@@ -32,9 +32,6 @@ public class TrocadorDeCenaEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        // Tirar o comentário da linha abaixo se quiser que o Unity Inspector
-        // mostre os campos/propriedades do script do jeito padrão, ou seja,
-        // como se não estivéssemos reescrevendo este jeito
         base.OnInspectorGUI();
 
         serializedObject.Update();

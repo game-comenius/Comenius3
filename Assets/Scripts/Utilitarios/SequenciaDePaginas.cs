@@ -6,6 +6,8 @@ public class SequenciaDePaginas : MonoBehaviour
 {
     [SerializeField] Pagina[] paginas;
 
+    [SerializeField] GameObject botaoProximaPagina;
+
     private LinkedList<Pagina> sequenciaDePaginas;
     private LinkedListNode<Pagina> nodoPaginaAtual;
     
@@ -19,6 +21,26 @@ public class SequenciaDePaginas : MonoBehaviour
         // Mostrar apenas a primeira página
         nodoPaginaAtual = sequenciaDePaginas.First;
         Mostrar(nodoPaginaAtual);
+        DefinirEstadoDoBotaoProximaPagina(false);
+        StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
+    }
+
+    public void MostrarProximaPagina()
+    {
+        if (!nodoPaginaAtual.Value.Validar())
+        {
+            Debug.LogWarning("Não é possível mostrar a próxima página porque a página atual não foi validada, i.e., ainda há detalhes que precisam ser preenchidos.");
+            return;
+        }
+        var proximoNodoPagina = nodoPaginaAtual.Next;
+        if (proximoNodoPagina == null)
+        {
+            Debug.LogWarning("Não há próxima página, esta é a última página de uma sequência de páginas.");
+            return;
+        }
+        Mostrar(proximoNodoPagina);
+        DefinirEstadoDoBotaoProximaPagina(false);
+        StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
     }
 
     private void Mostrar(LinkedListNode<Pagina> nodoPagina)
@@ -30,9 +52,22 @@ public class SequenciaDePaginas : MonoBehaviour
         nodoPaginaAtual.Value.Mostrar();
     }
 
-    public void MostrarProximaPagina()
+    private IEnumerator LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida()
+    {   
+        yield return new WaitUntil(() => nodoPaginaAtual.Value.Validar());
+        DefinirEstadoDoBotaoProximaPagina(true);
+        StartCoroutine(BloquearMostrarProximaPaginaSePaginaAtualPerderValidade());
+    }
+
+    private IEnumerator BloquearMostrarProximaPaginaSePaginaAtualPerderValidade()
     {
-        var proximoNodoPagina = nodoPaginaAtual.Next;
-        if (proximoNodoPagina != null) Mostrar(proximoNodoPagina);
+        yield return new WaitWhile(() => nodoPaginaAtual.Value.Validar());
+        DefinirEstadoDoBotaoProximaPagina(false);
+        StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
+    }
+
+    private void DefinirEstadoDoBotaoProximaPagina(bool habilitado)
+    {
+        botaoProximaPagina.SetActive(habilitado);
     }
 }
