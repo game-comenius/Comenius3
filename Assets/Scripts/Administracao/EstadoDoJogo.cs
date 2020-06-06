@@ -11,7 +11,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         get
         {
             if (nivelDeEnsinoSelecionado == null)
-                nivelDeEnsinoSelecionado = NivelDeEnsino.EnsinoFundamental;
+                nivelDeEnsinoSelecionado = NivelDeEnsino.EnsinoSuperior;
             return nivelDeEnsinoSelecionado;
         }
 
@@ -24,7 +24,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         get
         {
             if (areaDeConhecimentoSelecionada == null)
-                areaDeConhecimentoSelecionada = AreaDeConhecimento.Historia;
+                areaDeConhecimentoSelecionada = AreaDeConhecimento.CienciasHumanas;
             return areaDeConhecimentoSelecionada;
         }
 
