@@ -16,7 +16,7 @@ public class OnHoverCursorChanger : MonoBehaviour, IPointerEnterHandler, IPointe
             return textureImageWhenHovering;
         }
     }
-    private static Vector2 hotSpot = Vector2.zero;
+    private static Vector2 hotSpot = new Vector2(10, 10);
     private static CursorMode cursorMode = CursorMode.Auto;
 
     // Fields that represent the cursor when it is not hovering something
