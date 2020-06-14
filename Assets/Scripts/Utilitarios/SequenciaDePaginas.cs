@@ -39,8 +39,6 @@ public class SequenciaDePaginas : MonoBehaviour
             return;
         }
         Mostrar(proximoNodoPagina);
-        DefinirEstadoDoBotaoProximaPagina(false);
-        StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
     }
 
     private void Mostrar(LinkedListNode<Pagina> nodoPagina)
@@ -50,6 +48,10 @@ public class SequenciaDePaginas : MonoBehaviour
         // Mostrar página alvo
         nodoPaginaAtual = nodoPagina;
         nodoPaginaAtual.Value.Mostrar();
+        // Administrar botão de próxima página
+        DefinirEstadoDoBotaoProximaPagina(false);
+        if (nodoPaginaAtual != sequenciaDePaginas.Last)
+            StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
     }
 
     private IEnumerator LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida()
