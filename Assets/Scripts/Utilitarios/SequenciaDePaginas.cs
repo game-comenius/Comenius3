@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SequenciaDePaginas : MonoBehaviour
 {
     [SerializeField] Pagina[] paginas;
 
-    [SerializeField] GameObject botaoProximaPagina;
+    [SerializeField] Button botaoPaginaAnterior;
+    [SerializeField] Button botaoProximaPagina;
 
     private LinkedList<Pagina> sequenciaDePaginas;
     private LinkedListNode<Pagina> nodoPaginaAtual;
@@ -21,8 +23,17 @@ public class SequenciaDePaginas : MonoBehaviour
         // Mostrar apenas a primeira página
         nodoPaginaAtual = sequenciaDePaginas.First;
         Mostrar(nodoPaginaAtual);
-        DefinirEstadoDoBotaoProximaPagina(false);
-        StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
+    }
+
+    public void MostrarPaginaAnterior()
+    {
+        var nodoPaginaAnterior = nodoPaginaAtual.Previous;
+        if (nodoPaginaAnterior == null)
+        {
+            Debug.LogWarning("Não há página anterior, esta é a primeira página de uma sequência de páginas.");
+            return;
+        }
+        Mostrar(nodoPaginaAnterior);
     }
 
     public void MostrarProximaPagina()
@@ -48,7 +59,19 @@ public class SequenciaDePaginas : MonoBehaviour
         // Mostrar página alvo
         nodoPaginaAtual = nodoPagina;
         nodoPaginaAtual.Value.Mostrar();
-        // Administrar botão de próxima página
+
+        AdministrarBotoesDeNavegacao();
+    }
+
+    private void AdministrarBotoesDeNavegacao()
+    {
+        // Definir se o botão de página anterior vai ficar desabilitado ou não
+        if (nodoPaginaAtual == sequenciaDePaginas.First)
+            DefinirEstadoDoBotaoPaginaAnterior(false);
+        else
+            DefinirEstadoDoBotaoPaginaAnterior(true);
+
+        // Definir se o botão de próxima página vai ficar desabilitado ou não
         DefinirEstadoDoBotaoProximaPagina(false);
         if (nodoPaginaAtual != sequenciaDePaginas.Last)
             StartCoroutine(LiberarMostrarProximaPaginaQuandoPaginaAtualFicarValida());
@@ -70,6 +93,11 @@ public class SequenciaDePaginas : MonoBehaviour
 
     private void DefinirEstadoDoBotaoProximaPagina(bool habilitado)
     {
-        botaoProximaPagina.SetActive(habilitado);
+        botaoProximaPagina.interactable = habilitado;
+    }
+
+    private void DefinirEstadoDoBotaoPaginaAnterior(bool habilitado)
+    {
+        botaoPaginaAnterior.interactable = habilitado;
     }
 }
