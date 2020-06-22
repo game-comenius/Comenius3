@@ -7,7 +7,6 @@ public class GrupoDeIconesAreaDeConhecimento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Esconder();
     }
 
     public void Mostrar()

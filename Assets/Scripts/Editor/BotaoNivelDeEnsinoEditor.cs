@@ -10,10 +10,12 @@ public class BotaoNivelDeEnsinoEditor : Editor
     private string[] labelsDosNiveisDeEnsino;
 
     private SerializedProperty nivelDeEnsinoProperty;
+    private SerializedProperty spriteGrande;
 
     private void Awake()
     {
         nivelDeEnsinoProperty = serializedObject.FindProperty("valorNivelDeEnsino");
+        spriteGrande = serializedObject.FindProperty("SpriteGrande");
     }
 
     private void OnEnable()
@@ -36,6 +38,10 @@ public class BotaoNivelDeEnsinoEditor : Editor
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Nivel De Ensino");
         nivelDeEnsinoProperty.intValue = EditorGUILayout.IntPopup(nivelDeEnsinoProperty.intValue, labelsDosNiveisDeEnsino, valoresDosNiveisDeEnsino);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PropertyField(spriteGrande);
         EditorGUILayout.EndHorizontal();
 
         serializedObject.ApplyModifiedProperties();

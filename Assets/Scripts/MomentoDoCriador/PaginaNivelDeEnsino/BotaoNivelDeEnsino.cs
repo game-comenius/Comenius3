@@ -12,9 +12,8 @@ public class BotaoNivelDeEnsino : MonoBehaviour, IPointerClickHandler
         get { return selecionado; }
         set
         {
-            var image = GetComponent<Image>();
             selecionado = value;
-            image.color = selecionado ? (originalColor * 0.7f) : originalColor;
+            ImageComponent.color = selecionado ? (originalColor * 0.7f) : originalColor;
         }
     }
 
@@ -26,13 +25,17 @@ public class BotaoNivelDeEnsino : MonoBehaviour, IPointerClickHandler
         get { return NivelDeEnsino.Get(valorNivelDeEnsino); }
     }
 
-    private Image image;
+    [SerializeField] public Sprite SpriteGrande;
+
+
+    private Image imageComponent;
+    public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
+
     private Color originalColor;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
-        originalColor = image.color;
+        originalColor = ImageComponent.color;
     }
 
     public void OnPointerClick(PointerEventData eventData)

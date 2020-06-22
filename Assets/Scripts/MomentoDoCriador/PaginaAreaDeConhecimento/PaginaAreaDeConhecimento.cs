@@ -9,19 +9,22 @@ public class PaginaAreaDeConhecimento : Pagina
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesMedio;
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesSuperior;
 
-    private Dictionary<NivelDeEnsino, GrupoDeIconesAreaDeConhecimento> IconesPorNivelDeEnsino;
-
-    private GrupoDeIconesAreaDeConhecimento grupoAtual;
-
-    // Start is called before the first frame update
-    void Start()
+    private Dictionary<NivelDeEnsino, GrupoDeIconesAreaDeConhecimento> iconesPorNivelDeEnsino;
+    private Dictionary<NivelDeEnsino, GrupoDeIconesAreaDeConhecimento> IconesPorNivelDeEnsino
     {
-        // Criar mapeamento entre nível de ensino e os respectivos ícones
-        IconesPorNivelDeEnsino = new Dictionary<NivelDeEnsino, GrupoDeIconesAreaDeConhecimento>();
-        IconesPorNivelDeEnsino[NivelDeEnsino.EducacaoInfantil] = iconesInfantil;
-        IconesPorNivelDeEnsino[NivelDeEnsino.EnsinoFundamental] = iconesFundamental;
-        IconesPorNivelDeEnsino[NivelDeEnsino.EnsinoMedio] = iconesMedio;
-        IconesPorNivelDeEnsino[NivelDeEnsino.EnsinoSuperior] = iconesSuperior;
+        get
+        {
+            if (iconesPorNivelDeEnsino != null) return iconesPorNivelDeEnsino;
+
+            // Criar mapeamento entre nível de ensino e os respectivos ícones
+            var d = new Dictionary<NivelDeEnsino, GrupoDeIconesAreaDeConhecimento>();
+            d[NivelDeEnsino.EducacaoInfantil] = iconesInfantil;
+            d[NivelDeEnsino.EnsinoFundamental] = iconesFundamental;
+            d[NivelDeEnsino.EnsinoMedio] = iconesMedio;
+            d[NivelDeEnsino.EnsinoSuperior] = iconesSuperior;
+
+            return iconesPorNivelDeEnsino = d;
+        }
     }
 
     public override void Mostrar()
@@ -38,8 +41,10 @@ public class PaginaAreaDeConhecimento : Pagina
 
     private void ApresentarGrupoDeIcones(NivelDeEnsino nivelDeEnsino)
     {
-        if (grupoAtual) grupoAtual.Esconder();
-        grupoAtual = IconesPorNivelDeEnsino[nivelDeEnsino];
+        // Primeiro, esconder os grupos de ícones
+        foreach (var grupo in IconesPorNivelDeEnsino.Values) grupo.Esconder();
+        // Segundo, mostrar apenas o grupo de ícones do nível de ensino selecionado
+        var grupoAtual = IconesPorNivelDeEnsino[nivelDeEnsino];
         grupoAtual.Mostrar();
     }
 }
