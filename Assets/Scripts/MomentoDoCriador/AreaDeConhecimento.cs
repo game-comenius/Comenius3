@@ -20,7 +20,7 @@ public sealed class AreaDeConhecimento
 
     public static readonly AreaDeConhecimento LinguaInglesa = new AreaDeConhecimento(13, "Língua Inglesa");
 
-    public static readonly AreaDeConhecimento LinguagensSuasTecnologias = new AreaDeConhecimento(14, "Linguagens e suas Tecnologias");
+    public static readonly AreaDeConhecimento LinguisticaLetrasArtes = new AreaDeConhecimento(14, "Linguística, Letras e Artes");
     public static readonly AreaDeConhecimento CienciasHumanas = new AreaDeConhecimento(15, "Ciências Humanas");
     public static readonly AreaDeConhecimento CienciasSociaisAplicadas = new AreaDeConhecimento(16, "Ciências Sociais Aplicadas");
 
@@ -65,7 +65,7 @@ public sealed class AreaDeConhecimento
             EnsinoReligioso,
 
             LinguaInglesa,
-            LinguagensSuasTecnologias,
+            LinguisticaLetrasArtes,
             CienciasHumanas,
             CienciasSociaisAplicadas,
 
