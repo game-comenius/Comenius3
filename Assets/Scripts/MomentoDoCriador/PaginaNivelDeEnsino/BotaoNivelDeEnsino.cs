@@ -6,16 +6,7 @@ using UnityEngine.UI;
 
 public class BotaoNivelDeEnsino : MonoBehaviour, IPointerClickHandler
 {
-    private bool selecionado;
-    public bool Selecionado
-    {
-        get { return selecionado; }
-        set
-        {
-            selecionado = value;
-            ImageComponent.color = selecionado ? (originalColor * 0.7f) : originalColor;
-        }
-    }
+    public bool Selecionado { get; set; }
 
     public GrupoDeBotoesNivelDeEnsino grupo;
 
@@ -31,11 +22,9 @@ public class BotaoNivelDeEnsino : MonoBehaviour, IPointerClickHandler
     private Image imageComponent;
     public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
 
-    private Color originalColor;
-
-    private void Awake()
+    private void Start()
     {
-        originalColor = ImageComponent.color;
+        if (!grupo) grupo = GetComponentInParent<GrupoDeBotoesNivelDeEnsino>();
     }
 
     public void OnPointerClick(PointerEventData eventData)

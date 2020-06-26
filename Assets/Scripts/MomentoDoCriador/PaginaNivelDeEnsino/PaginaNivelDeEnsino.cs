@@ -6,10 +6,11 @@ using System.Linq;
 
 public class PaginaNivelDeEnsino : Pagina
 {
-    [SerializeField] GrupoDeBotoesNivelDeEnsino grupoDeBotoes;
     [SerializeField] Image iconePequenoGuia;
     [SerializeField] Image iconeGrandeEmDestaque;
     [SerializeField] Text NomeDoSelecionado;
+    [SerializeField] GrupoDeBotoesNivelDeEnsino grupoDeBotoes;
+    [SerializeField] PaginaAreaDeConhecimento paginaAreaDeConhecimento;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class PaginaNivelDeEnsino : Pagina
         // Toda vez que o grupo de botões disser que um novo botão foi
         // selecionado, a página irá atualizar o ícone grande em destaque,
         // o nome do botão selecionado e o ícone pequeno na lateral esquerda
-        grupoDeBotoes.QuandoUmBotaoForSelecionadoEvent += (botaoSelecionado) =>
+        grupoDeBotoes.QuandoUmNovoBotaoForSelecionadoEvent += (botaoSelecionado) =>
         {
             iconeGrandeEmDestaque.sprite = botaoSelecionado.SpriteGrande;
             iconeGrandeEmDestaque.enabled = true;
@@ -27,6 +28,8 @@ public class PaginaNivelDeEnsino : Pagina
 
             var spritePequeno = botaoSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
+
+            paginaAreaDeConhecimento.DesfazerEscolha();
         };
     }
 

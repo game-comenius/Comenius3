@@ -1,18 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class IconeAreaDeConhecimento : MonoBehaviour
+public class IconeAreaDeConhecimento : MonoBehaviour, IPointerClickHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool Selecionado { get; set; }
+
+    public GrupoDeIconesAreaDeConhecimento grupo;
+
+    [SerializeField] int valorAreaDeConhecimento = NivelDeEnsino.EnsinoSuperior.AreasDeConhecimento[0].valor;
+    public AreaDeConhecimento Valor
     {
-        
+        get { return AreaDeConhecimento.Get(valorAreaDeConhecimento); }
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] public Sprite SpriteGrande;
+
+    private Image imageComponent;
+    public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
+        if (!Selecionado && grupo && grupo.Selecionar(this)) return;
+
+        Selecionado = !Selecionado;
     }
 }

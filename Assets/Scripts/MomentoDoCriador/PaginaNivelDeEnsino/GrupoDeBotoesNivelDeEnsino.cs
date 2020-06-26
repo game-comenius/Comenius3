@@ -14,7 +14,7 @@ public class GrupoDeBotoesNivelDeEnsino : MonoBehaviour
     }
 
     // 
-    public event Action<BotaoNivelDeEnsino> QuandoUmBotaoForSelecionadoEvent;
+    public event Action<BotaoNivelDeEnsino> QuandoUmNovoBotaoForSelecionadoEvent;
 
     private void Start()
     {
@@ -47,7 +47,7 @@ public class GrupoDeBotoesNivelDeEnsino : MonoBehaviour
         AnelDeSelecao.rectTransform.anchoredPosition = posicaoDoBotao;
 
         // Avisar observadores qual é o novo botão selecionado
-        QuandoUmBotaoForSelecionadoEvent?.Invoke(botao);
+        QuandoUmNovoBotaoForSelecionadoEvent?.Invoke(botao);
 
         // Gravar no estado do jogo que este é o nível de ensino selecionado
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = botao.Valor;

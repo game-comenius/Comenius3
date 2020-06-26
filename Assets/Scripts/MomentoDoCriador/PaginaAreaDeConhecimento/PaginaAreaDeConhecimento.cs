@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : Pagina
 {
+    [SerializeField] Text tituloDaPagina;
+
+    [SerializeField] Image iconePequenoGuia;
+    private Sprite spriteOriginalDoIconePequenoGuia;
+
+    [SerializeField] Image iconeGrandeEmDestaque;
+    [SerializeField] Text NomeDoSelecionado;
+
+    [Header("Grupo de ícones por nível de ensino")]
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesInfantil;
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesFundamental;
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesMedio;
@@ -27,24 +37,84 @@ public class PaginaAreaDeConhecimento : Pagina
         }
     }
 
+    private GrupoDeIconesAreaDeConhecimento grupoDeIconesAtivo;
+    private NivelDeEnsino nivelDeEnsinoSelecionadoAnteriormente;
+
+    private void Start()
+    {
+        spriteOriginalDoIconePequenoGuia = iconePequenoGuia.sprite;
+
+        // Toda vez que o grupo de botões disser que um novo botão foi
+        // selecionado, a página irá atualizar o ícone grande em destaque,
+        // o nome do botão selecionado e o ícone pequeno na lateral esquerda
+        foreach (var grupoDeIcones in IconesPorNivelDeEnsino.Values)
+        {
+            grupoDeIcones.QuandoUmElementoForSelecionadoEvent += (iconeSelecionado) =>
+            {
+                iconeGrandeEmDestaque.sprite = iconeSelecionado.SpriteGrande;
+                iconeGrandeEmDestaque.enabled = true;
+
+                NomeDoSelecionado.text = iconeSelecionado.Valor.nome;
+
+                var spritePequeno = iconeSelecionado.ImageComponent.sprite;
+                iconePequenoGuia.sprite = spritePequeno;
+            };
+        }
+
+        this.LimparPagina();
+    }
+
     public override void Mostrar()
     {
         base.Mostrar();
 
-        ApresentarGrupoDeIcones(EstadoDoJogo.Instance.NivelDeEnsinoSelecionado);
+        // Se não há mudanças recentes no nível de ensino, não atualizar página
+        var nivelDeEnsinoSelecionado = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
+        if (nivelDeEnsinoSelecionado == nivelDeEnsinoSelecionadoAnteriormente) return;
+
+        // Porém, se o o jogador escolheu um novo nível de ensino, atualizar
+        ApresentarGrupoDeIcones(nivelDeEnsinoSelecionado);
+        // Lembrar do nível de ensino atual
+        nivelDeEnsinoSelecionadoAnteriormente = nivelDeEnsinoSelecionado;
     }
 
     public override bool Validar()
     {
-        return base.Validar();
+        return (grupoDeIconesAtivo.iconeSelecionado != null);
+    }
+
+    public void DesfazerEscolha()
+    {
+        if (grupoDeIconesAtivo) grupoDeIconesAtivo.DesfazerSelecao();
+        // Limpar campo com o nome do ícone escolhido
+        NomeDoSelecionado.text = string.Empty;
+        // Esconder destaque de item selecionado, como se não houvesse seleção
+        iconeGrandeEmDestaque.enabled = false;
+        // Voltar ícone pequeno ao seu estado original
+        iconePequenoGuia.sprite = spriteOriginalDoIconePequenoGuia;
     }
 
     private void ApresentarGrupoDeIcones(NivelDeEnsino nivelDeEnsino)
     {
-        // Primeiro, esconder os grupos de ícones
+        LimparPagina();
+
+        // Mostrar apenas o grupo de ícones do nível de ensino selecionado
+        var grupoVisivel = IconesPorNivelDeEnsino[nivelDeEnsino];
+        grupoVisivel.Mostrar();
+        // Lembrar do grupo que está visível para o jogador
+        grupoDeIconesAtivo = grupoVisivel;
+
+        // Caso especial para o nível de ensino infantil
+        if (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
+            tituloDaPagina.text = "Campos de Aprendizagem";
+        else
+            tituloDaPagina.text = "Área de Conhecimento";
+    }
+
+    private void LimparPagina()
+    {
+        DesfazerEscolha();
+        // Esconder os grupos de ícones
         foreach (var grupo in IconesPorNivelDeEnsino.Values) grupo.Esconder();
-        // Segundo, mostrar apenas o grupo de ícones do nível de ensino selecionado
-        var grupoAtual = IconesPorNivelDeEnsino[nivelDeEnsino];
-        grupoAtual.Mostrar();
     }
 }
