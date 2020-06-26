@@ -9,29 +9,18 @@ public sealed class AreaDeConhecimento
     public static readonly AreaDeConhecimento EscutaFalaPensamentoImaginacao = new AreaDeConhecimento(3, "Escuta, fala, pensamento e imaginação");
     public static readonly AreaDeConhecimento EspacosTemposQuantidadesRelacoesTransformacoes = new AreaDeConhecimento(4, "Espaços, tempos, quantidades, relações e transformações");
 
-    public static readonly AreaDeConhecimento LinguaPortuguesa = new AreaDeConhecimento(5, "Língua Portuguesa");
-    public static readonly AreaDeConhecimento Artes = new AreaDeConhecimento(6, "Artes");
-    public static readonly AreaDeConhecimento EducacaoFisica = new AreaDeConhecimento(7, "Educação Física");
     public static readonly AreaDeConhecimento Matematica = new AreaDeConhecimento(8, "Matemática");
     public static readonly AreaDeConhecimento CienciasDaNatureza = new AreaDeConhecimento(9, "Ciências da Natureza");
-    public static readonly AreaDeConhecimento Geografia = new AreaDeConhecimento(10, "Geografia");
-    public static readonly AreaDeConhecimento Historia = new AreaDeConhecimento(11, "História");
-    public static readonly AreaDeConhecimento EnsinoReligioso = new AreaDeConhecimento(12, "Ensino Religioso");
-
-    public static readonly AreaDeConhecimento LinguaInglesa = new AreaDeConhecimento(13, "Língua Inglesa");
-
-    public static readonly AreaDeConhecimento LinguisticaLetrasArtes = new AreaDeConhecimento(14, "Linguística, Letras e Artes");
     public static readonly AreaDeConhecimento CienciasHumanas = new AreaDeConhecimento(15, "Ciências Humanas");
+    public static readonly AreaDeConhecimento EnsinoReligioso = new AreaDeConhecimento(12, "Ensino Religioso");
+    public static readonly AreaDeConhecimento LinguisticaLetrasArtes = new AreaDeConhecimento(14, "Linguística, Letras e Artes");
+
+
     public static readonly AreaDeConhecimento CienciasSociaisAplicadas = new AreaDeConhecimento(16, "Ciências Sociais Aplicadas");
-
-    public static readonly AreaDeConhecimento EstudosDaSociedadeDaNatureza = new AreaDeConhecimento(17, "Estudos da Sociedade e da Natureza");
-
-    public static readonly AreaDeConhecimento LinguaEstrangeira = new AreaDeConhecimento(18, "Língua Estrangeira");
-
-    public static readonly AreaDeConhecimento CienciasExatasDaTerra = new AreaDeConhecimento(19, "Ciências Exatas e da Terra");
+    public static readonly AreaDeConhecimento CienciasDaSaude = new AreaDeConhecimento(22, "Ciências da Saúde");
     public static readonly AreaDeConhecimento CienciasBiologicas = new AreaDeConhecimento(20, "Ciências Biológicas");
     public static readonly AreaDeConhecimento Engenharias = new AreaDeConhecimento(21, "Engenharias");
-    public static readonly AreaDeConhecimento CienciasDaSaude = new AreaDeConhecimento(22, "Ciências da Saúde");
+    public static readonly AreaDeConhecimento CienciasExatasDaTerra = new AreaDeConhecimento(19, "Ciências Exatas e da Terra");
     public static readonly AreaDeConhecimento CienciasAgrarias = new AreaDeConhecimento(23, "Ciências Agrárias");
 
 
@@ -55,28 +44,17 @@ public sealed class AreaDeConhecimento
             EscutaFalaPensamentoImaginacao,
             EspacosTemposQuantidadesRelacoesTransformacoes,
 
-            LinguaPortuguesa,
-            Artes,
-            EducacaoFisica,
             Matematica,
             CienciasDaNatureza,
-            Geografia,
-            Historia,
-            EnsinoReligioso,
-
-            LinguaInglesa,
-            LinguisticaLetrasArtes,
             CienciasHumanas,
+            EnsinoReligioso,
+            LinguisticaLetrasArtes,
+
             CienciasSociaisAplicadas,
-
-            EstudosDaSociedadeDaNatureza,
-
-            LinguaEstrangeira,
-
-            CienciasExatasDaTerra,
+            CienciasDaSaude,
             CienciasBiologicas,
             Engenharias,
-            CienciasDaSaude,
+            CienciasExatasDaTerra,
             CienciasAgrarias
         };
         return areas;

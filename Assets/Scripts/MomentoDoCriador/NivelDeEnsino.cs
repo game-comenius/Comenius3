@@ -23,15 +23,11 @@ public sealed class NivelDeEnsino
         "Ensino Fundamental",
         new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa.valor,
-            AreaDeConhecimento.Artes.valor,
-            AreaDeConhecimento.EducacaoFisica.valor,
-            AreaDeConhecimento.LinguaInglesa.valor,
             AreaDeConhecimento.Matematica.valor,
             AreaDeConhecimento.CienciasDaNatureza.valor,
-            AreaDeConhecimento.Geografia.valor,
-            AreaDeConhecimento.Historia.valor,
-            AreaDeConhecimento.EnsinoReligioso.valor
+            AreaDeConhecimento.CienciasHumanas.valor,
+            AreaDeConhecimento.EnsinoReligioso.valor,
+            AreaDeConhecimento.LinguisticaLetrasArtes.valor
         }
     );
 
@@ -41,12 +37,10 @@ public sealed class NivelDeEnsino
         "Ensino Médio",
         new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa.valor,
-            AreaDeConhecimento.LinguisticaLetrasArtes.valor,
             AreaDeConhecimento.Matematica.valor,
             AreaDeConhecimento.CienciasDaNatureza.valor,
             AreaDeConhecimento.CienciasHumanas.valor,
-            AreaDeConhecimento.CienciasSociaisAplicadas.valor
+            AreaDeConhecimento.LinguisticaLetrasArtes.valor,
         }
     );
 
@@ -56,12 +50,12 @@ public sealed class NivelDeEnsino
         "Ensino Superior",
         new int[]
         {
-            AreaDeConhecimento.CienciasExatasDaTerra.valor,
+            AreaDeConhecimento.CienciasSociaisAplicadas.valor,
+            AreaDeConhecimento.CienciasDaSaude.valor,
             AreaDeConhecimento.CienciasBiologicas.valor,
             AreaDeConhecimento.Engenharias.valor,
-            AreaDeConhecimento.CienciasDaSaude.valor,
+            AreaDeConhecimento.CienciasExatasDaTerra.valor,
             AreaDeConhecimento.CienciasAgrarias.valor,
-            AreaDeConhecimento.CienciasSociaisAplicadas.valor,
             AreaDeConhecimento.CienciasHumanas.valor,
             AreaDeConhecimento.LinguisticaLetrasArtes.valor,
         }
