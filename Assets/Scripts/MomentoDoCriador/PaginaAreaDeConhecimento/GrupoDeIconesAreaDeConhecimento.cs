@@ -50,6 +50,7 @@ public class GrupoDeIconesAreaDeConhecimento : MonoBehaviour
 
         // Gravar no estado do jogo que este é o nível de ensino selecionado
         EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = botao.Valor;
+        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.Sprite = botao.ImageComponent.sprite;
 
         return true;
     }

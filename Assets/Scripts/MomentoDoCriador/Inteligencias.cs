@@ -1,4 +1,6 @@
 ﻿// Representa um par de inteligências múltiplas
+using UnityEngine;
+
 public sealed class Inteligencias
 {
     public static readonly Inteligencias CorporalCinestesicaComNaturalista = new Inteligencias
@@ -32,6 +34,10 @@ public sealed class Inteligencias
     public readonly int Valor;
     public readonly string Nome;
     public readonly string Descricao;
+    // Quando o jogador seleciona este quando aperta sobre o ícone que
+    // representa ele, o ícone salva seu sprite nesta propriedade
+    // para que o jogo possa apresentá-la depois em outras cenas
+    public Sprite SpriteGrande;
 
     private Inteligencias(int valor, string nome, string descricao)
     {

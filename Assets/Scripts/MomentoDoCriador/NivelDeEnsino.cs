@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 [Serializable]
 public sealed class NivelDeEnsino
@@ -77,6 +78,10 @@ public sealed class NivelDeEnsino
             return returnValues;
         }
     }
+    // Quando o jogador seleciona este quando aperta sobre o ícone que
+    // representa ele, o ícone salva seu sprite nesta propriedade
+    // para que o jogo possa apresentá-la depois em outras cenas
+    public Sprite Sprite;
 
     private NivelDeEnsino(int valor, string nome, int[] areasDeConhecimento)
     {

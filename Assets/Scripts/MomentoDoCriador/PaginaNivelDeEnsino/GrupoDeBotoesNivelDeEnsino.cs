@@ -51,6 +51,7 @@ public class GrupoDeBotoesNivelDeEnsino : MonoBehaviour
 
         // Gravar no estado do jogo que este é o nível de ensino selecionado
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = botao.Valor;
+        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.Sprite = botao.ImageComponent.sprite;
 
         return true;
     }

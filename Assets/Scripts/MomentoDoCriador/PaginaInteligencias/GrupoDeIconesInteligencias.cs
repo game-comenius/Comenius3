@@ -50,6 +50,7 @@ public class GrupoDeIconesInteligencias : MonoBehaviour
 
         // Gravar no estado do jogo que este é o par de inteligências selecionado
         EstadoDoJogo.Instance.InteligenciasSelecionadas = icone.Valor;
+        EstadoDoJogo.Instance.InteligenciasSelecionadas.SpriteGrande = icone.SpriteGrande;
 
         return true;
     }
