@@ -12,11 +12,16 @@ public class PaginaInteligencias : Pagina
 
     [SerializeField] GrupoDeIconesInteligencias grupoDeIconesInteligencias;
 
+    [SerializeField] Button botaoConfirmar;
+
     private void Start()
     {
         // Limpar nome do selecionado e esconder icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
         iconeGrandeEmDestaque.enabled = false;
+
+        // Esconder botão confirmar até que uma escolha seja feita
+        botaoConfirmar.gameObject.SetActive(false);
 
         // Toda vez que o grupo de botões disser que um novo botão foi
         // selecionado, a página irá atualizar o ícone grande em destaque,
@@ -30,11 +35,13 @@ public class PaginaInteligencias : Pagina
 
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
+
+            botaoConfirmar.gameObject.SetActive(true);
         };
     }
 
     public override bool Validar()
     {
-        return true;
+        return (grupoDeIconesInteligencias.IconeSelecionado != null);
     }
 }
