@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Midias
+public class Midia
 {
     public NomeMidias NomeMidia { get; private set; }
     public Sprite Sprite { get; private set; }
@@ -10,7 +10,7 @@ public class Midias
     public string NomeApresentavel { get; private set; }
     public string Descricao { get; private set; }
 
-    public Midias (NomeMidias nomeMidia)
+    public Midia (NomeMidias nomeMidia)
     {
         NomeMidia = nomeMidia;
 
