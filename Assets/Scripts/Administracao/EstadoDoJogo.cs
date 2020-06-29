@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EstadoDoJogo : Singleton<EstadoDoJogo>
+﻿public class EstadoDoJogo : Singleton<EstadoDoJogo>
 {
     // Propriedades definidas pelo criador de um jogo
     private NivelDeEnsino nivelDeEnsinoSelecionado;
@@ -29,5 +25,18 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         }
 
         set => areaDeConhecimentoSelecionada = value;
+    }
+
+    private Inteligencias inteligenciasSelecionadas;
+    public Inteligencias InteligenciasSelecionadas
+    {
+        get
+        {
+            if (inteligenciasSelecionadas == null)
+                inteligenciasSelecionadas = Inteligencias.LinguisticaComLogicoMatematica;
+            return inteligenciasSelecionadas;
+        }
+
+        set => inteligenciasSelecionadas = value;
     }
 }

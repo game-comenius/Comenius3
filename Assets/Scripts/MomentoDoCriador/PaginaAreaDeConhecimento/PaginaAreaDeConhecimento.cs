@@ -60,8 +60,6 @@ public class PaginaAreaDeConhecimento : Pagina
                 iconePequenoGuia.sprite = spritePequeno;
             };
         }
-
-        this.LimparPagina();
     }
 
     public override void Mostrar()
@@ -80,7 +78,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
     public override bool Validar()
     {
-        return (grupoDeIconesAtivo.iconeSelecionado != null);
+        return (grupoDeIconesAtivo && grupoDeIconesAtivo.iconeSelecionado != null);
     }
 
     public void DesfazerEscolha()
@@ -91,7 +89,7 @@ public class PaginaAreaDeConhecimento : Pagina
         // Esconder destaque de item selecionado, como se não houvesse seleção
         iconeGrandeEmDestaque.enabled = false;
         // Voltar ícone pequeno ao seu estado original
-        iconePequenoGuia.sprite = spriteOriginalDoIconePequenoGuia;
+        if (spriteOriginalDoIconePequenoGuia) iconePequenoGuia.sprite = spriteOriginalDoIconePequenoGuia;
     }
 
     private void ApresentarGrupoDeIcones(NivelDeEnsino nivelDeEnsino)
