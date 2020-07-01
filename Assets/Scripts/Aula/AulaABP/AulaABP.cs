@@ -20,9 +20,9 @@ public class AulaABP : Aula
     private Quiz[] ObterQuizzesConfigurados()
     {
         // O primeiro quiz de mídia será sobre a que jogador escolheu primeiro
-        quizDeMidia1.ConfigurarQuiz();
+        quizDeMidia1.ConfigurarQuiz(NomeMidias.Caderno);
         // O segundo quiz de mídia será sobre a que o jogador escolheu por segundo
-        quizDeMidia2.ConfigurarQuiz();
+        quizDeMidia2.ConfigurarQuiz(NomeMidias.Caderno);
 
         // Ordenar os quizzes
         Quiz[] quizzes =

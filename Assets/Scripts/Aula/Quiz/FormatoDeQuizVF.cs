@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FormatoDeQuizVF : MonoBehaviour
+public class FormatoDeQuizVF : FormatoDeQuiz
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Representam as etiquetas/faixas/botões com as afirmações na UI
+    [SerializeField] AfirmacaoQuizVF[] afirmacoesQuizVF;
 
-    // Update is called once per frame
-    void Update()
+    // Representam os textos, as afirmações verdadeiras ou falsas de fato
+    private Afirmacao[] afirmacoes;
+
+    public void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
-        
+        this.afirmacoes = afirmacoes;
+
+        // Se receber + que o número limite de afirmações deste objeto, que é
+        // igual a afirmacoesQuizVF.Length, não tentar adicionar + que o limite
+        var quantidade = (afirmacoes.Length <= afirmacoesQuizVF.Length) ? afirmacoes.Length : afirmacoesQuizVF.Length;
+        for (var i = 0; i < quantidade; i++)
+        {
+            afirmacoesQuizVF[i].Texto = afirmacoes[i].Texto;
+        }
     }
 }

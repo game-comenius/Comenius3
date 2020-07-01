@@ -1,18 +1,50 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class QuizDeMidia : Quiz
 {
-    public void ConfigurarQuiz()
+    [SerializeField] FormatoDeQuizVF prefabQuizVF;
+    private FormatoDeQuizVF quizVF;
+    [SerializeField] [Range(2, 4)] int quantidadeDeAfirmacoesNoQuiz;
+
+    public override float TaxaDeAcerto
     {
-        return;
+        get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto: 0; }
+    }
+
+    public NomeMidias Midia { get; private set; }
+
+
+    public void ConfigurarQuiz(NomeMidias midia)
+    {
+        Midia = midia;
+        quizVF = Instantiate(prefabQuizVF, canvas.transform);
+
+        quizVF.TextoDoEnunciado = "Escolha V ou F para as afirmações a seguir considerando a mídia " + midia + ".";
+
+        var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia);
+        var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
+        for (var i = 0; i < quantidadeDeAfirmacoesNoQuiz; i++)
+        {
+            var afirmacoesDisponiveis = todasAsAfirmacoes.Except(afirmacoesSelecionadas);
+            var indiceAleatorio = Random.Range(0, afirmacoesDisponiveis.Count());
+            var afirmacaoAleatoria = afirmacoesDisponiveis.ElementAt(indiceAleatorio);
+            afirmacoesSelecionadas[i] = afirmacaoAleatoria;
+        }
+        quizVF.DefinirAfirmacoes(afirmacoesSelecionadas);
     }
 
     public override IEnumerator Executar()
     {
+        estado = EstadoDeQuiz.EmExecucao;
         Debug.Log("Executando quiz de mídia...");
-        yield return new WaitForSeconds(3);
+
+        quizVF.Mostrar();
+        yield return new WaitForSeconds(tempoLimite);
+        quizVF.Esconder();
+
         Debug.Log("Terminando a execução do quiz de mídia...");
+        estado = EstadoDeQuiz.Executado;
     }
 }
