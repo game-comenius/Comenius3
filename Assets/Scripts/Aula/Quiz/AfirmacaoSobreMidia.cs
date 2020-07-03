@@ -10,7 +10,7 @@ public class AfirmacaoSobreMidia : Afirmacao
         var lista = new List<AfirmacaoSobreMidia>();
         switch (midia)
         {
-            case NomeMidias.Caderno:
+            case NomeMidias.CadernosECartazes:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     new AfirmacaoSobreMidia(true, "São mídias utilizadas para produção e armazenamento de informações por uso da escrita ou imagens, geralmente utilizadas pelos alunos."),

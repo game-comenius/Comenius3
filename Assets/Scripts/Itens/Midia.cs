@@ -16,11 +16,11 @@ public class Midia
 
         switch (NomeMidia)
         {
-            case NomeMidias.QuadroNegro:
+            case NomeMidias.Lousa:
                 NomeApresentavel = "Quadro Negro";
                 Descricao = "É um quadro negro.";
                 break;
-            case NomeMidias.Caderno:
+            case NomeMidias.CadernosECartazes:
                 NomeApresentavel = "Caderno";
                 Descricao = "É um caderno";
                 break;
