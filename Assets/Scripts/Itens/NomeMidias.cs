@@ -8,7 +8,7 @@ public enum NomeMidias
     LivrosJornaisERevistas,
     CadernosECartazes,
     Televisao,
-    ReprodutorDeAudio,
+    AparelhoDeSom,
     RedesSociais,
     Jogos,
     EditoresDeAudioEVideo,
