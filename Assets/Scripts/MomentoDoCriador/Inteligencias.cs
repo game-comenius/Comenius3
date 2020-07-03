@@ -6,28 +6,28 @@ public sealed class Inteligencias
     public static readonly Inteligencias CorporalCinestesicaComNaturalista = new Inteligencias
     (
         valor: 0,
-        nome: "Corporal-cinestésica + Naturalista",
+        nome: "Corporal-cinestésica e Naturalista",
         descricao: ""
     );
 
     public static readonly Inteligencias IntrapessoalComEspacialVisual = new Inteligencias
     (
         valor: 1,
-        nome: "Intrapessoal + Espacial-visual",
+        nome: "Intrapessoal e Espacial-visual",
         descricao: ""
     );
 
     public static readonly Inteligencias InterpessoalComMusical = new Inteligencias
     (
         valor: 2,
-        nome: "Interpessoal + Musical",
+        nome: "Interpessoal e Musical",
         descricao: ""
     );
 
     public static readonly Inteligencias LinguisticaComLogicoMatematica = new Inteligencias
     (
         valor: 3,
-        nome: "Linguística + Lógico-matemática",
+        nome: "Linguística e Lógico-matemática",
         descricao: ""
     );
 
