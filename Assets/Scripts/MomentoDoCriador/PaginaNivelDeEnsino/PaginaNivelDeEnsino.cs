@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class PaginaNivelDeEnsino : Pagina
 {
     [SerializeField] Image iconePequenoGuia;
     [SerializeField] Image iconeGrandeEmDestaque;
     [SerializeField] Text NomeDoSelecionado;
+    [SerializeField] ScrollRect DescricaoDoSelecionado;
     [SerializeField] GrupoDeBotoesNivelDeEnsino grupoDeBotoes;
     [SerializeField] PaginaAreaDeConhecimento paginaAreaDeConhecimento;
 
@@ -27,6 +29,12 @@ public class PaginaNivelDeEnsino : Pagina
             iconeGrandeEmDestaque.enabled = true;
 
             NomeDoSelecionado.text = botaoSelecionado.Valor.nome;
+
+            // Atualizar descrição para o nível de ensino selecionado
+            var textoDaDescricaoDoSelecionado = DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>();
+            textoDaDescricaoDoSelecionado.text = botaoSelecionado.Valor.Descricao;
+            // Retornar/resetar scrollbar para o topo
+            DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>().value = 1;
 
             var spritePequeno = botaoSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
