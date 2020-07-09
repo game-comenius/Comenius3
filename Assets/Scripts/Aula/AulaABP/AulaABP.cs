@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AulaABP : Aula
 {
+    // É possível definir as mídias selecionadas para a aula ABP em outra cena, são propriedades estáticas
+    public static NomeMidias PrimeiraMidia;
+    public static NomeMidias SegundaMidia;
+
     [Header("Quizzes")]
     [SerializeField] QuizDeMidia quizDeMidia1;
     [SerializeField] QuizDeMidia quizDeMidia2;
@@ -13,6 +17,10 @@ public class AulaABP : Aula
 
     void Start()
     {
+        // Temporário, deletar + tarde
+        PrimeiraMidia = NomeMidias.Jogos;
+        SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
+
         var quizzes = ObterQuizzesConfigurados();
         StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
     }
@@ -20,9 +28,9 @@ public class AulaABP : Aula
     private Quiz[] ObterQuizzesConfigurados()
     {
         // O primeiro quiz de mídia será sobre a que jogador escolheu primeiro
-        quizDeMidia1.ConfigurarQuiz(NomeMidias.CadernosECartazes);
+        quizDeMidia1.ConfigurarQuiz(PrimeiraMidia);
         // O segundo quiz de mídia será sobre a que o jogador escolheu por segundo
-        quizDeMidia2.ConfigurarQuiz(NomeMidias.CadernosECartazes);
+        quizDeMidia2.ConfigurarQuiz(SegundaMidia);
 
         // Ordenar os quizzes
         Quiz[] quizzes =

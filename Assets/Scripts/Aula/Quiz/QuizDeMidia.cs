@@ -21,7 +21,7 @@ public class QuizDeMidia : Quiz
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);
 
-        quizVF.TextoDoEnunciado = "Selecione as afirmações corretas sobre a mídia " + midia + ".";
+        quizVF.TextoDoEnunciado = "Selecione as afirmações corretas sobre a mídia " + new Midia(midia).NomeApresentavel + ".";
 
         var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia);
         var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
