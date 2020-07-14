@@ -1,18 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
+using TMPro;
 
-public class PaginaMidia : MonoBehaviour
+public class PaginaMidia : Pagina
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image iconePequenoGuia;
+    [SerializeField] Image iconeGrandeEmDestaque;
+    [SerializeField] Text NomeDoSelecionado;
+    [SerializeField] ScrollRect DescricaoDoSelecionado;
+    [SerializeField] GrupoDeBotoesMidia grupoDeBotoes;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        NomeDoSelecionado.text = string.Empty;
+        iconeGrandeEmDestaque.enabled = false;
+
+        grupoDeBotoes.QuandoUmNovoBotaoForSelecionadoEvent += (botaoSelecionado) =>
+        {
+            iconeGrandeEmDestaque.sprite = botaoSelecionado.SpriteGrande;
+            iconeGrandeEmDestaque.enabled = true;
+
+            //NomeDoSelecionado.text = botaoSelecionado.
+        }
     }
 }
