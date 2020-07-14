@@ -11,7 +11,7 @@ public class FormatoDeQuiz : MonoBehaviour
         set { enunciado.text = value; }
     }
 
-    public virtual float TaxaDeAcerto { get; }
+    public virtual float TaxaDeAcerto { get; protected set; }
 
     protected virtual void Start()
     {

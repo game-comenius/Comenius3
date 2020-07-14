@@ -41,7 +41,12 @@ public class QuizDeMidia : Quiz
         Debug.Log("Executando quiz de mídia...");
 
         quizVF.Mostrar();
-        yield return new WaitForSeconds(tempoLimite);
+
+        yield return new WaitUntil(() => quizVF.RespostaConfirmada);
+
+        // Mostrar se o jogador acertou ou errou nas suas escolhas
+        yield return new WaitForSeconds(2f);
+
         quizVF.Esconder();
 
         Debug.Log("Terminando a execução do quiz de mídia...");
