@@ -1,25 +1,80 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
 
 public class FormatoDeQuizVF : FormatoDeQuiz
 {
+    [SerializeField] public Button BotaoConfirmar;
     // Representam as etiquetas/faixas/botões com as afirmações na UI
     [SerializeField] AfirmacaoQuizVF[] afirmacoesQuizVF;
 
-    // Representam os textos, as afirmações verdadeiras ou falsas de fato
-    private Afirmacao[] afirmacoes;
+    public bool RespostaConfirmada { get; set; }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        // Definir funcionalidade do botão confirmar
+        BotaoConfirmar.onClick.AddListener(() =>
+        {
+            // Impedir que o jogador confirme mais de uma vez a resposta dele
+            BotaoConfirmar.gameObject.SetActive(false);
+            ConfirmarResposta();
+        });
+    }
 
     public void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
-        this.afirmacoes = afirmacoes;
-
         // Se receber + que o número limite de afirmações deste objeto, que é
         // igual a afirmacoesQuizVF.Length, não tentar adicionar + que o limite
         var quantidade = (afirmacoes.Length <= afirmacoesQuizVF.Length) ? afirmacoes.Length : afirmacoesQuizVF.Length;
         for (var i = 0; i < quantidade; i++)
+            afirmacoesQuizVF[i].Afirmacao = afirmacoes[i];
+    }
+
+    private void ConfirmarResposta()
+    {
+        // Se a resposta do jogador já foi confirmada, ignorar
+        if (RespostaConfirmada) return;
+
+        var acertosDoJogador = 0;
+        var errosDoJogador = 0;
+
+        // Apenas afirmações selecionadas pelo jogador serão marcadas como
+        // verdadeiras/falsas mesmo que outras afirmações sejam verdadeiras/falsas
+        // Estas últimas ficarão como um suspense para o jogador
+        var afirmacoesSelecionadas = afirmacoesQuizVF.Where((a) => a.Selecionada);
+        foreach (var afirmacaoSelecionada in afirmacoesSelecionadas)
         {
-            afirmacoesQuizVF[i].Texto = afirmacoes[i].Texto;
+            if (afirmacaoSelecionada.Afirmacao.Verdadeira)
+            {
+                acertosDoJogador++;
+                afirmacaoSelecionada.DefinirComoAcertoDoJogador();
+            }
+            else
+            {
+                errosDoJogador++;
+                afirmacaoSelecionada.DefinirComoErroDoJogador();
+            }
         }
+
+        // Definir taxa de acerto do quiz VF
+        var afirmacoesVerdadeiras = afirmacoesQuizVF.Where((a) => a.Afirmacao.Verdadeira).Count();
+        var pontuacao = acertosDoJogador - errosDoJogador;
+
+        if (afirmacoesVerdadeiras != 0)
+        {
+            TaxaDeAcerto = (float) pontuacao / afirmacoesVerdadeiras;
+            // Taxas de acerto menores que 0 não fazem sentido, por enquanto
+            if (TaxaDeAcerto < 0) TaxaDeAcerto = 0;
+        }
+        else
+        {
+            // Caso especial para quando todas as afirmações são falsas
+            // Basta o jogador não responder nenhuma errada para ganhar nota máxima
+            TaxaDeAcerto = errosDoJogador == 0 ? 1 : 0;
+        }
+
+        RespostaConfirmada = true;
     }
 }

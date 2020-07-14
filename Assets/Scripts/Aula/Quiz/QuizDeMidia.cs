@@ -10,7 +10,7 @@ public class QuizDeMidia : Quiz
 
     public override float TaxaDeAcerto
     {
-        get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto: 0; }
+        get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto : 0; }
     }
 
     public NomeMidias Midia { get; private set; }
@@ -21,7 +21,7 @@ public class QuizDeMidia : Quiz
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);
 
-        quizVF.TextoDoEnunciado = "Selecione as afirmações corretas sobre a mídia " + midia + ".";
+        quizVF.TextoDoEnunciado = "Selecione as afirmações corretas sobre a mídia " + new Midia(midia).NomeApresentavel + ".";
 
         var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia);
         var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
@@ -41,7 +41,12 @@ public class QuizDeMidia : Quiz
         Debug.Log("Executando quiz de mídia...");
 
         quizVF.Mostrar();
-        yield return new WaitForSeconds(tempoLimite);
+
+        yield return new WaitUntil(() => quizVF.RespostaConfirmada);
+
+        // Mostrar se o jogador acertou ou errou nas suas escolhas
+        yield return new WaitForSeconds(2f);
+
         quizVF.Esconder();
 
         Debug.Log("Terminando a execução do quiz de mídia...");

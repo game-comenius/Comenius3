@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Midia
 {
@@ -14,15 +12,55 @@ public class Midia
     {
         NomeMidia = nomeMidia;
 
-        switch (NomeMidia)
+        switch (nomeMidia)
         {
             case NomeMidias.Lousa:
-                NomeApresentavel = "Quadro Negro";
+                NomeApresentavel = "Lousa";
                 Descricao = "É um quadro negro.";
                 break;
+            case NomeMidias.LivroDidatico:
+                NomeApresentavel = "Livro Didático";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.LivrosJornaisERevistas:
+                NomeApresentavel = "Livros, Jornais e Revistas";
+                Descricao = "Descrição de uma mídia.";
+                break;
             case NomeMidias.CadernosECartazes:
-                NomeApresentavel = "Caderno";
+                NomeApresentavel = "Cadernos e Cartazes";
                 Descricao = "É um caderno";
+                break;
+            case NomeMidias.Televisao:
+                NomeApresentavel = "Televisão";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.AparelhoDeSom:
+                NomeApresentavel = "Aparelho de Som";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.RedesSociais:
+                NomeApresentavel = "Redes Sociais";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.Jogos:
+                NomeApresentavel = "Jogos";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.EditoresDeAudioEVideo:
+                NomeApresentavel = "Editores de Áudio e Vídeo";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.EditoresDeTextoEPlanilhasEletronicas:
+                NomeApresentavel = "Editores de Texto e Planilhas Eletrônicas";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.AVEAs:
+                NomeApresentavel = "AVEAs";
+                Descricao = "Descrição de uma mídia.";
+                break;
+            case NomeMidias.Aplicativos:
+                NomeApresentavel = "Aplicativos";
+                Descricao = "Descrição de uma mídia.";
                 break;
             default:
                 NomeApresentavel = "Sem nome";
