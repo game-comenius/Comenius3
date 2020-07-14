@@ -14,15 +14,26 @@ public class AulaABP : Aula
     // Após o início da cena/aula, os quizzes serão aplicados depois deste delay
     [SerializeField] [Range(0, 30)] float delayParaAplicarQuizzes;
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
+    [SerializeField] [Range(0, 30)] float tempoPosQuizzes;
+    private Quiz[] quizzes;
 
-    void Start()
+    [Header("Fim da Aula")]
+    [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
+    [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
+
+
+    private IEnumerator Start()
     {
         // Temporário, deletar + tarde
         PrimeiraMidia = NomeMidias.Jogos;
         SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
 
         var quizzes = ObterQuizzesConfigurados();
-        StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
+        yield return StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
+
+        // Esperar um tempo entre o último quiz e o resultado da aula
+        yield return new WaitForSeconds(tempoPosQuizzes);
+        StartCoroutine(ApresentarResultadoDaAula());
     }
 
     private Quiz[] ObterQuizzesConfigurados()
@@ -33,12 +44,12 @@ public class AulaABP : Aula
         quizDeMidia2.ConfigurarQuiz(SegundaMidia);
 
         // Ordenar os quizzes
-        Quiz[] quizzes =
+        Quiz[] localQuizzes =
         {
             quizDeMidia1,
             quizDeMidia2
         };
-        return quizzes;
+        return quizzes = localQuizzes;
     }
 
     private IEnumerator AplicarQuizzes(Quiz[] quizzes, float delayParaComecar, float tempoEntreQuizzes)
@@ -57,5 +68,20 @@ public class AulaABP : Aula
     protected override IEnumerator AplicarQuiz(Quiz quiz)
     {
         yield return StartCoroutine(quiz.Executar());
+    }
+
+    protected override IEnumerator ApresentarResultadoDaAula()
+    {
+        paginaResultadoDaAula.Mostrar();
+        paginaResultadoDaAula.Atualizar(quizzes);
+
+        yield return new WaitWhile(() => paginaResultadoDaAula.EmUso);
+
+        TerminarAula();
+    }
+
+    private void TerminarAula()
+    {
+        trocadorDeCenaCreditos.TrocarCena();
     }
 }

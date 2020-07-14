@@ -10,7 +10,7 @@ public class QuizDeMidia : Quiz
 
     public override float TaxaDeAcerto
     {
-        get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto: 0; }
+        get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto : 0; }
     }
 
     public NomeMidias Midia { get; private set; }
