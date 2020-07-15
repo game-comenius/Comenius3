@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class PaginaInteligencias : Pagina
 
     [SerializeField] Image iconeGrandeEmDestaque;
     [SerializeField] Text NomeDoSelecionado;
+    [SerializeField] ScrollRect DescricaoDoSelecionado;
 
     [SerializeField] GrupoDeIconesInteligencias grupoDeIconesInteligencias;
 
@@ -16,8 +18,10 @@ public class PaginaInteligencias : Pagina
 
     private void Start()
     {
-        // Limpar nome do selecionado e esconder icone em destaque pois não há seleção ainda
+        // Limpar nome do selecionado, descrição do selecionado e esconder
+        // icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
+        DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         iconeGrandeEmDestaque.enabled = false;
 
         // Esconder botão confirmar até que uma escolha seja feita
@@ -32,6 +36,12 @@ public class PaginaInteligencias : Pagina
             iconeGrandeEmDestaque.enabled = true;
 
             NomeDoSelecionado.text = iconeSelecionado.Valor.Nome;
+
+            // Atualizar descrição para o nível de ensino selecionado
+            var textoDaDescricaoDoSelecionado = DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>();
+            textoDaDescricaoDoSelecionado.text = iconeSelecionado.Valor.Descricao;
+            // Retornar/resetar scrollbar para o topo
+            DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>().value = 1;
 
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;

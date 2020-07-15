@@ -16,8 +16,10 @@ public class PaginaNivelDeEnsino : Pagina
 
     private void Start()
     {
-        // Limpar nome do selecionado e esconder icone em destaque pois não há seleção ainda
+        // Limpar nome do selecionado, descrição do selecionado e esconder
+        // icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
+        DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         iconeGrandeEmDestaque.enabled = false;
 
         // Toda vez que o grupo de botões disser que um novo botão foi
