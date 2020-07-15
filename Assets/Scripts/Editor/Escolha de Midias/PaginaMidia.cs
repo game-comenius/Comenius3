@@ -24,6 +24,6 @@ public class PaginaMidia : Pagina
             iconeGrandeEmDestaque.enabled = true;
 
             //NomeDoSelecionado.text = botaoSelecionado.
-        }
+        };
     }
 }
