@@ -26,11 +26,12 @@ public sealed class NivelDeEnsino
         descricao: "Etapa obrigatória com duração de 9 anos (dos 6 aos 14 anos), tendo como objetivo a formação básica do cidadão. É dividido em duas fases: Anos Iniciais (1º ao 5º ano) e Anos Finais (6º ao 9º ano), que inicia-se em torno dos interesses manifestados pelas crianças até desafios de maior complexidade. Sendo importante buscar o fortalecimento da autonomia dos estudantes nesse nível de ensino, desenvolvendo sua capacidade de aprendizagem tendo em vista a aquisição de conhecimentos e habilidades e a formação de atitudes e valores que se fundamentam a sociedade.",
         areasDeConhecimento: new int[]
         {
+            AreaDeConhecimento.Linguagens.valor,
             AreaDeConhecimento.Matematica.valor,
             AreaDeConhecimento.CienciasDaNatureza.valor,
             AreaDeConhecimento.CienciasHumanas.valor,
             AreaDeConhecimento.EnsinoReligioso.valor,
-            AreaDeConhecimento.LinguisticaLetrasArtes.valor
+            
         }
     );
 
@@ -41,10 +42,10 @@ public sealed class NivelDeEnsino
         descricao: "Etapa final da Educação Básica tem como finalidades o aprofundamento dos conhecimentos adquiridos anteriormente, a preparação básica para o trabalho e a cidadania, a formação ética e o aprimoramento do pensamento crítico através da compreensão dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prática através de 4 grandes áreas do conhecimento produzindo múltiplas culturas juvenis promovendo uma educação integral no que concerne os aspectos físicos, cognitivos e socioemocionais.",
         areasDeConhecimento: new int[]
         {
-            AreaDeConhecimento.Matematica.valor,
-            AreaDeConhecimento.CienciasDaNatureza.valor,
-            AreaDeConhecimento.CienciasHumanas.valor,
-            AreaDeConhecimento.LinguisticaLetrasArtes.valor,
+            AreaDeConhecimento.LinguagensESuasTecnologias.valor,
+            AreaDeConhecimento.MatematicaESuasTecnologias.valor,
+            AreaDeConhecimento.CienciasDaNaturezaESuasTecnologias.valor,
+            AreaDeConhecimento.CienciasHumanasESociaisAplicadas.valor,
         }
     );
 
@@ -55,13 +56,13 @@ public sealed class NivelDeEnsino
         descricao: "É o nível que busca o desejo de aperfeiçoamento cultural e profissional estimulando o conhecimento dos problemas do mundo presente, buscando prestar serviços especializados à comunidade através da pesquisa científica e tecnológica. Além de buscar o aprimoramento da educação básica mediante a formação e a capacitação de profissionais através de pesquisas pedagógicas e o desenvolvimento de atividades de extensão em prol do desenvolvimento da sociedade brasileira.",
         areasDeConhecimento: new int[]
         {
-            AreaDeConhecimento.CienciasSociaisAplicadas.valor,
-            AreaDeConhecimento.CienciasDaSaude.valor,
-            AreaDeConhecimento.CienciasBiologicas.valor,
-            AreaDeConhecimento.Engenharias.valor,
-            AreaDeConhecimento.CienciasExatasDaTerra.valor,
             AreaDeConhecimento.CienciasAgrarias.valor,
-            AreaDeConhecimento.CienciasHumanas.valor,
+            AreaDeConhecimento.CienciasBiologicas.valor,
+            AreaDeConhecimento.CienciasExatasDaTerra.valor,
+            AreaDeConhecimento.CienciasHumanasSuperior.valor,
+            AreaDeConhecimento.CienciasDaSaude.valor,
+            AreaDeConhecimento.CienciasSociaisAplicadas.valor,
+            AreaDeConhecimento.Engenharias.valor,
             AreaDeConhecimento.LinguisticaLetrasArtes.valor,
         }
     );
