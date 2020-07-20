@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
     [SerializeField] Image iconeGrandeEmDestaque;
     [SerializeField] Text NomeDoSelecionado;
+    [SerializeField] ScrollRect DescricaoDoSelecionado;
 
     [Header("Grupo de ícones por nível de ensino")]
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesInfantil;
@@ -55,6 +57,12 @@ public class PaginaAreaDeConhecimento : Pagina
                 iconeGrandeEmDestaque.enabled = true;
 
                 NomeDoSelecionado.text = iconeSelecionado.Valor.nome;
+                // Atualizar descrição para a área de conhecimento selecionada
+                var textoDaDescricaoDoSelecionado = DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>();
+                textoDaDescricaoDoSelecionado.text = iconeSelecionado.Valor.Descricao;
+                // Retornar/resetar scrollbar para o topo
+                var scrollbar = DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>();
+                if (scrollbar) scrollbar.value = 1;
 
                 var spritePequeno = iconeSelecionado.ImageComponent.sprite;
                 iconePequenoGuia.sprite = spritePequeno;
@@ -84,8 +92,9 @@ public class PaginaAreaDeConhecimento : Pagina
     public void DesfazerEscolha()
     {
         if (grupoDeIconesAtivo) grupoDeIconesAtivo.DesfazerSelecao();
-        // Limpar campo com o nome do ícone escolhido
+        // Limpar campo com o nome do ícone escolhido e descrição
         NomeDoSelecionado.text = string.Empty;
+        DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         // Esconder destaque de item selecionado, como se não houvesse seleção
         iconeGrandeEmDestaque.enabled = false;
         // Voltar ícone pequeno ao seu estado original

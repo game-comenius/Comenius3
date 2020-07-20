@@ -36,7 +36,8 @@ public class PaginaNivelDeEnsino : Pagina
             var textoDaDescricaoDoSelecionado = DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>();
             textoDaDescricaoDoSelecionado.text = botaoSelecionado.Valor.Descricao;
             // Retornar/resetar scrollbar para o topo
-            DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>().value = 1;
+            var scrollbar = DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>();
+            if (scrollbar) scrollbar.value = 1;
 
             var spritePequeno = botaoSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
