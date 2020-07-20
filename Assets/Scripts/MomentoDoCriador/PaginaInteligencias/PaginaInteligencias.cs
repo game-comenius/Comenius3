@@ -41,7 +41,8 @@ public class PaginaInteligencias : Pagina
             var textoDaDescricaoDoSelecionado = DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>();
             textoDaDescricaoDoSelecionado.text = iconeSelecionado.Valor.Descricao;
             // Retornar/resetar scrollbar para o topo
-            DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>().value = 1;
+            var scrollbar = DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>();
+            if (scrollbar) scrollbar.value = 1;
 
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
