@@ -53,7 +53,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(true, "São mídias de circulação social, que podem ser utilizadas para trabalhar a leitura e interpretação de diversos temas de forma mais aprofundada."),
                     new AfirmacaoSobreMidia(true, "Pode ser utilizado para refletir sobre o tratamento dos textos e imagens de acordo com cada gênero."),
                     new AfirmacaoSobreMidia(true, "Discutir sobre a criticidade das informações que são passadas, bem como os pontos de vistas e a quais interesses essas mídias atendem e as diversas abordagens ideológicas e culturais ali evidentes."),
-                    new AfirmacaoSobreMidia(true, "São mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos."),
+                    new AfirmacaoSobreMidia(true, "São mídias impressas são de uso popular e contém diversos gêneros literários, destinadas a diferentes públicos."),
                     // Afirmações falsas
                     new AfirmacaoSobreMidia(false, "Por serem mídias desenvolvidas por especialistas, cabe o professor apenas garantir o acesso a essas ferramentas deixando o aluno interpretá-las por si só sem a mediação do docente."),
                     new AfirmacaoSobreMidia(false, "Por ser uma mídia que já apresenta o conteúdo fechado fica inviável a mediação do professor com seu alunos acerca do tema."),
@@ -100,7 +100,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                 {
                     // Afirmações verdadeiras
                     new AfirmacaoSobreMidia(true, "Mídia que reproduz o som captado no gravador de áudio, CDs e diferentes formatos."),
-                    new AfirmacaoSobreMidia(true, "Seu uso diretamente ligado à ouvir, possibilitando a reprodução da atividade realizada por ele, seja para estudo, entretenimento ou informação."),
+                    new AfirmacaoSobreMidia(true, "Seu uso diretamente ligado a ouvir, possibilitando a reprodução da atividade realizada por ele, seja para estudo, entretenimento ou informação."),
                     new AfirmacaoSobreMidia(true, "Pode ser utilizado para estudar conteúdos diversos, as formas, e as linguagens da gravação."),
                     new AfirmacaoSobreMidia(true, "Pode ser utilizada para reproduzir diferentes gêneros musicais ou programas literários sonoros, como audiolivros ou podcasts."),
                     new AfirmacaoSobreMidia(true, "Pode ser usada como base sonora para complementar qualquer atividade, como ilustração, informação ou acompanhamento."),
@@ -127,7 +127,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Redes Sociais são mídias digitais criadas prioritariamente para a educação."),
                     new AfirmacaoSobreMidia(false, "As redes sociais são sistemas de simulações nos quais as situações reais são substituídas por situações lúdicas, permitindo aos usuários uma visão de distintos modelos de realidade."),
                     new AfirmacaoSobreMidia(false, "As redes sociais são utilizadas principalmente para exposição do conteúdo."),
-                    new AfirmacaoSobreMidia(false, "São mídias digitais de uso popular que contém diversos gêneros literários, destinadas à diferentes públicos que não interagem entre si."),
+                    new AfirmacaoSobreMidia(false, "São mídias digitais de uso popular que contém diversos gêneros literários, destinadas a diferentes públicos que não interagem entre si."),
                     new AfirmacaoSobreMidia(false, "É uma mídia digital fornecida pela escola que traz informações sobre todos os conteúdos das disciplinas do ano letivo."),
                 });
                 break;
@@ -146,7 +146,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Os jogos se configuram como um meio pedagógico versátil, através do qual os conhecimentos individuais se desenvolvem sem a necessidade de interações."),
                     new AfirmacaoSobreMidia(false, "Os Jogos Digitais são desenvolvidos para serem jogados num console, então para permitir o seu uso em sala de aula torna-se necessário um grande investimento em equipamentos e dispositivos tecnológicos."),
                     new AfirmacaoSobreMidia(false, "Os jogos digitais são utilizados principalmente para produção de conteúdo textual e visual."),
-                    new AfirmacaoSobreMidia(false, "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."),
+                    new AfirmacaoSobreMidia(false, "São Softwares com o objetivo de auxiliar o usuário professor a desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."),
                     new AfirmacaoSobreMidia(false, "Os jogos digitais são softwares desenvolvidos com o objetivo de auxiliar o usuário a desempenhar uma tarefa como: enviar um e-mail,  acessar alguma informação, entre outras."),
                 });
                 break;
@@ -193,11 +193,11 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(true, "Um AVEA pode ser utilizado para complementar aulas presenciais com conteúdos virtuais."),
                     new AfirmacaoSobreMidia(true, "No AVEA ocorrem trocas de materiais de estudo, textuais ou áudiovisuais e disponibilizam-se tarefas."),
                     new AfirmacaoSobreMidia(true, "O AVEA permite interações por escrito por meio de suas diversas ferramentas (fórum, chat, mensagens, carregamento de arquivos) que enriquecem a aprendizagem não só no seu resultado, mas no próprio processo de sua construção."),
-                    new AfirmacaoSobreMidia(true, "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."),
+                    new AfirmacaoSobreMidia(true, "São Softwares com o objetivo de auxiliar o usuário professor a desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."),
                     // Afirmações falsas
                     new AfirmacaoSobreMidia(false, "Um AVEA pode ser utilizado como uma plataforma que perpassa todo o processo de aprendizagem de um aluno, porém somente em disciplinas à distância."),
                     new AfirmacaoSobreMidia(false, "Um AVEA não pode ser utilizado para complementar aulas presenciais precisando ser utilizado apenas no ensino à distância."),
-                    new AfirmacaoSobreMidia(false, "São Softwares que surgiram com a função de entretenimento, mas podem ser adaptados com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais."),
+                    new AfirmacaoSobreMidia(false, "São Softwares que surgiram com a função de entretenimento, mas podem ser adaptados com o objetivo de auxiliar o usuário professor a desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais."),
                     new AfirmacaoSobreMidia(false, "Os AVEAs precisam da intervenção simultânea do professor com os alunos para poder ser efetivo."),
                 });
                 break;
