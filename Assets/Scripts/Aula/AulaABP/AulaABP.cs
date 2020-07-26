@@ -21,6 +21,12 @@ public class AulaABP : Aula
     [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
     [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
 
+    [Header("Sprites Laboratórios")]
+    public Sprite SpriteLaboratorioBiologia;
+    public Sprite SpriteLaboratorioFisica;
+    public Sprite SpriteLaboratorioMatematica;
+    public Sprite SpriteLaboratorioQuimica;
+
 
     private IEnumerator Start()
     {

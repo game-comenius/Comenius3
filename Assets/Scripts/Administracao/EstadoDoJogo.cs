@@ -1,4 +1,6 @@
-﻿public class EstadoDoJogo : Singleton<EstadoDoJogo>
+﻿using UnityEngine;
+
+public class EstadoDoJogo : Singleton<EstadoDoJogo>
 {
     // Propriedades definidas pelo criador de um jogo
     private NivelDeEnsino nivelDeEnsinoSelecionado;
@@ -39,4 +41,9 @@
 
         set => inteligenciasSelecionadas = value;
     }
+
+    // Características da personagem selecionada, observar se estes valores != null
+    public Sprite SpriteCorpoPersonagem { get; set; }
+    public Sprite SpriteCabeloPersonagem { get; set; }
+    public Sprite SpriteRoupaPersonagem { get; set; }
 }

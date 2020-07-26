@@ -50,8 +50,11 @@ public class GrupoDeIconesPersonagem : MonoBehaviour
         // Avisar observadores qual é o novo botão selecionado
         QuandoUmElementoForSelecionadoEvent?.Invoke(icone);
 
-        // Gravar no estado do jogo que este foi a personagem selecionada
-        //EstadoDoJogo.Instance.InteligenciasSelecionadas.SpriteGrande = icone.SpriteGrande;
+        // Gravar no estado do jogo as características da personagem selecionada
+        var estadoDoJogo = EstadoDoJogo.Instance;
+        estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
+        estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
+        estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
 
         return true;
     }
