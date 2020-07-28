@@ -22,6 +22,7 @@ public class AulaABP : Aula
     [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
 
     [Header("Sprites da Sala De Aula")]
+    public SpriteRenderer SalaSpriteRenderer;
     public Sprite SpriteLaboratorioBiologia;
     public Sprite SpriteLaboratorioFisica;
     public Sprite SpriteLaboratorioInformatica;
@@ -35,6 +36,11 @@ public class AulaABP : Aula
 
     private IEnumerator Start()
     {
+        // Definir a sala de aula que será usada
+        Dictionary<AreaDeConhecimento, Sprite> spritesPorAreaDeConhecimento = ConstruirRelacaoSpritesPorAreaDeConhecimento();
+        var spriteDoLaboratorio = spritesPorAreaDeConhecimento[EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada];
+        SalaSpriteRenderer.sprite = spriteDoLaboratorio ? spriteDoLaboratorio : SpriteLaboratorioQuimica;
+
         // Temporário, deletar + tarde
         PrimeiraMidia = NomeMidias.Jogos;
         SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
@@ -46,6 +52,8 @@ public class AulaABP : Aula
         yield return new WaitForSeconds(tempoPosQuizzes);
         StartCoroutine(ApresentarResultadoDaAula());
     }
+
+    
 
     private Quiz[] ObterQuizzesConfigurados()
     {
@@ -95,4 +103,41 @@ public class AulaABP : Aula
     {
         trocadorDeCenaCreditos.TrocarCena();
     }
+
+    private Dictionary<AreaDeConhecimento, Sprite> ConstruirRelacaoSpritesPorAreaDeConhecimento()
+    {
+        return new Dictionary<AreaDeConhecimento, Sprite>
+        {
+            // Ensino Infantil
+            { AreaDeConhecimento.EuOutroNos, SpriteSalaInfantil },
+            { AreaDeConhecimento.CorpoGestosMovimentos, SpriteSalaInfantil },
+            { AreaDeConhecimento.TracosSonsCoresFormas, SpriteSalaInfantil },
+            { AreaDeConhecimento.EscutaFalaPensamentoImaginacao, SpriteSalaInfantil },
+            { AreaDeConhecimento.EspacosTemposQuantidadesRelacoesTransformacoes, SpriteSalaInfantil },
+
+            // Ensino Fundamental
+            { AreaDeConhecimento.Linguagens, SpriteLaboratorioInformatica },
+            { AreaDeConhecimento.Matematica, SpriteLaboratorioFisica },
+            { AreaDeConhecimento.CienciasDaNatureza, SpriteLaboratorioBiologia },
+            { AreaDeConhecimento.CienciasHumanas, SpriteLaboratorioInformatica },
+            { AreaDeConhecimento.EnsinoReligioso, SpriteLaboratorioInformatica },
+
+            // Ensino Médio
+            { AreaDeConhecimento.LinguagensESuasTecnologias, SpriteLaboratorioInformatica },
+            { AreaDeConhecimento.MatematicaESuasTecnologias, SpriteLaboratorioFisica },
+            { AreaDeConhecimento.CienciasDaNaturezaESuasTecnologias, SpriteLaboratorioQuimica },
+            { AreaDeConhecimento.CienciasHumanasESociaisAplicadas, SpriteLaboratorioInformatica },
+
+            // Ensino Superior
+            { AreaDeConhecimento.CienciasAgrarias, SpriteLaboratorioBiologia },
+            { AreaDeConhecimento.CienciasBiologicas, SpriteLaboratorioBiologia },
+            { AreaDeConhecimento.CienciasExatasDaTerra, SpriteLaboratorioFisica },
+            { AreaDeConhecimento.CienciasHumanasSuperior, SpriteLaboratorioInformatica },
+            { AreaDeConhecimento.CienciasDaSaude, SpriteLaboratorioQuimica },
+            { AreaDeConhecimento.CienciasSociaisAplicadas, SpriteLaboratorioInformatica },
+            { AreaDeConhecimento.Engenharias, SpriteLaboratorioFisica },
+            { AreaDeConhecimento.LinguisticaLetrasArtes, SpriteLaboratorioInformatica },
+        };
+    }
 }
+
