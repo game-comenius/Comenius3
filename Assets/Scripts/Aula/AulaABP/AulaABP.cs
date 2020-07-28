@@ -41,6 +41,11 @@ public class AulaABP : Aula
         var spriteDoLaboratorio = spritesPorAreaDeConhecimento[EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada];
         SalaSpriteRenderer.sprite = spriteDoLaboratorio ? spriteDoLaboratorio : SpriteLaboratorioQuimica;
 
+        // Posicionar os alunos no laboratório de acordo com o nível de ensino
+        bool aulaInfantil = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil;
+        AlunosCriancas.SetActive(aulaInfantil);
+        AlunosJovens.SetActive(!aulaInfantil);
+
         // Temporário, deletar + tarde
         PrimeiraMidia = NomeMidias.Jogos;
         SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
