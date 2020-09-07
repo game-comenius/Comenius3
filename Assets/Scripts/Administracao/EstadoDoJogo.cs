@@ -46,4 +46,5 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public Sprite SpriteCorpoPersonagem { get; set; }
     public Sprite SpriteCabeloPersonagem { get; set; }
     public Sprite SpriteRoupaPersonagem { get; set; }
+    public Sprite SpriteIconePersonagem { get; set; }
 }

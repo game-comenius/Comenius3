@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AulaABP : Aula
 {
@@ -21,7 +22,7 @@ public class AulaABP : Aula
     [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
     [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
 
-    [Header("Sprites da Sala De Aula")]
+    [Header("Sprites Sala De Aula")]
     public SpriteRenderer SalaSpriteRenderer;
     public Sprite SpriteLaboratorioBiologia;
     public Sprite SpriteLaboratorioFisica;
@@ -32,6 +33,9 @@ public class AulaABP : Aula
     [Header("Alunos")]
     public GameObject AlunosJovens;
     public GameObject AlunosCriancas;
+
+    [Header("UI Aula")]
+    [SerializeField] Image iconePersonagemUI;
 
 
     private IEnumerator Start()
@@ -45,6 +49,10 @@ public class AulaABP : Aula
         bool aulaInfantil = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil;
         AlunosCriancas.SetActive(aulaInfantil);
         AlunosJovens.SetActive(!aulaInfantil);
+
+        // Inicializar UI da aula
+        var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
+        if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
 
         // Temporário, deletar + tarde
         PrimeiraMidia = NomeMidias.Jogos;

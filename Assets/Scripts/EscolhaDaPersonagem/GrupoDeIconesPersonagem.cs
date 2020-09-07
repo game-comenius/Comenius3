@@ -56,6 +56,8 @@ public class GrupoDeIconesPersonagem : MonoBehaviour
         estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
         estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
 
+        estadoDoJogo.SpriteIconePersonagem = icone.ImageComponent.sprite;
+
         return true;
     }
 }

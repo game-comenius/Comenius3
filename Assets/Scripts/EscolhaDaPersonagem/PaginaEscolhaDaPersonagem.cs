@@ -30,9 +30,6 @@ public class PaginaEscolhaDaPersonagem : Pagina
         // o nome do botão selecionado e o ícone pequeno na lateral esquerda
         grupoDeIconesPersonagem.QuandoUmElementoForSelecionadoEvent += (iconeSelecionado) =>
         {
-            // Alterar o nome do selecionado
-            // ...
-
             // Alterar sprite do pequeno guia da página para o sprite do selecionado
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
