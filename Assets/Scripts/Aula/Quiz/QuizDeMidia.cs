@@ -38,7 +38,6 @@ public class QuizDeMidia : Quiz
     public override IEnumerator Executar()
     {
         estado = EstadoDeQuiz.EmExecucao;
-        Debug.Log("Executando quiz de mídia...");
 
         quizVF.Mostrar();
 
@@ -49,7 +48,6 @@ public class QuizDeMidia : Quiz
 
         quizVF.Esconder();
 
-        Debug.Log("Terminando a execução do quiz de mídia...");
         estado = EstadoDeQuiz.Executado;
     }
 }
