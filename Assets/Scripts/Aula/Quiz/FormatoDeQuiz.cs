@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class FormatoDeQuiz : MonoBehaviour
+public abstract class FormatoDeQuiz : MonoBehaviour
 {
     [SerializeField] Text enunciado;
 
@@ -13,10 +13,24 @@ public class FormatoDeQuiz : MonoBehaviour
 
     public virtual float TaxaDeAcerto { get; protected set; }
 
+    public Button BotaoConfirmar;
+
+    public bool RespostaConfirmada { get; set; }
+
     protected virtual void Start()
     {
         Esconder();
+
+        // Definir funcionalidade do botão confirmar
+        BotaoConfirmar.onClick.AddListener(() =>
+        {
+            // Impedir que o jogador confirme mais de uma vez a resposta dele
+            BotaoConfirmar.gameObject.SetActive(false);
+            ConfirmarResposta();
+        });
     }
+
+    protected abstract void ConfirmarResposta();
 
     public virtual void Esconder()
     {

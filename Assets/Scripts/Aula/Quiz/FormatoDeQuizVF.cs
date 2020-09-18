@@ -4,24 +4,8 @@ using System.Linq;
 
 public class FormatoDeQuizVF : FormatoDeQuiz
 {
-    [SerializeField] public Button BotaoConfirmar;
     // Representam as etiquetas/faixas/botões com as afirmações na UI
     [SerializeField] AfirmacaoQuizVF[] afirmacoesQuizVF;
-
-    public bool RespostaConfirmada { get; set; }
-
-    protected override void Start()
-    {
-        base.Start();
-
-        // Definir funcionalidade do botão confirmar
-        BotaoConfirmar.onClick.AddListener(() =>
-        {
-            // Impedir que o jogador confirme mais de uma vez a resposta dele
-            BotaoConfirmar.gameObject.SetActive(false);
-            ConfirmarResposta();
-        });
-    }
 
     public void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
@@ -32,7 +16,7 @@ public class FormatoDeQuizVF : FormatoDeQuiz
             afirmacoesQuizVF[i].Afirmacao = afirmacoes[i];
     }
 
-    private void ConfirmarResposta()
+    protected override void ConfirmarResposta()
     {
         // Se a resposta do jogador já foi confirmada, ignorar
         if (RespostaConfirmada) return;
@@ -64,7 +48,7 @@ public class FormatoDeQuizVF : FormatoDeQuiz
 
         if (afirmacoesVerdadeiras != 0)
         {
-            TaxaDeAcerto = (float) pontuacao / afirmacoesVerdadeiras;
+            TaxaDeAcerto = (float)pontuacao / afirmacoesVerdadeiras;
             // Taxas de acerto menores que 0 não fazem sentido, por enquanto
             if (TaxaDeAcerto < 0) TaxaDeAcerto = 0;
         }
