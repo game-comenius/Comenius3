@@ -19,10 +19,21 @@ public class SelecaoMidia : MonoBehaviour
 
     public void SelecionarMidia(NomeMidias midia)
     {
-        midiasSelecionadas[selecaoAtual] = midia;
-        selecaoAtual++;
-        if (selecaoAtual == quantidadeMidias)
-            selecaoPronta = true;
+        if (!selecaoPronta)
+        {
+            midiasSelecionadas[selecaoAtual] = midia;
+            Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1] + " " + midiasSelecionadas[2]);
+            selecaoAtual++;
+            if (selecaoAtual == quantidadeMidias)
+            {
+                selecaoPronta = true;
+                Debug.Log("Ultima mídia selecionada");
+            }
+        }
+        else
+        {
+            Debug.Log("Jogador já selecionou todas as mídias");
+        }
     }
 
     public void DeselecionarMidia()
