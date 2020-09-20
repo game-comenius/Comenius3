@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SelecaoMidia : MonoBehaviour
 {
+    public GameObject trocadorCena;
+
     private NomeMidias[] midiasSelecionadas;
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
-    private int quantidadeMidias = 3;
+    private int quantidadeMidias = 2;
     private bool selecaoPronta;
 
     private Midia destaque;
@@ -21,6 +23,7 @@ public class SelecaoMidia : MonoBehaviour
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
         midiasSelecionadas = new NomeMidias[quantidadeMidias];
+        destaque = new Midia(NomeMidias.Nenhuma);
         selecaoPronta = false;
     }
 
@@ -34,11 +37,11 @@ public class SelecaoMidia : MonoBehaviour
 
     public void SelecionarMidia()
     {
-        if (!selecaoPronta)
+        if (!selecaoPronta && destaque.NomeMidia!=NomeMidias.Nenhuma)
         {
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
-            Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1] + " " + midiasSelecionadas[2]);
+            Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1]);
             selecaoAtual++;
             if (selecaoAtual == quantidadeMidias)
             {
@@ -47,9 +50,12 @@ public class SelecaoMidia : MonoBehaviour
                 Debug.Log("Ultima mídia selecionada");
             }
         }
-        else
+        else if(selecaoPronta)
         {
             Debug.Log("Jogador já selecionou todas as mídias");
+            AulaABP.PrimeiraMidia = midiasSelecionadas[0];
+            AulaABP.SegundaMidia = midiasSelecionadas[1];
+            trocadorCena.GetComponent<TrocadorDeCena>().TrocarCena();
         }
     }
 

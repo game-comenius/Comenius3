@@ -20,11 +20,11 @@ public class Midia
                 break;
             case NomeMidias.LivroDidatico:
                 NomeApresentavel = "Livro Didático";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "É um livro didático.";
                 break;
             case NomeMidias.LivrosJornaisERevistas:
                 NomeApresentavel = "Livros, Jornais e Revistas";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São livros, jornais e revistas.";
                 break;
             case NomeMidias.CadernosECartazes:
                 NomeApresentavel = "Cadernos e Cartazes";
@@ -32,35 +32,35 @@ public class Midia
                 break;
             case NomeMidias.Televisao:
                 NomeApresentavel = "Televisão";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "É uma televisão.";
                 break;
             case NomeMidias.AparelhoDeSom:
                 NomeApresentavel = "Aparelho de Som";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "É um aparelho de som.";
                 break;
             case NomeMidias.RedesSociais:
                 NomeApresentavel = "Redes Sociais";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "É uma rede social.";
                 break;
             case NomeMidias.Jogos:
                 NomeApresentavel = "Jogos";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São jogos.";
                 break;
             case NomeMidias.EditoresDeAudioEVideo:
                 NomeApresentavel = "Editores de Áudio e Vídeo";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São editores de áudio e vídeo.";
                 break;
             case NomeMidias.EditoresDeTextoEPlanilhasEletronicas:
                 NomeApresentavel = "Editores de Texto e Planilhas Eletrônicas";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São editores de texto e planilhas eletrônicas.";
                 break;
             case NomeMidias.AVEAs:
                 NomeApresentavel = "AVEAs";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São AVEAs.";
                 break;
             case NomeMidias.Aplicativos:
                 NomeApresentavel = "Aplicativos";
-                Descricao = "Descrição de uma mídia.";
+                Descricao = "São aplicativos.";
                 break;
             default:
                 NomeApresentavel = "Sem nome";
