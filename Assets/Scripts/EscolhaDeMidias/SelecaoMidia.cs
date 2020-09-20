@@ -8,7 +8,9 @@ public class SelecaoMidia : MonoBehaviour
 
     private NomeMidias[] midiasSelecionadas;
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
-    private int quantidadeMidias = 2;
+    private int paginaAtual = 0; //para usar de índice nas páginas de mídias
+    public int paginaTotal = 1; //índice da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
+    private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
     private bool selecaoPronta;
 
     private Midia destaque;
@@ -18,6 +20,8 @@ public class SelecaoMidia : MonoBehaviour
 
     public GameObject[] selecionadasUI;
 
+    public GameObject[] paginasDeMidias;
+
     private void Start()
     {
         //instanciando o tamanho do array de acordo com a metodologia
@@ -25,6 +29,31 @@ public class SelecaoMidia : MonoBehaviour
         midiasSelecionadas = new NomeMidias[quantidadeMidias];
         destaque = new Midia(NomeMidias.Nenhuma);
         selecaoPronta = false;
+        foreach (GameObject pagina in paginasDeMidias)
+        {
+            pagina.SetActive(false);
+        }
+        paginasDeMidias[paginaAtual].SetActive(true);
+    }
+
+    public void ProximaPagina()
+    {
+        if (paginaAtual < paginaTotal)
+        {
+            paginasDeMidias[paginaAtual].SetActive(false);
+            paginaAtual++;
+            paginasDeMidias[paginaAtual].SetActive(true);
+        }
+    }
+
+    public void PaginaAnterior()
+    {
+        if (paginaAtual > 0)
+        {
+            paginasDeMidias[paginaAtual].SetActive(false);
+            paginaAtual--;
+            paginasDeMidias[paginaAtual].SetActive(true);
+        }
     }
 
     public void DestacarMidia(NomeMidias midia)
