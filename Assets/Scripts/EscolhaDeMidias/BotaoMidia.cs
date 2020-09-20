@@ -16,7 +16,20 @@ public class BotaoMidia : MonoBehaviour
     {
         if (manager != null)
         {
-            manager.GetComponent<SelecaoMidia>().SelecionarMidia(midia);
+            manager.GetComponent<SelecaoMidia>().SelecionarMidia();
+            //Debug.Log("midia selecionada: " + midia);
+        }
+        else
+        {
+            Debug.Log("Botão de seleção de mídia sem referência ao manager");
+        }
+    }
+
+    public void DestacarEssaMidia()
+    {
+        if (manager != null)
+        {
+            manager.GetComponent<SelecaoMidia>().DestacarMidia(midia);
             //Debug.Log("midia selecionada: " + midia);
         }
         else

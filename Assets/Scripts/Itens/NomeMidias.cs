@@ -3,6 +3,7 @@
 
 public enum NomeMidias
 {
+    Nenhuma,
     Lousa,
     LivroDidatico,
     LivrosJornaisERevistas,
