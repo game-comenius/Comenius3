@@ -9,7 +9,7 @@ public class SelecaoMidia : MonoBehaviour
     private NomeMidias[] midiasSelecionadas;
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
     private int paginaAtual = 0; //para usar de índice nas páginas de mídias
-    public int paginaTotal = 1; //índice da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
+    public int ultimaPagina = 2; //*índice* da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
     private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
     private bool selecaoPronta;
 
@@ -38,7 +38,7 @@ public class SelecaoMidia : MonoBehaviour
 
     public void ProximaPagina()
     {
-        if (paginaAtual < paginaTotal)
+        if (paginaAtual < ultimaPagina)
         {
             paginasDeMidias[paginaAtual].SetActive(false);
             paginaAtual++;
