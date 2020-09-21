@@ -54,9 +54,13 @@ public class AulaABP : Aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
 
-        // Temporário, deletar + tarde
-        PrimeiraMidia = NomeMidias.Jogos;
-        SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
+        // Definir mídias padrão
+        // Útil no desenvolvimento quando estivermos testando diretamente a cena AulaABP
+        if (PrimeiraMidia == NomeMidias.Nenhuma && SegundaMidia == NomeMidias.Nenhuma)
+        {
+            PrimeiraMidia = NomeMidias.Jogos;
+            SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
+        }
 
         var quizzes = ObterQuizzesConfigurados();
         yield return StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));

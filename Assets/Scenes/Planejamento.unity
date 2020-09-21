@@ -308,36 +308,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5690d0bd685f4bb78efdfe7ac22bed0, type: 3}
---- !u!1 &330381571 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8643588056115091262, guid: f5690d0bd685f4bb78efdfe7ac22bed0,
-    type: 3}
-  m_PrefabInstance: {fileID: 330381570}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &330381572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330381571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ce4ac863ab8c34b8c82d0fe5b332c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trocadorCena: {fileID: 176406821}
-  ultimaPagina: 2
-  iconeDestaqueMidia: {fileID: 538621335}
-  tituloDestaqueMidia: {fileID: 460357379}
-  descricaoDestaqueMidia: {fileID: 823082337}
-  selecionadasUI:
-  - {fileID: 444760271}
-  - {fileID: 895850423}
-  paginasDeMidias:
-  - {fileID: 457453845}
-  - {fileID: 1411202420}
-  - {fileID: 1799712018}
 --- !u!1001 &333144489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -532,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 11
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &333144494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 1
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &389396497 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1953359481386789118, guid: 58639fa88a220463c9aeebec47bd5124,
@@ -966,8 +936,8 @@ RectTransform:
   - {fileID: 1085159625}
   - {fileID: 389396494}
   - {fileID: 1826188656}
-  m_Father: {fileID: 1860665227}
-  m_RootOrder: 14
+  m_Father: {fileID: 2074232594}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1084,7 +1054,7 @@ RectTransform:
   m_Children:
   - {fileID: 1229041753}
   m_Father: {fileID: 1860665227}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1134,7 +1104,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330381572}
+      - m_Target: {fileID: 0}
         m_MethodName: DeselecionarMidia
         m_Mode: 1
         m_Arguments:
@@ -1621,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 12
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &614267711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,7 +2261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 7
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &853923829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,7 +2754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 4
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &1005699922 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1953359481386789118, guid: 58639fa88a220463c9aeebec47bd5124,
@@ -3206,7 +3176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 2
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &1085159628 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1953359481386789118, guid: 58639fa88a220463c9aeebec47bd5124,
@@ -3556,7 +3526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330381572}
+      - m_Target: {fileID: 2074232595}
         m_MethodName: ProximaPagina
         m_Mode: 1
         m_Arguments:
@@ -3809,7 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 3
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!1 &1411202420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,8 +3812,8 @@ RectTransform:
   - {fileID: 1558330930}
   - {fileID: 1369077652}
   - {fileID: 1818888716}
-  m_Father: {fileID: 1860665227}
-  m_RootOrder: 15
+  m_Father: {fileID: 2074232594}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4247,7 +4217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 9
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!1 &1642013110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,7 +4351,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330381572}
+      - m_Target: {fileID: 2074232595}
         m_MethodName: SelecionarMidia
         m_Mode: 1
         m_Arguments:
@@ -4523,7 +4493,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330381572}
+      - m_Target: {fileID: 2074232595}
         m_MethodName: PaginaAnterior
         m_Mode: 1
         m_Arguments:
@@ -4751,7 +4721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 5
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!114 &1697450687 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1953359481386789118, guid: 58639fa88a220463c9aeebec47bd5124,
@@ -4949,8 +4919,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TrocarCena
+      - m_Target: {fileID: 2074232595}
+        m_MethodName: DeselecionarMidia
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5065,8 +5035,8 @@ RectTransform:
   - {fileID: 614267707}
   - {fileID: 853923825}
   - {fileID: 1196292585}
-  m_Father: {fileID: 1860665227}
-  m_RootOrder: 16
+  m_Father: {fileID: 2074232594}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5639,7 +5609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 8
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!1001 &1882927621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5888,7 +5858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midia: 10
-  manager: {fileID: 330381571}
+  manager: {fileID: 2074232593}
 --- !u!1 &2074232593
 GameObject:
   m_ObjectHideFlags: 0
@@ -5898,8 +5868,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074232594}
+  - component: {fileID: 2074232595}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SelecaoMidia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5913,12 +5884,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074232593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 478.37048, y: 284.7017, z: -16.90625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Children:
+  - {fileID: 457453846}
+  - {fileID: 1411202421}
+  - {fileID: 1799712019}
+  m_Father: {fileID: 1860665227}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074232595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074232593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ce4ac863ab8c34b8c82d0fe5b332c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trocadorCena: {fileID: 176406821}
+  ultimaPagina: 2
+  iconeDestaqueMidia: {fileID: 538621335}
+  tituloDestaqueMidia: {fileID: 460357379}
+  descricaoDestaqueMidia: {fileID: 823082337}
+  selecionadasUI:
+  - {fileID: 444760271}
+  - {fileID: 895850423}
+  paginasDeMidias:
+  - {fileID: 457453845}
+  - {fileID: 1411202420}
+  - {fileID: 1799712018}
 --- !u!1 &2091295391
 GameObject:
   m_ObjectHideFlags: 0
