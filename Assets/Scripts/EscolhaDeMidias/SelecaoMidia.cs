@@ -18,9 +18,11 @@ public class SelecaoMidia : MonoBehaviour
     public GameObject tituloDestaqueMidia;
     public GameObject descricaoDestaqueMidia;
 
-    public GameObject[] selecionadasUI;
+    public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
-    public GameObject[] paginasDeMidias;
+    public GameObject[] paginasDeMidias; //páginas de opções de mídias
+
+    public GameObject botaoConfirmar;
 
     private void Start()
     {
@@ -29,11 +31,13 @@ public class SelecaoMidia : MonoBehaviour
         midiasSelecionadas = new NomeMidias[quantidadeMidias];
         destaque = new Midia(NomeMidias.Nenhuma);
         selecaoPronta = false;
+        botaoConfirmar.SetActive(selecaoPronta);
         foreach (GameObject pagina in paginasDeMidias)
         {
             pagina.SetActive(false);
         }
         paginasDeMidias[paginaAtual].SetActive(true);
+        selecionadasUI[0].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
     }
 
     public void ProximaPagina()
@@ -62,6 +66,8 @@ public class SelecaoMidia : MonoBehaviour
         destaque = new Midia(midia);
         tituloDestaqueMidia.GetComponent<UnityEngine.UI.Text>().text = destaque.NomeApresentavel;
         descricaoDestaqueMidia.GetComponent<TMPro.TextMeshProUGUI>().text = destaque.Descricao;
+        midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
+        selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
     }
 
     public void SelecionarMidia()
@@ -71,13 +77,16 @@ public class SelecaoMidia : MonoBehaviour
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
             Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1]);
+            selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
             selecaoAtual++;
-            if (selecaoAtual == quantidadeMidias)
+            if (selecaoAtual >= quantidadeMidias)
             {
                 selecaoPronta = true;
-                //selecaoAtual--; //para garantir que não vamos apontar para fora do array
+                botaoConfirmar.SetActive(selecaoPronta);
                 Debug.Log("Ultima mídia selecionada");
+                selecaoAtual = quantidadeMidias - 1; //para não acabarmos fora do array
             }
+            selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
         }
         else if(selecaoPronta)
         {
@@ -90,12 +99,15 @@ public class SelecaoMidia : MonoBehaviour
 
     public void DeselecionarMidia()
     {
-        selecaoPronta = false;        
+        selecaoPronta = false;
+        botaoConfirmar.SetActive(selecaoPronta);
+        selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
         selecaoAtual--;
         if (selecaoAtual < 0)
         {
             selecaoAtual = 0;
         }
+        selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
         midiasSelecionadas[selecaoAtual] = NomeMidias.Nenhuma;
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
     }

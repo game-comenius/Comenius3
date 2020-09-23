@@ -12,6 +12,8 @@ public class MidiaEscolhida : MonoBehaviour
     public int posicao;
     private NomeMidias selecionada;
 
+    public GameObject anelSelecao;
+
     public Image atual;
     public Sprite padrao;
 
@@ -32,6 +34,12 @@ public class MidiaEscolhida : MonoBehaviour
     private void Start()
     {
         atual.sprite = padrao;
+        anelSelecao.SetActive(false);
+    }
+
+    public void exibirAnelSelecao(bool x)
+    {
+        anelSelecao.SetActive(x);
     }
 
     public void atualizarSelecao(NomeMidias[] midia)
