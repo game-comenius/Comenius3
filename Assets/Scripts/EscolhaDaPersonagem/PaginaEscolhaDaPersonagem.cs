@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PaginaEscolhaDaPersonagem : Pagina
 {
     [SerializeField] Image iconePequenoGuia;
-    [SerializeField] Text NomeDoSelecionado;
 
     [SerializeField] GrupoDeIconesPersonagem grupoDeIconesPersonagem;
 
@@ -19,9 +18,6 @@ public class PaginaEscolhaDaPersonagem : Pagina
     // Start is called before the first frame update
     void Start()
     {
-        // Limpar nome do selecionado pois não há seleção ainda
-        NomeDoSelecionado.text = string.Empty;
-
         // Esconder botão confirmar até que uma escolha seja feita
         botaoConfirmar.gameObject.SetActive(false);
 
