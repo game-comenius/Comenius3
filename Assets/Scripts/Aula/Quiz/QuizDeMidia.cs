@@ -4,9 +4,10 @@ using System.Linq;
 
 public class QuizDeMidia : Quiz
 {
-    [SerializeField] FormatoDeQuizVF prefabQuizVF;
     private FormatoDeQuizVF quizVF;
     [SerializeField] [Range(2, 4)] int quantidadeDeAfirmacoesNoQuiz;
+
+    [Header("Formato do Quiz")][SerializeField] FormatoDeQuizVF prefabQuizVF;
 
     public override float TaxaDeAcerto
     {

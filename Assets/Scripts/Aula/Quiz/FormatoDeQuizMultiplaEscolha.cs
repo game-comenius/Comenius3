@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
 {
@@ -11,6 +12,10 @@ public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
 
         // Esconder o botão confirmar até que o jogador selecione uma afirmação
         BotaoConfirmar.gameObject.SetActive(false);
+
+        // Definir função que será chamada sempre que uma afirmação for clicada
+        foreach (var afirmacao in afirmacoesQuizMultiplaEscolha)
+            afirmacao.FuiClicadaEvent += SelecionarAfirmacao;
     }
 
     public override void DefinirAfirmacoes(Afirmacao[] afirmacoes)
@@ -32,8 +37,28 @@ public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
             afirmacoesQuizMultiplaEscolha[i].Afirmacao = afirmacoes[i];
     }
 
+    private void SelecionarAfirmacao(AfirmacaoQuizMultiplaEscolha afirmacaoQueFoiClicada)
+    {
+        foreach (var afirmacao in afirmacoesQuizMultiplaEscolha)
+            afirmacao.Selecionada = (afirmacao == afirmacaoQueFoiClicada);
+
+        // Se existe uma afirmação selecionada, o botão confirmar fica disponível
+        BotaoConfirmar.gameObject.SetActive(true);
+    }
+
     protected override void ConfirmarResposta()
     {
-        Debug.Log("Resposta Confirmada");
+        // Se a resposta do jogador já foi confirmada, ignorar
+        if (RespostaConfirmada) return;
+
+        // Buscar por resposta selecionada e ao mesmo tempo verdadeira usando System.Linq
+        var busca = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME =>
+            afirmacaoQuizME.Selecionada && afirmacaoQuizME.Afirmacao.Verdadeira);
+        // Se uma afirmação satisfez às exigências da busca, o jogador acertou
+        var acertou = (busca.SingleOrDefault() != null);
+        // Definir taxa de acerto do quiz
+        TaxaDeAcerto = (acertou)? 1 : 0;
+
+        RespostaConfirmada = true;
     }
 }

@@ -11,6 +11,7 @@ public abstract class FormatoDeQuiz : MonoBehaviour
         set { enunciado.text = value; }
     }
 
+    // Número float no intervalo [0, 1] (inclusive)
     public virtual float TaxaDeAcerto { get; protected set; }
 
     public Button BotaoConfirmar;

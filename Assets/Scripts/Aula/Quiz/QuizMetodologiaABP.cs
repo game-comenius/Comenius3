@@ -22,7 +22,6 @@ public class QuizMetodologiaABP : Quiz
         GerarQuiz();
 
         estado = EstadoDeQuiz.EmExecucao;
-        Debug.Log("Executando quiz de metodologia abp...");
 
         formatoDoQuiz.Mostrar();
 
@@ -33,7 +32,6 @@ public class QuizMetodologiaABP : Quiz
 
         formatoDoQuiz.Esconder();
 
-        Debug.Log("Terminando a execução do quiz de metodologia abp...");
         estado = EstadoDeQuiz.Executado;
     }
 
