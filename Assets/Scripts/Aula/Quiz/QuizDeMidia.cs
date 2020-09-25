@@ -44,7 +44,7 @@ public class QuizDeMidia : Quiz
         yield return new WaitUntil(() => quizVF.RespostaConfirmada);
 
         // Mostrar se o jogador acertou ou errou nas suas escolhas
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         quizVF.Esconder();
 

@@ -17,10 +17,10 @@ public abstract class FormatoDeQuiz : MonoBehaviour
 
     public bool RespostaConfirmada { get; set; }
 
+    private void Awake() { Esconder(); }
+
     protected virtual void Start()
     {
-        Esconder();
-
         // Definir funcionalidade do botão confirmar
         BotaoConfirmar.onClick.AddListener(() =>
         {
@@ -29,6 +29,8 @@ public abstract class FormatoDeQuiz : MonoBehaviour
             ConfirmarResposta();
         });
     }
+
+    public abstract void DefinirAfirmacoes(Afirmacao[] afirmacoes);
 
     protected abstract void ConfirmarResposta();
 

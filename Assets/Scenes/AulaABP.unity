@@ -853,7 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1060170637}
   tempoLimite: 20
-  prefabQuizVF: {fileID: -1705302692370107175, guid: 091b97545b309423ba336e1d7086aa7f,
+  prefabQuizVF: {fileID: 8665044702619190736, guid: 091b97545b309423ba336e1d7086aa7f,
     type: 3}
   quantidadeDeAfirmacoesNoQuiz: 4
 --- !u!4 &566423108
@@ -1459,6 +1459,7 @@ Transform:
   m_Children:
   - {fileID: 566423108}
   - {fileID: 2013319509}
+  - {fileID: 1295040418}
   m_Father: {fileID: 2108632893}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1597,6 +1598,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b24e8b109e34f938e3ca2bcdf2b51c, type: 3}
+--- !u!1 &1295040417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295040418}
+  - component: {fileID: 1295040419}
+  m_Layer: 0
+  m_Name: QuizMetodologia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1295040418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295040417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1121749990}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1295040419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295040417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a870c6ceeb25c4cfc9bd328b7b8ea04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1060170637}
+  tempoLimite: 0
+  prefabQuizOrdenar: {fileID: -7012603831904635088, guid: 63daf1c06879d4275bd4350760038b0e,
+    type: 3}
+  prefabQuizMultiplaEscolha: {fileID: -6731170075623886999, guid: a810ef49600e742cebf3afadd89e09a7,
+    type: 3}
 --- !u!1 &1418273494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1060170637}
   tempoLimite: 20
-  prefabQuizVF: {fileID: -1705302692370107175, guid: 091b97545b309423ba336e1d7086aa7f,
+  prefabQuizVF: {fileID: 8665044702619190736, guid: 091b97545b309423ba336e1d7086aa7f,
     type: 3}
   quantidadeDeAfirmacoesNoQuiz: 4
 --- !u!4 &2013319509
@@ -2128,9 +2178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizDeMidia1: {fileID: 566423107}
   quizDeMidia2: {fileID: 2013319508}
-  delayParaAplicarQuizzes: 5
-  tempoEntreQuizzes: 10
-  tempoPosQuizzes: 5
+  quizMetodologiaABP: {fileID: 1295040419}
+  delayParaAplicarQuizzes: 1
+  tempoEntreQuizzes: 3
+  tempoPosQuizzes: 2
   paginaResultadoDaAula: {fileID: 1970570129}
   trocadorDeCenaCreditos: {fileID: 853448156}
   SalaSpriteRenderer: {fileID: 1640704990}
@@ -2230,130 +2281,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f947ebc95d4714528bd94254c3585c5c, type: 3}
---- !u!1001 &6110013036446818785
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1060170638}
-    m_Modifications:
-    - target: {fileID: 4597092429437573626, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_Name
-      value: PrefabQuizVF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597092429437573626, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 48.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1260.6406
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 735.37366
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841578467463650915, guid: 091b97545b309423ba336e1d7086aa7f,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 091b97545b309423ba336e1d7086aa7f, type: 3}
 --- !u!1001 &6538608063035186846
 PrefabInstance:
   m_ObjectHideFlags: 0

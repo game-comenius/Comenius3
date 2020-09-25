@@ -12,6 +12,7 @@ public class AulaABP : Aula
     [Header("Quizzes")]
     [SerializeField] QuizDeMidia quizDeMidia1;
     [SerializeField] QuizDeMidia quizDeMidia2;
+    [SerializeField] QuizMetodologiaABP quizMetodologiaABP;
     // Após o início da cena/aula, os quizzes serão aplicados depois deste delay
     [SerializeField] [Range(0, 30)] float delayParaAplicarQuizzes;
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
@@ -54,14 +55,6 @@ public class AulaABP : Aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
 
-        // Definir mídias padrão
-        // Útil no desenvolvimento quando estivermos testando diretamente a cena AulaABP
-        if (PrimeiraMidia == NomeMidias.Nenhuma && SegundaMidia == NomeMidias.Nenhuma)
-        {
-            PrimeiraMidia = NomeMidias.Jogos;
-            SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
-        }
-
         var quizzes = ObterQuizzesConfigurados();
         yield return StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
 
@@ -74,6 +67,13 @@ public class AulaABP : Aula
 
     private Quiz[] ObterQuizzesConfigurados()
     {
+        // Definir mídias padrão caso nenhuma tenha sido escolhida
+        // Útil no desenvolvimento quando estivermos testando diretamente a cena AulaABP
+        if (PrimeiraMidia == NomeMidias.Nenhuma && SegundaMidia == NomeMidias.Nenhuma)
+        {
+            PrimeiraMidia = NomeMidias.Jogos;
+            SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
+        }
         // O primeiro quiz de mídia será sobre a que jogador escolheu primeiro
         quizDeMidia1.ConfigurarQuiz(PrimeiraMidia);
         // O segundo quiz de mídia será sobre a que o jogador escolheu por segundo
@@ -83,7 +83,8 @@ public class AulaABP : Aula
         Quiz[] localQuizzes =
         {
             quizDeMidia1,
-            quizDeMidia2
+            quizDeMidia2,
+            quizMetodologiaABP,
         };
         return quizzes = localQuizzes;
     }

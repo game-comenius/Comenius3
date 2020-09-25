@@ -7,7 +7,7 @@ public class FormatoDeQuizVF : FormatoDeQuiz
     // Representam as etiquetas/faixas/botões com as afirmações na UI
     [SerializeField] AfirmacaoQuizVF[] afirmacoesQuizVF;
 
-    public void DefinirAfirmacoes(Afirmacao[] afirmacoes)
+    public override void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
         // Se receber + que o número limite de afirmações deste objeto, que é
         // igual a afirmacoesQuizVF.Length, não tentar adicionar + que o limite
