@@ -28,6 +28,26 @@ public class AfirmacaoSobreNivelDeEnsino : Afirmacao
                 new AfirmacaoSobreNivelDeEnsino(false, "É preciso que o professor tenha consciência que a brincadeira das crianças é apenas um momento recreativo."),
             });
         }
+        else if (nivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
+        {
+            lista.AddRange(new AfirmacaoSobreNivelDeEnsino[]
+            {
+                // Afirmações verdadeiras
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Fundamental é uma etapa da educação obrigatória, com nove anos de duração, atendendo estudantes entre 6 e 14 anos."),
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Fundamental tem como objetivo a formação básica do cidadão."),
+                new AfirmacaoSobreNivelDeEnsino(true, "É dividido em duas fases: Anos Iniciais (1º ao 5º ano) e Anos Finais (6º ao 9º ano), que se inicia em torno dos interesses manifestados pelas crianças até desafios de maior complexidade."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Nos Anos Iniciais devem-se valorizar as situações lúdicas de aprendizagem e a necessária articulação com as experiências vivenciadas na Educação Infantil."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Nos dois primeiros anos do Ensino Fundamental, a ação pedagógica deve ter como foco a alfabetização."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Está dividido em cinco áreas de conhecimento: Linguagens, Matemática, Ciências da Natureza, Ciências Humanas e Ensino Religioso."),
+                // Afirmações falsas
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Fundamental tem oito anos de duração."),
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Fundamental é uma etapa que não é obrigatória na Educação Básica."),
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Fundamental está separado em três fases: Anos Iniciais, Anos Finais e Ensino Médio."),
+                new AfirmacaoSobreNivelDeEnsino(false, "Está dividido em três áreas de conhecimento: Engenharias, Ciências da Saúde, Ciências Exatas e da Terra."),
+                new AfirmacaoSobreNivelDeEnsino(false, "Tanto no 5º como no 6º ano, não são necessárias adaptações e articulações, para apoiar os alunos nesse processo de transição."),
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Fundamental atende estudantes entre 11 e 14 anos."),
+            });
+        }
 
         foreach (var afirmacao in lista)
             afirmacao.nivelDeEnsino = nivelDeEnsino;
