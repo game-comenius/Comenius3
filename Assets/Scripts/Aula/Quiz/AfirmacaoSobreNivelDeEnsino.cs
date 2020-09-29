@@ -48,6 +48,26 @@ public class AfirmacaoSobreNivelDeEnsino : Afirmacao
                 new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Fundamental atende estudantes entre 11 e 14 anos."),
             });
         }
+        else if (nivelDeEnsino == NivelDeEnsino.EnsinoMedio)
+        {
+            lista.AddRange(new AfirmacaoSobreNivelDeEnsino[]
+            {
+                // Afirmações verdadeiras
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Médio é a etapa final da Educação Básica."),
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Médio tem como finalidades: a preparação básica para o trabalho e a cidadania, a formação ética e o aprimoramento do pensamento crítico."),
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Médio busca relacionar a teoria com a prática através de 4 grandes áreas do conhecimento."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Produzir múltiplas culturas juvenis promovendo uma educação integral no que concerne os aspectos físicos, cognitivos e socioemocionais é uma das características do Ensino Médio."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Uma das caracterísitcas do Ensino Médio é a compreensão dos fundamentos científico-tecnológicos dos processos produtivo."),
+                new AfirmacaoSobreNivelDeEnsino(true, "O Ensino Médio pode ser integrado com o Ensino Profissional podendo ser cursado concomitantemente."),
+                // Afirmações falsas
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Médio é uma etapa que não é obrigatória na Educação Básica."),
+                new AfirmacaoSobreNivelDeEnsino(false, "A matrícula no Ensino Médio para alunos de 14 a 17 anos é facultativa."),
+                new AfirmacaoSobreNivelDeEnsino(false, "Busca uma intencionalidade educativa e a garantia de seis direitos de aprendizagem e desenvolvimento que permeiam cinco campos de experiências."),
+                new AfirmacaoSobreNivelDeEnsino(false, "É o nível que busca o desejo de aperfeiçoamento cultural e profissional estimulando o conhecimento dos problemas do mundo presente, buscando prestar serviços especializados à comunidade."),
+                new AfirmacaoSobreNivelDeEnsino(false, "O Ensino Média é uma etapa obrigária tendo como objetivo a formação básica do cidadão."),
+                new AfirmacaoSobreNivelDeEnsino(false, " Inicia-se em torno dos interesses manifestados pelos jovens até desafios de maior complexidade sendo importante buscar o fortalecimento da autonomia dos estudantes."),
+            });
+        }
 
         foreach (var afirmacao in lista)
             afirmacao.nivelDeEnsino = nivelDeEnsino;
