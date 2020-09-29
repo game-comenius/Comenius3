@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 
+// Afirmações verdadeiras e falsas sobre cada um dos níveis de ensino presentes no jogo
+// Afirmações retiradas deste arquivo do Drive: https://docs.google.com/spreadsheets/d/1uW2ZZz8BnagpY9qWkufsmtNI8Bl_A8T1srsZDmPxHM0/edit#gid=0
 public class AfirmacaoSobreNivelDeEnsino : Afirmacao
 {
     public NivelDeEnsino nivelDeEnsino;
