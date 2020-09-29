@@ -13,6 +13,7 @@ public class AulaABP : Aula
     [SerializeField] QuizDeMidia quizDeMidia1;
     [SerializeField] QuizDeMidia quizDeMidia2;
     [SerializeField] QuizMetodologiaABP quizMetodologiaABP;
+    [SerializeField] QuizPerfilDaTurma quizPerfilDaTurma;
     // Após o início da cena/aula, os quizzes serão aplicados depois deste delay
     [SerializeField] [Range(0, 30)] float delayParaAplicarQuizzes;
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
@@ -74,10 +75,16 @@ public class AulaABP : Aula
             PrimeiraMidia = NomeMidias.Jogos;
             SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
         }
-        // O primeiro quiz de mídia será sobre a que jogador escolheu primeiro
+        // O primeiro quiz será um quiz de mídia sobre aquela que jogador escolheu primeiro
         quizDeMidia1.ConfigurarQuiz(PrimeiraMidia);
-        // O segundo quiz de mídia será sobre a que o jogador escolheu por segundo
+        // O segundo quiz será um quiz de mídia sobre aquela que o jogador escolheu por segundo
         quizDeMidia2.ConfigurarQuiz(SegundaMidia);
+        // O terceiro quiz será um quiz sobre a metodologia escolhida e não precisa ser configurado
+        // ...
+        // O quarto quiz será sobre o perfil da turma definido no início do jogo
+        var nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
+        var inteligencias = EstadoDoJogo.Instance.InteligenciasSelecionadas;
+        quizPerfilDaTurma.ConfigurarQuiz(nivelDeEnsino, inteligencias);
 
         // Ordenar os quizzes
         Quiz[] localQuizzes =
@@ -85,6 +92,7 @@ public class AulaABP : Aula
             quizDeMidia1,
             quizDeMidia2,
             quizMetodologiaABP,
+            quizPerfilDaTurma
         };
         return quizzes = localQuizzes;
     }

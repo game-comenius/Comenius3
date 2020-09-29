@@ -852,10 +852,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1060170637}
-  tempoLimite: 20
+  quantidadeDeAfirmacoesNoQuiz: 4
   prefabQuizVF: {fileID: 8665044702619190736, guid: 091b97545b309423ba336e1d7086aa7f,
     type: 3}
-  quantidadeDeAfirmacoesNoQuiz: 4
 --- !u!4 &566423108
 Transform:
   m_ObjectHideFlags: 0
@@ -1460,6 +1459,7 @@ Transform:
   - {fileID: 566423108}
   - {fileID: 2013319509}
   - {fileID: 1295040418}
+  - {fileID: 1476100370}
   m_Father: {fileID: 2108632893}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1642,7 +1642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1060170637}
-  tempoLimite: 0
   prefabQuizOrdenar: {fileID: -7012603831904635088, guid: 63daf1c06879d4275bd4350760038b0e,
     type: 3}
   prefabQuizMultiplaEscolha: {fileID: -6731170075623886999, guid: a810ef49600e742cebf3afadd89e09a7,
@@ -1833,6 +1832,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1476100369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476100370}
+  - component: {fileID: 1476100371}
+  m_Layer: 0
+  m_Name: QuizPerfilDaTurma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1476100370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476100369}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1121749990}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1476100371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476100369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f3599913f2547f5a126fe9131c460f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1060170637}
+  prefabQuizVF: {fileID: 8665044702619190736, guid: 091b97545b309423ba336e1d7086aa7f,
+    type: 3}
 --- !u!1 &1569067743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,10 +2174,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1060170637}
-  tempoLimite: 20
+  quantidadeDeAfirmacoesNoQuiz: 4
   prefabQuizVF: {fileID: 8665044702619190736, guid: 091b97545b309423ba336e1d7086aa7f,
     type: 3}
-  quantidadeDeAfirmacoesNoQuiz: 4
 --- !u!4 &2013319509
 Transform:
   m_ObjectHideFlags: 0
@@ -2179,6 +2223,7 @@ MonoBehaviour:
   quizDeMidia1: {fileID: 566423107}
   quizDeMidia2: {fileID: 2013319508}
   quizMetodologiaABP: {fileID: 1295040419}
+  quizPerfilDaTurma: {fileID: 1476100371}
   delayParaAplicarQuizzes: 1
   tempoEntreQuizzes: 3
   tempoPosQuizzes: 2
