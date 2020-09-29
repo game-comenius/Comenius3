@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class QuizPerfilDaTurma : Quiz
@@ -7,8 +6,8 @@ public class QuizPerfilDaTurma : Quiz
     [Header("Formato do Quiz")] [SerializeField] FormatoDeQuizVF prefabQuizVF;
     private FormatoDeQuiz formatoDoQuiz;
 
-    private NivelDeEnsino nivelDeEnsino;
-    private Inteligencias inteligencias;
+    public NivelDeEnsino NivelDeEnsino { get; set; }
+    public Inteligencias Inteligencias { get; set; }
 
     private int quantidadeDeAfirmacoesNoQuiz = 4;
 
@@ -25,21 +24,19 @@ public class QuizPerfilDaTurma : Quiz
         // Sorteio entre 0 e 1.
         // Se sair 0, o quiz será sobre nível de ensino
         // Se sair 1, o quiz será sobre Inteligências Múltiplas
-        int zeroOuUm = Random.Range(0, 2);
+        //int zeroOuUm = Random.Range(0, 2);
+        int zeroOuUm = 1;
         if (zeroOuUm == 0)
         {
-            this.nivelDeEnsino = nivelDeEnsino;
+            this.NivelDeEnsino = nivelDeEnsino;
             enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione as corretas sobre " + nivelDeEnsino.nome;
             afirmacoesDisponiveis = AfirmacaoSobreNivelDeEnsino.ObterTodasAsAfirmacoes(nivelDeEnsino);
         }
         else // ZeroOuUm == 1
         {
-            //this.inteligencias = inteligencias;
-            //afirmacoesDisponiveis = new Afirmacao[4];
-
-            this.nivelDeEnsino = nivelDeEnsino;
-            enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione as corretas sobre " + nivelDeEnsino.nome;
-            afirmacoesDisponiveis = AfirmacaoSobreNivelDeEnsino.ObterTodasAsAfirmacoes(nivelDeEnsino);
+            this.Inteligencias = inteligencias;
+            enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione as corretas sobre o par de inteligências " + inteligencias.Nome;
+            afirmacoesDisponiveis = AfirmacaoSobreInteligencias.ObterTodasAsAfirmacoes(inteligencias);
         }
 
         // Embaralhar as afirmações usando algoritmo Fisher–Yates Shuffle, O(n)
