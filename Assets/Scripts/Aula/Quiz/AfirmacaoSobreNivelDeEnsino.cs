@@ -68,6 +68,24 @@ public class AfirmacaoSobreNivelDeEnsino : Afirmacao
                 new AfirmacaoSobreNivelDeEnsino(false, " Inicia-se em torno dos interesses manifestados pelos jovens até desafios de maior complexidade sendo importante buscar o fortalecimento da autonomia dos estudantes."),
             });
         }
+        else if (nivelDeEnsino == NivelDeEnsino.EnsinoSuperior)
+        {
+            lista.AddRange(new AfirmacaoSobreNivelDeEnsino[]
+            {
+                // Afirmações verdadeiras
+                new AfirmacaoSobreNivelDeEnsino(true, "No nível superior a pessoa procura atender o desejo de aperfeiçoamento cultural e profissional."),
+                new AfirmacaoSobreNivelDeEnsino(true, "O estudo no nível superior estimula o conhecimento dos problemas do mundo presente, buscando prestar serviços especializados à comunidade através da pesquisa científica e tecnológica."),
+                new AfirmacaoSobreNivelDeEnsino(true, "No ensino superior busca-se o aprimoramento da educação básica mediante a formação e a capacitação de profissionais através da pesquisa e extensão."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Existem três tipos de graduação no ensino superior: bacharelado, licenciatura e graduação tecnológica."),
+                new AfirmacaoSobreNivelDeEnsino(true, "Atualmente existem três modalidades de ensino superior: Ensino Presencial, a Distância e Semipresencial."),
+                new AfirmacaoSobreNivelDeEnsino(true, "As universidades possuem três pilares indissociáveis para o ensino superior: Ensino, Pesquisa e Extensão."),
+                // Afirmações falsas
+                new AfirmacaoSobreNivelDeEnsino(false, "Atualmente existem três modalidades de formação superior: Magistério, Licenciatura e Bacharelado."),
+                new AfirmacaoSobreNivelDeEnsino(false, "Existem três tipos de graduação no ensino superior: bacharelado, especialização e MBA."),
+                new AfirmacaoSobreNivelDeEnsino(false, "O estudo no nível superior estimula a resolução de problemas científicos, buscando criar um conhecimento superior ao da comunidade através da pesquisa acadêmica."),
+                new AfirmacaoSobreNivelDeEnsino(false, "Para se matricular no ensino superior o estudante deve ter terminado a educação básica e ter mais de 18 anos."),
+            });
+        }
 
         foreach (var afirmacao in lista)
             afirmacao.nivelDeEnsino = nivelDeEnsino;
