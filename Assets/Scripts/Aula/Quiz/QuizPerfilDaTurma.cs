@@ -68,7 +68,7 @@ public class QuizPerfilDaTurma : Quiz
         yield return new WaitUntil(() => formatoDoQuiz.RespostaConfirmada);
 
         // Mostrar se o jogador acertou ou errou nas suas escolhas
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(tempoParaAvaliarResposta);
 
         formatoDoQuiz.Esconder();
 

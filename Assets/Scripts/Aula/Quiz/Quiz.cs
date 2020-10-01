@@ -10,7 +10,9 @@ public abstract class Quiz : MonoBehaviour
     public abstract float TaxaDeAcerto { get; }
 
     protected enum EstadoDeQuiz { NaoFoiExecutado, EmExecucao, Executado }
-    protected EstadoDeQuiz estado = EstadoDeQuiz.NaoFoiExecutado; 
+    protected EstadoDeQuiz estado = EstadoDeQuiz.NaoFoiExecutado;
+
+    [Range(0, 15)][SerializeField] protected float tempoParaAvaliarResposta;
 
     // Deve ser chamado como uma coroutine pelo StartCoroutine
     // Deve retornar quando o jogador responder o quiz completamente

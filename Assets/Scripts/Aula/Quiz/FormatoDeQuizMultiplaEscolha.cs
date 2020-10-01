@@ -20,9 +20,30 @@ public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
 
     public override void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
+        var busca = afirmacoes.Where(afirmacao => afirmacao.Verdadeira);
+        // Ignorar se houver mais de 1 afirmação verdadeira
+        if (busca.Count() != 1) return;
+
+        var afirmacaoVerdadeira = busca.Single();
+        var afirmacoesFalsas = afirmacoes.Except(busca).ToArray();
+
+        DefinirAfirmacoes(afirmacaoVerdadeira, afirmacoesFalsas);
+    }
+
+    public void DefinirAfirmacoes(Afirmacao afirmacaoVerdadeira, Afirmacao[] afirmacoesFalsas)
+    {
+        // Ignorar se não houver "slots" disponíveis pra encaixar as afirmações
+        if (afirmacoesQuizMultiplaEscolha.Length == 0) return;
+
         // Se receber + que o número limite de afirmações deste objeto, que é
         // igual a afirmacoesQuizMultiplaEscolha.Length, não tentar adicionar + que o limite
-        var quantidade = (afirmacoes.Length <= afirmacoesQuizMultiplaEscolha.Length) ? afirmacoes.Length : afirmacoesQuizMultiplaEscolha.Length;
+        var quantidade = (afirmacoesFalsas.Length + 1 <= afirmacoesQuizMultiplaEscolha.Length) ? (afirmacoesFalsas.Length + 1) : afirmacoesQuizMultiplaEscolha.Length;
+
+        // Juntar afirmação verdadeira e afirmações falsas em um único array
+        var afirmacoes = new Afirmacao[quantidade];
+        afirmacoes[0] = afirmacaoVerdadeira;
+        for (int i = 1; i < quantidade; i++)
+            afirmacoes[i] = afirmacoesFalsas[i - 1];
 
         // Embaralhar as afirmações usando algoritmo Fisher–Yates Shuffle, O(n)
         for (int i = quantidade - 1; i > 0; i--)
@@ -51,13 +72,25 @@ public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
         // Se a resposta do jogador já foi confirmada, ignorar
         if (RespostaConfirmada) return;
 
-        // Buscar por resposta selecionada e ao mesmo tempo verdadeira usando System.Linq
-        var busca = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME =>
-            afirmacaoQuizME.Selecionada && afirmacaoQuizME.Afirmacao.Verdadeira);
-        // Se uma afirmação satisfez às exigências da busca, o jogador acertou
-        var acertou = (busca.SingleOrDefault() != null);
-        // Definir taxa de acerto do quiz
-        TaxaDeAcerto = (acertou)? 1 : 0;
+        var respostaSelecionada = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME => afirmacaoQuizME.Selecionada).Single();
+        var respostaVerdadeira = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME => afirmacaoQuizME.Afirmacao.Verdadeira).Single();
+        var acertou = (respostaSelecionada == respostaVerdadeira);
+        
+        if (acertou)
+        {
+            respostaVerdadeira.DefinirComoAcertoDoJogador();
+
+            TaxaDeAcerto = 1;
+        }
+        else
+        {
+            // Mostrar que a afirmação selecionada estava errada
+            respostaSelecionada.DefinirComoErroDoJogador();
+            // Mostrar qual era a resposta correta
+            respostaVerdadeira.DefinirComoAcertoDoJogador();
+
+            TaxaDeAcerto = 0;
+        }
 
         RespostaConfirmada = true;
     }
