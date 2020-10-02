@@ -28,7 +28,8 @@ public class QuizMetodologiaABP : Quiz
         yield return new WaitUntil(() => formatoDoQuiz.RespostaConfirmada);
 
         // Mostrar se o jogador acertou ou errou nas suas escolhas
-        yield return new WaitForSeconds(tempoParaAvaliarResposta);
+        StartCoroutine(PassarTempoParaAvaliarResposta());
+        yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
         formatoDoQuiz.Esconder();
 

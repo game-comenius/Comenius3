@@ -12,7 +12,14 @@ public abstract class Quiz : MonoBehaviour
     protected enum EstadoDeQuiz { NaoFoiExecutado, EmExecucao, Executado }
     protected EstadoDeQuiz estado = EstadoDeQuiz.NaoFoiExecutado;
 
-    [Range(0, 15)][SerializeField] protected float tempoParaAvaliarResposta;
+    [Range(0, 60)][SerializeField] protected float tempoParaAvaliarResposta;
+    protected bool tempoParaAvaliarRespostaPassou;
+
+    protected IEnumerator PassarTempoParaAvaliarResposta()
+    {
+        yield return new WaitForSeconds(tempoParaAvaliarResposta);
+        tempoParaAvaliarRespostaPassou = true;
+    }
 
     // Deve ser chamado como uma coroutine pelo StartCoroutine
     // Deve retornar quando o jogador responder o quiz completamente
