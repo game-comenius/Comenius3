@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public abstract class FormatoDeQuiz : MonoBehaviour
@@ -18,6 +19,8 @@ public abstract class FormatoDeQuiz : MonoBehaviour
 
     public bool RespostaConfirmada { get; set; }
 
+    public bool JogadorPediuParaFechar { get; set; }
+
     private void Awake() { Esconder(); }
 
     protected virtual void Start()
@@ -25,9 +28,11 @@ public abstract class FormatoDeQuiz : MonoBehaviour
         // Definir funcionalidade do botão confirmar
         BotaoConfirmar.onClick.AddListener(() =>
         {
-            // Impedir que o jogador confirme mais de uma vez a resposta dele
-            BotaoConfirmar.gameObject.SetActive(false);
             ConfirmarResposta();
+            // Impedir que o jogador confirme mais de uma vez a resposta dele
+            // A próxima vez que ele clicar no botão confirmar, será para encerrar o quiz
+            BotaoConfirmar.onClick.RemoveAllListeners();
+            BotaoConfirmar.onClick.AddListener(() => JogadorPediuParaFechar = true);
         });
     }
 
