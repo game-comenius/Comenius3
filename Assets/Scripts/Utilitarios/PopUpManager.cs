@@ -5,19 +5,34 @@ using UnityEngine;
 public class PopUpManager : MonoBehaviour
 {
 
-    public GameObject InfoCanvas;
+    public GameObject infoCanvas;
 
-    public void OpenPanel()
+    private void OpenPanel()
     {
-        if(InfoCanvas != null)
+        if (infoCanvas != null)
         {
-            InfoCanvas.SetActive(true);
+            infoCanvas.SetActive(true);
+
         }
     }
 
-    public void QuitPanel()
+    private void QuitPanel()
     {
-        Debug.Log("Fechou");
-        InfoCanvas.SetActive(false);
+        if (infoCanvas != null)
+        {
+            infoCanvas.SetActive(false);
+        }
+    }
+
+    public void FuncaoDupla()
+    {
+        if (infoCanvas != null && infoCanvas.activeInHierarchy == false)
+        {
+            OpenPanel();
+        }
+        else
+        {
+            QuitPanel();
+        }
     }
 }
