@@ -590,85 +590,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 67009930}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96908883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 96908884}
-  - component: {fileID: 96908886}
-  - component: {fileID: 96908885}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &96908884
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96908883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 810173194}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.15, y: -26.96}
-  m_SizeDelta: {x: 621.2326, y: 163.11377}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &96908885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96908883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: d5925e12447dc3b48af4ad555d6c1435, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Nessa tela voc\xEA escolher\xE1 a metodologia que deseja usar no momento
-    da aula. Ap\xF3s a decis\xE3o, aperte em \"Confirmar\" para proseeguir."
---- !u!222 &96908886
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96908883}
-  m_CullTransparentMesh: 0
 --- !u!1001 &122292312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1266,6 +1187,8 @@ RectTransform:
   - {fileID: 67009931}
   - {fileID: 20827426}
   - {fileID: 662853116}
+  - {fileID: 1896009426}
+  - {fileID: 626269913}
   m_Father: {fileID: 122292313}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1307,12 +1230,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 122292313}
-  m_RootOrder: 14
+  m_Father: {fileID: 544080119}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 545.16003, y: 224.43999}
+  m_AnchoredPosition: {x: 295.66003, y: 246.43997}
   m_SizeDelta: {x: 42, y: 40}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &626269914
@@ -1359,7 +1282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 626269919}
-        m_MethodName: FuncaoDupla
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1449,7 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce381d5f5030f8848bb118425753980d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoCanvas: {fileID: 1896009425}
+  InfoCanvas: {fileID: 1896009425}
 --- !u!1 &645198014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1917,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1380814965}
-  - {fileID: 96908884}
   m_Father: {fileID: 1896009426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2913,7 +2835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce381d5f5030f8848bb118425753980d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoCanvas: {fileID: 1896009425}
+  InfoCanvas: {fileID: 1896009425}
 --- !u!114 &1380814970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3397,13 +3319,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 810173194}
-  m_Father: {fileID: 122292313}
-  m_RootOrder: 13
+  m_Father: {fileID: 544080119}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.6901245, y: 1.4276123}
-  m_SizeDelta: {x: 0.01171875, y: 2.855194}
+  m_AnchoredPosition: {x: -250.19006, y: 23.427612}
+  m_SizeDelta: {x: 682.885, y: 2.855194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896009427
 MonoBehaviour:
