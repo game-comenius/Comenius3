@@ -172,10 +172,10 @@ public class AfirmacaoSobreMidia : Afirmacao
                 {
                     // Afirmações verdadeiras
                     new AfirmacaoSobreMidia(true, "Os editores de texto e planilhas eletrônicas permitem uma aprendizagem interativa, rica e que os alunos sejam protagonistas da própria aprendizagem."),
-                    new AfirmacaoSobreMidia(true, "Nessas páginas em branco é possível criar, formatar, editar, salvar documentos eletrônicos, misturando elementos visuais e verbais."),
+                    new AfirmacaoSobreMidia(true, "Fornecem páginas em branco onde é possível criar, formatar, editar, salvar documentos eletrônicos, misturando elementos visuais e verbais."),
                     new AfirmacaoSobreMidia(true, "Por ser composto de recursos que possibilitam escolher a fonte, inserir imagens, gráficos e tabelas, o programa é um convite para fomentar a escrita, a leitura e o desenvolvimento da criatividade e aprendizagem colaborativa."),
                     new AfirmacaoSobreMidia(true, "Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas."),
-                    new AfirmacaoSobreMidia(true, "Os editores contém diversas ferramentas para personalizar seu conteúdo como definição de cores, fonte, espaçamentos e muito mais."),
+                    new AfirmacaoSobreMidia(true, "Os editores contém diversas ferramentas para personalizar seu conteúdo, como definição de cores, fonte, espaçamentos e muito mais."),
                     new AfirmacaoSobreMidia(true, "Os editores de texto e planilhas eletrônicas são mídias digitais de produção de texto que dão espaço para a construção própria do aluno."),
                     // Afirmações falsas
                     new AfirmacaoSobreMidia(false, "São mídias digitais de produção de conteúdos áudio-visuais que promovem a pesquisa e criatividade."),

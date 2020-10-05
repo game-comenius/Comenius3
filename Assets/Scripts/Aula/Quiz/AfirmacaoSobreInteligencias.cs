@@ -20,7 +20,7 @@ public class AfirmacaoSobreInteligencias : Afirmacao
                 new AfirmacaoSobreInteligencias(true, "O estilo de aprendizagem do aluno Corporal/Cinestésico geralmente está relacionado com a experiência física e movimento, sensações e toque."),
                 new AfirmacaoSobreInteligencias(true, "O estilo de aprendizagem do aluno Naturalista geralmente  se dá por meio do contato com a natureza."),
                 new AfirmacaoSobreInteligencias(true, "Os que possuem a inteligencia múltipla Naturalista geralmente são sensíveis em distinguir entre diferentes tipos de plantas, animais e formações climáticas."),
-                new AfirmacaoSobreInteligencias(true, "Os Corporais/Cinestésicos geralmente possuem a capacidade de controlar os movimentos corporais, ao equilíbrio, à coordenação e à expressão por meio do corpo."),
+                new AfirmacaoSobreInteligencias(true, "Os Corporais/Cinestésicos geralmente possuem a capacidade de controlar os movimentos corporais, o equilíbrio, a coordenação e a expressão por meio do corpo."),
                 new AfirmacaoSobreInteligencias(true, "Este grupo possui crianças que geralmente aprendem através de experiências multissensoriais, manipulação de materiais, uso do corpo e do movimento."),
                 new AfirmacaoSobreInteligencias(true, "Naturalistas entendem o meio ambiente como ambiente de aprendizagem."),
                 // Afirmações falsas
