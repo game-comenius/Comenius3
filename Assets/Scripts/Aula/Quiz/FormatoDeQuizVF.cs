@@ -24,9 +24,7 @@ public class FormatoDeQuizVF : FormatoDeQuiz
         var acertosDoJogador = 0;
         var errosDoJogador = 0;
 
-        // Apenas afirmações selecionadas pelo jogador serão marcadas como
-        // verdadeiras/falsas mesmo que outras afirmações sejam verdadeiras/falsas
-        // Estas últimas ficarão como um suspense para o jogador
+        // As afirmações selecionadas pelo jogador serão marcadas visualmente como acerto/erro do jogador
         var afirmacoesSelecionadas = afirmacoesQuizVF.Where((a) => a.Selecionada);
         foreach (var afirmacaoSelecionada in afirmacoesSelecionadas)
         {
@@ -57,6 +55,17 @@ public class FormatoDeQuizVF : FormatoDeQuiz
             // Caso especial para quando todas as afirmações são falsas
             // Basta o jogador não responder nenhuma errada para ganhar nota máxima
             TaxaDeAcerto = errosDoJogador == 0 ? 1 : 0;
+        }
+
+        // Se o jogador não conseguiu gabaritar o quiz, as afirmações que não
+        // foram selecionadas são marcadas como erros do jogador
+        // independentemente se ela é verdadeira ou falsa
+        // A ideia é mostrar ao jogador que a sua resposta não foi perfeita mas
+        // sem entregar quais eram as respostas corretas
+        if (TaxaDeAcerto < 1)
+        {
+            foreach (var afirmacaoNaoSelecionada in afirmacoesQuizVF.Except(afirmacoesSelecionadas))
+                afirmacaoNaoSelecionada.DefinirComoErroDoJogador();
         }
 
         RespostaConfirmada = true;
