@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 238797214}
   - component: {fileID: 238797216}
   - component: {fileID: 238797215}
+  - component: {fileID: 238797217}
   m_Layer: 5
   m_Name: InfoPanel
   m_TagString: Untagged
@@ -315,6 +316,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238797213}
   m_CullTransparentMesh: 0
+--- !u!114 &238797217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238797213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce381d5f5030f8848bb118425753980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoCanvas: {fileID: 1366663390}
 --- !u!1 &245091149
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +705,7 @@ GameObject:
   - component: {fileID: 376839493}
   - component: {fileID: 376839492}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Fechar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1173,7 @@ GameObject:
   - component: {fileID: 712131689}
   - component: {fileID: 712131688}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextoInformativo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1226,7 @@ MonoBehaviour:
     m_MaxSize: 110
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 0
+    m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -2317,13 +2331,14 @@ GameObject:
   - component: {fileID: 1366663391}
   - component: {fileID: 1366663393}
   - component: {fileID: 1366663392}
+  - component: {fileID: 1366663394}
   m_Layer: 5
   m_Name: InfoCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1366663391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2381,6 +2396,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366663390}
   m_CullTransparentMesh: 0
+--- !u!114 &1366663394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366663390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce381d5f5030f8848bb118425753980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoCanvas: {fileID: 1366663390}
 --- !u!1 &1510529219
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,6 +4313,11 @@ PrefabInstance:
       propertyPath: iconePequenoGuia
       value: 
       objectReference: {fileID: 1727825106}
+    - target: {fileID: 2396647964944179368, guid: 016b3f0147ee14968ab4a61c666a35a6,
+        type: 3}
+      propertyPath: textoInformativo
+      value: 
+      objectReference: {fileID: 712131688}
     - target: {fileID: 4894830099289173538, guid: 016b3f0147ee14968ab4a61c666a35a6,
         type: 3}
       propertyPath: m_LocalPosition.x

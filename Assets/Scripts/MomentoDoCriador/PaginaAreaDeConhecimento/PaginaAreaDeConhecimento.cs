@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : Pagina
 {
+    [SerializeField] Text textoInformativo;
+
     [SerializeField] Text tituloDaPagina;
 
     [SerializeField] Image iconePequenoGuia;
@@ -116,6 +118,15 @@ public class PaginaAreaDeConhecimento : Pagina
             tituloDaPagina.text = "Campos de Aprendizagem";
         else
             tituloDaPagina.text = "Área de Conhecimento";
+
+        if (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
+        {
+            textoInformativo.text = "De acordo com a escolha anterior, selecione qual campo de aprendizagem você deseja desenvolver com seus alunos.";
+        }
+        else
+        {
+            textoInformativo.text = "De acordo com a escolha anterior, selecione qual área do conhecimento você deseja desenvolver com seus alunos.";
+        }
     }
 
     private void LimparPagina()
