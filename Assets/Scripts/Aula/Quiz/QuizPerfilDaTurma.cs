@@ -6,6 +6,9 @@ public class QuizPerfilDaTurma : Quiz
     [Header("Formato do Quiz")] [SerializeField] FormatoDeQuizVF prefabQuizVF;
     private FormatoDeQuiz formatoDoQuiz;
 
+    // Sprite padrão que será usado para o ícone do quiz, útil quando jogar diretamente a cena da aula
+    [SerializeField] Sprite spritePadraoDoIconeDoQuiz;
+
     public NivelDeEnsino NivelDeEnsino { get; set; }
     public Inteligencias Inteligencias { get; set; }
 
@@ -58,7 +61,7 @@ public class QuizPerfilDaTurma : Quiz
 
         formatoDoQuiz = Instantiate(prefabQuizVF, canvas.transform);
         formatoDoQuiz.TextoDoEnunciado = enunciadoDoQuiz;
-        formatoDoQuiz.IconeDoQuiz.sprite = spriteDoIconeDoQuiz;
+        formatoDoQuiz.IconeDoQuiz.sprite = spriteDoIconeDoQuiz ? spriteDoIconeDoQuiz : spritePadraoDoIconeDoQuiz;
         formatoDoQuiz.DefinirAfirmacoes(afirmacoesDoQuiz);
     }
 

@@ -12,6 +12,8 @@ public class QuizMetodologiaABP : Quiz
     [SerializeField] FormatoDeQuizMultiplaEscolha prefabQuizMultiplaEscolha;
     private FormatoDeQuiz formatoDoQuiz;
 
+    [SerializeField] Sprite spriteDoIconeDoQuiz;
+
     public override float TaxaDeAcerto
     {
         get { return (estado == EstadoDeQuiz.Executado) ? formatoDoQuiz.TaxaDeAcerto : 0; }
@@ -92,5 +94,7 @@ public class QuizMetodologiaABP : Quiz
         {
             return;
         }
+
+        formatoDoQuiz.IconeDoQuiz.sprite = spriteDoIconeDoQuiz;
     }
 }
