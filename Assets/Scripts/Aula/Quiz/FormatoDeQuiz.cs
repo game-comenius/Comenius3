@@ -12,6 +12,8 @@ public abstract class FormatoDeQuiz : MonoBehaviour
         set { enunciado.text = value; }
     }
 
+    public Image IconeDoQuiz;
+
     // Número float no intervalo [0, 1] (inclusive)
     public virtual float TaxaDeAcerto { get; protected set; }
 

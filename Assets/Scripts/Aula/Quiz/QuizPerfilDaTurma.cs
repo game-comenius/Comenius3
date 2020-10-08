@@ -20,6 +20,7 @@ public class QuizPerfilDaTurma : Quiz
     {
         Afirmacao[] afirmacoesDisponiveis;
         string enunciadoDoQuiz;
+        Sprite spriteDoIconeDoQuiz;
 
         // Sorteio entre 0 e 1.
         // Se sair 0, o quiz será sobre nível de ensino
@@ -30,12 +31,14 @@ public class QuizPerfilDaTurma : Quiz
         {
             this.NivelDeEnsino = nivelDeEnsino;
             enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione as corretas sobre " + nivelDeEnsino.nome;
+            spriteDoIconeDoQuiz = nivelDeEnsino.Sprite;
             afirmacoesDisponiveis = AfirmacaoSobreNivelDeEnsino.ObterTodasAsAfirmacoes(nivelDeEnsino);
         }
         else // ZeroOuUm == 1
         {
             this.Inteligencias = inteligencias;
             enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione as corretas sobre o par de inteligências " + inteligencias.Nome;
+            spriteDoIconeDoQuiz = inteligencias.SpriteGrande;
             afirmacoesDisponiveis = AfirmacaoSobreInteligencias.ObterTodasAsAfirmacoes(inteligencias);
         }
 
@@ -55,6 +58,7 @@ public class QuizPerfilDaTurma : Quiz
 
         formatoDoQuiz = Instantiate(prefabQuizVF, canvas.transform);
         formatoDoQuiz.TextoDoEnunciado = enunciadoDoQuiz;
+        formatoDoQuiz.IconeDoQuiz.sprite = spriteDoIconeDoQuiz;
         formatoDoQuiz.DefinirAfirmacoes(afirmacoesDoQuiz);
     }
 
