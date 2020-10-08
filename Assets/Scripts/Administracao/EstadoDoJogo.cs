@@ -42,6 +42,19 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         set => inteligenciasSelecionadas = value;
     }
 
+    private Metodologia metodologiaSelecionada;
+    public Metodologia MetodologiaSelecionada
+    {
+        get
+        {
+            if (metodologiaSelecionada == null)
+                metodologiaSelecionada = Metodologia.ABP;
+            return metodologiaSelecionada;
+        }
+
+        set => metodologiaSelecionada = value;
+    }
+
     // Características da personagem selecionada, observar se estes valores != null
     public Sprite SpriteCorpoPersonagem { get; set; }
     public Sprite SpriteCabeloPersonagem { get; set; }
