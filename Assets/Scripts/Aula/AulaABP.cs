@@ -24,14 +24,6 @@ public class AulaABP : Aula
     [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
     [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
 
-    [Header("Sprites Sala De Aula")]
-    public SpriteRenderer SalaSpriteRenderer;
-    public Sprite SpriteLaboratorioBiologia;
-    public Sprite SpriteLaboratorioFisica;
-    public Sprite SpriteLaboratorioInformatica;
-    public Sprite SpriteLaboratorioQuimica;
-    public Sprite SpriteSalaInfantil;
-
     [Header("Alunos")]
     public GameObject AlunosJovens;
     public GameObject AlunosCriancas;
@@ -40,17 +32,9 @@ public class AulaABP : Aula
     [SerializeField] Image iconePersonagemUI;
 
 
-    private IEnumerator Start()
+    protected override IEnumerator Start()
     {
-        // Definir a sala de aula que será usada
-        Dictionary<AreaDeConhecimento, Sprite> spritesPorAreaDeConhecimento = ConstruirRelacaoSpritesPorAreaDeConhecimento();
-        var spriteDoLaboratorio = spritesPorAreaDeConhecimento[EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada];
-        SalaSpriteRenderer.sprite = spriteDoLaboratorio ? spriteDoLaboratorio : SpriteLaboratorioQuimica;
-
-        // Posicionar os alunos no laboratório de acordo com o nível de ensino
-        bool aulaInfantil = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil;
-        AlunosCriancas.SetActive(aulaInfantil);
-        AlunosJovens.SetActive(!aulaInfantil);
+        yield return base.Start();
 
         // Inicializar UI da aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
@@ -63,8 +47,6 @@ public class AulaABP : Aula
         yield return new WaitForSeconds(tempoPosQuizzes);
         StartCoroutine(ApresentarResultadoDaAula());
     }
-
-    
 
     private Quiz[] ObterQuizzesConfigurados()
     {
@@ -128,42 +110,6 @@ public class AulaABP : Aula
     private void TerminarAula()
     {
         trocadorDeCenaCreditos.TrocarCena();
-    }
-
-    private Dictionary<AreaDeConhecimento, Sprite> ConstruirRelacaoSpritesPorAreaDeConhecimento()
-    {
-        return new Dictionary<AreaDeConhecimento, Sprite>
-        {
-            // Ensino Infantil
-            { AreaDeConhecimento.EuOutroNos, SpriteSalaInfantil },
-            { AreaDeConhecimento.CorpoGestosMovimentos, SpriteSalaInfantil },
-            { AreaDeConhecimento.TracosSonsCoresFormas, SpriteSalaInfantil },
-            { AreaDeConhecimento.EscutaFalaPensamentoImaginacao, SpriteSalaInfantil },
-            { AreaDeConhecimento.EspacosTemposQuantidadesRelacoesTransformacoes, SpriteSalaInfantil },
-
-            // Ensino Fundamental
-            { AreaDeConhecimento.Linguagens, SpriteLaboratorioInformatica },
-            { AreaDeConhecimento.Matematica, SpriteLaboratorioFisica },
-            { AreaDeConhecimento.CienciasDaNatureza, SpriteLaboratorioBiologia },
-            { AreaDeConhecimento.CienciasHumanas, SpriteLaboratorioInformatica },
-            { AreaDeConhecimento.EnsinoReligioso, SpriteLaboratorioInformatica },
-
-            // Ensino Médio
-            { AreaDeConhecimento.LinguagensESuasTecnologias, SpriteLaboratorioInformatica },
-            { AreaDeConhecimento.MatematicaESuasTecnologias, SpriteLaboratorioFisica },
-            { AreaDeConhecimento.CienciasDaNaturezaESuasTecnologias, SpriteLaboratorioQuimica },
-            { AreaDeConhecimento.CienciasHumanasESociaisAplicadas, SpriteLaboratorioInformatica },
-
-            // Ensino Superior
-            { AreaDeConhecimento.CienciasAgrarias, SpriteLaboratorioBiologia },
-            { AreaDeConhecimento.CienciasBiologicas, SpriteLaboratorioBiologia },
-            { AreaDeConhecimento.CienciasExatasDaTerra, SpriteLaboratorioFisica },
-            { AreaDeConhecimento.CienciasHumanasSuperior, SpriteLaboratorioInformatica },
-            { AreaDeConhecimento.CienciasDaSaude, SpriteLaboratorioQuimica },
-            { AreaDeConhecimento.CienciasSociaisAplicadas, SpriteLaboratorioInformatica },
-            { AreaDeConhecimento.Engenharias, SpriteLaboratorioFisica },
-            { AreaDeConhecimento.LinguisticaLetrasArtes, SpriteLaboratorioInformatica },
-        };
     }
 }
 
