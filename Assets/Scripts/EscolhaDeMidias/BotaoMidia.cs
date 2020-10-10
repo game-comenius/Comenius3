@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BotaoMidia : MonoBehaviour
 {
     [SerializeField]
-    private NomeMidias midia;
+    private NomeDeMidia midia;
 
     [SerializeField]
     private GameObject manager; //objeto com script SelecaoMidia.cs

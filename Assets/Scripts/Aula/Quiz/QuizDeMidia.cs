@@ -14,10 +14,10 @@ public class QuizDeMidia : Quiz
         get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto : 0; }
     }
 
-    public NomeMidias Midia { get; private set; }
+    public NomeDeMidia Midia { get; private set; }
 
 
-    public void ConfigurarQuiz(NomeMidias midia)
+    public void ConfigurarQuiz(NomeDeMidia midia)
     {
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);

@@ -6,7 +6,7 @@ public class SelecaoMidia : MonoBehaviour
 {
     public GameObject trocadorCena;
 
-    private NomeMidias[] midiasSelecionadas;
+    private NomeDeMidia[] midiasSelecionadas;
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
     private int paginaAtual = 0; //para usar de índice nas páginas de mídias
     public int ultimaPagina = 2; //*índice* da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
@@ -28,8 +28,8 @@ public class SelecaoMidia : MonoBehaviour
     {
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
-        midiasSelecionadas = new NomeMidias[quantidadeMidias];
-        destaque = new Midia(NomeMidias.Nenhuma);
+        midiasSelecionadas = new NomeDeMidia[quantidadeMidias];
+        destaque = new Midia(NomeDeMidia.Nenhuma);
         selecaoPronta = false;
         botaoConfirmar.SetActive(selecaoPronta);
         foreach (GameObject pagina in paginasDeMidias)
@@ -60,7 +60,7 @@ public class SelecaoMidia : MonoBehaviour
         }
     }
 
-    public void DestacarMidia(NomeMidias midia)
+    public void DestacarMidia(NomeDeMidia midia)
     {
         iconeDestaqueMidia.GetComponent<ImagemMaiorSelecionada>().MudarSelecao(midia);
         destaque = new Midia(midia);
@@ -72,7 +72,7 @@ public class SelecaoMidia : MonoBehaviour
 
     public void SelecionarMidia()
     {
-        if (!selecaoPronta && destaque.NomeMidia!=NomeMidias.Nenhuma)
+        if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
         {
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
@@ -88,7 +88,7 @@ public class SelecaoMidia : MonoBehaviour
             }
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
         }
-        else if(selecaoPronta)
+        else if (selecaoPronta)
         {
             Debug.Log("Jogador já selecionou todas as mídias");
             AulaABP.PrimeiraMidia = midiasSelecionadas[0];
@@ -108,7 +108,7 @@ public class SelecaoMidia : MonoBehaviour
             selecaoAtual = 0;
         }
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
-        midiasSelecionadas[selecaoAtual] = NomeMidias.Nenhuma;
+        midiasSelecionadas[selecaoAtual] = NomeDeMidia.Nenhuma;
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
     }
 
@@ -117,7 +117,7 @@ public class SelecaoMidia : MonoBehaviour
         return selecaoPronta;
     }
 
-    public NomeMidias[] obterMidiasSelecionadas()
+    public NomeDeMidia[] obterMidiasSelecionadas()
     {
         return midiasSelecionadas;
     }

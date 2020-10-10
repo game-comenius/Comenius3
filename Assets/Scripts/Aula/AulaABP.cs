@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class AulaABP : Aula
 {
     // É possível definir as mídias selecionadas para a aula ABP em outra cena, são propriedades estáticas
-    public static NomeMidias PrimeiraMidia;
-    public static NomeMidias SegundaMidia;
+    public static NomeDeMidia PrimeiraMidia;
+    public static NomeDeMidia SegundaMidia;
 
     [Header("Quizzes")]
     [SerializeField] QuizDeMidia quizDeMidia1;
@@ -52,10 +52,10 @@ public class AulaABP : Aula
     {
         // Definir mídias padrão caso nenhuma tenha sido escolhida
         // Útil no desenvolvimento quando estivermos testando diretamente a cena AulaABP
-        if (PrimeiraMidia == NomeMidias.Nenhuma && SegundaMidia == NomeMidias.Nenhuma)
+        if (PrimeiraMidia == NomeDeMidia.Nenhuma && SegundaMidia == NomeDeMidia.Nenhuma)
         {
-            PrimeiraMidia = NomeMidias.Jogos;
-            SegundaMidia = NomeMidias.EditoresDeTextoEPlanilhasEletronicas;
+            PrimeiraMidia = NomeDeMidia.Jogos;
+            SegundaMidia = NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
         }
         // O primeiro quiz será um quiz de mídia sobre aquela que jogador escolheu primeiro
         quizDeMidia1.ConfigurarQuiz(PrimeiraMidia);

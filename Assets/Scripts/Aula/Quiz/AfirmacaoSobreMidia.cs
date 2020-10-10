@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 public class AfirmacaoSobreMidia : Afirmacao
 {
-    public NomeMidias NomeDaMidia;
+    public NomeDeMidia NomeDaMidia;
 
-    public static AfirmacaoSobreMidia[] ObterTodasAsAfirmacoes(NomeMidias midia)
+    public static AfirmacaoSobreMidia[] ObterTodasAsAfirmacoes(NomeDeMidia midia)
     {
         var lista = new List<AfirmacaoSobreMidia>();
         switch (midia)
         {
-            case NomeMidias.Lousa:
+            case NomeDeMidia.Lousa:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -27,7 +27,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "A lousa é uma ferramentas que instiga a pesquisa em sala de aula."),
                 });
                 break;
-            case NomeMidias.LivroDidatico:
+            case NomeDeMidia.LivroDidatico:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -44,7 +44,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Com o advento da internet essa mídia se tornaram obsoletas e não têm mais espaço naos processos de ensino e aprendizagem em sala de aula."),
                 });
                 break;
-            case NomeMidias.LivrosJornaisERevistas:
+            case NomeDeMidia.LivrosJornaisERevistas:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -61,7 +61,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Essas mídias aprensetam um forte viés ideológico, sendo desaconselhado trabalhar com crianças e jovens para que não sejam doutrinados por essas mídias de massa."),
                 });
                 break;
-            case NomeMidias.CadernosECartazes:
+            case NomeDeMidia.CadernosECartazes:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -78,7 +78,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "São mídias que focam no trabalho colaborativo no qual os esforços são dedicados sem ressentimento ou temor."),
                 });
                 break;
-            case NomeMidias.Televisao:
+            case NomeDeMidia.Televisao:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -95,7 +95,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Usada somente em situações de lazer, essa mídia pouco tem a oferecer como reprodutora de conteúdos pedagógicos."),
                 });
                 break;
-            case NomeMidias.AparelhoDeSom:
+            case NomeDeMidia.AparelhoDeSom:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -112,7 +112,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Por ser uma mídia que já apresenta o conteúdo fechado fica inviável a mediação do professor com seu alunos acerca do tema."),
                 });
                 break;
-            case NomeMidias.RedesSociais:
+            case NomeDeMidia.RedesSociais:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -131,7 +131,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "É uma mídia digital fornecida pela escola que traz informações sobre todos os conteúdos das disciplinas do ano letivo."),
                 });
                 break;
-            case NomeMidias.Jogos:
+            case NomeDeMidia.Jogos:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -150,7 +150,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Os jogos digitais são softwares desenvolvidos com o objetivo de auxiliar o usuário a desempenhar uma tarefa como: enviar um e-mail,  acessar alguma informação, entre outras."),
                 });
                 break;
-            case NomeMidias.EditoresDeAudioEVideo:
+            case NomeDeMidia.EditoresDeAudioEVideo:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -167,7 +167,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "É uma mídia digital de exposição de conteúdos de imagem e som."),
                 });
                 break;
-            case NomeMidias.EditoresDeTextoEPlanilhasEletronicas:
+            case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -184,7 +184,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Os editores de texto e planilhas permitem conhecer diferentes lugares do mundo e facilitar a distribuição de atividades, dentro e fora da sala de aula."),
                 });
                 break;
-            case NomeMidias.AVEAs:
+            case NomeDeMidia.AVEAs:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras
@@ -201,7 +201,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Os AVEAs precisam da intervenção simultânea do professor com os alunos para poder ser efetivo."),
                 });
                 break;
-            case NomeMidias.Aplicativos:
+            case NomeDeMidia.Aplicativos:
                 lista.AddRange(new AfirmacaoSobreMidia[]
                 {
                     // Afirmações verdadeiras

@@ -3,7 +3,7 @@
 
 // Por favor, não altere os valores internos (int) dos enums
 // Se você for adicionar uma nova mídia, atribua um novo valor à ela
-public enum NomeMidias
+public enum NomeDeMidia
 {
     Nenhuma = 0,
     Lousa = 1,

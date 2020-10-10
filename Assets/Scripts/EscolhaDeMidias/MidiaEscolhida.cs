@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MidiaEscolhida : MonoBehaviour
 {
     public int posicao;
-    private NomeMidias selecionada;
+    private NomeDeMidia selecionada;
 
     public GameObject anelSelecao;
 
@@ -42,49 +42,49 @@ public class MidiaEscolhida : MonoBehaviour
         anelSelecao.SetActive(x);
     }
 
-    public void atualizarSelecao(NomeMidias[] midia)
+    public void atualizarSelecao(NomeDeMidia[] midia)
     {
         selecionada = midia[posicao];
 
         switch (selecionada)
         {
-            case NomeMidias.Nenhuma:
+            case NomeDeMidia.Nenhuma:
                 atual.sprite = padrao;
                 break;
-            case NomeMidias.CadernosECartazes:
+            case NomeDeMidia.CadernosECartazes:
                 atual.sprite = cadernosCartazes;
                 break;
-            case NomeMidias.Televisao:
+            case NomeDeMidia.Televisao:
                 atual.sprite = televisao;
                 break;
-            case NomeMidias.LivroDidatico:
+            case NomeDeMidia.LivroDidatico:
                 atual.sprite = livroDidatico;
                 break;
-            case NomeMidias.Lousa:
+            case NomeDeMidia.Lousa:
                 atual.sprite = lousa;
                 break;
-            case NomeMidias.LivrosJornaisERevistas:
+            case NomeDeMidia.LivrosJornaisERevistas:
                 atual.sprite = livrosJornaisRevistas;
                 break;
-            case NomeMidias.AparelhoDeSom:
+            case NomeDeMidia.AparelhoDeSom:
                 atual.sprite = aparelhoDeSom;
                 break;
-            case NomeMidias.RedesSociais:
+            case NomeDeMidia.RedesSociais:
                 atual.sprite = redesSociais;
                 break;
-            case NomeMidias.Jogos:
+            case NomeDeMidia.Jogos:
                 atual.sprite = jogos;
                 break;
-            case NomeMidias.EditoresDeAudioEVideo:
+            case NomeDeMidia.EditoresDeAudioEVideo:
                 atual.sprite = editoresAudioVideo;
                 break;
-            case NomeMidias.EditoresDeTextoEPlanilhasEletronicas:
+            case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 atual.sprite = editoresTextoPlanilhasEletronicas;
                 break;
-            case NomeMidias.AVEAs:
+            case NomeDeMidia.AVEAs:
                 atual.sprite = aveas;
                 break;
-            case NomeMidias.Aplicativos:
+            case NomeDeMidia.Aplicativos:
                 atual.sprite = aplicativos;
                 break;
             default:
