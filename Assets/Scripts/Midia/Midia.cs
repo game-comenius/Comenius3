@@ -3,7 +3,8 @@
 public class Midia
 {
     public NomeMidias NomeMidia { get; private set; }
-    public Sprite Sprite { get; private set; }
+
+    public Sprite SpriteIcone;
 
     public string NomeApresentavel { get; private set; }
     public string Descricao { get; private set; }
