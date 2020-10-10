@@ -55,6 +55,30 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         set => metodologiaSelecionada = value;
     }
 
+    // Array de midias selecionadas pelo jogador na hora do planejamento.
+    // Cada metodologia pode precisar de um número diferente de mídias, por
+    // isso midiasSelecionadas é um array. O momento aula será responsável por
+    // selecionar as x primeiras mídias do array, onde x é o número de mídias
+    // que a metodologia escolhida pelo jogador precisa para funcionar bem.
+    private Midia[] midiasSelecionadas;
+    public Midia[] MidiasSelecionadas
+    {
+        get
+        {
+            if (midiasSelecionadas == null)
+                midiasSelecionadas = new Midia[]
+                {
+                    new Midia(NomeDeMidia.LivroDidatico),
+                    new Midia(NomeDeMidia.RedesSociais),
+                    new Midia(NomeDeMidia.AparelhoDeSom),
+                    new Midia(NomeDeMidia.Lousa)
+                };
+            return midiasSelecionadas;
+        }
+
+        set => midiasSelecionadas = value;
+    }
+
     // Características da personagem selecionada, observar se estes valores != null
     public Sprite SpriteCorpoPersonagem { get; set; }
     public Sprite SpriteCabeloPersonagem { get; set; }

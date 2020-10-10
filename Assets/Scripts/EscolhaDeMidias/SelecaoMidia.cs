@@ -91,8 +91,15 @@ public class SelecaoMidia : MonoBehaviour
         else if (selecaoPronta)
         {
             Debug.Log("Jogador já selecionou todas as mídias");
-            AulaABP.PrimeiraMidia = midiasSelecionadas[0];
-            AulaABP.SegundaMidia = midiasSelecionadas[1];
+            var jogo = EstadoDoJogo.Instance;
+            jogo.MidiasSelecionadas = new Midia[quantidadeMidias];
+            for (var i = 0; i < quantidadeMidias; i++)
+            {
+                var midia = new Midia(midiasSelecionadas[i]);
+                midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
+                jogo.MidiasSelecionadas[i] = midia;
+            }
+
             trocadorCena.GetComponent<TrocadorDeCena>().TrocarCena();
         }
     }

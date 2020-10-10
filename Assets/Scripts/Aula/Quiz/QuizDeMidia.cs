@@ -14,17 +14,17 @@ public class QuizDeMidia : Quiz
         get { return (estado == EstadoDeQuiz.Executado)? quizVF.TaxaDeAcerto : 0; }
     }
 
-    public NomeDeMidia Midia { get; private set; }
+    public Midia Midia { get; private set; }
 
 
-    public void ConfigurarQuiz(NomeDeMidia midia)
+    public void ConfigurarQuiz(Midia midia)
     {
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);
 
-        quizVF.TextoDoEnunciado = "Analise as afirmativas abaixo e selecione as corretas sobre a mídia " + new Midia(midia).NomeApresentavel + ".";
+        quizVF.TextoDoEnunciado = "Analise as afirmativas abaixo e selecione as corretas sobre a mídia " + midia.NomeApresentavel + ".";
 
-        var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia);
+        var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia.NomeMidia);
         var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
         for (var i = 0; i < quantidadeDeAfirmacoesNoQuiz; i++)
         {
@@ -34,6 +34,8 @@ public class QuizDeMidia : Quiz
             afirmacoesSelecionadas[i] = afirmacaoAleatoria;
         }
         quizVF.DefinirAfirmacoes(afirmacoesSelecionadas);
+
+        quizVF.IconeDoQuiz.sprite = midia.SpriteIcone;
     }
 
     public override IEnumerator Executar()

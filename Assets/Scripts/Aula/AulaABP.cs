@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class AulaABP : Aula
 {
-    // É possível definir as mídias selecionadas para a aula ABP em outra cena, são propriedades estáticas
-    public static NomeDeMidia PrimeiraMidia;
-    public static NomeDeMidia SegundaMidia;
-
     [Header("Quizzes")]
     [SerializeField] QuizDeMidia quizDeMidia1;
     [SerializeField] QuizDeMidia quizDeMidia2;
@@ -50,22 +46,20 @@ public class AulaABP : Aula
 
     private Quiz[] ObterQuizzesConfigurados()
     {
-        // Definir mídias padrão caso nenhuma tenha sido escolhida
-        // Útil no desenvolvimento quando estivermos testando diretamente a cena AulaABP
-        if (PrimeiraMidia == NomeDeMidia.Nenhuma && SegundaMidia == NomeDeMidia.Nenhuma)
-        {
-            PrimeiraMidia = NomeDeMidia.Jogos;
-            SegundaMidia = NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
-        }
+        var jogo = EstadoDoJogo.Instance;
+
+        var primeiraMidia = jogo.MidiasSelecionadas[0];
+        var segundaMidia = jogo.MidiasSelecionadas[1];
+
         // O primeiro quiz será um quiz de mídia sobre aquela que jogador escolheu primeiro
-        quizDeMidia1.ConfigurarQuiz(PrimeiraMidia);
+        quizDeMidia1.ConfigurarQuiz(primeiraMidia);
         // O segundo quiz será um quiz de mídia sobre aquela que o jogador escolheu por segundo
-        quizDeMidia2.ConfigurarQuiz(SegundaMidia);
+        quizDeMidia2.ConfigurarQuiz(segundaMidia);
         // O terceiro quiz será um quiz sobre a metodologia escolhida e não precisa ser configurado
         // ...
         // O quarto quiz será sobre o perfil da turma definido no início do jogo
-        var nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
-        var inteligencias = EstadoDoJogo.Instance.InteligenciasSelecionadas;
+        var nivelDeEnsino = jogo.NivelDeEnsinoSelecionado;
+        var inteligencias = jogo.InteligenciasSelecionadas;
         quizPerfilDaTurma.ConfigurarQuiz(nivelDeEnsino, inteligencias);
 
         // Ordenar os quizzes
