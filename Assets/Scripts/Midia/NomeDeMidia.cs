@@ -18,4 +18,31 @@ public enum NomeDeMidia
     EditoresDeTextoEPlanilhasEletronicas = 10,
     AVEAs = 11,
     Aplicativos = 12,
+    ProjetorMultimidia = 13,
+}
+
+public static class NomeDeMidiaExtensions
+{
+    // Retorna quais mídias pertencem ao parâmetro metodologia
+    // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=0
+    public static NomeDeMidia[] NomesDeMidiasDaMetodologia(Metodologia metodologia)
+    {
+        switch (metodologia)
+        {
+            default: // case Metodologia.ABP:
+                return new NomeDeMidia[]
+                {
+                    NomeDeMidia.Lousa,
+                    NomeDeMidia.LivroDidatico,
+                    NomeDeMidia.CadernosECartazes,
+                    NomeDeMidia.Televisao,
+                    NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
+                    NomeDeMidia.EditoresDeAudioEVideo,
+                    NomeDeMidia.Aplicativos,
+                    NomeDeMidia.AVEAs,
+                    NomeDeMidia.Jogos,
+                    NomeDeMidia.ProjetorMultimidia,
+                };
+        }
+    }
 }

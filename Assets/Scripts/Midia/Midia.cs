@@ -63,6 +63,10 @@ public class Midia
                 NomeApresentavel = "Aplicativos";
                 Descricao = "São aplicativos.";
                 break;
+            case NomeDeMidia.ProjetorMultimidia:
+                NomeApresentavel = "Projetor Multimídia";
+                Descricao = "É um projetor multimídia";
+                break;
             default:
                 NomeApresentavel = "Sem nome";
                 Descricao = "Sem texto";
