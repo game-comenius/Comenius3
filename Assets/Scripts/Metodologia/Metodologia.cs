@@ -7,6 +7,13 @@
         descricao: ""
     );
 
+    public static readonly Metodologia ABJ = new Metodologia
+    (
+        valor: 3,
+        nome: "Aprendizagem Baseada em Jogos",
+        descricao: ""
+    );  
+
     public readonly int Valor;
     public readonly string Nome;
     public readonly string Descricao;
@@ -19,4 +26,31 @@
     }
 
     public override string ToString() { return Nome; }
+
+    // Retorna quais mídias pertencem ao parâmetro metodologia
+    // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=0
+    public NomeDeMidia[] NomesDeMidiasDaMetodologia()
+    {
+        if (this == Metodologia.ABJ)
+        {
+            // TODO
+            return null;
+        }
+        else // this == Metodologia.ABP:
+        {
+            return new NomeDeMidia[]
+            {
+                NomeDeMidia.Lousa,
+                NomeDeMidia.LivroDidatico,
+                NomeDeMidia.CadernosECartazes,
+                NomeDeMidia.Televisao,
+                NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
+                NomeDeMidia.EditoresDeAudioEVideo,
+                NomeDeMidia.Aplicativos,
+                NomeDeMidia.AVEAs,
+                NomeDeMidia.Jogos,
+                NomeDeMidia.ProjetorMultimidia,
+            };
+        }
+    }
 }

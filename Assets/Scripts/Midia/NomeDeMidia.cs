@@ -23,26 +23,34 @@ public enum NomeDeMidia
 
 public static class NomeDeMidiaExtensions
 {
-    // Retorna quais mídias pertencem ao parâmetro metodologia
-    // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=0
-    public static NomeDeMidia[] NomesDeMidiasDaMetodologia(Metodologia metodologia)
+    public static CategoriasDeMidia CategoriasDaMidia(this NomeDeMidia nomeDeMidia)
     {
-        switch (metodologia)
+        switch (nomeDeMidia)
         {
-            default: // case Metodologia.ABP:
-                return new NomeDeMidia[]
-                {
-                    NomeDeMidia.Lousa,
-                    NomeDeMidia.LivroDidatico,
-                    NomeDeMidia.CadernosECartazes,
-                    NomeDeMidia.Televisao,
-                    NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
-                    NomeDeMidia.EditoresDeAudioEVideo,
-                    NomeDeMidia.Aplicativos,
-                    NomeDeMidia.AVEAs,
-                    NomeDeMidia.Jogos,
-                    NomeDeMidia.ProjetorMultimidia,
-                };
+            case NomeDeMidia.Lousa:
+                return CategoriasDeMidia.Exposicao | CategoriasDeMidia.Impressa;
+            case NomeDeMidia.ProjetorMultimidia:
+                return CategoriasDeMidia.Exposicao | CategoriasDeMidia.Digital;
+            case NomeDeMidia.LivroDidatico:
+                return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Impressa;
+            case NomeDeMidia.Aplicativos:
+            case NomeDeMidia.AVEAs:
+                return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Digital;
+            case NomeDeMidia.LivrosJornaisERevistas:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Impressa;
+            case NomeDeMidia.Televisao:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.AudioVisual;
+            case NomeDeMidia.RedesSociais:
+            case NomeDeMidia.Jogos:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
+            case NomeDeMidia.CadernosECartazes:
+                return CategoriasDeMidia.ProducaoArmazenamento | CategoriasDeMidia.Impressa;
+            case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
+                return CategoriasDeMidia.ProducaoArmazenamento | CategoriasDeMidia.AudioVisual;
+            case NomeDeMidia.EditoresDeAudioEVideo:
+                return CategoriasDeMidia.ProducaoArmazenamento | CategoriasDeMidia.Digital;
+            default:
+                return CategoriasDeMidia.Nenhuma;
         }
     }
 }
