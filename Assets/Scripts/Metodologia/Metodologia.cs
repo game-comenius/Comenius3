@@ -57,7 +57,7 @@
     // Cada metodologia define a pontuação das mídias usadas nela de acordo com as categorias dessas mídias
     // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=1166836280
     // A pontuação será entre [0, 1] (inclusive)
-    public float PontuacaoParaCategoriasDeMidia(CategoriasDeMidia categoria)
+    public float PontuacaoParaCategoriasDeMidia(CategoriasDeMidia categoria, bool receberaPenalidade)
     {
         float pontuacao = 0;
 
@@ -66,6 +66,14 @@
         float multiplicadorMidiaOtima = 1 / 1f;
         float multiplicadorMidiaBoa = 1 / 2f;
         float multiplicadorMidiaRegular = 1 / 3f;
+
+        // Se a pontuação receberá penalidade, os multiplicadores serão diferentes
+        if (receberaPenalidade)
+        {
+            multiplicadorMidiaOtima = multiplicadorMidiaBoa;
+            multiplicadorMidiaBoa = multiplicadorMidiaRegular;
+            multiplicadorMidiaRegular = 0;
+        }
 
         // Número máximo de categorias simultaneas em um objeto CategoriasDeMidia, padrão = 2
         // Ou seja, uma mídia pode pertencer à, no máximo, x categorias simultaneamente.

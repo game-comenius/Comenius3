@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,6 +45,8 @@ public class AulaABP : Aula
 
         // Obter mídias selecionadas pelo jogador em uma etapa anterior
         MidiasDaAula = ObterMidiasDaAula(jogo);
+
+        Debug.Log(ObterPontuacaoDaAula());
 
         // Inicializar UI da aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
@@ -111,10 +113,17 @@ public class AulaABP : Aula
 
         if (MidiasDaAula == null) ObterMidiasDaAula(EstadoDoJogo.Instance);
 
-        foreach (var midia in MidiasDaAula)
+        var midiasCujasPontuacoesJaForamCalculadas = new NomeDeMidia[QuantidadeDeMidiasDaAula];
+
+        for (int i = 0; i < QuantidadeDeMidiasDaAula; i++)
         {
+            var midia = MidiasDaAula[i];
+
             var categoriasDaMidia = midia.NomeMidia.CategoriasDaMidia();
-            pontuacao += MetodologiaDaAula.PontuacaoParaCategoriasDeMidia(categoriasDaMidia);
+            bool midiaFoiRepetida = midiasCujasPontuacoesJaForamCalculadas.Contains(midia.NomeMidia);
+            pontuacao += MetodologiaDaAula.PontuacaoParaCategoriasDeMidia(categoriasDaMidia, midiaFoiRepetida);
+
+            midiasCujasPontuacoesJaForamCalculadas[i] = midia.NomeMidia;
         }
 
         // Média aritmética entre as mídias da aula
