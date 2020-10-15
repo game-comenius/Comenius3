@@ -40,9 +40,12 @@ public class QuizMetodologiaABP : Quiz
 
     private void GerarQuiz()
     {
+        // As informações sobre os enunciados e afirmações dos quizzes desta
+        // metodologia foram retirados deste documento do drive
+        // https://docs.google.com/document/d/1VQRlVu3IrM3_BZZWHb9cD6qSskkU-3zsUSs_m1YI9lY/edit
+
         int quantidadeDeQuizzesDisponiveis = 4;
-        // Trocar de 1 para 0 quando o formato de quiz ORDENAR estiver pronto
-        var quizSorteado = Random.Range(1, quantidadeDeQuizzesDisponiveis);
+        var quizSorteado = Random.Range(0, quantidadeDeQuizzesDisponiveis);
 
         // Gerar apenas o quiz sorteado
         if (quizSorteado == 1)
@@ -52,10 +55,10 @@ public class QuizMetodologiaABP : Quiz
             quizMultiplaEscolha.TextoDoEnunciado = "Sobre os papéis do aluno e do professor em ABP é correto afirmar:";
             Afirmacao[] afirmacoes =
             {
-            new Afirmacao(true, "O docente organiza seu planejamento em etapas, partindo do entendimento do problema proposto, até a apresentação do trabalho e análises dos resultados."),
-            new Afirmacao(false, "O professor deve ser simples e objetivo, para permitir que o grupo não fique atento no assunto o tempo todo."),
-            new Afirmacao(false, "Os alunos devem selecionar as hipóteses mais adequadas a partir das instruções apresentadas pelo professor."),
-            new Afirmacao(false, "É importante que os alunos se mantenham curiosos sobre o conteúdo, então o professor deve manter as respostas em segredo até a avaliação dos resultados."),
+                new Afirmacao(true, "O docente organiza seu planejamento em etapas, partindo do entendimento do problema proposto, até a apresentação do trabalho e análises dos resultados."),
+                new Afirmacao(false, "O professor deve ser simples e objetivo, para permitir que o grupo não fique atento no assunto o tempo todo."),
+                new Afirmacao(false, "Os alunos devem selecionar as hipóteses mais adequadas a partir das instruções apresentadas pelo professor."),
+                new Afirmacao(false, "É importante que os alunos se mantenham curiosos sobre o conteúdo, então o professor deve manter as respostas em segredo até a avaliação dos resultados."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
@@ -67,10 +70,10 @@ public class QuizMetodologiaABP : Quiz
             quizMultiplaEscolha.TextoDoEnunciado = "Sobre ABP é correto afirmar:";
             Afirmacao[] afirmacoes =
             {
-            new Afirmacao(true, "O problema deve estar relacionado com uma situação bem prática."),
-            new Afirmacao(false, "Deve ser criado um enigma que exija muito trabalho para ser identificado pelos alunos."),
-            new Afirmacao(false, "O problema precisa ser real, um caso que tenha ocorrido em situação verídica."),
-            new Afirmacao(false, "Os alunos se deparam com um problema e precisam encontrar a solução correta."),
+                new Afirmacao(true, "O problema deve estar relacionado com uma situação bem prática."),
+                new Afirmacao(false, "Deve ser criado um enigma que exija muito trabalho para ser identificado pelos alunos."),
+                new Afirmacao(false, "O problema precisa ser real, um caso que tenha ocorrido em situação verídica."),
+                new Afirmacao(false, "Os alunos se deparam com um problema e precisam encontrar a solução correta."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
@@ -82,17 +85,29 @@ public class QuizMetodologiaABP : Quiz
             quizMultiplaEscolha.TextoDoEnunciado = "Quais as características que um problema deve ter?";
             Afirmacao[] afirmacoes =
             {
-            new Afirmacao(true, "Apresentar tema e nível de complexidade compatíveis com o conhecimento prévio dos alunos."),
-            new Afirmacao(false, "Apresentar uma  situação totalmente nova e desconhecida pelos alunos."),
-            new Afirmacao(false, "Para não inviabilizar as discussões em grupo, é melhor que poucos alunos relatem suas experiências prévias com o problema."),
-            new Afirmacao(false, "Um enunciado completo e complexo para permitir a visualização da questão principal como um todo."),
+                new Afirmacao(true, "Apresentar tema e nível de complexidade compatíveis com o conhecimento prévio dos alunos."),
+                new Afirmacao(false, "Apresentar uma  situação totalmente nova e desconhecida pelos alunos."),
+                new Afirmacao(false, "Para não inviabilizar as discussões em grupo, é melhor que poucos alunos relatem suas experiências prévias com o problema."),
+                new Afirmacao(false, "Um enunciado completo e complexo para permitir a visualização da questão principal como um todo."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
         }
         else // quizSorteado == 0
         {
-            return;
+            var quizOrdenar = Instantiate(prefabQuizOrdenar, canvas.transform);
+
+            quizOrdenar.TextoDoEnunciado = "Clique e arraste as etapas da metodologia Aprendizagem Baseada em Problemas para formar a ordem correta de execução.";
+            Afirmacao[] afirmacoesNaOrdemCorreta =
+            {
+                new Afirmacao(true, "Apresentar as respostas e avaliar os resultados."),
+                new Afirmacao(true, "Buscar novas referências para qualificar as propostas, debater e buscar consenso sobre as possíveis soluções."),
+                new Afirmacao(true, "Analisar as variáveis do problema e propor possíveis soluções."),
+                new Afirmacao(true, "Apresentar o problema e levantar os conhecimentos sobre o assunto."),
+            };
+
+            formatoDoQuiz = quizOrdenar;
+            quizOrdenar.DefinirAfirmacoes(afirmacoesNaOrdemCorreta);
         }
 
         formatoDoQuiz.IconeDoQuiz.sprite = spriteDoIconeDoQuiz;
