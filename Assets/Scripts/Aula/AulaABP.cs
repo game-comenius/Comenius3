@@ -27,10 +27,24 @@ public class AulaABP : Aula
     [Header("UI Aula")]
     [SerializeField] Image iconePersonagemUI;
 
+    // Na aula com metodologia ABP, o jogador escolhe 2 mídias
+    // As 2 primeiras mídias no array de mídias selecionadas serão
+    // consideradas as mídias escolhidas pelo jogador para essa metodologia
+    public int QuantidadeDeMidiasDaAula { get; set; } = 2;
+    public Midia[] MidiasDaAula { get; set; }
+
 
     protected override IEnumerator Start()
     {
         yield return base.Start();
+
+        // Definir qual é a metodologia desta aula
+        MetodologiaDaAula = Metodologia.ABP;
+
+        var jogo = EstadoDoJogo.Instance;
+
+        // Obter mídias selecionadas pelo jogador em uma etapa anterior
+        MidiasDaAula = ObterMidiasDaAula(jogo);
 
         // Inicializar UI da aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
@@ -48,13 +62,10 @@ public class AulaABP : Aula
     {
         var jogo = EstadoDoJogo.Instance;
 
-        var primeiraMidia = jogo.MidiasSelecionadas[0];
-        var segundaMidia = jogo.MidiasSelecionadas[1];
-
         // O primeiro quiz será um quiz de mídia sobre aquela que jogador escolheu primeiro
-        quizDeMidia1.ConfigurarQuiz(primeiraMidia);
+        quizDeMidia1.ConfigurarQuiz(MidiasDaAula[0]);
         // O segundo quiz será um quiz de mídia sobre aquela que o jogador escolheu por segundo
-        quizDeMidia2.ConfigurarQuiz(segundaMidia);
+        quizDeMidia2.ConfigurarQuiz(MidiasDaAula[1]);
         // O terceiro quiz será um quiz sobre a metodologia escolhida e não precisa ser configurado
         // ...
         // O quarto quiz será sobre o perfil da turma definido no início do jogo
@@ -91,19 +102,48 @@ public class AulaABP : Aula
         yield return StartCoroutine(quiz.Executar());
     }
 
+    // Obtém a pontuação da aula de uma vez só, um float apenas.
+    // Observação: Se for necessário, quebrar essa função em mais funções, uma
+    // para cada mídia escolhida para esta metodologia.
+    public override float ObterPontuacaoDaAula()
+    {
+        float pontuacao = 0;
+
+        if (MidiasDaAula == null) ObterMidiasDaAula(EstadoDoJogo.Instance);
+
+        foreach (var midia in MidiasDaAula)
+        {
+            var categoriasDaMidia = midia.NomeMidia.CategoriasDaMidia();
+            pontuacao += MetodologiaDaAula.PontuacaoParaCategoriasDeMidia(categoriasDaMidia);
+        }
+
+        // Média aritmética entre as mídias da aula
+        return pontuacao / QuantidadeDeMidiasDaAula;
+    }
+
     protected override IEnumerator ApresentarResultadoDaAula()
     {
         paginaResultadoDaAula.Mostrar();
-        paginaResultadoDaAula.Atualizar(quizzes);
+        paginaResultadoDaAula.Atualizar(ObterPontuacaoDaAula(), quizzes);
 
         yield return new WaitWhile(() => paginaResultadoDaAula.EmUso);
 
         TerminarAula();
     }
 
+    private Midia[] ObterMidiasDaAula(EstadoDoJogo jogo)
+    {
+        var midiasDaAula = new Midia[QuantidadeDeMidiasDaAula];
+        for (int i = 0; i < QuantidadeDeMidiasDaAula; i++)
+            midiasDaAula[i] = jogo.MidiasSelecionadas[i];
+        return midiasDaAula;
+    }
+
     private void TerminarAula()
     {
         trocadorDeCenaCreditos.TrocarCena();
     }
+
+    
 }
 

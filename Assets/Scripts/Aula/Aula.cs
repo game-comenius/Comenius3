@@ -8,6 +8,10 @@ public abstract class Aula : MonoBehaviour
     public SalaDeAula SalaDeAulaPadrao;
     public SalaDeAulaInfantil SalaDeAulaInfantil;
 
+    public Metodologia MetodologiaDaAula { get; protected set; }
+
+    public abstract float ObterPontuacaoDaAula();
+
     protected abstract IEnumerator AplicarQuiz(Quiz quiz);
 
     protected abstract IEnumerator ApresentarResultadoDaAula();

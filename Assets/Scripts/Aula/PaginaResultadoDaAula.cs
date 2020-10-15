@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PaginaResultadoDaAula : MonoBehaviour
 {
+    [SerializeField] Text textPontuacaoDaAula;
     [SerializeField] Text textTaxaDeAcertoDosQuizzes;
 
     public bool EmUso => gameObject.activeSelf;
@@ -13,9 +14,15 @@ public class PaginaResultadoDaAula : MonoBehaviour
         Esconder();
     }
 
-    public void Atualizar(Quiz[] quizzesDaAula)
+    public void Atualizar(float pontuacaoDaAula, Quiz[] quizzesDaAula)
     {
+        AtualizarPontuacaoDaAula(pontuacaoDaAula);
         AtualizarTaxaDeAcertoDosQuizzes(quizzesDaAula);
+    }
+
+    private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
+    {
+        textPontuacaoDaAula.text = (pontuacaoDaAula * 100).ToString("f") + "%";
     }
 
     private void AtualizarTaxaDeAcertoDosQuizzes(Quiz[] quizzesDaAula)

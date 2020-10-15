@@ -53,4 +53,42 @@
             };
         }
     }
+
+    // Cada metodologia define a pontuação das mídias usadas nela de acordo com as categorias dessas mídias
+    // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=1166836280
+    // A pontuação será entre [0, 1] (inclusive)
+    public float PontuacaoParaCategoriasDeMidia(CategoriasDeMidia categoria)
+    {
+        float pontuacao = 0;
+
+        float incrementoPadrao = 1.0f;
+
+        float multiplicadorMidiaOtima = 1 / 1f;
+        float multiplicadorMidiaBoa = 1 / 2f;
+        float multiplicadorMidiaRegular = 1 / 3f;
+
+        // Número máximo de categorias simultaneas em um objeto CategoriasDeMidia, padrão = 2
+        // Ou seja, uma mídia pode pertencer à, no máximo, x categorias simultaneamente.
+        int numeroMaxDeCategoriasSimultaneas = 2;
+
+        if (this == Metodologia.ABJ)
+        {
+            // TODO
+            return 0;
+        }
+        else // this == Metodologia.ABP:
+        {
+            if (categoria.HasFlag(CategoriasDeMidia.ConsultaRepositorio)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
+            if (categoria.HasFlag(CategoriasDeMidia.Digital)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
+
+            if (categoria.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
+            if (categoria.HasFlag(CategoriasDeMidia.Exposicao)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
+            if (categoria.HasFlag(CategoriasDeMidia.Impressa)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
+            if (categoria.HasFlag(CategoriasDeMidia.AudioVisual)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
+
+            if (categoria.HasFlag(CategoriasDeMidia.Popular)) pontuacao += incrementoPadrao * multiplicadorMidiaRegular;
+        }
+
+        return pontuacao / numeroMaxDeCategoriasSimultaneas;
+    }
 }
