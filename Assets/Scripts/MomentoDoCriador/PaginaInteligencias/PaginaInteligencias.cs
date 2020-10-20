@@ -21,7 +21,7 @@ public class PaginaInteligencias : Pagina
         // Limpar nome do selecionado, descrição do selecionado e esconder
         // icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
-        DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+        //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         iconeGrandeEmDestaque.enabled = false;
 
         // Esconder botão confirmar até que uma escolha seja feita
