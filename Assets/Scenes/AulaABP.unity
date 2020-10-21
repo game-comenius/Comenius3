@@ -386,8 +386,10 @@ RectTransform:
   m_Children:
   - {fileID: 1102658929}
   - {fileID: 858890226}
+  - {fileID: 1472593100}
+  - {fileID: 1418273495}
   m_Father: {fileID: 807921194}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -406,6 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab5a58da28d44e69af49ed2a4830111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidadeDaBarra: 1
+  animatorEstrelaProfessor: {fileID: 1472593101}
+  nomeAnimacaoEstrelaProfessor: EstrelaPulo
+  animatorEstrelaBarra: {fileID: 1418273496}
+  nomeAnimacaoEstrelaBarra: EstrelaBarrinha
 --- !u!114 &369450609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,7 +544,7 @@ RectTransform:
   m_GameObject: {fileID: 574163702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1418273495}
   m_RootOrder: 0
@@ -561,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -611,10 +618,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1472593100}
   - {fileID: 1444989724}
   - {fileID: 369450607}
-  - {fileID: 1418273495}
   m_Father: {fileID: 1060170638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1078,7 +1083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1418273495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1086,17 +1091,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418273494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 574163703}
-  m_Father: {fileID: 807921194}
+  m_Father: {fileID: 369450607}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -458, y: 335}
+  m_AnchoredPosition: {x: -479, y: 335}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1418273496
@@ -1148,7 +1153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 807921194}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1203,7 +1208,7 @@ GameObject:
   - component: {fileID: 1472593100}
   - component: {fileID: 1472593101}
   m_Layer: 5
-  m_Name: AnimacaoEstrela
+  m_Name: EstrelaProfessor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1216,17 +1221,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472593099}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1569067744}
-  m_Father: {fileID: 807921194}
-  m_RootOrder: 0
+  m_Father: {fileID: 369450607}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -330, y: 169}
+  m_AnchoredPosition: {x: -351, y: 169}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1472593101
@@ -1324,7 +1329,7 @@ RectTransform:
   m_GameObject: {fileID: 1569067743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1472593100}
   m_RootOrder: 0
@@ -1348,7 +1353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1940,6 +1945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaginaResultadoDaAula
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538608061777648913, guid: a24e377b332204efe84fd4e9451e7a26,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24e377b332204efe84fd4e9451e7a26, type: 3}

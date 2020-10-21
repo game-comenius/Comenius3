@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Aula : MonoBehaviour
@@ -12,7 +12,16 @@ public abstract class Aula : MonoBehaviour
 
     public abstract float ObterPontuacaoDaAula();
 
-    protected abstract IEnumerator AplicarQuiz(Quiz quiz);
+    // Executar uma função sempre que um quiz for aplicado e finalizado com sucesso
+    public event Action<Quiz> UmQuizFoiAplicadoComSucessoEvent;
+
+    public Quiz[] Quizzes { get; set; }
+
+    protected virtual IEnumerator AplicarQuiz(Quiz quiz)
+    {
+        yield return StartCoroutine(quiz.Executar());
+        UmQuizFoiAplicadoComSucessoEvent?.Invoke(quiz);
+    }
 
     protected abstract IEnumerator ApresentarResultadoDaAula();
 
