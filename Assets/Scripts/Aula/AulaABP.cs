@@ -14,7 +14,6 @@ public class AulaABP : Aula
     [SerializeField] [Range(0, 30)] float delayParaAplicarQuizzes;
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
     [SerializeField] [Range(0, 30)] float tempoPosQuizzes;
-    private Quiz[] quizzes;
 
     [Header("Fim da Aula")]
     [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
@@ -34,12 +33,25 @@ public class AulaABP : Aula
     public Midia[] MidiasDaAula { get; set; }
 
 
+    private void Awake()
+    {
+        // Definir qual é a metodologia desta aula
+        MetodologiaDaAula = Metodologia.ABP;
+
+        // Ordenar os quizzes
+        Quiz[] localQuizzes =
+        {
+            quizDeMidia1,
+            quizDeMidia2,
+            quizMetodologiaABP,
+            quizPerfilDaTurma
+        };
+        Quizzes = localQuizzes;
+    }
+
     protected override IEnumerator Start()
     {
         yield return base.Start();
-
-        // Definir qual é a metodologia desta aula
-        MetodologiaDaAula = Metodologia.ABP;
 
         var jogo = EstadoDoJogo.Instance;
 
@@ -52,15 +64,16 @@ public class AulaABP : Aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
 
-        var quizzes = ObterQuizzesConfigurados();
-        yield return StartCoroutine(AplicarQuizzes(quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
+        // Configurar e aplicar os quizzes na aula
+        ConfigurarQuizzes();
+        yield return StartCoroutine(AplicarQuizzes(Quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
 
         // Esperar um tempo entre o último quiz e o resultado da aula
         yield return new WaitForSeconds(tempoPosQuizzes);
         StartCoroutine(ApresentarResultadoDaAula());
     }
 
-    private Quiz[] ObterQuizzesConfigurados()
+    private void ConfigurarQuizzes()
     {
         var jogo = EstadoDoJogo.Instance;
 
@@ -74,16 +87,6 @@ public class AulaABP : Aula
         var nivelDeEnsino = jogo.NivelDeEnsinoSelecionado;
         var inteligencias = jogo.InteligenciasSelecionadas;
         quizPerfilDaTurma.ConfigurarQuiz(nivelDeEnsino, inteligencias);
-
-        // Ordenar os quizzes
-        Quiz[] localQuizzes =
-        {
-            quizDeMidia1,
-            quizDeMidia2,
-            quizMetodologiaABP,
-            quizPerfilDaTurma
-        };
-        return quizzes = localQuizzes;
     }
 
     private IEnumerator AplicarQuizzes(Quiz[] quizzes, float delayParaComecar, float tempoEntreQuizzes)
@@ -99,11 +102,6 @@ public class AulaABP : Aula
         }
     }
 
-    protected override IEnumerator AplicarQuiz(Quiz quiz)
-    {
-        yield return StartCoroutine(quiz.Executar());
-    }
-
     // Obtém a pontuação da aula de uma vez só, um float apenas.
     // Observação: Se for necessário, quebrar essa função em mais funções, uma
     // para cada mídia escolhida para esta metodologia.
@@ -111,7 +109,7 @@ public class AulaABP : Aula
     {
         float pontuacao = 0;
 
-        if (MidiasDaAula == null) ObterMidiasDaAula(EstadoDoJogo.Instance);
+        if (MidiasDaAula == null) MidiasDaAula = ObterMidiasDaAula(EstadoDoJogo.Instance);
 
         var midiasCujasPontuacoesJaForamCalculadas = new NomeDeMidia[QuantidadeDeMidiasDaAula];
 
@@ -133,7 +131,7 @@ public class AulaABP : Aula
     protected override IEnumerator ApresentarResultadoDaAula()
     {
         paginaResultadoDaAula.Mostrar();
-        paginaResultadoDaAula.Atualizar(ObterPontuacaoDaAula(), quizzes);
+        paginaResultadoDaAula.Atualizar(ObterPontuacaoDaAula(), Quizzes);
 
         yield return new WaitWhile(() => paginaResultadoDaAula.EmUso);
 
