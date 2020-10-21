@@ -100,7 +100,7 @@ public class SelecaoMidia : MonoBehaviour
                 jogo.MidiasSelecionadas[i] = midia;
             }
 
-            trocadorCena.GetComponent<TrocadorDeCena>().TrocarCena();
+            //trocadorCena.GetComponent<TrocadorDeCena>().TrocarCena();
         }
     }
 
