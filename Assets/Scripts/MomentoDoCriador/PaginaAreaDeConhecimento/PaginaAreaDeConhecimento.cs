@@ -96,7 +96,7 @@ public class PaginaAreaDeConhecimento : Pagina
         if (grupoDeIconesAtivo) grupoDeIconesAtivo.DesfazerSelecao();
         // Limpar campo com o nome do ícone escolhido e descrição
         NomeDoSelecionado.text = string.Empty;
-        DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+        //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         // Esconder destaque de item selecionado, como se não houvesse seleção
         iconeGrandeEmDestaque.enabled = false;
         // Voltar ícone pequeno ao seu estado original
