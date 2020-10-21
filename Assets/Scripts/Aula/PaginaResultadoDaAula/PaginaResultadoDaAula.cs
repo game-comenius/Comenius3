@@ -5,6 +5,8 @@ using TMPro;
 
 public class PaginaResultadoDaAula : MonoBehaviour
 {
+    [SerializeField] GameObject balaoFeedbackDosAlunos;
+
     [Header("Barras")]
     [SerializeField] Slider barraQualidadeDaAula;
     [SerializeField] Slider barraTaxaDeAcertoNosQuizzes;
@@ -18,8 +20,21 @@ public class PaginaResultadoDaAula : MonoBehaviour
 
     public void Atualizar(float pontuacaoDaAula, Quiz[] quizzesDaAula)
     {
+        AtualizarFeedbackDosAlunos();
         AtualizarPontuacaoDaAula(pontuacaoDaAula);
         AtualizarTaxaDeAcertoNosQuizzes(quizzesDaAula);
+    }
+
+    private void AtualizarFeedbackDosAlunos()
+    {
+        var feedbackDosAlunos = FeedbackDosAlunos.ObterFeedback(EstadoDoJogo.Instance);
+        if (string.IsNullOrEmpty(feedbackDosAlunos))
+            balaoFeedbackDosAlunos.SetActive(false);
+        else
+            balaoFeedbackDosAlunos.SetActive(true);
+
+        var textComponentFeedbackDosAlunos = balaoFeedbackDosAlunos.GetComponentInChildren<TextMeshProUGUI>();
+        textComponentFeedbackDosAlunos.text = feedbackDosAlunos;
     }
 
     private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
