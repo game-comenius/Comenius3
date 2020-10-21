@@ -98,7 +98,7 @@ public class PaginaAreaDeConhecimento : Pagina
         NomeDoSelecionado.text = string.Empty;
         //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         // Esconder destaque de item selecionado, como se não houvesse seleção
-        iconeGrandeEmDestaque.enabled = false;
+        //iconeGrandeEmDestaque.enabled = false;
         // Voltar ícone pequeno ao seu estado original
         if (spriteOriginalDoIconePequenoGuia) iconePequenoGuia.sprite = spriteOriginalDoIconePequenoGuia;
     }

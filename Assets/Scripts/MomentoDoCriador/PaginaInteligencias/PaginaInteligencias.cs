@@ -22,7 +22,7 @@ public class PaginaInteligencias : Pagina
         // icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
         //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-        iconeGrandeEmDestaque.enabled = false;
+        //iconeGrandeEmDestaque.enabled = false;
 
         // Esconder botão confirmar até que uma escolha seja feita
         botaoConfirmar.gameObject.SetActive(false);

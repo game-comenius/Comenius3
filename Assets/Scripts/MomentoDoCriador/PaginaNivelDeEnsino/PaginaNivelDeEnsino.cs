@@ -19,8 +19,10 @@ public class PaginaNivelDeEnsino : Pagina
         // Limpar nome do selecionado, descrição do selecionado e esconder
         // icone em destaque pois não há seleção ainda
         NomeDoSelecionado.text = string.Empty;
+
+        //Esconde descrição e ícone grande no início
         //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-        iconeGrandeEmDestaque.enabled = false;
+        //iconeGrandeEmDestaque.enabled = false;
 
         // Toda vez que o grupo de botões disser que um novo botão foi
         // selecionado, a página irá atualizar o ícone grande em destaque,
