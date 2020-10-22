@@ -58,8 +58,6 @@ public class AulaABP : Aula
         // Obter mídias selecionadas pelo jogador em uma etapa anterior
         MidiasDaAula = ObterMidiasDaAula(jogo);
 
-        Debug.Log(ObterPontuacaoDaAula());
-
         // Inicializar UI da aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
