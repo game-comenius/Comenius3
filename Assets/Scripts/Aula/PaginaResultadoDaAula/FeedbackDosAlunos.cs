@@ -4,12 +4,18 @@ using UnityEngine;
 
 public static class FeedbackDosAlunos
 {
-    public static string ObterFeedback(EstadoDoJogo jogo)
+    // Feedback padrão para quando não há feedback definido para uma situação
+    private const string SemFeedback = "Nenhum aluno comentou sobre a aula.";
+
+    // Retorna uma dupla de strings, a primeira é o que o aluno falou e a segunda
+    // é a assinatura do aluno, por exemplo "Nicole - Aluna do Ensino Fundamental"
+    // Se ninguém assinou, a string assinatura == null
+    public static (string feedback, string assinatura) ObterFeedback(EstadoDoJogo jogo)
     {
         if (jogo.MetodologiaSelecionada == Metodologia.ABJ)
         {
             // TODO
-            return string.Empty;
+            return (SemFeedback, null);
         }
         else // jogo.MetodologiaSelecionada == Metodologia.ABP
         {
@@ -19,26 +25,26 @@ public static class FeedbackDosAlunos
             var escolheuMidiaDigital = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Digital));
             if (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
             {
-                if (escolheuMidiaDeConsulta) return "Adorei descobrir sobre tudo isso!";
-                if (escolheuMidiaDigital) return "É bem mais legal a aula com essas tecnologias.";
+                if (escolheuMidiaDeConsulta) return ("Adorei descobrir sobre tudo isso!", $"Ricardo - Aluno da {jogo.NivelDeEnsinoSelecionado.nome}");
+                if (escolheuMidiaDigital) return ("É bem mais legal a aula com essas tecnologias.", $"Denise - Aluna da {jogo.NivelDeEnsinoSelecionado.nome}");
             }
             else if (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
             {
-                if (escolheuMidiaDeConsulta) return "Não imaginava que existia tanta coisa diferente sobre esse assunto!";
-                if (escolheuMidiaDigital) return "Gostei de interagir desse jeito na aula!";
+                if (escolheuMidiaDeConsulta) return ("Não imaginava que existia tanta coisa diferente sobre esse assunto!", $"Nicole - Aluna do {jogo.NivelDeEnsinoSelecionado.nome}");
+                if (escolheuMidiaDigital) return ("Gostei de interagir desse jeito na aula!", $"Fábio - Aluno do {jogo.NivelDeEnsinoSelecionado.nome}");
             }
             else if (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
             {
-                if (escolheuMidiaDeConsulta) return "Gostei de poder fazer as pesquisas sozinho, só pedi ajuda quando precisei mesmo.";
-                if (escolheuMidiaDigital) return "Usar essas ferramentas me ajudou na pesquisa e na apresentação!";
+                if (escolheuMidiaDeConsulta) return ("Gostei de poder fazer as pesquisas sozinho, só pedi ajuda quando precisei mesmo.", $"Maria - Aluna do {jogo.NivelDeEnsinoSelecionado.nome}");
+                if (escolheuMidiaDigital) return ("Usar essas ferramentas me ajudou na pesquisa e na apresentação!", $"Alexis - Aluno do {jogo.NivelDeEnsinoSelecionado.nome}");
             }
             else // (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoSuperior)
             {
-                if (escolheuMidiaDeConsulta) return "O professor nos deu autonomia para pesquisar e encontrar nossas próprias soluções.";
-                if (escolheuMidiaDigital) return "As mídias digitais permitem que a gente pesquise e se prepare muito mais.";
+                if (escolheuMidiaDeConsulta) return ("O professor nos deu autonomia para pesquisar e encontrar nossas próprias soluções.", $"Natan - Aluno do {jogo.NivelDeEnsinoSelecionado.nome}");
+                if (escolheuMidiaDigital) return ("As mídias digitais permitem que a gente pesquise e se prepare muito mais.", $"Indra - Aluna do {jogo.NivelDeEnsinoSelecionado.nome}");
             }
 
-            return string.Empty;
+            return (SemFeedback, null);
         }
     }
 }

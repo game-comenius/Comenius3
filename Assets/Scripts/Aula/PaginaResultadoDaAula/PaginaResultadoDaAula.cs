@@ -27,14 +27,27 @@ public class PaginaResultadoDaAula : MonoBehaviour
 
     private void AtualizarFeedbackDosAlunos()
     {
-        var feedbackDosAlunos = FeedbackDosAlunos.ObterFeedback(EstadoDoJogo.Instance);
-        if (string.IsNullOrEmpty(feedbackDosAlunos))
-            balaoFeedbackDosAlunos.SetActive(false);
-        else
-            balaoFeedbackDosAlunos.SetActive(true);
+        var textComponents = balaoFeedbackDosAlunos.GetComponentsInChildren<TextMeshProUGUI>();
+        var textComponentFeedback = textComponents[0];
+        var textComponentAssinatura = textComponents[1];
 
-        var textComponentFeedbackDosAlunos = balaoFeedbackDosAlunos.GetComponentInChildren<TextMeshProUGUI>();
-        textComponentFeedbackDosAlunos.text = feedbackDosAlunos;
+        var (feedbackDoAluno, assinatura) = FeedbackDosAlunos.ObterFeedback(EstadoDoJogo.Instance);
+
+        // Colocar àspas ao redor do feedback do aluno
+        feedbackDoAluno = $"\"{feedbackDoAluno}\"";
+        textComponentFeedback.text = feedbackDoAluno;
+
+        if (assinatura != null)
+        {
+            textComponentAssinatura.gameObject.SetActive(true);
+            textComponentAssinatura.text = assinatura;
+        }
+        else
+        {
+            // Se ninguém assinou, esconder o GameObject da assinatura
+            textComponentAssinatura.gameObject.SetActive(false);
+        }
+
     }
 
     private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
