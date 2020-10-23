@@ -5,6 +5,7 @@ using TMPro;
 
 public class PaginaResultadoDaAula : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI feedbackDaLurdinhaTextComponent;
     [SerializeField] GameObject balaoFeedbackDosAlunos;
 
     [Header("Barras")]
@@ -20,9 +21,17 @@ public class PaginaResultadoDaAula : MonoBehaviour
 
     public void Atualizar(float pontuacaoDaAula, Quiz[] quizzesDaAula)
     {
+        AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
         AtualizarPontuacaoDaAula(pontuacaoDaAula);
         AtualizarTaxaDeAcertoNosQuizzes(quizzesDaAula);
+    }
+
+    private void AtualizarFeedbackDaLurdinha()
+    {
+        var listaDeFeedback = FeedbackDaLurdinha.ObterFeedback(EstadoDoJogo.Instance);
+        var feedbackCompleto = string.Join("\n\n", listaDeFeedback);
+        feedbackDaLurdinhaTextComponent.text = feedbackCompleto;
     }
 
     private void AtualizarFeedbackDosAlunos()
