@@ -79,7 +79,7 @@ public class AfirmacaoSobreInteligencias : Afirmacao
                 // Afirmações verdadeiras
                 new AfirmacaoSobreInteligencias(true, "O Inteligência Linguística refere-se à capacidade de um indivíduo de se expressar, seja por meio da linguagem ou de gestos."),
                 new AfirmacaoSobreInteligencias(true, "A Inteligência Linguística diz respeito a forma de analisar e interpretar ideias e informações e produzir trabalhos envolvendo linguagem oral e escrita."),
-                new AfirmacaoSobreInteligencias(true, "A pessoa com o maior desenvolvimento no Raciocínio Lógico-Matemático votla-se para conclusões baseadas na razão."),
+                new AfirmacaoSobreInteligencias(true, "A pessoa com o maior desenvolvimento no Raciocínio Lógico-Matemático volta-se para conclusões baseadas na razão."),
                 new AfirmacaoSobreInteligencias(true, "O Raciocínio Lógico-Matemático descreve a capacidade de resolver equações e provas, de ter pensamento lógico, detectar padrões, fazer cálculos e resolver problemas abstratos."),
                 new AfirmacaoSobreInteligencias(true, "A combinação dessas inteligências favorece o aprendizado relacionado a linguagem e lógica, e as pessoas tem um grande interesse em atividades que envolvam abstração, análise, síntese e interpretação de textos."),
                 new AfirmacaoSobreInteligencias(true, "Atividades de profissões como Engenharia, Contabilidade e Estatística são interessantes para pessoas com alta inteligência Lógico-Matemática."),
