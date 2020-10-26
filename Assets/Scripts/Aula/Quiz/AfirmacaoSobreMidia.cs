@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Fonte = https://docs.google.com/spreadsheets/d/107qEmnJbyoW8dPyvz0AiuGCE1Tqok4ybZdin8u_vKHQ/edit#gid=0
 public class AfirmacaoSobreMidia : Afirmacao
 {
     public NomeDeMidia NomeDaMidia;
@@ -219,7 +220,7 @@ public class AfirmacaoSobreMidia : Afirmacao
                 });
                 break;
             default:
-                Debug.LogWarning("Não há nenhuma afirmação definida para a mídia '" + midia.ToString() + "'");
+                Debug.LogError("Não há nenhuma afirmação definida para a mídia '" + midia.ToString() + "'");
                 return null;
         }
         var afirmacoes = lista.ToArray();
