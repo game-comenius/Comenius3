@@ -82,7 +82,7 @@ public class QuizMetodologiaABP : Quiz
         {
             var quizMultiplaEscolha = Instantiate(prefabQuizMultiplaEscolha, canvas.transform);
 
-            quizMultiplaEscolha.TextoDoEnunciado = "Quais as características que um problema deve ter?";
+            quizMultiplaEscolha.TextoDoEnunciado = "Na metodologia ABP, assinale a alternativa que mostra quais devem ser as características do problema apresentado aos alunos?";
             Afirmacao[] afirmacoes =
             {
                 new Afirmacao(true, "Apresentar tema e nível de complexidade compatíveis com o conhecimento prévio dos alunos."),
