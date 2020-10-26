@@ -26,13 +26,21 @@ public class QuizDeMidia : Quiz
 
         var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia.NomeMidia);
         var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
-        for (var i = 0; i < quantidadeDeAfirmacoesNoQuiz; i++)
+
+        // Selecionar pelo menos uma afirmação verdadeira
+        var afirmacoesVerdadeiras = todasAsAfirmacoes.Where(a => a.Verdadeira);
+        var indiceAleatorio = Random.Range(0, afirmacoesVerdadeiras.Count());
+        afirmacoesSelecionadas[0] = afirmacoesVerdadeiras.ElementAt(indiceAleatorio);
+
+        // Selecionar as outras afirmações do quiz, que podem ou não serem verdadeiras
+        for (var i = 1; i < quantidadeDeAfirmacoesNoQuiz; i++)
         {
             var afirmacoesDisponiveis = todasAsAfirmacoes.Except(afirmacoesSelecionadas);
-            var indiceAleatorio = Random.Range(0, afirmacoesDisponiveis.Count());
+            indiceAleatorio = Random.Range(0, afirmacoesDisponiveis.Count());
             var afirmacaoAleatoria = afirmacoesDisponiveis.ElementAt(indiceAleatorio);
             afirmacoesSelecionadas[i] = afirmacaoAleatoria;
         }
+
         quizVF.DefinirAfirmacoes(afirmacoesSelecionadas);
 
         quizVF.IconeDoQuiz.sprite = midia.SpriteIcone;

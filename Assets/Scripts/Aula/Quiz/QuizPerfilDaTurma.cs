@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Linq;
 
 public class QuizPerfilDaTurma : Quiz
 {
@@ -45,19 +46,21 @@ public class QuizPerfilDaTurma : Quiz
             afirmacoesDisponiveis = AfirmacaoSobreInteligencias.ObterTodasAsAfirmacoes(inteligencias);
         }
 
-        // Embaralhar as afirmações usando algoritmo Fisher–Yates Shuffle, O(n)
-        for (int i = afirmacoesDisponiveis.Length - 1; i > 0; i--)
-        {
-            var randomIndex = Random.Range(0, i + 1);
-            var temp = afirmacoesDisponiveis[randomIndex];
-            afirmacoesDisponiveis[randomIndex] = afirmacoesDisponiveis[i];
-            afirmacoesDisponiveis[i] = temp;
-        }
-
         // Selecionar algumas dessas afirmações para colocar no quiz
         var afirmacoesDoQuiz = new Afirmacao[quantidadeDeAfirmacoesNoQuiz];
-        for (int i = 0; i < quantidadeDeAfirmacoesNoQuiz; i++)
-            afirmacoesDoQuiz[i] = afirmacoesDisponiveis[i];
+        // Selecionar pelo menos uma afirmação verdadeira
+        var afirmacoesVerdadeiras = afirmacoesDisponiveis.Where(a => a.Verdadeira);
+        var indiceAleatorio = Random.Range(0, afirmacoesVerdadeiras.Count());
+        afirmacoesDoQuiz[0] = afirmacoesVerdadeiras.ElementAt(indiceAleatorio);
+        // Selecionar as outras afirmações do quiz, que podem ou não serem verdadeiras
+        for (int i = 1; i < quantidadeDeAfirmacoesNoQuiz; i++)
+        {
+            // Remover das afirmações disponíveis as afirmações selecionadas
+            afirmacoesDisponiveis = afirmacoesDisponiveis.Except(afirmacoesDoQuiz).ToArray();
+            indiceAleatorio = Random.Range(0, afirmacoesDisponiveis.Count());
+            var afirmacaoAleatoria = afirmacoesDisponiveis.ElementAt(indiceAleatorio);
+            afirmacoesDoQuiz[i] = afirmacaoAleatoria;
+        }
 
         formatoDoQuiz = Instantiate(prefabQuizVF, canvas.transform);
         formatoDoQuiz.TextoDoEnunciado = enunciadoDoQuiz;

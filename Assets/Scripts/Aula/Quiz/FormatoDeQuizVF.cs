@@ -7,11 +7,29 @@ public class FormatoDeQuizVF : FormatoDeQuiz
     // Representam as etiquetas/faixas/botões com as afirmações na UI
     [SerializeField] AfirmacaoQuizVF[] afirmacoesQuizVF;
 
+    // Pelo menos uma das afirmações deve ser verdadeira
     public override void DefinirAfirmacoes(Afirmacao[] afirmacoes)
     {
+        var existeAfirmacaoVerdadeira = afirmacoes.Where(a => a.Verdadeira).Any();
+        if (!existeAfirmacaoVerdadeira)
+        {
+            Debug.LogError("O quiz VF exige pelo menos 1 afirmação verdadeira.");
+            return;
+        }
+
         // Se receber + que o número limite de afirmações deste objeto, que é
         // igual a afirmacoesQuizVF.Length, não tentar adicionar + que o limite
         var quantidade = (afirmacoes.Length <= afirmacoesQuizVF.Length) ? afirmacoes.Length : afirmacoesQuizVF.Length;
+
+        // Embaralhar as afirmações usando algoritmo Fisher–Yates Shuffle, O(n)
+        for (int i = quantidade - 1; i > 0; i--)
+        {
+            var randomIndex = UnityEngine.Random.Range(0, i + 1);
+            var temp = afirmacoes[randomIndex];
+            afirmacoes[randomIndex] = afirmacoes[i];
+            afirmacoes[i] = temp;
+        }
+
         for (var i = 0; i < quantidade; i++)
             afirmacoesQuizVF[i].Afirmacao = afirmacoes[i];
     }
