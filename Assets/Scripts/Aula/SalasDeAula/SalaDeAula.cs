@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class SalaDeAula : MonoBehaviour
 {
+    public BaloesDosAlunos baloesDosAlunos;
+
     private void Awake()
     {
         this.gameObject.SetActive(false);

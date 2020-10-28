@@ -30,5 +30,13 @@ public abstract class Aula : MonoBehaviour
         var nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
         var salaDeAulaQueSeraUsada = (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil) ? SalaDeAulaInfantil : SalaDeAulaPadrao;
         yield return StartCoroutine(salaDeAulaQueSeraUsada.Mostrar());
+
+        var baloesDosAlunos = salaDeAulaQueSeraUsada.baloesDosAlunos;
+        if (baloesDosAlunos)
+        {
+            var inteligencias = EstadoDoJogo.Instance.InteligenciasSelecionadas;
+            yield return new WaitForSeconds(1);
+            StartCoroutine(baloesDosAlunos.ExecutarAnimacao(inteligencias));
+        }
     }
 }
