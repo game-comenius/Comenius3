@@ -86,9 +86,7 @@ public class BaloesDosAlunos : MonoBehaviour
                     spriteDoIconeDoBalao = jogo.InteligenciasSelecionadas.SpriteGrande ? jogo.InteligenciasSelecionadas.SpriteGrande : inteligenciasFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.Metodologia:
-                    // TODO: corrigir esta linha quando houver mais que uma metodologia no jogo,
-                    // coletar corretamente o sprite metodologia selecionada pelo jogador
-                    spriteDoIconeDoBalao = metodologiaFallbackSprite;
+                    spriteDoIconeDoBalao = jogo.MetodologiaSelecionada.Sprite ? jogo.MetodologiaSelecionada.Sprite : metodologiaFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.Midia:
                     // O jogador pode ter escolhido várias mídias para serem usadas na aula,

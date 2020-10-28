@@ -1,4 +1,6 @@
-﻿public sealed class Metodologia
+﻿using UnityEngine;
+
+public sealed class Metodologia
 {
     public static readonly Metodologia ABP = new Metodologia
     (
@@ -17,6 +19,7 @@
     public readonly int Valor;
     public readonly string Nome;
     public readonly string Descricao;
+    public Sprite Sprite;
 
     private Metodologia(int valor, string nome, string descricao)
     {

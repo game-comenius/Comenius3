@@ -15,6 +15,9 @@ public class AulaABP : Aula
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
     [SerializeField] [Range(0, 30)] float tempoPosQuizzes;
 
+    [Header("Sprite do Ícone da Metodologia")]
+    [SerializeField] Sprite spriteIconeMetodologia;
+
     [Header("Fim da Aula")]
     [SerializeField] PaginaResultadoDaAula paginaResultadoDaAula;
     [SerializeField] TrocadorDeCena trocadorDeCenaCreditos;
@@ -37,6 +40,7 @@ public class AulaABP : Aula
     {
         // Definir qual é a metodologia desta aula
         MetodologiaDaAula = Metodologia.ABP;
+        if (!MetodologiaDaAula.Sprite) MetodologiaDaAula.Sprite = spriteIconeMetodologia;
 
         // Ordenar os quizzes
         Quiz[] localQuizzes =
