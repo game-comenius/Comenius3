@@ -219,6 +219,23 @@ public class AfirmacaoSobreMidia : Afirmacao
                     new AfirmacaoSobreMidia(false, "Os aplicativos são mídias de exposição, utilizadas principalmente para os alunos ter o primeiro contato com o conteúdo que será aprendido."),
                 });
                 break;
+            case NomeDeMidia.ProjetorMultimidia:
+                lista.AddRange(new AfirmacaoSobreMidia[]
+                {
+                    // Afirmações verdadeiras
+                    new AfirmacaoSobreMidia(true, "O projetor multimídia é uma das ferramentas tecnológicas mais utilizada pelos professores como recurso pedagógico."),
+                    new AfirmacaoSobreMidia(true, "O Projetor Multimídia permite que se escape do ritmo comum das aulas expositivas em lousas."),
+                    new AfirmacaoSobreMidia(true, "O Projetor Multimídia facilita a observação de imagens, gráficos e animações didáticas."),
+                    new AfirmacaoSobreMidia(true, "É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes."),
+                    new AfirmacaoSobreMidia(true, "O Projetor Multimídia pode reproduzir planilhas e slides à partir do que estiver sendo realizado no computador."),
+                    new AfirmacaoSobreMidia(true, "O Projetor Multimídia aumenta a  escala do que estiver sendo realizado no computador."),
+                    // Afirmações falsas
+                    new AfirmacaoSobreMidia(false, "O Projetor Multimídia é uma mídia digital de produção de texto que dá espaço para a construção própria do aluno."),
+                    new AfirmacaoSobreMidia(false, "O Projetor Miultimídia é um software com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar um e-mail."),
+                    new AfirmacaoSobreMidia(false, "É uma mídia impressa composta de exercícios, textos e imagens do conteúdo estudado em sala que acompanha o currículo escolar."),
+                    new AfirmacaoSobreMidia(false, "O Projetor Multimídia é uma mídia utilizada para produção e armazenamento de informações por uso da escrita ou imagens, geralmente utilizadas pelos alunos."),
+                });
+                break;
             default:
                 Debug.LogError("Não há nenhuma afirmação definida para a mídia '" + midia.ToString() + "'");
                 return null;
