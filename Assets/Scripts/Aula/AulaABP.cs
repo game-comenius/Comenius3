@@ -62,6 +62,10 @@ public class AulaABP : Aula
         // Obter mídias selecionadas pelo jogador em uma etapa anterior
         MidiasDaAula = ObterMidiasDaAula(jogo);
 
+        // A primeira mídia será mostrada logo no início, antes de qualquer quiz.
+        // Já a segunda mídia será mostrada na metade dos quizzes
+        ConfigurarTrocaDeMidiasDuranteAula(MidiasDaAula);
+
         // Inicializar UI da aula
         var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
@@ -146,6 +150,35 @@ public class AulaABP : Aula
         for (int i = 0; i < QuantidadeDeMidiasDaAula; i++)
             midiasDaAula[i] = jogo.MidiasSelecionadas[i];
         return midiasDaAula;
+    }
+
+    private void ConfigurarTrocaDeMidiasDuranteAula(Midia[] midias)
+    {
+        // Mostrar a primeira mídia logo no início com um pequeno delay
+        var delayParaTroca = delayParaAplicarQuizzes / 3;
+        StartCoroutine(TrocarDeMidiaNaSala(midias[0].NomeMidia, delayParaTroca, 0));
+
+        // Na aula ABP, serão 2 mídias, o jogo irá trocar a mídia mais ou menos no meio da aula
+        // O meio da aula é na metade dos quizzes
+        var quantidadeDeQuizzesDaAula = Quizzes.Length;
+        var quizzesExecutados = 0;
+        this.UmQuizFoiAplicadoComSucessoEvent += (quiz) =>
+        {
+            quizzesExecutados++;
+            if (quizzesExecutados == Mathf.Ceil(quantidadeDeQuizzesDaAula / 2.0f))
+            {
+                var intervaloDeTempo = tempoEntreQuizzes / 3;
+                StartCoroutine(TrocarDeMidiaNaSala(midias[1].NomeMidia, intervaloDeTempo, intervaloDeTempo));
+            }
+        };
+    }
+
+    private IEnumerator TrocarDeMidiaNaSala(NomeDeMidia midiaQueSeraUsada, float delayParaTroca, float tempoDaTroca)
+    {
+        yield return new WaitForSeconds(delayParaTroca);
+        SalaDeAulaEscolhida.MidiasNaSalaDeAula.EsconderMidiasNaSalaDeAula();
+        yield return new WaitForSeconds(tempoDaTroca);
+        SalaDeAulaEscolhida.MidiasNaSalaDeAula.MostrarMidiasNaSalaDeAula(midiaQueSeraUsada);
     }
 
     private void TerminarAula()

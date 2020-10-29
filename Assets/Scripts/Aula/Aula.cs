@@ -7,6 +7,7 @@ public abstract class Aula : MonoBehaviour
     [Header("Prefabs Salas de Aula")]
     public SalaDeAula SalaDeAulaPadrao;
     public SalaDeAulaInfantil SalaDeAulaInfantil;
+    public SalaDeAula SalaDeAulaEscolhida { get; private set; }
 
     public Metodologia MetodologiaDaAula { get; protected set; }
 
@@ -28,10 +29,10 @@ public abstract class Aula : MonoBehaviour
     protected virtual IEnumerator Start()
     {
         var nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
-        var salaDeAulaQueSeraUsada = (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil) ? SalaDeAulaInfantil : SalaDeAulaPadrao;
-        yield return StartCoroutine(salaDeAulaQueSeraUsada.Mostrar());
+        SalaDeAulaEscolhida = (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil) ? SalaDeAulaInfantil : SalaDeAulaPadrao;
+        yield return StartCoroutine(SalaDeAulaEscolhida.Mostrar());
 
-        var baloesDosAlunos = salaDeAulaQueSeraUsada.baloesDosAlunos;
+        var baloesDosAlunos = SalaDeAulaEscolhida.baloesDosAlunos;
         if (baloesDosAlunos)
         {
             var inteligencias = EstadoDoJogo.Instance.InteligenciasSelecionadas;
