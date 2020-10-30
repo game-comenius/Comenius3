@@ -154,6 +154,8 @@ public class AulaABP : Aula
 
     private void ConfigurarTrocaDeMidiasDuranteAula(Midia[] midias)
     {
+        if (SalaDeAulaEscolhida.MidiasNaSalaDeAula == null) return;
+
         // Mostrar a primeira mídia logo no início com um pequeno delay
         var delayParaTroca = delayParaAplicarQuizzes / 3;
         StartCoroutine(TrocarDeMidiaNaSala(midias[0].NomeMidia, delayParaTroca, 0));
