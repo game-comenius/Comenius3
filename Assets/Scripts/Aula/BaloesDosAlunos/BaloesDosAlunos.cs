@@ -101,11 +101,10 @@ public class BaloesDosAlunos : MonoBehaviour
 
             // Definir o sprite do ícone do balão
             // Caso especial para quando o jogador seleciona inteligências interpessoal + musical
-            // Um balão na verdade é uma dupla de balões, os alunos conversam entre si
+            // Um balão na verdade é uma dupla de balões, os alunos conversam entre si e o
+            // sprite do ícone estará apenas no segundo balão, que fica na frente
             if (InteligenciasInterpessoalComMusicalForamEscolhidas)
             {
-                imageDoIconeDoBalao = balaoEscolhido.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-                imageDoIconeDoBalao.sprite = spriteDoIconeDoBalao;
                 imageDoIconeDoBalao2 = balaoEscolhido.transform.GetChild(1).GetChild(0).GetComponent<Image>();
                 imageDoIconeDoBalao2.sprite = spriteDoIconeDoBalao;
             }
