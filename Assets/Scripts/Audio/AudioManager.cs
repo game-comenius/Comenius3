@@ -73,6 +73,8 @@ public class AudioManager : MonoBehaviour
         switch (nomeDoSFX)
         {
             case "clique":
+
+                Debug.Log("Tocar chamado");
                 CriacaoGameObjectSom(cliqueComumSFX);
                 break;
             case "confirmar":
@@ -88,6 +90,8 @@ public class AudioManager : MonoBehaviour
 
     public void CriacaoGameObjectSom(AudioClip clipe)
     {
+        Debug.Log("Criar chamado");
+
         //Criar o GameObject para o som a partir da prefab
         GameObject novoObjeto = Instantiate(som, transform);
         //Atribuir o clipe do som a sua fonte
