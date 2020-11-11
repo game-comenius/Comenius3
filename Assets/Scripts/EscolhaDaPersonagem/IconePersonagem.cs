@@ -19,8 +19,13 @@ public class IconePersonagem : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!Selecionado && grupo && grupo.Selecionar(this)) return;
+        if (!Selecionado && grupo && grupo.Selecionar(this))
+        {
+            AudioManager.instance.TocarSFX("clique");
+            return;
+        }
 
+        AudioManager.instance.TocarSFX("clique");
         Selecionado = !Selecionado;
     }
 }

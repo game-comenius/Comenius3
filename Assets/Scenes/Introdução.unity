@@ -362,6 +362,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 647316984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &356610899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356610898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &356610902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,8 +1387,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1429700644}
-        m_MethodName: TocarSFX
+      - m_Target: {fileID: 356610899}
+        m_MethodName: ChamarSFXParaTocar
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1727,18 +1739,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400091909}
   m_CullTransparentMesh: 0
---- !u!114 &1429700644 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 626172925403905051, guid: b67b623554d3cbe47a1bdc9799b5a68b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1507510261}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ed428e7db8b62498d552c842dad6b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1507510261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1937,8 +1937,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1429700644}
-        m_MethodName: TocarSFX
+      - m_Target: {fileID: 356610899}
+        m_MethodName: ChamarSFXParaTocar
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2156,7 +2156,7 @@ PrefabInstance:
     - target: {fileID: 153492063245381319, guid: fce0d01ff76889f45a3f763030b7ba81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 153492063245381319, guid: fce0d01ff76889f45a3f763030b7ba81,
         type: 3}
@@ -2368,8 +2368,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1429700644}
-        m_MethodName: TocarSFX
+      - m_Target: {fileID: 356610899}
+        m_MethodName: ChamarSFXParaTocar
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2541,6 +2541,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 356610899}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clique
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1854575948
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,8 +29,14 @@ public class BotaoNivelDeEnsino : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!Selecionado && grupo && grupo.Selecionar(this)) return;
+        if (!Selecionado && grupo && grupo.Selecionar(this))
+        {
+            AudioManager.instance.TocarSFX("clique");
+            return;
+        }
 
         Selecionado = !Selecionado;
+
+        AudioManager.instance.TocarSFX("clique");
     }
 }

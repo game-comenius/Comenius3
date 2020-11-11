@@ -942,7 +942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac356cf23c815334e8bef97b4a7806d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56ec3656aba146b41984ad4b895fb694, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1158,6 +1158,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1718683146}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: confirmar
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &482626708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1296,8 @@ GameObject:
   - component: {fileID: 626269917}
   - component: {fileID: 626269918}
   - component: {fileID: 626269919}
+  - component: {fileID: 626269921}
+  - component: {fileID: 626269920}
   m_Layer: 5
   m_Name: "Bot\xE3oInfo"
   m_TagString: Untagged
@@ -1304,7 +1317,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122292313}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1363,6 +1376,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1718683146}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clique
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &626269915
@@ -1446,6 +1470,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoCanvas: {fileID: 1896009425}
+--- !u!114 &626269920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626269912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &626269921
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626269912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &645198014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2199,6 @@ GameObject:
   - component: {fileID: 953092388}
   - component: {fileID: 953092387}
   - component: {fileID: 953092386}
-  - component: {fileID: 953092385}
   m_Layer: 5
   m_Name: BotaoPaginaAnterior
   m_TagString: Untagged
@@ -2164,18 +2225,6 @@ RectTransform:
   m_AnchoredPosition: {x: -384.30002, y: 294.90002}
   m_SizeDelta: {x: 27, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &953092385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953092383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &953092386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac356cf23c815334e8bef97b4a7806d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56ec3656aba146b41984ad4b895fb694, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3076,6 +3125,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618966110}
   m_CullTransparentMesh: 0
+--- !u!1 &1718683142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8115735780321581232, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+    type: 3}
+  m_PrefabInstance: {fileID: 122292312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1718683146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718683142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727026406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,6 +3330,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1718683146}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clique
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1742258874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3326,6 +3404,44 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1746920945599949074}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1896009429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896009425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1896009430
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896009425}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &1974071220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3871,7 @@ PrefabInstance:
     - target: {fileID: 1746920946388592576, guid: 1eaa3c778517b0a449225ef809d55642,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1746920946388592576, guid: 1eaa3c778517b0a449225ef809d55642,
         type: 3}
