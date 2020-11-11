@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class AudioManager : MonoBehaviour
     //GameObject pro som
     public GameObject som;
 
+    //Controle de cenas
+    private string ultimaCena;
+
 
     private void Awake()
     {
@@ -36,7 +40,33 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
+        //Armazena a cena que foi ativa por último
+        ultimaCena = SceneManager.GetActiveScene().name;
     }
+
+    private void Update()
+    {
+        //Variável para comparação
+        //Armazena constantemente a cena que está ativa no momento
+        var cenaAtual = SceneManager.GetActiveScene().name;
+        
+        //Compara com a cena ativa por último para confirmar se ainda está na mesma cena ou trocou de cena
+        if(cenaAtual != ultimaCena)
+        {
+            ultimaCena = cenaAtual;
+            TocarTrilhaSonora();
+        }
+    }
+
+    private void Start()
+    {
+
+        //Se não existir um gameObject com uma trilha sonora, criar um
+        if (gameObjectDaTrilhaAtual == false)
+        {
+            TocarTrilhaSonora();
+        }    }
+
 
     public void TocarSFX(string nomeDoSFX)
     {
@@ -67,25 +97,25 @@ public class AudioManager : MonoBehaviour
         novoObjeto.GetComponent<AudioSource>().clip = clipe;
         //Tocar o SFX
         novoObjeto.GetComponent<AudioSource>().Play();
-
-        
     }
 
-    public void TocarTrilhaSonora(string nomeDaMusica)
+    public void TocarTrilhaSonora()
     {
-        switch (nomeDaMusica)
+        Debug.Log(ultimaCena);
+
+
+        //Troca trilha apenas se a cena em que o jogo se encontra for uma cena pré definida como gatilho para trocar trilha
+        //Se não, trilha continua tocando normalmente
+        switch (ultimaCena)
         {
-            case "menu":
-                CriacaoGameObjectTrilhaSonora(menuTrilha);
-                break;
-            case "comenius":
-                CriacaoGameObjectTrilhaSonora(comeniusTrilha);
-                break;
-            case "lurdinha":
+            case "PlanejamentoABP":
                 CriacaoGameObjectTrilhaSonora(lurdinhaTrilha);
                 break;
-            case "feedback":
-                CriacaoGameObjectTrilhaSonora(feedbackTrilha);
+            case "MenuPrincipal":
+                CriacaoGameObjectTrilhaSonora(menuTrilha);
+                break;
+            case "Introdução":
+                CriacaoGameObjectTrilhaSonora(comeniusTrilha);
                 break;
             default:
                 break;
@@ -107,8 +137,6 @@ public class AudioManager : MonoBehaviour
         gameObjectDaTrilhaAtual.GetComponent<AudioSource>().loop = true;
         //Tocar o SFX
         gameObjectDaTrilhaAtual.GetComponent<AudioSource>().Play();
-
-
     }
 
 }
