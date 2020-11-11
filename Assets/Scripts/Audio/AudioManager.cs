@@ -11,10 +11,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance { get { return _instance; } }
 
     //Definição SFXs
-    public AudioClip cliqueSFX, desligarSFX, popUpSFX, estrelinhaSFX;
+    public AudioClip cliqueComumSFX, cliqueConfirmarSFX, estrelaEBarraSFX;
 
     //Definição trilha sonora
-    public AudioClip menuTrilha, comeniusTrilha, lurdinhaTrilha, feedbackTrilha;
+    public AudioClip menuTrilha, comeniusELurdinhaTrilha, aulaTrilha;
 
     public GameObject gameObjectDaTrilhaAtual;
 
@@ -73,16 +73,13 @@ public class AudioManager : MonoBehaviour
         switch (nomeDoSFX)
         {
             case "clique":
-                CriacaoGameObjectSom(cliqueSFX);
+                CriacaoGameObjectSom(cliqueComumSFX);
                 break;
-            case "desligar":
-                CriacaoGameObjectSom(desligarSFX);
-                break;
-            case "popUpSFX":
-                CriacaoGameObjectSom(popUpSFX);
+            case "confirmar":
+                CriacaoGameObjectSom(cliqueConfirmarSFX);
                 break;
             case "estrela":
-                CriacaoGameObjectSom(estrelinhaSFX);
+                CriacaoGameObjectSom(estrelaEBarraSFX);
                 break;
             default:
                 break;
@@ -97,6 +94,8 @@ public class AudioManager : MonoBehaviour
         novoObjeto.GetComponent<AudioSource>().clip = clipe;
         //Tocar o SFX
         novoObjeto.GetComponent<AudioSource>().Play();
+
+        Debug.Log(clipe);
     }
 
     public void TocarTrilhaSonora()
@@ -108,14 +107,14 @@ public class AudioManager : MonoBehaviour
         //Se não, trilha continua tocando normalmente
         switch (ultimaCena)
         {
-            case "PlanejamentoABP":
-                CriacaoGameObjectTrilhaSonora(lurdinhaTrilha);
+            case "AulaABP":
+                CriacaoGameObjectTrilhaSonora(aulaTrilha);
                 break;
             case "MenuPrincipal":
                 CriacaoGameObjectTrilhaSonora(menuTrilha);
                 break;
             case "Introdução":
-                CriacaoGameObjectTrilhaSonora(comeniusTrilha);
+                CriacaoGameObjectTrilhaSonora(comeniusELurdinhaTrilha);
                 break;
             default:
                 break;
