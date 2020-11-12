@@ -771,8 +771,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2032394974}
-        m_MethodName: TocarSFX
+      - m_Target: {fileID: 990346537}
+        m_MethodName: ChamarSFXParaTocar
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1243,6 +1243,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &990346536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8115735780321581232, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+    type: 3}
+  m_PrefabInstance: {fileID: 1209163276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &990346537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990346536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1022671343
@@ -2135,8 +2153,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2032394974}
-        m_MethodName: TocarSFX
+      - m_Target: {fileID: 990346537}
+        m_MethodName: ChamarSFXParaTocar
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2455,6 +2473,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 990346537}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clique
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 402577184}
         m_MethodName: TrocarCena
         m_Mode: 1
@@ -2464,17 +2493,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2032394974}
-        m_MethodName: TocarSFX
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: clique
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1869095552
@@ -2783,18 +2801,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67b623554d3cbe47a1bdc9799b5a68b, type: 3}
---- !u!114 &2032394974 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 626172925403905051, guid: b67b623554d3cbe47a1bdc9799b5a68b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2032394973}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ed428e7db8b62498d552c842dad6b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2527210800056778871
 RectTransform:
   m_ObjectHideFlags: 0
