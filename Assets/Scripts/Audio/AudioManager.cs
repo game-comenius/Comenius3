@@ -21,7 +21,9 @@ public class AudioManager : MonoBehaviour
     //GameObject pro som
     public GameObject som;
 
-    public GameObject trilha;
+    //public GameObject trilha;
+
+    public GameObject trilhaInicial;
 
     //Controle de cenas
     private string ultimaCena;
@@ -45,12 +47,7 @@ public class AudioManager : MonoBehaviour
         //Armazena a cena que foi ativa por último
         ultimaCena = SceneManager.GetActiveScene().name;
 
-
-        //Se não existir um gameObject com uma trilha sonora, criar um
-        if (gameObjectDaTrilhaAtual == false)
-        {
-            TocarTrilhaSonora();
-        }
+        
     }
 
     private void Update()
@@ -132,19 +129,17 @@ public class AudioManager : MonoBehaviour
 
     public void CriacaoGameObjectTrilhaSonora(AudioClip clipe)
     {
-        //Checar se já existe um gameObject da trilha sonora, se existir, deletar
-        if (gameObjectDaTrilhaAtual)
-        {
-            Destroy(gameObjectDaTrilhaAtual);
-        }
+        
+       
+
         //Criar o GameObject para o som a partir da prefab
-        gameObjectDaTrilhaAtual = Instantiate(trilha, transform);
+        //gameObjectDaTrilhaAtual = Instantiate(trilha, transform);
         //Atribuir o clipe do som a sua fonte
-        gameObjectDaTrilhaAtual.GetComponent<AudioSource>().clip = clipe;
+        trilhaInicial.GetComponent<AudioSource>().clip = clipe;
         //Configurar a trilha para ficar em looping
-        gameObjectDaTrilhaAtual.GetComponent<AudioSource>().loop = true;
+        trilhaInicial.GetComponent<AudioSource>().loop = true;
         //Tocar o SFX
-        gameObjectDaTrilhaAtual.GetComponent<AudioSource>().Play();
+        trilhaInicial.GetComponent<AudioSource>().Play();
     }
 
 }
