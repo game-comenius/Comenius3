@@ -35,7 +35,7 @@ public static class FeedbackDosAlunos
             }
             else if (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
             {
-                if (escolheuMidiaDeConsulta) return ("Gostei de poder fazer as pesquisas sozinho, só pedi ajuda quando precisei mesmo.", $"Maria - Aluna do {jogo.NivelDeEnsinoSelecionado.nome}");
+                if (escolheuMidiaDeConsulta) return ("Gostei de poder fazer as pesquisas sozinha, só pedi ajuda quando precisei mesmo.", $"Maria - Aluna do {jogo.NivelDeEnsinoSelecionado.nome}");
                 if (escolheuMidiaDigital) return ("Usar essas ferramentas me ajudou na pesquisa e na apresentação!", $"Alexis - Aluno do {jogo.NivelDeEnsinoSelecionado.nome}");
             }
             else // (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoSuperior)
