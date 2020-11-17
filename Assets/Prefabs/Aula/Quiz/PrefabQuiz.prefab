@@ -971,6 +971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7841578467463650915}
   - component: {fileID: 697704077159987887}
+  - component: {fileID: 2886380353301288285}
   m_Layer: 5
   m_Name: PrefabQuiz
   m_TagString: Untagged
@@ -1011,6 +1012,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4597092429437573626}
   m_CullTransparentMesh: 0
+--- !u!114 &2886380353301288285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597092429437573626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4918589130738924151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1298,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8909524753754876672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2886380353301288285}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: confirmar
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &6259943487825073171
 CanvasRenderer:
   m_ObjectHideFlags: 0

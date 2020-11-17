@@ -63,6 +63,10 @@ public class BarraQualidadeDaAula : MonoBehaviour
     {
         // Executar animação da estrela do professor e esperar ela terminar antes de continuar
         animatorEstrelaProfessor.Play(nomeAnimacaoEstrelaProfessor);
+
+        // Tocar SFX das estrelas
+        AudioManager.instance.TocarSFX("estrela");
+
         yield return new WaitUntil(() => animatorEstrelaProfessor.GetCurrentAnimatorStateInfo(0).IsName(nomeAnimacaoEstrelaProfessor));
         yield return new WaitForSeconds(animatorEstrelaProfessor.GetCurrentAnimatorStateInfo(0).length * (1 - animatorEstrelaProfessor.GetCurrentAnimatorStateInfo(0).normalizedTime));
 

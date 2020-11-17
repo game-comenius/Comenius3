@@ -65,18 +65,13 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-    }
-
 
     public void TocarSFX(string nomeDoSFX)
     {
         switch (nomeDoSFX)
         {
             case "clique":
-
-                Debug.Log("Tocar chamado");
+                
                 CriacaoGameObjectSom(cliqueComumSFX);
                 break;
             case "confirmar":
@@ -92,23 +87,16 @@ public class AudioManager : MonoBehaviour
 
     public void CriacaoGameObjectSom(AudioClip clipe)
     {
-        Debug.Log("Criar chamado");
-
         //Criar o GameObject para o som a partir da prefab
         GameObject novoObjeto = Instantiate(som, transform);
         //Atribuir o clipe do som a sua fonte
         novoObjeto.GetComponent<AudioSource>().clip = clipe;
         //Tocar o SFX
         novoObjeto.GetComponent<AudioSource>().Play();
-
-        Debug.Log(clipe);
     }
 
     public void TocarTrilhaSonora()
     {
-        Debug.Log(ultimaCena);
-
-
         //Troca trilha apenas se a cena em que o jogo se encontra for uma cena pré definida como gatilho para trocar trilha
         //Se não, trilha continua tocando normalmente
         switch (ultimaCena)
@@ -129,11 +117,9 @@ public class AudioManager : MonoBehaviour
 
     public void CriacaoGameObjectTrilhaSonora(AudioClip clipe)
     {
-        
-       
-
         //Criar o GameObject para o som a partir da prefab
         //gameObjectDaTrilhaAtual = Instantiate(trilha, transform);
+
         //Atribuir o clipe do som a sua fonte
         trilhaInicial.GetComponent<AudioSource>().clip = clipe;
         //Configurar a trilha para ficar em looping
