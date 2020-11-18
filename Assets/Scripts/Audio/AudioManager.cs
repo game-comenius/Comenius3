@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip cliqueComumSFX, cliqueConfirmarSFX, estrelaEBarraSFX;
 
     //Definição trilha sonora
-    public AudioClip menuTrilha, comeniusELurdinhaTrilha, aulaTrilha;
+    public AudioClip menuTrilha, momentoDoCriadorTrilha, aulaTrilha, creditosTrilha;
 
     public GameObject gameObjectDaTrilhaAtual;
 
@@ -108,7 +108,10 @@ public class AudioManager : MonoBehaviour
                 CriacaoGameObjectTrilhaSonora(menuTrilha);
                 break;
             case "Introdução":
-                CriacaoGameObjectTrilhaSonora(comeniusELurdinhaTrilha);
+                CriacaoGameObjectTrilhaSonora(momentoDoCriadorTrilha);
+                break;
+            case "Loading":
+                trilhaInicial.GetComponent<AudioSource>().Stop();
                 break;
             default:
                 break;
