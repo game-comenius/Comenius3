@@ -79,6 +79,9 @@ public class PaginaResultadoDaAula : MonoBehaviour
 
     public void Mostrar()
     {
+        //Começar trilha dos créditos
+        var creditosTrilha = AudioManager.instance.creditosTrilha;
+        AudioManager.instance.CriacaoGameObjectTrilhaSonora(creditosTrilha);
         gameObject.SetActive(true);
     }
 
