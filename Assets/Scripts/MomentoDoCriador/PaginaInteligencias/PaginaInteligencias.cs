@@ -12,6 +12,8 @@ public class PaginaInteligencias : Pagina
     [SerializeField] Text NomeDoSelecionado;
     [SerializeField] ScrollRect DescricaoDoSelecionado;
 
+    [SerializeField] TextMeshProUGUI TextoExpandido;
+
     [SerializeField] GrupoDeIconesInteligencias grupoDeIconesInteligencias;
 
     [SerializeField] Button botaoConfirmar;
@@ -23,6 +25,13 @@ public class PaginaInteligencias : Pagina
         NomeDoSelecionado.text = string.Empty;
         //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         //iconeGrandeEmDestaque.enabled = false;
+
+        //Setar a descrição expandida inicial
+        var descricaoExpandida = TextoExpandido;
+        descricaoExpandida.text = "Agora é hora escolher qual o perfil que a turma apresentará através das INTELIGÊNCIAS MÚLTIPLAS." +
+            "\n\nCada opção traz duas inteligências múltiplas que estarão mais latentes na sua turma.\nImportante saber que o comportamento " +
+            "dos seus alunos refletirão no resultado final do jogo de acordo com as suas próximas escolhas.";
+
 
         // Esconder botão confirmar até que uma escolha seja feita
         botaoConfirmar.gameObject.SetActive(false);
@@ -43,6 +52,9 @@ public class PaginaInteligencias : Pagina
             // Retornar/resetar scrollbar para o topo
             var scrollbar = DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>();
             if (scrollbar) scrollbar.value = 1;
+
+            //Atualizar texto dentro do popup de expansão
+            descricaoExpandida.text = iconeSelecionado.Valor.Expansao;
 
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;

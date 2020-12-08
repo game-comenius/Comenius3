@@ -17,6 +17,9 @@ public class PaginaAreaDeConhecimento : Pagina
     [SerializeField] Text NomeDoSelecionado;
     [SerializeField] ScrollRect DescricaoDoSelecionado;
 
+    [SerializeField] TextMeshProUGUI TextoExpandido;
+
+
     [Header("Grupo de ícones por nível de ensino")]
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesInfantil;
     [SerializeField] GrupoDeIconesAreaDeConhecimento iconesFundamental;
@@ -48,6 +51,13 @@ public class PaginaAreaDeConhecimento : Pagina
     {
         spriteOriginalDoIconePequenoGuia = iconePequenoGuia.sprite;
 
+        //Setar a descrição expandida inicial
+        var descricaoExpandidaInicial = TextoExpandido;
+        descricaoExpandidaInicial.text = "Agora você deve escolher a ÁREA DO CONHECIMENTO (ou CAMPOS DE APRENDIZAGEM) de acordo com o Nível de Ensino.\n\n" +
+            "Todo o resto do seu planejamento será definido por essa escolha. Se você selecionou anteriormente algum nível da Educação Básica, procure ler " +
+            "atentamente cada uma delas para aprender mais sobre o assunto de acordo com a nova divisão da Base Nacional Comum Curricular(BNCC).Se selecionou o " +
+            "Ensino Superior, é importante aprender sobre como estão definidas de acordo com o Conselho Nacional de Desenvolvimento Cientítico e Tecnoloógico(CNPq).";
+
         // Toda vez que o grupo de botões disser que um novo botão foi
         // selecionado, a página irá atualizar o ícone grande em destaque,
         // o nome do botão selecionado e o ícone pequeno na lateral esquerda
@@ -65,6 +75,10 @@ public class PaginaAreaDeConhecimento : Pagina
                 // Retornar/resetar scrollbar para o topo
                 var scrollbar = DescricaoDoSelecionado.GetComponentInChildren<Scrollbar>();
                 if (scrollbar) scrollbar.value = 1;
+
+                //Atualizar descrição no popup expandido para a area de conhecimento selecionada
+                var descricaoExpandida = TextoExpandido;
+                descricaoExpandida.text = iconeSelecionado.Valor.Expansao;
 
                 var spritePequeno = iconeSelecionado.ImageComponent.sprite;
                 iconePequenoGuia.sprite = spritePequeno;
@@ -96,6 +110,9 @@ public class PaginaAreaDeConhecimento : Pagina
         if (grupoDeIconesAtivo) grupoDeIconesAtivo.DesfazerSelecao();
         // Limpar campo com o nome do ícone escolhido e descrição
         NomeDoSelecionado.text = string.Empty;
+
+        
+
         //DescricaoDoSelecionado.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         // Esconder destaque de item selecionado, como se não houvesse seleção
         //iconeGrandeEmDestaque.enabled = false;
