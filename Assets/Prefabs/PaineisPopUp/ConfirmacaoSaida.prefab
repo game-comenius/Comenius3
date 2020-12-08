@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 153492062230279443}
   - component: {fileID: 153492062230279440}
   - component: {fileID: 153492062230279468}
-  - component: {fileID: 153492062230279469}
   m_Layer: 5
   m_Name: NaoButton
   m_TagString: Untagged
@@ -290,7 +289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 153492062230279469}
+      - m_Target: {fileID: 6133728580855830946}
         m_MethodName: FecharPainel
         m_Mode: 1
         m_Arguments:
@@ -324,19 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &153492062230279469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153492062230279446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e92aef637fe21549a521d72a1ff6c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PainelDeConfirmacao: {fileID: 153492063245381316}
 --- !u!1 &153492062435779106
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +622,7 @@ GameObject:
   - component: {fileID: 153492063245381313}
   - component: {fileID: 153492063245381318}
   - component: {fileID: 211789742715603275}
+  - component: {fileID: 6133728580855830946}
   m_Layer: 5
   m_Name: ConfirmacaoSaida
   m_TagString: Untagged
@@ -750,3 +737,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6133728580855830946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153492063245381316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e92aef637fe21549a521d72a1ff6c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  painel: {fileID: 153492063245381316}
