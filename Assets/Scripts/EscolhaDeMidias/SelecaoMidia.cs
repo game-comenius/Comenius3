@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelecaoMidia : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class SelecaoMidia : MonoBehaviour
     public GameObject iconeDestaqueMidia;
     public GameObject tituloDestaqueMidia;
     public GameObject descricaoDestaqueMidia;
+
+    [SerializeField] TextMeshProUGUI TextoExpandido;
 
     public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
@@ -38,6 +42,9 @@ public class SelecaoMidia : MonoBehaviour
         }
         paginasDeMidias[paginaAtual].SetActive(true);
         selecionadasUI[0].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
+
+        var descricaoExpandidaInicial = TextoExpandido;
+        descricaoExpandidaInicial.text = "Agora você deve escolher as mídias que irá utilizar em sala de aula. Para isso é bom pensar nas diferentes etapas da Aprendizagem Baseada em Problemas: o levantamento de conhecimentos, análise de variáveis, propor soluções, busca de referências e apresentar as respostas e resultados. Você pode escolher duas mídias diferentes. Pense bem quais serão mais úteis para os alunos!";
     }
 
     public void ProximaPagina()
@@ -66,6 +73,10 @@ public class SelecaoMidia : MonoBehaviour
         destaque = new Midia(midia);
         tituloDestaqueMidia.GetComponent<UnityEngine.UI.Text>().text = destaque.NomeApresentavel;
         descricaoDestaqueMidia.GetComponent<TMPro.TextMeshProUGUI>().text = destaque.Descricao;
+
+        var descricaoExpandida = TextoExpandido;
+        descricaoExpandida.text = destaque.Expansao;
+
         midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
     }
