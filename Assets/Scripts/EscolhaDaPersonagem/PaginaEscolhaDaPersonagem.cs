@@ -15,6 +15,14 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     [SerializeField] Button botaoConfirmar;
 
+    private void Awake()
+    {
+
+        corpoPersonagemSelecionada.gameObject.SetActive(false);
+        cabeloPersonagemSelecionada.gameObject.SetActive(false);
+        roupaPersonagemSelecionada.gameObject.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +37,11 @@ public class PaginaEscolhaDaPersonagem : Pagina
             // Alterar sprite do pequeno guia da página para o sprite do selecionado
             var spritePequeno = iconeSelecionado.ImageComponent.sprite;
             iconePequenoGuia.sprite = spritePequeno;
+
+            // Ativar sprites do preview
+            corpoPersonagemSelecionada.gameObject.SetActive(true);
+            cabeloPersonagemSelecionada.gameObject.SetActive(true);
+            roupaPersonagemSelecionada.gameObject.SetActive(true);
 
             // Alterar o preview da personagem selecionada
             corpoPersonagemSelecionada.sprite = iconeSelecionado.SpriteCorpo;
