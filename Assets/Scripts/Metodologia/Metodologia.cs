@@ -9,6 +9,13 @@ public sealed class Metodologia
         descricao: ""
     );
 
+    public static readonly Metodologia Invertida = new Metodologia
+    (
+        valor: 1,
+        nome: "Sala Invertida",
+        descricao:""
+    );
+
     public static readonly Metodologia ABJ = new Metodologia
     (
         valor: 3,
@@ -87,7 +94,7 @@ public sealed class Metodologia
             // TODO
             return 0;
         }
-        else // this == Metodologia.ABP:
+        else if (this == Metodologia.ABP)
         {
             if (categoria.HasFlag(CategoriasDeMidia.ConsultaRepositorio)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
             if (categoria.HasFlag(CategoriasDeMidia.Digital)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
@@ -98,6 +105,10 @@ public sealed class Metodologia
             if (categoria.HasFlag(CategoriasDeMidia.AudioVisual)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
 
             if (categoria.HasFlag(CategoriasDeMidia.Popular)) pontuacao += incrementoPadrao * multiplicadorMidiaRegular;
+        }
+        else //this == Metodologia.Invertida
+        {
+
         }
 
         return pontuacao / numeroMaxDeCategoriasSimultaneas;
