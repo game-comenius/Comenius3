@@ -22,6 +22,8 @@ public class SelecaoMidia : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
+    [SerializeField] Text titulo;
+
     public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
     public GameObject[] paginasDeMidias; //páginas de opções de mídias
@@ -30,6 +32,8 @@ public class SelecaoMidia : MonoBehaviour
 
     private void Start()
     {
+        var tituloDaPrimeiraSelecao = titulo;
+        tituloDaPrimeiraSelecao.text = "Escolha sua primeira mídia";
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
         midiasSelecionadas = new NomeDeMidia[quantidadeMidias];
@@ -85,6 +89,8 @@ public class SelecaoMidia : MonoBehaviour
     {
         if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
         {
+            var tituloDaSegundaSelecao = titulo;
+            tituloDaSegundaSelecao.text = "Escolha sua segunda mídia";
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
             Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1]);
@@ -110,8 +116,6 @@ public class SelecaoMidia : MonoBehaviour
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
                 jogo.MidiasSelecionadas[i] = midia;
             }
-
-            //trocadorCena.GetComponent<TrocadorDeCena>().TrocarCena();
         }
     }
 
