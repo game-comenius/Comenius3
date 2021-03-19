@@ -10,6 +10,8 @@ public class AulaABP : Aula
     [SerializeField] QuizDeMidia quizDeMidia2;
     [SerializeField] QuizMetodologiaABP quizMetodologiaABP;
     [SerializeField] QuizPerfilDaTurma quizPerfilDaTurma;
+    public bool botãoQuizzPressionado = false;
+    public GameObject objtBotãoQuizz;//Referência feita via editor
     // Após o início da cena/aula, os quizzes serão aplicados depois deste delay
     [SerializeField] [Range(0, 30)] float delayParaAplicarQuizzes;
     [SerializeField] [Range(0, 30)] float tempoEntreQuizzes;
@@ -72,7 +74,14 @@ public class AulaABP : Aula
 
         // Configurar e aplicar os quizzes na aula
         ConfigurarQuizzes();
-        yield return StartCoroutine(AplicarQuizzes(Quizzes, delayParaAplicarQuizzes, tempoEntreQuizzes));
+        //Botão Quizz:
+        //Enquanto a bool botãoQuizzPressionado for falsa a execução Corrotina Start vai parar neste ponto.        
+        while (!botãoQuizzPressionado)
+        {
+            yield return null;
+        }
+        //O resto da Corrotina será executado depois que o usuário apertar o botão na UI(botãoQuizzPreSSionado = true)
+        yield return StartCoroutine(AplicarQuizzes(Quizzes, /*delayParaAplicarQuizzes,*/ tempoEntreQuizzes));
 
         // Esperar um tempo entre o último quiz e o resultado da aula
         yield return new WaitForSeconds(tempoPosQuizzes);
@@ -95,9 +104,9 @@ public class AulaABP : Aula
         quizPerfilDaTurma.ConfigurarQuiz(nivelDeEnsino, inteligencias);
     }
 
-    private IEnumerator AplicarQuizzes(Quiz[] quizzes, float delayParaComecar, float tempoEntreQuizzes)
+    private IEnumerator AplicarQuizzes(Quiz[] quizzes, /*float delayParaComecar,*/ float tempoEntreQuizzes)
     {
-        yield return new WaitForSeconds(delayParaComecar);
+       // yield return new WaitForSeconds(delayParaComecar);
 
         for (int i = 0; i < quizzes.Length; i++)
         {
@@ -188,6 +197,12 @@ public class AulaABP : Aula
         trocadorDeCenaCreditos.TrocarCena();
     }
 
-    
+    //Função ativada pelo botão na UI e o faz o objeto desaparecer.
+    public void BotãoQuizz()
+    {
+        Debug.Log("Botão apertado");
+        botãoQuizzPressionado = true;
+        objtBotãoQuizz.SetActive(false);
+    }
 }
 
