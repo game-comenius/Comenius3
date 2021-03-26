@@ -1,0 +1,163 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs40\lang22 Comenius 3  Fluxograma\par
+\fs22\par
+\tab\par
+\tab\i -Objetos:\par
+\i0\tab\tab (script)NomeDoScript    \par
+\tab\tab\tab (var)Vari\'e1veis ou outras informa\'e7\'f5es visiveis  no Editor: \par
+\tab -\b Bot\'f5es:\par
+\tab\tab\b0 (OnClick)Objeto/Script de refer\'eancia\par
+\tab\tab\tab Script de Refer\'eancia.Parte do script chamada pelo click do bot\'e3o()\par
+\par
+Scene 1- Loading\par
+\tab\i -Admin:\par
+\i0\tab\tab (Script)Custom cursor\par
+\tab\tab (Script)Estado do Jogo\par
+\tab\i -TrocadordeCenaParaMenuPrincipal:\par
+\i0\tab\tab (Script)TrocadordeCena    \par
+\tab\tab\tab (var)CenaAlvo:    0:MenuPrincipal          \par
+\tab\b BotaoJogar\par
+\tab\tab\b0 (OnClick)TrocadorDeCenaParaOMenuPrincipal/TrocadorDeCena\par
+\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab\par
+Scene 2 - Menu principal\par
+\tab\i - AudioManager:\par
+\i0\tab\tab AudioManager\par
+\tab\tab\tab (var)Clique Comum SFX:    Clique_Comum\par
+\tab\tab\tab (var)Clique Confirmar SFX:  Clique_Confirmar\par
+\tab\tab\tab (var)Estrela E Barra SFX:   EstrelaeBarra\par
+\tab\tab\tab (var)Menu Trilha:  MenuPrincipal\par
+\tab\tab\tab (var)MomentoDoCriadorTrilha:  MomentoDoCriador\par
+\tab\tab\tab (var)AulaTrilha:  Aula1\par
+\tab\tab\tab (var)Creditos Trilha: Cr\'e9ditos\par
+\tab\tab\tab (var)Game Object Da Trilha Atual:\par
+\tab\tab\tab (var)Som: Som\par
+\tab\tab\tab (var)Trilha Inicial: TrilhaSonora\par
+\tab\i -TrocadorDeCenaParaIntrodu\'e7\'e3o:\par
+\i0\tab\tab (Script)TrocadorDeCena (chamado pelo bot\'e3o: BotaoNovoJogo)\par
+\tab\tab\tab (var)Cena Alvo:  6:Introdu\'e7\'e3o\par
+\tab\i -TrocadorDeCenaParaCreditos:\par
+\i0\tab\tab (Script)TrocadorDeCena(chamado pelo bot\'e3o: BotaoCreditos)\par
+\tab\tab\tab (var)Cena Alvo:  7:Creditos\par
+\tab\i -TrocadorDeCenaParaSobreOJogo\i0\par
+\tab\tab (Script)TrocadorDeCena(chamado pelo bot\'e3o: BotaoSobreOJogo)\par
+\tab\tab\tab (var)Cena Alvo:  12:SobreoJogo\par
+\tab\i -TrocadorDeCenaParaLoading\i0\par
+\tab\tab (Script)TrocadorDeCenaLoading\par
+\tab\b BotaoNovoJogo\par
+\tab\tab\b0 (OnClick)TrocadorDeCenaParaIntrodu\'e7\'e3o/TrocadorDeCena\par
+\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab (OnClick)CanvasMenuPrincipal/Chamar SFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\b BotaoSobreOJogo\par
+\b0\tab\tab (OnClick)TrocadorDeCenaParaSobreoJogo/TrocadorDeCena\par
+\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab (OnClick)CanvasMenuPrincipal/Chamar SFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\b BotaoCreditos\par
+\tab\tab\b0 (OnClick)TrocadorDeCenaParaCreditos/TrocadorDeCena\par
+\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\b\tab\b0\par
+Scene 3 - Introdu\'e7\'e3o\par
+\tab -\i TrocadorDeCenaParaMenuPrincipal:\par
+\i0\tab\tab (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:  0:MenuPrincipa\par
+\tab\i -TrocadorDeCenaParaMomentoCriador:\par
+\tab\tab\i0 (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:    1:MomentoDoCriador\par
+\tab\tab (Script)Pagina\par
+\tab -\i CanvasIntrodu\'e7\'e3o:\par
+\tab\tab\i0 (Script)SequenciaDePaginas\par
+\tab\tab\tab (Array)Paginas(array com 2 itens)\par
+\tab\tab\tab\tab Element 0: PaginaPrimeiraFala(Pagina)\par
+\tab\tab\tab\tab Element1: PaginaSegundaFala(Pagina)\par
+\tab\tab\tab (var)BotaoPaginaAnterior: BotaoPaginaAnterior(Button)\par
+\tab\tab\tab (var)BotaoProximaPagina: BotaoProximaPagina(Button)\par
+\tab\tab (Script)ChamarSFX\par
+\tab\tab -CanvasIntroducao/\i PaginaPrimeiraFala\par
+\tab\tab\tab\i0 (Script)Pagina\par
+\tab\tab\tab\b -CanvasIntroducao/PaginaPrimeiraFala/BotaoProximaPagina\par
+\tab\tab\tab\tab\b0 (OnClick)CanvasIntrodu\'e7\'e3o/SequenciadePaginas\par
+\tab\tab\tab\tab\tab SequenciaDePaginas.MostrarProximaPagina()\par
+\tab\tab\tab\tab (OnClick)CanvasIntrodu\'e7\'e3o/ChamarSFX\par
+\tab\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\tab\i -CanvasIntroducao/PaginaSegundaFala(desativado no editor)\par
+\tab\tab\tab\i0 (Script)Pagina\par
+\tab\tab\tab\b CanvasIntroducao/PaginaSegundaFala/BotaoTrocaDeCena\par
+\tab\tab\tab\tab\b0 (OnClick)\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab TrocadorDeCenaParaMomentoCriador/TrocadorDeCena\par
+\tab\tab\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab\par
+\tab\tab -CanvasIntroducao/\i ConfirmacaoSaida\par
+\tab\tab\tab\i0 (Script)ChamarSFX\par
+\tab\tab\tab (Script)BotoesPaineis\par
+\tab\tab\tab\tab (var)Painel: ConfirmacaoSaida\par
+\tab\tab\tab\b -CanvasIntroducao/ConfirmacaoSaida/InfoPanel/SimButton\par
+\tab\tab\tab\tab\b0 (OnClick)\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab TrocadorDeCenaParaMenuPrincipal/TrocadorDeCena\par
+\tab\tab\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+\tab\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTrocar()\par
+\tab\tab\tab\b -CanvasIntroducao/ConfirmacaoSaida/InfoPanel/NaoButton\par
+\tab\tab\tab\tab\b0 (OnClick)ConfirmacaoSaida/BotaoPaineis\par
+\tab\tab\tab\tab\tab BotaoPaineis.FecharPainel()\par
+\tab\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+\tab\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTrocar()\b\par
+\b0\par
+\tab\tab\b -CanvasIntroducao/BotaoCancelar:\b0\i\par
+\tab\tab\tab\i0 (Script)BotaoPaineis\par
+\tab\tab\tab (OnClick)BotaoCancelar/BotoesPaineis\par
+\tab\tab\tab\tab BotoesPaineis.AbrirPainel()\par
+\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTrocar()\par
+\tab\tab\b -CanvasIntroducao/BotaoPaginaAnterior :\par
+\tab\tab\b0\tab (OnClick)CanvasIntroducao/SequenciaDePaginas\par
+\tab\tab\tab\tab SequenciaDePaginas.MostraPaginaAnterior()\par
+\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+Scene 4 - Momento do Criador\par
+\tab\par
+\tab -\i TrocadorDeCenaParaMenuPrincipal\par
+\tab\tab\i0 (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:      0:MenuPrincipal\par
+\tab\i -TrocadorDeCenaParaResumoDoCriador\par
+\tab\tab\i0 (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:      2:ResumoDoCriador\par
+\tab\i -CanvasMomentoDoCriador\par
+\tab\tab\i0 (Script)SequenciaDePaginas\par
+\tab\tab (Script)ChamarSFX\par
+\tab -\i CanvasMomentoDoCriador/PaginaNivelDeEnsino(\i0 desativado no editor\i )\par
+\tab\tab\i0 (Script) Pagina N\'edvel De Ensino\par
+\tab\tab\tab (var)GrupoDeBotoes:    GrupoDeBotoesNivelDeEnsino(script)\par
+
+\pard\ri-1634\sa200\sl276\slmult1\tab\tab\tab (var)Pagina AreaDeConhecimento:  \tab\tab\tab\tab\tab\tab\tab\tab PaginaAreaDeConhecimento(script)\i\tab\par
+\tab -CanvasMomentoDoCriador/PaginaNivelDeEnsino/GrupoDeBotoesNivelDeEnsino\par
+\tab\tab\i0 (Script)GrupoDeBotoesNivelDeEnsino\par
+\tab\tab\tab (array)BotoesNivelDeEnsino\par
+\tab\tab\tab\tab Element0: BotaoEducacaoInfantil(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element1: BotaoEnsinoFundamental(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element2: BotaoEnsinoMedio(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element3: BotaoEnsinoSuperior(BotaoNivelDeEnsino)\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEducacaoInfantil\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\par
+\tab\tab\tab\i0 (var)NivelDeEnsino:  0:Educa\'e7\'e3o Infantil\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoFudamental\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  1:Ensino Fundamental\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoMedio\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  2:Ensino Medio\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoSuperior\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  3:Ensino Superior\par
+\tab\b -PaginaNivelDeEnsino/BotaoExpandirTexto\par
+\b0\tab\tab (Script)BotoesPaineis\par
+\tab\tab\tab (var)Painel:  PainelExpans\'e3o\par
+\tab\tab (OnClick)BotaoExpandirTexto/BotoesPaineis\par
+\tab\tab\tab BotoesPainels.AbrirPainel()\par
+\i\tab\b\i0\par
+
+\pard\sa200\sl276\slmult1\b0\i\par
+\tab\tab\i0\par
+\par
+}
+ 
