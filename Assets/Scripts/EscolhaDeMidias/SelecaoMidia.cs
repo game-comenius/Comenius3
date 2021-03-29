@@ -12,7 +12,7 @@ public class SelecaoMidia : MonoBehaviour
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
     private int paginaAtual = 0; //para usar de índice nas páginas de mídias
     public int ultimaPagina = 2; //*índice* da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
-    private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
+    [SerializeField]private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
     private bool selecaoPronta;
 
     private Midia destaque;
@@ -93,7 +93,7 @@ public class SelecaoMidia : MonoBehaviour
             tituloDaSegundaSelecao.text = "Escolha sua segunda mídia";
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
-            Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1]);
+
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
             selecaoAtual++;
             if (selecaoAtual >= quantidadeMidias)
@@ -101,6 +101,8 @@ public class SelecaoMidia : MonoBehaviour
                 selecaoPronta = true;
                 botaoConfirmar.SetActive(selecaoPronta);
                 Debug.Log("Ultima mídia selecionada");
+              
+                
                 selecaoAtual = quantidadeMidias - 1; //para não acabarmos fora do array
             }
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
@@ -112,11 +114,13 @@ public class SelecaoMidia : MonoBehaviour
             jogo.MidiasSelecionadas = new Midia[quantidadeMidias];
             for (var i = 0; i < quantidadeMidias; i++)
             {
-                var midia = new Midia(midiasSelecionadas[i]);
+                Midia midia = new Midia(midiasSelecionadas[i]);
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
                 jogo.MidiasSelecionadas[i] = midia;
             }
         }
+       
+        
     }
 
     public void DeselecionarMidia()
