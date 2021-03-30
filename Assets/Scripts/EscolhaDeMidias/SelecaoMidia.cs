@@ -23,11 +23,12 @@ public class SelecaoMidia : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
     [SerializeField] Text titulo;
-    
-
-    [SerializeField] string[] titulosDasSelecoes;
-
+ 
+    [Header("Textos da seleção: ")]
     [SerializeField] string descriçãoInicial;
+    [SerializeField] string[] titulosDasSelecoes;
+    
+    [Space(10)]
 
     public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
