@@ -23,6 +23,11 @@ public class SelecaoMidia : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
     [SerializeField] Text titulo;
+    
+
+    [SerializeField] string[] titulosDasSelecoes;
+
+    [SerializeField] string descriçãoInicial;
 
     public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
@@ -32,8 +37,7 @@ public class SelecaoMidia : MonoBehaviour
 
     private void Start()
     {
-        var tituloDaPrimeiraSelecao = titulo;
-        tituloDaPrimeiraSelecao.text = "Escolha sua primeira mídia";
+        titulo.text = titulosDasSelecoes[0];
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
         midiasSelecionadas = new NomeDeMidia[quantidadeMidias];
@@ -48,7 +52,7 @@ public class SelecaoMidia : MonoBehaviour
         selecionadasUI[0].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
 
         var descricaoExpandidaInicial = TextoExpandido;
-        descricaoExpandidaInicial.text = "Agora você deve escolher as mídias que irá utilizar em sala de aula. Para isso é bom pensar nas diferentes etapas da Aprendizagem Baseada em Problemas: o levantamento de conhecimentos, análise de variáveis, propor soluções, busca de referências e apresentar as respostas e resultados. Você pode escolher duas mídias diferentes. Pense bem quais serão mais úteis para os alunos!";
+        descricaoExpandidaInicial.text = descriçãoInicial;
     }
 
     public void ProximaPagina()
@@ -89,8 +93,7 @@ public class SelecaoMidia : MonoBehaviour
     {
         if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
         {
-            var tituloDaSegundaSelecao = titulo;
-            tituloDaSegundaSelecao.text = "Escolha sua segunda mídia";
+            titulo.text = titulosDasSelecoes[Mathf.Clamp(selecaoAtual+1, 0,quantidadeMidias-1)];
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
 
