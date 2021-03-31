@@ -29,6 +29,7 @@ public class MidiaEscolhida : MonoBehaviour
     public Sprite editoresTextoPlanilhasEletronicas;
     public Sprite aveas;
     public Sprite aplicativos;
+    public Sprite projetorMultimidia;
 
 
     private void Start()
@@ -49,7 +50,7 @@ public class MidiaEscolhida : MonoBehaviour
         switch (selecionada)
         {
             case NomeDeMidia.Nenhuma:
-                atual.sprite = padrao;
+                //atual.sprite = padrao;
                 break;
             case NomeDeMidia.CadernosECartazes:
                 atual.sprite = cadernosCartazes;
@@ -86,6 +87,9 @@ public class MidiaEscolhida : MonoBehaviour
                 break;
             case NomeDeMidia.Aplicativos:
                 atual.sprite = aplicativos;
+                break;
+            case NomeDeMidia.ProjetorMultimidia:
+                atual.sprite = projetorMultimidia;
                 break;
             default:
                 break;
