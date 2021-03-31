@@ -1,0 +1,167 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang22 Scene 4 - Momento do Criador\par
+\tab\par
+\tab -\i TrocadorDeCenaParaMenuPrincipal\par
+\tab\tab\i0 (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:      0:MenuPrincipal\par
+\tab\i -TrocadorDeCenaParaResumoDoCriador\par
+\tab\tab\i0 (Script)TrocadorDeCena\par
+\tab\tab\tab (var)Cena Alvo:      2:ResumoDoCriador\par
+\tab\i -CanvasMomentoDoCriador\par
+\tab\tab\i0 (Script)SequenciaDePaginas\par
+\tab\tab (Script)ChamarSFX\par
+\tab -\i CanvasMomentoDoCriador/PaginaNivelDeEnsino(\i0 desativado no editor\i )\par
+\tab\tab\i0 (Script) Pagina N\'edvel De Ensino\par
+\tab\tab\tab (var)GrupoDeBotoes:    GrupoDeBotoesNivelDeEnsino(script)\par
+
+\pard\ri-1634\sa200\sl276\slmult1\tab\tab\tab (var)Pagina AreaDeConhecimento:  \tab\tab\tab\tab\tab\tab\tab\tab PaginaAreaDeConhecimento(script)\i\tab\par
+\tab -CanvasMomentoDoCriador/PaginaNivelDeEnsino/GrupoDeBotoesNivelDeEnsino\par
+\tab\tab\i0 (Script)GrupoDeBotoesNivelDeEnsino\par
+\tab\tab\tab (array)BotoesNivelDeEnsino\par
+\tab\tab\tab\tab Element0: BotaoEducacaoInfantil(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element1: BotaoEnsinoFundamental(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element2: BotaoEnsinoMedio(BotaoNivelDeEnsino)\par
+\tab\tab\tab\tab Element3: BotaoEnsinoSuperior(BotaoNivelDeEnsino)\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEducacaoInfantil\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\par
+\tab\tab\tab\i0 (var)NivelDeEnsino:  0:Educa\'e7\'e3o Infantil\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoFudamental\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  1:Ensino Fundamental\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoMedio\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  2:Ensino Medio\par
+\tab -\i PaginaNivelDeEnsino/GrupoDeBototesNivelDeEnsino/BotaoEnsinoSuperior\par
+\tab\tab\i0 (Script)BotaoNivelDeEnsino\i\tab\tab\par
+\i0\tab\tab\tab (var)NivelDeEnsino:  3:Ensino Superior\par
+\tab\b -PaginaNivelDeEnsino/BotaoInfo\par
+\tab\tab\b0 (Script)PopUpManager\par
+\tab\tab (OnClick)BotaoInfo/PopUpManager\par
+\tab\tab\tab PopUpManager.FuncaoDupla()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\tab\tab\par
+\tab\b -PaginaNivelDeEnsino/BotaoExpandirTexto\par
+\b0\tab\tab (Script)BotoesPaineis\par
+\tab\tab\tab (var)Painel:  PainelExpans\'e3o\par
+\tab\tab (OnClick)BotaoExpandirTexto/BotoesPaineis\par
+\tab\tab\tab BotoesPainels.AbrirPainel()\par
+\tab\i -CanvasMomentoDoCriador/PaginaAreaDeConhecimento\par
+\tab\tab\i0 (Script)PaginaAreDeConhecimento\par
+\tab\tab\tab (var)Icones Infantil:  \tab\tab\tab\tab\tab\tab\tab\tab\tab IconeInfantil(GruposDeIconesAreaDeConhecimento)\par
+\tab\tab\tab (var)Icones Fundamental:  IconesFundamental(GdAdC)\par
+\tab\tab\tab (var)Icones Medio:  IconesMedio(GdAdC)\par
+\tab\tab\tab (var)Icones Superior: IconesSuperior(GdAsC)\par
+\tab\i -CanvasMomentoDoCriador/PaginaAreaDeConhecimento/IconesInfantil\par
+\tab\tab\i0 (Script)GrupoDeIconesAreaDeConhecimento\par
+\tab\tab\tab (array)IconesDeAreaDeConhecimento\par
+\tab\tab\tab\tab Element0:  \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab CorpoGestos(IconeAreaDeConhecimento(Script))\par
+\i\tab\tab\tab\tab\i0 Element1: OEeEOOutro(IAdC(Script))\par
+\tab\tab\tab\tab Element2: TracosSons(IAdC(Script))\par
+\tab\tab\tab\tab Element3: EscutaFala(IAdC(Script))\par
+\tab\tab\tab\tab Element4: EspacoTempo(IAdC(Script))\par
+\tab\i -CanvasMomentoDoCriador/PaginaAreaDeConhecimento/IconesFundamental\par
+\tab\tab\i0 *Segue a mesma estrutura que Icones Infantil,com um array \tab\tab\tab\tab contendo diferentes icones.\par
+\tab\i -CanvasMomentoDoCriador/PaginaAreaDeConhecimento/IconesMedio\par
+\tab\tab\i0 *Segue a mesma estrutura que Icones Infantil,com um array \tab\tab\tab\tab contendo diferentes icones.\par
+\tab\i -CanvasMomentoDoCriador/PaginaAreaDeConhecimento/IconesSuperior\par
+\tab\tab\i0 *Segue a mesma estrutura que Icones Infantil,com um array \tab\tab\tab\tab contendo diferentes icones.\par
+\tab\b -PaginaAreaDeConhecimento/BotaoInfo\par
+\tab\tab\b0 (OnClick)BotaoInfo/PopUpManager\par
+\tab\tab\tab PopUpManager.FuncaoDupla()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\b\par
+\tab\tab (\b0 Script)PopUpManager\par
+\tab\tab\tab (var)InfoCanvas\par
+\tab\b -PaginaAreaDeConhecimento/InfoCanvas/Button\par
+\tab\tab\b0 (OnClick)Button/PopUpManager\par
+\tab\tab\tab PopUpManager.QuitPanel()\par
+\tab\tab (OnClick)Button/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab -\b PaginaAreaDeConhecimento/BotaoExpandirTexto\par
+\tab\tab\b0 (OnClick)BotaoExpandirTexto/BotoesPainels\b\par
+\tab\tab\tab\b0 BotoesPainels.AbrirPainel()\par
+\tab\tab (Script)BotoesExpandir\par
+\tab\tab\tab (var)Painel:  PainelExpans\'e3o\par
+\tab\i -CanvasMomentoDoCriador/PaginaInteligencias\par
+\tab\tab\i0 (Script)PaginaInteligencias\par
+\tab\tab\tab (var)GruposDeIconesDeIntelig\'eancia:  \tab\tab\tab\tab\tab\tab\tab IconesDeInteligencias(GrupoDeIconesdeInteligencia(Script))\par
+\tab -\i PaginaInteligencias/IconesDeInteligencia\par
+\tab\tab\i0 (Script)GruposDeIconesDeInteligencias\par
+\tab\tab\tab (array)IconesInteligencias\par
+\tab\tab\tab\tab Element0: InteligenciaCorporal(Script)\par
+\tab\tab\tab\tab Element1: InteligenciaIntrapessoal(Script)\par
+\tab\tab\tab\tab Element2: InteligenciaIntrapessoal(Script)\par
+\tab\tab\tab\tab Element3: InteligenciaLinguistica\par
+\tab\b -PaginaInteligencias/BotaoConfirmar\par
+\tab\tab\b0 (OnClick)TrocadorDeCenaParaResumoDoCriador/TrocadorDeCena\par
+\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\b -PaginaInteligencias/BotaoInfo\par
+\tab\tab\b0 (OnClick)BotaoInfo/PopUpManager\par
+\tab\tab\tab PopUpManager.FuncaoDupla()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab -\b PaginaInteligencias/InfoCanvas/InfoPanel/Button\par
+\b0\tab\tab (OnClick)Button/PopUpManager\par
+\tab\tab\tab PopUpManager.QuitPanel()\par
+\tab\tab (OnClick)Button/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\tab (Script)PopUpManager\par
+\tab\tab\tab (var)InfoCanvas:  InfoCanvas\par
+\tab\tab (Script)ChamarSFX\par
+\tab\b -PaginaInteligencias/BotaoExpandirTexto\par
+\tab\tab\b0 (OnClick)BotaoExpandirTexto/BotoesPainel\par
+\tab\tab\tab BotoesPainel.AbrirPainel()\par
+\tab\tab (Script)BotoesPaineis\par
+\tab\tab\tab (var) PainelExpans\'e3o\par
+\tab\b -CanvasMomentoDoCriador/BotaoPaginaAnterior\par
+\tab\tab\b0 (OnClick)CanvasMomentoDoCriador/SequenciaDePaginas\par
+\tab\tab\tab SequenciaDePaginas.MostrarPaginaAnterior()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\b -CanvasMomentoCriador/BotaoProximaPagina\par
+\tab\tab\b0 (OnClick)CanvasMomentoDoCriador/SequenciaDePaginas\par
+\tab\tab\tab SequenciaDePaginas.MostrarProximaPagina()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\b -CanvasMomentoCriador/BotaoCancelar\par
+\tab\tab\b0 (OnClick)BotaoCancelar/BotoesPainels\par
+\tab\tab\tab BotoesPainels.AbrirPainel()\par
+\tab\tab (OnClick)CanvasMomentoDoCriador/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\par
+\tab\tab (Scripts)BotoesPainels\par
+\tab\tab\tab (var)Painel: ConfirmacaoSaida\par
+
+\pard\sa200\sl276\slmult1\tab -CanvasMomentoDoCriador/\i ConfirmacaoSaida\par
+\tab\tab\tab\i0 (Script)ChamarSFX\par
+\tab\tab\tab (Script)BotoesPaineis\par
+\tab\tab\tab\tab (var)Painel: ConfirmacaoSaida\par
+\tab\tab\tab\b -CanvasMomentoCriador/ConfirmacaoSaida/InfoPanel/SimButton\par
+\tab\tab\tab\tab\b0 (OnClick)\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab TrocadorDeCenaParaMenuPrincipal/TrocadorDeCena\par
+\tab\tab\tab\tab\tab TrocadorDeCena.TrocarCena()\par
+\tab\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+\tab\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTrocar()\par
+
+\pard\ri-782\sa200\sl276\slmult1\tab\tab\tab\tab\tab\b\tab\tab\tab\tab\tab\tab\tab -CanvasMomentoDoCriador/ConfirmacaoSaida/InfoPanel/NaoButton\par
+
+\pard\sa200\sl276\slmult1\tab\tab\tab\tab\b0 (OnClick)ConfirmacaoSaida/BotaoPaineis\par
+\tab\tab\tab\tab\tab BotaoPaineis.FecharPainel()\par
+\tab\tab\tab\tab (OnClick)CanvasIntroducao/ChamarSFX\par
+
+\pard\ri-1634\sa200\sl276\slmult1\tab\tab\tab\tab\tab ChamarSFX.ChamarSFXParaTrocar()\par
+\tab -CanvasMomentoDoCriador/PainelExpansao\par
+\b\tab\tab\tab\b0 (Script)BotoesPainels\par
+\tab\tab\tab\tab (var)Painel:  PainelExpans\'e3o\par
+\tab\tab\tab (Script) ChamarSFX\par
+\tab -\b PainelExpansao/PopUpExpans\'e3oTexto/Bot\'e3oFechar\par
+\tab\tab\b0 (OnClick)PainelExpans\'e3o/BotoesPainels\par
+\tab\tab\tab BotoesPainels.FecharPainel()\par
+\tab\tab (OnClick)PainelExpans\'e3o/ChamarSFX\par
+\tab\tab\tab ChamarSFX.ChamarSFXParaTocar()\b\par
+
+\pard\sa200\sl276\slmult1\b0\par
+}
+ 
