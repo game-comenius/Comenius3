@@ -18,6 +18,8 @@ public class PaginaInteligencias : Pagina
 
     [SerializeField] Button botaoConfirmar;
 
+    public Button botaoProximaPagina;
+
     private void Start()
     {
         // Limpar nome do selecionado, descrição do selecionado e esconder
@@ -65,6 +67,9 @@ public class PaginaInteligencias : Pagina
 
     public override bool Validar()
     {
+        //Garantir que o botão de avançar permaneça desativado.
+        botaoProximaPagina.interactable = false;
+
         return (grupoDeIconesInteligencias.IconeSelecionado != null);
     }
 }

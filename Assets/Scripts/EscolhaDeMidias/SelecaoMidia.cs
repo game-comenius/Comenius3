@@ -19,6 +19,8 @@ public class SelecaoMidia : MonoBehaviour
     public GameObject iconeDestaqueMidia;
     public GameObject tituloDestaqueMidia;
     public GameObject descricaoDestaqueMidia;
+    public GameObject botaoProximaPaginaDeMidias;
+    public GameObject botaoPaginaDeMidiasAnterior;
 
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
@@ -53,16 +55,29 @@ public class SelecaoMidia : MonoBehaviour
         selecionadasUI[0].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
 
         var descricaoExpandidaInicial = TextoExpandido;
+
         descricaoExpandidaInicial.text = descriçãoInicial;
+
+       //Iniciar com o botão de voltar página desativado.
+        botaoPaginaDeMidiasAnterior.SetActive(false);
     }
 
     public void ProximaPagina()
     {
         if (paginaAtual < ultimaPagina)
         {
+
+            if (paginaAtual == 1)
+            {
+                botaoProximaPaginaDeMidias.SetActive(false);
+
+            }
+
             paginasDeMidias[paginaAtual].SetActive(false);
             paginaAtual++;
             paginasDeMidias[paginaAtual].SetActive(true);
+
+            botaoPaginaDeMidiasAnterior.SetActive(true);
         }
     }
 
@@ -70,10 +85,21 @@ public class SelecaoMidia : MonoBehaviour
     {
         if (paginaAtual > 0)
         {
+
+            if (paginaAtual == 1)
+            {
+                botaoPaginaDeMidiasAnterior.SetActive(false);
+
+            }
+
             paginasDeMidias[paginaAtual].SetActive(false);
             paginaAtual--;
             paginasDeMidias[paginaAtual].SetActive(true);
+
+            botaoProximaPaginaDeMidias.SetActive(true);
+
         }
+
     }
 
     public void DestacarMidia(NomeDeMidia midia)
