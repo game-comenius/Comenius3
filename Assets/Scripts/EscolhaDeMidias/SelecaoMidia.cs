@@ -56,9 +56,11 @@ public class SelecaoMidia : MonoBehaviour
 
         var descricaoExpandidaInicial = TextoExpandido;
 
+
         descricaoExpandidaInicial.text = descriçãoInicial;
 
        //Iniciar com o botão de voltar página desativado.
+
         botaoPaginaDeMidiasAnterior.SetActive(false);
     }
 
