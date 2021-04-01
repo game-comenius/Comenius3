@@ -1418,7 +1418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599, y: 207}
+  m_AnchoredPosition: {x: -599, y: 250}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444760273
@@ -1451,6 +1451,7 @@ MonoBehaviour:
     type: 3}
   aveas: {fileID: 21300000, guid: 5fe3875b78af5824b91405219290c2ae, type: 3}
   aplicativos: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  projetorMultimidia: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
 --- !u!114 &444760274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,6 +1842,7 @@ MonoBehaviour:
     type: 3}
   aveas: {fileID: 21300000, guid: 95b608be2669cff4d8a42f4a34bed7dc, type: 3}
   aplicativos: {fileID: 21300000, guid: 0db0dc2994db58a46acebc9bf698186f, type: 3}
+  projetorMultimidia: {fileID: 0}
 --- !u!1 &547386501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,7 +3253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599, y: 42}
+  m_AnchoredPosition: {x: -599, y: 85}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895850425
@@ -3284,6 +3286,7 @@ MonoBehaviour:
     type: 3}
   aveas: {fileID: 21300000, guid: 5fe3875b78af5824b91405219290c2ae, type: 3}
   aplicativos: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  projetorMultimidia: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
 --- !u!114 &895850426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6163,7 +6166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599, y: -123}
+  m_AnchoredPosition: {x: -599, y: -80}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684438603
@@ -6196,6 +6199,7 @@ MonoBehaviour:
     type: 3}
   aveas: {fileID: 21300000, guid: 5fe3875b78af5824b91405219290c2ae, type: 3}
   aplicativos: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  projetorMultimidia: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
 --- !u!114 &1684438604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7069,7 +7073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599, y: -288}
+  m_AnchoredPosition: {x: -599, y: -245}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830832776
@@ -7102,6 +7106,7 @@ MonoBehaviour:
     type: 3}
   aveas: {fileID: 21300000, guid: 5fe3875b78af5824b91405219290c2ae, type: 3}
   aplicativos: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  projetorMultimidia: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
 --- !u!114 &1830832777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8080,19 +8085,21 @@ MonoBehaviour:
   iconeDestaqueMidia: {fileID: 538621335}
   tituloDestaqueMidia: {fileID: 460357379}
   descricaoDestaqueMidia: {fileID: 823082337}
+  botaoProximaPaginaDeMidias: {fileID: 1238270416}
+  botaoPaginaDeMidiasAnterior: {fileID: 1669002897}
   TextoExpandido: {fileID: 1074216910}
   titulo: {fileID: 989595390}
-  titulosDasSelecoes:
-  - "Escolha sua primeira m\xEDdia para usar no quarto"
-  - "Escolha sua segunda m\xEDdia para usar no quarto"
-  - "Escolha sua primeira m\xEDdia para usar na sala de aula"
-  - "Escolha sua segunda m\xEDdia para usar na sala de aula"
   "descri\xE7\xE3oInicial": "\"Agora voc\xEA deve escolher as m\xEDdias que ir\xE1
     utilizar em sala de aula. Para isso \xE9 bom pensar nas diferentes etapas da
     Aprendizagem Baseada em Problemas: o levantamento de conhecimentos, an\xE1lise
     de vari\xE1veis, propor solu\xE7\xF5es, busca de refer\xEAncias e apresentar
     as respostas e resultados. Voc\xEA pode escolher duas m\xEDdias diferentes. Pense
     bem quais ser\xE3o mais \xFAteis para os alunos!\""
+  titulosDasSelecoes:
+  - "Escolha sua primeira m\xEDdia para usar no quarto"
+  - "Escolha sua segunda m\xEDdia para usar no quarto"
+  - "Escolha sua primeira m\xEDdia para usar na sala de aula"
+  - "Escolha sua segunda m\xEDdia para usar na sala de aula"
   selecionadasUI:
   - {fileID: 444760271}
   - {fileID: 895850423}
