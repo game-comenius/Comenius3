@@ -12,7 +12,7 @@ public class SelecaoMidia : MonoBehaviour
     private int selecaoAtual = 0; //para usar de índice escolhendo a mídia
     private int paginaAtual = 0; //para usar de índice nas páginas de mídias
     public int ultimaPagina = 2; //*índice* da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
-    private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
+    [SerializeField]private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
     private bool selecaoPronta;
 
     private Midia destaque;
@@ -25,6 +25,12 @@ public class SelecaoMidia : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
     [SerializeField] Text titulo;
+ 
+    [Header("Textos da seleção: ")]
+    [SerializeField] string descriçãoInicial;
+    [SerializeField] string[] titulosDasSelecoes;
+    
+    [Space(10)]
 
     public GameObject[] selecionadasUI; //parte a UI que mostra as mídias que já foram selecionadas
 
@@ -34,8 +40,7 @@ public class SelecaoMidia : MonoBehaviour
 
     private void Start()
     {
-        var tituloDaPrimeiraSelecao = titulo;
-        tituloDaPrimeiraSelecao.text = "Escolha sua primeira mídia";
+        titulo.text = titulosDasSelecoes[0];
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
         midiasSelecionadas = new NomeDeMidia[quantidadeMidias];
@@ -50,9 +55,12 @@ public class SelecaoMidia : MonoBehaviour
         selecionadasUI[0].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
 
         var descricaoExpandidaInicial = TextoExpandido;
-        descricaoExpandidaInicial.text = "Agora você deve escolher as mídias que irá utilizar em sala de aula. Para isso é bom pensar nas diferentes etapas da Aprendizagem Baseada em Problemas: o levantamento de conhecimentos, análise de variáveis, propor soluções, busca de referências e apresentar as respostas e resultados. Você pode escolher duas mídias diferentes. Pense bem quais serão mais úteis para os alunos!";
-        
-        //Iniciar com o botão de voltar página desativado.
+
+
+        descricaoExpandidaInicial.text = descriçãoInicial;
+
+       //Iniciar com o botão de voltar página desativado.
+
         botaoPaginaDeMidiasAnterior.SetActive(false);
     }
 
@@ -114,11 +122,10 @@ public class SelecaoMidia : MonoBehaviour
     {
         if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
         {
-            var tituloDaSegundaSelecao = titulo;
-            tituloDaSegundaSelecao.text = "Escolha sua segunda mídia";
+            titulo.text = titulosDasSelecoes[Mathf.Clamp(selecaoAtual+1, 0,quantidadeMidias-1)];
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
-            Debug.Log("midias planejadas: " + midiasSelecionadas[0] + " " + midiasSelecionadas[1]);
+
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
             selecaoAtual++;
             if (selecaoAtual >= quantidadeMidias)
@@ -126,6 +133,8 @@ public class SelecaoMidia : MonoBehaviour
                 selecaoPronta = true;
                 botaoConfirmar.SetActive(selecaoPronta);
                 Debug.Log("Ultima mídia selecionada");
+              
+                
                 selecaoAtual = quantidadeMidias - 1; //para não acabarmos fora do array
             }
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
@@ -137,11 +146,13 @@ public class SelecaoMidia : MonoBehaviour
             jogo.MidiasSelecionadas = new Midia[quantidadeMidias];
             for (var i = 0; i < quantidadeMidias; i++)
             {
-                var midia = new Midia(midiasSelecionadas[i]);
+                Midia midia = new Midia(midiasSelecionadas[i]);
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
                 jogo.MidiasSelecionadas[i] = midia;
             }
         }
+       
+        
     }
 
     public void DeselecionarMidia()
