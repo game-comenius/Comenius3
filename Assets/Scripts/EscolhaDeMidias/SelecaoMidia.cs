@@ -21,6 +21,8 @@ public class SelecaoMidia : MonoBehaviour
     public GameObject descricaoDestaqueMidia;
     public GameObject botaoProximaPaginaDeMidias;
     public GameObject botaoPaginaDeMidiasAnterior;
+    public Button botaoProximaMidia;
+    public Button botaoMidiaAnterior;
 
     [SerializeField] TextMeshProUGUI TextoExpandido;
 
@@ -40,6 +42,7 @@ public class SelecaoMidia : MonoBehaviour
 
     private void Start()
     {
+        botaoMidiaAnterior.interactable = false;
         titulo.text = titulosDasSelecoes[0];
         //instanciando o tamanho do array de acordo com a metodologia
         //como por enquanto usamos uma metodologia só, estou deixando fixo
@@ -60,7 +63,6 @@ public class SelecaoMidia : MonoBehaviour
         descricaoExpandidaInicial.text = descriçãoInicial;
 
        //Iniciar com o botão de voltar página desativado.
-
         botaoPaginaDeMidiasAnterior.SetActive(false);
     }
 
@@ -120,8 +122,14 @@ public class SelecaoMidia : MonoBehaviour
 
     public void SelecionarMidia()
     {
+        if (selecaoAtual == quantidadeMidias - 1)
+        {
+            botaoProximaMidia.interactable = false;
+        }
+
         if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
         {
+            botaoMidiaAnterior.interactable = true;
             titulo.text = titulosDasSelecoes[Mathf.Clamp(selecaoAtual+1, 0,quantidadeMidias-1)];
             midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
@@ -157,6 +165,13 @@ public class SelecaoMidia : MonoBehaviour
 
     public void DeselecionarMidia()
     {
+
+        if (selecaoAtual == 1)
+        {
+            botaoMidiaAnterior.interactable = false;
+        }
+
+        botaoProximaMidia.interactable = true;
         selecaoPronta = false;
         botaoConfirmar.SetActive(selecaoPronta);
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
