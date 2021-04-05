@@ -11,7 +11,7 @@ public class AnimacaoRolagem : MonoBehaviour
     public GameObject Programacao;
     public GameObject Pedagogico;
 
-    int velocidade = 40;
+    int velocidade = 30;
     float ProducaoECoordY, ProducaoECoordX;
     float GameDesignY, GameDesignX;
     float ArteY, ArteX;
