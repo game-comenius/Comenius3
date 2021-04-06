@@ -10,14 +10,9 @@ public class TrocadorDeCenaEditor : Editor
     private string[] labelDasCenasDisponiveis;
 
     private SerializedProperty cenaAlvoProperty;
-
-    private void Awake()
-    {
-        cenaAlvoProperty = serializedObject.FindProperty("IndiceDaCenaAlvo");
-    }
-
     private void OnEnable()
     {
+        
         var quantidadeDeCenasDisponiveis = SceneManager.sceneCountInBuildSettings;
         indicesDasCenasDisponiveis = new int[quantidadeDeCenasDisponiveis];
         labelDasCenasDisponiveis = new string[quantidadeDeCenasDisponiveis];
@@ -34,10 +29,13 @@ public class TrocadorDeCenaEditor : Editor
     {
         base.OnInspectorGUI();
 
+        cenaAlvoProperty = serializedObject.FindProperty("IndiceDaCenaAlvo");
+
         serializedObject.Update();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Cena Alvo");
+
         cenaAlvoProperty.intValue = EditorGUILayout.IntPopup(cenaAlvoProperty.intValue, labelDasCenasDisponiveis, indicesDasCenasDisponiveis);
         EditorGUILayout.EndHorizontal();
 
