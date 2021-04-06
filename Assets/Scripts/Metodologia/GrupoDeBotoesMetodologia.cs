@@ -18,7 +18,7 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
     private void Start()
     {
         // Cadastrar os botões passados pelo Inspector neste grupo
-        foreach (var botao in botoesMetodologia) botao.grupo = this;
+        //foreach (var botao in botoesMetodologia) botao.grupo = this;
 
         // Esconder anel de seleção pois não há botões selecionados
         AnelDeSelecao.enabled = false;
@@ -27,7 +27,10 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
     public bool Selecionar(BotaoMetodologia botao)
     {
         // Se botão não faz parte do grupo, ignorar
-        if (!botoesMetodologia.Contains(botao)) return false;
+        if (!botoesMetodologia.Contains(botao)) {
+            return false;
+        }
+            
 
         var botaoQueEstavaSelecionado = BotaoSelecionado;
         if (botaoQueEstavaSelecionado)
