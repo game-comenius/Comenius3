@@ -7,6 +7,8 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
 {
     [SerializeField] Image AnelDeSelecao;
     [SerializeField] BotaoMetodologia[] botoesMetodologia;
+    [SerializeField] TrocadorDeCena TrocadorDeCena;
+    [SerializeField] int[] indiceDeCenaPorBotão;
 
     public BotaoMetodologia BotaoSelecionado
     {
@@ -18,7 +20,7 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
     private void Start()
     {
         // Cadastrar os botões passados pelo Inspector neste grupo
-        foreach (var botao in botoesMetodologia) botao.grupo = this;
+        //foreach (var botao in botoesMetodologia) botao.grupo = this;
 
         // Esconder anel de seleção pois não há botões selecionados
         AnelDeSelecao.enabled = false;
@@ -27,7 +29,10 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
     public bool Selecionar(BotaoMetodologia botao)
     {
         // Se botão não faz parte do grupo, ignorar
-        if (!botoesMetodologia.Contains(botao)) return false;
+        if (!botoesMetodologia.Contains(botao)) {
+            return false;
+        }
+            
 
         var botaoQueEstavaSelecionado = BotaoSelecionado;
         if (botaoQueEstavaSelecionado)
@@ -51,6 +56,16 @@ public class GrupoDeBotoesMetodologia : MonoBehaviour
         // Gravar no estado do jogo que este é o nível de ensino selecionado
         EstadoDoJogo.Instance.MetodologiaSelecionada = botao.Valor;
         EstadoDoJogo.Instance.MetodologiaSelecionada.Sprite = botao.ImageComponent.sprite;
+
+        // Configurar a cena corretamente
+        int indiceDoBotão = 0;
+        for (int i = 0; i < botoesMetodologia.Length ; i++) {
+            if(botoesMetodologia[i] == botao)
+                indiceDoBotão = i;
+        } 
+        //// Pega o indice correspondente na lista de indices
+        indiceDoBotão = indiceDeCenaPorBotão[indiceDoBotão];
+        TrocadorDeCena.IndiceDaCenaAlvo = indiceDoBotão;
 
         return true;
     }
