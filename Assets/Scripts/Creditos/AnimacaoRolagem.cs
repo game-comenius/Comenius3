@@ -11,7 +11,7 @@ public class AnimacaoRolagem : MonoBehaviour
     public GameObject Programacao;
     public GameObject Pedagogico;
 
-    int velocidade = 30;
+    int velocidade = 25;
     float ProducaoECoordY, ProducaoECoordX;
     float GameDesignY, GameDesignX;
     float ArteY, ArteX;
@@ -41,13 +41,13 @@ public class AnimacaoRolagem : MonoBehaviour
     void Update()
     {
 
-        if (ProducaoECoord.transform.position.y < 700) {
+        if (ProducaoECoord.transform.position.y < 310) {
             ProducaoECoord.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             GameDesign.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             Arte.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             Programacao.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             Pedagogico.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-        } else {
+        } /*else {
 
             ProducaoECoord.transform.position = new Vector3(ProducaoECoordX, ProducaoECoordY, transform.position.z);
             GameDesign.transform.position = new Vector3(GameDesignX, GameDesignY, transform.position.z);
@@ -55,9 +55,9 @@ public class AnimacaoRolagem : MonoBehaviour
             Programacao.transform.position = new Vector3(ProgramacaoX, ProgramacaoY, transform.position.z);
             Pedagogico.transform.position = new Vector3(PedagogicoX, PedagogicoY, transform.position.z);
 
-        }
+        } */
 
-        Debug.Log(ProducaoECoord.transform.position.x + " " + ProducaoECoord.transform.position.y + " " + ProducaoECoord.transform.position.z);
+        //Debug.Log(ProducaoECoord.transform.position.x + " " + ProducaoECoord.transform.position.y + " " + ProducaoECoord.transform.position.z);
 
     }
 }
