@@ -57,7 +57,7 @@ public class AnimacaoRolagem : MonoBehaviour
 
         }
 
-        Debug.Log(ProducaoECoord.transform.position.x + " " + ProducaoECoord.transform.position.y + " " + ProducaoECoord.transform.position.z);
+        //Debug.Log(ProducaoECoord.transform.position.x + " " + ProducaoECoord.transform.position.y + " " + ProducaoECoord.transform.position.z);
 
     }
 }
