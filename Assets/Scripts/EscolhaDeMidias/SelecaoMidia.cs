@@ -140,7 +140,7 @@ public class SelecaoMidia : MonoBehaviour
             {
                 selecaoPronta = true;
                 botaoConfirmar.SetActive(selecaoPronta);
-                Debug.Log("Ultima mídia selecionada");
+                //Debug.Log("Ultima mídia selecionada");
               
                 
                 selecaoAtual = quantidadeMidias - 1; //para não acabarmos fora do array

@@ -5,32 +5,33 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ControladorDeDisplayQuarto : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite medio;
-    [SerializeField] private Sprite fundamental;
-    [SerializeField] private Sprite infantil;
-    [SerializeField] private Sprite superior;
+    [SerializeField] private GameObject infantil;
+    [SerializeField] private GameObject fundamental;
+    [SerializeField] private GameObject medio;
+    [SerializeField] private GameObject superior;
 
     void Start()
     {
-        if(spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        infantil.SetActive(false);
+        fundamental.SetActive(false);
+        medio.SetActive(false);
+        superior.SetActive(false);
+
         int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.valor;//Verifica o nivel de ensino selecionado
-        //Atribui ao renderer o sprite correspondente ao selecionado
+        //Ativa o gameObject correspondente ao selecionado
         switch (indiceNivelDeEnsino)
         {
             case 0://Educacao infantil
-                spriteRenderer.sprite = infantil;
+                infantil.SetActive(true);
                 break;
             case 1://Ensino Fundamental
-                spriteRenderer.sprite = fundamental;
+                fundamental.SetActive(true);
                 break;
             case 2://Ensino Medio
-                spriteRenderer.sprite = medio;
+                medio.SetActive(true);
                 break;
             default://Ensino Superior
-                spriteRenderer.sprite = superior;
+                superior.SetActive(true);
                 break;
         }
         
