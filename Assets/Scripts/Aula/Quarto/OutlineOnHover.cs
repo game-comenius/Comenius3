@@ -14,13 +14,13 @@ public class OutlineOnHover : MonoBehaviour
 
     void OnMouseEnter() 
     {
-        Debug.Log("Entrou");
-        rend.sharedMaterial.SetFloat("_OutlineEnabled", 1f);
+        //Debug.Log("Entrou");
+        rend.material.SetFloat("_OutlineEnabled", 1f);
     }
 
     void OnMouseExit() 
     {
-        Debug.Log("Saiu");
-        rend.sharedMaterial.SetFloat("_OutlineEnabled", 0f);
+        //Debug.Log("Saiu");
+        rend.material.SetFloat("_OutlineEnabled", 0f);
     }
 }
