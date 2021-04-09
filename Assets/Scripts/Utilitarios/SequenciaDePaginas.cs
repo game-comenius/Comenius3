@@ -45,8 +45,7 @@ public class SequenciaDePaginas : MonoBehaviour
             if (AnelDeSelecao.enabled == true) {
                 AnelDeSelecao.enabled = false;
                 jaMudou = true;
-            }
-            else {
+            } else {
                 if (jaMudou == true) {
                     AnelDeSelecao.enabled = true;
                 }
@@ -78,8 +77,7 @@ public class SequenciaDePaginas : MonoBehaviour
             if (AnelDeSelecao.enabled == true) {
                 AnelDeSelecao.enabled = false;
                 jaMudou = true;
-            }
-            else {
+            } else {
                 if (jaMudou == true) {
                     AnelDeSelecao.enabled = true;
                 }
