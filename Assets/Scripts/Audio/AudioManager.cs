@@ -28,6 +28,9 @@ public class AudioManager : MonoBehaviour
     //Controle de cenas
     private string ultimaCena;
 
+    //Impedir que a música pare no menu.
+    bool jaIniciou = false;
+
 
     private void Awake()
     {
@@ -59,8 +62,18 @@ public class AudioManager : MonoBehaviour
         //Compara com a cena ativa por último para confirmar se ainda está na mesma cena ou trocou de cena
         if(cenaAtual != ultimaCena)
         {
-            ultimaCena = cenaAtual;
-            TocarTrilhaSonora();
+            if (cenaAtual != "MenuPrincipal") {
+                ultimaCena = cenaAtual;
+                TocarTrilhaSonora();
+                //Debug.Log(ultimaCena + " - Não é o menu" + " | Cena atual: " + cenaAtual);
+            } else {
+                if (jaIniciou == false) {
+                    ultimaCena = cenaAtual;
+                    TocarTrilhaSonora();
+                    //Debug.Log(ultimaCena + " - Menu" + " | Cena atual: " + cenaAtual);
+                    jaIniciou = true;
+                }
+            }
         }
 
     }
@@ -103,6 +116,7 @@ public class AudioManager : MonoBehaviour
         {
             case "AulaABP":
                 CriacaoGameObjectTrilhaSonora(aulaTrilha);
+                jaIniciou = false;
                 break;
             case "MenuPrincipal":
                 CriacaoGameObjectTrilhaSonora(menuTrilha);
