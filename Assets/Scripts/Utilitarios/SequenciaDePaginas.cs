@@ -10,6 +10,10 @@ public class SequenciaDePaginas : MonoBehaviour
     [SerializeField] Button botaoPaginaAnterior;
     [SerializeField] Button botaoProximaPagina;
 
+    //Variáveis para corrigir a seleção de personagens.
+    [SerializeField] Image AnelDeSelecao;
+    bool jaMudou = false;
+
     private LinkedList<Pagina> sequenciaDePaginas;
     private LinkedListNode<Pagina> nodoPaginaAtual;
     
@@ -34,6 +38,23 @@ public class SequenciaDePaginas : MonoBehaviour
             return;
         }
         Mostrar(nodoPaginaAnterior);
+
+        //Correção na seleção de personagens.
+        try
+        {
+            if (AnelDeSelecao.enabled == true) {
+                AnelDeSelecao.enabled = false;
+                jaMudou = true;
+            }
+            else {
+                if (jaMudou == true) {
+                    AnelDeSelecao.enabled = true;
+                }
+            }
+        }
+        catch {
+
+        }
     }
 
     public void MostrarProximaPagina()
@@ -50,6 +71,23 @@ public class SequenciaDePaginas : MonoBehaviour
             return;
         }
         Mostrar(proximoNodoPagina);
+
+        //Correção na seleção de personagens.
+        try
+        {
+            if (AnelDeSelecao.enabled == true) {
+                AnelDeSelecao.enabled = false;
+                jaMudou = true;
+            }
+            else {
+                if (jaMudou == true) {
+                    AnelDeSelecao.enabled = true;
+                }
+            }
+        }
+        catch {
+
+        }
     }
 
     private void Mostrar(LinkedListNode<Pagina> nodoPagina)
