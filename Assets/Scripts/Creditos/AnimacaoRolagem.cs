@@ -11,7 +11,7 @@ public class AnimacaoRolagem : MonoBehaviour
     public GameObject Programacao;
     public GameObject Pedagogico;
 
-    int velocidade = 25;
+    int velocidade = Screen.height / 12;
     float ProducaoECoordY, ProducaoECoordX;
     float GameDesignY, GameDesignX;
     float ArteY, ArteX;
@@ -41,7 +41,7 @@ public class AnimacaoRolagem : MonoBehaviour
     void Update()
     {
 
-        if (ProducaoECoord.transform.position.y < 310) {
+        if (ProducaoECoord.transform.position.y < Screen.height - (Screen.height / 24)) {
             ProducaoECoord.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             GameDesign.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             Arte.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
