@@ -30,7 +30,7 @@ public class BotaoMidia : MonoBehaviour
         if (manager != null)
         {
             manager.GetComponent<SelecaoMidia>().DestacarMidia(midia);
-            Debug.Log("midia selecionada: " + midia);
+            //Debug.Log("midia selecionada: " + midia);
         }
         else
         {
