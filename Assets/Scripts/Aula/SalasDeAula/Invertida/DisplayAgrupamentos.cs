@@ -18,11 +18,6 @@ public class DisplayAgrupamentos : MonoBehaviour
      [SerializeField]
     GameObject SalaInteira;
 
-    void Start()
-    {
-        MostrarAgrupamento();
-    }
-
     public void MostrarAgrupamento() 
     {
         int agrupamento = EstadoDoJogo.Instance.Agrupamento;
