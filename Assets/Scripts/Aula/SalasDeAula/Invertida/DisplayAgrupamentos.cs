@@ -18,10 +18,9 @@ public class DisplayAgrupamentos : MonoBehaviour
      [SerializeField]
     GameObject SalaInteira;
 
-    public void MostrarAgrupamento() 
+    public void Mostrar(int indiceDaMidia) 
     {
-        int agrupamento = EstadoDoJogo.Instance.Agrupamento;
-
+        Agrupamento agrupamento = EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento;
         Individual.SetActive(false);
         Duplas.SetActive(false);
         PequenosGrupos.SetActive(false);
@@ -30,19 +29,19 @@ public class DisplayAgrupamentos : MonoBehaviour
 
         switch (agrupamento)
         {
-            case (int)Agrupamento.FormatoU:
+            case Agrupamento.FormatoU:
                 SalaInteira.SetActive(true);
                 break;
-            case (int)Agrupamento.Individual:
+            case Agrupamento.Individual:
                 Individual.SetActive(true);
                 break;
-            case (int)Agrupamento.Duplas:
+            case Agrupamento.Duplas:
                 Duplas.SetActive(true);
                 break;
-            case (int)Agrupamento.PequenosGrupos:
+            case Agrupamento.PequenosGrupos:
                 PequenosGrupos.SetActive(true);
                 break;
-            case (int)Agrupamento.GrandesGrupos:
+            case Agrupamento.GrandesGrupos:
                 GrandesGrupos.SetActive(true);
                 break;
         }

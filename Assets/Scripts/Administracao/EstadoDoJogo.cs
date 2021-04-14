@@ -84,15 +84,4 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public Sprite SpriteCabeloPersonagem { get; set; }
     public Sprite SpriteRoupaPersonagem { get; set; }
     public Sprite SpriteIconePersonagem { get; set; }
-
-    private int agrupamento;
-    public int Agrupamento
-    {
-        get
-        {
-            return agrupamento;
-        }
-
-        set => agrupamento = value;
-    }
 }

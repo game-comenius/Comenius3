@@ -10,6 +10,10 @@ public class Midia
     public string Descricao { get; private set; }
     public string Expansao { get; private set; }
 
+    public int indiceDaMidia;
+
+    public Agrupamento agrupamento;
+
     public Midia (NomeDeMidia nomeMidia)
     {
         NomeMidia = nomeMidia;

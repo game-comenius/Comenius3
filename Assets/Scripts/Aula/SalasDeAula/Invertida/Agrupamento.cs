@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Agrupamento 
+[SerializableAttribute]
+public enum Agrupamento 
 {
     FormatoU,
     Individual,
