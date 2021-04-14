@@ -18,16 +18,9 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
     public Text nomeDoAgrupamento;
     public TextMeshProUGUI descricaoAgrupamento;
 
-    // Start is called before the first frame update
     void Start()
     {        
         MostrarAgrupamento(1);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void MostrarAgrupamento(int agrValor)
@@ -45,26 +38,31 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
                 agrupamentoVisualizado = agrupamentoSalaInteira;
                 nomeDoAgrupamento.text = "Formato de U";
                 descricaoAgrupamento.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração, troca entre os colegas, aulas expositivas que necessitam de apoio da lousa ou outra tecnologia educacional.";
+                EstadoDoJogo.Instance.Agrupamento = (int)Agrupamento.FormatoU;
                 break;
             case 2:
                 agrupamentoVisualizado = agrupamentoGrandesGrupos;
                 nomeDoAgrupamento.text = "Grupos Grandes";
                 descricaoAgrupamento.text = "Os grupos formados por um número maior de alunos são indicados para atividades de pluralidade de olhares e debate de hipóteses sobre o objeto de aprendizagem. Habilidades como negociação, argumentação, responsabilidade compartilhada, divisão e delegação de tarefas trabalhando em equipe.";
+                EstadoDoJogo.Instance.Agrupamento = (int)Agrupamento.GrandesGrupos;
                 break;
             case 3:
                 agrupamentoVisualizado = agrupamentoPequenosGrupos;
                 nomeDoAgrupamento.text = "Grupos Pequenos";
                 descricaoAgrupamento.text = "";
+                EstadoDoJogo.Instance.Agrupamento = (int)Agrupamento.PequenosGrupos;
                 break;
             case 4:
                 agrupamentoVisualizado = agrupamentoDuplas;
                 nomeDoAgrupamento.text = "Duplas";
                 descricaoAgrupamento.text = "Esse formato é recomendado para uma interação mais direta entre os alunos. Ideal para produção de textos, alfabetização e resolução de problemas.";
+                EstadoDoJogo.Instance.Agrupamento = (int)Agrupamento.Duplas;
                 break;
             case 5:
                 agrupamentoVisualizado = agrupamentoIndividual;
                 nomeDoAgrupamento.text = "Individual";
                 descricaoAgrupamento.text = "Permite que o educador trabalhe aulas expositivas, apresentações em vídeo, filmes e situações em que é necessário o apoio da lousa. Essa organização em alguns momentos pode limitar a interação entre alunos e entre estes e os professores.";
+                EstadoDoJogo.Instance.Agrupamento = (int)Agrupamento.Individual;
                 break;
     
         }

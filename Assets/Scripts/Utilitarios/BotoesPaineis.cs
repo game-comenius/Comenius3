@@ -10,7 +10,7 @@ public class BotoesPaineis : MonoBehaviour
     {
         if(painel != null)
         {
-            Debug.Log("Abriu");
+            //Debug.Log("Abriu");
             painel.SetActive(true);
         }
     }
