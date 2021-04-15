@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplaySalaDeAula : MonoBehaviour
+public class DisplaySalaDeAulaInvertida : MonoBehaviour
 {
     [SerializeField]
     GameObject salaNormal;
