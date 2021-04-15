@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Midia
 {
@@ -9,8 +9,6 @@ public class Midia
     public string NomeApresentavel { get; private set; }
     public string Descricao { get; private set; }
     public string Expansao { get; private set; }
-
-    public int indiceDaMidia;
 
     public Agrupamento agrupamento;
 
