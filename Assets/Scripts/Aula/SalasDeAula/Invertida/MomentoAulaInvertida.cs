@@ -11,6 +11,9 @@ public class MomentoAulaInvertida : MonoBehaviour
         Interacao2,
         Quizz3,
     }
+
+    public UnityEngine.Events.UnityEvent OnStateChange;
+
     private EstadoDeAula estadoAtual;
 
     private void Start()
@@ -24,6 +27,7 @@ public class MomentoAulaInvertida : MonoBehaviour
         estadoAtual = estadoAtual + 1;
         if(estadoAtual > EstadoDeAula.Quizz3)//O Momento Aula Acabou
             estadoAtual = 0;
+        OnStateChange.Invoke();
     }
 
     public EstadoDeAula GetEstadoAtualdaAula()
