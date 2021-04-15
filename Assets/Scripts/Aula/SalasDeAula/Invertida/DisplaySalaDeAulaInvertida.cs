@@ -8,15 +8,8 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
     GameObject salaNormal;
     [SerializeField]
     GameObject salaInfantil;
-
-    public UnityEngine.Events.UnityEvent Display;
-
-    void Start() 
-    {
-        MostrarSala();
-    }
-
-    void MostrarSala()
+    
+    public void MostrarSala()
     {
         NivelDeEnsino nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
@@ -27,7 +20,5 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
             salaInfantil.SetActive(true);
         else
             salaNormal.SetActive(true);
-
-        Display.Invoke();
     }
 }

@@ -18,9 +18,9 @@ public class DisplayAgrupamentos : MonoBehaviour
      [SerializeField]
     GameObject SalaInteira;
 
-    public void Mostrar(int indiceDaMidia) 
+    public void Mostrar(MomentoAulaInvertida momento) 
     {
-        Agrupamento agrupamento = EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento;
+        Agrupamento agrupamento = momento.MidiaAtual.agrupamento;
         Individual.SetActive(false);
         Duplas.SetActive(false);
         PequenosGrupos.SetActive(false);
