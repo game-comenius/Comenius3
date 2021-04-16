@@ -12,17 +12,15 @@ using UnityEngine;
 
 public class MomentoAulaInvertida : MonoBehaviour
 {
-    [System.Serializable]
-    public class StateChangeEvent : UnityEngine.Events.UnityEvent<MomentoAulaInvertida> {}   
-    public StateChangeEvent OnStateChange;
-
+    public UnityEngine.Events.UnityEvent OnStateChange;
     private EstadoDeAula estadoAtual;
     public EstadoDeAula EstadoAtual{get {return estadoAtual;} private set {estadoAtual = value;}}
 
     private Midia midiaAtual;
     public Midia MidiaAtual {get {return midiaAtual;} private set {midiaAtual = value;}}
 
-    private void Start()
+    [ContextMenu("Start")]
+    public void Awake()
     {
         estadoAtual = EstadoDeAula.Quizz3;
         AvancarEstado();//Inicia o no primeiro estado e da a chamada de evento
@@ -41,6 +39,6 @@ public class MomentoAulaInvertida : MonoBehaviour
         else
             midiaAtual = EstadoDoJogo.Instance.MidiasSelecionadas[2];
 
-        OnStateChange.Invoke(this);
+        OnStateChange.Invoke();
     }
 }

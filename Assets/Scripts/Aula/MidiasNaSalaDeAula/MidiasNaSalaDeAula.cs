@@ -10,6 +10,14 @@ public abstract class MidiasNaSalaDeAula : MonoBehaviour
         midiasVisiveis = new List<GameObject>();
     }
 
+    protected void Mostrar()
+    {
+        foreach (GameObject midia in midiasVisiveis)
+        {
+            midia.SetActive(true);
+        }
+    }
+
     public void EsconderMidiasNaSalaDeAula()
     {
         foreach (var midia in midiasVisiveis) midia.SetActive(false);

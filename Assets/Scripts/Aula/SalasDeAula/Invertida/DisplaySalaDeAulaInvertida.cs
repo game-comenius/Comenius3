@@ -8,8 +8,21 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
     GameObject salaNormal;
     [SerializeField]
     GameObject salaInfantil;
-    
-    public void MostrarSala()
+    [SerializeField]
+
+    MomentoAulaInvertida controladorJogo;
+    void OnEnable()
+    {
+        UpdateDisplay();
+        controladorJogo.OnStateChange.AddListener(UpdateDisplay);
+    }
+
+    void OnDisable() 
+    {
+        controladorJogo.OnStateChange.RemoveListener(UpdateDisplay);
+    }
+
+    public void UpdateDisplay()
     {
         NivelDeEnsino nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
