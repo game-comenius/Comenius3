@@ -13,23 +13,17 @@ public class ControleResumo : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.MetodologiaSelecionada == Metodologia.ABP) {
+        if (estadoDoJogo.MetodologiaSelecionada == Metodologia.ABP)
+        {
             PaginaResumoCriador.SetActive(true);
             PaginaResumoPlanejamento.SetActive(false);
-        } else {
+        }
+        else
+        {
             PaginaResumoCriador.SetActive(false);
             PaginaResumoPlanejamento.SetActive(true);
         }
 
-
-
     }
 
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        PaginaResumoCriador.SetActive(false);
-    }
-    */
 }
