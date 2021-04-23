@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Midia
 {
     public NomeDeMidia NomeMidia { get; private set; }

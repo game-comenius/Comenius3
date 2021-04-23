@@ -2,7 +2,8 @@
 // https://docs.google.com/spreadsheets/d/107qEmnJbyoW8dPyvz0AiuGCE1Tqok4ybZdin8u_vKHQ/edit?usp=sharing
 
 // Por favor, não altere os valores internos (int) dos enums
-// Se você for adicionar uma nova mídia, atribua um novo valor à ela
+// Se você for adicionar uma nova mídia, atribua um novo valor à ela/
+[System.Serializable]
 public enum NomeDeMidia
 {
     Nenhuma = 0,

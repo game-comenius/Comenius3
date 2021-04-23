@@ -18,7 +18,7 @@ public class PaginaResumoDoPlanejamento : Pagina
     void Start()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
-        Debug.Log(estadoDoJogo.MidiasSelecionadas[0].NomeMidia);
+
 
         NomeDaMetodologia.text = estadoDoJogo.MetodologiaSelecionada.nome;
         NomeDasMidias.text = estadoDoJogo.MidiasSelecionadas[0].NomeApresentavel + ", " + estadoDoJogo.MidiasSelecionadas[1].NomeApresentavel +

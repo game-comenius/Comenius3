@@ -140,14 +140,14 @@ public class SelecaoMidia : MonoBehaviour
             {
                 selecaoPronta = true;
                 botaoConfirmar.SetActive(selecaoPronta);
-                //Debug.Log("Ultima mídia selecionada");
+                Debug.Log("Ultima mídia selecionada");
               
                 
                 selecaoAtual = quantidadeMidias - 1; //para não acabarmos fora do array
             }
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(true);
         }
-        else if (selecaoPronta)
+        if (selecaoPronta)
         {
             Debug.Log("Jogador já selecionou todas as mídias");
             var jogo = EstadoDoJogo.Instance;
@@ -157,6 +157,7 @@ public class SelecaoMidia : MonoBehaviour
                 Midia midia = new Midia(midiasSelecionadas[i]);
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
                 jogo.MidiasSelecionadas[i] = midia;
+                print(midia);
             }
         }
        
