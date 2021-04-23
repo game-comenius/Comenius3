@@ -21,11 +21,11 @@ public class MidiasNaSalaInvertida : MonoBehaviour
     void OnEnable()
     {
         UpdateDisplay();
-        controladorJogo.OnStateChange.AddListener(UpdateDisplay);
+        controladorJogo.OnMidiaChange.AddListener(UpdateDisplay);
     }
     void OnDisable() 
     {
-        controladorJogo.OnStateChange.RemoveListener(UpdateDisplay);
+        controladorJogo.OnMidiaChange.RemoveListener(UpdateDisplay);
     }
 
     void Esconder()
