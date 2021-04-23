@@ -10,7 +10,7 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
     GameObject salaInfantil;
     [SerializeField]
 
-    MomentoAulaInvertida controladorJogo;
+    EstadoDeAulaInvertida controladorJogo;
     void OnEnable()
     {
         UpdateDisplay();

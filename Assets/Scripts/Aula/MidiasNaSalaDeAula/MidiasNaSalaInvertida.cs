@@ -16,7 +16,7 @@ public class MidiasNaSalaInvertida : MonoBehaviour
     private ParMidia[] midiasNaSala;
 
     [SerializeField]
-    MomentoAulaInvertida controladorJogo;
+    EstadoDeAulaInvertida controladorJogo;
 
     void OnEnable()
     {
@@ -38,7 +38,8 @@ public class MidiasNaSalaInvertida : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        NomeDeMidia midiaParaMostrar = controladorJogo.MidiaAtual.NomeMidia;
+        Esconder();
+        NomeDeMidia midiaParaMostrar = controladorJogo.midiaAtual.NomeMidia;
         foreach (ParMidia midia in midiasNaSala)
         {
             if(midia.nome == midiaParaMostrar)

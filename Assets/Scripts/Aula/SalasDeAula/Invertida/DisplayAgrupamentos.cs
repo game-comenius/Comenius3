@@ -19,7 +19,7 @@ public class DisplayAgrupamentos : MonoBehaviour
     GameObject SalaInteira;
 
     [SerializeField]
-    MomentoAulaInvertida controladorJogo;
+    EstadoDeAulaInvertida controladorJogo;
 
     void OnEnable()
     {
@@ -34,7 +34,7 @@ public class DisplayAgrupamentos : MonoBehaviour
 
     public void UpdateDisplay() 
     {
-        Agrupamento agrupamento = controladorJogo.MidiaAtual.agrupamento;
+        Agrupamento agrupamento = controladorJogo.midiaAtual.agrupamento;
         Individual.SetActive(false);
         Duplas.SetActive(false);
         PequenosGrupos.SetActive(false);
