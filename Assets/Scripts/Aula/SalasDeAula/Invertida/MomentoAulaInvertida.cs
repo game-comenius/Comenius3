@@ -7,7 +7,7 @@ public class MomentoAulaInvertida : MonoBehaviour
     [SerializeField]EstadoDeAulaInvertida messenger;
 
     [ContextMenu("Start")]
-    public void Awake()
+    public void Start()
     {
         messenger.estadoAtual = EstadoDeAula.Quizz3;
         AvancarEstado();//Inicia o no primeiro estado e da a chamada de evento

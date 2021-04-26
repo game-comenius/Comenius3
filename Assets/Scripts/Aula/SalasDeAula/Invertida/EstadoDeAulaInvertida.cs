@@ -7,45 +7,24 @@ using UnityEngine;
 public class EstadoDeAulaInvertida : ScriptableObject 
 {
     public Midia midiaAtual;
-    public EstadoDeAula estadoAtual;
+    [SerializeField]private EstadoDeAula _estadoAtual;
+    public EstadoDeAula estadoAtual {
+         get { return _estadoAtual; }
+         set { _estadoAtual = 0;
+            _estadoAtual = value; }
+     }
+
     public UnityEngine.Events.UnityEvent OnStateChange;
 
     public UnityEngine.Events.UnityEvent OnMidiaChange;
 
-    public UnityEngine.Events.UnityEvent OnStateQuizz1;
-    public UnityEngine.Events.UnityEvent OnStateInteracao1;
-    public UnityEngine.Events.UnityEvent OnStateQuizz2;
-    public UnityEngine.Events.UnityEvent OnStateInteracao2;
-    public UnityEngine.Events.UnityEvent OnStateQuizz3;
-
 
     public void AvancarEstado()
     {
-        EstadoDeAula estadoAnterior = estadoAtual;
-        estadoAtual = estadoAtual + 1;
+        estadoAtual = (EstadoDeAula)((int)estadoAtual << 1);
 
-        switch (estadoAtual)
-        {
-            case EstadoDeAula.Quizz1:
-                OnStateQuizz1.Invoke();
-                break;
-            case EstadoDeAula.Interacao1:
-                OnStateInteracao1.Invoke();
-                break;
-            case EstadoDeAula.Quizz2:
-                OnStateQuizz2.Invoke();
-                break;
-            case EstadoDeAula.Interacao2:
-                OnStateInteracao2.Invoke();
-                break;
-            case EstadoDeAula.Quizz3:
-                OnStateQuizz3.Invoke();
-                break;
-            default://Fim do momento aula
-                estadoAtual = EstadoDeAula.Quizz1;
-                break;
-        }
-
+        if(estadoAtual > EstadoDeAula.Quizz3)
+            estadoAtual = EstadoDeAula.Quizz1;
         //Atualiza a midia conforme o momento de aula
         if(estadoAtual > EstadoDeAula.Quizz2)
         {
@@ -57,11 +36,11 @@ public class EstadoDeAulaInvertida : ScriptableObject
         OnStateChange.Invoke();
     }
 }
-
+[System.Serializable, System.Flags]
     public enum EstadoDeAula{
-        Quizz1,
-        Interacao1,
-        Quizz2,
-        Interacao2,
-        Quizz3,
+        Quizz1 = (1 << 0),
+        Interacao1 = (1 << 1),
+        Quizz2 = (1 << 2),
+        Interacao2 = (1 << 3),
+        Quizz3 = (1 << 4),
     }
