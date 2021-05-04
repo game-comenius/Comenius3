@@ -18,13 +18,14 @@ public class EstadoDeAulaInvertida : ScriptableObject
 
     public UnityEngine.Events.UnityEvent OnMidiaChange;
 
-
     public void AvancarEstado()
     {
         estadoAtual = (EstadoDeAula)((int)estadoAtual << 1);
 
-        if(estadoAtual > EstadoDeAula.Quizz3)
+        if(estadoAtual > EstadoDeAula.End)
+        {
             estadoAtual = EstadoDeAula.Quizz1;
+        }
         //Atualiza a midia conforme o momento de aula
         if(estadoAtual > EstadoDeAula.Quizz2)
         {
@@ -43,4 +44,5 @@ public class EstadoDeAulaInvertida : ScriptableObject
         Quizz2 = (1 << 2),
         Interacao2 = (1 << 3),
         Quizz3 = (1 << 4),
+        End=(1<<5)
     }

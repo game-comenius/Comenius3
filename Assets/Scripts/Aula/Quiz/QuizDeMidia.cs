@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using System.Linq;
 
@@ -19,6 +19,7 @@ public class QuizDeMidia : Quiz
 
     public void ConfigurarQuiz(Midia midia)
     {
+        
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);
 
@@ -48,6 +49,7 @@ public class QuizDeMidia : Quiz
 
     public override IEnumerator Executar()
     {
+        
         estado = EstadoDeQuiz.EmExecucao;
 
         quizVF.Mostrar();

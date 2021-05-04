@@ -5,18 +5,21 @@ using UnityEngine;
 public class MomentoAulaInvertida : MonoBehaviour
 { 
     [SerializeField]EstadoDeAulaInvertida messenger;
+    [SerializeField]TrocadorDeCena trocadorDeCena;
+
+    private bool isMomentStarted = false;
 
     [ContextMenu("Start")]
-    public void Start()
+    private void Start()
     {
-        messenger.estadoAtual = EstadoDeAula.Quizz3;
+        messenger.estadoAtual = EstadoDeAula.End;
         AvancarEstado();//Inicia o no primeiro estado e da a chamada de evento
         messenger.midiaAtual = EstadoDoJogo.Instance.MidiasSelecionadas[2];
     }
-
 [ContextMenu("Avançar Estado")]
     public void AvancarEstado()
     {
         messenger.AvancarEstado();
     }
+
 }
