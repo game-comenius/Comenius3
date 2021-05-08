@@ -1,12 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &286984942234740536
+--- !u!114 &8665044702619190736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5196932291725362802}
+  m_GameObject: {fileID: 8634263978979573906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4280c577ea9e1463bb2f92d605fe0689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enunciado: {fileID: 33832856704125337}
+  IconeDoQuiz: {fileID: 5779468390530904611}
+  BotaoConfirmar: {fileID: 5620673712319671647}
+  afirmacoesQuizVF:
+  - {fileID: 8919264413471631193}
+  - {fileID: 133801976281570379}
+  - {fileID: 378066965175627447}
+  - {fileID: 286984942234740536}
+--- !u!114 &8919264413471631193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438964632073319011}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e9e22bc1f2f147ad8ba6f8c64ee93a4, type: 3}
@@ -14,7 +34,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteErrada: {fileID: 21300000, guid: a32b46f2257ae124aa226716836e3d04, type: 3}
   spriteCorreta: {fileID: 21300000, guid: f7d074c290860db409010b41c93b8a1d, type: 3}
-  textoAfirmacao: {fileID: 5196932293580281857}
+  textoAfirmacao: {fileID: 3502306750835994280}
   spriteNaoSelecionada: {fileID: 21300000, guid: 7d133b26e0822dc4db537b3fa4298562,
     type: 3}
   spriteSelecionada: {fileID: 21300000, guid: c95fa8542979b5d4d94a643caf8692dd, type: 3}
@@ -54,13 +74,13 @@ MonoBehaviour:
   spriteNaoSelecionada: {fileID: 21300000, guid: 7d133b26e0822dc4db537b3fa4298562,
     type: 3}
   spriteSelecionada: {fileID: 21300000, guid: c95fa8542979b5d4d94a643caf8692dd, type: 3}
---- !u!114 &8919264413471631193
+--- !u!114 &286984942234740536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6438964632073319011}
+  m_GameObject: {fileID: 5196932291725362802}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e9e22bc1f2f147ad8ba6f8c64ee93a4, type: 3}
@@ -68,30 +88,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteErrada: {fileID: 21300000, guid: a32b46f2257ae124aa226716836e3d04, type: 3}
   spriteCorreta: {fileID: 21300000, guid: f7d074c290860db409010b41c93b8a1d, type: 3}
-  textoAfirmacao: {fileID: 3502306750835994280}
+  textoAfirmacao: {fileID: 5196932293580281857}
   spriteNaoSelecionada: {fileID: 21300000, guid: 7d133b26e0822dc4db537b3fa4298562,
     type: 3}
   spriteSelecionada: {fileID: 21300000, guid: c95fa8542979b5d4d94a643caf8692dd, type: 3}
---- !u!114 &8665044702619190736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8634263978979573906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4280c577ea9e1463bb2f92d605fe0689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enunciado: {fileID: 33832856704125337}
-  IconeDoQuiz: {fileID: 5779468390530904611}
-  BotaoConfirmar: {fileID: 5620673712319671647}
-  afirmacoesQuizVF:
-  - {fileID: 8919264413471631193}
-  - {fileID: 133801976281570379}
-  - {fileID: 378066965175627447}
-  - {fileID: 286984942234740536}
 --- !u!1001 &5196932293775907176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,12 +167,12 @@ PrefabInstance:
     - target: {fileID: 7841578467463650915, guid: def79d26d90c748b88f638145af2c660,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841578467463650915, guid: def79d26d90c748b88f638145af2c660,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 48.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841578467463650915, guid: def79d26d90c748b88f638145af2c660,
         type: 3}

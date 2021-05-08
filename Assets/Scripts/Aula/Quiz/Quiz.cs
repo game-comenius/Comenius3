@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Quiz : MonoBehaviour
 {
     [SerializeField] protected Canvas canvas;
+
+    public UnityEngine.Events.UnityEvent OnQuizzExit;
 
     // Faz sentido que seja chamado apenas após a execução deste quiz
     // Deve retornar um número entre 0 e 1

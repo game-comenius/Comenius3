@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class QuizDeMidia : Quiz
 {
@@ -15,7 +16,6 @@ public class QuizDeMidia : Quiz
     }
 
     public Midia Midia { get; private set; }
-
 
     public void ConfigurarQuiz(Midia midia)
     {
@@ -60,6 +60,8 @@ public class QuizDeMidia : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => quizVF.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
+        Debug.Log("Acabou");
+        OnQuizzExit.Invoke();
         quizVF.Esconder();
 
         estado = EstadoDeQuiz.Executado;
