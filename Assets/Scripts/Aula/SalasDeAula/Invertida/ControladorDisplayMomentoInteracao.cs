@@ -36,7 +36,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         }
     }
 
-    private Dropdown.OptionData escolhaAtual = null;
+    private Dropdown.OptionData escolhaAtual;
 
     [SerializeField]private Text titulo;
     [SerializeField]private Text texto;
@@ -54,7 +54,8 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         //Atualiza o display para primeira pagina
         paginaAtual = 0;
         AtualizarPagina();
-        escolhaAtual = null;
+        if(escolhaAtual == null)
+            escolhaAtual = new Dropdown.OptionData("");
 
         //Faz os botões chamarem o avanco/volta pagina
         setaDireita.onClick.AddListener(AvançarPagina);
@@ -72,6 +73,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     public void ValidarEscolha(int escolha)
     {
         escolhaAtual = dropdown.options[escolha];
+        setaDireita.interactable = true;
     }
 
     private void AtualizarPagina()
@@ -81,15 +83,20 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         titulo.text = pagina.titulo;
         texto.text = pagina.texto;
 
-        if(ultimaPagina)
+        if(ultimaPagina) {
             dropdown.gameObject.SetActive(true);
-        else
+            if(escolhaAtual.text == "")
+                setaDireita.interactable = false;
+        } else {
+            setaDireita.interactable = true;
             dropdown.gameObject.SetActive(false);
+        }
+        setaEsquerda.interactable = !(paginaAtual == 0);//Seta esquerda esta ativada com excessão da primeira pagina
     }
 
     public void AvançarPagina()
     {
-        if(ultimaPagina && escolhaAtual != null)
+        if(ultimaPagina && escolhaAtual.text != "")
             OnChoiceConfirm.Invoke(escolhaAtual);
         
 
@@ -103,7 +110,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     {
         paginaAtual --;
         if(paginaAtual < 0)
-            paginaAtual =0;
+            paginaAtual = 0;
         AtualizarPagina();
         
     }

@@ -60,7 +60,6 @@ public class QuizDeMidia : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => quizVF.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
-        Debug.Log("Acabou");
         OnQuizzExit.Invoke();
         quizVF.Esconder();
 
