@@ -16,8 +16,12 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
                 totalDePaginas = value.paginas.Length;
                 paginaAtual = 0;
                 momento = value;
+                //Prepara o dropdown
                 dropdown.ClearOptions();
-                dropdown.AddOptions(value.opcoesDeEscolha);
+                List<Dropdown.OptionData> listaDeEscolhas = new List<Dropdown.OptionData>();
+                listaDeEscolhas.Add(new Dropdown.OptionData(""));
+                listaDeEscolhas.AddRange(value.opcoesDeEscolha);
+                dropdown.AddOptions(listaDeEscolhas);
             }
         }
 
@@ -73,7 +77,10 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     public void ValidarEscolha(int escolha)
     {
         escolhaAtual = dropdown.options[escolha];
-        setaDireita.interactable = true;
+        if(escolhaAtual.text != "")
+            setaDireita.interactable = true;
+        else
+            setaDireita.interactable = false;
     }
 
     private void AtualizarPagina()
