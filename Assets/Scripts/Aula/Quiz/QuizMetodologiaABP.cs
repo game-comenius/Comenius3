@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class QuizMetodologiaABP : Quiz
 {
@@ -33,6 +34,7 @@ public class QuizMetodologiaABP : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
+        OnQuizzExit.Invoke();
         formatoDoQuiz.Esconder();
 
         estado = EstadoDeQuiz.Executado;

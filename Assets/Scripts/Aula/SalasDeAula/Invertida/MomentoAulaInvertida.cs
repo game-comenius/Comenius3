@@ -7,8 +7,6 @@ public class MomentoAulaInvertida : MonoBehaviour
     [SerializeField]EstadoDeAulaInvertida messenger;
     [SerializeField]TrocadorDeCena trocadorDeCena;
 
-    private bool isMomentStarted = false;
-
     [ContextMenu("Start")]
     private void Start()
     {
@@ -21,5 +19,4 @@ public class MomentoAulaInvertida : MonoBehaviour
     {
         messenger.AvancarEstado();
     }
-
 }

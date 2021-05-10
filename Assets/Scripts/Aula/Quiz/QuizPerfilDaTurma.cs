@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class QuizPerfilDaTurma : Quiz
 {
@@ -81,6 +82,7 @@ public class QuizPerfilDaTurma : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
+        OnQuizzExit.Invoke();
         formatoDoQuiz.Esconder();
 
         estado = EstadoDeQuiz.Executado;

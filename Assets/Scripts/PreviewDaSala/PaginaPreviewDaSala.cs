@@ -11,6 +11,7 @@ public class PaginaPreviewDaSala : Pagina
     {
         var salaEscolhida = SelecionarSalaQueSeraUsada();
         StartCoroutine(salaEscolhida.Mostrar());
+        Debug.Log(salaEscolhida);
     }
 
     private SalaDeAula SelecionarSalaQueSeraUsada()

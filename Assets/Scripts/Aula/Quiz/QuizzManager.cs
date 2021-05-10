@@ -34,7 +34,7 @@ public class QuizzManager : MonoBehaviour
             Inteligencias inteli = EstadoDoJogo.Instance.InteligenciasSelecionadas;
             quizz.ConfigurarQuiz(nivel, inteli);
         }
-            
+        quizzParaMostrar.OnQuizzExit.RemoveAllListeners();
         StartCoroutine(quizzParaMostrar.Executar());
     }
 }
