@@ -27,21 +27,6 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     [SerializeField] Sprite quebraCabecaSprite;
     [SerializeField] Sprite ioioSprite;
     [SerializeField] Sprite blocosSprite;
-    /*
-    [SerializeField] Sprite lousaSprite;
-    [SerializeField] Sprite livroDidaticoSprite;
-    [SerializeField] Sprite livrosJornaisERevistasSprite;
-    [SerializeField] Sprite cadernosECartazesSprite;
-    [SerializeField] Sprite televisaoSprite;
-    [SerializeField] Sprite aparelhoDeSomSprite;
-    [SerializeField] Sprite redesSociaisSprite;
-    [SerializeField] Sprite jogosSprite;
-    [SerializeField] Sprite editoresDeAudioEVideoSprite;
-    [SerializeField] Sprite editoresDeTextoEPlanilhasSprite;
-    [SerializeField] Sprite aveasSprite;
-    [SerializeField] Sprite aplicativosSprite;
-    [SerializeField] Sprite projetorMultimidiaSprite;
-    */
 
     private int midiaAtual = 0;
     private string midiaProvisoria;

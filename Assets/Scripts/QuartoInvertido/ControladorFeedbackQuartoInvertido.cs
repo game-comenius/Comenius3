@@ -53,7 +53,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
             switch (nomeInteligencia)
             {
                 case ("Corporal-cinestésica e Naturalista"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Gostaria de realizar atividades a céu aberto, em contato com a natureza";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Gostaria de realizar atividades a céu aberto, em contato com a natureza.";
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 case ("Intrapessoal e Espacial-visual"):
