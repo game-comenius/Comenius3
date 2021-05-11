@@ -53,8 +53,10 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         Momento = momento;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        //Serve de trigger para o setter
+        Momento = momento;
         //Atualiza o display para primeira pagina
         paginaAtual = 0;
         AtualizarPagina();
@@ -67,7 +69,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         dropdown.onValueChanged.AddListener(ValidarEscolha);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         setaDireita.onClick.RemoveListener(AvançarPagina);
         setaEsquerda.onClick.RemoveListener(RetrocederPagina);
