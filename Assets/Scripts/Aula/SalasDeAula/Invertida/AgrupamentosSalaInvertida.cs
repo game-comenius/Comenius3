@@ -40,7 +40,7 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
             case 1:
                 agrupamentoVisualizado = agrupamentoSalaInteira;
                 nomeDoAgrupamento.text = "Formato de U";
-                descricaoAgrupamento.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração, troca entre os colegas, aulas expositivas que necessitam de apoio da lousa ou outra tecnologia educacional.";
+                //descricaoAgrupamento.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração, troca entre os colegas, aulas expositivas que necessitam de apoio da lousa ou outra tecnologia educacional.";
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.FormatoU;             
                 break;
             case 2:

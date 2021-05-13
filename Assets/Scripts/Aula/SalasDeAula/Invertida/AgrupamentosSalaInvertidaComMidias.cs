@@ -6,7 +6,11 @@ using TMPro;
 
 public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
 {
+    [Header("Telas")]
+    public int tela;
+    // tela denomida qual painel no canvas vai mostrar o objeto com esse script, deve der declarado no inspetor(as únicas opções válidas são 1 ou 2)
 
+    [Header("Agrupamentos")]
     public GameObject agrupamentoSalaInteira;
     public GameObject agrupamentoGrandesGrupos;
     public GameObject agrupamentoPequenosGrupos;
@@ -15,7 +19,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     public int agrupamentoValor;
     GameObject agrupamentoVisualizado;
     public Text nomeDoAgrupamento;
-    public TextMeshProUGUI descricaoAgrupamento;
+    
 
     //Midias
     [Header("Mídias")]
@@ -90,85 +94,98 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         midiaSelecionadaDic.Add(NomeDeMidia.Jogos, consolesParaJogos);
         midiaSelecionadaDic.Add(NomeDeMidia.CadernosECartazes, cadernosECartazes);
 
-        if (midiaSelecionada1 == NomeDeMidia.LivroDidatico)
+        if(tela == 1)
         {
-            //Dicionário dos agrupamentos de LivroDidatico
-            agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
-            agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
-            agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-            agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
-            agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
+            if (midiaSelecionada1 == NomeDeMidia.LivroDidatico)
+            {
+                //Dicionário dos agrupamentos de LivroDidatico
+                agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
+                agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
+                agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
+                agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
 
-            midiaPossuiIndividual01 = true;
+                midiaPossuiIndividual01 = true;
+            }
+
+            if (midiaSelecionada1 == NomeDeMidia.Jogos)
+            {
+                //Dicionário de agrupamentos de ConsolesParaJogos
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual01 = true;
+            }
+
+            if (midiaSelecionada1 == NomeDeMidia.CadernosECartazes)
+            {
+                //Dicionário de agrupamentos de CadernosECartazes
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual01 = true;
+            }
         }
-        if (midiaSelecionada2 == NomeDeMidia.LivroDidatico)
+
+        if(tela == 2)
         {
-            //Dicionário dos agrupamentos de LivroDidatico
-            agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
-            agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
-            agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-            agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
-            agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
+            if (midiaSelecionada2 == NomeDeMidia.LivroDidatico)
+            {
+                //Dicionário dos agrupamentos de LivroDidatico
+                agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
+                agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
+                agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
+                agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
 
-            midiaPossuiIndividual02 = true;
+                midiaPossuiIndividual02 = true;
+            }
+
+            if (midiaSelecionada2 == NomeDeMidia.Jogos)
+            {
+                //Dicionário de agrupamentos de ConsolesParaJogos
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual02 = true;
+            }
+            
+            if (midiaSelecionada2 == NomeDeMidia.CadernosECartazes)
+            {
+                //Dicionário de agrupamentos de CadernosECartazes
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual02 = true;
+            }
         }
+       
+        
 
         //Dicionário dos agrupamentos de Computadores
         /*
         agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
-        agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador
+        agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
         agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
         agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
         agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGrandesGrupos);*/
 
-        if (midiaSelecionada1 == NomeDeMidia.Jogos)
-        {
-            //Dicionário de agrupamentos de ConsolesParaJogos
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
+        
 
-            midiaPossuiIndividual01 = true;
-        }
-
-        if (midiaSelecionada2 == NomeDeMidia.Jogos)
-        {
-            //Dicionário de agrupamentos de ConsolesParaJogos
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
-
-            midiaPossuiIndividual02 = true;
-        }
-
-        if (midiaSelecionada1 == NomeDeMidia.CadernosECartazes)
-        {
-            //Dicionário de agrupamentos de CadernosECartazes
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
-
-            midiaPossuiIndividual01 = true;
-        }
-
-        if (midiaSelecionada2 == NomeDeMidia.CadernosECartazes)
-        {
-            //Dicionário de agrupamentos de CadernosECartazes
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
-
-            midiaPossuiIndividual02 = true;
-        }
-
+        
+        agrupamentoValor = 1;
         MostrarAgrupamento(1);
     }
 
@@ -186,109 +203,132 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
             case 1:
                 agrupamentoVisualizado = agrupamentoSalaInteira;
                 nomeDoAgrupamento.text = "Formato de U";
-                descricaoAgrupamento.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração, troca entre os colegas, aulas expositivas que necessitam de apoio da lousa ou outra tecnologia educacional.";
+                
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.FormatoU;
-                //Ativar objeto de midia 1(no caso de mídias individuais ativar o objeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada1);
-
-                //Se midia 1 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual01)
+                if(tela == 1)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.FormatoU, midiaIndividualVizualizada01);
+                    //Ativar objeto de midia 1(no caso de mídias individuais ativar o objeto vazio na hierarquia)
+                    MostrarMidiaSelecionada(midiaSelecionada1);
+
+                    //Se midia 1 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual01)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.FormatoU, midiaIndividualVizualizada01);
+                    }
                 }
-
-                //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada2);
-
-                //Se midia 2 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual02)
+                
+                if(tela == 2)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.FormatoU, midiaIndividualVizualizada02);
+                    //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
+                    MostrarMidiaSelecionada(midiaSelecionada2);
+
+                    //Se midia 2 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual02)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.FormatoU, midiaIndividualVizualizada02);
+                    }
                 }
+                
                 break;
             case 2:
                 agrupamentoVisualizado = agrupamentoGrandesGrupos;
                 nomeDoAgrupamento.text = "Grupos Grandes";
-                descricaoAgrupamento.text = "Os grupos formados por um número maior de alunos são indicados para atividades de pluralidade de olhares e debate de hipóteses sobre o objeto de aprendizagem. Habilidades como negociação, argumentação, responsabilidade compartilhada, divisão e delegação de tarefas trabalhando em equipe.";
+                
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.GrandesGrupos;
 
-                //Se midia 1 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual01)
+                if(tela == 1)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.GrandesGrupos, midiaIndividualVizualizada01);
+                    //Se midia 1 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual01)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.GrandesGrupos, midiaIndividualVizualizada01);
+                    }
                 }
-
-                //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada2);
-
-                //Se midia 2 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual02)
+                                
+                if(tela == 2)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.GrandesGrupos, midiaIndividualVizualizada02);
+                    //Se midia 2 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual02)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.GrandesGrupos, midiaIndividualVizualizada02);
+                    }
                 }
+                
                 break;
             case 3:
                 agrupamentoVisualizado = agrupamentoPequenosGrupos;
                 nomeDoAgrupamento.text = "Grupos Pequenos";
-                descricaoAgrupamento.text = "";
+                
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.PequenosGrupos;
 
-                //Se midia 1 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual01)
+                if(tela == 1)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.PequenosGrupos, midiaIndividualVizualizada01);
-                }
+                    //Se midia 1 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual01)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.PequenosGrupos, midiaIndividualVizualizada01);
+                    }
+                }                
 
-                //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada2);
-
-                //Se midia 2 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual02)
+                if(tela == 2)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.PequenosGrupos, midiaIndividualVizualizada02);
+                    //Se midia 2 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual02)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.PequenosGrupos, midiaIndividualVizualizada02);
+                    }
                 }
+                
                 break;
             case 4:
                 agrupamentoVisualizado = agrupamentoDuplas;
                 nomeDoAgrupamento.text = "Duplas";
-                descricaoAgrupamento.text = "Esse formato é recomendado para uma interação mais direta entre os alunos. Ideal para produção de textos, alfabetização e resolução de problemas.";
+
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.Duplas;
 
-                //Se midia 1 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual01)
+                if(tela == 1)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.Duplas, midiaIndividualVizualizada01);
+                    //Se midia 1 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual01)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.Duplas, midiaIndividualVizualizada01);
+                    }
                 }
-
-                //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada2);
-
-                //Se midia 2 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual02)
+                
+                if(tela == 2)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.Duplas, midiaIndividualVizualizada02);
+                    //Se midia 2 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual02)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.Duplas, midiaIndividualVizualizada02);
+                    }
                 }
+                
                 break;
             case 5:
                 agrupamentoVisualizado = agrupamentoIndividual;
                 nomeDoAgrupamento.text = "Individual";
-                descricaoAgrupamento.text = "Permite que o educador trabalhe aulas expositivas, apresentações em vídeo, filmes e situações em que é necessário o apoio da lousa. Essa organização em alguns momentos pode limitar a interação entre alunos e entre estes e os professores.";
+                
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.Individual;
 
-                //Se midia 1 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual01)
+                if(tela == 1)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.Individual, midiaIndividualVizualizada01);
+                    //Se midia 1 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual01)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.Individual, midiaIndividualVizualizada01);
+                    }
                 }
-
-                //Ativar objeto de midia 2(no caso de mídias individuais ativar o bjeto vazio na hierarquia)
-                MostrarMidiaSelecionada(midiaSelecionada2);
-
-                //Se midia 2 for uma midia individual ativar seu agrupamento específico
-                if (midiaPossuiIndividual02)
+                
+                if(tela == 2)
                 {
-                    MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.Individual, midiaIndividualVizualizada02);
+                    //Se midia 2 for uma midia individual ativar seu agrupamento específico
+                    if (midiaPossuiIndividual02)
+                    {
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.Individual, midiaIndividualVizualizada02);
+                    }
                 }
+                
                 break;
 
         }
@@ -350,5 +390,5 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoAMostra = agrupamentoCadernoECartazDic[agrupamento].name;
                 break;
         }
-    }
+    } 
 }
