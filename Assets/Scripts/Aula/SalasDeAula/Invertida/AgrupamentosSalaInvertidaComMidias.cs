@@ -37,8 +37,8 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     public ImagemMaiorSelecionada imagemIconeDaMidia;
 
     public ReferenciaDeMidias referenciaDeMidias;//Para conseguir as midias do EstatoDeJogo
-    NomeDeMidia midiaSelecionada1;//Vai ser declarada manualmente para testar a cena. Uma vez que pudermos obter a informação do EstadoDeJogo isso deve mudar.
-    NomeDeMidia midiaSelecionada2;//Vai ser declarada manualmente para testar a cena. Uma vez que pudermos obter a informação do EstadoDeJogo isso deve mudar.
+    NomeDeMidia midiaSelecionada1;
+    NomeDeMidia midiaSelecionada2;
     Dictionary<NomeDeMidia, GameObject> midiaSelecionadaDic = new Dictionary<NomeDeMidia, GameObject>();
     bool midiaPossuiIndividual01;
     bool midiaPossuiIndividual02;
@@ -88,8 +88,14 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         //Começo do Algorítimo
         midiaPossuiIndividual01 = false;
         midiaPossuiIndividual02 = false;
-        
-
+        if(tela == 1)
+        {
+            indiceDaMidia = 2;
+        }
+        if(tela == 2)
+        {
+            indiceDaMidia = 3;
+        }
         //Dicionário das Midias
 
         midiaSelecionadaDic.Add(NomeDeMidia.Lousa, lousa);
@@ -213,6 +219,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 midiaPossuiIndividual02 = true;
             }
         }
+
         
         agrupamentoValor = 1;
         MostrarAgrupamento(1);
@@ -286,7 +293,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 break;
             case 3:
                 agrupamentoVisualizado = agrupamentoPequenosGrupos;
-                nomeDoAgrupamento.text = "Grupos Pequenos";
+                nomeDoAgrupamento.text = "Trios";
                 
                 EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.PequenosGrupos;
 
@@ -377,6 +384,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         agrupamentoValor++;
 
         MostrarAgrupamento(agrupamentoValor);
+
     }
 
     public void BotaoAgrupamentoAnterior()
@@ -436,5 +444,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoAMostra = agrupamentoCadernoECartazDic[agrupamento].name;
                 break;
         }
-    } 
+    }
+
+   
 }
