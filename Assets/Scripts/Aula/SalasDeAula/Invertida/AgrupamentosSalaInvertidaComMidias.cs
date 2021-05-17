@@ -27,11 +27,16 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     public GameObject televisao;
     public GameObject projetorMultimidia;
     public GameObject livrosDidaticos;
-    public GameObject computadores;
+    public GameObject computadorAplicativo;
+    public GameObject computadorAVEA;
+    public GameObject computadorEditorAudioVideo;
+    public GameObject computadorEditorPlanilhaTexto;
+    public GameObject computadorRedesSociais;
     public GameObject consolesParaJogos;
     public GameObject cadernosECartazes;
+    public ImagemMaiorSelecionada imagemIconeDaMidia;
 
-
+    public ReferenciaDeMidias referenciaDeMidias;//Para conseguir as midias do EstatoDeJogo
     NomeDeMidia midiaSelecionada1;//Vai ser declarada manualmente para testar a cena. Uma vez que pudermos obter a informação do EstadoDeJogo isso deve mudar.
     NomeDeMidia midiaSelecionada2;//Vai ser declarada manualmente para testar a cena. Uma vez que pudermos obter a informação do EstadoDeJogo isso deve mudar.
     Dictionary<NomeDeMidia, GameObject> midiaSelecionadaDic = new Dictionary<NomeDeMidia, GameObject>();
@@ -77,12 +82,13 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     void Start()
     {
 
-        //Teste da cena
-        midiaSelecionada1 = NomeDeMidia.CadernosECartazes;
-        midiaSelecionada2 = NomeDeMidia.ProjetorMultimidia;
+        //Obtendo a referência das mídias
+        midiaSelecionada1 = referenciaDeMidias.midia1.NomeMidia;
+        midiaSelecionada2 = referenciaDeMidias.midia2.NomeMidia;
         //Começo do Algorítimo
         midiaPossuiIndividual01 = false;
         midiaPossuiIndividual02 = false;
+        
 
         //Dicionário das Midias
 
@@ -90,12 +96,20 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         midiaSelecionadaDic.Add(NomeDeMidia.Televisao, televisao);
         midiaSelecionadaDic.Add(NomeDeMidia.ProjetorMultimidia, projetorMultimidia);
         midiaSelecionadaDic.Add(NomeDeMidia.LivroDidatico, livrosDidaticos);
-        //midiaSelecionadaDic.Add(NomeDeMidia., computadores); Qual é o nome da midia do computador? RedesSociais?
+        midiaSelecionadaDic.Add(NomeDeMidia.Aplicativos, computadorAplicativo);
+        midiaSelecionadaDic.Add(NomeDeMidia.AVEAs, computadorAVEA);
+        midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeAudioEVideo, computadorEditorAudioVideo);
+        midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas, computadorEditorPlanilhaTexto);
+        midiaSelecionadaDic.Add(NomeDeMidia.RedesSociais, computadorRedesSociais);
         midiaSelecionadaDic.Add(NomeDeMidia.Jogos, consolesParaJogos);
         midiaSelecionadaDic.Add(NomeDeMidia.CadernosECartazes, cadernosECartazes);
 
-        if(tela == 1)
+        //Se esse script estiver no objeto do primeiro painel ele pesquisa sobre a midia1. Caso contrário ele não se preocupasobre a midia1.
+        if (tela == 1)
         {
+            //Configurando o Icone dos Painel
+            imagemIconeDaMidia.MudarSelecao(midiaSelecionada1);
+
             if (midiaSelecionada1 == NomeDeMidia.LivroDidatico)
             {
                 //Dicionário dos agrupamentos de LivroDidatico
@@ -131,10 +145,26 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
 
                 midiaPossuiIndividual01 = true;
             }
+
+            if(midiaSelecionada1 == NomeDeMidia.Aplicativos || midiaSelecionada1 == NomeDeMidia.AVEAs || midiaSelecionada1 == NomeDeMidia.EditoresDeAudioEVideo || midiaSelecionada1 == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiaSelecionada1 == NomeDeMidia.RedesSociais)
+            {
+                //Dicionário dos agrupamentos de Computadores        
+                agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
+                agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
+                agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
+                agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
+                agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual01 = true;
+            }
         }
 
-        if(tela == 2)
+        //Se esse script estiver no objeto do segundo painel ele pesquisa sobre a midia2. Caso contrário ele não se preocupasobre a midia2.
+        if (tela == 2)
         {
+            //Configurando o Icone dos Painel
+            imagemIconeDaMidia.MudarSelecao(midiaSelecionada2);
+
             if (midiaSelecionada2 == NomeDeMidia.LivroDidatico)
             {
                 //Dicionário dos agrupamentos de LivroDidatico
@@ -170,20 +200,19 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
 
                 midiaPossuiIndividual02 = true;
             }
+
+            if (midiaSelecionada2 == NomeDeMidia.Aplicativos || midiaSelecionada2 == NomeDeMidia.AVEAs || midiaSelecionada2 == NomeDeMidia.EditoresDeAudioEVideo || midiaSelecionada2 == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiaSelecionada2 == NomeDeMidia.RedesSociais)
+            {
+                //Dicionário dos agrupamentos de Computadores        
+                agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
+                agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
+                agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
+                agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
+                agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGruposPequenos);
+
+                midiaPossuiIndividual02 = true;
+            }
         }
-       
-        
-
-        //Dicionário dos agrupamentos de Computadores
-        /*
-        agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
-        agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
-        agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
-        agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
-        agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGrandesGrupos);*/
-
-        
-
         
         agrupamentoValor = 1;
         MostrarAgrupamento(1);
@@ -369,7 +398,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         midiaSelecionadaDic[midia].SetActive(true);
     }
 
-    //Método usado para achar os agrupamentos de cada midia indivual ///Terminar método
+    //Método usado para achar os agrupamentos de cada midia indivual 
     void MostrarMidiaIndividual(NomeDeMidia midia, Agrupamento agrupamento, string agrupamentoAMostra)
     {
         switch (midia)
@@ -378,9 +407,26 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoLivroDic[agrupamento].SetActive(true);
                 agrupamentoAMostra = agrupamentoLivroDic[agrupamento].name;
                 break;
-            /*case NomeDeMidia.:
-                agrupamentoLivroDic[agrupamento].SetActive(true);    ///Escolheria os agrupamentos da midia do computador
-                break;*/
+            case NomeDeMidia.Aplicativos:
+                agrupamentoComputadorDic[agrupamento].SetActive(true);
+                agrupamentoAMostra = agrupamentoComputadorDic[agrupamento].name;
+                break;
+            case NomeDeMidia.AVEAs:
+                agrupamentoComputadorDic[agrupamento].SetActive(true);
+                agrupamentoAMostra = agrupamentoComputadorDic[agrupamento].name;
+                break;
+            case NomeDeMidia.EditoresDeAudioEVideo:
+                agrupamentoComputadorDic[agrupamento].SetActive(true);
+                agrupamentoAMostra = agrupamentoComputadorDic[agrupamento].name;
+                break;
+            case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
+                agrupamentoComputadorDic[agrupamento].SetActive(true);
+                agrupamentoAMostra = agrupamentoComputadorDic[agrupamento].name;
+                break;
+            case NomeDeMidia.RedesSociais:
+                agrupamentoComputadorDic[agrupamento].SetActive(true);
+                agrupamentoAMostra = agrupamentoComputadorDic[agrupamento].name;
+                break;
             case NomeDeMidia.Jogos:
                 agrupamentoConsolesParaJogosDic[agrupamento].SetActive(true);
                 agrupamentoAMostra = agrupamentoConsolesParaJogosDic[agrupamento].name;
