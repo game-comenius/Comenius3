@@ -11,8 +11,7 @@ public class ReferenciaDeMidias : MonoBehaviour
     {
         midia1 = EstadoDoJogo.Instance.MidiasSelecionadas[2];
         midia2 = EstadoDoJogo.Instance.MidiasSelecionadas[3];
-        Debug.Log(midia1.NomeMidia);
-        Debug.Log(midia2.NomeMidia);
+        
     }
 
     // Update is called once per frame
