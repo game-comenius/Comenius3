@@ -17,9 +17,12 @@ public sealed class Metodologia
         valor: 1,
         nome: "Sala Invertida",
         descricao: "É o método que inverte a sequência tradicional das situações de aprendizagem. Nessa proposta...",
-        expansao: "É o método que inverte a sequência tradicional das situações de aprendizagem. Nessa proposta, os alunos realizam leituras e pesquisas antes da " +
-        "aula, por meio de recursos como textos, vídeos e áudios. Podem também participar de chats, fóruns, jogos e de outras atividades interativas. " +
-        "\nPosteriormente, em sala de aula, os alunos discutem a temática e desenvolvem atividades relacionadas."
+        expansao: "A sala de aula invertida, também conhecida como Flipped Classroom, é o método que inverte a sequência tradicional do processo de ensino e aprendizagem.\nOs alunos realizam leituras e pesquisas antes da aula. Podem participar de atividades interativas como jogos e chats, ou ainda fazer uma leitura, assistir um vídeo.\n" +
+        "Em sala de aula, os alunos discutem sobre o tema com o docente e os demais colegas, tiram suas dúvidas e fazem atividades.\nAs dúvidas e reflexões que os alunos levarem para a aula são tomadas como ponto de partida para as atividades presenciais, tornando as aulas mais participativas."
+        
+        //expansao: "É o método que inverte a sequência tradicional das situações de aprendizagem. Nessa proposta, os alunos realizam leituras e pesquisas antes da " +
+        //"aula, por meio de recursos como textos, vídeos e áudios. Podem também participar de chats, fóruns, jogos e de outras atividades interativas. " +
+        //"\nPosteriormente, em sala de aula, os alunos discutem a temática e desenvolvem atividades relacionadas."
     );
 
     public static readonly Metodologia ABProj = new Metodologia
