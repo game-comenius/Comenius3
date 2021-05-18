@@ -6,20 +6,12 @@ using UnityEngine;
 public class ControladorFeedbackAulaInvertida : MonoBehaviour
 {
 
-    [Header("GameObjects das mídias")]
-    [SerializeField] GameObject lousa;
-    [SerializeField] GameObject livroDidatico;
-    [SerializeField] GameObject livrosJornaisERevistas;
-    [SerializeField] GameObject cadernosECartazes;
-    [SerializeField] GameObject televisao;
-    [SerializeField] GameObject aparelhoDeSom;
-    [SerializeField] GameObject redesSociais;
-    [SerializeField] GameObject jogos;
-    [SerializeField] GameObject editoresDeAudioEVideo;
-    [SerializeField] GameObject editoresDeTextoEPlanilhas;
-    [SerializeField] GameObject aveas;
-    [SerializeField] GameObject aplicativos;
-    [SerializeField] GameObject projetorMultimidia;
+    [Header("GameObjects dos previews")]
+    [SerializeField] GameObject midia1;
+    [SerializeField] GameObject midia2;
+    [SerializeField] GameObject metodologia;
+    [SerializeField] GameObject inteligencia;
+    [SerializeField] GameObject campoAprendizagem;
 
     [SerializeField] GameObject feedbackAulaInvertida;
     [SerializeField] GameObject botaoConfirmarAnterior;
@@ -44,53 +36,8 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        for (int i = 2;  i <= 3; i++) {
-            var midiaAtual = estadoDoJogo.MidiasSelecionadas[i].NomeApresentavel;
-            switch (midiaAtual)
-            {
-                case "Lousa":
-                    lousa.GetComponent<Image>().sprite = lousaSprite;
-                    break;
-                case "Livro Didático":
-                    livroDidatico.GetComponent<Image>().sprite = livroDidaticoSprite;
-                    break;
-                case "Livros, Jornais e Revistas":
-                    livrosJornaisERevistas.GetComponent<Image>().sprite = livrosJornaisERevistasSprite;
-                    break;
-                case "Cadernos e Cartazes":
-                    cadernosECartazes.GetComponent<Image>().sprite = cadernosECartazesSprite;
-                    break;
-                case "Televisão":
-                    televisao.GetComponent<Image>().sprite = televisaoSprite;
-                    break;
-                case "Aparelho de Som":
-                    aparelhoDeSom.GetComponent<Image>().sprite = aparelhoDeSomSprite;
-                    break;
-                case "Redes Sociais":
-                    redesSociais.GetComponent<Image>().sprite = redesSociaisSprite;
-                    break;
-                case "Jogos":
-                    jogos.GetComponent<Image>().sprite = jogosSprite;
-                    break;
-                case "Editores de Áudio e Vídeo":
-                    editoresDeAudioEVideo.GetComponent<Image>().sprite = editoresDeAudioEVideoSprite;
-                    break;
-                case "Editores de Texto e Planilhas Eletrônicas":
-                    editoresDeTextoEPlanilhas.GetComponent<Image>().sprite = editoresDeTextoEPlanilhasSprite;
-                    break;
-                case "AVEAs":
-                    aveas.GetComponent<Image>().sprite = aveasSprite;
-                    break;
-                case "Aplicativos":
-                    aplicativos.GetComponent<Image>().sprite = aplicativosSprite;
-                    break;
-                case "Projetor Multimídia":
-                    projetorMultimidia.GetComponent<Image>().sprite = projetorMultimidiaSprite;
-                    break;
-
-            }
-            Debug.Log(estadoDoJogo.MidiasSelecionadas[i].NomeMidia);
-        }
+        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
+        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
 
     }
 
