@@ -20,6 +20,9 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [SerializeField] GameObject feedbackAulaInvertidaAlunoTexto;
     [SerializeField] GameObject feedbackAulaInvertidaAlunoNome;
 
+    [SerializeField] Slider barraQualidadeDaAula;
+    [SerializeField] Slider barraTaxaDeAcertoNosQuizzes;
+
     [Header("Ícones das mídias")]
     [SerializeField] Sprite lousaSprite;
     [SerializeField] Sprite livroDidaticoSprite;
@@ -75,6 +78,8 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
+        AtualizarPontuacaoDaAula(50);
+        //AtualizarTaxaDeAcertoNosQuizzes(50);
 
     }
 
@@ -107,6 +112,26 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         }
 
     }
+
+    private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
+    {
+        barraQualidadeDaAula.value = pontuacaoDaAula;
+        //textPontuacaoDaAula.text = (pontuacaoDaAula * 100).ToString("f") + "%";
+    }
+
+    /*
+    private void AtualizarTaxaDeAcertoNosQuizzes(Quiz[] quizzesDaAula)
+    {
+        float taxaDeAcertoNosQuizzes = 0;
+        if (quizzesDaAula.Any())
+            taxaDeAcertoNosQuizzes = quizzesDaAula.Sum((quiz) => quiz.TaxaDeAcerto) / quizzesDaAula.Length;
+        barraTaxaDeAcertoNosQuizzes.value = taxaDeAcertoNosQuizzes;
+        // Mostrar taxa de acerto nos quizzes como texto e arredondada para cima
+        var textoTaxaDeAcertoNosQuizzes = barraTaxaDeAcertoNosQuizzes.GetComponentInChildren<TextMeshProUGUI>();
+        var taxaDeAcertoPorcentagemArredondada = Mathf.Ceil(taxaDeAcertoNosQuizzes * 100);
+        textoTaxaDeAcertoNosQuizzes.text = taxaDeAcertoPorcentagemArredondada + "%";
+    }
+    */
 
     public void Exibir()
     {
