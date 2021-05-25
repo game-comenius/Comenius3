@@ -9,7 +9,7 @@ public enum Agrupamento
     FormatoU,
     Individual,
     Duplas,
-    PequenosGrupos,
+    Trios,
     GrandesGrupos
 
 };

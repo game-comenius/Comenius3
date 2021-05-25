@@ -52,7 +52,7 @@ public class DisplayAgrupamentos : MonoBehaviour
             case Agrupamento.Duplas:
                 Duplas.SetActive(true);
                 break;
-            case Agrupamento.PequenosGrupos:
+            case Agrupamento.Trios:
                 PequenosGrupos.SetActive(true);
                 break;
             case Agrupamento.GrandesGrupos:

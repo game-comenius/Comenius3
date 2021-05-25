@@ -29,8 +29,8 @@ public class PaginaResumoDoPlanejamento : Pagina
         NomeDaMetodologia.text = estadoDoJogo.MetodologiaSelecionada.nome;
         NomeDaMidiaQuarto1.text = estadoDoJogo.MidiasSelecionadas[0].NomeApresentavel;
         NomeDaMidiaQuarto2.text = estadoDoJogo.MidiasSelecionadas[1].NomeApresentavel;
-        NomeDaMidiaEAgrupamentoSala1.text = estadoDoJogo.MidiasSelecionadas[2].NomeApresentavel + " + " + "Agrupamento 1";
-        NomeDaMidiaEAgrupamentoSala2.text = estadoDoJogo.MidiasSelecionadas[3].NomeApresentavel + " + " + "Agrupamento 2";
+        NomeDaMidiaEAgrupamentoSala1.text = estadoDoJogo.MidiasSelecionadas[2].NomeApresentavel + " + " + estadoDoJogo.MidiasSelecionadas[2].agrupamento;//"Agrupamento 1";
+        NomeDaMidiaEAgrupamentoSala2.text = estadoDoJogo.MidiasSelecionadas[3].NomeApresentavel + " + " + estadoDoJogo.MidiasSelecionadas[3].agrupamento;//"Agrupamento 2";
 
         IconeMidia1.sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
         IconeMidia2.sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
