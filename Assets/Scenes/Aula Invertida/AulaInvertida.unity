@@ -719,7 +719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9571d0af13c3da846b781dc18d2e8877, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 346f3031b01dd9b48b246c4610b3d920, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3687,12 +3687,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 8
+    m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3885,6 +3885,9 @@ MonoBehaviour:
   campoAprendizagem: {fileID: 1363552935}
   feedbackAulaInvertida: {fileID: 1111530533}
   botaoConfirmarAnterior: {fileID: 555199692}
+  feedbackAulaInvertidaLurdinhaTexto: {fileID: 1834433846}
+  feedbackAulaInvertidaAlunoTexto: {fileID: 1099558676}
+  feedbackAulaInvertidaAlunoNome: {fileID: 1556927773}
   lousaSprite: {fileID: 21300000, guid: 82f4982f35b081e46a642d55bc6b9b89, type: 3}
   livroDidaticoSprite: {fileID: 21300000, guid: 8376b4eeb5c93ab4c8f074508962fc0e,
     type: 3}
@@ -3904,6 +3907,10 @@ MonoBehaviour:
   aplicativosSprite: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
   projetorMultimidiaSprite: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d,
     type: 3}
+  corporalSprite: {fileID: 21300000, guid: 8a55c0677e2ebfc489a502eaf4c19210, type: 3}
+  intrapessoalSprite: {fileID: 21300000, guid: cac705ae4b7e4464fa09bcee4378b841, type: 3}
+  interpessoalSprite: {fileID: 21300000, guid: bfc278bb026c6434382b76c595a07c5c, type: 3}
+  linguisticaSprite: {fileID: 21300000, guid: 8e3d81e1d12f6754a8d981946d615946, type: 3}
 --- !u!1 &1112467959
 GameObject:
   m_ObjectHideFlags: 0
@@ -4534,8 +4541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102.15, y: 22.77}
-  m_SizeDelta: {x: 61.69574, y: 31.319885}
+  m_AnchoredPosition: {x: -1.78, y: -16.47}
+  m_SizeDelta: {x: 269.8356, y: 67.62078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338697039
 MonoBehaviour:
@@ -4558,18 +4565,21 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 69d83d5f9b8978143b123679c6fb5016, type: 3}
-    m_FontSize: 10
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto
+  m_Text: "Esta \xE9 a tela de feedback final da sua aula!\nAqui voc\xEA pode conferir
+    sua taxa de acertos no quiz, revisar as escolhas feitas para sua aula, obter
+    o feedback da Lurdinha e dos alunos, bem como o quanto sua escolha de m\xEDdias
+    foi proveitosa!"
 --- !u!222 &1338697040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4964,8 +4974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.1, y: 33.3}
-  m_SizeDelta: {x: 92.60087, y: 13.869339}
+  m_AnchoredPosition: {x: -63.1, y: 35.48}
+  m_SizeDelta: {x: 92.60087, y: 23.55676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556927775
 MonoBehaviour:
@@ -4988,11 +4998,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5971,7 +5981,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 69d83d5f9b8978143b123679c6fb5016, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6756,7 +6766,7 @@ PrefabInstance:
     - target: {fileID: 2652009346711488267, guid: 7fa7fe931cde6d94288f7a24244f6f28,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -180.99998
+      value: -181
       objectReference: {fileID: 0}
     - target: {fileID: 2652009346711488267, guid: 7fa7fe931cde6d94288f7a24244f6f28,
         type: 3}

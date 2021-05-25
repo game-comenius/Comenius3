@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class ControladorFeedbackAulaInvertida : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
     [SerializeField] GameObject feedbackAulaInvertida;
     [SerializeField] GameObject botaoConfirmarAnterior;
+    [SerializeField] GameObject feedbackAulaInvertidaLurdinhaTexto;
+    [SerializeField] GameObject feedbackAulaInvertidaAlunoTexto;
+    [SerializeField] GameObject feedbackAulaInvertidaAlunoNome;
 
     [Header("Ícones das mídias")]
     [SerializeField] Sprite lousaSprite;
@@ -31,6 +35,13 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [SerializeField] Sprite aplicativosSprite;
     [SerializeField] Sprite projetorMultimidiaSprite;
 
+    [Header("Ícones das inteligências")]
+    [SerializeField] Sprite corporalSprite;
+    [SerializeField] Sprite intrapessoalSprite;
+    [SerializeField] Sprite interpessoalSprite;
+    [SerializeField] Sprite linguisticaSprite;
+
+    // Boa parte do código foi copiado do PaginaResultadoDaAula, vou ver se faço herança depois pra diminuir o código repetido.
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +49,62 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
         midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
+
+        switch(estadoDoJogo.InteligenciasSelecionadas.Valor)
+        {
+
+            case 0:
+                inteligencia.GetComponent<Image>().sprite = corporalSprite;
+                break;
+
+            case 1:
+                inteligencia.GetComponent<Image>().sprite = intrapessoalSprite;
+                break;
+
+            case 2:
+                inteligencia.GetComponent<Image>().sprite = interpessoalSprite;
+                break;
+
+            case 3:
+                inteligencia.GetComponent<Image>().sprite = linguisticaSprite;
+                break;
+
+        }
+
+        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
+
+        AtualizarFeedbackDaLurdinha();
+        AtualizarFeedbackDosAlunos();
+
+    }
+
+    private void AtualizarFeedbackDaLurdinha()
+    {
+        var listaDeFeedback = FeedbackDaLurdinha.ObterFeedback(EstadoDoJogo.Instance);
+        var feedbackCompleto = string.Join("\n\n", listaDeFeedback);
+        feedbackAulaInvertidaLurdinhaTexto.GetComponent<Text>().text = feedbackCompleto;
+    }
+
+
+    private void AtualizarFeedbackDosAlunos()
+    {
+
+        var (feedbackDoAluno, assinatura) = FeedbackDosAlunos.ObterFeedback(EstadoDoJogo.Instance);
+
+        // Colocar àspas ao redor do feedback do aluno
+        feedbackDoAluno = $"\"{feedbackDoAluno}\"";
+        feedbackAulaInvertidaAlunoTexto.GetComponent<Text>().text = feedbackDoAluno;
+
+        if (assinatura != null)
+        {
+            feedbackAulaInvertidaAlunoNome.SetActive(true);
+            feedbackAulaInvertidaAlunoNome.GetComponent<Text>().text = assinatura;
+        }
+        else
+        {
+            // Se ninguém assinou, esconder o GameObject da assinatura
+            feedbackAulaInvertidaAlunoNome.SetActive(false);
+        }
 
     }
 
