@@ -45,11 +45,21 @@ public class CelulaReferenceDrawer : PropertyDrawer
 
         position.height = EditorGUIUtility.singleLineHeight;
 
-        
+        //Popup
+        Rect popUpRect = new Rect(EditorGUIUtility.labelWidth - ((EditorGUI.indentLevel - 1) * 15) - 20, position.y,50, position.height);
+
+        int result = EditorGUI.Popup(popUpRect, "", modoReferencia.boolValue ? 0 : 1, popupOptions, popupStyle);
+        if (result == 0)
+            modoReferencia.boolValue = true;
+        else
+            modoReferencia.boolValue = false;
+
+
         string foldoutLabel = property.displayName;
         if (modoReferencia.boolValue)
         {
-            property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
+            Rect foldoutRect = new Rect(position.x, position.y, EditorGUIUtility.labelWidth - ((EditorGUI.indentLevel - 1) * 15) - 100, position.height);
+            property.isExpanded = EditorGUI.Foldout(foldoutRect, property.isExpanded, foldoutLabel, true);
 
             if (planilhaObj != null)
                 valor.stringValue = planilhaObj.GetDataAt(linha.intValue, coluna.intValue);
@@ -123,15 +133,7 @@ public class CelulaReferenceDrawer : PropertyDrawer
                 EditorGUI.EndDisabledGroup();
             }
         }
-        //Popup
-        Rect popUpRect = new Rect(EditorGUIUtility.labelWidth - ((EditorGUI.indentLevel - 1) * 15) - 15, position.y, EditorGUIUtility.singleLineHeight * 3 + 10, position.height);
-
-        int result = EditorGUI.Popup(popUpRect, "", modoReferencia.boolValue ? 0 : 1, popupOptions, popupStyle);
-        if (result == 0)
-            modoReferencia.boolValue = true;
-        else
-            modoReferencia.boolValue = false;
-
+        
 
         propertyDrawerAux.floatValue = propertyHeight;
         if (EditorGUI.EndChangeCheck())
