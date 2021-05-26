@@ -13,18 +13,27 @@ MonoBehaviour:
   m_Name: Momento1
   m_EditorClassIdentifier: 
   paginas:
-  - texto: Reclamacao do aluno
+  - texto:
+      planilha: {fileID: 11400000, guid: d087f22e3fc4640488073754bff2b278, type: 2}
+      linha: 1
+      coluna: 0
+      propertyDrawerAux: 20
+      valor: Aconteceu alguma coisa X
+      modoReferencia: 1
     professorFalando: 0
-  - texto: "Continua\xE7ao da fala do aluno"
-    professorFalando: 0
-  - texto: "Nessa situa\xE7\xE3o, eu vou:"
+  - texto:
+      planilha: {fileID: 11400000, guid: d087f22e3fc4640488073754bff2b278, type: 2}
+      linha: 1
+      coluna: 1
+      propertyDrawerAux: 20
+      valor: Nesse caso...
+      modoReferencia: 1
     professorFalando: 1
   opcoesDeEscolha:
-  - m_Text: Escolha 1
-    m_Image: {fileID: 0}
-  - m_Text: Escolha 2
-    m_Image: {fileID: 0}
-  - m_Text: Escolha 3
-    m_Image: {fileID: 0}
-  - m_Text: Escolha 4
-    m_Image: {fileID: 0}
+    planilha: {fileID: 11400000, guid: d087f22e3fc4640488073754bff2b278, type: 2}
+    linha: 1
+    coluna: 2
+    propertyDrawerAux: 74
+    valor: "op\xE7\xE3o correta\nop\xE7\xE3o correta2\nop\xE7\xE3o correta3\nop\xE7\xE3o
+      incorreta"
+    modoReferencia: 1
