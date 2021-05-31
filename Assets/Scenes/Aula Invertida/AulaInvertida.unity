@@ -5648,13 +5648,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1729727039}
   - component: {fileID: 1729727040}
+  - component: {fileID: 1729727041}
   m_Layer: 0
   m_Name: "MomentoIntera\xE7\xE3o"
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1729727039
 Transform:
   m_ObjectHideFlags: 0
@@ -5716,6 +5717,20 @@ MonoBehaviour:
   setaDireita: {fileID: 1726125657}
   setaEsquerda: {fileID: 1072122131}
   dropdown: {fileID: 355649332}
+--- !u!114 &1729727041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729727038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59379eda5918635468fca4dbb4172f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlador: {fileID: 1729727040}
+  estadoDaAula: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
 --- !u!1 &1746604668
 GameObject:
   m_ObjectHideFlags: 0
@@ -7169,7 +7184,7 @@ PrefabInstance:
     - target: {fileID: 2652009346711488267, guid: 7fa7fe931cde6d94288f7a24244f6f28,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -180.99998
+      value: -181
       objectReference: {fileID: 0}
     - target: {fileID: 2652009346711488267, guid: 7fa7fe931cde6d94288f7a24244f6f28,
         type: 3}
