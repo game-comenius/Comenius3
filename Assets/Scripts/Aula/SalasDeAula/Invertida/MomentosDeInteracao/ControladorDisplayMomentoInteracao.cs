@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
+
     public MomentoInteracao Momento
     {
         get
@@ -95,6 +96,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     private void AtualizarPagina()
     {
+
         PaginaInteracao pagina = momento.paginas[paginaAtual];
 
         titulo.text = pagina.titulo;

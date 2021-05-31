@@ -8,6 +8,7 @@ public class MomentoInteracao : ScriptableObject
 {
     public PaginaInteracao[] paginas;
     public CelulaReference opcoesDeEscolha;
+
 }
 
 [System.Serializable]

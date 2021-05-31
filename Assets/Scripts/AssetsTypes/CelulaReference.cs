@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class CelulaReference
 {
+
     public PlanilhaDoGoogle planilha;//Referencia de um scriptable objet do tipo planilha
 
     //Linha e coluna no qual está a celula desejada
@@ -17,6 +18,16 @@ public class CelulaReference
     [SerializeField]
     private string valor;
     public bool modoReferencia;//Modo onde não é utilizado o valor da célula e sim um no qual é possivél digitar
+
+    //Construtor
+    public CelulaReference(PlanilhaDoGoogle planilha, int linha, int coluna)
+    {
+        this.planilha = planilha;
+        this.linha = linha;
+        this.coluna = coluna;
+        modoReferencia = true;
+        valor = Valor;
+    }
 
     //Getter/setter para o valor
     public string Valor

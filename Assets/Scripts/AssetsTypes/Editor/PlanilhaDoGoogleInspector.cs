@@ -35,7 +35,12 @@ public class PlanilhaDoGoogleInspector : Editor
         {
             myTarget.MakeRequest();
         }
-        
+
+        if (GUILayout.Button("Open sheet"))
+        {
+            Application.OpenURL("https://docs.google.com/spreadsheets/d/" + myTarget.sheetID);
+        }
+
         if (GUI.changed)
         {
             EditorUtility.SetDirty(target);
