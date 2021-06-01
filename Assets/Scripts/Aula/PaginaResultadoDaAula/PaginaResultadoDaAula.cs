@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using TMPro;
@@ -11,6 +12,8 @@ public class PaginaResultadoDaAula : MonoBehaviour
     [Header("Barras")]
     [SerializeField] Slider barraQualidadeDaAula;
     [SerializeField] Slider barraTaxaDeAcertoNosQuizzes;
+
+    [SerializeField] Image barraQualidadeDaAulaFill;
 
     public bool EmUso => gameObject.activeSelf;
 
@@ -62,6 +65,31 @@ public class PaginaResultadoDaAula : MonoBehaviour
     private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
     {
         barraQualidadeDaAula.value = pontuacaoDaAula;
+
+        float corVermelha = 1f;
+        float corVerde = 1f;
+
+        switch (pontuacaoDaAula)
+        {
+            case float pontuacao when pontuacao >= 0.75:
+                corVermelha = 0f;
+                corVerde = 1f;
+                break;
+            case float pontuacao when pontuacao >= 0.50:
+                corVermelha = 0.65f;
+                corVerde = 1f;
+                break;
+            case float pontuacao when pontuacao >= 0.25:
+                corVermelha = 1f;
+                corVerde = 1f;
+                break;
+            default:
+                corVermelha = 1f;
+                corVerde = 0f;
+                break;
+        }
+
+        barraQualidadeDaAulaFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
         //textPontuacaoDaAula.text = (pontuacaoDaAula * 100).ToString("f") + "%";
     }
 

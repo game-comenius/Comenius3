@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -21,7 +22,10 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [SerializeField] GameObject feedbackAulaInvertidaAlunoNome;
 
     [SerializeField] Slider barraQualidadeDaAula;
+    [SerializeField] Image barraQualidadeDaAulaFill;
+
     [SerializeField] Slider barraTaxaDeAcertoNosQuizzes;
+    [SerializeField] Image barraTaxaDeAcertoNosQuizzesFill;
 
     [Header("Ícones das mídias")]
     [SerializeField] Sprite lousaSprite;
@@ -78,7 +82,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
-        AtualizarPontuacaoDaAula(50);
+        AtualizarPontuacaoDaAula(0.70f);
         //AtualizarTaxaDeAcertoNosQuizzes(50);
 
     }
@@ -116,7 +120,31 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
     {
         barraQualidadeDaAula.value = pontuacaoDaAula;
-        //textPontuacaoDaAula.text = (pontuacaoDaAula * 100).ToString("f") + "%";
+
+        float corVermelha = 1f;
+        float corVerde = 1f;
+
+        switch(pontuacaoDaAula)
+        {
+            case float pontuacao when pontuacao >= 0.75:
+                corVermelha = 0f;
+                corVerde = 1f;
+                break;
+            case float pontuacao when pontuacao >= 0.50:
+                corVermelha = 0.65f;
+                corVerde = 1f;
+                break;
+            case float pontuacao when pontuacao >= 0.25:
+                corVermelha = 1f;
+                corVerde = 1f;
+                break;
+            default:
+                corVermelha = 1f;
+                corVerde = 0f;
+                break;
+        }
+
+        barraQualidadeDaAulaFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
     }
 
     /*
