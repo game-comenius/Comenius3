@@ -121,6 +121,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13839619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13839620}
+  - component: {fileID: 13839622}
+  - component: {fileID: 13839621}
+  m_Layer: 0
+  m_Name: QuartoInvertidoPopUpPreviewMidia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &13839620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13839619}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 60, y: 60, z: 1}
+  m_Children:
+  - {fileID: 652492926}
+  m_Father: {fileID: 1748074052}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 147, y: -13}
+  m_SizeDelta: {x: 2, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &13839621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13839619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: de722b499ea33374bab8eadfa9ab551c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &13839622
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13839619}
+  m_CullTransparentMesh: 0
 --- !u!1001 &24765746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,7 +277,7 @@ GameObject:
   - component: {fileID: 230581223}
   - component: {fileID: 230581222}
   m_Layer: 5
-  m_Name: PopUpNome
+  m_Name: QuartoInvertidoPopUpNomeTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,13 +294,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1748074052}
-  m_RootOrder: 3
+  m_Father: {fileID: 1109492656}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134.00002, y: -45}
-  m_SizeDelta: {x: 244.52815, y: 31.06}
+  m_AnchoredPosition: {x: 1.63, y: -0.9}
+  m_SizeDelta: {x: 227.48225, y: 31.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230581222
 MonoBehaviour:
@@ -256,8 +331,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285546519
-  m_fontColor: {r: 0.09019608, g: 0.2509804, b: 0.43921572, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -282,7 +357,7 @@ MonoBehaviour:
   m_fontSizeMin: 14
   m_fontSizeMax: 24
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -996,6 +1071,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 707408642203335675, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Name
+      value: "QuartoInvertidoPopUpExpans\xE3oTexto"
+      objectReference: {fileID: 0}
     - target: {fileID: 736833562739119838, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: m_IsActive
@@ -1191,11 +1271,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2358770972132139768, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Name
+      value: "QuartoInvertidoPainelExpans\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748489864466562524, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Name
+      value: "QuartoInvertidoBot\xE3oFechar"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852383779514609288, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 109.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852383779514609288, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 206.31
+      objectReference: {fileID: 0}
     - target: {fileID: 3461088054946381903, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3845328854665912253, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ed43b3d911088c4c8e66ece9c166140,
+        type: 3}
     - target: {fileID: 4485643612817308121, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1316,6 +1422,12 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: celular
       objectReference: {fileID: 0}
+    - target: {fileID: 5780896072903715687, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc5a61aec182bf947a7000e792900ef0,
+        type: 3}
     - target: {fileID: 5924883499398701249, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1409,12 +1521,22 @@ PrefabInstance:
     - target: {fileID: 6334332356400653935, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 6334332356400653935, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334332356400653935, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 467.59937
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334332356400653935, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 276.83582
       objectReference: {fileID: 0}
     - target: {fileID: 6638208042192419058, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
@@ -1998,8 +2120,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -3.7}
-  m_SizeDelta: {x: 435.57123, y: 183.11441}
+  m_AnchoredPosition: {x: 1.7355, y: -8.9}
+  m_SizeDelta: {x: 388.04218, y: 171.99088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &424786706
 MonoBehaviour:
@@ -2030,8 +2152,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285546519
-  m_fontColor: {r: 0.09019608, g: 0.2509804, b: 0.43921572, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2049,8 +2171,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 14
@@ -2156,42 +2278,54 @@ PrefabInstance:
     - target: {fileID: 2852383778440034577, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 215.3
+      value: 187.22
       objectReference: {fileID: 0}
     - target: {fileID: 2852383778440034577, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 116.5
+      value: 96.7
       objectReference: {fileID: 0}
     - target: {fileID: 2852383778440034577, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 17.07317
+      value: 13.4699745
       objectReference: {fileID: 0}
     - target: {fileID: 2852383778440034577, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16.361786
+      value: 12.908724
       objectReference: {fileID: 0}
+    - target: {fileID: 3845328853591853092, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ed43b3d911088c4c8e66ece9c166140,
+        type: 3}
+    - target: {fileID: 5780896073978264830, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc5a61aec182bf947a7000e792900ef0,
+        type: 3}
     - target: {fileID: 6334332357474710006, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: 6334332357474710006, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -129.23
+      value: -89
       objectReference: {fileID: 0}
     - target: {fileID: 6334332357474710006, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 490.60522
+      value: 430.47522
       objectReference: {fileID: 0}
     - target: {fileID: 6334332357474710006, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 258.45764
+      value: 216.01294
       objectReference: {fileID: 0}
     - target: {fileID: 6854282345564146423, guid: 56b52d848255379438701829adf3456e,
         type: 3}
@@ -2505,7 +2639,7 @@ GameObject:
   - component: {fileID: 652492929}
   - component: {fileID: 652492928}
   m_Layer: 0
-  m_Name: PopUpPreviewMidia
+  m_Name: QuartoInvertidoPopUpPreviewMidiaImagem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2520,15 +2654,15 @@ RectTransform:
   m_GameObject: {fileID: 652492925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 60, y: 60, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1748074052}
-  m_RootOrder: 4
+  m_Father: {fileID: 13839620}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147, y: -13}
-  m_SizeDelta: {x: 2.6049662, y: 2.6049662}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_SizeDelta: {x: 1.6, y: 1.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652492928
 MonoBehaviour:
@@ -2666,6 +2800,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f947ebc95d4714528bd94254c3585c5c, type: 3}
+--- !u!1 &675558357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675558358}
+  - component: {fileID: 675558360}
+  - component: {fileID: 675558359}
+  m_Layer: 5
+  m_Name: QuartoInvertidoPopUpTipo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &675558358
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675558357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1708951771}
+  m_Father: {fileID: 1748074052}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -79.1, y: 14.3769}
+  m_SizeDelta: {x: 237.78784, y: 38.35379}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &675558359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675558357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 38bbddb9cae728a45a9b9b67ca558876, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &675558360
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675558357}
+  m_CullTransparentMesh: 0
 --- !u!1 &793605213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,7 +2889,7 @@ GameObject:
   - component: {fileID: 793605217}
   - component: {fileID: 793605218}
   m_Layer: 5
-  m_Name: PopUpBotaoSim
+  m_Name: QuartoInvertidoPopUpBotaoSim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3319,6 +3528,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1109492655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1109492656}
+  - component: {fileID: 1109492658}
+  - component: {fileID: 1109492657}
+  m_Layer: 5
+  m_Name: QuartoInvertidoPopUpNome
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1109492656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109492655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 230581221}
+  m_Father: {fileID: 1748074052}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -79.1, y: -41}
+  m_SizeDelta: {x: 237.7878, y: 38.35379}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1109492657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109492655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 38bbddb9cae728a45a9b9b67ca558876, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1109492658
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109492655}
+  m_CullTransparentMesh: 0
 --- !u!1 &1150390276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,7 +4069,7 @@ GameObject:
   - component: {fileID: 1263308381}
   - component: {fileID: 1263308380}
   m_Layer: 5
-  m_Name: PopUpTitulo
+  m_Name: QuartoInvertidoPopUpTitulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3807,7 +4091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -222.1, y: 149.3}
+  m_AnchoredPosition: {x: -147.9, y: 106.6}
   m_SizeDelta: {x: 119.2, y: 31.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263308380
@@ -3839,8 +4123,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294701805
-  m_fontColor: {r: 0.9294118, g: 0.9490197, b: 0.9843138, a: 1}
+    rgba: 4285546519
+  m_fontColor: {r: 0.09019608, g: 0.2509804, b: 0.43921572, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4952,7 +5236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.3, y: 116.5}
+  m_AnchoredPosition: {x: -100.1, y: 96.23}
   m_SizeDelta: {x: 176.92526, y: 23.285265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633767005
@@ -4984,8 +5268,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294701805
-  m_fontColor: {r: 0.9294118, g: 0.9490197, b: 0.9843138, a: 1}
+    rgba: 4285546519
+  m_fontColor: {r: 0.09019608, g: 0.2509804, b: 0.43921572, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5003,8 +5287,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 14
@@ -5087,7 +5371,7 @@ GameObject:
   - component: {fileID: 1708951773}
   - component: {fileID: 1708951772}
   m_Layer: 5
-  m_Name: PopUpTipo
+  m_Name: QuartoInvertidoPopUpTipoTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5104,13 +5388,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1748074052}
-  m_RootOrder: 2
+  m_Father: {fileID: 675558358}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134, y: 32}
-  m_SizeDelta: {x: 244.52815, y: 31.06}
+  m_AnchoredPosition: {x: 0.31, y: -0.6}
+  m_SizeDelta: {x: 229.5796, y: 31.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708951772
 MonoBehaviour:
@@ -5141,8 +5425,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285546519
-  m_fontColor: {r: 0.09019608, g: 0.2509804, b: 0.43921572, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5167,7 +5451,7 @@ MonoBehaviour:
   m_fontSizeMin: 14
   m_fontSizeMax: 24
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5618,7 +5902,7 @@ PrefabInstance:
     - target: {fileID: 7849648982970574169, guid: b99383c29190d414281bea1a8c9ed18f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7849648982970574169, guid: b99383c29190d414281bea1a8c9ed18f,
         type: 3}
