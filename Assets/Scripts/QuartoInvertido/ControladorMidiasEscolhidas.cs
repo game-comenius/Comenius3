@@ -16,6 +16,8 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
 
     [SerializeField] GameObject painelFeedback;
 
+    [SerializeField] GameObject quartoInfo;
+
     [Header("Imagens das mídias e brinquedos")]
     [SerializeField] Sprite estanteSprite;
     [SerializeField] Sprite televisaoSprite;
@@ -162,6 +164,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
             midiasDefinitivas[midiaAtual] = midiaProvisoria;
             Debug.Log(midiaAtual);
             painelFeedback.SetActive(true);
+            quartoInfo.SetActive(false);
             Debug.Log(midiasDefinitivas[0] + " " + midiasDefinitivas[1] + " " + midiasDefinitivas[2]);
         }
         
