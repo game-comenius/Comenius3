@@ -82,7 +82,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
-        AtualizarPontuacaoDaAula(0.70f);
+        AtualizarPontuacaoDaAula(0.24f);
         //AtualizarTaxaDeAcertoNosQuizzes(50);
 
     }

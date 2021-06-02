@@ -41,7 +41,7 @@ public class AnimacaoRolagem : MonoBehaviour
     void Update()
     {
 
-        if (ProducaoECoord.transform.position.y < Screen.height - (Screen.height / 24)) {
+        if (ProducaoECoord.transform.position.y < Screen.height - (Screen.height / 35)) {
             ProducaoECoord.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             GameDesign.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
             Arte.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
