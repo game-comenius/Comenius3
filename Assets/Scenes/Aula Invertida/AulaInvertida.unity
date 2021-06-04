@@ -1596,13 +1596,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Escolha 1
+    - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
-    - m_Text: Escolha 2
+    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
-    - m_Text: Escolha 3
+    - m_Text: "op\xE7\xE3o correta3"
       m_Image: {fileID: 0}
-    - m_Text: Escolha 4
+    - m_Text: "op\xE7\xE3o incorreta"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6087,6 +6087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729727039}
   - component: {fileID: 1729727040}
+  - component: {fileID: 1729727041}
   m_Layer: 0
   m_Name: "MomentoIntera\xE7\xE3o"
   m_TagString: GameController
@@ -6155,6 +6156,20 @@ MonoBehaviour:
   setaDireita: {fileID: 1726125657}
   setaEsquerda: {fileID: 1072122131}
   dropdown: {fileID: 355649332}
+--- !u!114 &1729727041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729727038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59379eda5918635468fca4dbb4172f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlador: {fileID: 1729727040}
+  estadoDaAula: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
 --- !u!1 &1746604668
 GameObject:
   m_ObjectHideFlags: 0

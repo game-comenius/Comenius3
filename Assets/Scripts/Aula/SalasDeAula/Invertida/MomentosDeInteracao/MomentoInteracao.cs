@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MomentoInteracao : ScriptableObject
 {
     public PaginaInteracao[] paginas;
-    public List<Dropdown.OptionData> opcoesDeEscolha;
+    public CelulaReference opcoesDeEscolha;
+
 }
 
 [System.Serializable]
@@ -22,7 +23,7 @@ public class PaginaInteracao
         }
     }
 
-    public string texto;
+    public CelulaReference texto;
 
     public bool professorFalando; //Se for falso o aluno esta falando
 }
