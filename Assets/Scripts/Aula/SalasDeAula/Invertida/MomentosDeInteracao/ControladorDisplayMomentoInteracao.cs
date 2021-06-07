@@ -29,7 +29,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
             listaDeEscolhas.Add(new Dropdown.OptionData(""));
 
             List<string> escolhas = new List<string>(value.opcoesDeEscolha.Valor.Split('\n'));
-            
+            escolhaErrada = new Dropdown.OptionData(escolhas[escolhas.Count - 1]);
             //Adiciona as escolhas aleatoriamente
             while (escolhas.Count > 0)
             {
@@ -43,7 +43,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         }
     }
 
-    [System.Serializable] public class ChoiceConfirmEvent : UnityEvent<Dropdown.OptionData> { }
+    [System.Serializable] public class ChoiceConfirmEvent : UnityEvent<bool> { }
     public ChoiceConfirmEvent OnChoiceConfirm;
 
     public void UpdateMomento()
@@ -54,6 +54,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     private int paginaAtual;
     private int totalDePaginas;
+    private Dropdown.OptionData escolhaErrada;
     private bool ultimaPagina
     {
         get
@@ -136,7 +137,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     public void AvançarPagina()
     {
         if (ultimaPagina && escolhaAtual.text != "")
-            OnChoiceConfirm.Invoke(escolhaAtual);
+            OnChoiceConfirm.Invoke(escolhaAtual.text != escolhaErrada.text);
 
 
         paginaAtual++;
