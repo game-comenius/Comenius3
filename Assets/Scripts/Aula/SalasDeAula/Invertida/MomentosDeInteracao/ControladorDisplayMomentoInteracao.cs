@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,11 +27,17 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
             dropdown.ClearOptions();
             List<Dropdown.OptionData> listaDeEscolhas = new List<Dropdown.OptionData>();
             listaDeEscolhas.Add(new Dropdown.OptionData(""));
-            string[] escolhas = value.opcoesDeEscolha.Valor.Split('\n');
-            foreach (string escolha in escolhas)
+
+            List<string> escolhas = new List<string>(value.opcoesDeEscolha.Valor.Split('\n'));
+            
+            //Adiciona as escolhas aleatoriamente
+            while (escolhas.Count > 0)
             {
-                listaDeEscolhas.Add(new Dropdown.OptionData(escolha));
+                int index = Random.Range(0, escolhas.Count);
+                listaDeEscolhas.Add(new Dropdown.OptionData(escolhas[index]));
+                escolhas.RemoveAt(index);
             }
+
             dropdown.AddOptions(listaDeEscolhas);
             AtualizarPagina();
         }
