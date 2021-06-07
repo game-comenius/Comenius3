@@ -3347,6 +3347,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &923747826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6920648353827604952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9564899b0ad7d254189144c7a5c3023d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &923747827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6920648353827604952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &938450202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,9 +3830,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quizzes:
-  - {fileID: 1610260921}
+  - {fileID: 923747826}
   - {fileID: 2028371529}
-  - {fileID: 1941896174}
+  - {fileID: 923747826}
   estadoDaAulaInvertida: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
     type: 2}
 --- !u!4 &1068671431
@@ -3831,6 +3849,7 @@ Transform:
   - {fileID: 2028371530}
   - {fileID: 1941896175}
   - {fileID: 192466245}
+  - {fileID: 923747827}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5564,18 +5583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556927773}
   m_CullTransparentMesh: 0
---- !u!114 &1610260921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6657145328966804705, guid: 10a19cfec6edef44f81cd0087ccc764d,
-    type: 3}
-  m_PrefabInstance: {fileID: 485599624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f3599913f2547f5a126fe9131c460f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1614000715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6945,18 +6952,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928722770}
   m_CullTransparentMesh: 0
---- !u!114 &1941896174 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7554043740827829902, guid: 9d8915635c85485429c412893074c609,
-    type: 3}
-  m_PrefabInstance: {fileID: 325295246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff76d4e02c180460ba36c18391f36bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1941896175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7554043740827829903, guid: 9d8915635c85485429c412893074c609,
@@ -8625,6 +8620,139 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 265, y: 33}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!1001 &6920648353827604952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1068671431}
+    m_Modifications:
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: spriteDoIconeDoQuiz
+      value: 
+      objectReference: {fileID: 21300000, guid: a9656ff666f57084785bb2567d5b5f70,
+        type: 3}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: prefabQuizOrdenar
+      value: 
+      objectReference: {fileID: -7012603831904635088, guid: 6b8ffb2cb6001104b8ab3d29e563d6a6,
+        type: 3}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: prefabQuizMultiplaEscolha
+      value: 
+      objectReference: {fileID: -6731170075623886999, guid: da7baf0118ced3441b07160bc62be707,
+        type: 3}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1026319645}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: planilhaDoQuizz
+      value: 
+      objectReference: {fileID: 11400000, guid: de8cc10275578a140b419369296e6732,
+        type: 2}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 774386296}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AvancarEstado
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484567833962750261, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: tempoParaAvaliarResposta
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550285302624929826, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039850920421774461, guid: 77cd33e552b47db41b6cd15c53cf0f9e,
+        type: 3}
+      propertyPath: m_Name
+      value: QuizSalaInvertida
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77cd33e552b47db41b6cd15c53cf0f9e, type: 3}
 --- !u!1 &7663898337307687174
 GameObject:
   m_ObjectHideFlags: 0

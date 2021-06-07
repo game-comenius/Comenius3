@@ -43,7 +43,7 @@ public class PlanilhaDoGoogle : ScriptableObject
         this.OnEnable();
         _webRequest = UnityWebRequest.Get(url);
         _webRequest.SendWebRequest();
-        Debug.Log("Feito !");
+        Debug.Log("Web request realizado!");
         EditorApplication.update += CheckForImportRequestEnd; 
     }
 
@@ -65,7 +65,7 @@ public class PlanilhaDoGoogle : ScriptableObject
 
 
             data = ParseData(contentData);
-            Debug.Log("Dados atualizados!");
+            Debug.Log("Dados atualizados com sucesso!");
         }
     }
 
@@ -74,7 +74,6 @@ public class PlanilhaDoGoogle : ScriptableObject
     {
         //Divide o CSV por linhas
         string[] linhas = CSVHelper.GetLines(contentData);
-        Debug.Log(linhas[0]);
         //Calcula quantidade de linhas e colunas
         quantidadeDeLinhas = linhas.Length;
 
