@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
+    [SerializeField] bool isAutomatic = false;
 
     public MomentoInteracao Momento
     {
@@ -17,6 +18,9 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         }
         set
         {
+            if (isAutomatic)
+                value = EscolhedorDeMomentoInteracao.GetMomento();
+
             totalDePaginas = value.paginas.Length;
             paginaAtual = 0;
             momento = value;
@@ -36,6 +40,12 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     [System.Serializable] public class ChoiceConfirmEvent : UnityEvent<Dropdown.OptionData> { }
     public ChoiceConfirmEvent OnChoiceConfirm;
+
+    public void UpdateMomento()
+    {
+        Momento = momento;
+        escolhaAtual = dropdown.options[0];
+    }
 
     private int paginaAtual;
     private int totalDePaginas;
@@ -67,11 +77,12 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     {
         //Serve de trigger para o setter
         Momento = momento;
+        if (escolhaAtual == null)
+            escolhaAtual = new Dropdown.OptionData("");
         //Atualiza o display para primeira pagina
         paginaAtual = 0;
         AtualizarPagina();
-        if (escolhaAtual == null)
-            escolhaAtual = new Dropdown.OptionData("");
+        
 
         //Faz os botões chamarem o avanco/volta pagina
         setaDireita.onClick.AddListener(AvançarPagina);
