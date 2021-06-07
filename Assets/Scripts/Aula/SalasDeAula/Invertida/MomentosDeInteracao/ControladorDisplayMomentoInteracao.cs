@@ -30,6 +30,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
                 listaDeEscolhas.Add(new Dropdown.OptionData(escolha));
             }
             dropdown.AddOptions(listaDeEscolhas);
+            AtualizarPagina();
         }
     }
 

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 [RequireComponent(typeof(ControladorDisplayMomentoInteracao))]
 public class EscolhedorDeMomentoIntecao : MonoBehaviour
@@ -15,9 +14,10 @@ public class EscolhedorDeMomentoIntecao : MonoBehaviour
     {
         if (controlador == null)
             controlador = GetComponent<ControladorDisplayMomentoInteracao>();
+        momentos = Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha");
 
         estadoDaAula.OnStateChange.AddListener(AtualizarMomento);
-        var assets = AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/MomentosInteracao/GeradosPelaPlanilha");
+        AtualizarMomento();
     }
 
     private void OnDisable()
@@ -28,6 +28,6 @@ public class EscolhedorDeMomentoIntecao : MonoBehaviour
     public void AtualizarMomento()
     {
         //Pega um momento gerado pela da planilha
-        controlador.Momento = GeradorDeMomentosDaPlanilha.momentos[Random.Range(0, GeradorDeMomentosDaPlanilha.momentos.Count)];
+        controlador.Momento = momentos[Random.Range(0, momentos.Length)];
     }
 }
