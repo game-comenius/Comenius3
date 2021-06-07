@@ -66,7 +66,7 @@ public class PlanilhaDoGoogleInspector : Editor
             EditorGUILayout.BeginHorizontal();
             for (int coluna = 0; coluna < myTarget.quantidadeDeColunas; coluna++)
             {
-                EditorGUILayout.TextArea(myTarget.data[linha * myTarget.quantidadeDeColunas + coluna], GUILayout.Width((EditorGUIUtility.currentViewWidth-35)/ myTarget.quantidadeDeColunas), GUILayout.ExpandHeight(true)) ;
+                EditorGUILayout.TextArea(myTarget.GetDataAt(linha, coluna), GUILayout.Width((EditorGUIUtility.currentViewWidth-35)/ myTarget.quantidadeDeColunas), GUILayout.ExpandHeight(true)) ;
             }
             EditorGUILayout.EndHorizontal();
         }
