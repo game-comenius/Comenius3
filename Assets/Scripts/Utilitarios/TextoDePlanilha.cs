@@ -12,14 +12,14 @@ public class TextoDePlanilha : MonoBehaviour
     private void OnEnable()
     {
         if (texto == null)
-            texto = GetComponent<Text>();
+            texto = transform.gameObject.GetComponent<Text>();
     }
 
     [ContextMenu("Start()")]
     private void Start()
     {
         if (texto == null)
-            texto = GetComponent<Text>();
+            texto = transform.gameObject.GetComponent<Text>();
 
         texto.text = celula.Valor;
     }

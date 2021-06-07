@@ -13,17 +13,10 @@ public class ControleResumo : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.MetodologiaSelecionada == Metodologia.Invertida)
-        {
-            PaginaResumoCriador.SetActive(false);
-            PaginaResumoPlanejamento.SetActive(true);
-        }
-        else
-        {
-            PaginaResumoCriador.SetActive(true);
-            PaginaResumoPlanejamento.SetActive(false);
-        }
+        bool isInvertida = estadoDoJogo.MetodologiaSelecionada == Metodologia.Invertida;
 
+        PaginaResumoCriador.SetActive(!isInvertida);
+        PaginaResumoPlanejamento.SetActive(isInvertida);
     }
 
 }
