@@ -20,7 +20,7 @@ public static class GeradorDeMomentosDaPlanilha
         PlanilhaDoGoogle planilha = AssetDatabase.LoadAssetAtPath<PlanilhaDoGoogle>(planilhaPath);
 
         //Gera os momentos e salva eles
-        for (int linha = 1; linha < planilha.quantidadeDeLinhas; linha++)
+        for (int linha = 2; linha < planilha.quantidadeDeLinhas; linha++)
         {
             MomentoInteracao momento = ScriptableObject.CreateInstance<MomentoInteracao>();
 
@@ -48,5 +48,18 @@ public static class GeradorDeMomentosDaPlanilha
 
             AssetDatabase.SaveAssets();
         }
+
+    }
+    public static MomentoInteracao GetRandomMomento()
+    {
+        if (momentos == null)
+        { 
+            momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
+            if (momentos == null)
+                GerarMomentos();
+        }
+        
+        //Pega um momento gerado pela da planilha
+        return momentos[Random.Range(0, momentos.Count)];
     }
 }

@@ -18,7 +18,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         set
         {
             if (isAutomatic)
-                value = EscolhedorDeMomentoInteracao.GetMomento();
+                value = GeradorDeMomentosDaPlanilha.GetRandomMomento();
 
             totalDePaginas = value.paginas.Length;
             paginaAtual = 0;
