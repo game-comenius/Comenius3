@@ -67,29 +67,8 @@ public class PaginaResultadoDaAula : MonoBehaviour
     {
         barraQualidadeDaAula.value = pontuacaoDaAula;
 
-        float corVermelha = 1f;
-        float corVerde = 1f;
-
-        switch (pontuacaoDaAula)
-        {
-            case float pontuacao when pontuacao >= 0.75:
-                corVermelha = 0f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.50:
-                corVermelha = 0.65f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.25:
-                corVermelha = 1f;
-                corVerde = 1f;
-                break;
-            default:
-                corVermelha = 1f;
-                corVerde = 0f;
-                break;
-        }
-
+        float corVerde = pontuacaoDaAula;
+        float corVermelha = 1 - corVerde;
         barraQualidadeDaAulaFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
         //textPontuacaoDaAula.text = (pontuacaoDaAula * 100).ToString("f") + "%";
     }
@@ -105,29 +84,8 @@ public class PaginaResultadoDaAula : MonoBehaviour
         var taxaDeAcertoPorcentagemArredondada = Mathf.Ceil(taxaDeAcertoNosQuizzes * 100);
         textoTaxaDeAcertoNosQuizzes.text = taxaDeAcertoPorcentagemArredondada + "%";
 
-        float corVermelha = 1f;
-        float corVerde = 1f;
-
-        switch (taxaDeAcertoNosQuizzes)
-        {
-            case float pontuacao when pontuacao >= 0.75:
-                corVermelha = 0f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.50:
-                corVermelha = 0.65f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.25:
-                corVermelha = 1f;
-                corVerde = 1f;
-                break;
-            default:
-                corVermelha = 1f;
-                corVerde = 0f;
-                break;
-        }
-
+        float corVerde = taxaDeAcertoNosQuizzes;
+        float corVermelha = 1 - corVerde;
         barraTaxaDeAcertoNosQuizzesFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
 
     }
