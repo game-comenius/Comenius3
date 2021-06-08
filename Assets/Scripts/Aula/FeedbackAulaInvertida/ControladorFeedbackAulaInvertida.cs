@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+//using System.Runtime;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
@@ -48,16 +50,25 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [SerializeField] Sprite interpessoalSprite;
     [SerializeField] Sprite linguisticaSprite;
 
+    [Header("Retratos dos alunos")]
+    [SerializeField] GameObject retratoAluno;
+    [SerializeField] Sprite retratoMenino1;
+    [SerializeField] Sprite retratoMenino2;
+    [SerializeField] Sprite retratoMenina1;
+    [SerializeField] Sprite retratoMenina2;
+
+
     // Boa parte do código foi copiado do PaginaResultadoDaAula, vou ver se faço herança depois pra diminuir o código repetido.
     // Start is called before the first frame update
-    void Start()
+
+    private void AtualizarIcones()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
         midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
         midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
 
-        switch(estadoDoJogo.InteligenciasSelecionadas.Valor)
+        switch (estadoDoJogo.InteligenciasSelecionadas.Valor)
         {
 
             case 0:
@@ -79,12 +90,6 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         }
 
         campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
-
-        AtualizarFeedbackDaLurdinha();
-        AtualizarFeedbackDosAlunos();
-        AtualizarPontuacaoDaAula(0.24f);
-        //AtualizarTaxaDeAcertoNosQuizzes(50);
-
     }
 
     private void AtualizarFeedbackDaLurdinha()
@@ -94,6 +99,46 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         feedbackAulaInvertidaLurdinhaTexto.GetComponent<Text>().text = feedbackCompleto;
     }
 
+    private void DefinirRetratoAluno(string assinatura)
+    {
+        System.Random rnd = new System.Random();
+        int indexRetrato = rnd.Next(2);
+        Debug.Log(indexRetrato);
+
+        //Se for menino.
+        if (assinatura == "Natan - Ensino Superior" || assinatura == "Alexis - Ensino Médio" ||
+            assinatura == "Fábio - Ensino Fundamental" || assinatura == "Ricardo - Educação Infantil")
+        {
+
+            switch (indexRetrato)
+            {
+                case 0:
+                    retratoAluno.GetComponent<Image>().sprite = retratoMenino1;
+                    break;
+
+                default:
+                    retratoAluno.GetComponent<Image>().sprite = retratoMenino2;
+                    break;
+            }
+
+        }
+        else //Se for menina.
+        {
+
+            switch (indexRetrato)
+            {
+                case 0:
+                    retratoAluno.GetComponent<Image>().sprite = retratoMenina1;
+                    break;
+
+                default:
+                    retratoAluno.GetComponent<Image>().sprite = retratoMenina2;
+                    break;
+            }
+
+        }
+
+    }
 
     private void AtualizarFeedbackDosAlunos()
     {
@@ -108,11 +153,13 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         {
             feedbackAulaInvertidaAlunoNome.SetActive(true);
             feedbackAulaInvertidaAlunoNome.GetComponent<Text>().text = assinatura;
+            DefinirRetratoAluno(assinatura);
         }
         else
         {
-            // Se ninguém assinou, esconder o GameObject da assinatura
+            // Se ninguém assinou, esconder o GameObject da assinatura e do retrato.
             feedbackAulaInvertidaAlunoNome.SetActive(false);
+            retratoAluno.SetActive(false);
         }
 
     }
@@ -121,33 +168,13 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     {
         barraQualidadeDaAula.value = pontuacaoDaAula;
 
-        float corVermelha = 1f;
-        float corVerde = 1f;
-
-        switch(pontuacaoDaAula)
-        {
-            case float pontuacao when pontuacao >= 0.75:
-                corVermelha = 0f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.50:
-                corVermelha = 0.65f;
-                corVerde = 1f;
-                break;
-            case float pontuacao when pontuacao >= 0.25:
-                corVermelha = 1f;
-                corVerde = 1f;
-                break;
-            default:
-                corVermelha = 1f;
-                corVerde = 0f;
-                break;
-        }
-
+        //Fazer a mudança de cor da barra.
+        float corVerde = pontuacaoDaAula;
+        float corVermelha = 1 - corVerde;
         barraQualidadeDaAulaFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
     }
 
-    /*
+
     private void AtualizarTaxaDeAcertoNosQuizzes(Quiz[] quizzesDaAula)
     {
         float taxaDeAcertoNosQuizzes = 0;
@@ -155,16 +182,30 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
             taxaDeAcertoNosQuizzes = quizzesDaAula.Sum((quiz) => quiz.TaxaDeAcerto) / quizzesDaAula.Length;
         barraTaxaDeAcertoNosQuizzes.value = taxaDeAcertoNosQuizzes;
         // Mostrar taxa de acerto nos quizzes como texto e arredondada para cima
-        var textoTaxaDeAcertoNosQuizzes = barraTaxaDeAcertoNosQuizzes.GetComponentInChildren<TextMeshProUGUI>();
-        var taxaDeAcertoPorcentagemArredondada = Mathf.Ceil(taxaDeAcertoNosQuizzes * 100);
-        textoTaxaDeAcertoNosQuizzes.text = taxaDeAcertoPorcentagemArredondada + "%";
+        //var taxaDeAcertoPorcentagemArredondada = Mathf.Ceil(taxaDeAcertoNosQuizzes * 100);
+        //textoTaxaDeAcertoNosQuizzes.text = taxaDeAcertoPorcentagemArredondada + "%";
+
+        //Fazer a mudança de cor da barra.
+        float corVerde = taxaDeAcertoNosQuizzes;
+        float corVermelha = 1 - corVerde;
+        barraTaxaDeAcertoNosQuizzesFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
     }
-    */
+
+
+    public void Atualizar(float pontuacaoDaAula)//, Quiz[] quizzesDaAula)
+    {
+        AtualizarIcones();
+        AtualizarFeedbackDaLurdinha();
+        AtualizarFeedbackDosAlunos();
+        AtualizarPontuacaoDaAula(pontuacaoDaAula);
+        //AtualizarTaxaDeAcertoNosQuizzes(quizzesDaAula);
+    }
 
     public void Exibir()
     {
 
         feedbackAulaInvertida.SetActive(true);
+        Atualizar(0.65f);
 
     }
 
