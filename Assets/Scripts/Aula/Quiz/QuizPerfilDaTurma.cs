@@ -82,7 +82,7 @@ public class QuizPerfilDaTurma : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
-        OnQuizzExit.Invoke();
+        OnQuizzExit.Invoke(TaxaDeAcerto);
         formatoDoQuiz.Esconder();
 
         estado = EstadoDeQuiz.Executado;
