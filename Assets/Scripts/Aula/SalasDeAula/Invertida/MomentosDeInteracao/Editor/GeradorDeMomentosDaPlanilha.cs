@@ -8,8 +8,7 @@ public static class GeradorDeMomentosDaPlanilha
     private static string planilhaPath = "Assets/Resources/PlanilhasGoogle/PlanilhaMomentosDeInteracao.asset";
     private static string momentosFolderPath = "Assets/Resources/MomentosInteracao/GeradosPelaPlanilha";
 
-    public static List<MomentoInteracao> momentos { get; private set; }
-
+    private static List<MomentoInteracao> momentos;
     [MenuItem("Ferramentas/GerarMomentosDaPlanilha")]
     public static void GerarMomentos()
     {
@@ -44,22 +43,11 @@ public static class GeradorDeMomentosDaPlanilha
             momentos.Add(momento);
 
             //Salva o momento na pasta
+
             AssetDatabase.CreateAsset(momento, momentosFolderPath + "/MomentoPlanilha "+ linha + ".asset");
 
             AssetDatabase.SaveAssets();
         }
 
-    }
-    public static MomentoInteracao GetRandomMomento()
-    {
-        if (momentos == null)
-        { 
-            momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
-            if (momentos == null)
-                GerarMomentos();
-        }
-        
-        //Pega um momento gerado pela da planilha
-        return momentos[Random.Range(0, momentos.Count)];
     }
 }

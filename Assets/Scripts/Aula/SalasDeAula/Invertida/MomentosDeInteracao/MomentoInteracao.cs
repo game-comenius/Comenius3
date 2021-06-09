@@ -9,6 +9,21 @@ public class MomentoInteracao : ScriptableObject
     public PaginaInteracao[] paginas;
     public CelulaReference opcoesDeEscolha;
 
+    public static List<MomentoInteracao> momentos { get; private set; }
+
+    public static MomentoInteracao GetRamdomMomentoFromArquives()
+    {
+
+        if(momentos == null)
+        {
+            momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
+            if (momentos == null)
+                Debug.LogError("Gere os momentos denovo no menu Ferramentas/GerarMomentosDaPlanilha");
+        }
+
+        //Pega um momento gerado pela da planilha
+        return momentos[Random.Range(0, momentos.Count)];
+    }
 }
 
 [System.Serializable]
