@@ -78,79 +78,82 @@ public class DisplayAgrupamentoComMidia : Pagina
         //Referencia das Midias
         // var estadoDeJogo = EstadoDoJogo.Instance;
         EstadoDoJogo estadoDoJogo = EstadoDoJogo.Instance;
-        midiaSelecionada1 = estadoDoJogo.MidiasSelecionadas[2];
-        midiaSelecionada2 = estadoDoJogo.MidiasSelecionadas[3] ;
-
-        //Começo do Algorítimo
-        possuiMidiaIndividual = false;
-        midiasDisponiveis[1] = midiaSelecionada1;
-        midiasDisponiveis[2] = midiaSelecionada2;
-
-        midiaSelecionadaDic.Add(NomeDeMidia.Lousa, lousa);
-        midiaSelecionadaDic.Add(NomeDeMidia.Televisao, televisao);
-        midiaSelecionadaDic.Add(NomeDeMidia.ProjetorMultimidia, projetorMultimidia);
-        midiaSelecionadaDic.Add(NomeDeMidia.LivroDidatico, livrosDidaticos);
-        midiaSelecionadaDic.Add(NomeDeMidia.Aplicativos, computadorAplicativo);
-        midiaSelecionadaDic.Add(NomeDeMidia.AVEAs, computadorAVEA);
-        midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeAudioEVideo, computadorEditorAudioVideo);
-        midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas, computadorEditorPlanilhaTexto);
-        midiaSelecionadaDic.Add(NomeDeMidia.RedesSociais, computadorRedesSociais);
-        midiaSelecionadaDic.Add(NomeDeMidia.Jogos, consolesParaJogos);
-        midiaSelecionadaDic.Add(NomeDeMidia.CadernosECartazes, cadernosECartazes);
-
-        //Chacando se a midia é individual. Se for o caso ela vai ter que carregar outros dicionários
-        if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.LivroDidatico)
+        if (estadoDoJogo.MetodologiaSelecionada == Metodologia.Invertida)
         {
-            //Dicionário dos agrupamentos de LivroDidatico
-            agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
-            agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
-            agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-            agrupamentoLivroDic.Add(Agrupamento.Trios, livroAgrupamentoGruposPequenos);
-            agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
+            midiaSelecionada1 = estadoDoJogo.MidiasSelecionadas[2];
+            midiaSelecionada2 = estadoDoJogo.MidiasSelecionadas[3];
 
-            possuiMidiaIndividual = true;
+            //Começo do Algorítimo
+            possuiMidiaIndividual = false;
+            midiasDisponiveis[1] = midiaSelecionada1;
+            midiasDisponiveis[2] = midiaSelecionada2;
+
+            midiaSelecionadaDic.Add(NomeDeMidia.Lousa, lousa);
+            midiaSelecionadaDic.Add(NomeDeMidia.Televisao, televisao);
+            midiaSelecionadaDic.Add(NomeDeMidia.ProjetorMultimidia, projetorMultimidia);
+            midiaSelecionadaDic.Add(NomeDeMidia.LivroDidatico, livrosDidaticos);
+            midiaSelecionadaDic.Add(NomeDeMidia.Aplicativos, computadorAplicativo);
+            midiaSelecionadaDic.Add(NomeDeMidia.AVEAs, computadorAVEA);
+            midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeAudioEVideo, computadorEditorAudioVideo);
+            midiaSelecionadaDic.Add(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas, computadorEditorPlanilhaTexto);
+            midiaSelecionadaDic.Add(NomeDeMidia.RedesSociais, computadorRedesSociais);
+            midiaSelecionadaDic.Add(NomeDeMidia.Jogos, consolesParaJogos);
+            midiaSelecionadaDic.Add(NomeDeMidia.CadernosECartazes, cadernosECartazes);
+
+            //Chacando se a midia é individual. Se for o caso ela vai ter que carregar outros dicionários
+            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.LivroDidatico)
+            {
+                //Dicionário dos agrupamentos de LivroDidatico
+                agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
+                agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
+                agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
+                agrupamentoLivroDic.Add(Agrupamento.Trios, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
+
+                possuiMidiaIndividual = true;
+            }
+
+            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Jogos)
+            {
+                //Dicionário de agrupamentos de ConsolesParaJogos
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Trios, consoleParaJogoAgrupamentoGruposPequenos);
+
+                possuiMidiaIndividual = true;
+            }
+
+            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.CadernosECartazes)
+            {
+                //Dicionário de agrupamentos de CadernosECartazes
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.Trios, cadernoECartazAgrupamentoGruposPequenos);
+
+                possuiMidiaIndividual = true;
+            }
+
+            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Aplicativos || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.AVEAs || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeAudioEVideo || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.RedesSociais)
+            {
+                //Dicionário dos agrupamentos de Computadores        
+                agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
+                agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);
+                agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
+                agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
+                agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
+
+                possuiMidiaIndividual = true;
+            }
+
+            //Ativar a os componentes da sala
+            MostrarASala(midiasDisponiveis[midiaAlvo]);
+            Debug.Log(midiaSelecionada1.agrupamento);
+            Debug.Log(midiaSelecionada2.agrupamento);
         }
-
-        if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Jogos)
-        {
-            //Dicionário de agrupamentos de ConsolesParaJogos
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-            agrupamentoConsolesParaJogosDic.Add(Agrupamento.Trios, consoleParaJogoAgrupamentoGruposPequenos);
-
-            possuiMidiaIndividual = true;
-        }
-
-        if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.CadernosECartazes)
-        {
-            //Dicionário de agrupamentos de CadernosECartazes
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-            agrupamentoCadernoECartazDic.Add(Agrupamento.Trios, cadernoECartazAgrupamentoGruposPequenos);
-
-            possuiMidiaIndividual = true;
-        }
-
-        if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Aplicativos || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.AVEAs || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeAudioEVideo || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.RedesSociais)
-        {
-            //Dicionário dos agrupamentos de Computadores        
-            agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
-            agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);
-            agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
-            agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
-            agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
-
-            possuiMidiaIndividual = true;
-        }
-
-        //Ativar a os componentes da sala
-        MostrarASala(midiasDisponiveis[midiaAlvo]);
-        Debug.Log(midiaSelecionada1.agrupamento);
-        Debug.Log(midiaSelecionada2.agrupamento);
     }
 
     public void MostrarASala(Midia midia)
