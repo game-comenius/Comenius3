@@ -23,12 +23,6 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [SerializeField] GameObject feedbackAulaInvertidaAlunoTexto;
     [SerializeField] GameObject feedbackAulaInvertidaAlunoNome;
 
-    [SerializeField] Slider barraQualidadeDaAula;
-    [SerializeField] Image barraQualidadeDaAulaFill;
-
-    [SerializeField] Slider barraTaxaDeAcertoNosQuizzes;
-    [SerializeField] Image barraTaxaDeAcertoNosQuizzesFill;
-
     [Header("Ícones das mídias")]
     [SerializeField] Sprite lousaSprite;
     [SerializeField] Sprite livroDidaticoSprite;
@@ -164,48 +158,18 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
     }
 
-    private void AtualizarPontuacaoDaAula(float pontuacaoDaAula)
-    {
-        barraQualidadeDaAula.value = pontuacaoDaAula;
-
-        //Fazer a mudança de cor da barra.
-        float corVerde = pontuacaoDaAula;
-        float corVermelha = 1 - corVerde;
-        barraQualidadeDaAulaFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
-    }
-
-
-    private void AtualizarTaxaDeAcertoNosQuizzes(Quiz[] quizzesDaAula)
-    {
-        float taxaDeAcertoNosQuizzes = 0;
-        if (quizzesDaAula.Any())
-            taxaDeAcertoNosQuizzes = quizzesDaAula.Sum((quiz) => quiz.TaxaDeAcerto) / quizzesDaAula.Length;
-        barraTaxaDeAcertoNosQuizzes.value = taxaDeAcertoNosQuizzes;
-        // Mostrar taxa de acerto nos quizzes como texto e arredondada para cima
-        //var taxaDeAcertoPorcentagemArredondada = Mathf.Ceil(taxaDeAcertoNosQuizzes * 100);
-        //textoTaxaDeAcertoNosQuizzes.text = taxaDeAcertoPorcentagemArredondada + "%";
-
-        //Fazer a mudança de cor da barra.
-        float corVerde = taxaDeAcertoNosQuizzes;
-        float corVermelha = 1 - corVerde;
-        barraTaxaDeAcertoNosQuizzesFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
-    }
-
-
-    public void Atualizar(float pontuacaoDaAula)//, Quiz[] quizzesDaAula)
+    public void Atualizar()
     {
         AtualizarIcones();
         AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
-        AtualizarPontuacaoDaAula(pontuacaoDaAula);
-        //AtualizarTaxaDeAcertoNosQuizzes(quizzesDaAula);
     }
 
     public void Exibir()
     {
 
         feedbackAulaInvertida.SetActive(true);
-        Atualizar(0.65f);
+        Atualizar();
 
     }
 
