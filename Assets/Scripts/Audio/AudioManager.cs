@@ -25,6 +25,11 @@ public class AudioManager : MonoBehaviour
 
     public GameObject trilhaInicial;
 
+    //Componente audio source da trilha inicial
+    AudioSource audioSourceTrilha;
+
+    //public float volume;
+
     //Controle de cenas
     private string ultimaCena;
 
@@ -50,7 +55,7 @@ public class AudioManager : MonoBehaviour
         //Armazena a cena que foi ativa por último
         ultimaCena = SceneManager.GetActiveScene().name;
 
-        
+        audioSourceTrilha = trilhaInicial.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -75,7 +80,7 @@ public class AudioManager : MonoBehaviour
                 }
             }
         }
-
+        
     }
 
 
@@ -143,6 +148,5 @@ public class AudioManager : MonoBehaviour
         trilhaInicial.GetComponent<AudioSource>().loop = true;
         //Tocar o SFX
         trilhaInicial.GetComponent<AudioSource>().Play();
-    }
-
+    }   
 }
