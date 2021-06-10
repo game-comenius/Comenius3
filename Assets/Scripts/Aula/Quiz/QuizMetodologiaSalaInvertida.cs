@@ -35,10 +35,10 @@ public class QuizMetodologiaSalaInvertida : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
-        OnQuizzExit.Invoke(TaxaDeAcerto);
         formatoDoQuiz.Esconder();
 
         estado = EstadoDeQuiz.Executado;
+        OnQuizzExit.Invoke(TaxaDeAcerto);
     }
 
     private void GerarQuiz()

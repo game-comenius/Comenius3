@@ -60,9 +60,9 @@ public class QuizDeMidia : Quiz
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => quizVF.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
 
-        OnQuizzExit.Invoke(TaxaDeAcerto);
         quizVF.Esconder();
 
         estado = EstadoDeQuiz.Executado;
+        OnQuizzExit.Invoke(TaxaDeAcerto);
     }
 }

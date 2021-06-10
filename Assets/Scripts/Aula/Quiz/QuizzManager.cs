@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuizzManager : MonoBehaviour
 {
@@ -9,11 +11,25 @@ public class QuizzManager : MonoBehaviour
     [SerializeField] EstadoDeAulaInvertida estadoDaAulaInvertida;
     private int quizzAtual = -1;
 
-
+    [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
+    public QuizzExitEvent OnPontuacaoChange;
 
     private void Start() 
     {
         quizzAtual = -1;
+
+        foreach (Quiz quiz in quizzes)
+        {
+            quiz.OnQuizzExit.AddListener(EndQuizz);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (Quiz quiz in quizzes)
+        {
+            quiz.OnQuizzExit.RemoveListener(EndQuizz);
+        }
     }
 
     public void MostrarProximoQuizz()
@@ -36,5 +52,12 @@ public class QuizzManager : MonoBehaviour
         }
         quizzParaMostrar.OnQuizzExit.RemoveAllListeners();
         StartCoroutine(quizzParaMostrar.Executar());
+    }
+
+    public void EndQuizz(float taxaDeAcerto)
+    {
+        int quantidadeDeQuizzes = quizzes.Length;
+        float tamanhoDoFragmento = taxaDeAcerto / quantidadeDeQuizzes;
+        OnPontuacaoChange.Invoke(tamanhoDoFragmento);
     }
 }

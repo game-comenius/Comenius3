@@ -103,7 +103,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     {
         System.Random rnd = new System.Random();
         int indexRetrato = rnd.Next(2);
-        Debug.Log(indexRetrato);
+        //Debug.Log(indexRetrato);
 
         //Se for menino.
         if (assinatura == "Natan - Ensino Superior" || assinatura == "Alexis - Ensino Médio" ||

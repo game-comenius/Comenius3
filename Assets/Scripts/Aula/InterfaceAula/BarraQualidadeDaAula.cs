@@ -59,7 +59,7 @@ public class BarraQualidadeDaAula : MonoBehaviour
         aula.UmQuizFoiAplicadoComSucessoEvent += (quiz) => StartCoroutine(PreencherBarra(tamanhoDoFragmento));
     }
 
-    private IEnumerator PreencherBarra(float quantidade)
+    public IEnumerator PreencherBarra(float quantidade)
     {
         // Executar animação da estrela do professor e esperar ela terminar antes de continuar
         animatorEstrelaProfessor.Play(nomeAnimacaoEstrelaProfessor);

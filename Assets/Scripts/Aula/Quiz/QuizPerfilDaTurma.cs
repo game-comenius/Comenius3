@@ -81,10 +81,11 @@ public class QuizPerfilDaTurma : Quiz
         // Mostrar se o jogador acertou ou errou nas suas escolhas
         StartCoroutine(PassarTempoParaAvaliarResposta());
         yield return new WaitUntil(() => formatoDoQuiz.JogadorPediuParaFechar || tempoParaAvaliarRespostaPassou);
-
-        OnQuizzExit.Invoke(TaxaDeAcerto);
+        
         formatoDoQuiz.Esconder();
 
         estado = EstadoDeQuiz.Executado;
+
+        OnQuizzExit.Invoke(TaxaDeAcerto);
     }
 }

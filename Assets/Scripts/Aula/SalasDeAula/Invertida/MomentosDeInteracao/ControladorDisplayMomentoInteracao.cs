@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
-    [SerializeField] bool isAutomatic = false;
+    [SerializeField] bool isRamdomAutoSelected = false;
 
     public MomentoInteracao Momento
     {
@@ -17,7 +17,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         }
         set
         {
-            if (isAutomatic)
+            if (isRamdomAutoSelected)
                 value = MomentoInteracao.GetRamdomMomentoFromArquives();
 
             totalDePaginas = value.paginas.Length;
