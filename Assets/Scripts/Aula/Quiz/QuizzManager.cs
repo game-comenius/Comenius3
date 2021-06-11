@@ -13,7 +13,8 @@ public class QuizzManager : MonoBehaviour
 
     [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
     public QuizzExitEvent OnPontuacaoChange;
-
+    [System.Serializable] public class QuizzEndEvent : UnityEvent<int> { }
+    public QuizzExitEvent OnQuizzEnd;
     private void Start() 
     {
         quizzAtual = -1;
@@ -35,6 +36,7 @@ public class QuizzManager : MonoBehaviour
     public void MostrarProximoQuizz()
     {
         quizzAtual++;
+        Debug.Log((float)(quizzAtual + 1));
         //Se acabaram os quizzes nao faz nada
         if(quizzAtual >= quizzes.Length)
             return;
@@ -59,5 +61,7 @@ public class QuizzManager : MonoBehaviour
         int quantidadeDeQuizzes = quizzes.Length;
         float tamanhoDoFragmento = taxaDeAcerto / quantidadeDeQuizzes;
         OnPontuacaoChange.Invoke(tamanhoDoFragmento);
+
+        OnQuizzEnd.Invoke(quantidadeDeQuizzes);
     }
 }
