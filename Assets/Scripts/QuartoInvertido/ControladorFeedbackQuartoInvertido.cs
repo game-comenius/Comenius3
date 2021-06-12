@@ -27,11 +27,11 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
             switch(nomeInteligencia)
             {
                 case ("Corporal-cinestésica e Naturalista"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero me movimentar, brincando lá fora.";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero me movimentar, brincando lá fora!";
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 case ("Intrapessoal e Espacial-visual"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Gostei de fazer as tarefas e ver o conteúdo antes da aula.";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Gostei de fazer as tarefas e ver o conteúdo antes da aula!";
                     feedbackVisual.GetComponent<Image>().sprite = alunoFeliz;
                     break;
                 case ("Interpessoal e Musical"):
@@ -39,7 +39,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 case ("Linguística e Lógico-matemática"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero aprender com as histórias contadas pelo professor.";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero aprender com as histórias contadas pelo professor!";
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 default:
@@ -57,7 +57,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 case ("Intrapessoal e Espacial-visual"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Adorei a ideia de poder entender e visualizar o conteúdo primeiro com atividades individuais.";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Adorei a ideia de entender e visualizar o conteúdo primeiro com atividades individuais.";
                     feedbackVisual.GetComponent<Image>().sprite = alunoFeliz;
                     break;
                 case ("Interpessoal e Musical"):
@@ -65,7 +65,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 case ("Linguística e Lógico-matemática"):
-                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero poder entender o conteúdo, tirando dúvidas e fazendo as minhas anotações.";
+                    feedbackDescricao.GetComponent<TextMeshProUGUI>().text = "Quero entender o conteúdo, tirando dúvidas e fazendo as minhas anotações.";
                     feedbackVisual.GetComponent<Image>().sprite = alunoNeutro;
                     break;
                 default:
