@@ -1512,9 +1512,9 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta"
-      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta3"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o incorreta"
       m_Image: {fileID: 0}
@@ -1776,6 +1776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1026319645}
@@ -1793,7 +1798,7 @@ PrefabInstance:
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
@@ -1808,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MostrarProximoQuizz
+      value: EndQuizz
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
@@ -1819,16 +1824,16 @@ PrefabInstance:
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1068671430}
+      objectReference: {fileID: 2028371529}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: EndQuizz
+      value: CallQuizzLateExit
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
@@ -1839,6 +1844,56 @@ PrefabInstance:
         type: 3}
       propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2028371529}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: CallQuizzLateExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzExit.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1068671430}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MostrarProximoQuizz
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822680479314837569, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
+        type: 3}
+      propertyPath: OnQuizzLateExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3822680479314837574, guid: 5188bfe7cb153c44a83d51cfc82b6d06,
         type: 3}
@@ -3807,6 +3862,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5936127171537603471}
         m_MethodName: PreencherBarra
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnQuizzEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 774386296}
+        m_MethodName: AtualizarPontuacaoDaAula
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7242,7 +7311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &556043545971046936
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7346,7 +7415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &556043546015650769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7810,6 +7879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556043547047178089}
   - component: {fileID: 556043547047178103}
+  - component: {fileID: 556043547047178090}
   m_Layer: 5
   m_Name: BarraQualidadeDaAula
   m_TagString: Untagged
@@ -7840,6 +7910,23 @@ RectTransform:
   m_AnchoredPosition: {x: 21, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &556043547047178090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556043547047178088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1bc40c3b45c5c4982a8f8e654ae4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeDaBarra: 1
+  animatorEstrelaProfessor: {fileID: 556043545960877515}
+  nomeAnimacaoEstrelaProfessor: EstrelaPulo
+  animatorEstrelaBarra: {fileID: 556043546015650782}
+  nomeAnimacaoEstrelaBarra: EstrelaBarrinha
 --- !u!114 &556043547047178103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8137,6 +8224,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 270658509}
     m_Modifications:
     - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: messenger
       value: 
       objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
@@ -8145,6 +8236,26 @@ PrefabInstance:
       propertyPath: trocadorDeCena
       value: 
       objectReference: {fileID: 210179270}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 556043547047178090}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PreencherBarra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
+      propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1580642591, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: controladorJogo
       value: 

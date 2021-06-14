@@ -9,6 +9,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     [SerializeField] private MomentoInteracao momento;
     [SerializeField] bool isRamdomAutoSelected = false;
 
+
     public MomentoInteracao Momento
     {
         get
@@ -74,7 +75,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     [SerializeField] private Button setaEsquerda;
     [SerializeField] private Dropdown dropdown;
 
-    private void OnValidate()//Faz atualizar o momento quando alterado pelo inspector
+    public void OnValidate()//Faz atualizar o momento quando alterado pelo inspector
     {
         Momento = momento;
     }
