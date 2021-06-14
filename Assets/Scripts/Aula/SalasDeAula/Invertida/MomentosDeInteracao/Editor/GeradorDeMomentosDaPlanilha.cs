@@ -6,7 +6,9 @@ using UnityEditor;
 public static class GeradorDeMomentosDaPlanilha
 {
     private static string planilhaPath = "Assets/Resources/PlanilhasGoogle/PlanilhaMomentosDeInteracao.asset";
-    private static string momentosFolderPath = "Assets/Resources/MomentosInteracao/GeradosPelaPlanilha";
+    
+    private static string momentosParentFolderPath = "Assets/Resources/MomentosInteracao";
+    private static string momentosFoldername = "GeradosPelaPlanilha";
 
     private static List<MomentoInteracao> momentos;
     [MenuItem("Ferramentas/GerarMomentosDaPlanilha")]
@@ -42,12 +44,16 @@ public static class GeradorDeMomentosDaPlanilha
             //Salva o momento na lista
             momentos.Add(momento);
 
-            //Salva o momento na pasta
-
-            AssetDatabase.CreateAsset(momento, momentosFolderPath + "/MomentoPlanilha "+ linha + ".asset");
-
-            AssetDatabase.SaveAssets();
         }
-
+        //Salva o momento na pasta
+        AssetDatabase.DeleteAsset(momentosParentFolderPath +"/"+ momentosFoldername);
+        AssetDatabase.CreateFolder(momentosParentFolderPath, momentosFoldername);
+        int index = 0;
+        foreach (MomentoInteracao momento in momentos)
+        {
+            AssetDatabase.CreateAsset(momento, momentosParentFolderPath + "/" + momentosFoldername + "/MomentoPlanilha " + index + ".asset");
+            index++;
+        }
+        AssetDatabase.SaveAssets();
     }
 }
