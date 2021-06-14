@@ -69,7 +69,7 @@ public class PlanilhaDoGoogleInspector : Editor
             EditorGUILayout.BeginHorizontal();
             for (int coluna = 0; coluna < myTarget.quantidadeDeColunas; coluna++)
             {
-                EditorGUILayout.TextArea(myTarget.GetDataAt(linha, coluna), GUILayout.Width((EditorGUIUtility.currentViewWidth-35)/ myTarget.quantidadeDeColunas), GUILayout.ExpandHeight(true)) ;
+                EditorGUILayout.TextArea(myTarget.GetDataAt(linha, coluna), GUILayout.Width((EditorGUIUtility.currentViewWidth - 35) / myTarget.quantidadeDeColunas), GUILayout.ExpandHeight(true));
             }
             EditorGUILayout.EndHorizontal();
         }
@@ -111,6 +111,8 @@ public class PlanilhaDoGoogleInspector : Editor
     {
         //Divide o CSV por linhas
         string[] linhas = CSVHelper.GetLines(contentData);
+
+
         //Calcula quantidade de linhas e colunas
         myTarget.quantidadeDeLinhas = linhas.Length;
 
@@ -122,6 +124,8 @@ public class PlanilhaDoGoogleInspector : Editor
             if (colunasNaLinha > myTarget.quantidadeDeColunas)
                 myTarget.quantidadeDeColunas = colunasNaLinha;
         }
+
+
 
         //Divide as linhas nas celulas
         List<string> data = new List<string>();
@@ -154,21 +158,24 @@ public static class CSVHelper
 
         foreach (string piece in pieces)
         {
+
             if (repairing)
             {
                 string last = result[result.Count - 1];
 
 
                 last = last + "\n" + piece;
-
                 //Remove o caracter " (aspas duplas)
-                string newLast = "";
-                foreach (char charI in last.ToCharArray())
+                if (!last.Contains(","))
                 {
-                    if (charI != c)
-                        newLast += charI;
+                    string newLast = "";
+                    foreach (char charI in last.ToCharArray())
+                    {
+                        if (charI != c)
+                            newLast += charI;
+                    }
+                    last = newLast;
                 }
-                last = newLast;
 
                 result[result.Count - 1] = last;
             }
@@ -207,21 +214,13 @@ public static class CSVHelper
 
         foreach (string piece in pieces)
         {
+
             if (repairing)
             {
                 string last = result[result.Count - 1];
 
 
                 last = last + "," + piece;
-
-                //Remove o caracter " (aspas duplas)
-                string newLast = "";
-                foreach (char charI in last.ToCharArray())
-                {
-                    if (charI != c)
-                        newLast += charI;
-                }
-                last = newLast;
 
                 result[result.Count - 1] = last;
             }
@@ -231,10 +230,34 @@ public static class CSVHelper
             }
             if (piece.Contains(c.ToString()))//Se contem " comeca/para de reparar
             {
-                repairing = !repairing;
+                int contagem = 0;
+                foreach (char _c in piece.ToCharArray())
+                {
+                    if (_c == c)
+                        contagem++;
+                }
+                //Verifica entao se essa peça esta "danificada"
+                if (contagem < 2)
+                {
+                    repairing = !repairing;
+                }
+
             }
         }
-        return result.ToArray();
+
+        List<string> returnList = new List<string>();
+        //Remove o caracter " (aspas duplas)
+        foreach (string piece in result)
+        {
+            string newPiece = "";
+            foreach (char charI in piece.ToCharArray())
+            {
+                if (charI != c)
+                    newPiece += charI;
+            }
+            returnList.Add(newPiece);
+        }
+        return returnList.ToArray();
     }
 
 }
