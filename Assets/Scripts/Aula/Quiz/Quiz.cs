@@ -9,6 +9,12 @@ public abstract class Quiz : MonoBehaviour
 
     [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
     public QuizzExitEvent OnQuizzExit;
+    public UnityEvent OnQuizzLateExit;
+
+    public void CallQuizzLateExit()
+    {
+        OnQuizzLateExit.Invoke();
+    }
 
     // Faz sentido que seja chamado apenas após a execução deste quiz
     // Deve retornar um número entre 0 e 1
