@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Text;
 using UnityEngine.Networking;
+using UnityEngine.Events;
 
 [CustomEditor(typeof(PlanilhaDoGoogle))]
 public class PlanilhaDoGoogleInspector : Editor
@@ -14,14 +15,19 @@ public class PlanilhaDoGoogleInspector : Editor
 
     private UnityWebRequest _webRequest;
 
+    public UnityEvent OnMomentosDataUpdate;
+
     private void OnEnable()
     {
         myTarget = target as PlanilhaDoGoogle;
         // Link the properties
         sheetID = serializedObject.FindProperty("sheetID");
         pageID = serializedObject.FindProperty("pageID");
+        if (OnMomentosDataUpdate == null)
+        {
+            OnMomentosDataUpdate = new UnityEvent();
+        }
     }
-
 
     public override void OnInspectorGUI()
     {
@@ -36,7 +42,12 @@ public class PlanilhaDoGoogleInspector : Editor
 
         if (GUILayout.Button("Update from GDrive"))
         {
-            MakeRequest();
+            if(OnMomentosDataUpdate.GetPersistentEventCount() == 0)
+            {
+                OnMomentosDataUpdate.AddListener(GeradorDeMomentosDaPlanilha.GerarMomentos);
+            }
+            
+            MakeRequest();           
         }
 
         if (GUILayout.Button("Open sheet"))
@@ -102,6 +113,8 @@ public class PlanilhaDoGoogleInspector : Editor
 
 
             myTarget.data = ParseData(contentData);
+            if(target.name == "PlanilhaMomentosDeInteracao")
+                OnMomentosDataUpdate.Invoke();
             Debug.Log("Dados atualizados com sucesso!");
         }
     }

@@ -5,6 +5,7 @@ using UnityEditor;
 
 public static class GeradorDeMomentosDaPlanilha
 {
+
     private static string planilhaPath = "Assets/Resources/PlanilhasGoogle/PlanilhaMomentosDeInteracao.asset";
     
     private static string momentosParentFolderPath = "Assets/Resources/MomentosInteracao";
