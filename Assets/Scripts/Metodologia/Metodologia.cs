@@ -15,7 +15,7 @@ public sealed class Metodologia
     public static readonly Metodologia Invertida = new Metodologia
     (
         valor: 1,
-        nome: "Sala Invertida",
+        nome: "Sala de Aula Invertida",
         descricao: "É o método que inverte a sequência tradicional das situações de aprendizagem. Nessa proposta...",
         expansao: "A sala de aula invertida, também conhecida como Flipped Classroom, é o método que inverte a sequência tradicional do processo de ensino e aprendizagem.\nOs alunos realizam leituras e pesquisas antes da aula. Podem participar de atividades interativas como jogos e chats, ou ainda fazer uma leitura, assistir um vídeo.\n" +
         "Em sala de aula, os alunos discutem sobre o tema com o docente e os demais colegas, tiram suas dúvidas e fazem atividades.\nAs dúvidas e reflexões que os alunos levarem para a aula são tomadas como ponto de partida para as atividades presenciais, tornando as aulas mais participativas."
