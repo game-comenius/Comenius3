@@ -21,7 +21,7 @@ public class Midia
         {
             case NomeDeMidia.Lousa:
                 NomeApresentavel = "Lousa";
-                Descricao = "  Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado...";
+                Descricao = "Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado...";
                 Expansao = "  Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado de forma colaborativa entre professor e estudante." 
                     + System.Environment.NewLine + 
                     "  É uma mídia de exposição que acompanha o ofício do professor há algumas décadas, podendo ser utilizado de diversas formas, de acordo com a proposta metodológica de cada professor";
@@ -29,7 +29,7 @@ public class Midia
 
             case NomeDeMidia.LivroDidatico:
                 NomeApresentavel = "Livro Didático";
-                Descricao = "  É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto...";
+                Descricao = "É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto...";
                 Expansao = "  É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto de exercícios, textos e imagens do conteúdo estudado em sala que acompanha o currículo escolar." 
                     + System.Environment.NewLine + 
                     "  É um livro impresso fornecido pela escola que traz informações sobre todos os conteúdos das disciplinas do ano letivo em questão, normalmente utilizado como leitura do material didático complementar" +
@@ -38,7 +38,7 @@ public class Midia
 
             case NomeDeMidia.LivrosJornaisERevistas:
                 NomeApresentavel = "Livros, Jornais e Revistas";
-                Descricao = "  Essas mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos."
+                Descricao = "Essas mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos."
                     + System.Environment.NewLine +
                     "  São publicações de cunho literário, informativo, jornalístico ou de entretenimento, geralmente voltada para o público em geral. Contém páginas impressas com textos e imagens. " +
                     "Podem ser usados como material para leitura,consulta, ou base de recorte para atividades. " +
@@ -49,7 +49,7 @@ public class Midia
 
             case NomeDeMidia.CadernosECartazes:
                 NomeApresentavel = "Cadernos e Cartazes";
-                Descricao = "  São mídias utilizadas para produção e armazenamento de informações por uso da escrita...";
+                Descricao = "São mídias utilizadas para produção e armazenamento de informações por uso da escrita...";
                 Expansao = "  São mídias utilizadas para produção e armazenamento de informações por uso da escrita ou imagens, geralmente utilizadas pelos alunos."
                     + System.Environment.NewLine +
                     "  É uma litografia. Geralmente feito pelos próprios estudantes, utilizados para atividades pedagógicas individuais ou em grupo para proporcionar a produção coletiva. " +
@@ -59,7 +59,7 @@ public class Midia
 
             case NomeDeMidia.Televisao:
                 NomeApresentavel = "Televisão";
-                Descricao = "  Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos...";
+                Descricao = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos...";
                 Expansao = "  Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e ficcionais, gravados ou ao vivo."
                     + System.Environment.NewLine +
                     "  A televisão é uma máquina que reproduz imagens e sons transmitidos por antena ou por meio de um VHS.  " +
@@ -70,7 +70,7 @@ public class Midia
                 break;
             case NomeDeMidia.AparelhoDeSom:
                 NomeApresentavel = "Aparelho de Som";
-                Descricao = "  Esse aparelho é uma mídia de reprodução para propiciar comunicação por intermédio da transcepção de dados e informações como  fitas gravadas, " +
+                Descricao = "Esse aparelho é uma mídia de reprodução para propiciar comunicação por intermédio da transcepção de dados e informações como  fitas gravadas, " +
                     "CDs, DVDs e arquivos de diversos formatos, com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes."
                      + System.Environment.NewLine +
                      "  O reprodutor de áudio reproduz o som captado no gravador de áudio, CDs e diferentes formatos."
@@ -83,7 +83,7 @@ public class Midia
 
             case NomeDeMidia.RedesSociais:
                 NomeApresentavel = "Redes Sociais";
-                Descricao = "  São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento de informações, criação de grupos e diálogos entre seus usuários."
+                Descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento de informações, criação de grupos e diálogos entre seus usuários."
                     + System.Environment.NewLine +
                     "  As redes sociais tem o objetivo de conectar pessoas e compartilhar informações entre elas, reunindo usuários que compactuam dos mesmos valores e interesses. " +
                     "As escolas com propostas intencionais podem usá-la para contribuir para a mobilização de saberes e de aprendizagens colaborativas, por meio de frequentes trocas, debates e contribuições de diferentes perspectivas, com uma construção social de significados e compartilhamento. " +
@@ -93,7 +93,7 @@ public class Midia
 
             case NomeDeMidia.Jogos:
                 NomeApresentavel = "Jogos";
-                Descricao = "  Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo...";
+                Descricao = "Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo...";
                 Expansao = "  Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo tecnológico, contendo gêneros, propostas e mecânicas variadas."
                     + System.Environment.NewLine +
                     "  Os jogos digitais são sistemas de simulações nos quais as situações reais são substituídas por situações lúdicas, permitindo aos jogadores uma visão de distintos modelos de realidade. " +
@@ -104,7 +104,7 @@ public class Midia
 
             case NomeDeMidia.EditoresDeAudioEVideo:
                 NomeApresentavel = "Editores de Áudio e Vídeo";
-                Descricao = "  Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções...";
+                Descricao = "Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções...";
                 Expansao = "  Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções para cortar, copiar e colar trechos de áudio e video, bem como aplicar efeitos diversos."
                     + System.Environment.NewLine +
                     "  Os editores de áudio e vídeo são ferramentas que instigam a pesquisa em sala de aula, pois ao construir essas mídias podemos incentivar a reflexão de diferentes temas, criatividade e trabalho em equipe dos envolvidos.  " +
@@ -114,7 +114,7 @@ public class Midia
 
             case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 NomeApresentavel = "Editores de Texto e Planilhas Eletrônicas";
-                Descricao = "  Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas...";
+                Descricao = "Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas...";
                 Expansao = "  Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas, contendo diversas ferramentas para personalizar seu conteúdo como definição de cores, fonte, espaçamentos e muito mais."
                     + System.Environment.NewLine +
                     "  O funcionamento desses softwares é bem simples, ao mesmo tempo em que permitem uma aprendizagem interativa, rica e que os alunos sejam protagonistas da própria aprendizagem. " +
@@ -124,7 +124,7 @@ public class Midia
 
             case NomeDeMidia.AVEAs:
                 NomeApresentavel = "AVEAs";
-                Descricao = "  São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos...";
+                Descricao = "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos...";
                 Expansao = "  São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."
                     + System.Environment.NewLine +
                     "  Um AVEA pode ser utilizado como uma plataforma que perpassa todo o processo de aprendizagem de um aluno, no caso de cursos ou disciplinas à distância, " +
@@ -135,7 +135,7 @@ public class Midia
 
             case NomeDeMidia.Aplicativos:
                 NomeApresentavel = "Aplicativos";
-                Descricao = "  Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar...";
+                Descricao = "Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar...";
                 Expansao = "  Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar um e-mail, ou acessar alguma informação, como o GPS, entre outros."
                     + System.Environment.NewLine +
                     "  Tanto para alunos quanto para professores, os aplicativos tornaram-se uma das principais ferramentas para aprender e ensinar com mais facilidade. " +
@@ -145,7 +145,7 @@ public class Midia
 
             case NomeDeMidia.ProjetorMultimidia:
                 NomeApresentavel = "Projetor Multimídia";
-                Descricao = "  É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas...";
+                Descricao = "É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas...";
                 Expansao = "  É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas, slides à partir da projeção (em maior escala) do que estiver sendo realizado no computador."
                     + System.Environment.NewLine +
                     "  O projetor multimídia é uma ferramenta tecnológica cada vez mais utilizada pelos professores como recurso pedagógico. As vantagens são muitas, " +
