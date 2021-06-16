@@ -46,7 +46,6 @@ public class MomentoAulaInvertida : MonoBehaviour
         }
         
         pontuacao /= quantidadeDeQuizzes;
-        Debug.Log("Atualizar Aula: " + pontuacao);
         OnPontuacaoMidiaUpdate.Invoke(pontuacao);
     }
 }

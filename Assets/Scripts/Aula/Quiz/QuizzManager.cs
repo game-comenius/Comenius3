@@ -36,7 +36,6 @@ public class QuizzManager : MonoBehaviour
     public void MostrarProximoQuizz()
     {
         quizzAtual++;
-        Debug.Log((float)(quizzAtual + 1));
         //Se acabaram os quizzes nao faz nada
         if(quizzAtual >= quizzes.Length)
             return;
