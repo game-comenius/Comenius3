@@ -41,7 +41,7 @@ public static class GeradorDeMomentosDaPlanilha
 
             //Configura selecao
             momento.opcoesDeEscolha = new CelulaReference(planilha, linha, 2);
-
+            momento.paginaDoDropdown = -1;//Sempre utiliza a ultima pagina
             //Salva o momento na lista
             momentos.Add(momento);
 

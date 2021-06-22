@@ -8,6 +8,7 @@ public class MomentoInteracao : ScriptableObject
 {
     public PaginaInteracao[] paginas;
     public CelulaReference opcoesDeEscolha;
+    public int paginaDoDropdown = -1;
 
     public static List<MomentoInteracao> momentos { get; private set; }
 
