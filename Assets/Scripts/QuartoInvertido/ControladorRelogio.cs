@@ -8,6 +8,7 @@ public class ControladorRelogio : MonoBehaviour
     [SerializeField] GameObject relogio1;
     [SerializeField] GameObject relogio2;
     [SerializeField] GameObject relogio3;
+    [SerializeField] AudioSource efeitosSonorosQuarto;
     private int estado = 0;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class ControladorRelogio : MonoBehaviour
 
         if (estado < 4) {
             estado++;
+            efeitosSonorosQuarto.Play();
         }
 
         switch (estado) {
