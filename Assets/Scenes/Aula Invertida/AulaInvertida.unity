@@ -464,7 +464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Esqueci meu caderno em casa.
+  m_Text: "N\xE3o tem livro did\xE1tico para todos!"
 --- !u!222 &81447462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1664,13 +1664,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Sente com um colega.
+    - m_Text: "Que pena, vamos pular essa li\xE7\xE3o."
       m_Image: {fileID: 0}
-    - m_Text: "Voc\xEA vai levar zero."
+    - m_Text: "Pe\xE7a emprestado na sala ao lado."
       m_Image: {fileID: 0}
-    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
+    - m_Text: Podemos fazer essa atividade na biblioteca.
       m_Image: {fileID: 0}
-    - m_Text: "Acompanhe pelo livro did\xE1tico."
+    - m_Text: "Fa\xE7am a tarefa em grupos."
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4849,6 +4849,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 996606218}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1599439781}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1184795247
 GameObject:
   m_ObjectHideFlags: 0
@@ -6805,7 +6827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911541077b2f3d4894cf535ba3c3053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momento: {fileID: 11400000, guid: dac54c83f8271f746b40a3e2dec792ce, type: 2}
+  momento: {fileID: 11400000, guid: 1c5cd95b05870c04ebe9e499e4788802, type: 2}
   isRamdomAutoSelected: 1
   OnChoiceConfirm:
     m_PersistentCalls:
