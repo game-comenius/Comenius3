@@ -84,4 +84,10 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public Sprite SpriteCabeloPersonagem { get; set; }
     public Sprite SpriteRoupaPersonagem { get; set; }
     public Sprite SpriteIconePersonagem { get; set; }
+
+    public void ResetMetodologia()
+    {
+        midiasSelecionadas = null;
+        metodologiaSelecionada = null;
+    }
 }

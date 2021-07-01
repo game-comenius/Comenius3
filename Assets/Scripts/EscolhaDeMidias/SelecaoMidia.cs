@@ -151,14 +151,23 @@ public class SelecaoMidia : MonoBehaviour
         {
             Debug.Log("Jogador já selecionou todas as mídias");
             var jogo = EstadoDoJogo.Instance;
-            jogo.MidiasSelecionadas = new Midia[quantidadeMidias];
+            int antigoComprimento = jogo.MidiasSelecionadas.Length;
+            Midia[] midias = new Midia[antigoComprimento + quantidadeMidias];
+            for(int i = 0; i < antigoComprimento; i++)
+            {
+                midias[i] = jogo.MidiasSelecionadas[i];
+            }
+
+
             for (var i = 0; i < quantidadeMidias; i++)
             {
                 Midia midia = new Midia(midiasSelecionadas[i]);
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
-                jogo.MidiasSelecionadas[i] = midia;
-                print(midia);
+                midias[antigoComprimento + i] = midia;
+                print(midia.NomeApresentavel);
             }
+            jogo.MidiasSelecionadas = midias;
+            selecaoPronta = false;
         }
        
         
