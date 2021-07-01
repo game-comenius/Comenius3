@@ -14,6 +14,7 @@ public class SelecaoMidia : MonoBehaviour
     public int ultimaPagina = 2; //*índice* da última página de opções de mídia, necessário pra evitar um IndexOutOfRange
     [SerializeField]private int quantidadeMidias = 2; //total de mídias a serem selecionadas na metodologia
     private bool selecaoPronta;
+    [SerializeField] int indiceInicial = 0;
 
     private Midia destaque;
     public GameObject iconeDestaqueMidia;
@@ -151,23 +152,14 @@ public class SelecaoMidia : MonoBehaviour
         {
             Debug.Log("Jogador já selecionou todas as mídias");
             var jogo = EstadoDoJogo.Instance;
-            int antigoComprimento = jogo.MidiasSelecionadas.Length;
-            Midia[] midias = new Midia[antigoComprimento + quantidadeMidias];
-            for(int i = 0; i < antigoComprimento; i++)
-            {
-                midias[i] = jogo.MidiasSelecionadas[i];
-            }
-
 
             for (var i = 0; i < quantidadeMidias; i++)
             {
                 Midia midia = new Midia(midiasSelecionadas[i]);
                 midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
-                midias[antigoComprimento + i] = midia;
+                jogo.MidiasSelecionadas[indiceInicial+ i] = midia;
                 print(midia.NomeApresentavel);
             }
-            jogo.MidiasSelecionadas = midias;
-            selecaoPronta = false;
         }
        
         
