@@ -173,8 +173,11 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     private void ConfirmarResposta()
     {
-        OnChoiceConfirm.Invoke(escolhaAtual.text != escolhaErrada.text);
-        OnRightChoiceConfirm.Invoke();
-        OnWrongChoiceConfirm.Invoke();
+        bool acertou = escolhaAtual.text != escolhaErrada.text;
+        OnChoiceConfirm.Invoke(acertou);
+        if(acertou)
+            OnRightChoiceConfirm.Invoke();
+        else
+            OnWrongChoiceConfirm.Invoke();
     }
 }
