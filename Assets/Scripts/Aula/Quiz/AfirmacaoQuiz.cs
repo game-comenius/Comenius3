@@ -48,12 +48,12 @@ public abstract class AfirmacaoQuiz : MonoBehaviour, IPointerClickHandler
             if(Afirmacao.Verdadeira)
             {
                 marcacaoResposta.enabled = true;
-                marcacaoResposta.color = Color.green;
+                marcacaoResposta.color = new Color(0,1,0,0.5f);
                 marcacaoResposta.text = "V";
             } else
             {
                 marcacaoResposta.enabled = true;
-                marcacaoResposta.color = Color.red;
+                marcacaoResposta.color = new Color(1, 0, 0, 0.5f);
                 marcacaoResposta.text = "X";
             }
         }

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ElementoDaAulaInvertida : MonoBehaviour
 {
     
-    [SerializeField]EstadoDeAulaInvertida controladorDaAula;
+    [SerializeField] EstadoDeAulaInvertida controladorDaAula;
     [SerializeField] EstadoDeAula[] estadosNoQualChama;
     [SerializeField] UnityEvent OnSelectedStates;
     [SerializeField] UnityEvent OnNotSelectedStates;
