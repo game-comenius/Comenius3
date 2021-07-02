@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 130764272}
   - component: {fileID: 130764271}
   - component: {fileID: 130764273}
+  - component: {fileID: 130764274}
   m_Layer: 0
   m_Name: PrimeiroMomento
   m_TagString: GameController
@@ -1210,6 +1211,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IndiceDaCenaAlvo: 22
+--- !u!114 &130764274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130764269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b1482db7f482e42b5a2cfa5720cb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentos: []
+  momentosInfantil: []
+  controlador: {fileID: 130764272}
 --- !u!1 &134446167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,13 +2573,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Ent\xE3o vamos pesquisar sobre esse asunto na biblioteca."
+    - m_Text: "Procure a Diretora para resolver essa situa\xE7\xE3o."
       m_Image: {fileID: 0}
-    - m_Text: "Vamos ficar em sil\xEAncio enquanto a luz n\xE3o volta."
+    - m_Text: "Ent\xE3o vamos pesquisar sobre esse asunto na biblioteca."
       m_Image: {fileID: 0}
     - m_Text: "Veja se n\xE3o \xE9 a tomada ou a extens\xE3o."
       m_Image: {fileID: 0}
-    - m_Text: "Procure a Diretora para resolver essa situa\xE7\xE3o."
+    - m_Text: "Vamos ficar em sil\xEAncio enquanto a luz n\xE3o volta."
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10169,9 +10185,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Alterar meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Manter meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Alterar meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
