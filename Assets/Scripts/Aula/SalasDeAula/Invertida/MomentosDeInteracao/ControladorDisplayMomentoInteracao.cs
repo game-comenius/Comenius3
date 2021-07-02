@@ -47,6 +47,8 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     [System.Serializable] public class ChoiceConfirmEvent : UnityEvent<bool> { }
     public ChoiceConfirmEvent OnChoiceConfirm;
+    public UnityEvent OnRightChoiceConfirm;
+    public UnityEvent OnWrongChoiceConfirm;
 
     public void UpdateMomento()
     {
@@ -151,7 +153,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     public void AvançarPagina()
     {
         if(ultimaPagina && escolhaAtual.text != "")
-            OnChoiceConfirm.Invoke(escolhaAtual.text != escolhaErrada.text);
+            ConfirmarResposta();
 
 
         paginaAtual++;
@@ -167,5 +169,12 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
             paginaAtual = 0;
         AtualizarPagina();
 
+    }
+
+    private void ConfirmarResposta()
+    {
+        OnChoiceConfirm.Invoke(escolhaAtual.text != escolhaErrada.text);
+        OnRightChoiceConfirm.Invoke();
+        OnWrongChoiceConfirm.Invoke();
     }
 }

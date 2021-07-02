@@ -7,27 +7,37 @@ using UnityEngine;
 public class EstadoDeAulaInvertida : ScriptableObject 
 {
     public Midia midiaAtual;
-    [SerializeField]private EstadoDeAula _estadoAtual;
-    public EstadoDeAula estadoAtual {
-         get { return _estadoAtual; }
-         set { _estadoAtual = 0;
-            _estadoAtual = value; }
-     }
 
+    private int indiceEstadoAtual;
+   
     public UnityEngine.Events.UnityEvent OnStateChange;
-
     public UnityEngine.Events.UnityEvent OnMidiaChange;
+
+    [SerializeField] List<EstadoDeAula> estados;
+    [SerializeField] int indiceDaSegundaMidia;
+
+    public EstadoDeAula estadoAtual
+    {
+        get {
+            
+            return estados[indiceEstadoAtual]; }
+    }
+
+    public void Init()
+    {
+        indiceEstadoAtual = estados.Count - 1;
+        AvancarEstado();
+    }
 
     public void AvancarEstado()
     {
-        estadoAtual = (EstadoDeAula)((int)estadoAtual << 1);
-
-        if(estadoAtual > EstadoDeAula.End)
+        indiceEstadoAtual++;
+        if(indiceEstadoAtual >= estados.Count)
         {
-            estadoAtual = EstadoDeAula.Quizz1;
+            indiceEstadoAtual = 0;
         }
         //Atualiza a midia conforme o momento de aula
-        if(estadoAtual > EstadoDeAula.Quizz2)
+        if(indiceEstadoAtual > indiceDaSegundaMidia)
         {
             midiaAtual = EstadoDoJogo.Instance.MidiasSelecionadas[3];
             OnMidiaChange.Invoke();
@@ -37,12 +47,3 @@ public class EstadoDeAulaInvertida : ScriptableObject
         OnStateChange.Invoke();
     }
 }
-[System.Serializable, System.Flags]
-    public enum EstadoDeAula{
-        Quizz1 = (1 << 0),
-        Interacao1 = (1 << 1),
-        Quizz2 = (1 << 2),
-        Interacao2 = (1 << 3),
-        Quizz3 = (1 << 4),
-        End=(1<<5)
-    }

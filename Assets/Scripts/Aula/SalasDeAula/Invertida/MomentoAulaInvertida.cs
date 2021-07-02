@@ -14,9 +14,7 @@ public class MomentoAulaInvertida : MonoBehaviour
     [ContextMenu("Start")]
     private void Start()
     {
-        messenger.estadoAtual = EstadoDeAula.End;
-        AvancarEstado();//Inicia o no primeiro estado e da a chamada de evento
-        messenger.midiaAtual = EstadoDoJogo.Instance.MidiasSelecionadas[2];
+        messenger.Init();
     }
 
 
