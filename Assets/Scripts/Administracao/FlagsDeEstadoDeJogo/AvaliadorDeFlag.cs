@@ -11,7 +11,7 @@ public class AvaliadorDeFlag : MonoBehaviour
 
     public void Avaliar()
     {
-        if(flag.value)
+        if(flag.GetFlagValue())
             OnTrue.Invoke();
         else
             OnFalse.Invoke();

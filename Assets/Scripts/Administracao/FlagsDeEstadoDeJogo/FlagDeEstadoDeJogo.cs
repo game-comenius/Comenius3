@@ -4,12 +4,19 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "FlagDeJogo", menuName = "Comenius3/FlagDeEstadoDeJogo", order = 0)]
+
 public class FlagDeEstadoDeJogo : ScriptableObject
 {
-    public bool value;
+    [System.NonSerialized] bool value;
 
-    public void SetFlag(bool value)
+
+    public void SetFlagValue(bool value)
     {
         this.value = value;
+    }
+
+    public bool GetFlagValue()
+    {
+        return value;
     }
 }
