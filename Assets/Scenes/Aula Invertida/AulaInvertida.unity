@@ -891,7 +891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Acabou a luz!
+  m_Text: Esqueci meu caderno em casa.
 --- !u!222 &81447462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2582,13 +2582,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Vamos ficar em sil\xEAncio enquanto a luz n\xE3o volta."
+    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
       m_Image: {fileID: 0}
-    - m_Text: "Procure a Diretora para resolver essa situa\xE7\xE3o."
+    - m_Text: Sente com um colega.
       m_Image: {fileID: 0}
-    - m_Text: "Veja se n\xE3o \xE9 a tomada ou a extens\xE3o."
+    - m_Text: "Acompanhe pelo livro did\xE1tico."
       m_Image: {fileID: 0}
-    - m_Text: "Ent\xE3o vamos pesquisar sobre esse asunto na biblioteca."
+    - m_Text: "Voc\xEA vai levar zero."
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4404,6 +4404,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1255257592}
     m_Modifications:
+    - target: {fileID: 1514198145783476030, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5538586308345356557, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4505,6 +4510,56 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5538586310026104806, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807580692819842033, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807580692819842033, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132869095290829206, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132869095290829206, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294204831571258138, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000053192488249376, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569412346799383439, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569412346799383439, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776420104295069846, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776420104295069846, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
         type: 3}
       propertyPath: m_MaskInteraction
       value: 1
@@ -9220,7 +9275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911541077b2f3d4894cf535ba3c3053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momento: {fileID: 11400000, guid: 30521c6664f1e7b448fe0ceeb311e972, type: 2}
+  momento: {fileID: 11400000, guid: dac54c83f8271f746b40a3e2dec792ce, type: 2}
   isRamdomAutoSelected: 1
   OnChoiceConfirm:
     m_PersistentCalls:
@@ -10194,9 +10249,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Manter meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Alterar meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Manter meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
