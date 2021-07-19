@@ -5,9 +5,7 @@ using UnityEngine;
 public class FeedbackMomentoDeInteracao : MonoBehaviour
 {
     [SerializeField] GameObject feedback;
-    [SerializeField] SpriteRenderer alunoRenderer;
-    [SerializeField] Sprite alunoFeliz;
-    [SerializeField] Sprite alunoTriste;
+    [SerializeField] DisplayDeAluno alunoRenderer;
     private void Start()
     {
         feedback.SetActive(false);
@@ -15,9 +13,11 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
     public void MostrarFeedback(bool acerto)
     {
         if(acerto)
-            alunoRenderer.sprite = alunoFeliz;
+            alunoRenderer.estaFeliz = true;
         else
-            alunoRenderer.sprite = alunoTriste;
+            alunoRenderer.estaFeliz = false;
+
+        alunoRenderer.AtualizarAluno();
 
         feedback.SetActive(true);
     }
