@@ -7,16 +7,18 @@ using UnityEngine;
 
 public class FlagDeEstadoDeJogo : ScriptableObject
 {
-    [System.NonSerialized] bool value;
+    private bool value;
 
 
     public void SetFlagValue(bool value)
     {
         this.value = value;
+        Debug.Log(value);
     }
 
     public bool GetFlagValue()
     {
+        Debug.Log(value);
         return value;
     }
 }
