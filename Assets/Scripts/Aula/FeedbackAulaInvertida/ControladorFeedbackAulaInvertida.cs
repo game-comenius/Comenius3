@@ -13,6 +13,8 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     [Header("GameObjects dos previews")]
     [SerializeField] GameObject midia1;
     [SerializeField] GameObject midia2;
+    [SerializeField] GameObject midiaQuarto1;
+    [SerializeField] GameObject midiaQuarto2;
     [SerializeField] GameObject metodologia;
     [SerializeField] GameObject inteligencia;
     [SerializeField] GameObject campoAprendizagem;
@@ -62,6 +64,8 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
         midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
 
+        midiaQuarto1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
+        midiaQuarto2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
         switch (estadoDoJogo.InteligenciasSelecionadas.Valor)
         {
 
