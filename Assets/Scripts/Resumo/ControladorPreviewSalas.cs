@@ -9,22 +9,12 @@ public class ControladorPreviewSalas : MonoBehaviour
     [SerializeField] private GameObject SalaInfantil;
     [SerializeField] private GameObject SalaDeAula;
 
-    //[Header("Laboratórios")]
-    //[SerializeField] private GameObject LabInformatica;
-    //[SerializeField] private GameObject LabFisica;
-    //[SerializeField] private GameObject LabBiologia;
-    //[SerializeField] private GameObject LabQuimica;
-
     // Start is called before the first frame update
     void Start()
     {
         
         SalaInfantil.SetActive(false);
         SalaDeAula.SetActive(false);
-        //LabInformatica.SetActive(false);
-        //LabFisica.SetActive(false);
-        //LabBiologia.SetActive(false);
-        //LabQuimica.SetActive(false);
         
         int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.valor;
         
