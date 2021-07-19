@@ -13,4 +13,9 @@ public class Pagina : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    public virtual void Alternar()
+    {
+        this.gameObject.SetActive(!gameObject.activeSelf);
+    }
 }
