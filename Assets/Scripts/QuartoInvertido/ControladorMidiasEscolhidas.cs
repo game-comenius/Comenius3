@@ -53,7 +53,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
                 midiaProvisoria = midia;
                 spriteProvisorio = estanteSprite;
                 popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Livro Didático";
+                popUpNome.GetComponent<TextMeshProUGUI>().text = "Livros";
                 previewMidia.GetComponent<Image>().sprite = spriteProvisorio;
                 Debug.Log(midia);
                 break;
