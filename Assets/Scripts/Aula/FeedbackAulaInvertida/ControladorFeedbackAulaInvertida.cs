@@ -5,10 +5,13 @@ using System.Linq;
 //using System.Runtime;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class ControladorFeedbackAulaInvertida : MonoBehaviour
 {
+
+    public UnityEvent OnUpdate;
 
     [Header("GameObjects dos previews")]
     [SerializeField] GameObject midia1;
@@ -90,13 +93,6 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
         campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
     }
 
-    private void AtualizarFeedbackDaLurdinha()
-    {
-        var listaDeFeedback = FeedbackDaLurdinha.ObterFeedback(EstadoDoJogo.Instance);
-        var feedbackCompleto = string.Join("\n\n", listaDeFeedback);
-        feedbackAulaInvertidaLurdinhaTexto.GetComponent<Text>().text = feedbackCompleto;
-    }
-
     private void DefinirRetratoAluno(string assinatura)
     {
         System.Random rnd = new System.Random();
@@ -165,8 +161,8 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     public void Atualizar()
     {
         AtualizarIcones();
-        AtualizarFeedbackDaLurdinha();
         AtualizarFeedbackDosAlunos();
+        OnUpdate.Invoke();
     }
 
     public void Exibir()

@@ -2912,13 +2912,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
+    - m_Text: "Acompanhe pelo livro did\xE1tico."
       m_Image: {fileID: 0}
-    - m_Text: Sente com um colega.
+    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
       m_Image: {fileID: 0}
     - m_Text: "Voc\xEA vai levar zero."
       m_Image: {fileID: 0}
-    - m_Text: "Acompanhe pelo livro did\xE1tico."
+    - m_Text: Sente com um colega.
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5317,6 +5317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704d95962a0797743b4cb2578816f44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   midia1: {fileID: 200187301}
   midia2: {fileID: 858052263}
   midiaQuarto1: {fileID: 636185155}
@@ -8375,6 +8378,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704d95962a0797743b4cb2578816f44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834433850}
+        m_MethodName: Atualizar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   midia1: {fileID: 118969366}
   midia2: {fileID: 996966322}
   midiaQuarto1: {fileID: 1604658568}
@@ -13088,6 +13105,7 @@ GameObject:
   - component: {fileID: 1834433847}
   - component: {fileID: 1834433849}
   - component: {fileID: 1834433848}
+  - component: {fileID: 1834433850}
   m_Layer: 5
   m_Name: FeedbackAulaInvertidaTexto
   m_TagString: Untagged
@@ -13155,6 +13173,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834433846}
   m_CullTransparentMesh: 0
+--- !u!114 &1834433850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834433846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e8f3b93a919074c9b28176f17179ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texto: {fileID: 1834433848}
 --- !u!1 &1863195612
 GameObject:
   m_ObjectHideFlags: 0
@@ -14198,9 +14229,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Manter meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Alterar meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Manter meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

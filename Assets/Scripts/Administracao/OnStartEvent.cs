@@ -7,7 +7,7 @@ public class OnStartEvent : MonoBehaviour
 {
     [SerializeField] UnityEvent OnStart;
 
-    private void Start()
+    private void OnEnable()
     {
         OnStart.Invoke();
     }
