@@ -8,6 +8,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
     [SerializeField] bool isRamdomAutoSelected = false;
+    [SerializeField] EstadoDeAulaInvertida estado;
 
 
     public MomentoInteracao Momento
@@ -19,7 +20,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         set
         {
             if(isRamdomAutoSelected)
-                value = MomentoInteracao.GetRamdomMomentoFromArquives();
+                value = MomentoInteracao.GetMomentoFromArquives(estado.midiaAtual.NomeMidia);//TODO
 
             totalDePaginas = value.paginas.Length;
             paginaAtual = 0;

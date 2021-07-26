@@ -891,7 +891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Esqueci meu caderno em casa.
+  m_Text: "N\xE3o tem mais cartolina para fazer os cartazes"
 --- !u!222 &81447462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1140,6 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   momento: {fileID: 11400000, guid: 5a415ccecf675cb4b8edb5fc6329f52e, type: 2}
   isRamdomAutoSelected: 0
+  estado: {fileID: 0}
   OnChoiceConfirm:
     m_PersistentCalls:
       m_Calls:
@@ -2912,13 +2913,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Acompanhe pelo livro did\xE1tico."
+    - m_Text: "V\xE1 at\xE9 a secretaria pegar algumas cartolinas"
       m_Image: {fileID: 0}
-    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
+    - m_Text: Ah, se vire!
       m_Image: {fileID: 0}
-    - m_Text: "Voc\xEA vai levar zero."
+    - m_Text: "Pe\xE7a emprestado da sala ao lado"
       m_Image: {fileID: 0}
-    - m_Text: Sente com um colega.
+    - m_Text: Que pena, tente usar outro material
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12650,8 +12651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911541077b2f3d4894cf535ba3c3053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momento: {fileID: 11400000, guid: dac54c83f8271f746b40a3e2dec792ce, type: 2}
+  momento: {fileID: 11400000, guid: 30521c6664f1e7b448fe0ceeb311e972, type: 2}
   isRamdomAutoSelected: 1
+  estado: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
   OnChoiceConfirm:
     m_PersistentCalls:
       m_Calls:
@@ -14229,9 +14231,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Alterar meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Manter meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Alterar meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
