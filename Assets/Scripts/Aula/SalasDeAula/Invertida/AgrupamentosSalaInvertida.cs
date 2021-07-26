@@ -15,8 +15,9 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
     GameObject agrupamentoVisualizado;   
     public Text nomeDoAgrupamento;
     public TextMeshProUGUI descricaoAgrupamento;
-    
-    
+    public TextMeshProUGUI descricaoAgrupamentoCurta;
+
+
 
     public int indiceDaMidia;
 
@@ -41,12 +42,14 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
                 agrupamentoVisualizado = agrupamentoSalaInteira;
                 nomeDoAgrupamento.text = "Formato de U";
                 descricaoAgrupamento.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração, troca entre os colegas, aulas expositivas que necessitam de apoio da lousa ou outra tecnologia educacional.";
-               // EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.FormatoU;             
+                descricaoAgrupamentoCurta.text = "Esse formato proporciona contato visual entre todos e favorece o debate coletivo, colaboração...";
+                // EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.FormatoU;             
                 break;
             case 2:
                 agrupamentoVisualizado = agrupamentoGrandesGrupos;
                 nomeDoAgrupamento.text = "Grupos Grandes";
                 descricaoAgrupamento.text = "Os grupos formados por um número maior de alunos são indicados para atividades de pluralidade de olhares e debate de hipóteses sobre o objeto de aprendizagem. Habilidades como negociação, argumentação, responsabilidade compartilhada, divisão e delegação de tarefas trabalhando em equipe.";
+                descricaoAgrupamentoCurta.text = "Os grupos formados por um número maior de alunos são indicados para atividades de pluralidade...";
                 //EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.GrandesGrupos;              
                 break;
 
@@ -61,6 +64,7 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
                 agrupamentoVisualizado = agrupamentoDuplas;
                 nomeDoAgrupamento.text = "Duplas ou Trios";
                 descricaoAgrupamento.text = "Esse formato é recomendado para uma interação mais direta entre os alunos. Ideal para produção de textos, alfabetização e resolução de problemas.";
+                descricaoAgrupamentoCurta.text = "Esse formato é recomendado para uma interação mais direta entre os alunos. Ideal para...";
                 //EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.Duplas;                
                 break;
 
@@ -68,6 +72,7 @@ public class AgrupamentosSalaInvertida : MonoBehaviour
                 agrupamentoVisualizado = agrupamentoIndividual;
                 nomeDoAgrupamento.text = "Individual";
                 descricaoAgrupamento.text = "Permite que o educador trabalhe aulas expositivas, apresentações em vídeo, filmes e situações em que é necessário o apoio da lousa. Essa organização em alguns momentos pode limitar a interação entre alunos e entre estes e os professores.";
+                descricaoAgrupamentoCurta.text = "Permite que o educador trabalhe aulas expositivas, apresentações em vídeo, filmes e...";
                 //EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.Individual;
                 break;    
         }
