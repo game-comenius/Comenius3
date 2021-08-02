@@ -38342,6 +38342,7 @@ GameObject:
   - component: {fileID: 1197464414}
   - component: {fileID: 1197464413}
   - component: {fileID: 1197464415}
+  - component: {fileID: 1197464416}
   m_Layer: 5
   m_Name: "PaginaSele\xE7\xE3oDeAgrupamentos"
   m_TagString: Untagged
@@ -38392,8 +38393,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   salaInvertida: {fileID: 868224752}
   salaInfantil: {fileID: 441321407}
-  midiaSala1Nome: {fileID: 2067508218}
-  midiaSala2Nome: {fileID: 40173747}
 --- !u!222 &1197464414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38416,8 +38415,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   salaInvertida: {fileID: 7044036}
   salaInfantil: {fileID: 2079173558}
-  midiaSala1Nome: {fileID: 0}
-  midiaSala2Nome: {fileID: 0}
+--- !u!114 &1197464416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197464411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb83e8bd17f3e74abcd408eb975feef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  midiaSala1Nome: {fileID: 2067508218}
+  midiaSala2Nome: {fileID: 40173747}
 --- !u!1 &1199647473
 GameObject:
   m_ObjectHideFlags: 0
@@ -68906,8 +68917,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   salaInvertida: {fileID: 2098525426}
   salaInfantil: {fileID: 1660444644}
-  midiaSala1Nome: {fileID: 0}
-  midiaSala2Nome: {fileID: 0}
 --- !u!222 &3246313340188008288
 CanvasRenderer:
   m_ObjectHideFlags: 0
