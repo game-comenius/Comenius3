@@ -19,7 +19,10 @@ public class AvaliadorDeFlag : MonoBehaviour
                     OnTrue.Invoke();
                 else
                     OnFalse.Invoke();
+
+                return;
             }
         }
+        OnFalse.Invoke();
     }
 }
