@@ -498,7 +498,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 44798798}
   m_OnClick:
     m_PersistentCalls:
@@ -1461,6 +1461,7 @@ MonoBehaviour:
   controlador: {fileID: 130764272}
   updateOnEnable: 1
   controladorDaAula: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
+  cannotRepeat: 0
 --- !u!1 &134446167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +2067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Professor
+  m_Text: Aluno
 --- !u!222 &240024361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   controlador: {fileID: 465302593}
   updateOnEnable: 1
   controladorDaAula: {fileID: 0}
+  cannotRepeat: 1
 --- !u!114 &465302591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5760,9 +5762,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Alterar meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Manter meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Alterar meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16020,6 +16022,7 @@ MonoBehaviour:
   controlador: {fileID: 1729727040}
   updateOnEnable: 0
   controladorDaAula: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
+  cannotRepeat: 0
 --- !u!1 &1746604668
 GameObject:
   m_ObjectHideFlags: 0
@@ -17867,7 +17870,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Vou manter o que planejei
+    - m_Text: Vou manter meu planejameto
       m_Image: {fileID: 0}
     - m_Text: Vou alterar meu planejamento
       m_Image: {fileID: 0}
@@ -19427,7 +19430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.000008, y: 0}
+  m_AnchoredPosition: {x: 21, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556043547047178090
