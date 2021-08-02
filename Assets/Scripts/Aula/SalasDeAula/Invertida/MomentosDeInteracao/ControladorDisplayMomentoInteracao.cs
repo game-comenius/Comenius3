@@ -8,8 +8,10 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
     [SerializeField] bool isRamdomAutoSelected = false;
+    [SerializeField] DisplayDeAluno displayAluno;
+    public void SetisRamdomAutoSelected(bool state) { isRamdomAutoSelected = state; }
     [SerializeField] EstadoDeAulaInvertida estado;
-
+    private bool dontShowDropDown;
 
     public MomentoInteracao Momento
     {
@@ -26,6 +28,12 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
             paginaAtual = 0;
             paginaDropdown = value.paginaDoDropdown;
             momento = value;
+            if(displayAluno != null)
+            {
+                displayAluno.estaFeliz = momento.alunoFeliz;
+                displayAluno.AtualizarDisplay();
+            }
+                
             //Prepara o dropdown
             dropdown.ClearOptions();
             List<Dropdown.OptionData> listaDeEscolhas = new List<Dropdown.OptionData>();
@@ -40,7 +48,10 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
                 listaDeEscolhas.Add(new Dropdown.OptionData(escolhas[index]));
                 escolhas.RemoveAt(index);
             }
-
+            if(paginaDropdown == -2)
+                dontShowDropDown = true;
+            else
+                dontShowDropDown = false;
             dropdown.AddOptions(listaDeEscolhas);
             AtualizarPagina();
         }
@@ -50,6 +61,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     public ChoiceConfirmEvent OnChoiceConfirm;
     public UnityEvent OnRightChoiceConfirm;
     public UnityEvent OnWrongChoiceConfirm;
+    public UnityEvent OnExitWithNoDropdown;
 
     public void UpdateMomento()
     {
@@ -138,7 +150,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         titulo.text = pagina.titulo;
         texto.text = pagina.texto.Valor;
 
-        if(isDropdownPage)
+        if(isDropdownPage && !dontShowDropDown)
         {
             dropdown.gameObject.SetActive(true);
             if(escolhaAtual.text == "")
@@ -153,8 +165,14 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     public void AvançarPagina()
     {
-        if(ultimaPagina && escolhaAtual.text != "")
-            ConfirmarResposta();
+        if(ultimaPagina)
+        {
+            if(escolhaAtual.text != "")
+                ConfirmarResposta();
+            if(dontShowDropDown)
+                OnExitWithNoDropdown.Invoke();
+        }
+            
 
 
         paginaAtual++;
@@ -174,6 +192,8 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     private void ConfirmarResposta()
     {
+        if(dontShowDropDown)
+            return;
         bool acertou = escolhaAtual.text != escolhaErrada.text;
         OnChoiceConfirm.Invoke(acertou);
         if(acertou)
