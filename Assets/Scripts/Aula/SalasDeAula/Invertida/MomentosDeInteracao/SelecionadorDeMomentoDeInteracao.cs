@@ -10,21 +10,50 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
     [SerializeField] ControladorDisplayMomentoInteracao controlador;
     [SerializeField] bool updateOnEnable = true;
     [SerializeField] EstadoDeAulaInvertida controladorDaAula;
+    [SerializeField] bool cannotRepeat;
+    List<MomentoInteracao> momentosJaMostrados;
 
     private void OnEnable()
     {
         controlador = gameObject.GetComponent<ControladorDisplayMomentoInteracao>();
+        
         if(updateOnEnable)
             SelecionarMomento();
     }
 
    public void SelecionarMomento()
    {
+        MomentoInteracao momento;
         NivelDeEnsino nivel = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
+
         if(nivel == NivelDeEnsino.EducacaoInfantil)
-            controlador.Momento = momentosInfantil[Random.Range(0, momentosInfantil.Count)];
+            momento = momentosInfantil[Random.Range(0, momentosInfantil.Count)];
         else
-            controlador.Momento = momentos[Random.Range(0, momentos.Count)];
+            momento = momentos[Random.Range(0, momentos.Count)];
+
+        
+        if(cannotRepeat)
+        {
+            if(momentosJaMostrados == null)
+            {
+                momentosJaMostrados = new List<MomentoInteracao>();
+                
+            }
+            else
+            {
+                foreach(MomentoInteracao mom in momentosJaMostrados)
+                {
+                    if(mom == momento)
+                    {
+                        SelecionarMomento();
+                        return;
+                    }
+                }
+
+            }
+            momentosJaMostrados.Add(momento);
+        }
+        controlador.Momento = momento;
    }
 
     public void SelecionarMomentoBaseadoEmMidia()
