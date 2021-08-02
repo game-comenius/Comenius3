@@ -2,23 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "FlagDeJogo", menuName = "Comenius3/FlagDeEstadoDeJogo", order = 0)]
-
-public class FlagDeEstadoDeJogo : ScriptableObject
+[System.Serializable]
+public class FlagDeEstadoDeJogo
 {
-    private bool value;
-
-
-    public void SetFlagValue(bool value)
+    public FlagDeEstadoDeJogo(string _nome, bool _valor)
     {
-        this.value = value;
-        Debug.Log(value);
+        nome = _nome;
+        valor = _valor;
     }
-
-    public bool GetFlagValue()
-    {
-        Debug.Log(value);
-        return value;
-    }
+    public string nome;
+    public bool valor;
 }

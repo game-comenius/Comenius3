@@ -5,15 +5,21 @@ using UnityEngine.Events;
 
 public class AvaliadorDeFlag : MonoBehaviour
 {
-    public FlagDeEstadoDeJogo flag;
+    [SerializeField] string nomeDaFlag;
     public UnityEvent OnTrue;
     public UnityEvent OnFalse;
 
     public void Avaliar()
     {
-        if(flag.GetFlagValue())
-            OnTrue.Invoke();
-        else
-            OnFalse.Invoke();
+        foreach(FlagDeEstadoDeJogo flag in EstadoDoJogo.Instance.flags)
+        {
+            if(flag.nome == nomeDaFlag)
+            {
+                if(flag.valor)
+                    OnTrue.Invoke();
+                else
+                    OnFalse.Invoke();
+            }
+        }
     }
 }

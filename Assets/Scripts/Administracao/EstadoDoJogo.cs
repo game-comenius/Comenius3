@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class EstadoDoJogo : Singleton<EstadoDoJogo>
 {
@@ -90,4 +92,6 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         midiasSelecionadas = null;
         metodologiaSelecionada = null;
     }
+
+    public List<FlagDeEstadoDeJogo> flags;
 }
