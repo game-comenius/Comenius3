@@ -78,7 +78,7 @@ public class Personagem : MonoBehaviour
         }
         
     }
-    //Procurando o sprite equivalente com base no cabelo
+    //Procurando o sprite equivalente com base no nome do sprite de cabelo (já que cabbelo é o único sprite que não se repete)
     Sprite acharCabeloSentado(Sprite sprite)
     {
         switch (sprite.name)
@@ -122,7 +122,7 @@ public class Personagem : MonoBehaviour
         }
         return spriteCabelo;
     }
-    //Procurando o sprite equivalente com base no cabelo
+    //Procurando o sprite equivalente com base no nome do sprite de cabelo (já que cabbelo é o único sprite que não se repete)
     Sprite acharCorpoSentado(Sprite sprite)
     {        
         switch (sprite.name)
@@ -166,7 +166,7 @@ public class Personagem : MonoBehaviour
         }
         return spriteCorpo;
     }
-    //Procurando o sprite equivalente com base no cabelo
+    //Procurando o sprite equivalente com base no nome do sprite de cabelo (já que cabbelo é o único sprite que não se repete)
     Sprite acharRoupaSentado(Sprite sprite)
     {
         switch (sprite.name)
@@ -210,7 +210,7 @@ public class Personagem : MonoBehaviour
         }
         return spriteRoupa;
     }
-    //Procurando o sprite equivalente com base no cabelo
+    //Procurando o sprite equivalente com base no nome do sprite de cabelo (já que cabbelo é o único sprite que não se repete)
     Sprite acharAlmofada(Sprite sprite)
     {
         switch (sprite.name)

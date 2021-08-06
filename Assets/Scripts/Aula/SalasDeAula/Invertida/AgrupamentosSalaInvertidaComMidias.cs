@@ -21,7 +21,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     public Text nomeDoAgrupamento;
     
 
-    //Midias
+    
     [Header("Mídias")]
     public GameObject lousa;
     public GameObject televisao;
@@ -88,6 +88,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
         //Começo do Algorítimo
         midiaPossuiIndividual01 = false;
         midiaPossuiIndividual02 = false;
+        //Das quatro mídias selecionadas, apenas as duas últimas(indez do array seria 2 e 3) serão mostradas na sala de aula
         if(tela == 1)
         {
             indiceDaMidia = 2;
@@ -211,7 +212,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
             {
                 //Dicionário dos agrupamentos de Computadores        
                 agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
-                agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
+                agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                 
                 agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
                 agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
                 agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
@@ -219,7 +220,6 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 midiaPossuiIndividual02 = true;
             }
         }
-
         
         agrupamentoValor = 1;
         MostrarAgrupamento(1);
@@ -444,7 +444,5 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoAMostra = agrupamentoCadernoECartazDic[agrupamento].name;
                 break;
         }
-    }
-
-   
+    }   
 }
