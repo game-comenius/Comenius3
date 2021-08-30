@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         {
             if (cenaAtual != "MenuPrincipal") {
                 ultimaCena = cenaAtual;
-                TocarTrilhaSonora();
+                if (cenaAtual != "Introdução") { TocarTrilhaSonora(); }
                 //Debug.Log(ultimaCena + " - Não é o menu" + " | Cena atual: " + cenaAtual);
             } else {
                 if (jaIniciou == false) {

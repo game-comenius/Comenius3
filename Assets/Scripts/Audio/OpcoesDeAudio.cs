@@ -25,6 +25,7 @@ public class OpcoesDeAudio :  MonoBehaviour
         trilhaSonora = GameObject.Find("AudioManager/TrilhaSonora").GetComponent<AudioSource>();
         displaySlider = GetComponent<DisplaySlider>();
         sliderScript = sliderObject.GetComponent<Slider>();
+        trilhaSonora.volume = 0.4f;
         sliderScript.value = trilhaSonora.volume;//Queremos que o valor do slider seja o mesmo quando trocamos de cena.
         ultimoVolume = sliderScript.value;//O ultimoVolume também.
         imagemBotaoAudio = GetComponent<RawImage>();
