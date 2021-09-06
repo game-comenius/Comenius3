@@ -16,6 +16,17 @@ public class PaginaResultadoDaAula : MonoBehaviour
     [SerializeField] Image barraQualidadeDaAulaFill;
     [SerializeField] Image barraTaxaDeAcertoNosQuizzesFill;
 
+    [Header("Ícones")]
+    [SerializeField] GameObject midia1;
+    [SerializeField] GameObject midia2;
+    [SerializeField] GameObject inteligencia;
+    [SerializeField] GameObject campoAprendizagem;
+
+    [SerializeField] Sprite corporalSprite;
+    [SerializeField] Sprite intrapessoalSprite;
+    [SerializeField] Sprite interpessoalSprite;
+    [SerializeField] Sprite linguisticaSprite;
+
     public bool EmUso => gameObject.activeSelf;
 
     private void Start()
@@ -29,6 +40,7 @@ public class PaginaResultadoDaAula : MonoBehaviour
         AtualizarFeedbackDosAlunos();
         AtualizarPontuacaoDaAula(pontuacaoDaAula);
         AtualizarTaxaDeAcertoNosQuizzes(quizzesDaAula);
+        AtualizarIcones();
     }
 
     private void AtualizarFeedbackDaLurdinha()
@@ -88,6 +100,37 @@ public class PaginaResultadoDaAula : MonoBehaviour
         float corVermelha = 1 - corVerde;
         barraTaxaDeAcertoNosQuizzesFill.GetComponent<Image>().color = new Color(corVermelha, corVerde, 0, 100);
 
+    }
+
+    private void AtualizarIcones()
+    {
+        var estadoDoJogo = EstadoDoJogo.Instance;
+
+        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
+        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
+
+        switch (estadoDoJogo.InteligenciasSelecionadas.Valor)
+        {
+
+            case 0:
+                inteligencia.GetComponent<Image>().sprite = corporalSprite;
+                break;
+
+            case 1:
+                inteligencia.GetComponent<Image>().sprite = intrapessoalSprite;
+                break;
+
+            case 2:
+                inteligencia.GetComponent<Image>().sprite = interpessoalSprite;
+                break;
+
+            case 3:
+                inteligencia.GetComponent<Image>().sprite = linguisticaSprite;
+                break;
+
+        }
+
+        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
     }
 
     public void Mostrar()
