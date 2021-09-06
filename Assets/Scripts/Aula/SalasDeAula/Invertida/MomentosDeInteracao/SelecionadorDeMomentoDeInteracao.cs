@@ -11,54 +11,59 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
     [SerializeField] bool updateOnEnable = true;
     [SerializeField] EstadoDeAulaInvertida controladorDaAula;
     [SerializeField] bool cannotRepeat;
-    List<MomentoInteracao> momentosJaMostrados;
+    List<MomentoInteracao> momentosDisponiveis;
+    bool inicializarMomentosDisponiveis = true;
 
     private void OnEnable()
     {
         controlador = gameObject.GetComponent<ControladorDisplayMomentoInteracao>();
-        
         if(updateOnEnable)
             SelecionarMomento();
     }
 
-   public void SelecionarMomento()
-   {
+    // Seleciona um momento de interação e evita que ele se repita.
+    public void SelecionarMomento()
+    {
+        /* O método cria uma lista de momentos disponíveis com base no nível de ensino. Quando um
+         * momento é escolhido é feita a remoção desse momento da lista de momentos disponíveis.
+         * Quando a lista de momentos disponíveis fica vazia ela é inicializada novamente.
+         */
+
         MomentoInteracao momento;
         NivelDeEnsino nivel = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
-        if(nivel == NivelDeEnsino.EducacaoInfantil)
-            momento = momentosInfantil[Random.Range(0, momentosInfantil.Count)];
-        else
-            momento = momentos[Random.Range(0, momentos.Count)];
-
-        
-        if(cannotRepeat)
+        if (inicializarMomentosDisponiveis)
         {
-            if(momentosJaMostrados == null)
+            if (nivel == NivelDeEnsino.EducacaoInfantil)
             {
-                momentosJaMostrados = new List<MomentoInteracao>();
-                
+                momentosDisponiveis = new List<MomentoInteracao>(momentosInfantil);
             }
             else
             {
-                foreach(MomentoInteracao mom in momentosJaMostrados)
-                {
-                    if(mom == momento)
-                    {
-                        SelecionarMomento();
-                        return;
-                    }
-                }
-
+                momentosDisponiveis = new List<MomentoInteracao>(momentos);
             }
-            momentosJaMostrados.Add(momento);
+
+            inicializarMomentosDisponiveis = false;
+        }
+
+        momento = momentosDisponiveis[Random.Range(0, momentosDisponiveis.Count)];
+
+        if (cannotRepeat)
+        {
+            momentosDisponiveis.Remove(momento);
+
+            if (momentosDisponiveis.Count == 0)
+            {
+                momentosDisponiveis = null;
+                inicializarMomentosDisponiveis = true;
+            }
         }
         controlador.Momento = momento;
-   }
+    }
 
     public void SelecionarMomentoBaseadoEmMidia()
     {
-        NomeDeMidia midia =  controladorDaAula.midiaAtual.NomeMidia;
+        NomeDeMidia midia = controladorDaAula.midiaAtual.NomeMidia;
         NivelDeEnsino nivel = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
         List<MomentoInteracao> possiveisMomentos = new List<MomentoInteracao>();
