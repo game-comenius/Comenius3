@@ -123,7 +123,7 @@ public class Midia
                 break;
 
             case NomeDeMidia.AVEAs:
-                NomeApresentavel = "AVEAs";
+                NomeApresentavel = "Plataformas";
                 Descricao = "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos...";
                 Expansao = "  São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e disciplinas semipresenciais para alunos em geral."
                     + System.Environment.NewLine +
