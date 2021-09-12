@@ -1452,6 +1452,12 @@ MonoBehaviour:
   - {fileID: 681191664}
   TrocadorDeCena: {fileID: 1727026407}
   "indiceDeCenaPorBot\xE3o": 0900000012000000
+--- !u!1 &557580126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1405788155134837172, guid: 9c687d8871543d3448cf175218195def,
+    type: 3}
+  m_PrefabInstance: {fileID: 935600020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &600103288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524aea942a165456aa9c1ff12c6b7c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flags: []
 --- !u!4 &600103290
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,6 +2600,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BotaoExpandirTexto
       objectReference: {fileID: 0}
+    - target: {fileID: 1405788155134837172, guid: 9c687d8871543d3448cf175218195def,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1405788155134837173, guid: 9c687d8871543d3448cf175218195def,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3554,6 +3566,7 @@ MonoBehaviour:
   DescricaoDoSelecionado: {fileID: 1523330857}
   TextoExpandido: {fileID: 620661918}
   grupoDeBotoes: {fileID: 544080120}
+  botaoExpandirTexto: {fileID: 557580126}
 --- !u!1 &1523330855
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class PaginaMetodologia : Pagina
     [SerializeField] ScrollRect DescricaoDoSelecionado;
     [SerializeField] TextMeshProUGUI TextoExpandido;
     [SerializeField] GrupoDeBotoesMetodologia grupoDeBotoes;
+    [SerializeField] GameObject botaoExpandirTexto;  // Solução temporária
 
     private void Start()
     {
@@ -32,6 +33,10 @@ public class PaginaMetodologia : Pagina
         // o nome do botão selecionado e o ícone pequeno na lateral esquerda
         grupoDeBotoes.QuandoUmNovoBotaoForSelecionadoEvent += (botaoSelecionado) =>
         {
+            // Ativa o botão de ler mais quando há um texto válido para ser usado
+            // (Solução temporária)
+            botaoExpandirTexto.SetActive(true);
+
             iconeGrandeEmDestaque.sprite = botaoSelecionado.SpriteGrande;
             iconeGrandeEmDestaque.enabled = true;
 
