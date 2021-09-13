@@ -72,17 +72,18 @@ public class SelecaoMidia : MonoBehaviour
         if (paginaAtual < ultimaPagina)
         {
 
-            if (paginaAtual == 1)
-            {
-                botaoProximaPaginaDeMidias.SetActive(false);
-
-            }
-
             paginasDeMidias[paginaAtual].SetActive(false);
             paginaAtual++;
             paginasDeMidias[paginaAtual].SetActive(true);
 
             botaoPaginaDeMidiasAnterior.SetActive(true);
+
+            if (paginaAtual == ultimaPagina)
+            {
+                botaoProximaPaginaDeMidias.SetActive(false);
+
+            }
+
         }
     }
 
