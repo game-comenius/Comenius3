@@ -38,9 +38,8 @@ public class Midia
 
             case NomeDeMidia.LivrosJornaisERevistas:
                 NomeApresentavel = "Livros, Jornais e Revistas";
-                Descricao = "Essas mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos."
-                    + System.Environment.NewLine +
-                    "  São publicações de cunho literário, informativo, jornalístico ou de entretenimento, geralmente voltada para o público em geral. Contém páginas impressas com textos e imagens. " +
+                Descricao = "Essas mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos.";
+                Expansao = "  São publicações de cunho literário, informativo, jornalístico ou de entretenimento, geralmente voltada para o público em geral. Contém páginas impressas com textos e imagens. " +
                     "Podem ser usados como material para leitura,consulta, ou base de recorte para atividades. " +
                     "São mídias de circulação social, que podem ser utilizadas para trabalhar a leitura e interpretação de diversos temas de forma mais aprofundada. " +
                     "Refletir sobre o tratamento dos textos e imagens de acordo com cada gênero, ou as diferenças entre revistas, jornais e livros que são idealizadas e produzidas com objetivos e formas diferentes e as diversas abordagens ideológicas e culturais ali evidentes. " +
@@ -83,9 +82,8 @@ public class Midia
 
             case NomeDeMidia.RedesSociais:
                 NomeApresentavel = "Redes Sociais";
-                Descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento de informações, criação de grupos e diálogos entre seus usuários."
-                    + System.Environment.NewLine +
-                    "  As redes sociais tem o objetivo de conectar pessoas e compartilhar informações entre elas, reunindo usuários que compactuam dos mesmos valores e interesses. " +
+                Descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento de informações, criação de grupos e diálogos entre seus usuários.";
+                Expansao = "  As redes sociais tem o objetivo de conectar pessoas e compartilhar informações entre elas, reunindo usuários que compactuam dos mesmos valores e interesses. " +
                     "As escolas com propostas intencionais podem usá-la para contribuir para a mobilização de saberes e de aprendizagens colaborativas, por meio de frequentes trocas, debates e contribuições de diferentes perspectivas, com uma construção social de significados e compartilhamento. " +
                     "Além disso, podem ser usadas para grupos de estudo, conteúdos extras, chat para dúvidas, calendários de eventos escolares e formação para leitura e uso crítico. " +
                     "Uma das fundamentais características na definição das redes é a sua abertura, possibilitando relacionamentos horizontais e não hierárquicos entre os participantes.";
