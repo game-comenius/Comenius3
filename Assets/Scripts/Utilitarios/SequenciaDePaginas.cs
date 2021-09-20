@@ -129,11 +129,24 @@ public class SequenciaDePaginas : MonoBehaviour
 
     private void DefinirEstadoDoBotaoProximaPagina(bool habilitado)
     {
-        botaoProximaPagina.interactable = habilitado;
+        // Em algumas situações o botão não é usado, nesse caso um aviso é exibido
+        if (botaoProximaPagina != null)
+        {
+            botaoProximaPagina.interactable = habilitado;
+        } else
+        {
+            Debug.LogWarning("Botão não definido");
+        }
     }
 
     private void DefinirEstadoDoBotaoPaginaAnterior(bool habilitado)
     {
-        botaoPaginaAnterior.interactable = habilitado;
+        if (botaoPaginaAnterior != null)
+        {
+            botaoPaginaAnterior.interactable = habilitado;
+        } else
+        {
+            Debug.LogWarning("Botão não definido");
+        }
     }
 }
