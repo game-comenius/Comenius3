@@ -2,13 +2,13 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// Funcionamento similar ao do OnHoverCursoChange
+
 public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Funcionamento similar ao do OnHoverCursoChange
-
     public GameObject popUp;
     public Text text;
-    public Vector3 popUpOffset;
+    public Vector3 popUpOffset;  // Offset a partir do centro do objeto selecionado
     [TextArea]
     public string content;
 
