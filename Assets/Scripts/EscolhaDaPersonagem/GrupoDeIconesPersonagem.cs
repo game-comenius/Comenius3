@@ -1,63 +1,78 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GrupoDeIconesPersonagem : MonoBehaviour
 {
+    public PaginaEscolhaDaPersonagem paginaEscolhaDaPersonagem;
     [SerializeField] Image AnelDeSelecao;
     [SerializeField] IconePersonagem[] iconesPersonagem;
+    [SerializeField] OnHoverShowCharacter[] hoversPersonagens;
 
     public IconePersonagem IconeSelecionado
     {
         get { return iconesPersonagem.Where((i) => i.Selecionado).FirstOrDefault(); }
     }
 
-    public event Action<IconePersonagem> QuandoUmElementoForSelecionadoEvent;
+    private IconePersonagem ultimoSelecionado;
 
     private void Start()
     {
         // Cadastrar os botões passados pelo Inspector neste grupo
         foreach (var botao in iconesPersonagem) botao.grupo = this;
+        foreach (var hover in hoversPersonagens) hover.group = this; 
 
         // Esconder anel de seleção pois não há botões selecionados
         AnelDeSelecao.enabled = false;
     }
 
-    public bool Selecionar(IconePersonagem icone)
+    public void Selecao(IconePersonagem icone)
     {
-        // Se botão não faz parte do grupo, ignorar
-        if (!iconesPersonagem.Contains(icone)) return false;
+        AudioManager.instance.TocarSFX("clique");
 
-        var iconeQueEstavaSelecionado = IconeSelecionado;
-        if (iconeQueEstavaSelecionado)
+        if (!icone.Selecionado)
         {
-            // Se o botão que foi selecionado já estava selecionado, ignorar
-            if (iconeQueEstavaSelecionado == icone) return true;
+            if (ultimoSelecionado)
+            {
+                ultimoSelecionado.Selecionado = false;
+            }
 
-            iconeQueEstavaSelecionado.Selecionado = false;
+            ultimoSelecionado = icone;
+
+            // Posicionar anel de seleção sobre o botão selecionado
+            AnelDeSelecao.enabled = true;
+            var posicaoDoBotao = icone.GetComponent<RectTransform>().anchoredPosition;
+            AnelDeSelecao.rectTransform.anchoredPosition = posicaoDoBotao;
+
+            paginaEscolhaDaPersonagem.atualizarSprites(icone);
+            paginaEscolhaDaPersonagem.atualizarEstadoDeJogo(icone);
+        }
+        else
+        {
+            ultimoSelecionado = null;
+
+            AnelDeSelecao.enabled = false;
+
+            paginaEscolhaDaPersonagem.resetarSprites();
+            paginaEscolhaDaPersonagem.resetarEstadoDeJogo();
         }
 
-        icone.Selecionado = true;
+        icone.Selecionado = !icone.Selecionado;
+    }
 
-        // Posicionar anel de seleção sobre o botão selecionado
-        AnelDeSelecao.enabled = true;
-        var posicaoDoBotao = icone.GetComponent<RectTransform>().anchoredPosition;
-        AnelDeSelecao.rectTransform.anchoredPosition = posicaoDoBotao;
+    public void HoverEnter(IconePersonagem icone)
+    {
+        if (!ultimoSelecionado)
+        {
+            paginaEscolhaDaPersonagem.atualizarSprites(icone);
+        }
+    }
 
-        // Avisar observadores qual é o novo botão selecionado
-        QuandoUmElementoForSelecionadoEvent?.Invoke(icone);
-
-        // Gravar no estado do jogo as características da personagem selecionada
-        var estadoDoJogo = EstadoDoJogo.Instance;
-        estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
-        estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
-        estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
-
-        estadoDoJogo.SpriteIconePersonagem = icone.ImageComponent.sprite;
-
-        return true;
+    public void HoverExit()
+    {
+        if (!ultimoSelecionado)
+        {
+            paginaEscolhaDaPersonagem.resetarSprites();
+        }
     }
 }

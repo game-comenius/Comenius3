@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class IconePersonagem : MonoBehaviour, IPointerClickHandler
+public class IconePersonagem : MonoBehaviour
 {
     public Sprite SpriteCorpo;
     public Sprite SpriteCabelo;
@@ -17,15 +14,8 @@ public class IconePersonagem : MonoBehaviour, IPointerClickHandler
     private Image imageComponent;
     public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void Start()
     {
-        if (!Selecionado && grupo && grupo.Selecionar(this))
-        {
-            AudioManager.instance.TocarSFX("clique");
-            return;
-        }
-
-        AudioManager.instance.TocarSFX("clique");
-        Selecionado = !Selecionado;
+        Selecionado = false;
     }
 }

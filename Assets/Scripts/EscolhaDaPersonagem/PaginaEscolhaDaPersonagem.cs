@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaEscolhaDaPersonagem : Pagina
@@ -15,46 +13,61 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     [SerializeField] Button botaoConfirmar;
 
-    private void Awake()
-    {
+    private Sprite iconePequenoPadrao;
 
+    private void Start() {
+        iconePequenoPadrao = iconePequenoGuia.sprite;
+    }
+
+    public void atualizarSprites(IconePersonagem icone)
+    {
+        // Ativar sprites do preview
+        corpoPersonagemSelecionada.gameObject.SetActive(true);
+        cabeloPersonagemSelecionada.gameObject.SetActive(true);
+        roupaPersonagemSelecionada.gameObject.SetActive(true);
+
+        // Alterar o preview da personagem selecionada
+        corpoPersonagemSelecionada.sprite = icone.SpriteCorpo;
+        cabeloPersonagemSelecionada.sprite = icone.SpriteCabelo;
+        roupaPersonagemSelecionada.sprite = icone.SpriteRoupa;
+    }
+
+    public void atualizarEstadoDeJogo(IconePersonagem icone)
+    {
+        // Alterar sprite do pequeno guia da página para o sprite do selecionado
+        iconePequenoGuia.sprite = icone.ImageComponent.sprite;
+
+        // Gravar no estado do jogo as características da personagem selecionada
+        var estadoDoJogo = EstadoDoJogo.Instance;
+        estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
+        estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
+        estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
+
+        estadoDoJogo.SpriteIconePersonagem = icone.ImageComponent.sprite;
+
+        // Ativar o botão de confirmar agora que há uma seleção
+        botaoConfirmar.gameObject.SetActive(true);
+    }
+
+    public void resetarSprites()
+    {
         corpoPersonagemSelecionada.gameObject.SetActive(false);
         cabeloPersonagemSelecionada.gameObject.SetActive(false);
         roupaPersonagemSelecionada.gameObject.SetActive(false);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void resetarEstadoDeJogo()
     {
-        // Esconder botão confirmar até que uma escolha seja feita
+        iconePequenoGuia.sprite = iconePequenoPadrao;
+
+        // Gravar no estado do jogo as características da personagem selecionada
+        var estadoDoJogo = EstadoDoJogo.Instance;
+        estadoDoJogo.SpriteCorpoPersonagem = null;
+        estadoDoJogo.SpriteCabeloPersonagem = null;
+        estadoDoJogo.SpriteRoupaPersonagem = null;
+
+        estadoDoJogo.SpriteIconePersonagem = null;
+
         botaoConfirmar.gameObject.SetActive(false);
-
-        // Toda vez que o grupo de botões disser que um novo botão foi
-        // selecionado, a página irá atualizar o ícone grande em destaque,
-        // o nome do botão selecionado e o ícone pequeno na lateral esquerda
-        grupoDeIconesPersonagem.QuandoUmElementoForSelecionadoEvent += (iconeSelecionado) =>
-        {
-            // Alterar sprite do pequeno guia da página para o sprite do selecionado
-            var spritePequeno = iconeSelecionado.ImageComponent.sprite;
-            iconePequenoGuia.sprite = spritePequeno;
-
-            // Ativar sprites do preview
-            corpoPersonagemSelecionada.gameObject.SetActive(true);
-            cabeloPersonagemSelecionada.gameObject.SetActive(true);
-            roupaPersonagemSelecionada.gameObject.SetActive(true);
-
-            // Alterar o preview da personagem selecionada
-            corpoPersonagemSelecionada.sprite = iconeSelecionado.SpriteCorpo;
-            cabeloPersonagemSelecionada.sprite = iconeSelecionado.SpriteCabelo;
-            roupaPersonagemSelecionada.sprite = iconeSelecionado.SpriteRoupa;
-
-            // Ativar o botão de confirmar agora que há uma seleção
-            botaoConfirmar.gameObject.SetActive(true);
-        };
-    }
-
-    public override bool Validar()
-    {
-        return (grupoDeIconesPersonagem.IconeSelecionado != null);
     }
 }
