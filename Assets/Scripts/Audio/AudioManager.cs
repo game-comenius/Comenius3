@@ -28,6 +28,12 @@ public class AudioManager : MonoBehaviour
     //Componente audio source da trilha inicial
     AudioSource audioSourceTrilha;
 
+    public enum TrilhasSonoras {
+        MenuPrincipal,
+        Planejamento,
+        AulaABP
+    }
+
     //public float volume;
 
     //Controle de cenas
@@ -58,11 +64,24 @@ public class AudioManager : MonoBehaviour
         audioSourceTrilha = trilhaInicial.GetComponent<AudioSource>();
     }
 
+    private void Start() {
+        // Toca a trilha sonora inicial
+        TocarTrilhaSonora();
+    }
+
+    // Evento que é chamado na troca de cenas
+    // private void OnSceneLoaded()
+    // {
+
+    // }
+
     private void Update()
     {
+        // Essa chamada do update pode ser substituída por um evento
+
         //Variável para comparação
         //Armazena constantemente a cena que está ativa no momento
-        var cenaAtual = SceneManager.GetActiveScene().name;
+        var cenaAtual = SceneManager.GetActiveScene().name;  // <- Isso aqui está alocando GC (34B por frame)
         
         //Compara com a cena ativa por último para confirmar se ainda está na mesma cena ou trocou de cena
         if(cenaAtual != ultimaCena)
@@ -126,11 +145,34 @@ public class AudioManager : MonoBehaviour
             case "MenuPrincipal":
                 CriacaoGameObjectTrilhaSonora(menuTrilha);
                 break;
+            case "Menu":  // Adicionado para os testes com o novo sistema de interface
+                CriacaoGameObjectTrilhaSonora(menuTrilha);
+                break;
             case "Introdução":
                 CriacaoGameObjectTrilhaSonora(momentoDoCriadorTrilha);
                 break;
             case "Loading":
                 trilhaInicial.GetComponent<AudioSource>().Stop();
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Overload para o novo sistema de interfaces
+    public void TocarTrilhaSonoraPainel(string trilhaSonora)
+    {
+        switch (trilhaSonora)
+        {
+            case "AulaABP":
+                CriacaoGameObjectTrilhaSonora(aulaTrilha);
+                jaIniciou = false;
+                break;
+            case "MenuPrincipal":
+                CriacaoGameObjectTrilhaSonora(menuTrilha);
+                break;
+            case "Planejamento":
+                CriacaoGameObjectTrilhaSonora(momentoDoCriadorTrilha);
                 break;
             default:
                 break;
