@@ -9,11 +9,6 @@ public class GrupoDeIconesPersonagem : MonoBehaviour
     [SerializeField] IconePersonagem[] iconesPersonagem;
     [SerializeField] OnHoverShowCharacter[] hoversPersonagens;
 
-    public IconePersonagem IconeSelecionado
-    {
-        get { return iconesPersonagem.Where((i) => i.Selecionado).FirstOrDefault(); }
-    }
-
     private IconePersonagem ultimoSelecionado;
 
     private void Start()

@@ -11,8 +11,8 @@ public class IconePersonagem : MonoBehaviour
 
     [HideInInspector] public GrupoDeIconesPersonagem grupo;
 
-    private Image imageComponent;
     public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
+    private Image imageComponent;
 
     private void Start()
     {
