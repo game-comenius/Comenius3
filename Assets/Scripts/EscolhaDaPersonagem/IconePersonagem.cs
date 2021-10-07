@@ -1,21 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class IconePersonagem : MonoBehaviour
+public class IconePersonagem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public PaginaEscolhaDaPersonagem pagina;
     public Sprite SpriteCorpo;
     public Sprite SpriteCabelo;
     public Sprite SpriteRoupa;
 
-    public bool Selecionado { get; set; }
+    [HideInInspector]
+    public bool Selecionado;
 
-    [HideInInspector] public GrupoDeIconesPersonagem grupo;
-
-    public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
-    private Image imageComponent;
+    private bool hovering;
 
     private void Start()
     {
         Selecionado = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        pagina.HoverEnter(this);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        pagina.HoverExit();
     }
 }
