@@ -2202,7 +2202,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168628360}
-  - component: {fileID: 168628359}
   m_Layer: 5
   m_Name: GrupoIconesGeral
   m_TagString: Untagged
@@ -2210,46 +2209,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &168628359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168628358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0477cd9d6df41ea8345b5847af31f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paginaEscolhaDaPersonagem: {fileID: 531606186}
-  AnelDeSelecao: {fileID: 578125779}
-  iconesPersonagem:
-  - {fileID: 515094382}
-  - {fileID: 1649614509}
-  - {fileID: 797246966}
-  - {fileID: 575602469}
-  - {fileID: 1519937959}
-  - {fileID: 1077985538}
-  - {fileID: 386005047}
-  - {fileID: 1419228880}
-  - {fileID: 1996286424}
-  - {fileID: 706979858}
-  - {fileID: 931560286}
-  - {fileID: 1045085487}
-  hoversPersonagens:
-  - {fileID: 1077985540}
-  - {fileID: 1519937961}
-  - {fileID: 575602471}
-  - {fileID: 797246968}
-  - {fileID: 1649614511}
-  - {fileID: 515094384}
-  - {fileID: 386005049}
-  - {fileID: 1419228882}
-  - {fileID: 1996286426}
-  - {fileID: 706979860}
-  - {fileID: 931560288}
-  - {fileID: 1045085493}
 --- !u!224 &168628360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2259,7 +2218,7 @@ RectTransform:
   m_GameObject: {fileID: 168628358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 515094378}
   - {fileID: 1649614505}
@@ -4922,7 +4881,6 @@ GameObject:
   - component: {fileID: 386005044}
   - component: {fileID: 386005047}
   - component: {fileID: 386005048}
-  - component: {fileID: 386005049}
   m_Layer: 5
   m_Name: IconePersonagemProfessorLoiro2
   m_TagString: Untagged
@@ -5010,10 +4968,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 89b69b1a17de2e84586ee0a7ca6cb287, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: ebc8b33bd13ef914ab7ad27dad73fcdd, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 49837aa0f0e34a84a83b7be3dbe873a7, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &386005048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5057,7 +5016,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -5068,19 +5027,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &386005049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386005042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &388174151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,7 +6906,6 @@ GameObject:
   - component: {fileID: 515094380}
   - component: {fileID: 515094379}
   - component: {fileID: 515094383}
-  - component: {fileID: 515094384}
   m_Layer: 5
   m_Name: IconePersonagemProfessorLoiro
   m_TagString: Untagged
@@ -7048,10 +6993,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 89b69b1a17de2e84586ee0a7ca6cb287, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 41a170666dde40e449f357e8aefe914d, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 49837aa0f0e34a84a83b7be3dbe873a7, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &515094383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7095,7 +7041,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -7106,19 +7052,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &515094384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515094377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1001 &521615512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7442,11 +7375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconePequenoGuia: {fileID: 637487278}
-  grupoDeIconesPersonagem: {fileID: 168628359}
   corpoPersonagemSelecionada: {fileID: 823909626}
   cabeloPersonagemSelecionada: {fileID: 1399260760}
   roupaPersonagemSelecionada: {fileID: 1619874462}
   botaoConfirmar: {fileID: 224140298}
+  anelDeSelecao: {fileID: 578125779}
 --- !u!222 &531606188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7995,7 +7928,6 @@ GameObject:
   - component: {fileID: 575602467}
   - component: {fileID: 575602466}
   - component: {fileID: 575602470}
-  - component: {fileID: 575602471}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraLoira
   m_TagString: Untagged
@@ -8083,10 +8015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 7128e2b9cbbfa5c4f80016816079480e, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: dc877b89e95f889418a5f12e4b748817, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 2d1f0ecff18b4044b8e2872991494155, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &575602470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,7 +8063,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -8141,19 +8074,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &575602471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575602464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &578125776
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,7 +9353,6 @@ GameObject:
   - component: {fileID: 706979855}
   - component: {fileID: 706979858}
   - component: {fileID: 706979859}
-  - component: {fileID: 706979860}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraLoira2
   m_TagString: Untagged
@@ -9521,10 +9440,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 7128e2b9cbbfa5c4f80016816079480e, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: a0ce1c77acb5d7f458a57a4015797bdb, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 2d1f0ecff18b4044b8e2872991494155, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &706979859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9568,7 +9488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -9579,19 +9499,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &706979860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706979853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!224 &733005269 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1405788155134837173, guid: 9c687d8871543d3448cf175218195def,
@@ -10483,7 +10390,6 @@ GameObject:
   - component: {fileID: 797246964}
   - component: {fileID: 797246963}
   - component: {fileID: 797246967}
-  - component: {fileID: 797246968}
   m_Layer: 5
   m_Name: IconePersonagemProfessorNegro
   m_TagString: Untagged
@@ -10571,10 +10477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 8822346890601e64e90da125a67dc972, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 826c728fe1dd2634fb1a1a447420906c, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: f2143a7b9e0f7514eb06aa9a2ee0f805, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &797246967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10618,7 +10525,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -10629,19 +10536,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &797246968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797246961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &799074957
 GameObject:
   m_ObjectHideFlags: 0
@@ -12301,7 +12195,6 @@ GameObject:
   - component: {fileID: 931560283}
   - component: {fileID: 931560286}
   - component: {fileID: 931560287}
-  - component: {fileID: 931560288}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraMorena2
   m_TagString: Untagged
@@ -12389,10 +12282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 50101e596d317b444af29cffb85cf754, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 0041045c80d2d294287753980f3e593b, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 3bd5302a67e6687488dac0fbb12d1175, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &931560287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12436,7 +12330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -12447,19 +12341,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &931560288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931560281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &941323591
 GameObject:
   m_ObjectHideFlags: 0
@@ -13792,7 +13673,6 @@ GameObject:
   - component: {fileID: 1045085488}
   - component: {fileID: 1045085487}
   - component: {fileID: 1045085492}
-  - component: {fileID: 1045085493}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraNegra2
   m_TagString: Untagged
@@ -13812,10 +13692,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: d74e23322b42e294cb73bd4c9e1a0caf, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: beea4046fcf357347a2edfaca8b9340e, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: b7bac0e08d32d6343a29cd15a2a437c8, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1045085488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13927,7 +13808,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -13938,19 +13819,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1045085493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045085486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &1045141112
 GameObject:
   m_ObjectHideFlags: 0
@@ -14114,7 +13982,6 @@ GameObject:
   - component: {fileID: 1077985536}
   - component: {fileID: 1077985535}
   - component: {fileID: 1077985539}
-  - component: {fileID: 1077985540}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraNegra
   m_TagString: Untagged
@@ -14202,10 +14069,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: d74e23322b42e294cb73bd4c9e1a0caf, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 94ea45795c67d91449c3e541f7b6f142, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: b7bac0e08d32d6343a29cd15a2a437c8, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1077985539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14249,7 +14117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -14260,19 +14128,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1077985540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077985533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1001 &1078212950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17385,7 +17240,6 @@ GameObject:
   - component: {fileID: 1419228877}
   - component: {fileID: 1419228880}
   - component: {fileID: 1419228881}
-  - component: {fileID: 1419228882}
   m_Layer: 5
   m_Name: IconePersonagemProfessorMoreno2
   m_TagString: Untagged
@@ -17473,10 +17327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 4decd93581be1d44592d9a2bac7f65ae, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: ab7edc5b6a9833640b3fbce69b2b5df6, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 5ac530e5622a70742ae4f607657d0c57, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1419228881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17520,7 +17375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -17531,19 +17386,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1419228882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419228875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &1420612117
 GameObject:
   m_ObjectHideFlags: 0
@@ -18812,7 +18654,6 @@ GameObject:
   - component: {fileID: 1519937957}
   - component: {fileID: 1519937956}
   - component: {fileID: 1519937960}
-  - component: {fileID: 1519937961}
   m_Layer: 5
   m_Name: IconePersonagemProfessoraMorena
   m_TagString: Untagged
@@ -18900,10 +18741,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 50101e596d317b444af29cffb85cf754, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 7cb44979d90850844a4dc1db9a09acd4, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 3bd5302a67e6687488dac0fbb12d1175, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1519937960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18947,7 +18789,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -18958,19 +18800,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1519937961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519937954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1001 &1524008194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20941,7 +20770,6 @@ GameObject:
   - component: {fileID: 1649614507}
   - component: {fileID: 1649614506}
   - component: {fileID: 1649614510}
-  - component: {fileID: 1649614511}
   m_Layer: 5
   m_Name: IconePersonagemProfessorMoreno
   m_TagString: Untagged
@@ -21029,10 +20857,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 4decd93581be1d44592d9a2bac7f65ae, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: f5fd32f5c6bbc56459ab9cb4d024c301, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 5ac530e5622a70742ae4f607657d0c57, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1649614510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21076,7 +20905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -21087,19 +20916,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1649614511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649614504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!1 &1658099628
 GameObject:
   m_ObjectHideFlags: 0
@@ -24491,7 +24307,6 @@ GameObject:
   - component: {fileID: 1996286421}
   - component: {fileID: 1996286424}
   - component: {fileID: 1996286425}
-  - component: {fileID: 1996286426}
   m_Layer: 5
   m_Name: IconePersonagemProfessorNegro2
   m_TagString: Untagged
@@ -24579,10 +24394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 8822346890601e64e90da125a67dc972, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 59c25e0c7735506478739b789b9cf965, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: f2143a7b9e0f7514eb06aa9a2ee0f805, type: 3}
-  grupo: {fileID: 0}
+  Selecionado: 0
 --- !u!114 &1996286425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24626,7 +24442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168628359}
+      - m_Target: {fileID: 531606186}
         m_MethodName: Selecao
         m_Mode: 2
         m_Arguments:
@@ -24637,19 +24453,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1996286426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996286419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94866c516adc8fa41939e76ece315b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: {fileID: 0}
 --- !u!224 &2017569347 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1587852307760672536, guid: 58639fa88a220463c9aeebec47bd5124,
