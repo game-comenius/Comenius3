@@ -3,34 +3,34 @@ using UnityEngine.UI;
 
 public class PaginaEscolhaDaPersonagem : Pagina
 {
-    [SerializeField] Image iconePequenoGuia;
+    public IconManager iconManager;
+
     [SerializeField] Image corpoPersonagemSelecionada;
     [SerializeField] Image cabeloPersonagemSelecionada;
     [SerializeField] Image roupaPersonagemSelecionada;
     [SerializeField] Button botaoConfirmar;
     [SerializeField] Image anelDeSelecao;
 
-    private Sprite iconePequenoPadrao;
     private IconePersonagem ultimoSelecionado;
 
     private void Start()
     {
-        iconePequenoPadrao = iconePequenoGuia.sprite;
-        anelDeSelecao.enabled = false;
+        anelDeSelecao.enabled = false;  // Desabilita a imagem do anel de seleção
     }
 
     public void Selecao(IconePersonagem icone)
     {
         AudioManager.instance.TocarSFX("clique");
 
-        if (!icone.Selecionado)
+        if (!icone.Selecionado)  // O ícone foi selecionado
         {
+            // Marca o último ícone selecionado como falso
             if (ultimoSelecionado)
             {
                 ultimoSelecionado.Selecionado = false;
             }
 
-            ultimoSelecionado = icone;
+            ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
 
             // Posicionar anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
@@ -40,17 +40,17 @@ public class PaginaEscolhaDaPersonagem : Pagina
             atualizarSprites(icone);
             atualizarEstadoDeJogo(icone);
         }
-        else
+        else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
+            // Redefine a seleção
             ultimoSelecionado = null;
-
             anelDeSelecao.enabled = false;
 
             resetarSprites();
             resetarEstadoDeJogo();
         }
 
-        icone.Selecionado = !icone.Selecionado;
+        icone.Selecionado = !icone.Selecionado;  // Inverte o estado de seleção
     }
 
     public void HoverEnter(IconePersonagem icone)
@@ -92,14 +92,13 @@ public class PaginaEscolhaDaPersonagem : Pagina
     public void atualizarEstadoDeJogo(IconePersonagem icone)
     {
         // Alterar sprite do pequeno guia da página para o sprite do selecionado
-        iconePequenoGuia.sprite = icone.GetComponent<Image>().sprite;
+        iconManager.SetIcon(0, icone.GetComponent<Image>().sprite);
 
         // Gravar no estado do jogo as características da personagem selecionada
         var estadoDoJogo = EstadoDoJogo.Instance;
         estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
         estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
         estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
-
         estadoDoJogo.SpriteIconePersonagem = icone.GetComponent<Image>().sprite; ;
 
         // Ativar o botão de confirmar agora que há uma seleção
@@ -108,16 +107,16 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     public void resetarEstadoDeJogo()
     {
-        iconePequenoGuia.sprite = iconePequenoPadrao;
+        iconManager.ResetIcon(0);
 
         // Gravar no estado do jogo as características da personagem selecionada
         var estadoDoJogo = EstadoDoJogo.Instance;
         estadoDoJogo.SpriteCorpoPersonagem = null;
         estadoDoJogo.SpriteCabeloPersonagem = null;
         estadoDoJogo.SpriteRoupaPersonagem = null;
-
         estadoDoJogo.SpriteIconePersonagem = null;
 
+        // Desativa o botão de confirmar
         botaoConfirmar.gameObject.SetActive(false);
     }
 }
