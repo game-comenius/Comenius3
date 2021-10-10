@@ -1,21 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using UnityEditor;
-using UnityEngine;
 
-[CustomEditor(typeof(BotaoNivelDeEnsino))]
-public class BotaoNivelDeEnsinoEditor : Editor
+[CustomEditor(typeof(IconeNivelDeEnsino))]
+public class IconeNivelDeEnsinoEditor : Editor
 {
     private int[] valoresDosNiveisDeEnsino;
     private string[] labelsDosNiveisDeEnsino;
 
     private SerializedProperty nivelDeEnsinoProperty;
-    private SerializedProperty spriteGrande;
 
     private void Awake()
     {
         nivelDeEnsinoProperty = serializedObject.FindProperty("valorNivelDeEnsino");
-        spriteGrande = serializedObject.FindProperty("SpriteGrande");
     }
 
     private void OnEnable()
@@ -38,10 +34,6 @@ public class BotaoNivelDeEnsinoEditor : Editor
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Nivel De Ensino");
         nivelDeEnsinoProperty.intValue = EditorGUILayout.IntPopup(nivelDeEnsinoProperty.intValue, labelsDosNiveisDeEnsino, valoresDosNiveisDeEnsino);
-        EditorGUILayout.EndHorizontal();
-
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PropertyField(spriteGrande);
         EditorGUILayout.EndHorizontal();
 
         serializedObject.ApplyModifiedProperties();

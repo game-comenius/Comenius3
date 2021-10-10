@@ -15,6 +15,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     private void Start()
     {
+        botaoConfirmar.interactable = false;
         anelDeSelecao.enabled = false;  // Desabilita a imagem do anel de seleção
     }
 
@@ -22,20 +23,20 @@ public class PaginaEscolhaDaPersonagem : Pagina
     {
         AudioManager.instance.TocarSFX("clique");
 
-        if (!icone.Selecionado)  // O ícone foi selecionado
+        if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
             if (ultimoSelecionado)
             {
-                ultimoSelecionado.Selecionado = false;
+                ultimoSelecionado.selecionado = false;
             }
 
             ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
 
             // Posicionar anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
-            var posicaoDoBotao = icone.GetComponent<RectTransform>().anchoredPosition;
-            anelDeSelecao.rectTransform.anchoredPosition = posicaoDoBotao;
+            var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
+            anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
             atualizarSprites(icone);
             atualizarEstadoDeJogo(icone);
@@ -50,7 +51,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
             resetarEstadoDeJogo();
         }
 
-        icone.Selecionado = !icone.Selecionado;  // Inverte o estado de seleção
+        icone.selecionado = !icone.selecionado;  // Inverte o estado de seleção
     }
 
     public void HoverEnter(IconePersonagem icone)
@@ -102,7 +103,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
         estadoDoJogo.SpriteIconePersonagem = icone.GetComponent<Image>().sprite; ;
 
         // Ativar o botão de confirmar agora que há uma seleção
-        botaoConfirmar.gameObject.SetActive(true);
+        botaoConfirmar.interactable = true;
     }
 
     public void resetarEstadoDeJogo()
@@ -117,6 +118,6 @@ public class PaginaEscolhaDaPersonagem : Pagina
         estadoDoJogo.SpriteIconePersonagem = null;
 
         // Desativa o botão de confirmar
-        botaoConfirmar.gameObject.SetActive(false);
+        botaoConfirmar.interactable = false;
     }
 }

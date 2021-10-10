@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class IconePersonagem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class IconeNivelDeEnsino : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public PaginaEscolhaDaPersonagem pagina;
-    public Sprite SpriteCorpo;
-    public Sprite SpriteCabelo;
-    public Sprite SpriteRoupa;
+    public PaginaNivelDeEnsino pagina;
+
+    [SerializeField] int valorNivelDeEnsino = NivelDeEnsino.EnsinoSuperior.valor;
+    public NivelDeEnsino Valor
+    {
+        get { return NivelDeEnsino.Get(valorNivelDeEnsino); }
+    }
 
     [HideInInspector]
     public bool selecionado;
