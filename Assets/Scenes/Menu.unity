@@ -5656,8 +5656,6 @@ GameObject:
   - component: {fileID: 435949867}
   - component: {fileID: 435949866}
   - component: {fileID: 435949865}
-  - component: {fileID: 435949864}
-  - component: {fileID: 435949863}
   m_Layer: 5
   m_Name: BotaoInfo
   m_TagString: Untagged
@@ -5684,44 +5682,6 @@ RectTransform:
   m_AnchoredPosition: {x: 544.98285, y: 223.39795}
   m_SizeDelta: {x: 42, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &435949863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435949861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!223 &435949864
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435949861}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -137645013
-  m_SortingOrder: 2
-  m_TargetDisplay: 0
 --- !u!114 &435949865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8758,6 +8718,28 @@ MonoBehaviour:
           m_StringArgument: clique
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 662372263}
+        m_MethodName: MudarPosicaoX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 490
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662372263}
+        m_MethodName: MudarPosicaoY
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 260
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &631034679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9079,6 +9061,7 @@ GameObject:
   - component: {fileID: 662372261}
   - component: {fileID: 662372260}
   - component: {fileID: 662372262}
+  - component: {fileID: 662372263}
   m_Layer: 5
   m_Name: MenuCascata
   m_TagString: Untagged
@@ -9157,6 +9140,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoCanvas: {fileID: 662372258}
+--- !u!114 &662372263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662372258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6bfab6a4602c24280fdf2a92bbe79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 662372258}
 --- !u!1 &677423569
 GameObject:
   m_ObjectHideFlags: 0
@@ -16410,8 +16406,6 @@ GameObject:
   - component: {fileID: 1348226022}
   - component: {fileID: 1348226021}
   - component: {fileID: 1348226020}
-  - component: {fileID: 1348226019}
-  - component: {fileID: 1348226018}
   m_Layer: 5
   m_Name: BotaoInfo
   m_TagString: Untagged
@@ -16438,44 +16432,6 @@ RectTransform:
   m_AnchoredPosition: {x: 547.2967, y: 223.2109}
   m_SizeDelta: {x: 112.45575, y: 107.10072}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1348226018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348226016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!223 &1348226019
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348226016}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_TargetDisplay: 0
 --- !u!114 &1348226020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18380,8 +18336,6 @@ GameObject:
   - component: {fileID: 1469144379}
   - component: {fileID: 1469144378}
   - component: {fileID: 1469144377}
-  - component: {fileID: 1469144376}
-  - component: {fileID: 1469144375}
   m_Layer: 5
   m_Name: BotaoInfo
   m_TagString: Untagged
@@ -18408,44 +18362,6 @@ RectTransform:
   m_AnchoredPosition: {x: 544.5266, y: 223.2109}
   m_SizeDelta: {x: 42, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1469144375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469144373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!223 &1469144376
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469144373}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_TargetDisplay: 0
 --- !u!114 &1469144377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22443,6 +22359,28 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: clique
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662372263}
+        m_MethodName: MudarPosicaoX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 490
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 662372263}
+        m_MethodName: MudarPosicaoY
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 238
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1820779650
