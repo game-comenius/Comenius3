@@ -1,24 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using TMPro;
 
 public class PaginaNivelDeEnsino : Pagina
 {
-    public IconManager iconManager;
-
-    [SerializeField] Text nomeDoSelecionado;
-    [SerializeField] Text descricaoDoSelecionado;
-    [SerializeField] PaginaAreaDeConhecimento paginaAreaDeConhecimento;
-    [SerializeField] Button botaoConfirmar;
-    [SerializeField] Image anelDeSelecao;
-
-    public string nomePadrao;
-
-    [TextArea]
-    public string descricaoPadrao;
+    [SerializeField] private string nomePadrao;
+    [SerializeField] private IconManager iconManager;
+    [SerializeField] private Text nomeDoSelecionado;
+    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private Button botaoConfirmar;
+    [SerializeField] private Image anelDeSelecao;
+    [TextArea] private string descricaoPadrao;
 
     private IconeNivelDeEnsino ultimoSelecionado;
 
@@ -27,7 +18,6 @@ public class PaginaNivelDeEnsino : Pagina
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
     
-        // Limpar nome do selecionado e descrição
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
@@ -35,17 +25,18 @@ public class PaginaNivelDeEnsino : Pagina
     public void Selecao(IconeNivelDeEnsino icone)
     {
         AudioManager.instance.TocarSFX("clique");
-        // paginaAreaDeConhecimento.DesfazerEscolha();
 
-        if (!icone.selecionado)
+        if (!icone.selecionado)  // O ícone foi selecionado
         {
+            // Marca o último ícone selecionado como falso
             if (ultimoSelecionado)
             {
                 ultimoSelecionado.selecionado = false;
             }
 
-            ultimoSelecionado = icone;
+            ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
 
+            // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
@@ -53,8 +44,9 @@ public class PaginaNivelDeEnsino : Pagina
             atualizarTexto(icone);
             atualizarEstadoDeJogo(icone);
         }
-        else
+        else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
+            // Redefine a seleção
             ultimoSelecionado = null;
             anelDeSelecao.enabled = false;
 
@@ -62,7 +54,7 @@ public class PaginaNivelDeEnsino : Pagina
             resetarEstadoDeJogo();
         }
 
-        icone.selecionado = !icone.selecionado;
+        icone.selecionado = !icone.selecionado;  // Inverte o estado de seleção
     }
 
     public void HoverEnter(IconeNivelDeEnsino icone)
@@ -83,26 +75,26 @@ public class PaginaNivelDeEnsino : Pagina
 
     public void atualizarTexto(IconeNivelDeEnsino icone)
     {
-        nomeDoSelecionado.text = icone.Valor.nome;
-        descricaoDoSelecionado.text = icone.Valor.Descricao;
+        nomeDoSelecionado.text = icone.nivelDeEnsino.nome;
+        descricaoDoSelecionado.text = icone.nivelDeEnsino.Descricao;
     }
 
     public void resetarTexto()
     {
-        anelDeSelecao.enabled = false;
-        botaoConfirmar.interactable = false;
-
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
     public void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)
     {
+        // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(1, icone.GetComponent<Image>().sprite);
 
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = icone.Valor;
+        // Grava o nível de ensino selecionado
+        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = icone.nivelDeEnsino;
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.Sprite = icone.GetComponent<Image>().sprite;
 
+        // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
     }
 
@@ -110,6 +102,7 @@ public class PaginaNivelDeEnsino : Pagina
     {
         iconManager.ResetIcon(1);
 
+        // Reseta a escolha
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = null;
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.Sprite = null;
 

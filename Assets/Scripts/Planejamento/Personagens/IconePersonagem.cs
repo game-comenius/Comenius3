@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 
 public class IconePersonagem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public PaginaEscolhaDaPersonagem pagina;
     public Sprite SpriteCorpo;
     public Sprite SpriteCabelo;
     public Sprite SpriteRoupa;
 
-    [HideInInspector]
-    public bool selecionado;
+    [HideInInspector] public bool selecionado;
+
+    [SerializeField] private PaginaEscolhaDaPersonagem pagina;
 
     private void Start()
     {

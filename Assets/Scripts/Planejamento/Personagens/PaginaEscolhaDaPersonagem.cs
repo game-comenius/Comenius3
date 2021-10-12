@@ -3,13 +3,12 @@ using UnityEngine.UI;
 
 public class PaginaEscolhaDaPersonagem : Pagina
 {
-    public IconManager iconManager;
-
-    [SerializeField] Image corpoPersonagemSelecionada;
-    [SerializeField] Image cabeloPersonagemSelecionada;
-    [SerializeField] Image roupaPersonagemSelecionada;
-    [SerializeField] Button botaoConfirmar;
-    [SerializeField] Image anelDeSelecao;
+    [SerializeField] private IconManager iconManager;
+    [SerializeField] private Image corpoPersonagemSelecionada;
+    [SerializeField] private Image cabeloPersonagemSelecionada;
+    [SerializeField] private Image roupaPersonagemSelecionada;
+    [SerializeField] private Button botaoConfirmar;
+    [SerializeField] private Image anelDeSelecao;
 
     private IconePersonagem ultimoSelecionado;
 
@@ -33,7 +32,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
             ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
 
-            // Posicionar anel de seleção sobre o botão selecionado
+            // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
@@ -92,10 +91,10 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     public void atualizarEstadoDeJogo(IconePersonagem icone)
     {
-        // Alterar sprite do pequeno guia da página para o sprite do selecionado
+        // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(0, icone.GetComponent<Image>().sprite);
 
-        // Gravar no estado do jogo as características da personagem selecionada
+        // Grava no estado do jogo as características da personagem selecionada
         var estadoDoJogo = EstadoDoJogo.Instance;
         estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
         estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
@@ -110,14 +109,13 @@ public class PaginaEscolhaDaPersonagem : Pagina
     {
         iconManager.ResetIcon(0);
 
-        // Gravar no estado do jogo as características da personagem selecionada
+        // Reseta a escolha
         var estadoDoJogo = EstadoDoJogo.Instance;
         estadoDoJogo.SpriteCorpoPersonagem = null;
         estadoDoJogo.SpriteCabeloPersonagem = null;
         estadoDoJogo.SpriteRoupaPersonagem = null;
         estadoDoJogo.SpriteIconePersonagem = null;
 
-        // Desativa o botão de confirmar
         botaoConfirmar.interactable = false;
     }
 }

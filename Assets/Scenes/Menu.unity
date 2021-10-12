@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 126797421}
   - component: {fileID: 126797420}
   - component: {fileID: 126797419}
+  - component: {fileID: 126797423}
   m_Layer: 5
   m_Name: EnsinoReligioso
   m_TagString: Untagged
@@ -1065,9 +1066,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 12
-  SpriteGrande: {fileID: 21300000, guid: 9f36b9de22dce8847b8070c222716a14, type: 3}
+  selecionado: 0
+--- !u!114 &126797423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126797417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 126797420}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 126797422}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &133370211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,7 +2183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168628360}
   m_Layer: 5
-  m_Name: GrupoIconesGeral
+  m_Name: Icones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3062,6 +3117,46 @@ MonoBehaviour:
   pagina: {fileID: 2077270557}
   valorNivelDeEnsino: 0
   selecionado: 0
+--- !u!1 &234571797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234571798}
+  m_Layer: 5
+  m_Name: Icones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &234571798
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234571797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1734713309}
+  - {fileID: 1589380324}
+  - {fileID: 345916763}
+  - {fileID: 1944877492}
+  - {fileID: 1737888633}
+  m_Father: {fileID: 528148841}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &252326211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3638,6 +3733,7 @@ GameObject:
   - component: {fileID: 297660175}
   - component: {fileID: 297660174}
   - component: {fileID: 297660173}
+  - component: {fileID: 297660177}
   m_Layer: 5
   m_Name: CienciasExatasEDaTerra
   m_TagString: Untagged
@@ -3725,9 +3821,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 19
-  SpriteGrande: {fileID: 21300000, guid: 9b696403a58dae84895311392ba7d41b, type: 3}
+  selecionado: 0
+--- !u!114 &297660177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297660171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 297660174}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 297660176}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &301593152 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8834209829490879211, guid: 4da11d3b0cb208e47baacc9a86c6510a,
@@ -4372,7 +4522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 345916763}
-  - component: {fileID: 345916764}
   m_Layer: 5
   m_Name: IconesMedio
   m_TagString: Untagged
@@ -4389,39 +4538,20 @@ RectTransform:
   m_GameObject: {fileID: 345916762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
+  m_LocalScale: {x: 1.0000491, y: 1.0000491, z: 1.0000491}
   m_Children:
   - {fileID: 1335489166}
   - {fileID: 1529423459}
   - {fileID: 1165349596}
   - {fileID: 1632568260}
-  - {fileID: 565018526}
-  m_Father: {fileID: 528148841}
-  m_RootOrder: 6
+  m_Father: {fileID: 234571798}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &345916764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345916762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec182a478d5e849f291e31e24a91aefc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnelDeSelecao: {fileID: 565018527}
-  iconesAreaDeConhecimento:
-  - {fileID: 1335489170}
-  - {fileID: 1529423463}
-  - {fileID: 1165349600}
-  - {fileID: 1632568264}
 --- !u!1 &353096560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,11 +4939,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 89b69b1a17de2e84586ee0a7ca6cb287, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: ebc8b33bd13ef914ab7ad27dad73fcdd, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 49837aa0f0e34a84a83b7be3dbe873a7, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &386005048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6848,11 +6978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 89b69b1a17de2e84586ee0a7ca6cb287, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 41a170666dde40e449f357e8aefe914d, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 49837aa0f0e34a84a83b7be3dbe873a7, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &515094383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7148,12 +7278,10 @@ RectTransform:
   - {fileID: 390119484}
   - {fileID: 2063432210}
   - {fileID: 1873847420}
-  - {fileID: 1734713309}
-  - {fileID: 1589380324}
-  - {fileID: 345916763}
-  - {fileID: 1944877492}
+  - {fileID: 234571798}
   - {fileID: 1469144374}
   - {fileID: 1593627296}
+  - {fileID: 999408984}
   - {fileID: 1524008195}
   m_Father: {fileID: 654290116}
   m_RootOrder: 3
@@ -7175,17 +7303,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5bf1cea500a743c6a7619f8fe922974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoInformativo: {fileID: 0}
-  tituloDaPagina: {fileID: 0}
-  iconePequenoGuia: {fileID: 0}
-  iconeGrandeEmDestaque: {fileID: 0}
-  NomeDoSelecionado: {fileID: 0}
-  DescricaoDoSelecionado: {fileID: 0}
-  TextoExpandido: {fileID: 0}
-  iconesInfantil: {fileID: 0}
-  iconesFundamental: {fileID: 0}
-  iconesMedio: {fileID: 0}
-  iconesSuperior: {fileID: 0}
+  nomePadrao: "\xC1rea de Conhecimento"
+  iconManager: {fileID: 452067417}
+  nomeDoSelecionado: {fileID: 975800456}
+  descricaoDoSelecionado: {fileID: 1504681805}
+  botaoConfirmar: {fileID: 1593627298}
+  anelDeSelecao: {fileID: 1737888634}
+  iconesInfantil: {fileID: 1734713308}
+  iconesFundamental: {fileID: 1589380323}
+  iconesMedio: {fileID: 345916762}
+  iconesSuperior: {fileID: 1944877491}
+  descricaoPadrao: "Descri\xE7\xE3o padr\xE3o"
 --- !u!222 &528148843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7730,80 +7858,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564481694}
   m_CullTransparentMesh: 0
---- !u!1 &565018525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 565018526}
-  - component: {fileID: 565018528}
-  - component: {fileID: 565018527}
-  m_Layer: 5
-  m_Name: SelecaoIcones
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &565018526
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565018525}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_Children: []
-  m_Father: {fileID: 345916763}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120.2, y: 85.799995}
-  m_SizeDelta: {x: 162, y: 162}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &565018527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565018525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60e8cf970328d1c449d89a0076c3d057, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &565018528
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565018525}
-  m_CullTransparentMesh: 0
 --- !u!1 &569326430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7984,11 +8038,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 7128e2b9cbbfa5c4f80016816079480e, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: dc877b89e95f889418a5f12e4b748817, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 2d1f0ecff18b4044b8e2872991494155, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &575602470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8572,7 +8626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629043280}
   m_Layer: 5
-  m_Name: GrupoDeBotoesNivelDeEnsino
+  m_Name: Icones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9003,9 +9057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 1
-  SpriteGrande: {fileID: 21300000, guid: c1f98fd9aa3e2794fad289cc1c960030, type: 3}
+  selecionado: 0
 --- !u!114 &661618148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9048,7 +9102,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661618145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 661618147}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &662372258
 GameObject:
   m_ObjectHideFlags: 0
@@ -9485,9 +9550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 4
-  SpriteGrande: {fileID: 21300000, guid: d842397ad853f0e4eab2178bca51e5c2, type: 3}
+  selecionado: 0
 --- !u!114 &699701374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9530,7 +9595,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 699701371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 699701373}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &706979853
 GameObject:
   m_ObjectHideFlags: 0
@@ -9632,11 +9708,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 7128e2b9cbbfa5c4f80016816079480e, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: a0ce1c77acb5d7f458a57a4015797bdb, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 2d1f0ecff18b4044b8e2872991494155, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &706979859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9790,6 +9866,7 @@ GameObject:
   - component: {fileID: 767257632}
   - component: {fileID: 767257631}
   - component: {fileID: 767257630}
+  - component: {fileID: 767257634}
   m_Layer: 5
   m_Name: CienciasAgrarias
   m_TagString: Untagged
@@ -9877,9 +9954,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 23
-  SpriteGrande: {fileID: 21300000, guid: 4a45d9d125ef0a14da2421d3b6cd982d, type: 3}
+  selecionado: 0
+--- !u!114 &767257634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767257628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 767257631}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 767257633}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &777258034
 GameObject:
   m_ObjectHideFlags: 0
@@ -10627,11 +10758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 8822346890601e64e90da125a67dc972, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 826c728fe1dd2634fb1a1a447420906c, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: f2143a7b9e0f7514eb06aa9a2ee0f805, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &797246967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12061,6 +12192,7 @@ GameObject:
   - component: {fileID: 897799284}
   - component: {fileID: 897799283}
   - component: {fileID: 897799282}
+  - component: {fileID: 897799286}
   m_Layer: 5
   m_Name: CienciasHumanas
   m_TagString: Untagged
@@ -12148,9 +12280,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 18
-  SpriteGrande: {fileID: 21300000, guid: a6368df1d47268b49a6851a69e7e93fe, type: 3}
+  selecionado: 0
+--- !u!114 &897799286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897799280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 897799283}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 897799285}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &899657076
 GameObject:
   m_ObjectHideFlags: 0
@@ -12164,6 +12350,7 @@ GameObject:
   - component: {fileID: 899657080}
   - component: {fileID: 899657079}
   - component: {fileID: 899657078}
+  - component: {fileID: 899657082}
   m_Layer: 5
   m_Name: Engenharias
   m_TagString: Untagged
@@ -12251,9 +12438,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 21
-  SpriteGrande: {fileID: 21300000, guid: a96287fa135c9094092d0a9454138d0a, type: 3}
+  selecionado: 0
+--- !u!114 &899657082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899657076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 899657079}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 899657081}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &912468550
 GameObject:
   m_ObjectHideFlags: 0
@@ -12433,11 +12674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 50101e596d317b444af29cffb85cf754, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 0041045c80d2d294287753980f3e593b, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 3bd5302a67e6687488dac0fbb12d1175, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &931560287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12747,80 +12988,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 949228336}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &953173860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 953173861}
-  - component: {fileID: 953173863}
-  - component: {fileID: 953173862}
-  m_Layer: 5
-  m_Name: SelecaoIcones
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &953173861
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953173860}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589380324}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.2, y: 72.79999}
-  m_SizeDelta: {x: 162, y: 162}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &953173862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953173860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60e8cf970328d1c449d89a0076c3d057, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &953173863
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953173860}
-  m_CullTransparentMesh: 0
 --- !u!1 &964096424
 GameObject:
   m_ObjectHideFlags: 0
@@ -12834,6 +13001,7 @@ GameObject:
   - component: {fileID: 964096428}
   - component: {fileID: 964096427}
   - component: {fileID: 964096426}
+  - component: {fileID: 964096430}
   m_Layer: 5
   m_Name: LinguisticaLetrasArtes
   m_TagString: Untagged
@@ -12921,9 +13089,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 24
-  SpriteGrande: {fileID: 21300000, guid: b263dd9fa9b410a4592f0df4fe0e0105, type: 3}
+  selecionado: 0
+--- !u!114 &964096430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964096424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 964096427}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 964096429}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &974704247
 GameObject:
   m_ObjectHideFlags: 0
@@ -13464,6 +13686,173 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997974170}
   m_CullTransparentMesh: 0
+--- !u!1 &999408983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999408984}
+  - component: {fileID: 999408989}
+  - component: {fileID: 999408988}
+  - component: {fileID: 999408987}
+  - component: {fileID: 999408986}
+  - component: {fileID: 999408985}
+  m_Layer: 5
+  m_Name: BotaoVoltar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &999408984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15133001, y: 0.15133001, z: 0.15133001}
+  m_Children: []
+  m_Father: {fileID: 528148841}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -387.99014, y: 294.61438}
+  m_SizeDelta: {x: 125.65663, y: 120.42093}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &999408985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e92aef637fe21549a521d72a1ff6c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  painel: {fileID: 1640811942}
+--- !u!114 &999408986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &999408987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 91952ef768eacbf4e81e3793545fcf63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &999408988
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_CullTransparentMesh: 0
+--- !u!114 &999408989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999408983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 0.105882354, g: 0.1882353, b: 0.13333334, a: 1}
+    m_HighlightedColor: {r: 0.22352941, g: 0.34117648, b: 0.3372549, a: 0.9019608}
+    m_PressedColor: {r: 0.22352941, g: 0.34117648, b: 0.3372549, a: 0.69803923}
+    m_SelectedColor: {r: 0.105882354, g: 0.1882353, b: 0.13333334, a: 1}
+    m_DisabledColor: {r: 0.105882354, g: 0.1882353, b: 0.13333334, a: 0.2}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: b6211591d7e5cd94ab04deeac0c9206d, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 999408987}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1613302565}
+        m_MethodName: ChamarSFXParaTocar
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clique
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 96110436}
+        m_MethodName: ChangePanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2077270555}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1006397165
 GameObject:
   m_ObjectHideFlags: 0
@@ -13843,11 +14232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: d74e23322b42e294cb73bd4c9e1a0caf, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: beea4046fcf357347a2edfaca8b9340e, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: b7bac0e08d32d6343a29cd15a2a437c8, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1045085488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14294,11 +14683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: d74e23322b42e294cb73bd4c9e1a0caf, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 94ea45795c67d91449c3e541f7b6f142, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: b7bac0e08d32d6343a29cd15a2a437c8, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1077985539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15009,6 +15398,7 @@ GameObject:
   - component: {fileID: 1165349599}
   - component: {fileID: 1165349598}
   - component: {fileID: 1165349597}
+  - component: {fileID: 1165349601}
   m_Layer: 5
   m_Name: CienciasHumanasSoc
   m_TagString: Untagged
@@ -15096,9 +15486,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 16
-  SpriteGrande: {fileID: 21300000, guid: a6368df1d47268b49a6851a69e7e93fe, type: 3}
+  selecionado: 0
+--- !u!114 &1165349601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165349595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1165349598}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1165349600}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1183986886
 GameObject:
   m_ObjectHideFlags: 0
@@ -15112,6 +15556,7 @@ GameObject:
   - component: {fileID: 1183986890}
   - component: {fileID: 1183986889}
   - component: {fileID: 1183986888}
+  - component: {fileID: 1183986892}
   m_Layer: 5
   m_Name: CienciasDaNatureza
   m_TagString: Untagged
@@ -15199,9 +15644,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 9
-  SpriteGrande: {fileID: 21300000, guid: 4a45d9d125ef0a14da2421d3b6cd982d, type: 3}
+  selecionado: 0
+--- !u!114 &1183986892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183986886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1183986889}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1183986891}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1187845658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6899105850274526907, guid: 58639fa88a220463c9aeebec47bd5124,
@@ -16055,6 +16554,7 @@ GameObject:
   - component: {fileID: 1313385820}
   - component: {fileID: 1313385819}
   - component: {fileID: 1313385818}
+  - component: {fileID: 1313385822}
   m_Layer: 5
   m_Name: Matematica
   m_TagString: Untagged
@@ -16142,9 +16642,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 8
-  SpriteGrande: {fileID: 21300000, guid: 9b696403a58dae84895311392ba7d41b, type: 3}
+  selecionado: 0
+--- !u!114 &1313385822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313385816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1313385819}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1313385821}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1325973550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16227,6 +16781,7 @@ GameObject:
   - component: {fileID: 1335489169}
   - component: {fileID: 1335489168}
   - component: {fileID: 1335489167}
+  - component: {fileID: 1335489171}
   m_Layer: 5
   m_Name: MatematicaTec
   m_TagString: Untagged
@@ -16314,9 +16869,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 14
-  SpriteGrande: {fileID: 21300000, guid: 9b696403a58dae84895311392ba7d41b, type: 3}
+  selecionado: 0
+--- !u!114 &1335489171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335489165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1335489168}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1335489170}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1339012449
 GameObject:
   m_ObjectHideFlags: 0
@@ -17669,11 +18278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 4decd93581be1d44592d9a2bac7f65ae, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: ab7edc5b6a9833640b3fbce69b2b5df6, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 5ac530e5622a70742ae4f607657d0c57, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1419228881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18355,7 +18964,7 @@ RectTransform:
   m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
   m_Children: []
   m_Father: {fileID: 528148841}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18581,80 +19190,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490520570}
-  m_CullTransparentMesh: 0
---- !u!1 &1496867025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1496867026}
-  - component: {fileID: 1496867028}
-  - component: {fileID: 1496867027}
-  m_Layer: 5
-  m_Name: SelecaoIcones
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1496867026
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496867025}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1944877492}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 82.00003}
-  m_SizeDelta: {x: 157, y: 157}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1496867027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496867025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60e8cf970328d1c449d89a0076c3d057, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1496867028
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496867025}
   m_CullTransparentMesh: 0
 --- !u!1 &1504681803
 GameObject:
@@ -18989,11 +19524,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 50101e596d317b444af29cffb85cf754, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 7cb44979d90850844a4dc1db9a09acd4, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 3bd5302a67e6687488dac0fbb12d1175, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1519937960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19134,7 +19669,7 @@ PrefabInstance:
     - target: {fileID: 1746920946388592576, guid: 1eaa3c778517b0a449225ef809d55642,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1746920946388592576, guid: 1eaa3c778517b0a449225ef809d55642,
         type: 3}
@@ -19306,6 +19841,7 @@ GameObject:
   - component: {fileID: 1529423462}
   - component: {fileID: 1529423461}
   - component: {fileID: 1529423460}
+  - component: {fileID: 1529423464}
   m_Layer: 5
   m_Name: CienciasNaturezaTec
   m_TagString: Untagged
@@ -19393,9 +19929,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 15
-  SpriteGrande: {fileID: 21300000, guid: 4a45d9d125ef0a14da2421d3b6cd982d, type: 3}
+  selecionado: 0
+--- !u!114 &1529423464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529423458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1529423461}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1529423463}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1543843661
 GameObject:
   m_ObjectHideFlags: 0
@@ -19409,6 +19999,7 @@ GameObject:
   - component: {fileID: 1543843665}
   - component: {fileID: 1543843664}
   - component: {fileID: 1543843663}
+  - component: {fileID: 1543843667}
   m_Layer: 5
   m_Name: CienciasSociaisAplic
   m_TagString: Untagged
@@ -19496,9 +20087,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 16
-  SpriteGrande: {fileID: 21300000, guid: a53a3ee0cb9be534a802120b68837c09, type: 3}
+  selecionado: 0
+--- !u!114 &1543843667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543843661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1543843664}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1543843666}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1558577113
 GameObject:
   m_ObjectHideFlags: 0
@@ -19810,7 +20455,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1589380324}
-  - component: {fileID: 1589380325}
   m_Layer: 5
   m_Name: IconesFundamental
   m_TagString: Untagged
@@ -19827,41 +20471,21 @@ RectTransform:
   m_GameObject: {fileID: 1589380323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
+  m_LocalScale: {x: 1.0000491, y: 1.0000491, z: 1.0000491}
   m_Children:
   - {fileID: 1313385817}
   - {fileID: 1183986887}
   - {fileID: 1881729996}
   - {fileID: 126797418}
   - {fileID: 1810833876}
-  - {fileID: 953173861}
-  m_Father: {fileID: 528148841}
-  m_RootOrder: 5
+  m_Father: {fileID: 234571798}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1589380325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589380323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec182a478d5e849f291e31e24a91aefc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnelDeSelecao: {fileID: 953173862}
-  iconesAreaDeConhecimento:
-  - {fileID: 1313385821}
-  - {fileID: 1183986891}
-  - {fileID: 1881730000}
-  - {fileID: 126797422}
-  - {fileID: 1810833880}
 --- !u!1 &1591836996
 GameObject:
   m_ObjectHideFlags: 0
@@ -19950,7 +20574,7 @@ GameObject:
   - component: {fileID: 1593627298}
   - component: {fileID: 1593627297}
   m_Layer: 5
-  m_Name: areaDeConhecimentoBotaoOK
+  m_Name: BotaoOK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19968,7 +20592,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 528148841}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20446,6 +21070,7 @@ GameObject:
   - component: {fileID: 1632568263}
   - component: {fileID: 1632568262}
   - component: {fileID: 1632568261}
+  - component: {fileID: 1632568265}
   m_Layer: 5
   m_Name: LinguagensTec
   m_TagString: Untagged
@@ -20533,9 +21158,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 13
-  SpriteGrande: {fileID: 21300000, guid: b263dd9fa9b410a4592f0df4fe0e0105, type: 3}
+  selecionado: 0
+--- !u!114 &1632568265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632568259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1632568262}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1632568264}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1640811941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20909,11 +21588,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 4decd93581be1d44592d9a2bac7f65ae, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: f5fd32f5c6bbc56459ab9cb4d024c301, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: 5ac530e5622a70742ae4f607657d0c57, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1649614510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21328,6 +22007,7 @@ GameObject:
   - component: {fileID: 1700482878}
   - component: {fileID: 1700482877}
   - component: {fileID: 1700482876}
+  - component: {fileID: 1700482880}
   m_Layer: 5
   m_Name: CienciasBiologicas
   m_TagString: Untagged
@@ -21415,9 +22095,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 20
-  SpriteGrande: {fileID: 21300000, guid: da8180b4d1f00724eb2cbec1badbfe11, type: 3}
+  selecionado: 0
+--- !u!114 &1700482880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700482874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1700482877}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1700482879}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1711443331
 GameObject:
   m_ObjectHideFlags: 0
@@ -21642,14 +22376,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734713309}
-  - component: {fileID: 1734713310}
   m_Layer: 5
   m_Name: IconesInfantil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1734713309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21659,41 +22392,21 @@ RectTransform:
   m_GameObject: {fileID: 1734713308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
+  m_LocalScale: {x: 1.0000491, y: 1.0000491, z: 1.0000491}
   m_Children:
   - {fileID: 661618143}
   - {fileID: 2076672580}
   - {fileID: 2060883793}
   - {fileID: 1749640397}
   - {fileID: 699701369}
-  - {fileID: 1737888633}
-  m_Father: {fileID: 528148841}
-  m_RootOrder: 4
+  m_Father: {fileID: 234571798}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1734713310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734713308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec182a478d5e849f291e31e24a91aefc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnelDeSelecao: {fileID: 1737888634}
-  iconesAreaDeConhecimento:
-  - {fileID: 661618147}
-  - {fileID: 2076672584}
-  - {fileID: 2060883797}
-  - {fileID: 1749640401}
-  - {fileID: 699701373}
 --- !u!1 &1737843912
 GameObject:
   m_ObjectHideFlags: 0
@@ -21780,7 +22493,7 @@ GameObject:
   - component: {fileID: 1737888635}
   - component: {fileID: 1737888634}
   m_Layer: 5
-  m_Name: SelecaoIcones
+  m_Name: AnelDeSelecao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21795,14 +22508,14 @@ RectTransform:
   m_GameObject: {fileID: 1737888632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000491, y: 1.0000491, z: 1.0000491}
   m_Children: []
-  m_Father: {fileID: 1734713309}
-  m_RootOrder: 5
+  m_Father: {fileID: 234571798}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 85}
+  m_AnchoredPosition: {x: 58.002884, y: 85.0042}
   m_SizeDelta: {x: 162, y: 162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737888634
@@ -21819,7 +22532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -21943,9 +22656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 3
-  SpriteGrande: {fileID: 21300000, guid: 1c170e897b4873f478507fda87468ac4, type: 3}
+  selecionado: 0
 --- !u!114 &1749640402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21988,7 +22701,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749640399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1749640401}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1791101756
 GameObject:
   m_ObjectHideFlags: 0
@@ -22076,6 +22800,7 @@ GameObject:
   - component: {fileID: 1810833879}
   - component: {fileID: 1810833878}
   - component: {fileID: 1810833877}
+  - component: {fileID: 1810833881}
   m_Layer: 5
   m_Name: Linguagens
   m_TagString: Untagged
@@ -22163,9 +22888,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 7
-  SpriteGrande: {fileID: 21300000, guid: b263dd9fa9b410a4592f0df4fe0e0105, type: 3}
+  selecionado: 0
+--- !u!114 &1810833881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810833875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1810833878}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1810833880}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1811353125
 GameObject:
   m_ObjectHideFlags: 0
@@ -22875,6 +23654,7 @@ GameObject:
   - component: {fileID: 1881729999}
   - component: {fileID: 1881729998}
   - component: {fileID: 1881729997}
+  - component: {fileID: 1881730001}
   m_Layer: 5
   m_Name: CienciasHumanas
   m_TagString: Untagged
@@ -22962,9 +23742,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 10
-  SpriteGrande: {fileID: 21300000, guid: a6368df1d47268b49a6851a69e7e93fe, type: 3}
+  selecionado: 0
+--- !u!114 &1881730001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881729995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1881729998}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1881730000}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1888857868
 GameObject:
   m_ObjectHideFlags: 0
@@ -23613,7 +24447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1944877492}
-  - component: {fileID: 1944877493}
   m_Layer: 5
   m_Name: IconesSuperior
   m_TagString: Untagged
@@ -23630,7 +24463,7 @@ RectTransform:
   m_GameObject: {fileID: 1944877491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000049, y: 1.000049, z: 1.000049}
+  m_LocalScale: {x: 1.0000491, y: 1.0000491, z: 1.0000491}
   m_Children:
   - {fileID: 1543843662}
   - {fileID: 2039834814}
@@ -23640,37 +24473,14 @@ RectTransform:
   - {fileID: 767257629}
   - {fileID: 897799281}
   - {fileID: 964096425}
-  - {fileID: 1496867026}
-  m_Father: {fileID: 528148841}
-  m_RootOrder: 7
+  m_Father: {fileID: 234571798}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1365.0332, y: 767.9999}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1944877493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944877491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec182a478d5e849f291e31e24a91aefc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnelDeSelecao: {fileID: 1496867027}
-  iconesAreaDeConhecimento:
-  - {fileID: 1543843666}
-  - {fileID: 2039834818}
-  - {fileID: 1700482879}
-  - {fileID: 899657081}
-  - {fileID: 297660176}
-  - {fileID: 767257633}
-  - {fileID: 897799285}
-  - {fileID: 964096429}
 --- !u!1 &1956870366
 GameObject:
   m_ObjectHideFlags: 0
@@ -24265,11 +25075,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20828bb270404c54b921e3bf00e5eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pagina: {fileID: 531606186}
   SpriteCorpo: {fileID: 21300000, guid: 8822346890601e64e90da125a67dc972, type: 3}
   SpriteCabelo: {fileID: 21300000, guid: 59c25e0c7735506478739b789b9cf965, type: 3}
   SpriteRoupa: {fileID: 21300000, guid: f2143a7b9e0f7514eb06aa9a2ee0f805, type: 3}
   selecionado: 0
+  pagina: {fileID: 531606186}
 --- !u!114 &1996286425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24396,6 +25206,7 @@ GameObject:
   - component: {fileID: 2039834817}
   - component: {fileID: 2039834816}
   - component: {fileID: 2039834815}
+  - component: {fileID: 2039834819}
   m_Layer: 5
   m_Name: CienciasSaude
   m_TagString: Untagged
@@ -24483,9 +25294,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 22
-  SpriteGrande: {fileID: 21300000, guid: 85ffcedc303d15d4dba5dd35d614ccbb, type: 3}
+  selecionado: 0
+--- !u!114 &2039834819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039834813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2039834816}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2039834818}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2053426466
 GameObject:
   m_ObjectHideFlags: 0
@@ -24646,9 +25511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 2
-  SpriteGrande: {fileID: 21300000, guid: 6b14ade2be4dd6848b3eb1f04305edfd, type: 3}
+  selecionado: 0
 --- !u!114 &2060883798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24691,7 +25556,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2060883795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2060883797}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2063432209
 GameObject:
   m_ObjectHideFlags: 0
@@ -24942,9 +25818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb0e10dcab447578b02c664bb537f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grupo: {fileID: 0}
+  pagina: {fileID: 528148842}
   valorAreaDeConhecimento: 0
-  SpriteGrande: {fileID: 21300000, guid: e688ecac0160041479b2de4d5c3ec9bd, type: 3}
+  selecionado: 0
 --- !u!114 &2076672585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24987,7 +25863,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076672582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 528148842}
+        m_MethodName: Selecao
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2076672584}
+          m_ObjectArgumentAssemblyTypeName: IconeAreaDeConhecimento, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2077270555
 GameObject:
   m_ObjectHideFlags: 0
@@ -25046,14 +25933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f6bb71bad8e46ce97d1f28d02bc9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nomePadrao: "N\xEDvel de Ensino"
   iconManager: {fileID: 452067417}
   nomeDoSelecionado: {fileID: 369692273}
   descricaoDoSelecionado: {fileID: 1714953148}
-  paginaAreaDeConhecimento: {fileID: 528148842}
   botaoConfirmar: {fileID: 8792170}
   anelDeSelecao: {fileID: 153625842}
-  nomePadrao: "N\xEDvel de Ensino"
-  descricaoPadrao: "Descri\xE7\xE3o padr\xE3o."
 --- !u!222 &2077270558
 CanvasRenderer:
   m_ObjectHideFlags: 0

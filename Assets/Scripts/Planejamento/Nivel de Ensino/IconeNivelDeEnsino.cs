@@ -3,16 +3,14 @@ using UnityEngine.EventSystems;
 
 public class IconeNivelDeEnsino : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public PaginaNivelDeEnsino pagina;
-
-    [SerializeField] int valorNivelDeEnsino = NivelDeEnsino.EnsinoSuperior.valor;
-    public NivelDeEnsino Valor
+    public NivelDeEnsino nivelDeEnsino
     {
         get { return NivelDeEnsino.Get(valorNivelDeEnsino); }
     }
+    public PaginaNivelDeEnsino pagina;
 
-    [HideInInspector]
-    public bool selecionado;
+    [HideInInspector] public int valorNivelDeEnsino;
+    [HideInInspector] public bool selecionado;
 
     private void Start()
     {

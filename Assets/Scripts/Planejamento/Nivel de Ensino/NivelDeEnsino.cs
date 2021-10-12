@@ -84,7 +84,6 @@ public sealed class NivelDeEnsino
         }
     }
     public readonly string Descricao;
-    public readonly string Expansao;
     // Quando o jogador seleciona este quando aperta sobre o ícone que
     // representa ele, o ícone salva seu sprite nesta propriedade
     // para que o jogo possa apresentá-la depois em outras cenas
