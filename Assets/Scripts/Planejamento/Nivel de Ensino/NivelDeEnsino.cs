@@ -83,7 +83,7 @@ public sealed class NivelDeEnsino
             return returnValues;
         }
     }
-    public readonly string Descricao;
+    public readonly string descricao;
     // Quando o jogador seleciona este quando aperta sobre o ícone que
     // representa ele, o ícone salva seu sprite nesta propriedade
     // para que o jogo possa apresentá-la depois em outras cenas
@@ -93,7 +93,7 @@ public sealed class NivelDeEnsino
     {
         this.valor = valor;
         this.nome = nome;
-        this.Descricao = descricao;
+        this.descricao = descricao;
         this.areasDeConhecimento = areasDeConhecimento;
     }
 

@@ -10,7 +10,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
 
-    private IconePersonagem ultimoSelecionado;
+    private IconePersonagem iconeSelecionado;
 
     private void Start()
     {
@@ -25,12 +25,12 @@ public class PaginaEscolhaDaPersonagem : Pagina
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (ultimoSelecionado)
+            if (iconeSelecionado)
             {
-                ultimoSelecionado.selecionado = false;
+                iconeSelecionado.selecionado = false;
             }
 
-            ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
+            iconeSelecionado = icone;  // Agora esse ícone será o último selecionado
 
             // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
@@ -43,7 +43,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
             // Redefine a seleção
-            ultimoSelecionado = null;
+            iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
             resetarSprites();
@@ -55,7 +55,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     public void HoverEnter(IconePersonagem icone)
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             atualizarSprites(icone);
         }
@@ -63,7 +63,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
 
     public void HoverExit()
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             resetarSprites();
         }
@@ -99,7 +99,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
         estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
         estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
         estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
-        estadoDoJogo.SpriteIconePersonagem = icone.GetComponent<Image>().sprite; ;
+        estadoDoJogo.SpriteIconePersonagem = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;

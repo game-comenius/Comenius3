@@ -9,9 +9,9 @@ public class PaginaNivelDeEnsino : Pagina
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
-    [TextArea] private string descricaoPadrao;
+    [SerializeField] [TextArea] private string descricaoPadrao;
 
-    private IconeNivelDeEnsino ultimoSelecionado;
+    private IconeNivelDeEnsino iconeSelecionado;
 
     private void Start()
     {
@@ -29,12 +29,12 @@ public class PaginaNivelDeEnsino : Pagina
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (ultimoSelecionado)
+            if (iconeSelecionado)
             {
-                ultimoSelecionado.selecionado = false;
+                iconeSelecionado.selecionado = false;
             }
 
-            ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
+            iconeSelecionado = icone;  // Agora esse ícone será o último selecionado
 
             // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
@@ -47,7 +47,7 @@ public class PaginaNivelDeEnsino : Pagina
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
             // Redefine a seleção
-            ultimoSelecionado = null;
+            iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
             resetarTexto();
@@ -59,7 +59,7 @@ public class PaginaNivelDeEnsino : Pagina
 
     public void HoverEnter(IconeNivelDeEnsino icone)
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             atualizarTexto(icone);
         }
@@ -67,7 +67,7 @@ public class PaginaNivelDeEnsino : Pagina
 
     public void HoverExit()
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             resetarTexto();
         }
@@ -76,7 +76,7 @@ public class PaginaNivelDeEnsino : Pagina
     public void atualizarTexto(IconeNivelDeEnsino icone)
     {
         nomeDoSelecionado.text = icone.nivelDeEnsino.nome;
-        descricaoDoSelecionado.text = icone.nivelDeEnsino.Descricao;
+        descricaoDoSelecionado.text = icone.nivelDeEnsino.descricao;
     }
 
     public void resetarTexto()

@@ -81,18 +81,18 @@ public sealed class AreaDeConhecimento
 
     public readonly int valor;
     public readonly string nome;
-    public readonly string Descricao;
+    public readonly string descricao;
     // Quando o jogador seleciona este quando aperta sobre o ícone que
     // representa ele, o ícone salva seu sprite nesta propriedade
     // para que o jogo possa apresentá-la depois em outras cenas
-    public Sprite Sprite;
+    public Sprite sprite;
 
 
     private AreaDeConhecimento(int valor, string nome, string descricao)
     {
         this.valor = valor;
         this.nome = nome;
-        this.Descricao = descricao;
+        this.descricao = descricao;
     }
 
     public static AreaDeConhecimento[] TodasAsAreasDeConhecimento()

@@ -42,7 +42,7 @@ public class QuizPerfilDaTurma : Quiz
         else // ZeroOuUm == 1
         {
             this.Inteligencias = inteligencias;
-            enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre o par de inteligências " + inteligencias.Nome;
+            enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre o par de inteligências " + inteligencias.nome;
             spriteDoIconeDoQuiz = inteligencias.SpriteGrande;
             afirmacoesDisponiveis = AfirmacaoSobreInteligencias.ObterTodasAsAfirmacoes(inteligencias);
         }

@@ -109,7 +109,7 @@ public class PaginaResultadoDaAula : MonoBehaviour
         midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
         midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
 
-        switch (estadoDoJogo.InteligenciasSelecionadas.Valor)
+        switch (estadoDoJogo.InteligenciasSelecionadas.valor)
         {
 
             case 0:
@@ -130,7 +130,7 @@ public class PaginaResultadoDaAula : MonoBehaviour
 
         }
 
-        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
+        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.sprite;
     }
 
     public void Mostrar()

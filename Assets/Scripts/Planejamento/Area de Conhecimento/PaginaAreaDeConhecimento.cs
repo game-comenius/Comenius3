@@ -16,7 +16,7 @@ public class PaginaAreaDeConhecimento : Pagina
     [SerializeField] [TextArea] private string descricaoPadrao;
 
     private GameObject ultimoGrupoAtivo;
-    private IconeAreaDeConhecimento ultimoSelecionado;
+    private IconeAreaDeConhecimento iconeSelecionado;
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
                 if (ultimoGrupoAtivo != iconesInfantil)
                 {
-                    ultimoSelecionado = null;
+                    iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
                     resetarTexto();
@@ -60,7 +60,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
                 if (ultimoGrupoAtivo != iconesFundamental)
                 {
-                    ultimoSelecionado = null;
+                    iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
                     resetarTexto();
@@ -74,7 +74,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
                 if (ultimoGrupoAtivo != iconesMedio)
                 {
-                    ultimoSelecionado = null;
+                    iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
                     resetarTexto();
@@ -88,7 +88,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
                 if (ultimoGrupoAtivo != iconesSuperior)
                 {
-                    ultimoSelecionado = null;
+                    iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
                     resetarTexto();
@@ -102,7 +102,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
                 if (ultimoGrupoAtivo != iconesInfantil)
                 {
-                    ultimoSelecionado = null;
+                    iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
                     resetarTexto();
@@ -121,12 +121,12 @@ public class PaginaAreaDeConhecimento : Pagina
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (ultimoSelecionado)
+            if (iconeSelecionado)
             {
-                ultimoSelecionado.selecionado = false;
+                iconeSelecionado.selecionado = false;
             }
 
-            ultimoSelecionado = icone;  // Agora esse ícone será o último selecionado
+            iconeSelecionado = icone;  // Agora esse ícone será o último selecionado
 
             // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
@@ -139,7 +139,7 @@ public class PaginaAreaDeConhecimento : Pagina
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
             // Redefine a seleção
-            ultimoSelecionado = null;
+            iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
             resetarTexto();
@@ -151,7 +151,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
     public void HoverEnter(IconeAreaDeConhecimento icone)
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             atualizarTexto(icone);
         }
@@ -159,7 +159,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
     public void HoverExit()
     {
-        if (!ultimoSelecionado)
+        if (!iconeSelecionado)
         {
             resetarTexto();
         }
@@ -168,7 +168,7 @@ public class PaginaAreaDeConhecimento : Pagina
     public void atualizarTexto(IconeAreaDeConhecimento icone)
     {
         nomeDoSelecionado.text = icone.areaDeConhecimento.nome;
-        descricaoDoSelecionado.text = icone.areaDeConhecimento.Descricao;
+        descricaoDoSelecionado.text = icone.areaDeConhecimento.descricao;
     }
 
     public void resetarTexto()
@@ -184,7 +184,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
         // Grava a área de conhecimento escolhida
         EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = icone.areaDeConhecimento;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.Sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -196,7 +196,7 @@ public class PaginaAreaDeConhecimento : Pagina
 
         // Reseta a escolha
         EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = null;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.Sprite = null;
+        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = null;
 
         botaoConfirmar.interactable = false;
     }

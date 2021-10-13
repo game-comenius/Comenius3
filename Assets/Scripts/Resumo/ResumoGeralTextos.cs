@@ -32,7 +32,7 @@ public class ResumoGeralTextos : MonoBehaviour
         controlador.Atualizar();
 
         campoDeAprendizagem.text = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome;
-        inteligenciaMultipla.text = EstadoDoJogo.Instance.InteligenciasSelecionadas.Nome;
+        inteligenciaMultipla.text = EstadoDoJogo.Instance.InteligenciasSelecionadas.nome;
         metodologia.text = EstadoDoJogo.Instance.MetodologiaSelecionada.nome;
         midiaSala1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].NomeApresentavel;
         midiaSala2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].NomeApresentavel;

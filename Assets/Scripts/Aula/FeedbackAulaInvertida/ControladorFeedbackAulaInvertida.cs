@@ -69,7 +69,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         midiaQuarto1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
         midiaQuarto2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
-        switch (estadoDoJogo.InteligenciasSelecionadas.Valor)
+        switch (estadoDoJogo.InteligenciasSelecionadas.valor)
         {
 
             case 0:
@@ -90,7 +90,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
         }
 
-        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
+        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.sprite;
     }
 
     private void DefinirRetratoAluno(string assinatura)

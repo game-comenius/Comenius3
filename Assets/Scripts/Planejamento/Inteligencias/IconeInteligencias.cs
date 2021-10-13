@@ -1,35 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class IconeInteligencias : MonoBehaviour, IPointerClickHandler
+public class IconeInteligencias : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public bool Selecionado { get; set; }
-
-    public GrupoDeIconesInteligencias grupo;
-
-    [SerializeField] int valorInteligencias;
-    public Inteligencias Valor
+    public Inteligencias inteligencia
     {
         get { return Inteligencias.Get(valorInteligencias); }
     }
+    public PaginaInteligencias pagina;
 
-    [SerializeField] public Sprite SpriteGrande;
+    [HideInInspector] public int valorInteligencias;
+    [HideInInspector] public bool selecionado;
 
-    private Image imageComponent;
-    public Image ImageComponent => imageComponent ? imageComponent : imageComponent = GetComponentInChildren<Image>();
-
-    public void OnPointerClick(PointerEventData eventData)
+    private void Start()
     {
-        if (!Selecionado && grupo && grupo.Selecionar(this))
-        {
-            AudioManager.instance.TocarSFX("clique");
-            return;
-        }
-            
+        selecionado = false;
+    }
 
-        Selecionado = !Selecionado;
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        pagina.HoverEnter(this);
+    }
 
-        AudioManager.instance.TocarSFX("clique");
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        pagina.HoverExit();
     }
 }

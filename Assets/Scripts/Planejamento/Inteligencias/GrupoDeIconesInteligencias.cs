@@ -10,7 +10,7 @@ public class GrupoDeIconesInteligencias : MonoBehaviour
 
     public IconeInteligencias IconeSelecionado
     {
-        get { return iconesInteligencias.Where((i) => i.Selecionado).FirstOrDefault(); }
+        get { return iconesInteligencias.Where((i) => i.selecionado).FirstOrDefault(); }
     }
 
     public event Action<IconeInteligencias> QuandoUmElementoForSelecionadoEvent;
@@ -18,7 +18,7 @@ public class GrupoDeIconesInteligencias : MonoBehaviour
     private void Start()
     {
         // Cadastrar os botões passados pelo Inspector neste grupo
-        foreach (var botao in iconesInteligencias) botao.grupo = this;
+        // foreach (var botao in iconesInteligencias) botao.grupo = this;
 
         // Esconder anel de seleção pois não há botões selecionados
         AnelDeSelecao.enabled = false;
@@ -35,10 +35,10 @@ public class GrupoDeIconesInteligencias : MonoBehaviour
             // Se o botão que foi selecionado já estava selecionado, ignorar
             if (iconeQueEstavaSelecionado == icone) return true;
 
-            iconeQueEstavaSelecionado.Selecionado = false;
+            iconeQueEstavaSelecionado.selecionado = false;
         }
 
-        icone.Selecionado = true;
+        icone.selecionado = true;
 
         // Posicionar anel de seleção sobre o botão selecionado
         AnelDeSelecao.enabled = true;
@@ -49,8 +49,8 @@ public class GrupoDeIconesInteligencias : MonoBehaviour
         QuandoUmElementoForSelecionadoEvent?.Invoke(icone);
 
         // Gravar no estado do jogo que este é o par de inteligências selecionado
-        EstadoDoJogo.Instance.InteligenciasSelecionadas = icone.Valor;
-        EstadoDoJogo.Instance.InteligenciasSelecionadas.SpriteGrande = icone.SpriteGrande;
+        EstadoDoJogo.Instance.InteligenciasSelecionadas = icone.inteligencia;
+        // EstadoDoJogo.Instance.InteligenciasSelecionadas.SpriteGrande = icone.SpriteGrande;
 
         return true;
     }

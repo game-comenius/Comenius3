@@ -80,7 +80,7 @@ public class BaloesDosAlunos : MonoBehaviour
                     spriteDoIconeDoBalao = jogo.NivelDeEnsinoSelecionado.Sprite ? jogo.NivelDeEnsinoSelecionado.Sprite : nivelDeEnsinoFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.AreaDeConhecimento:
-                    spriteDoIconeDoBalao = jogo.AreaDeConhecimentoSelecionada.Sprite ? jogo.AreaDeConhecimentoSelecionada.Sprite : areaDeConhecimentoFallbackSprite;
+                    spriteDoIconeDoBalao = jogo.AreaDeConhecimentoSelecionada.sprite ? jogo.AreaDeConhecimentoSelecionada.sprite : areaDeConhecimentoFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.Inteligencias:
                     spriteDoIconeDoBalao = jogo.InteligenciasSelecionadas.SpriteGrande ? jogo.InteligenciasSelecionadas.SpriteGrande : inteligenciasFallbackSprite;

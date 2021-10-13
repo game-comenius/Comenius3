@@ -23,13 +23,13 @@ public class PaginaResumoDoCriador : Pagina
             iconeNivelDeEnsinoEscolhido.sprite = estadoDoJogo.NivelDeEnsinoSelecionado.Sprite;
         nomeDoNivelDeEnsinoEscolhido.text = estadoDoJogo.NivelDeEnsinoSelecionado.nome;
 
-        if (estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite)
-            iconeAreaDeConhecimentoEscolhida.sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.Sprite;
+        if (estadoDoJogo.AreaDeConhecimentoSelecionada.sprite)
+            iconeAreaDeConhecimentoEscolhida.sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.sprite;
         nomeDaAreaDeConhecimentoEscolhida.text = estadoDoJogo.AreaDeConhecimentoSelecionada.nome;
 
         if (estadoDoJogo.InteligenciasSelecionadas.SpriteGrande)
             iconeInteligenciasEscolhidas.sprite = estadoDoJogo.InteligenciasSelecionadas.SpriteGrande;
-        nomeDasInteligenciasSelecionadas.text = estadoDoJogo.InteligenciasSelecionadas.Nome;
+        nomeDasInteligenciasSelecionadas.text = estadoDoJogo.InteligenciasSelecionadas.nome;
 
         // Garantir que o botão para voltar à cena anterior apareça
         if (botaoParaCenaAnterior != null) botaoParaCenaAnterior.gameObject.SetActive(true);

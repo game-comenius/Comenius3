@@ -16,7 +16,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
     {
 
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeInteligencia = estadoDoJogo.InteligenciasSelecionadas.Nome;
+        string nomeInteligencia = estadoDoJogo.InteligenciasSelecionadas.nome;
 
         if (estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Educação Infantil" || estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Ensino Fundamental") 
         {
