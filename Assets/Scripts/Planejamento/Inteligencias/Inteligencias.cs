@@ -38,7 +38,7 @@ public sealed class Inteligencias
     // Quando o jogador seleciona este quando aperta sobre o ícone que
     // representa ele, o ícone salva seu sprite nesta propriedade
     // para que o jogo possa apresentá-la depois em outras cenas
-    public Sprite SpriteGrande;
+    public Sprite sprite;
 
     private Inteligencias(int valor, string nome, string descricao)
     {

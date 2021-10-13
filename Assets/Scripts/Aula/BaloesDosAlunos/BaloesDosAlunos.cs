@@ -77,13 +77,13 @@ public class BaloesDosAlunos : MonoBehaviour
             switch (indiceAleatorio)
             {
                 case (int)TipoDeIconeDeBalao.NivelDeEnsino:
-                    spriteDoIconeDoBalao = jogo.NivelDeEnsinoSelecionado.Sprite ? jogo.NivelDeEnsinoSelecionado.Sprite : nivelDeEnsinoFallbackSprite;
+                    spriteDoIconeDoBalao = jogo.NivelDeEnsinoSelecionado.sprite ? jogo.NivelDeEnsinoSelecionado.sprite : nivelDeEnsinoFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.AreaDeConhecimento:
                     spriteDoIconeDoBalao = jogo.AreaDeConhecimentoSelecionada.sprite ? jogo.AreaDeConhecimentoSelecionada.sprite : areaDeConhecimentoFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.Inteligencias:
-                    spriteDoIconeDoBalao = jogo.InteligenciasSelecionadas.SpriteGrande ? jogo.InteligenciasSelecionadas.SpriteGrande : inteligenciasFallbackSprite;
+                    spriteDoIconeDoBalao = jogo.InteligenciasSelecionadas.sprite ? jogo.InteligenciasSelecionadas.sprite : inteligenciasFallbackSprite;
                     break;
                 case (int)TipoDeIconeDeBalao.Metodologia:
                     spriteDoIconeDoBalao = jogo.MetodologiaSelecionada.Sprite ? jogo.MetodologiaSelecionada.Sprite : metodologiaFallbackSprite;

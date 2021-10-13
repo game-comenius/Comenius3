@@ -92,7 +92,7 @@ public class PaginaNivelDeEnsino : Pagina
 
         // Grava o nível de ensino selecionado
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = icone.nivelDeEnsino;
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.Sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -104,7 +104,7 @@ public class PaginaNivelDeEnsino : Pagina
 
         // Reseta a escolha
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = null;
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.Sprite = null;
+        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite = null;
 
         botaoConfirmar.interactable = false;
     }

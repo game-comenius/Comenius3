@@ -38,8 +38,8 @@ public class PaginaResumoDoPlanejamento : Pagina
             IconeMidia3.sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
             IconeMidia4.sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
 
-            PreviewQuarto1.sprite = estadoDoJogo.NivelDeEnsinoSelecionado.Sprite;
-            PreviewQuarto2.sprite = estadoDoJogo.NivelDeEnsinoSelecionado.Sprite;
+            PreviewQuarto1.sprite = estadoDoJogo.NivelDeEnsinoSelecionado.sprite;
+            PreviewQuarto2.sprite = estadoDoJogo.NivelDeEnsinoSelecionado.sprite;
         }
     }
 

@@ -36,14 +36,14 @@ public class QuizPerfilDaTurma : Quiz
         {
             this.NivelDeEnsino = nivelDeEnsino;
             enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre " + nivelDeEnsino.nome;
-            spriteDoIconeDoQuiz = nivelDeEnsino.Sprite;
+            spriteDoIconeDoQuiz = nivelDeEnsino.sprite;
             afirmacoesDisponiveis = AfirmacaoSobreNivelDeEnsino.ObterTodasAsAfirmacoes(nivelDeEnsino);
         }
         else // ZeroOuUm == 1
         {
             this.Inteligencias = inteligencias;
             enunciadoDoQuiz = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre o par de inteligências " + inteligencias.nome;
-            spriteDoIconeDoQuiz = inteligencias.SpriteGrande;
+            spriteDoIconeDoQuiz = inteligencias.sprite;
             afirmacoesDisponiveis = AfirmacaoSobreInteligencias.ObterTodasAsAfirmacoes(inteligencias);
         }
 

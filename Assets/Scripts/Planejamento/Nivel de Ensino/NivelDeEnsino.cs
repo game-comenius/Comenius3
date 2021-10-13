@@ -87,7 +87,7 @@ public sealed class NivelDeEnsino
     // Quando o jogador seleciona este quando aperta sobre o ícone que
     // representa ele, o ícone salva seu sprite nesta propriedade
     // para que o jogo possa apresentá-la depois em outras cenas
-    public Sprite Sprite;
+    public Sprite sprite;
 
     private NivelDeEnsino(int valor, string nome, string descricao, int[] areasDeConhecimento)
     {

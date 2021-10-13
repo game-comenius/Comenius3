@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class IconManager : MonoBehaviour
 {
-    public Image[] icons;
+    [SerializeField] private Image[] icons;
 
     private Sprite defaultSprite;
 
@@ -20,8 +20,23 @@ public class IconManager : MonoBehaviour
         icons[index].sprite = sprite;
     }
 
+    public Sprite GetIconSprite(int index)
+    {
+        return icons[index].sprite;
+    }
+
     public void ResetIcon(int index)
     {
         icons[index].sprite = defaultSprite;
+    }
+
+    public void HideIcon(int index)
+    {
+        icons[index].enabled = false;
+    }
+
+    public void ShowIcon(int index)
+    {
+        icons[index].enabled = true;
     }
 }
