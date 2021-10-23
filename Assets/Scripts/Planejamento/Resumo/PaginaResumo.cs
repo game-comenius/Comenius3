@@ -9,12 +9,18 @@ public class PaginaResumo : MonoBehaviour
     [SerializeField] private Image iconeInteligencia;
     [SerializeField] private Text texto;
     [SerializeField] private Sprite icone;
-
-    private Sprite tempIcon;
+    [SerializeField] [TextArea] private string ajuda;
+    [SerializeField] private Text textoAjuda;
+    [SerializeField] private Sprite backgroundSprite;
+    [SerializeField] private Image background;
+    private Sprite tempBackground;
 
     private void OnEnable()
     {
-        tempIcon = iconManager.GetIconSprite(0);
+        tempBackground = background.sprite;
+        background.sprite = backgroundSprite;
+        textoAjuda.text = ajuda;
+
         iconManager.SetIcon(0, icone);
 
         iconManager.HideIcon(1);
@@ -25,14 +31,16 @@ public class PaginaResumo : MonoBehaviour
         iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite;
         iconeInteligencia.sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
 
-        texto.text = $"Você irá jogar uma aula do {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} " + 
-                     $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} " + 
+        texto.text = $"Você irá jogar uma aula do {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} " +
+                     $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} " +
                      $"com uma turma de perfil {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
     }
 
     private void OnDisable()
     {
-        iconManager.SetIcon(0, tempIcon);
+        background.sprite = tempBackground;
+
+        iconManager.ResetIcon(0);
 
         iconManager.ShowIcon(1);
         iconManager.ShowIcon(2);

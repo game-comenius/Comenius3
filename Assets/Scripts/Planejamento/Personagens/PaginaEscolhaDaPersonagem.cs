@@ -9,6 +9,8 @@ public class PaginaEscolhaDaPersonagem : Pagina
     [SerializeField] private Image roupaPersonagemSelecionada;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
+    [SerializeField] [TextArea] private string ajuda;
+    [SerializeField] private Text textoAjuda;
 
     private IconePersonagem iconeSelecionado;
 
@@ -16,6 +18,16 @@ public class PaginaEscolhaDaPersonagem : Pagina
     {
         botaoConfirmar.interactable = false;
         anelDeSelecao.enabled = false;  // Desabilita a imagem do anel de seleção
+    }
+
+    private void OnEnable()
+    {
+        textoAjuda.text = ajuda;
+
+        if (iconeSelecionado)
+        {
+            iconManager.SetIcon(0, iconeSelecionado.GetComponent<Image>().sprite);
+        }
     }
 
     public void Selecao(IconePersonagem icone)

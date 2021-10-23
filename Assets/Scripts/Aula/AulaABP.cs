@@ -42,7 +42,7 @@ public class AulaABP : Aula
     {
         // Definir qual é a metodologia desta aula
         MetodologiaDaAula = Metodologia.ABP;
-        if (!MetodologiaDaAula.Sprite) MetodologiaDaAula.Sprite = spriteIconeMetodologia;
+        if (!MetodologiaDaAula.sprite) MetodologiaDaAula.sprite = spriteIconeMetodologia;
 
         // Ordenar os quizzes
         Quiz[] localQuizzes =

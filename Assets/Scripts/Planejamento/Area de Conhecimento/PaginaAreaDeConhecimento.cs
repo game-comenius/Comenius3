@@ -14,6 +14,8 @@ public class PaginaAreaDeConhecimento : Pagina
     [SerializeField] private GameObject iconesMedio;
     [SerializeField] private GameObject iconesSuperior;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField] [TextArea] private string ajuda;
+    [SerializeField] private Text textoAjuda;
 
     private GameObject ultimoGrupoAtivo;
     private IconeAreaDeConhecimento iconeSelecionado;
@@ -32,6 +34,13 @@ public class PaginaAreaDeConhecimento : Pagina
 
     private void OnEnable()
     {
+        textoAjuda.text = ajuda;
+
+        if (iconeSelecionado)
+        {
+            iconManager.SetIcon(2, iconeSelecionado.GetComponent<Image>().sprite);
+        }
+
         // Atualiza qual grupo deve ser exibido no momento
 
         if (ultimoGrupoAtivo)

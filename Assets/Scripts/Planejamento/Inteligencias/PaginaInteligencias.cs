@@ -10,6 +10,8 @@ public class PaginaInteligencias : Pagina
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField] [TextArea] private string ajuda;
+    [SerializeField] private Text textoAjuda;
 
     private IconeInteligencias iconeSelecionado;
 
@@ -20,6 +22,16 @@ public class PaginaInteligencias : Pagina
     
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
+    }
+
+    private void OnEnable()
+    {
+        textoAjuda.text = ajuda;
+
+        if (iconeSelecionado)
+        {
+            iconManager.SetIcon(3, iconeSelecionado.GetComponent<Image>().sprite);
+        }
     }
 
     public void Selecao(IconeInteligencias icone)
