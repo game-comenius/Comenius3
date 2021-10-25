@@ -14,7 +14,6 @@ public class DeletarSom : MonoBehaviour
     {
         if (!fonte.isPlaying)
         {
-           // Debug.Log(name + " Parou de tocar");
             Destroy(gameObject);
         }
     }
