@@ -6,12 +6,6 @@ using UnityEngine.UI;
 
 public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject popUp;
-    public Text text;
-    public Orientation orientation;
-    [TextArea]
-    public string content;
-
     public enum Orientation
     {
         Top,
@@ -19,6 +13,11 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         Right,
         Left
     }
+
+    [SerializeField] private GameObject popUp;
+    [SerializeField] private Text text;
+    [SerializeField] private Orientation orientation;
+    [SerializeField] [TextArea] private string content;
 
     private RectTransform rect;
     private RectTransform popUpRect;
