@@ -31,9 +31,7 @@ public class PaginaResumo : MonoBehaviour
         iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite;
         iconeInteligencia.sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
 
-        texto.text = $"Você irá jogar uma aula do {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} " +
-                     $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} " +
-                     $"com uma turma de perfil {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
+        BuildText();
     }
 
     private void OnDisable()
@@ -45,5 +43,42 @@ public class PaginaResumo : MonoBehaviour
         iconManager.ShowIcon(1);
         iconManager.ShowIcon(2);
         iconManager.ShowIcon(3);
+    }
+
+    // O argumento deveria ser um enum, porém por conveniência no editor foi usado um string
+    public void BuildText(string highlightedChoice = "")
+    {
+        string preposition = "do";
+
+        string levelPart, areaPart, inteligencePart;
+
+        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        {
+            preposition = "da";
+        }
+
+        levelPart = $"Você irá jogar uma aula {preposition} {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} ";
+        areaPart = $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} ";
+        inteligencePart = $"com uma turma de perfil {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
+
+        switch (highlightedChoice)
+        {
+            case "Nivel":
+                levelPart = $"Você irá jogar uma aula {preposition} " +
+                            $"<i><color=green>{EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome}</color></i> ";
+                break;
+            case "Area":
+                areaPart = "sobre " +
+                           $"<i><color=green>{EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome}</color></i> ";
+                break;
+            case "Inteligencia":
+                inteligencePart = "com uma turma de perfil " +
+                                  $"<i><color=green>{EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}</color></i>.";
+                break;
+            default:
+                break;
+        }
+
+        texto.text = levelPart + areaPart + inteligencePart;
     }
 }

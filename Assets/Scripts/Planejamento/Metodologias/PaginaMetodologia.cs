@@ -12,6 +12,9 @@ public class PaginaMetodologia : Pagina
     [SerializeField] [TextArea] private string descricaoPadrao;
     [SerializeField] [TextArea] private string ajuda;
     [SerializeField] private Text textoAjuda;
+    [SerializeField] private TrocadorDeCena cenaABP;
+    [SerializeField] private TrocadorDeCena cenaInvertida;
+    [SerializeField] private TrocadorDeCena cenaABJ;
 
     private IconeMetodologia iconeSelecionado;
 
@@ -130,5 +133,23 @@ public class PaginaMetodologia : Pagina
         EstadoDoJogo.Instance.MetodologiaSelecionada.sprite = null;
 
         botaoConfirmar.interactable = false;
+    }
+
+    public void Confirmar()
+    {
+        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        {
+            case "Aprendizagem Baseada em Problemas":
+                cenaABP.TrocarCena();
+                break;
+            case "Sala de Aula Invertida":
+                cenaInvertida.TrocarCena();
+                break;
+            case "Aprendizagem Baseada em Jogos":
+                cenaInvertida.TrocarCena();
+                break;
+            default:
+                break;
+        }
     }
 }

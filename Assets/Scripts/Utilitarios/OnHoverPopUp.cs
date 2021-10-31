@@ -17,6 +17,7 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField] private GameObject popUp;
     [SerializeField] private Text text;
     [SerializeField] private Orientation orientation;
+    [SerializeField] private float offset;
     [SerializeField] [TextArea] private string content;
 
     private RectTransform rect;
@@ -45,16 +46,16 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         switch (orientation)
         {
             case Orientation.Top:
-                popUpPosition = new Vector3(rect.position.x, rect.position.y + halfHeight + halfPopUpHeight, 0f);
+                popUpPosition = new Vector3(rect.position.x, rect.position.y + halfHeight + halfPopUpHeight + offset, 0f);
                 break;
             case Orientation.Bottom:
-                popUpPosition = new Vector3(rect.position.x, rect.position.y - (halfHeight + halfPopUpHeight), 0f);
+                popUpPosition = new Vector3(rect.position.x, rect.position.y - (halfHeight + halfPopUpHeight + offset), 0f);
                 break;
             case Orientation.Right:
-                popUpPosition = new Vector3(rect.position.x + halfWidth + halfPopUpWidth, rect.position.y, 0f);
+                popUpPosition = new Vector3(rect.position.x + halfWidth + halfPopUpWidth + offset, rect.position.y, 0f);
                 break;
             case Orientation.Left:
-                popUpPosition = new Vector3(rect.position.x - (halfWidth + halfPopUpWidth), rect.position.y, 0f);
+                popUpPosition = new Vector3(rect.position.x - (halfWidth + halfPopUpWidth + offset), rect.position.y, 0f);
                 break;
             default:
                 break;
@@ -63,6 +64,9 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        // Atualmente o posicionamento apresenta problemas por conta do resizing que acontece depois da atribuição
+        // de texto. Atualizar a "popUpPosition" aqui não resolveu.
+
         popUpRect.position = popUpPosition;
         popUp.SetActive(true);
         text.text = content;
