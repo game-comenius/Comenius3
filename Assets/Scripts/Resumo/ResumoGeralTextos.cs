@@ -34,10 +34,10 @@ public class ResumoGeralTextos : MonoBehaviour
         campoDeAprendizagem.text = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome;
         inteligenciaMultipla.text = EstadoDoJogo.Instance.InteligenciasSelecionadas.nome;
         metodologia.text = EstadoDoJogo.Instance.MetodologiaSelecionada.nome;
-        midiaSala1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].NomeApresentavel;
-        midiaSala2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].NomeApresentavel;
-        midiaQuarto1.text = EstadoDoJogo.Instance.MidiasSelecionadas[0].NomeApresentavel;
-        midiaQuarto2.text = EstadoDoJogo.Instance.MidiasSelecionadas[1].NomeApresentavel;
+        midiaSala1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].nome;
+        midiaSala2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].nome;
+        midiaQuarto1.text = EstadoDoJogo.Instance.MidiasSelecionadas[0].nome;
+        midiaQuarto2.text = EstadoDoJogo.Instance.MidiasSelecionadas[1].nome;
         agrupamento1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento.ToString();
         agrupamento2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento.ToString();
 

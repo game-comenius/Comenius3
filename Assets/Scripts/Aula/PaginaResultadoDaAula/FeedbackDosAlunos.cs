@@ -21,8 +21,8 @@ public static class FeedbackDosAlunos
         {
             // Escolher um entre os feedbacks possíveis,
             // dar prioridade a feedbacks sobre mídia de consulta
-            var escolheuMidiaDeConsulta = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.ConsultaRepositorio));
-            var escolheuMidiaDigital = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Digital));
+            var escolheuMidiaDeConsulta = jogo.MidiasSelecionadas.Any((midia) => midia.nomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.ConsultaRepositorio));
+            var escolheuMidiaDigital = jogo.MidiasSelecionadas.Any((midia) => midia.nomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Digital));
             if (jogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
             {
                 if (escolheuMidiaDeConsulta) return ("Adorei descobrir sobre tudo isso!", $"Ricardo - {jogo.NivelDeEnsinoSelecionado.nome}");

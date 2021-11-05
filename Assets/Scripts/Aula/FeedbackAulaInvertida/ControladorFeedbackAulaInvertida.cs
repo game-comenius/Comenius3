@@ -64,11 +64,11 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].SpriteIcone;
-        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].SpriteIcone;
+        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].sprite;
+        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].sprite;
 
-        midiaQuarto1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
-        midiaQuarto2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
+        midiaQuarto1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].sprite;
+        midiaQuarto2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].sprite;
         switch (estadoDoJogo.InteligenciasSelecionadas.valor)
         {
 

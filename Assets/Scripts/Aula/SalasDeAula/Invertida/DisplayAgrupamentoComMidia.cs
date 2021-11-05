@@ -101,7 +101,7 @@ public class DisplayAgrupamentoComMidia : Pagina
             midiaSelecionadaDic.Add(NomeDeMidia.CadernosECartazes, cadernosECartazes);
 
             //Chacando se a midia é individual. Se for o caso ela vai ter que carregar outros dicionários
-            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.LivroDidatico)
+            if (midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.LivroDidatico)
             {
                 //Dicionário dos agrupamentos de LivroDidatico
                 agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
@@ -113,7 +113,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 possuiMidiaIndividual = true;
             }
 
-            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Jogos)
+            if (midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.Jogos)
             {
                 //Dicionário de agrupamentos de ConsolesParaJogos
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.Individual, consoleParaJogoAgrupamentoIndividual);
@@ -125,7 +125,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 possuiMidiaIndividual = true;
             }
 
-            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.CadernosECartazes)
+            if (midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.CadernosECartazes)
             {
                 //Dicionário de agrupamentos de CadernosECartazes
                 agrupamentoCadernoECartazDic.Add(Agrupamento.Individual, cadernoECartazAgrupamentoIndividual);
@@ -137,7 +137,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 possuiMidiaIndividual = true;
             }
 
-            if (midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.Aplicativos || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.AVEAs || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeAudioEVideo || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiasDisponiveis[midiaAlvo].NomeMidia == NomeDeMidia.RedesSociais)
+            if (midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.Aplicativos || midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.AVEAs || midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.EditoresDeAudioEVideo || midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas || midiasDisponiveis[midiaAlvo].nomeMidia == NomeDeMidia.RedesSociais)
             {
                 //Dicionário dos agrupamentos de Computadores        
                 agrupamentoComputadorDic.Add(Agrupamento.Individual, computadorAgrupamentoIndividual);
@@ -165,7 +165,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 //Mostrar alunos
                 agrupamentoIndividual.SetActive(true);
                 //Mostrar midia
-                midiaSelecionadaDic[midia.NomeMidia].SetActive(true);
+                midiaSelecionadaDic[midia.nomeMidia].SetActive(true);
                 //Se for uma midia individual
                 if (possuiMidiaIndividual)
                 {
@@ -176,7 +176,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 //Mostrar alunos
                 agrupamentoDuplas.SetActive(true);
                 //Mostrar midia
-                midiaSelecionadaDic[midia.NomeMidia].SetActive(true);
+                midiaSelecionadaDic[midia.nomeMidia].SetActive(true);
                 //Se for uma midia individual
                 if (possuiMidiaIndividual)
                 {
@@ -187,7 +187,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 //Mostrar alunos
                 agrupamentoSalaInteira.SetActive(true);
                 //Mostrar midia
-                midiaSelecionadaDic[midia.NomeMidia].SetActive(true);
+                midiaSelecionadaDic[midia.nomeMidia].SetActive(true);
                 //Se for uma midia individual
                 if (possuiMidiaIndividual)
                 {
@@ -198,7 +198,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 //Mostrar alunos
                 agrupamentoGrandesGrupos.SetActive(true);
                 //Mostrar midia
-                midiaSelecionadaDic[midia.NomeMidia].SetActive(true);
+                midiaSelecionadaDic[midia.nomeMidia].SetActive(true);
                 //Se for uma midia individual
                 if (possuiMidiaIndividual)
                 {
@@ -209,7 +209,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 //Mostrar alunos
                 agrupamentoPequenosGrupos.SetActive(true);
                 //Mostrar midia
-                midiaSelecionadaDic[midia.NomeMidia].SetActive(true);
+                midiaSelecionadaDic[midia.nomeMidia].SetActive(true);
                 //Se for uma midia individual
                 if (possuiMidiaIndividual)
                 {
@@ -221,7 +221,7 @@ public class DisplayAgrupamentoComMidia : Pagina
 
     public void MostrarMidiaIndividual(Midia midia, Agrupamento agrupamento)
     {
-        switch (midia.NomeMidia)
+        switch (midia.nomeMidia)
         {
             case NomeDeMidia.Aplicativos:
                 agrupamentoComputadorDic[agrupamento].SetActive(true);

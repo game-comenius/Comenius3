@@ -22,7 +22,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         set
         {
             if(isRamdomAutoSelected)
-                value = MomentoInteracao.GetMomentoFromArquives(estado.midiaAtual.NomeMidia);//TODO
+                value = MomentoInteracao.GetMomentoFromArquives(estado.midiaAtual.nomeMidia);//TODO
 
             totalDePaginas = value.paginas.Length;
             paginaAtual = 0;

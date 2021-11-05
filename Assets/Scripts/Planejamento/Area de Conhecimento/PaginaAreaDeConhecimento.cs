@@ -204,8 +204,8 @@ public class PaginaAreaDeConhecimento : Pagina
         iconManager.ResetIcon(2);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = null;
         EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = null;
+        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = null;
 
         botaoConfirmar.interactable = false;
     }

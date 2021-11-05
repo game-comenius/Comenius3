@@ -132,11 +132,11 @@ public class AulaABP : Aula
         {
             var midia = MidiasDaAula[i];
 
-            var categoriasDaMidia = midia.NomeMidia.CategoriasDaMidia();
-            bool midiaFoiRepetida = midiasCujasPontuacoesJaForamCalculadas.Contains(midia.NomeMidia);
+            var categoriasDaMidia = midia.nomeMidia.CategoriasDaMidia();
+            bool midiaFoiRepetida = midiasCujasPontuacoesJaForamCalculadas.Contains(midia.nomeMidia);
             pontuacao += MetodologiaDaAula.PontuacaoParaCategoriasDeMidia(categoriasDaMidia, midiaFoiRepetida);
 
-            midiasCujasPontuacoesJaForamCalculadas[i] = midia.NomeMidia;
+            midiasCujasPontuacoesJaForamCalculadas[i] = midia.nomeMidia;
         }
 
         // Média aritmética entre as mídias da aula
@@ -167,7 +167,7 @@ public class AulaABP : Aula
 
         // Mostrar a primeira mídia logo no início com um pequeno delay
         var delayParaTroca = delayParaAplicarQuizzes / 3;
-        StartCoroutine(TrocarDeMidiaNaSala(midias[0].NomeMidia, delayParaTroca, 0));
+        StartCoroutine(TrocarDeMidiaNaSala(midias[0].nomeMidia, delayParaTroca, 0));
 
         // Na aula ABP, serão 2 mídias, o jogo irá trocar a mídia mais ou menos no meio da aula
         // O meio da aula é na metade dos quizzes
@@ -179,7 +179,7 @@ public class AulaABP : Aula
             if (quizzesExecutados == Mathf.Ceil(quantidadeDeQuizzesDaAula / 2.0f))
             {
                 var intervaloDeTempo = tempoEntreQuizzes / 3;
-                StartCoroutine(TrocarDeMidiaNaSala(midias[1].NomeMidia, intervaloDeTempo, intervaloDeTempo));
+                StartCoroutine(TrocarDeMidiaNaSala(midias[1].nomeMidia, intervaloDeTempo, intervaloDeTempo));
             }
         };
     }

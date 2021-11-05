@@ -39,7 +39,7 @@ public class MidiasNaSalaInvertida : MonoBehaviour
     public void UpdateDisplay()
     {
         Esconder();
-        NomeDeMidia midiaParaMostrar = controladorJogo.midiaAtual.NomeMidia;
+        NomeDeMidia midiaParaMostrar = controladorJogo.midiaAtual.nomeMidia;
         foreach (ParMidia midia in midiasNaSala)
         {
             if(midia.nome == midiaParaMostrar)

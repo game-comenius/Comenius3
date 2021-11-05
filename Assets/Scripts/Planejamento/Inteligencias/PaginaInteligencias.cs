@@ -115,8 +115,8 @@ public class PaginaInteligencias : Pagina
         iconManager.ResetIcon(3);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.InteligenciasSelecionadas = null;
         EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite = null;
+        EstadoDoJogo.Instance.InteligenciasSelecionadas = null;
 
         botaoConfirmar.interactable = false;
     }

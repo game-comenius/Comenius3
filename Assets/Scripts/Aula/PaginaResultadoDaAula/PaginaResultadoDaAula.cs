@@ -106,8 +106,8 @@ public class PaginaResultadoDaAula : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].SpriteIcone;
-        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].SpriteIcone;
+        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].sprite;
+        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].sprite;
 
         switch (estadoDoJogo.InteligenciasSelecionadas.valor)
         {

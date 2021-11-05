@@ -93,7 +93,7 @@ public class BaloesDosAlunos : MonoBehaviour
                     // portanto, escolher o sprite do ícone de uma delas aleatoriamente
                     indiceAleatorio = Random.Range(0, jogo.MidiasSelecionadas.Length);
                     var midia = jogo.MidiasSelecionadas[indiceAleatorio];
-                    spriteDoIconeDoBalao = midia.SpriteIcone ? midia.SpriteIcone : midiaFallbackSprite;
+                    spriteDoIconeDoBalao = midia.sprite ? midia.sprite : midiaFallbackSprite;
                     break;
                 default:
                     spriteDoIconeDoBalao = null; break;

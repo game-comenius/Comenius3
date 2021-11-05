@@ -83,8 +83,8 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
     {
 
         //Obtendo a referência das mídias
-        midiaSelecionada1 = referenciaDeMidias.midia1.NomeMidia;
-        midiaSelecionada2 = referenciaDeMidias.midia2.NomeMidia;
+        midiaSelecionada1 = referenciaDeMidias.midia1.nomeMidia;
+        midiaSelecionada2 = referenciaDeMidias.midia2.nomeMidia;
         //Começo do Algorítimo
         midiaPossuiIndividual01 = false;
         midiaPossuiIndividual02 = false;

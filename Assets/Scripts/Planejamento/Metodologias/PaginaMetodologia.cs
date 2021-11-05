@@ -129,8 +129,8 @@ public class PaginaMetodologia : Pagina
         iconManager.ResetIcon(0);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.MetodologiaSelecionada = null;
         EstadoDoJogo.Instance.MetodologiaSelecionada.sprite = null;
+        EstadoDoJogo.Instance.MetodologiaSelecionada = null;
 
         botaoConfirmar.interactable = false;
     }

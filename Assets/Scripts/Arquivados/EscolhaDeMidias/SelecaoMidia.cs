@@ -112,13 +112,13 @@ public class SelecaoMidia : MonoBehaviour
     {
         iconeDestaqueMidia.GetComponent<ImagemMaiorSelecionada>().MudarSelecao(midia);
         destaque = new Midia(midia);
-        tituloDestaqueMidia.GetComponent<UnityEngine.UI.Text>().text = destaque.NomeApresentavel;
-        descricaoDestaqueMidia.GetComponent<TMPro.TextMeshProUGUI>().text = destaque.Descricao;
+        tituloDestaqueMidia.GetComponent<UnityEngine.UI.Text>().text = destaque.nome;
+        descricaoDestaqueMidia.GetComponent<TMPro.TextMeshProUGUI>().text = destaque.descricao;
 
         var descricaoExpandida = TextoExpandido;
-        descricaoExpandida.text = destaque.Expansao;
+        // descricaoExpandida.text = destaque.expansao;
 
-        midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
+        midiasSelecionadas[selecaoAtual] = destaque.nomeMidia;
         selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
     }
 
@@ -129,11 +129,11 @@ public class SelecaoMidia : MonoBehaviour
             botaoProximaMidia.interactable = false;
         }
 
-        if (!selecaoPronta && destaque.NomeMidia != NomeDeMidia.Nenhuma)
+        if (!selecaoPronta && destaque.nomeMidia != NomeDeMidia.Nenhuma)
         {
             botaoMidiaAnterior.interactable = true;
             titulo.text = titulosDasSelecoes[Mathf.Clamp(selecaoAtual+1, 0,quantidadeMidias-1)];
-            midiasSelecionadas[selecaoAtual] = destaque.NomeMidia;
+            midiasSelecionadas[selecaoAtual] = destaque.nomeMidia;
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().atualizarSelecao(midiasSelecionadas);
 
             selecionadasUI[selecaoAtual].GetComponent<MidiaEscolhida>().exibirAnelSelecao(false);
@@ -157,9 +157,9 @@ public class SelecaoMidia : MonoBehaviour
             for (var i = 0; i < quantidadeMidias; i++)
             {
                 Midia midia = new Midia(midiasSelecionadas[i]);
-                midia.SpriteIcone = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
+                midia.sprite = selecionadasUI[i].GetComponent<MidiaEscolhida>().atual.sprite;
                 jogo.MidiasSelecionadas[indiceInicial+ i] = midia;
-                print(midia.NomeApresentavel);
+                print(midia.nome);
             }
         }
        

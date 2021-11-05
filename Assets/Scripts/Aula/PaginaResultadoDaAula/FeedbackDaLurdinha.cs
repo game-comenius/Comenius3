@@ -18,9 +18,9 @@ public static class FeedbackDaLurdinha
         }
         else // jogo.MetodologiaSelecionada == Metodologia.ABP
         {
-            var escolheuMidiaDeConsulta = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.ConsultaRepositorio));
-            var escolheuMidiaDigital = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Digital));
-            var escolheuMidiaPopular = jogo.MidiasSelecionadas.Any((midia) => midia.NomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Popular));
+            var escolheuMidiaDeConsulta = jogo.MidiasSelecionadas.Any((midia) => midia.nomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.ConsultaRepositorio));
+            var escolheuMidiaDigital = jogo.MidiasSelecionadas.Any((midia) => midia.nomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Digital));
+            var escolheuMidiaPopular = jogo.MidiasSelecionadas.Any((midia) => midia.nomeMidia.CategoriasDaMidia().HasFlag(CategoriasDeMidia.Popular));
 
             if (escolheuMidiaDeConsulta && escolheuMidiaDigital)
                 listaDeFeedbacks.Add("Parabéns! Você oportunizou pesquisas de qualidade e discussões intensas para os alunos sobre o assunto abordado!");
@@ -39,7 +39,7 @@ public static class FeedbackDaLurdinha
 
         // Adicionar feedback para quando o jogador seleciona mídias repetidas
         var quantidadeMidiasDistintas = jogo.MidiasSelecionadas
-            .GroupBy((midia) => midia.NomeMidia)
+            .GroupBy((midia) => midia.nomeMidia)
             .Select((grupo) => grupo.First())
             .Count();
         if (jogo.MidiasSelecionadas.Length > quantidadeMidiasDistintas)

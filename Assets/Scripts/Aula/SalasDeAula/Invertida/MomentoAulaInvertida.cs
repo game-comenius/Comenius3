@@ -35,9 +35,9 @@ public class MomentoAulaInvertida : MonoBehaviour
 
         foreach (Midia midia in midiasSelecionadas)
         {
-            if (midia.NomeMidia == NomeDeMidia.CadernosECartazes || midia.NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
+            if (midia.nomeMidia == NomeDeMidia.CadernosECartazes || midia.nomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 pontuacao += 0.5f;
-            else if (midia.NomeMidia == NomeDeMidia.Televisao)
+            else if (midia.nomeMidia == NomeDeMidia.Televisao)
                 pontuacao += 0.17f;
             else
                 pontuacao += 0.25f;

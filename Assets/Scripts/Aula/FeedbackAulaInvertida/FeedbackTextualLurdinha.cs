@@ -60,28 +60,28 @@ public class FeedbackTextualLurdinha : MonoBehaviour
     private bool usouProducao()
     {
         bool returnValue = false;
-        returnValue = returnValue || midia3.NomeMidia == NomeDeMidia.CadernosECartazes;
-        returnValue = returnValue || midia3.NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
-        returnValue = returnValue || midia3.NomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
+        returnValue = returnValue || midia3.nomeMidia == NomeDeMidia.CadernosECartazes;
+        returnValue = returnValue || midia3.nomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
+        returnValue = returnValue || midia3.nomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
 
-        returnValue = returnValue || midia4.NomeMidia == NomeDeMidia.CadernosECartazes;
-        returnValue = returnValue || midia4.NomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
-        returnValue = returnValue || midia4.NomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
+        returnValue = returnValue || midia4.nomeMidia == NomeDeMidia.CadernosECartazes;
+        returnValue = returnValue || midia4.nomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas;
+        returnValue = returnValue || midia4.nomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
 
         return returnValue;
     }
     private bool usouDigital()
     {
         bool returnValue = false;
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.Aplicativos;
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.AVEAs;
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.RedesSociais;
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.Jogos;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.Aplicativos;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.AVEAs;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.RedesSociais;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.Jogos;
 
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.Aplicativos;
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.AVEAs;
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.RedesSociais;
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.Jogos;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.Aplicativos;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.AVEAs;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.RedesSociais;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.Jogos;
 
         return returnValue;
     }
@@ -89,29 +89,29 @@ public class FeedbackTextualLurdinha : MonoBehaviour
     private bool midiasRepetidas()
     {
         bool returnValue = false;
-        returnValue = returnValue || midia1.NomeMidia == midia2.NomeMidia;
-        returnValue = returnValue || midia1.NomeMidia == midia3.NomeMidia;
-        returnValue = returnValue || midia1.NomeMidia == midia4.NomeMidia;
-        returnValue = returnValue || midia2.NomeMidia == midia3.NomeMidia;
-        returnValue = returnValue || midia2.NomeMidia == midia4.NomeMidia;
-        returnValue = returnValue || midia3.NomeMidia == midia4.NomeMidia;
+        returnValue = returnValue || midia1.nomeMidia == midia2.nomeMidia;
+        returnValue = returnValue || midia1.nomeMidia == midia3.nomeMidia;
+        returnValue = returnValue || midia1.nomeMidia == midia4.nomeMidia;
+        returnValue = returnValue || midia2.nomeMidia == midia3.nomeMidia;
+        returnValue = returnValue || midia2.nomeMidia == midia4.nomeMidia;
+        returnValue = returnValue || midia3.nomeMidia == midia4.nomeMidia;
         return returnValue;
     }
 
     private bool usouMidiasErradas()
     {
         bool returnValue = false;
-        returnValue = returnValue || midia3.NomeMidia == NomeDeMidia.Televisao;
-        returnValue = returnValue || midia3.NomeMidia == NomeDeMidia.AparelhoDeSom;
+        returnValue = returnValue || midia3.nomeMidia == NomeDeMidia.Televisao;
+        returnValue = returnValue || midia3.nomeMidia == NomeDeMidia.AparelhoDeSom;
 
-        returnValue = returnValue || midia4.NomeMidia == NomeDeMidia.Televisao;
-        returnValue = returnValue || midia4.NomeMidia == NomeDeMidia.AparelhoDeSom;
+        returnValue = returnValue || midia4.nomeMidia == NomeDeMidia.Televisao;
+        returnValue = returnValue || midia4.nomeMidia == NomeDeMidia.AparelhoDeSom;
 
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
-        returnValue = returnValue || midia1.NomeMidia == NomeDeMidia.LivroDidatico;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
+        returnValue = returnValue || midia1.nomeMidia == NomeDeMidia.LivroDidatico;
 
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
-        returnValue = returnValue || midia2.NomeMidia == NomeDeMidia.LivroDidatico;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.EditoresDeAudioEVideo;
+        returnValue = returnValue || midia2.nomeMidia == NomeDeMidia.LivroDidatico;
 
         return returnValue;
     }

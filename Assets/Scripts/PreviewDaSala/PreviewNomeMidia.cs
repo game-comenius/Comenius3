@@ -13,8 +13,8 @@ public class PreviewNomeMidia : MonoBehaviour
     void Start()
     {
 
-        var midiaSala1 = EstadoDoJogo.Instance.MidiasSelecionadas[2].NomeApresentavel;
-        var midiaSala2 = EstadoDoJogo.Instance.MidiasSelecionadas[3].NomeApresentavel;
+        var midiaSala1 = EstadoDoJogo.Instance.MidiasSelecionadas[2].nome;
+        var midiaSala2 = EstadoDoJogo.Instance.MidiasSelecionadas[3].nome;
 
         midiaSala1Nome.text = midiaSala1;
         midiaSala2Nome.text = midiaSala2;

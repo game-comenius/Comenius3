@@ -23,9 +23,9 @@ public class QuizDeMidia : Quiz
         Midia = midia;
         quizVF = Instantiate(prefabQuizVF, canvas.transform);
 
-        quizVF.TextoDoEnunciado = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre a mídia " + midia.NomeApresentavel + ".";
+        quizVF.TextoDoEnunciado = "Analise as afirmativas abaixo e selecione a(s) correta(s) sobre a mídia " + midia.nome + ".";
 
-        var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia.NomeMidia);
+        var todasAsAfirmacoes = AfirmacaoSobreMidia.ObterTodasAsAfirmacoes(midia.nomeMidia);
         var afirmacoesSelecionadas = new AfirmacaoSobreMidia[quantidadeDeAfirmacoesNoQuiz];
 
         // Selecionar pelo menos uma afirmação verdadeira
@@ -44,7 +44,7 @@ public class QuizDeMidia : Quiz
 
         quizVF.DefinirAfirmacoes(afirmacoesSelecionadas);
 
-        quizVF.IconeDoQuiz.sprite = midia.SpriteIcone;
+        quizVF.IconeDoQuiz.sprite = midia.sprite;
     }
 
     public override IEnumerator Executar()

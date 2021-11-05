@@ -63,7 +63,7 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
 
     public void SelecionarMomentoBaseadoEmMidia()
     {
-        NomeDeMidia midia = controladorDaAula.midiaAtual.NomeMidia;
+        NomeDeMidia midia = controladorDaAula.midiaAtual.nomeMidia;
         NivelDeEnsino nivel = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
         List<MomentoInteracao> possiveisMomentos = new List<MomentoInteracao>();

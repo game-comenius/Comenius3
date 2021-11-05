@@ -55,7 +55,7 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
         }
         else
         {
-            Debug.LogError($"O jogo não sabe como mostrar a mídia {new Midia(nomeDeMidia).NomeApresentavel} nesta sala de aula.");
+            Debug.LogError($"O jogo não sabe como mostrar a mídia {new Midia(nomeDeMidia).nome} nesta sala de aula.");
         }
 
         return midiaPodeSerMostradaNestaSala;

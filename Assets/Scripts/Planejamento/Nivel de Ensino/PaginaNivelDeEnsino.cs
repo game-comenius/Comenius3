@@ -115,8 +115,8 @@ public class PaginaNivelDeEnsino : Pagina
         iconManager.ResetIcon(1);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = null;
         EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite = null;
+        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = null;
 
         botaoConfirmar.interactable = false;
     }
