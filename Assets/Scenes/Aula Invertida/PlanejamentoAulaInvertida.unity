@@ -4274,8 +4274,9 @@ GameObject:
   - component: {fileID: 87280686}
   - component: {fileID: 87280688}
   - component: {fileID: 87280687}
+  - component: {fileID: 87280689}
   m_Layer: 5
-  m_Name: BotaoMidiaCadernosECartazes
+  m_Name: BotaoMidiaEditorTextoEPlanilha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4319,7 +4320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 434d4a78f4d08c0488b279a2c91ef083, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4831fbb444ddf24cbf6093dcd2ea6e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4337,6 +4338,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87280685}
   m_CullTransparentMesh: 0
+--- !u!114 &87280689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87280685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88245462
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,43 +7225,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &145855528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 145855529}
-  m_Layer: 5
-  m_Name: Pagina3Midias
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &145855529
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145855528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 579652165}
-  - {fileID: 175548867}
-  m_Father: {fileID: 566643231}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249.5, y: -22}
-  m_SizeDelta: {x: 683, y: 768}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &146528934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8407,80 +8383,6 @@ Transform:
   m_Father: {fileID: 1084185805}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &175548866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 175548867}
-  - component: {fileID: 175548869}
-  - component: {fileID: 175548868}
-  m_Layer: 5
-  m_Name: BotaoMidiaProjetorMultimidia
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &175548867
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175548866}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 145855529}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.60016, y: 87.80001}
-  m_SizeDelta: {x: 138, y: 138}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &175548868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175548866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &175548869
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175548866}
-  m_CullTransparentMesh: 0
 --- !u!1001 &177362633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11644,7 +11546,7 @@ RectTransform:
   m_Children:
   - {fileID: 778839597}
   m_Father: {fileID: 566643231}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24643,7 +24545,6 @@ Transform:
   m_Children:
   - {fileID: 823417670}
   - {fileID: 1460707775}
-  - {fileID: 145855529}
   - {fileID: 684886792}
   - {fileID: 2014493245}
   - {fileID: 226394244}
@@ -24663,7 +24564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trocadorCena: {fileID: 0}
-  ultimaPagina: 2
+  ultimaPagina: 1
   quantidadeMidias: 2
   indiceInicial: 0
   iconeDestaqueMidia: {fileID: 0}
@@ -24686,7 +24587,6 @@ MonoBehaviour:
   paginasDeMidias:
   - {fileID: 823417669}
   - {fileID: 1460707774}
-  - {fileID: 145855528}
   botaoConfirmar: {fileID: 0}
 --- !u!1 &569899953
 GameObject:
@@ -25168,80 +25068,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &579652164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 579652165}
-  - component: {fileID: 579652167}
-  - component: {fileID: 579652166}
-  m_Layer: 5
-  m_Name: BotaoMidiaJogos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &579652165
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579652164}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 145855529}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.39993, y: 87.80001}
-  m_SizeDelta: {x: 138, y: 138}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &579652166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579652164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27109d2d93570c34d8f755afbf5afa08, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &579652167
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579652164}
-  m_CullTransparentMesh: 0
 --- !u!1 &584811257
 GameObject:
   m_ObjectHideFlags: 0
@@ -29646,7 +29472,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566643231}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29868,8 +29694,9 @@ GameObject:
   - component: {fileID: 698786808}
   - component: {fileID: 698786810}
   - component: {fileID: 698786809}
+  - component: {fileID: 698786811}
   m_Layer: 5
-  m_Name: BotaoMidiaPlataformas
+  m_Name: BotaoMidiaLivroDitatico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29913,7 +29740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 30f019afb18f727438faba10a64ed4d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fe3875b78af5824b91405219290c2ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29931,6 +29758,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698786807}
   m_CullTransparentMesh: 0
+--- !u!114 &698786811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698786807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &701200172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31510,80 +31349,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &733020213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 733020214}
-  - component: {fileID: 733020216}
-  - component: {fileID: 733020215}
-  m_Layer: 5
-  m_Name: BotaoMidiaJogos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &733020214
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733020213}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1416607527}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.39993, y: 87.80001}
-  m_SizeDelta: {x: 138, y: 138}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &733020215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733020213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27109d2d93570c34d8f755afbf5afa08, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &733020216
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733020213}
-  m_CullTransparentMesh: 0
 --- !u!1 &739765442
 GameObject:
   m_ObjectHideFlags: 0
@@ -35100,7 +34865,7 @@ RectTransform:
   m_Children:
   - {fileID: 670587146}
   m_Father: {fileID: 1493640445}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35767,7 +35532,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1493640445}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -39056,8 +38821,9 @@ GameObject:
   - component: {fileID: 921744842}
   - component: {fileID: 921744844}
   - component: {fileID: 921744843}
+  - component: {fileID: 921744845}
   m_Layer: 5
-  m_Name: BotaoMidiaLousa
+  m_Name: BotaoMidiaAplicativos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39101,7 +38867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82f4982f35b081e46a642d55bc6b9b89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39119,6 +38885,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921744841}
   m_CullTransparentMesh: 0
+--- !u!114 &921744845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921744841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &922579193
 GameObject:
   m_ObjectHideFlags: 0
@@ -48884,8 +48662,9 @@ GameObject:
   - component: {fileID: 1147287620}
   - component: {fileID: 1147287622}
   - component: {fileID: 1147287621}
+  - component: {fileID: 1147287623}
   m_Layer: 5
-  m_Name: BotaoMidiaCadernosECartazes
+  m_Name: BotaoMidiaLivrosJornaisERevistas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48929,7 +48708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 434d4a78f4d08c0488b279a2c91ef083, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe47cc908b44d8e43b71d15aa5a57c55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48947,6 +48726,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147287619}
   m_CullTransparentMesh: 0
+--- !u!114 &1147287623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147287619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1147907736 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
@@ -50280,6 +50071,7 @@ GameObject:
   - component: {fileID: 1181035130}
   - component: {fileID: 1181035132}
   - component: {fileID: 1181035131}
+  - component: {fileID: 1181035133}
   m_Layer: 5
   m_Name: BotaoMidiaEditorTextoEPlanilha
   m_TagString: Untagged
@@ -50343,6 +50135,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181035129}
   m_CullTransparentMesh: 0
+--- !u!114 &1181035133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181035129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182196209
 GameObject:
   m_ObjectHideFlags: 0
@@ -57903,8 +57707,9 @@ GameObject:
   - component: {fileID: 1354208817}
   - component: {fileID: 1354208819}
   - component: {fileID: 1354208818}
+  - component: {fileID: 1354208820}
   m_Layer: 5
-  m_Name: BotaoMidiaAplicativos
+  m_Name: BotaoMidiaTelevisao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57948,7 +57753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17bdab3c1d85f174f92b48a3235c0cef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -57966,6 +57771,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354208816}
   m_CullTransparentMesh: 0
+--- !u!114 &1354208820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354208816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360920896
 GameObject:
   m_ObjectHideFlags: 0
@@ -60020,8 +59837,9 @@ GameObject:
   - component: {fileID: 1406886039}
   - component: {fileID: 1406886041}
   - component: {fileID: 1406886040}
+  - component: {fileID: 1406886042}
   m_Layer: 5
-  m_Name: BotaoMidiaEditorAudioEVideo
+  m_Name: BotaoMidiaProjetorMultimidia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60065,7 +59883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: adfe682d0a0270140ac54ba0156057c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -60083,6 +59901,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406886038}
   m_CullTransparentMesh: 0
+--- !u!114 &1406886042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406886038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408168588
 GameObject:
   m_ObjectHideFlags: 0
@@ -60605,43 +60435,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1416607526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1416607527}
-  m_Layer: 5
-  m_Name: Pagina3Midias
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1416607527
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416607526}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 733020214}
-  - {fileID: 1657562487}
-  m_Father: {fileID: 1493640445}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249.5, y: -22}
-  m_SizeDelta: {x: 683, y: 768}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1416868966
 GameObject:
   m_ObjectHideFlags: 0
@@ -61076,6 +60869,7 @@ GameObject:
   - component: {fileID: 1427012295}
   - component: {fileID: 1427012297}
   - component: {fileID: 1427012296}
+  - component: {fileID: 1427012298}
   m_Layer: 5
   m_Name: BotaoMidiaEditorAudioEVideo
   m_TagString: Untagged
@@ -61139,6 +60933,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427012294}
   m_CullTransparentMesh: 0
+--- !u!114 &1427012298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427012294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1428292137
 GameObject:
   m_ObjectHideFlags: 0
@@ -61722,6 +61528,7 @@ GameObject:
   - component: {fileID: 1442341737}
   - component: {fileID: 1442341739}
   - component: {fileID: 1442341738}
+  - component: {fileID: 1442341740}
   m_Layer: 5
   m_Name: BotaoMidiaLousa
   m_TagString: Untagged
@@ -61785,6 +61592,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442341736}
   m_CullTransparentMesh: 0
+--- !u!114 &1442341740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442341736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445560196
 GameObject:
   m_ObjectHideFlags: 0
@@ -62416,7 +62235,6 @@ RectTransform:
   - {fileID: 1181035130}
   - {fileID: 1406886039}
   - {fileID: 1354208817}
-  - {fileID: 1558170076}
   m_Father: {fileID: 566643231}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62762,8 +62580,9 @@ GameObject:
   - component: {fileID: 1467100474}
   - component: {fileID: 1467100476}
   - component: {fileID: 1467100475}
+  - component: {fileID: 1467100477}
   m_Layer: 5
-  m_Name: BotaoMidiaLivroDidatico
+  m_Name: BotaoMidiaRedesSociais
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62807,7 +62626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8376b4eeb5c93ab4c8f074508962fc0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 636768d8087c04d4692b95a403e876b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -62825,6 +62644,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467100473}
   m_CullTransparentMesh: 0
+--- !u!114 &1467100477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467100473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470021609
 GameObject:
   m_ObjectHideFlags: 0
@@ -63532,7 +63363,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1493640445}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -63845,7 +63676,6 @@ Transform:
   m_Children:
   - {fileID: 664094497}
   - {fileID: 407057279}
-  - {fileID: 1416607527}
   - {fileID: 837001840}
   - {fileID: 1490064049}
   - {fileID: 826570860}
@@ -63865,7 +63695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trocadorCena: {fileID: 0}
-  ultimaPagina: 2
+  ultimaPagina: 1
   quantidadeMidias: 2
   indiceInicial: 0
   iconeDestaqueMidia: {fileID: 0}
@@ -63888,7 +63718,6 @@ MonoBehaviour:
   paginasDeMidias:
   - {fileID: 664094496}
   - {fileID: 407057278}
-  - {fileID: 1416607526}
   botaoConfirmar: {fileID: 0}
 --- !u!1001 &1493676854
 PrefabInstance:
@@ -66296,80 +66125,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557858605}
   m_CullTransparentMesh: 0
---- !u!1 &1558170075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1558170076}
-  - component: {fileID: 1558170078}
-  - component: {fileID: 1558170077}
-  m_Layer: 5
-  m_Name: BotaoMidiaPlataformas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1558170076
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558170075}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1460707775}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.600006, y: -142.19998}
-  m_SizeDelta: {x: 138, y: 138}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1558170077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558170075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 30f019afb18f727438faba10a64ed4d1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1558170078
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558170075}
-  m_CullTransparentMesh: 0
 --- !u!1 &1558171287
 GameObject:
   m_ObjectHideFlags: 0
@@ -68285,8 +68040,9 @@ GameObject:
   - component: {fileID: 1601070923}
   - component: {fileID: 1601070925}
   - component: {fileID: 1601070924}
+  - component: {fileID: 1601070926}
   m_Layer: 5
-  m_Name: BotaoMidiaTelevisao
+  m_Name: BotaoMidiaJogos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68330,7 +68086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 17bdab3c1d85f174f92b48a3235c0cef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27109d2d93570c34d8f755afbf5afa08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68348,6 +68104,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601070922}
   m_CullTransparentMesh: 0
+--- !u!114 &1601070926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601070922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603844282
 GameObject:
   m_ObjectHideFlags: 0
@@ -70317,80 +70085,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1657562486
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1657562487}
-  - component: {fileID: 1657562489}
-  - component: {fileID: 1657562488}
-  m_Layer: 5
-  m_Name: BotaoMidiaProjetorMultimidia
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1657562487
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657562486}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1416607527}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.60016, y: 87.80001}
-  m_SizeDelta: {x: 138, y: 138}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1657562488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657562486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4bf51f43349a544b93b62e32511638d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1657562489
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657562486}
-  m_CullTransparentMesh: 0
 --- !u!1 &1658399416
 GameObject:
   m_ObjectHideFlags: 0
@@ -72395,8 +72089,9 @@ GameObject:
   - component: {fileID: 1709558668}
   - component: {fileID: 1709558670}
   - component: {fileID: 1709558669}
+  - component: {fileID: 1709558671}
   m_Layer: 5
-  m_Name: BotaoMidiaAplicativos
+  m_Name: BotaoMidiaTelevisao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72440,7 +72135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97d8f5f6ce63633449ccfc5471bba64e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17bdab3c1d85f174f92b48a3235c0cef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72458,6 +72153,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709558667}
   m_CullTransparentMesh: 0
+--- !u!114 &1709558671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709558667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1711744566
 GameObject:
   m_ObjectHideFlags: 0
@@ -78571,8 +78278,9 @@ GameObject:
   - component: {fileID: 1847885191}
   - component: {fileID: 1847885193}
   - component: {fileID: 1847885192}
+  - component: {fileID: 1847885194}
   m_Layer: 5
-  m_Name: BotaoMidiaEditorTextoEPlanilha
+  m_Name: BotaoMidiaPlataformas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78616,7 +78324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e4831fbb444ddf24cbf6093dcd2ea6e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30f019afb18f727438faba10a64ed4d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78634,6 +78342,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847885190}
   m_CullTransparentMesh: 0
+--- !u!114 &1847885194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847885190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850244829
 GameObject:
   m_ObjectHideFlags: 0
@@ -81765,6 +81485,7 @@ GameObject:
   - component: {fileID: 1955568310}
   - component: {fileID: 1955568312}
   - component: {fileID: 1955568311}
+  - component: {fileID: 1955568313}
   m_Layer: 5
   m_Name: BotaoMidiaLivroDidatico
   m_TagString: Untagged
@@ -81828,6 +81549,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955568309}
   m_CullTransparentMesh: 0
+--- !u!114 &1955568313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955568309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956887942
 GameObject:
   m_ObjectHideFlags: 0
@@ -83997,7 +83730,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566643231}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -84129,8 +83862,9 @@ GameObject:
   - component: {fileID: 2015321710}
   - component: {fileID: 2015321712}
   - component: {fileID: 2015321711}
+  - component: {fileID: 2015321713}
   m_Layer: 5
-  m_Name: BotaoMidiaTelevisao
+  m_Name: BotaoMidiaCadernosECartazes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84174,7 +83908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 17bdab3c1d85f174f92b48a3235c0cef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c80dd85e720d4c438a46a007c3793f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -84192,6 +83926,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015321709}
   m_CullTransparentMesh: 0
+--- !u!114 &2015321713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015321709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015664130
 GameObject:
   m_ObjectHideFlags: 0
