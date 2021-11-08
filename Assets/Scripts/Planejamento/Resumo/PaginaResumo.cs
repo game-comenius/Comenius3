@@ -65,15 +65,15 @@ public class PaginaResumo : MonoBehaviour
         {
             case "Nivel":
                 levelPart = $"Você irá jogar uma aula {preposition} " +
-                            $"<i><color=green>{EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome}</color></i> ";
+                            $"<i><color=yellow>{EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome}</color></i> ";
                 break;
             case "Area":
                 areaPart = "sobre " +
-                           $"<i><color=green>{EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome}</color></i> ";
+                           $"<i><color=yellow>{EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome}</color></i> ";
                 break;
             case "Inteligencia":
                 inteligencePart = "com uma turma de perfil " +
-                                  $"<i><color=green>{EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}</color></i>.";
+                                  $"<i><color=yellow>{EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}</color></i>.";
                 break;
             default:
                 break;
