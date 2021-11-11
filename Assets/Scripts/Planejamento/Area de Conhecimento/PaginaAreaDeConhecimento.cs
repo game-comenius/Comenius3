@@ -1,21 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaAreaDeConhecimento : Pagina
+public class PaginaAreaDeConhecimento : PaginaPlanejamento
 {
     [SerializeField] private string nomePadrao;
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
+    [SerializeField] [TextArea] private string descricaoPadrao;
     [SerializeField] private GameObject iconesInfantil;
     [SerializeField] private GameObject iconesFundamental;
     [SerializeField] private GameObject iconesMedio;
     [SerializeField] private GameObject iconesSuperior;
-    [SerializeField] [TextArea] private string descricaoPadrao;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
 
     private GameObject ultimoGrupoAtivo;
     private IconeAreaDeConhecimento iconeSelecionado;
@@ -32,7 +29,7 @@ public class PaginaAreaDeConhecimento : Pagina
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
@@ -58,7 +55,7 @@ public class PaginaAreaDeConhecimento : Pagina
                     iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
-                    resetarTexto();
+                    resetar();
                     resetarEstadoDeJogo();
                 }
 
@@ -72,7 +69,7 @@ public class PaginaAreaDeConhecimento : Pagina
                     iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
-                    resetarTexto();
+                    resetar();
                     resetarEstadoDeJogo();
                 }
 
@@ -86,7 +83,7 @@ public class PaginaAreaDeConhecimento : Pagina
                     iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
-                    resetarTexto();
+                    resetar();
                     resetarEstadoDeJogo();
                 }
 
@@ -100,7 +97,7 @@ public class PaginaAreaDeConhecimento : Pagina
                     iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
-                    resetarTexto();
+                    resetar();
                     resetarEstadoDeJogo();
                 }
 
@@ -114,7 +111,7 @@ public class PaginaAreaDeConhecimento : Pagina
                     iconeSelecionado = null;
                     anelDeSelecao.enabled = false;
 
-                    resetarTexto();
+                    resetar();
                     resetarEstadoDeJogo();
                 }
 
@@ -142,7 +139,7 @@ public class PaginaAreaDeConhecimento : Pagina
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
-            atualizarTexto(icone);
+            atualizar(icone);
             atualizarEstadoDeJogo(icone);
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
@@ -151,7 +148,7 @@ public class PaginaAreaDeConhecimento : Pagina
             iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
-            resetarTexto();
+            resetar();
             resetarEstadoDeJogo();
         }
 
@@ -162,7 +159,7 @@ public class PaginaAreaDeConhecimento : Pagina
     {
         if (!iconeSelecionado)
         {
-            atualizarTexto(icone);
+            atualizar(icone);
         }
     }
 
@@ -170,23 +167,23 @@ public class PaginaAreaDeConhecimento : Pagina
     {
         if (!iconeSelecionado)
         {
-            resetarTexto();
+            resetar();
         }
     }
 
-    public void atualizarTexto(IconeAreaDeConhecimento icone)
+    private void atualizar(IconeAreaDeConhecimento icone)
     {
         nomeDoSelecionado.text = icone.areaDeConhecimento.nome;
         descricaoDoSelecionado.text = icone.areaDeConhecimento.descricao;
     }
 
-    public void resetarTexto()
+    private void resetar()
     {
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    public void atualizarEstadoDeJogo(IconeAreaDeConhecimento icone)
+    private void atualizarEstadoDeJogo(IconeAreaDeConhecimento icone)
     {
         // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(2, icone.GetComponent<Image>().sprite);

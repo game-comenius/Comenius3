@@ -1,18 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaNivelDeEnsino : Pagina
+public class PaginaNivelDeEnsino : PaginaPlanejamento
 {
     [SerializeField] private string nomePadrao;
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
-
     private IconeNivelDeEnsino iconeSelecionado;
 
     private void Start()
@@ -24,7 +20,7 @@ public class PaginaNivelDeEnsino : Pagina
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
@@ -53,7 +49,7 @@ public class PaginaNivelDeEnsino : Pagina
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
-            atualizarTexto(icone);
+            atualizar(icone);
             atualizarEstadoDeJogo(icone);
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
@@ -62,7 +58,7 @@ public class PaginaNivelDeEnsino : Pagina
             iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
-            resetarTexto();
+            resetar();
             resetarEstadoDeJogo();
         }
 
@@ -73,7 +69,7 @@ public class PaginaNivelDeEnsino : Pagina
     {
         if (!iconeSelecionado)
         {
-            atualizarTexto(icone);
+            atualizar(icone);
         }
     }
 
@@ -81,23 +77,23 @@ public class PaginaNivelDeEnsino : Pagina
     {
         if (!iconeSelecionado)
         {
-            resetarTexto();
+            resetar();
         }
     }
 
-    public void atualizarTexto(IconeNivelDeEnsino icone)
+    private void atualizar(IconeNivelDeEnsino icone)
     {
         nomeDoSelecionado.text = icone.nivelDeEnsino.nome;
         descricaoDoSelecionado.text = icone.nivelDeEnsino.descricao;
     }
 
-    public void resetarTexto()
+    private void resetar()
     {
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    public void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)
+    private void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)
     {
         // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(1, icone.GetComponent<Image>().sprite);
@@ -110,7 +106,7 @@ public class PaginaNivelDeEnsino : Pagina
         botaoConfirmar.interactable = true;
     }
 
-    public void resetarEstadoDeJogo()
+    private void resetarEstadoDeJogo()
     {
         iconManager.ResetIcon(1);
 

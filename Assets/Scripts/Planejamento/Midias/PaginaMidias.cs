@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaMidias : MonoBehaviour
+public class PaginaMidias : PaginaPlanejamento
 {
     [SerializeField] private string nomePadrao;
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
+    [SerializeField] private Image anelDeSelecao;
+    [SerializeField] [TextArea] private string descricaoPadrao;
     [SerializeField] private Button botaoProximaMidia;
     [SerializeField] private GameObject botaoMidiaAnterior;
     [SerializeField] private GameObject botaoPainelAnterior;
-    [SerializeField] private Image anelDeSelecao;
-    [SerializeField] [TextArea] private string descricaoPadrao;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
     [SerializeField] private GameObject[] paginas;
     [SerializeField] private Button botaoProximaPagina;
     [SerializeField] private Button botaoPaginaAnterior;
@@ -36,7 +33,7 @@ public class PaginaMidias : MonoBehaviour
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
@@ -91,7 +88,7 @@ public class PaginaMidias : MonoBehaviour
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
-            atualizarTexto(icone);
+            atualizar(icone);
             atualizarEstadoDeJogo(icone);
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
@@ -108,7 +105,7 @@ public class PaginaMidias : MonoBehaviour
 
             anelDeSelecao.enabled = false;
 
-            resetarTexto();
+            resetar();
             resetarEstadoDeJogo();
         }
 
@@ -121,14 +118,14 @@ public class PaginaMidias : MonoBehaviour
         {
             if (!primeiroIconeSelecionado)
             {
-                atualizarTexto(icone);
+                atualizar(icone);
             }
         }
         else
         {
             if (!segundoIconeSelecionado)
             {
-                atualizarTexto(icone);
+                atualizar(icone);
             }
         }
     }
@@ -139,31 +136,31 @@ public class PaginaMidias : MonoBehaviour
         {
             if (!primeiroIconeSelecionado)
             {
-                resetarTexto();
+                resetar();
             }
         }
         else
         {
             if (!segundoIconeSelecionado)
             {
-                resetarTexto();
+                resetar();
             }
         }
     }
 
-    public void atualizarTexto(IconeMidias icone)
+    private void atualizar(IconeMidias icone)
     {
         nomeDoSelecionado.text = icone.midia.nome;
         descricaoDoSelecionado.text = icone.midia.descricao;
     }
 
-    public void resetarTexto()
+    private void resetar()
     {
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    public void atualizarEstadoDeJogo(IconeMidias icone)
+    private void atualizarEstadoDeJogo(IconeMidias icone)
     {
         // Altera o sprite do pequeno guia da página para o sprite do selecionado
         int indice = 0;
@@ -183,7 +180,7 @@ public class PaginaMidias : MonoBehaviour
         EstadoDoJogo.Instance.MidiasSelecionadas[indice].sprite = icone.GetComponent<Image>().sprite;
     }
 
-    public void resetarEstadoDeJogo()
+    private void resetarEstadoDeJogo()
     {
         int indice = 0;
 
@@ -212,7 +209,7 @@ public class PaginaMidias : MonoBehaviour
         botaoConfirmar.gameObject.SetActive(true);
 
         ResetarPaginas();
-        resetarTexto();
+        resetar();
     }
 
     public void Voltar()
@@ -225,7 +222,7 @@ public class PaginaMidias : MonoBehaviour
         botaoConfirmar.gameObject.SetActive(false);
 
         ResetarPaginas();
-        resetarTexto();
+        resetar();
     }
 
     public void AvancarPagina()

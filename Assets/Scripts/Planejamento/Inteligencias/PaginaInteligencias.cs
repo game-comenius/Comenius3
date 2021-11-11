@@ -1,18 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaInteligencias : Pagina
+public class PaginaInteligencias : PaginaPlanejamento
 {
     [SerializeField] private string nomePadrao;
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
-
     private IconeInteligencias iconeSelecionado;
 
     private void Start()
@@ -24,7 +20,7 @@ public class PaginaInteligencias : Pagina
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
@@ -53,7 +49,7 @@ public class PaginaInteligencias : Pagina
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
-            atualizarTexto(icone);
+            atualizar(icone);
             atualizarEstadoDeJogo(icone);
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
@@ -62,7 +58,7 @@ public class PaginaInteligencias : Pagina
             iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
-            resetarTexto();
+            resetar();
             resetarEstadoDeJogo();
         }
 
@@ -73,7 +69,7 @@ public class PaginaInteligencias : Pagina
     {
         if (!iconeSelecionado)
         {
-            atualizarTexto(icone);
+            atualizar(icone);
         }
     }
 
@@ -81,23 +77,23 @@ public class PaginaInteligencias : Pagina
     {
         if (!iconeSelecionado)
         {
-            resetarTexto();
+            resetar();
         }
     }
 
-    public void atualizarTexto(IconeInteligencias icone)
+    private void atualizar(IconeInteligencias icone)
     {
         nomeDoSelecionado.text = icone.inteligencia.nome;
         descricaoDoSelecionado.text = icone.inteligencia.descricao;
     }
 
-    public void resetarTexto()
+    private void resetar()
     {
         nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    public void atualizarEstadoDeJogo(IconeInteligencias icone)
+    private void atualizarEstadoDeJogo(IconeInteligencias icone)
     {
         // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(3, icone.GetComponent<Image>().sprite);
@@ -110,7 +106,7 @@ public class PaginaInteligencias : Pagina
         botaoConfirmar.interactable = true;
     }
 
-    public void resetarEstadoDeJogo()
+    private void resetarEstadoDeJogo()
     {
         iconManager.ResetIcon(3);
 

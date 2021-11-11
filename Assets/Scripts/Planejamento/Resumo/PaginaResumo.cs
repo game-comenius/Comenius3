@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaResumo : MonoBehaviour
+public class PaginaResumo : PaginaPlanejamento
 {
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Image iconeNivelDeEnsino;
     [SerializeField] private Image iconeAreaDeConhecimento;
     [SerializeField] private Image iconeInteligencia;
     [SerializeField] private Text texto;
     [SerializeField] private Sprite icone;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
     [SerializeField] private Sprite backgroundSprite;
     [SerializeField] private Image background;
     private Sprite tempBackground;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         tempBackground = background.sprite;
         background.sprite = backgroundSprite;
@@ -65,15 +62,15 @@ public class PaginaResumo : MonoBehaviour
         {
             case "Nivel":
                 levelPart = $"Você irá jogar uma aula {preposition} " +
-                            $"<i><color=yellow>{EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome}</color></i> ";
+                            $"<i><color=orange>{EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome}</color></i> ";
                 break;
             case "Area":
                 areaPart = "sobre " +
-                           $"<i><color=yellow>{EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome}</color></i> ";
+                           $"<i><color=orange>{EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome}</color></i> ";
                 break;
             case "Inteligencia":
                 inteligencePart = "com uma turma de perfil " +
-                                  $"<i><color=yellow>{EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}</color></i>.";
+                                  $"<i><color=orange>{EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}</color></i>.";
                 break;
             default:
                 break;

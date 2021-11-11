@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaEscolhaDaPersonagem : Pagina
+public class PaginaEscolhaDaPersonagem : PaginaPlanejamento
 {
-    [SerializeField] private IconManager iconManager;
     [SerializeField] private Image corpoPersonagemSelecionada;
     [SerializeField] private Image cabeloPersonagemSelecionada;
     [SerializeField] private Image roupaPersonagemSelecionada;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
-    [SerializeField] [TextArea] private string ajuda;
-    [SerializeField] private Text textoAjuda;
 
     private IconePersonagem iconeSelecionado;
 
@@ -20,7 +17,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
         anelDeSelecao.enabled = false;  // Desabilita a imagem do anel de seleção
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
@@ -49,7 +46,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
             var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
             anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
 
-            atualizarSprites(icone);
+            atualizar(icone);
             atualizarEstadoDeJogo(icone);
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
@@ -58,7 +55,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
             iconeSelecionado = null;
             anelDeSelecao.enabled = false;
 
-            resetarSprites();
+            resetar();
             resetarEstadoDeJogo();
         }
 
@@ -69,7 +66,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
     {
         if (!iconeSelecionado)
         {
-            atualizarSprites(icone);
+            atualizar(icone);
         }
     }
 
@@ -77,11 +74,11 @@ public class PaginaEscolhaDaPersonagem : Pagina
     {
         if (!iconeSelecionado)
         {
-            resetarSprites();
+            resetar();
         }
     }
 
-    public void atualizarSprites(IconePersonagem icone)
+    private void atualizar(IconePersonagem icone)
     {
         // Ativar sprites do preview
         corpoPersonagemSelecionada.gameObject.SetActive(true);
@@ -94,14 +91,14 @@ public class PaginaEscolhaDaPersonagem : Pagina
         roupaPersonagemSelecionada.sprite = icone.SpriteRoupa;
     }
 
-    public void resetarSprites()
+    private void resetar()
     {
         corpoPersonagemSelecionada.gameObject.SetActive(false);
         cabeloPersonagemSelecionada.gameObject.SetActive(false);
         roupaPersonagemSelecionada.gameObject.SetActive(false);
     }
 
-    public void atualizarEstadoDeJogo(IconePersonagem icone)
+    private void atualizarEstadoDeJogo(IconePersonagem icone)
     {
         // Altera o sprite do pequeno guia da página para o sprite do selecionado
         iconManager.SetIcon(0, icone.GetComponent<Image>().sprite);
@@ -117,7 +114,7 @@ public class PaginaEscolhaDaPersonagem : Pagina
         botaoConfirmar.interactable = true;
     }
 
-    public void resetarEstadoDeJogo()
+    private void resetarEstadoDeJogo()
     {
         iconManager.ResetIcon(0);
 
