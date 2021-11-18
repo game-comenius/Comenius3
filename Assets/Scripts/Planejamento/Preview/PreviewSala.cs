@@ -18,10 +18,7 @@ public class PreviewSala : MonoBehaviour
         }
         else
         {
-            if (EstadoDoJogo.Instance.MetodologiaSelecionada == Metodologia.ABP)
-            {
-                sala.sprite = salaRegular;
-            }
+            sala.sprite = salaRegular;
         }
     }
 }

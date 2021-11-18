@@ -162,7 +162,6 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizarEstadoDeJogo(IconeMidias icone)
     {
-        // Altera o sprite do pequeno guia da página para o sprite do selecionado
         int indice = 0;
 
         if (!primeiraMidia)
@@ -233,15 +232,7 @@ public class PaginaMidias : PaginaPlanejamento
         paginas[paginaAtual].SetActive(true);
 
         DefinirEstadoDoAnelDeSelecao();
-
-        if (paginaAtual + 1 == paginas.Length)
-        {
-            botaoProximaPagina.interactable = false;
-        }
-        else if (paginaAtual == 1)
-        {
-            botaoPaginaAnterior.interactable = true;
-        }
+        atualizarBotoes();
     }
 
     public void VoltarPagina()
@@ -252,15 +243,7 @@ public class PaginaMidias : PaginaPlanejamento
         paginas[paginaAtual].SetActive(true);
 
         DefinirEstadoDoAnelDeSelecao();
-
-        if (paginaAtual == paginas.Length - 2)
-        {
-            botaoProximaPagina.interactable = true;
-        }
-        else if (paginaAtual == 0)
-        {
-            botaoPaginaAnterior.interactable = false;
-        }
+        atualizarBotoes();
     }
 
     private void ResetarPaginas()
@@ -306,5 +289,26 @@ public class PaginaMidias : PaginaPlanejamento
         }
 
         anelDeSelecao.enabled = false;
+    }
+
+    private void atualizarBotoes()
+    {
+        if (paginaAtual + 1 == paginas.Length)
+        {
+            botaoProximaPagina.interactable = false;
+        }
+        else
+        {
+            botaoProximaPagina.interactable = true;
+        }
+
+        if (paginaAtual == 0)
+        {
+            botaoPaginaAnterior.interactable = false;
+        }
+        else
+        {
+            botaoPaginaAnterior.interactable = true;
+        }
     }
 }
