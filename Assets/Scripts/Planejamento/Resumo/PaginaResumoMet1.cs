@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaResumo : PaginaPlanejamento
+public class PaginaResumoMet1 : PaginaPlanejamento
 {
     [SerializeField] private Image iconeNivelDeEnsino;
     [SerializeField] private Image iconeAreaDeConhecimento;
