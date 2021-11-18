@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class DropdownMenu : MonoBehaviour
 {
     [SerializeField] private GameObject dropdownMenu;
+    [SerializeField] private Vector2 offset;
 
     private RectTransform rect;
     private RectTransform dropdownMenuRect;
@@ -25,8 +25,8 @@ public class DropdownMenu : MonoBehaviour
         rect.GetWorldCorners(worldCorners);
         dropdownMenuRect.GetWorldCorners(dropdownWorldCorners);
 
-        float xPos = (worldCorners[0].x - worldCorners[3].x + dropdownWorldCorners[0].x - dropdownWorldCorners[3].x) / 2f + rect.position.x;
-        float yPos = (worldCorners[0].y - worldCorners[1].y + dropdownWorldCorners[0].y - dropdownWorldCorners[1].y) / 2f + rect.position.y;
+        float xPos = worldCorners[2].x - (dropdownWorldCorners[3].x - dropdownWorldCorners[0].x) / 2f + offset.x;
+        float yPos = worldCorners[2].y - (dropdownWorldCorners[1].y - dropdownWorldCorners[0].y) / 2f + offset.y;
 
         dropdownMenuPosition = new Vector3(xPos, yPos, 0f);
     }

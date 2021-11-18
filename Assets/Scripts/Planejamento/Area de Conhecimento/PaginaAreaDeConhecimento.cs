@@ -31,6 +31,8 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        // Mudar headline com a educação infantil
+
         textoAjuda.text = ajuda;
 
         if (iconeSelecionado)

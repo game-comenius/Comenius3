@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaResumoDoPlanejamento : Pagina
+public class PaginaResumoDoPlanejamento : PaginaPlanejamento
 {
     [Header("Ícones")]
     [SerializeField] Image IconeMidia1;
@@ -21,7 +21,7 @@ public class PaginaResumoDoPlanejamento : Pagina
     [SerializeField] Text NomeDaMidiaEAgrupamentoSala2;
 
     // Start is called before the first frame update
-    void OnEnable()
+    protected override void OnEnable()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 

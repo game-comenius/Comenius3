@@ -107,7 +107,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
                 agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
                 agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-                agrupamentoLivroDic.Add(Agrupamento.Trios, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
                 agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
 
                 possuiMidiaIndividual = true;
@@ -120,7 +120,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Trios, consoleParaJogoAgrupamentoGruposPequenos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
 
                 possuiMidiaIndividual = true;
             }
@@ -132,7 +132,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-                agrupamentoCadernoECartazDic.Add(Agrupamento.Trios, cadernoECartazAgrupamentoGruposPequenos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
 
                 possuiMidiaIndividual = true;
             }
@@ -144,7 +144,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                 agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);
                 agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
                 agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
-                agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
+                agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGruposPequenos);
 
                 possuiMidiaIndividual = true;
             }
@@ -205,7 +205,7 @@ public class DisplayAgrupamentoComMidia : Pagina
                     MostrarMidiaIndividual(midiasDisponiveis[midiaAlvo], midiasDisponiveis[midiaAlvo].agrupamento);
                 }
                 break;
-            case Agrupamento.Trios:
+            case Agrupamento.PequenosGrupos:
                 //Mostrar alunos
                 agrupamentoPequenosGrupos.SetActive(true);
                 //Mostrar midia

@@ -15,6 +15,7 @@ public class PaginaMidias : PaginaPlanejamento
     [SerializeField] private GameObject[] paginas;
     [SerializeField] private Button botaoProximaPagina;
     [SerializeField] private Button botaoPaginaAnterior;
+    [SerializeField] private bool segundaEtapa;
 
     private IconeMidias primeiroIconeSelecionado;
     private IconeMidias segundoIconeSelecionado;
@@ -162,11 +163,13 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizarEstadoDeJogo(IconeMidias icone)
     {
-        int indice = 0;
+        int indice = segundaEtapa ? 0 : 2;
+        int indiceIcone = 0;
 
         if (!primeiraMidia)
         {
-            indice = 1;
+            indice++;
+            indiceIcone++;
             botaoConfirmar.interactable = true;
         }
         else
@@ -174,18 +177,20 @@ public class PaginaMidias : PaginaPlanejamento
             botaoProximaMidia.interactable = true;
         }
 
-        iconManager.SetIcon(indice, icone.GetComponent<Image>().sprite);
+        iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
         EstadoDoJogo.Instance.MidiasSelecionadas[indice] = icone.midia;
         EstadoDoJogo.Instance.MidiasSelecionadas[indice].sprite = icone.GetComponent<Image>().sprite;
     }
 
     private void resetarEstadoDeJogo()
     {
-        int indice = 0;
+        int indice = segundaEtapa ? 0 : 2;
+        int indiceIcone = 0;
 
         if (!primeiraMidia)
         {
-            indice = 1;
+            indice++;
+            indiceIcone++;
             botaoConfirmar.interactable = false;
         }
         else
@@ -193,7 +198,7 @@ public class PaginaMidias : PaginaPlanejamento
             botaoProximaMidia.interactable = false;
         }
 
-        iconManager.ResetIcon(indice);
+        iconManager.ResetIcon(indiceIcone);
         EstadoDoJogo.Instance.MidiasSelecionadas[indice].sprite = null;
         EstadoDoJogo.Instance.MidiasSelecionadas[indice] = null;
     }

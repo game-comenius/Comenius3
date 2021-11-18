@@ -20,12 +20,14 @@ public class Midia
         {
             case NomeDeMidia.Lousa:
                 nome = "Lousa";
-                descricao = "Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado...";
+                descricao = "Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado " +
+                            "de forma colaborativa entre professor e estudante.";
                 break;
 
             case NomeDeMidia.LivroDidatico:
                 nome = "Livro Didático";
-                descricao = "É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto...";
+                descricao = "É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto de exercícios, textos e " +
+                            "imagens do conteúdo estudado em sala que acompanha o currículo escolar.";
                 break;
 
             case NomeDeMidia.LivrosJornaisERevistas:
@@ -35,14 +37,15 @@ public class Midia
 
             case NomeDeMidia.CadernosECartazes:
                 nome = "Cadernos e Cartazes";
-                descricao = "São mídias utilizadas para produção e armazenamento de informações por uso da escrita...";
+                descricao = "São mídias utilizadas para produção e armazenamento de informações por uso da escrita ou imagens, geralmente utilizadas pelos alunos.";
                 break;
 
             case NomeDeMidia.Televisao:
                 nome = "Televisão";
-                descricao = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos...";
+                descricao = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e " +
+                            "ficcionais, gravados ou ao vivo.";
                 break;
-            case NomeDeMidia.AparelhoDeSom:
+            case NomeDeMidia.AparelhoDeSom:  // Obsoleto?
                 nome = "Aparelho de Som";
                 descricao = "Esse aparelho é uma mídia de reprodução para propiciar comunicação por intermédio da transcepção de dados e informações como  fitas gravadas, " +
                     "CDs, DVDs e arquivos de diversos formatos, com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes."
@@ -57,37 +60,44 @@ public class Midia
 
             case NomeDeMidia.RedesSociais:
                 nome = "Redes Sociais";
-                descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento de informações, criação de grupos e diálogos entre seus usuários.";
+                descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento " +
+                            " de informações, criação de grupos e diálogos entre seus usuários.";
                 break;
 
             case NomeDeMidia.Jogos:
                 nome = "Jogos";
-                descricao = "Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo...";
+                descricao = "Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo tecnológico, contendo gêneros, " +
+                            "propostas e mecânicas variadas.";
                 break;
 
             case NomeDeMidia.EditoresDeAudioEVideo:
                 nome = "Editores de Áudio e Vídeo";
-                descricao = "Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções...";
+                descricao = "Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções para cortar, copiar e colar trechos " +
+                            "de áudio e video, bem como aplicar efeitos diversos.";
                 break;
 
             case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 nome = "Editores de Texto e Planilhas Eletrônicas";
-                descricao = "Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas...";
+                descricao = "Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas, contendo diversas ferramentas " +
+                            "para personalizar seu conteúdo como definição de cores, fonte, espaçamentos e muito mais.	";
                 break;
 
             case NomeDeMidia.AVEAs:
                 nome = "Plataformas";
-                descricao = "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos...";
+                descricao = "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e " +
+                            "disciplinas semipresenciais para alunos em geral.";
                 break;
 
             case NomeDeMidia.Aplicativos:
                 nome = "Aplicativos";
-                descricao = "Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar...";
+                descricao = "Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar um e-mail, ou acessar alguma " +
+                            "informação, como o GPS, entre outros.";
                 break;
 
             case NomeDeMidia.ProjetorMultimidia:
                 nome = "Projetor Multimídia";
-                descricao = "É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas...";
+                descricao = "É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas, slides à partir da projeção " +
+                            "(em maior escala) do que estiver sendo realizado no computador.";
                 break;
 
             default:

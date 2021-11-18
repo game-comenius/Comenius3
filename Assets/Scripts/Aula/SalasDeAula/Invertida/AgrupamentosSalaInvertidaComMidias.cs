@@ -123,7 +123,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
                 agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
                 agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-                agrupamentoLivroDic.Add(Agrupamento.Trios, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
                 agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
 
                 midiaPossuiIndividual01 = true;
@@ -136,7 +136,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Trios, consoleParaJogoAgrupamentoGruposPequenos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual01 = true;
             }
@@ -148,7 +148,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-                agrupamentoCadernoECartazDic.Add(Agrupamento.Trios, cadernoECartazAgrupamentoGruposPequenos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual01 = true;
             }
@@ -160,7 +160,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                  //////Ver a questão de qual é o nome da midia do computador e fazer duas versões(tela e midia 1 ou 2)
                 agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
                 agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
-                agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
+                agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual01 = true;
             }
@@ -178,7 +178,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoLivroDic.Add(Agrupamento.FormatoU, livroAgrupamentoSalaInteira);
                 agrupamentoLivroDic.Add(Agrupamento.Individual, livroAgrupamentoIndividual);
                 agrupamentoLivroDic.Add(Agrupamento.Duplas, livroAgrupamentoDupla);
-                agrupamentoLivroDic.Add(Agrupamento.Trios, livroAgrupamentoGruposPequenos);
+                agrupamentoLivroDic.Add(Agrupamento.PequenosGrupos, livroAgrupamentoGruposPequenos);
                 agrupamentoLivroDic.Add(Agrupamento.GrandesGrupos, livroAgrupamentoGrandesGrupos);
 
                 midiaPossuiIndividual02 = true;
@@ -191,7 +191,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.FormatoU, consoleParaJogoAgrupamentoSalaInteira);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.Duplas, consoleParaJogoAgrupamentoDupla);
                 agrupamentoConsolesParaJogosDic.Add(Agrupamento.GrandesGrupos, consoleParaJogoAgrupamentoGrandesGrupos);
-                agrupamentoConsolesParaJogosDic.Add(Agrupamento.Trios, consoleParaJogoAgrupamentoGruposPequenos);
+                agrupamentoConsolesParaJogosDic.Add(Agrupamento.PequenosGrupos, consoleParaJogoAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual02 = true;
             }
@@ -203,7 +203,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoCadernoECartazDic.Add(Agrupamento.FormatoU, cadernoECartazAgrupamentoSalaInteira);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.Duplas, cadernoECartazAgrupamentoDupla);
                 agrupamentoCadernoECartazDic.Add(Agrupamento.GrandesGrupos, cadernoECartazAgrupamentoGrandesGrupos);
-                agrupamentoCadernoECartazDic.Add(Agrupamento.Trios, cadernoECartazAgrupamentoGruposPequenos);
+                agrupamentoCadernoECartazDic.Add(Agrupamento.PequenosGrupos, cadernoECartazAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual02 = true;
             }
@@ -215,7 +215,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoComputadorDic.Add(Agrupamento.FormatoU, computadorAgrupamentoSalaInteira);                 
                 agrupamentoComputadorDic.Add(Agrupamento.Duplas, computadorAgrupamentoDupla);
                 agrupamentoComputadorDic.Add(Agrupamento.GrandesGrupos, computadorAgrupamentoGrandesGrupos);
-                agrupamentoComputadorDic.Add(Agrupamento.Trios, computadorAgrupamentoGruposPequenos);
+                agrupamentoComputadorDic.Add(Agrupamento.PequenosGrupos, computadorAgrupamentoGruposPequenos);
 
                 midiaPossuiIndividual02 = true;
             }
@@ -295,14 +295,14 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                 agrupamentoVisualizado = agrupamentoPequenosGrupos;
                 nomeDoAgrupamento.text = "Trios";
                 
-                EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.Trios;
+                EstadoDoJogo.Instance.MidiasSelecionadas[indiceDaMidia].agrupamento = Agrupamento.PequenosGrupos;
 
                 if(tela == 1)
                 {
                     //Se midia 1 for uma midia individual ativar seu agrupamento específico
                     if (midiaPossuiIndividual01)
                     {
-                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.Trios, midiaIndividualVizualizada01);
+                        MostrarMidiaIndividual(midiaSelecionada1, Agrupamento.PequenosGrupos, midiaIndividualVizualizada01);
                     }
                 }                
 
@@ -311,7 +311,7 @@ public class AgrupamentosSalaInvertidaComMidias : MonoBehaviour
                     //Se midia 2 for uma midia individual ativar seu agrupamento específico
                     if (midiaPossuiIndividual02)
                     {
-                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.Trios, midiaIndividualVizualizada02);
+                        MostrarMidiaIndividual(midiaSelecionada2, Agrupamento.PequenosGrupos, midiaIndividualVizualizada02);
                     }
                 }
                 
