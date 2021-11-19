@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class PaginaMidias : PaginaPlanejamento
 {
-    [SerializeField] private string nomePadrao;
-    [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
@@ -30,7 +28,6 @@ public class PaginaMidias : PaginaPlanejamento
         primeiraMidia = true;
         paginaAtual = 0;
 
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
@@ -151,19 +148,17 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizar(IconeMidias icone)
     {
-        nomeDoSelecionado.text = icone.midia.nome;
         descricaoDoSelecionado.text = icone.midia.descricao;
     }
 
     private void resetar()
     {
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeMidias icone)
     {
-        int indice = segundaEtapa ? 0 : 2;
+        int indice = segundaEtapa ? 2 : 0;
         int indiceIcone = 0;
 
         if (!primeiraMidia)
@@ -178,13 +173,16 @@ public class PaginaMidias : PaginaPlanejamento
         }
 
         iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
-        EstadoDoJogo.Instance.MidiasSelecionadas[indice] = icone.midia;
-        EstadoDoJogo.Instance.MidiasSelecionadas[indice].sprite = icone.GetComponent<Image>().sprite;
+
+        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        temp[indice] = icone.midia;
+        temp[indice].sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
     }
 
     private void resetarEstadoDeJogo()
     {
-        int indice = segundaEtapa ? 0 : 2;
+        int indice = segundaEtapa ? 2 : 0;
         int indiceIcone = 0;
 
         if (!primeiraMidia)
@@ -199,8 +197,10 @@ public class PaginaMidias : PaginaPlanejamento
         }
 
         iconManager.ResetIcon(indiceIcone);
-        EstadoDoJogo.Instance.MidiasSelecionadas[indice].sprite = null;
-        EstadoDoJogo.Instance.MidiasSelecionadas[indice] = null;
+
+        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        temp[indice] = null;
+        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
     }
 
     public void Confirmar()

@@ -2111,7 +2111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aprendizagem baseada em problemas
+  m_Text: "Qual ser\xE1 a sua estrat\xE9gia pedag\xF3gica?"
 --- !u!222 &204437968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2737,7 +2737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Espa\xE7os, tempos, quantidades, rela\xE7\xF5es e transforma\xE7\xF5es"
+  m_Text: "Qual ser\xE1 o perfil dos alunos desta turma?"
 --- !u!222 &261630185
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2856,11 +2856,11 @@ RectTransform:
   m_Father: {fileID: 1324917882}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 266, y: 296}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 87.787, y: 296}
   m_SizeDelta: {x: 800, y: 30.791016}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277458410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2893,7 +2893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ficha Resumo 1: Caracter\xEDsticas da Turma"
+  m_Text: "Ficha 1: Caracter\xEDsticas da Turma\t"
 --- !u!222 &277458411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2936,8 +2936,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -70, y: 530}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: -69.99999, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280484901
 MonoBehaviour:
@@ -3836,8 +3836,6 @@ MonoBehaviour:
   ajuda: "Nessa tela voc\xEA escolher\xE1 a metodologia que deseja usar no momento
     da aula. Ap\xF3s a decis\xE3o, aperte em \"Confirmar\" para proseguir."
   textoAjuda: {fileID: 1687012366}
-  nomePadrao: Metodologias
-  nomeDoSelecionado: {fileID: 204437967}
   descricaoDoSelecionado: {fileID: 280484901}
   botaoConfirmar: {fileID: 1745354898}
   anelDeSelecao: {fileID: 857162746}
@@ -4083,7 +4081,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ensino Superior
+  m_Text: "Qual o est\xE1gio de aprendizagem da turma?"
 --- !u!222 &369692274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4457,7 +4455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xC1rea de Conhecimento"
+  m_Text: "Campos de Experi\xEAncias"
 --- !u!222 &390119486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5594,7 +5592,6 @@ GameObject:
   - component: {fileID: 95265540}
   - component: {fileID: 521095686}
   - component: {fileID: 521095684}
-  - component: {fileID: 521095685}
   - component: {fileID: 521095683}
   m_Layer: 5
   m_Name: BotaoMetodologia3
@@ -5675,18 +5672,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &521095685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521095682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &521095686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5829,8 +5814,6 @@ MonoBehaviour:
   ajuda: "De acordo com a escolha anterior, selecione quais \xE1reas do conhecimento
     voc\xEA deseja desenvolver com seus alunos."
   textoAjuda: {fileID: 1687012366}
-  nomePadrao: "\xC1rea de Conhecimento"
-  nomeDoSelecionado: {fileID: 975800456}
   descricaoDoSelecionado: {fileID: 1504681805}
   botaoConfirmar: {fileID: 1593627298}
   anelDeSelecao: {fileID: 1737888634}
@@ -11673,7 +11656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Espa\xE7os, tempos, quantidades, rela\xE7\xF5es e transforma\xE7\xF5es"
+  m_Text: "Com base no n\xEDvel de ensino, o que ser\xE1 estudado?"
 --- !u!222 &975800457
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15316,7 +15299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconManager: {fileID: 452067417}
-  ajuda: 
+  ajuda: "Esta p\xE1gina resume as escolhas feitas anteriormente sobre as caracter\xEDsticas
+    da sua turma. Essa combina\xE7\xE3o servir\xE1 de base para o seu plano de aula
+    e definir\xE1 algumas perguntas do quizz."
   textoAjuda: {fileID: 1687012366}
   iconeNivelDeEnsino: {fileID: 1613194618}
   iconeAreaDeConhecimento: {fileID: 1850156593}
@@ -17345,7 +17330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: -70, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492043197
@@ -17498,8 +17483,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -70, y: 530}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: -69.99999, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504681805
 MonoBehaviour:
@@ -20393,7 +20378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: -69.99999, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714953148
@@ -20535,7 +20520,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d5925e12447dc3b48af4ad555d6c1435, type: 3}
-    m_FontSize: 16
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -20546,12 +20531,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ol\xE1, sou a Lurdinha vou te ajudar com seu planejamento! Aqui suas escolhas
-    v\xE3o definir como e onde a aula ser\xE1 feita.\n\nAgora que voc\xEA conhece
-    sua turma poder\xE1 montar uma aula interativa e interessante utilizando \nmetodologia,
-    espa\xE7o de ensino e diversas m\xEDdias! \n\nTenha sempre em mente as caracter\xEDsticas
-    da turma - voc\xEA pode relembr\xE1-las acessando sua Ficha 1 no menu. \n\nVamos
-    come\xE7ar sua estrat\xE9gia pedag\xF3gica escolhendo uma metodologia ativa! "
+  m_Text: "Ol\xE1, sou a Lurdinha vou te ajudar com seu planejamento!\nAqui suas
+    escolhas v\xE3o definir <b>como</b> e <b>onde</b> a aula ser\xE1 feita.\n\nAgora
+    que voc\xEA conhece sua turma poder\xE1 montar uma aula interativa e interessante
+    utilizando\n<b>metodologia, espa\xE7o de ensino e diversas m\xEDdias!</b>\n\nTenha
+    sempre em mente as caracter\xEDsticas da turma que voc\xEA selecionou na etapa
+    anterior.\n\nVamos come\xE7ar sua estrat\xE9gia pedag\xF3gica escolhendo uma
+    <b>metodologia ativa!</b>"
 --- !u!222 &1733958680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23286,8 +23272,6 @@ MonoBehaviour:
     Aqui voc\xEA deve levar em conta o perfil para turma e decidir quais intelig\xEAncias
     v\xE3o ser desenvolvidas em aula.\r Quando decidir, aperte no \"Confirmar\"."
   textoAjuda: {fileID: 1687012366}
-  nomePadrao: "Intelig\xEAncias"
-  nomeDoSelecionado: {fileID: 261630184}
   descricaoDoSelecionado: {fileID: 1492043197}
   botaoConfirmar: {fileID: 1282819563}
   anelDeSelecao: {fileID: 564481696}
@@ -24104,8 +24088,6 @@ MonoBehaviour:
   ajuda: "Nesta tela voc\xEA deve selecionar o n\xEDvel de ensino com o qual gostaria
     de trabalhar para prosseguir com as atividades.\r"
   textoAjuda: {fileID: 1687012366}
-  nomePadrao: "N\xEDvel de Ensino"
-  nomeDoSelecionado: {fileID: 369692273}
   descricaoDoSelecionado: {fileID: 1714953148}
   botaoConfirmar: {fileID: 8792170}
   anelDeSelecao: {fileID: 153625842}

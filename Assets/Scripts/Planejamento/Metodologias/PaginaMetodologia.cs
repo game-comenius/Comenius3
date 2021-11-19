@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class PaginaMetodologia : PaginaPlanejamento
 {
-    [SerializeField] private string nomePadrao;
-    [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
@@ -20,7 +18,6 @@ public class PaginaMetodologia : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
     
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
@@ -98,13 +95,11 @@ public class PaginaMetodologia : PaginaPlanejamento
 
     private void atualizar(IconeMetodologia icone)
     {
-        nomeDoSelecionado.text = icone.metodologia.nome;
         descricaoDoSelecionado.text = icone.metodologia.descricao;
     }
 
     private void resetar()
     {
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 

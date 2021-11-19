@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : PaginaPlanejamento
 {
-    [SerializeField] private string nomePadrao;
-    [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
@@ -25,7 +23,6 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
 
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
@@ -175,13 +172,11 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     private void atualizar(IconeAreaDeConhecimento icone)
     {
-        nomeDoSelecionado.text = icone.areaDeConhecimento.nome;
         descricaoDoSelecionado.text = icone.areaDeConhecimento.descricao;
     }
 
     private void resetar()
     {
-        nomeDoSelecionado.text = nomePadrao;
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
