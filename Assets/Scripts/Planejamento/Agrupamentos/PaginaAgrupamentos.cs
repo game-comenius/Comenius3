@@ -11,29 +11,40 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     [SerializeField] private GameObject botaoPainelAnterior;
     [SerializeField] private Image agrupamentoEmFocoImagem;
     [SerializeField] private Agrupamento[] agrupamentos;
-    [SerializeField] private Sprite[] agrupamentosSprites;
+    [SerializeField] private Sprite[] agrupamentosSpritesInfantil;
+    [SerializeField] private Sprite[] agrupamentosSpritesRegular;
     [SerializeField] private string[] agrupamentosNomes;
     [SerializeField] [TextArea] private string[] agrupamentosDescricao;
     [SerializeField] private Button botaoProximoAgrupamento;
     [SerializeField] private Button botaoAgrupamentoAnterior;
+    [SerializeField] private GameObject setaPrimeiraMidia;
+    [SerializeField] private GameObject setaSegundaMidia;
+    [SerializeField] private Image fundo;
+    [SerializeField] private Sprite fundoSprite;
 
+    private Sprite[] agrupamentosSprites;
     private int primeiroAgrupamentoSelecionado;
     private int segundoAgrupamentoSelecionado;
     private int agrupamentoEmFoco;
     private bool primeiroAgrupamento;
+    private Sprite fundoSpriteTemp;
 
     protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
-        iconManager.ShowIcon(1);
+        fundoSpriteTemp = fundo.sprite;
+        fundo.sprite = fundoSprite;
 
-        iconManager.SetIcon(0, EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite);
-        iconManager.SetIcon(1, EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite);
+        iconManager.ShowIcon(1);
+        iconManager.SetIcon(0, EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite);
+        iconManager.SetIcon(1, EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite);
     }
 
     private void OnDisable()
     {
+        fundo.sprite = fundoSpriteTemp;
+
         iconManager.ResetIcon(0);
         iconManager.ResetIcon(1);
         iconManager.HideIcon(1);
@@ -45,6 +56,16 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         primeiroAgrupamentoSelecionado = 0;
         segundoAgrupamentoSelecionado = 0;
         agrupamentoEmFoco = 0;
+
+        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        {
+            agrupamentosSprites = agrupamentosSpritesInfantil;
+        }
+        else
+        {
+            agrupamentosSprites = agrupamentosSpritesRegular;
+        }
+
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
 
         nomeDoSelecionado.text = agrupamentosNomes[agrupamentoEmFoco];
@@ -62,11 +83,11 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     {
         if (primeiroAgrupamento)
         {
-            EstadoDoJogo.Instance.MidiasSelecionadas[0].agrupamento = agrupamentos[agrupamentoSelecionado];
+            EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento = agrupamentos[agrupamentoSelecionado];
         }
         else
         {
-            EstadoDoJogo.Instance.MidiasSelecionadas[1].agrupamento = agrupamentos[agrupamentoSelecionado];
+            EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento = agrupamentos[agrupamentoSelecionado];
         }
     }
 
@@ -81,15 +102,17 @@ public class PaginaAgrupamentos : PaginaPlanejamento
             segundoAgrupamentoSelecionado = agrupamentoEmFoco;
         }
 
+        atualizarEstadoDeJogo(agrupamentoEmFoco);
         agrupamentoEmFoco = segundoAgrupamentoSelecionado;
         primeiroAgrupamento = false;
 
+        setaPrimeiraMidia.SetActive(false);
+        setaSegundaMidia.SetActive(true);
         botaoPainelAnterior.SetActive(false);
         botaoProximaMidia.gameObject.SetActive(false);
         botaoMidiaAnterior.SetActive(true);
         botaoConfirmar.gameObject.SetActive(true);
 
-        atualizarEstadoDeJogo(agrupamentoEmFoco);
         atualizar(segundoAgrupamentoSelecionado);
         atualizarBotoes();
     }
@@ -99,6 +122,8 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         agrupamentoEmFoco = primeiroAgrupamentoSelecionado;
         primeiroAgrupamento = true;
 
+        setaPrimeiraMidia.SetActive(true);
+        setaSegundaMidia.SetActive(false);
         botaoPainelAnterior.SetActive(true);
         botaoProximaMidia.gameObject.SetActive(true);
         botaoMidiaAnterior.SetActive(false);

@@ -8,5 +8,4 @@ public enum Agrupamento
     Duplas,
     PequenosGrupos,
     GrandesGrupos
-
 };

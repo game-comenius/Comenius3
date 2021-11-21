@@ -7,8 +7,8 @@ public sealed class Inteligencias
     (
         valor: 0,
         nome: "Corporal-cinestésica e Naturalista",
-        descricao: "<b>Corporal-cinestésica:</b>\nImplica o uso do próprio corpo para resolver problemas. Diz respeito à capacidade " +
-                   "de controlar os movimentos corporais, ao equilíbrio, à coordenação e à expressão por meio do corpo.\n\n<b>Natruralista:</b>\nRefere-se " +
+        descricao: "<b>Corporal-cinestésica</b>\n\nImplica o uso do próprio corpo para resolver problemas. Diz respeito à capacidade " +
+                   "de controlar os movimentos corporais, ao equilíbrio, à coordenação e à expressão por meio do corpo.\n\n<b>Natruralista</b>\n\nRefere-se " +
                    "à capacidade de compreender o mundo natural, identificando e distinguindo entre diferentes tipos de plantas, animais e formações climáticas."
     );
 
@@ -16,8 +16,8 @@ public sealed class Inteligencias
     (
         valor: 1,
         nome: "Intrapessoal e Espacial-visual",
-        descricao: "<b>Intrapessoal:</b>\nRefere-se à capacidade das pessoas de reconhecerem a si mesmos, percebendo seus " +
-                   "sentimentos...\n\n<b>Espacial-visual:</b>\nLigada à percepção visual e espacial, à interpretação e criação de " +
+        descricao: "<b>Intrapessoal</b>\n\nRefere-se à capacidade das pessoas de reconhecerem a si mesmos, percebendo seus " +
+                   "sentimentos...\n\n<b>Espacial-visual</b>\n\nLigada à percepção visual e espacial, à interpretação e criação de " +
                    "imagens visuais e à imaginação pictórica. Ela permite que as pessoas compreendam melhor informações gráficas, como mapas."
     );
 
@@ -25,8 +25,8 @@ public sealed class Inteligencias
     (
         valor: 2,
         nome: "Interpessoal e Musical",
-        descricao: "<b>Musical:</b>\nPermite aos indivíduos produzir, compreender e identificar os diferentes tipos de som, reconhecendo " +
-                   "harmonias, melodias, padrões tonais, e rítmicos.\n\n<b>Interpessoal:</b>\nRefere-se à capacidade de se relacionar com os outros, " +
+        descricao: "<b>Musical</b>\n\nPermite aos indivíduos produzir, compreender e identificar os diferentes tipos de som, reconhecendo " +
+                   "harmonias, melodias, padrões tonais, e rítmicos.\n\n<b>Interpessoal</b>\n\nRefere-se à capacidade de se relacionar com os outros, " +
                    "e o estilo de aprendizado ligado a esse tipo de inteligência envolve contato humano, trabalho em equipe e comunicação."
     );
 
@@ -34,8 +34,8 @@ public sealed class Inteligencias
     (
         valor: 3,
         nome: "Linguística e Lógico-matemática",
-        descricao: "<b>Lógico-matemática:</b>\nVoltado para conclusões baseadas na razão, e descreve a capacidade de resolver equações e " +
-                   "provas, de ter pensamento lógico, detectar padrões, fazer cálculos e resolver problemas abstratos.\n\n<b>Linguística:</b>\nRefere-se à " +
+        descricao: "<b>Lógico-matemática</b>\n\nVoltado para conclusões baseadas na razão, e descreve a capacidade de resolver equações e " +
+                   "provas, de ter pensamento lógico, detectar padrões, fazer cálculos e resolver problemas abstratos.\n\n<b>Linguística</b>\n\nRefere-se à " +
                    "capacidade de um indivíduo de se expressar, seja por meio da linguagem ou de gestos. Assim como a forma de analisar e interpretar ideias " +
                    "e informações, e produzir trabalhos envolvendo linguagem oral e escrita."
     );

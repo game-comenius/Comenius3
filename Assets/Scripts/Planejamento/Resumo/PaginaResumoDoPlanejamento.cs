@@ -20,9 +20,18 @@ public class PaginaResumoDoPlanejamento : PaginaPlanejamento
     [SerializeField] Text NomeDaMidiaEAgrupamentoSala1;
     [SerializeField] Text NomeDaMidiaEAgrupamentoSala2;
 
+    [Header("Ícones Laterais")]
+    [SerializeField] private Sprite primeiroIcone;
+    [SerializeField] private Sprite segundoIcone;
+
     // Start is called before the first frame update
     protected override void OnEnable()
     {
+
+        iconManager.ShowIcon(1);
+        iconManager.SetIcon(0, primeiroIcone);
+        iconManager.SetIcon(1, segundoIcone);
+
         var estadoDoJogo = EstadoDoJogo.Instance;
 
         if (estadoDoJogo.MetodologiaSelecionada == Metodologia.Invertida)
@@ -43,4 +52,10 @@ public class PaginaResumoDoPlanejamento : PaginaPlanejamento
         }
     }
 
+    private void OnDisable()
+    {
+        iconManager.HideIcon(1);
+        iconManager.ResetIcon(0);
+        iconManager.ResetIcon(1);
+    }
 }

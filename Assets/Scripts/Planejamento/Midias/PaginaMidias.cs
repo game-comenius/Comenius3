@@ -14,11 +14,16 @@ public class PaginaMidias : PaginaPlanejamento
     [SerializeField] private Button botaoProximaPagina;
     [SerializeField] private Button botaoPaginaAnterior;
     [SerializeField] private bool segundaEtapa;
+    [SerializeField] private GameObject setaPrimeiraMidia;
+    [SerializeField] private GameObject setaSegundaMidia;
+    [SerializeField] private Image fundo;
+    [SerializeField] private Sprite spriteFundo;
 
     private IconeMidias primeiroIconeSelecionado;
     private IconeMidias segundoIconeSelecionado;
     private bool primeiraMidia;
     private int paginaAtual;
+    private Sprite spriteFundoTemp;
 
     private void Start()
     {
@@ -35,12 +40,15 @@ public class PaginaMidias : PaginaPlanejamento
     {
         textoAjuda.text = ajuda;
 
+        spriteFundoTemp = fundo.sprite;
+        fundo.sprite = spriteFundo;
+
         iconManager.ShowIcon(1);
 
         if (primeiroIconeSelecionado)
         {
             iconManager.SetIcon(0, primeiroIconeSelecionado.GetComponent<Image>().sprite);
-            primeiraMidia = false;
+            // primeiraMidia = false;  // Avaliar isso aqui
         }
 
         if (segundoIconeSelecionado)
@@ -51,6 +59,8 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void OnDisable()
     {
+        fundo.sprite = spriteFundoTemp;
+
         iconManager.ResetIcon(0);
         iconManager.ResetIcon(1);
         iconManager.HideIcon(1);
@@ -207,6 +217,10 @@ public class PaginaMidias : PaginaPlanejamento
     {
         primeiraMidia = false;
 
+        primeiroIconeSelecionado.selecionado = false;
+
+        setaPrimeiraMidia.SetActive(false);
+        setaSegundaMidia.SetActive(true);
         botaoPainelAnterior.SetActive(false);
         botaoProximaMidia.gameObject.SetActive(false);
         botaoMidiaAnterior.SetActive(true);
@@ -220,6 +234,10 @@ public class PaginaMidias : PaginaPlanejamento
     {
         primeiraMidia = true;
 
+        segundoIconeSelecionado.selecionado = false;
+
+        setaPrimeiraMidia.SetActive(true);
+        setaSegundaMidia.SetActive(false);
         botaoPainelAnterior.SetActive(true);
         botaoProximaMidia.gameObject.SetActive(true);
         botaoMidiaAnterior.SetActive(false);
