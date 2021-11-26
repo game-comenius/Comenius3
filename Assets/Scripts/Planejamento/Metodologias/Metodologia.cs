@@ -6,7 +6,7 @@ public sealed class Metodologia
     (
         valor: 0,
         nome: "Aprendizagem Baseada em Problemas",
-        descricao: "Nessa abordagem os estudantes se deparam com um problema e precisam buscar possíveis soluções. " +
+        descricao: "<b>Aprendizagem Baseada em Problemas</b>\n\nNessa abordagem os estudantes se deparam com um problema e precisam buscar possíveis soluções. " +
                    "Assim a curiosidade é a base para a elaboração de perguntas acerca dos assuntos estudados.  A ideia " +
                    "não é ter sempre o problema resolvido na etapa final do trabalho, e sim enfatizar o processo de aprendizagem do grupo na busca de uma solução."
     );
@@ -15,7 +15,7 @@ public sealed class Metodologia
     (
         valor: 1,
         nome: "Sala de Aula Invertida",
-        descricao: "A sala de aula invertida, também conhecida como Flipped Classroom, é o método que inverte a sequência tradicional do processo " +
+        descricao: "<b>Sala de Aula Invertida</b>\n\nA sala de aula invertida, também conhecida como Flipped Classroom, é o método que inverte a sequência tradicional do processo " +
                    "de ensino e aprendizagem.\nOs estudantes realizam leituras e pesquisas antes da aula. Podem participar de atividades interativas " +
                    "como jogos e chats, ou ainda fazer uma leitura, assistir um vídeo.\nEm sala de aula, discutem sobre o tema com o docente e os " +
                    "demais colegas, tiram suas dúvidas e fazem atividades. As dúvidas e reflexões que os estudantes levarem para a aula são tomadas " +

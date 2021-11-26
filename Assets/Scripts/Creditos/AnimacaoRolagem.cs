@@ -1,63 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AnimacaoRolagem : MonoBehaviour
 {
+    [SerializeField] private GameObject[] itens;
+    [SerializeField] float velocidade;
 
-    public GameObject ProducaoECoord;
-    public GameObject GameDesign;
-    public GameObject Arte;
-    public GameObject Programacao;
-    public GameObject Pedagogico;
+    private Vector2[] posicoesOriginais;
+    private int indiceExibicao;
 
-    int velocidade = Screen.height / 12;
-    float ProducaoECoordY, ProducaoECoordX;
-    float GameDesignY, GameDesignX;
-    float ArteY, ArteX;
-    float ProgramacaoY, ProgramacaoX;
-    float PedagogicoY, PedagogicoX;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ProducaoECoordY = ProducaoECoord.transform.position.y;
-        ProducaoECoordX = ProducaoECoord.transform.position.x;
+        indiceExibicao = 0;
+        posicoesOriginais = new Vector2[itens.Length];
 
-        GameDesignY = GameDesign.transform.position.y;
-        GameDesignX = GameDesign.transform.position.x;
-
-        ArteY = Arte.transform.position.y;
-        ArteX = Arte.transform.position.x;
-
-        ProgramacaoY = Programacao.transform.position.y;
-        ProgramacaoX = Programacao.transform.position.x;
-
-        PedagogicoY = Pedagogico.transform.position.y;
-        PedagogicoX = Pedagogico.transform.position.x;
+        for (int i = 0; i < itens.Length; ++i)
+        {
+            posicoesOriginais[i] = itens[i].GetComponent<RectTransform>().anchoredPosition;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        itens[indiceExibicao].transform.Translate(Vector3.up * velocidade);
 
-        if (ProducaoECoord.transform.position.y < Screen.height - (Screen.height / 35)) {
-            ProducaoECoord.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-            GameDesign.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-            Arte.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-            Programacao.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-            Pedagogico.transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-        } /*else {
+        RectTransform rect = itens[indiceExibicao].GetComponent<RectTransform>();
 
-            ProducaoECoord.transform.position = new Vector3(ProducaoECoordX, ProducaoECoordY, transform.position.z);
-            GameDesign.transform.position = new Vector3(GameDesignX, GameDesignY, transform.position.z);
-            Arte.transform.transform.position = new Vector3(ArteX, ArteY, transform.position.z);
-            Programacao.transform.position = new Vector3(ProgramacaoX, ProgramacaoY, transform.position.z);
-            Pedagogico.transform.position = new Vector3(PedagogicoX, PedagogicoY, transform.position.z);
 
-        } */
+        if (rect.anchoredPosition.y > Screen.height)
+        {
+            rect.anchoredPosition = posicoesOriginais[indiceExibicao];
 
-        //Debug.Log(ProducaoECoord.transform.position.x + " " + ProducaoECoord.transform.position.y + " " + ProducaoECoord.transform.position.z);
-
+            ++indiceExibicao;
+            if (indiceExibicao == itens.Length)
+            {
+                indiceExibicao = 0;
+            }
+        }
     }
 }

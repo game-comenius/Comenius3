@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
         AulaABP
     }
 
-    //public float volume;
+    [SerializeField] private float volumeInicial;
 
     //Controle de cenas
     private string ultimaCena;
@@ -126,6 +126,11 @@ public class AudioManager : MonoBehaviour
         trilhaInicial.GetComponent<AudioSource>().clip = clipe;
         //Configurar a trilha para ficar em looping
         trilhaInicial.GetComponent<AudioSource>().loop = true;
+        // Volume inicial (Gambiarra extrema)
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            trilhaInicial.GetComponent<AudioSource>().volume = volumeInicial;
+        }
         //Tocar o SFX
         trilhaInicial.GetComponent<AudioSource>().Play();
     }

@@ -1446,6 +1446,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 109.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2900190119787355116, guid: 4e78f7472d201e54a83cf713a94c65f9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cb3e678dafb62b4b8649784fedc182e, type: 2}
     - target: {fileID: 3461088054946381903, guid: 4e78f7472d201e54a83cf713a94c65f9,
         type: 3}
       propertyPath: m_IsActive
@@ -4165,10 +4170,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lembre que nesse momento voc\xEA est\xE1 no papel de aluno(a). Agora voc\xEA
-    deve escolher quais atividades o(a) aluno(a) vai executar e a sequ\xEAncia de
-    interesse. Fa\xE7a ao menos duas tarefas escolares conforme solicitado pelo(a)
-    professor(a) e uma atividade de lazer de livre escolha."
+  m_text: "Agora voc\xEA est\xE1 no papel do estudante, o perfil da sua turma deve
+    influ\xEAnciar nas atividades de lazer e os objetos tem que se relacionar com
+    as m\xEDdias selecionadas para o quarto. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1cda096ce065e4d06a58cf4ba5e5e098, type: 2}
   m_sharedMaterial: {fileID: 8232838106164297912, guid: 1cda096ce065e4d06a58cf4ba5e5e098,
@@ -4196,7 +4200,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.2
+  m_fontSize: 19
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5342,6 +5346,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 994576705}
     m_Modifications:
+    - target: {fileID: 697044192868007707, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697044192868007707, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697044192868007707, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 697044192868007707, guid: 56b52d848255379438701829adf3456e,
+        type: 3}
+      propertyPath: m_TargetDisplay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 707408641130425442, guid: 56b52d848255379438701829adf3456e,
         type: 3}
       propertyPath: m_Name
@@ -6593,6 +6617,29 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1465399893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946502061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946502059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1366, y: 768}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1001 &1976915249
 PrefabInstance:
   m_ObjectHideFlags: 0

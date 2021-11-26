@@ -3719,6 +3719,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 662372259}
     m_Modifications:
+    - target: {fileID: 335052583354544188, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335052583354544188, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335052583965177033, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335052583965177033, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335052583965177033, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335052584228481692, guid: 21216db89663f8246818f107542c6595,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4053,18 +4083,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349058951}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1363541646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.5, y: 10}
-  m_SizeDelta: {x: 371, y: 40}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000015258789, y: 84.999985}
+  m_SizeDelta: {x: 50, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349058953
 MonoBehaviour:
@@ -4164,7 +4194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconManager: {fileID: 452067417}
   ajuda: "Nessa tela voc\xEA escolher\xE1 a metodologia que deseja usar no momento
-    da aula. Ap\xF3s a decis\xE3o, aperte em \"Confirmar\" para proseguir."
+    da aula. Ap\xF3s a decis\xE3o, aperte em \"Ok\" para proseguir."
   textoAjuda: {fileID: 1687012366}
   descricaoDoSelecionado: {fileID: 280484901}
   botaoConfirmar: {fileID: 293419948}
@@ -5187,6 +5217,7 @@ MonoBehaviour:
   - {fileID: 1932678899}
   - {fileID: 872308337}
   - {fileID: 753029954}
+  defaultIcon: {fileID: 21300000, guid: b386465f868cbe740a4fb8b18b7dae8c, type: 3}
 --- !u!1 &456295527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6192,6 +6223,7 @@ MonoBehaviour:
   ajuda: "De acordo com a escolha anterior, selecione quais \xE1reas do conhecimento
     voc\xEA deseja desenvolver com seus alunos."
   textoAjuda: {fileID: 1687012366}
+  titulo: {fileID: 390119485}
   descricaoDoSelecionado: {fileID: 1504681805}
   botaoConfirmar: {fileID: 663342127}
   anelDeSelecao: {fileID: 1737888634}
@@ -6653,9 +6685,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7403270432530615713, guid: b67b623554d3cbe47a1bdc9799b5a68b,
         type: 3}
+      propertyPath: volumeInicial
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403270432530615713, guid: b67b623554d3cbe47a1bdc9799b5a68b,
+        type: 3}
       propertyPath: momentoDoCriadorTrilha
       value: 
-      objectReference: {fileID: 8300000, guid: 86fbc8f4171266544942f393cb088048, type: 3}
+      objectReference: {fileID: 8300000, guid: 9ec36e0ba6b01e245b602fbf43a41393, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67b623554d3cbe47a1bdc9799b5a68b, type: 3}
 --- !u!1 &551087229
@@ -7169,7 +7206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 20, y: 50}
-  m_SizeDelta: {x: 170, y: 35}
+  m_SizeDelta: {x: 170, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590406554
 MonoBehaviour:
@@ -7184,9 +7221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUp: {fileID: 1363541645}
+  popUpArrow: {fileID: 349058951}
   text: {fileID: 1711443333}
   orientation: 1
-  offset: 35
   content: "Escolha algumas caracter\xEDsticas dos seus alunos\r e o que ser\xE1
     estudado."
 --- !u!114 &590406555
@@ -7345,7 +7382,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 20, y: 15}
-  m_SizeDelta: {x: 210, y: 35}
+  m_SizeDelta: {x: 210, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604962823
 MonoBehaviour:
@@ -7360,9 +7397,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUp: {fileID: 1363541645}
+  popUpArrow: {fileID: 349058951}
   text: {fileID: 1711443333}
   orientation: 1
-  offset: 35
   content: "Defina como e onde acontecer\xE1 sua aula."
 --- !u!114 &604962824
 MonoBehaviour:
@@ -10517,7 +10554,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 20, y: -30}
-  m_SizeDelta: {x: 340, y: 50}
+  m_SizeDelta: {x: 340, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838066948
 MonoBehaviour:
@@ -10532,9 +10569,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUp: {fileID: 1363541645}
+  popUpArrow: {fileID: 349058951}
   text: {fileID: 1711443333}
   orientation: 1
-  offset: 55
   content: "Todas as op\xE7\xF5es das etapas anteriores s\xE3o acompanhadas de informa\xE7\xF5es
     importantes para responder \xE0s perguntas do quiz, e escolhas conscientes resultam
     em pontua\xE7\xE3o alta e uma aula interativa e interessante!"
@@ -13169,8 +13206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 28, y: 1}
+  m_SizeDelta: {x: 28, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011709821
 MonoBehaviour:
@@ -16490,8 +16527,6 @@ GameObject:
   - component: {fileID: 1363541646}
   - component: {fileID: 1363541648}
   - component: {fileID: 1363541647}
-  - component: {fileID: 1363541649}
-  - component: {fileID: 1363541650}
   m_Layer: 5
   m_Name: Hover PopUp
   m_TagString: Untagged
@@ -16508,7 +16543,7 @@ RectTransform:
   m_GameObject: {fileID: 1363541645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349058952}
@@ -16518,8 +16553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160.1, y: -112.50009}
-  m_SizeDelta: {x: 391, y: 36.512085}
+  m_AnchoredPosition: {x: -160.09995, y: -112.50003}
+  m_SizeDelta: {x: 391, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363541647
 MonoBehaviour:
@@ -16559,46 +16594,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363541645}
   m_CullTransparentMesh: 0
---- !u!114 &1363541649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363541645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: -30
-    m_Bottom: 10
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
-  m_ReverseArrangement: 0
---- !u!114 &1363541650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363541645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!1001 &1383587157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17860,7 +17855,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1440837590}
   m_OnClick:
     m_PersistentCalls:
@@ -19517,6 +19512,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Planejamento
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1440837589}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1572999916
 MonoBehaviour:
@@ -21201,7 +21208,6 @@ GameObject:
   - component: {fileID: 1711443332}
   - component: {fileID: 1711443334}
   - component: {fileID: 1711443333}
-  - component: {fileID: 1711443335}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -21224,10 +21230,10 @@ RectTransform:
   m_Father: {fileID: 1363541646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.5, y: -18.256042}
-  m_SizeDelta: {x: 371, y: 16.512087}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -19.999998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711443333
 MonoBehaviour:
@@ -21271,20 +21277,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711443331}
   m_CullTransparentMesh: 0
---- !u!114 &1711443335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711443331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!1 &1714953146
 GameObject:
   m_ObjectHideFlags: 0
@@ -24345,7 +24337,7 @@ MonoBehaviour:
   iconManager: {fileID: 452067417}
   ajuda: "Voc\xEA sabia que nem todos os alunos t\xEAm facilidade com os mesmos temas?
     Aqui voc\xEA deve levar em conta o perfil para turma e decidir quais intelig\xEAncias
-    v\xE3o ser desenvolvidas em aula.\r Quando decidir, aperte no \"Confirmar\"."
+    v\xE3o ser desenvolvidas em aula.\r"
   textoAjuda: {fileID: 1687012366}
   descricaoDoSelecionado: {fileID: 1492043197}
   botaoConfirmar: {fileID: 1383587158}

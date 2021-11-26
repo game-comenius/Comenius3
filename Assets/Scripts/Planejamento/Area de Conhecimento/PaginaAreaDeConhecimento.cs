@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : PaginaPlanejamento
 {
+    [SerializeField] private Text titulo;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
@@ -30,8 +31,6 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
     {
         // Mudar headline com a educação infantil
 
-        textoAjuda.text = ajuda;
-
         if (iconeSelecionado)
         {
             iconManager.SetIcon(2, iconeSelecionado.GetComponent<Image>().sprite);
@@ -48,6 +47,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         {
             case 0:
                 iconesInfantil.SetActive(true);
+                titulo.text = "Campos de Experiência";
 
                 if (ultimoGrupoAtivo != iconesInfantil)
                 {
@@ -62,6 +62,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
                 break;
             case 1:
                 iconesFundamental.SetActive(true);
+                titulo.text = "Áreas de Conhecimento";
 
                 if (ultimoGrupoAtivo != iconesFundamental)
                 {
@@ -76,6 +77,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
                 break;
             case 2:
                 iconesMedio.SetActive(true);
+                titulo.text = "Áreas de Conhecimento";
 
                 if (ultimoGrupoAtivo != iconesMedio)
                 {
@@ -90,6 +92,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
                 break;
             case 3:
                 iconesSuperior.SetActive(true);
+                titulo.text = "Áreas de Conhecimento";
 
                 if (ultimoGrupoAtivo != iconesSuperior)
                 {
@@ -102,19 +105,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
                 ultimoGrupoAtivo = iconesSuperior;
                 break;
-            default:  // Por padrão exibe o grupo infantil
-                iconesInfantil.SetActive(true);
-
-                if (ultimoGrupoAtivo != iconesInfantil)
-                {
-                    iconeSelecionado = null;
-                    anelDeSelecao.enabled = false;
-
-                    resetar();
-                    resetarEstadoDeJogo();
-                }
-
-                ultimoGrupoAtivo = iconesInfantil;
+            default:
                 break;
         }
     }

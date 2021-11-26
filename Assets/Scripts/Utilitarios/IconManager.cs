@@ -4,16 +4,7 @@ using UnityEngine.UI;
 public class IconManager : MonoBehaviour
 {
     [SerializeField] private Image[] icons;
-
-    private Sprite defaultSprite;
-
-    private void Start()
-    {
-        if (icons.Length > 0)
-        {
-            defaultSprite = icons[0].sprite;
-        }
-    }
+    [SerializeField] private Sprite defaultIcon;
 
     public void SetIcon(int index, Sprite sprite)
     {
@@ -27,7 +18,7 @@ public class IconManager : MonoBehaviour
 
     public void ResetIcon(int index)
     {
-        icons[index].sprite = defaultSprite;
+        icons[index].sprite = defaultIcon;
     }
 
     public void HideIcon(int index)

@@ -102,7 +102,7 @@ public class PlanilhaDoGoogleInspector : Editor
         if (_webRequest != null && _webRequest.isDone)
         {
             EditorApplication.update -= CheckForImportRequestEnd;
-            if (_webRequest.isNetworkError || _webRequest.isHttpError)
+            if (_webRequest.result == UnityWebRequest.Result.ConnectionError || _webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(_webRequest.error);
                 return;
