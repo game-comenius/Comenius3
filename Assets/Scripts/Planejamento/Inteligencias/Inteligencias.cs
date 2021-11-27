@@ -16,8 +16,8 @@ public sealed class Inteligencias
     (
         valor: 1,
         nome: "Intrapessoal e Espacial-visual",
-        descricao: "<b>Intrapessoal</b>\n\nRefere-se à capacidade das pessoas de reconhecerem a si mesmos, percebendo seus " +
-                   "sentimentos...\n\n<b>Espacial-visual</b>\n\nLigada à percepção visual e espacial, à interpretação e criação de " +
+        descricao: "<b>Intrapessoal</b>\n\nRefere-se à capacidade das pessoas de reconhecerem a si mesmos, percebendo seus sentimentos, motivações e desejos. Está " +
+                   "ligada à capacidade de identificar seus hábitos inconscientes, transformar suas atitudes, controlar vícios e emoções.\n\n<b>Espacial-visual</b>\n\nLigada à percepção visual e espacial, à interpretação e criação de " +
                    "imagens visuais e à imaginação pictórica. Ela permite que as pessoas compreendam melhor informações gráficas, como mapas."
     );
 

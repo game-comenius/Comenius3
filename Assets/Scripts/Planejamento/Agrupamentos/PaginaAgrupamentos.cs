@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class PaginaAgrupamentos : PaginaPlanejamento
 {
-    [SerializeField] private Text nomeDoSelecionado;
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Button botaoProximaMidia;
@@ -68,13 +67,11 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
 
-        nomeDoSelecionado.text = agrupamentosNomes[agrupamentoEmFoco];
         descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoEmFoco];
     }
 
     private void atualizar(int agrupamentoSelecionado)
     {
-        nomeDoSelecionado.text = agrupamentosNomes[agrupamentoSelecionado];
         descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoSelecionado];
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoSelecionado];
     }

@@ -3,8 +3,8 @@
 public class AnimacaoRolagem : MonoBehaviour
 {
     [SerializeField] private GameObject[] itens;
-    [SerializeField] float velocidade;
 
+    private float velocidade = Screen.height / 10f;
     private Vector2[] posicoesOriginais;
     private int indiceExibicao;
 
@@ -21,7 +21,7 @@ public class AnimacaoRolagem : MonoBehaviour
 
     void Update()
     {
-        itens[indiceExibicao].transform.Translate(Vector3.up * velocidade);
+        itens[indiceExibicao].transform.Translate(Vector3.up * Time.deltaTime * velocidade);
 
         RectTransform rect = itens[indiceExibicao].GetComponent<RectTransform>();
 

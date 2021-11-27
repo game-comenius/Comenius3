@@ -38,10 +38,6 @@ public class AudioManager : MonoBehaviour
     //Controle de cenas
     private string ultimaCena;
 
-    //Impedir que a música pare no menu.
-    bool jaIniciou = false;
-
-
     private void Awake()
     {
 
@@ -104,7 +100,6 @@ public class AudioManager : MonoBehaviour
         {
             case "AulaABP":
                 CriacaoGameObjectTrilhaSonora(aulaTrilha);
-                jaIniciou = false;
                 break;
             case "MenuPrincipal":
                 CriacaoGameObjectTrilhaSonora(menuTrilha);

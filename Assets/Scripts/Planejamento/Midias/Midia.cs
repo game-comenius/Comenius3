@@ -20,30 +20,34 @@ public class Midia
         {
             case NomeDeMidia.Lousa:
                 nome = "Lousa";
-                descricao = "Superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo ou usado " +
-                            "de forma colaborativa entre professor e estudante.";
+                descricao = "A lousa é uma superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo "+
+                            "do docente ou de forma colaborativa para docente e estudante.";
                 break;
 
             case NomeDeMidia.LivroDidatico:
                 nome = "Livro Didático";
-                descricao = "É uma mídia de consulta comum do professor e aluno, de cunho pedagógico composto de exercícios, textos e " +
-                            "imagens do conteúdo estudado em sala que acompanha o currículo escolar.";
+                descricao = "O livro didático é uma mídia de consulta comum do docente e aluno, de cunho pedagógico, composto de exercícios, textos e " +
+                            "imagens do conteúdo estudado, que acompanham o currículo escolar.";
                 break;
 
             case NomeDeMidia.LivrosJornaisERevistas:
                 nome = "Livros, Jornais e Revistas";
-                descricao = "Essas mídias impressas são de uso popular e contém diversos gêneros literários, destinadas à diferentes públicos.";
+                descricao = "Livros, jornais e revistas são publicações de cunho literário, informativo, jornalístico ou de entretenimento. Contém pág" +
+                            "inas impressas em papel com textos e imagens. Podem ser usados como material para leitura, consulta, ou base de recorte p" +
+                            "ara atividades.";
                 break;
 
             case NomeDeMidia.CadernosECartazes:
                 nome = "Cadernos e Cartazes";
-                descricao = "São mídias utilizadas para produção e armazenamento de informações por uso da escrita ou imagens, geralmente utilizadas pelos alunos.";
+                descricao = "Caderno e cartazes são mídias utilizadas para produção e armazenamento de informações por uso da escrita ou das imagens. " +
+                            "Auxiliam no exercício de autonomia, colaborando para que os estudantes aprendam a sistematizar o conhecimento adquirido, " +
+                            "as dúvidas e as descobertas feitas.";
                 break;
 
             case NomeDeMidia.Televisao:
                 nome = "Televisão";
-                descricao = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e " +
-                            "ficcionais, gravados ou ao vivo.";
+                descricao = "A televisão é um meio de comunição de massa. Um sistema eletrônico de transmissão e recepção de imagens e sons gerados ao" +
+                            " vivo ou previamente gravadas, com programações artísticas, culturais, educativas, informativas etc.";
                 break;
             case NomeDeMidia.AparelhoDeSom:  // Obsoleto?
                 nome = "Aparelho de Som";
@@ -60,44 +64,52 @@ public class Midia
 
             case NomeDeMidia.RedesSociais:
                 nome = "Redes Sociais";
-                descricao = "São estruturas digitais (sites e aplicativos) formada por pessoas ou empresas com interesses comuns, que permite o compartilhamento " +
-                            " de informações, criação de grupos e diálogos entre seus usuários.";
+                descricao = "Redes Sociais são estruturas dinâmicas e complexas formadas por pessoas com valores e/ou objetivos em comum, interligadas" +
+                            " de forma horizontal e predominantemente descentralizada, que existem desde o início da sociedade humana. As redes sociai" +
+                            "s online se articulam através das mídias sociais que são espaços de comunicação e de relacionamento, a partir da conexão " +
+                            "pela internet, que permitem a troca de mensagens e a partilha de conteúdos entre indivíduos e grupos, ampliando as possib" +
+                            "ilidades de todo tipo de relacionamento entre eles.";
                 break;
 
             case NomeDeMidia.Jogos:
                 nome = "Jogos";
-                descricao = "Os Jogos Digitais são desenhados para serem jogados num computador, numa console ou outro dispositivo tecnológico, contendo gêneros, " +
-                            "propostas e mecânicas variadas.";
+                descricao = "Um Jogo digital é uma atividade lúdica composta por mecânicas, estéticas e narrativas, suportadas por uma tecnologia, ond" +
+                            "e o jogador realiza uma série de ações e decisões, que estão limitadas por regras e pelo contexto do contexto do game, re" +
+                            "cebendo feedback constante e buscando alcançar um meta.";
                 break;
 
             case NomeDeMidia.EditoresDeAudioEVideo:
                 nome = "Editores de Áudio e Vídeo";
-                descricao = "Softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de opções para cortar, copiar e colar trechos " +
-                            "de áudio e video, bem como aplicar efeitos diversos.";
+                descricao = "Editores de áudio e vídeo são softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de op" +
+                            "ções para cortar, copiar e colar trechos de áudio e video, bem como aplicar efeitos diversos.";
                 break;
 
             case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 nome = "Editores de Texto e Planilhas Eletrônicas";
-                descricao = "Softwares que permitem a edição ou criação de conteúdos que estejam em formato de texto ou planilhas, contendo diversas ferramentas " +
-                            "para personalizar seu conteúdo como definição de cores, fonte, espaçamentos e muito mais.	";
+                descricao = "Um editor de texto é um software que permite aos usuários criar, alterar ou editar arquivos de texto simples. Planilha el" +
+                            "etrônica é um programa de computador que utiliza tabelas para realização de cálculos ou apresentação de dados. Editores e" +
+                            " planilhas permitem personalizar o conteúdo criado como definição de cores, fonte, espaçamentos e muito mais.";
                 break;
 
             case NomeDeMidia.AVEAs:
                 nome = "Plataformas";
-                descricao = "São Softwares com o objetivo de auxiliar o usuário professor à desenvolver e distribuir conteúdos diversos para cursos online e " +
-                            "disciplinas semipresenciais para alunos em geral.";
+                descricao = "Plataformas virtuais de aprendizagem são softwares que agregam ferrramentas para a criação, tutoria, gestão e compartilha" +
+                            "mento de atividades com o objetivo de auxiliar o usuário à desenvolver e distribuir conteúdos diversos para cursos online" +
+                            " e disciplinas semipresenciais para estudantes em geral.";
                 break;
 
             case NomeDeMidia.Aplicativos:
                 nome = "Aplicativos";
-                descricao = "Os aplicativos são softwares com o objetivo de auxiliar o usuário a desempenhar uma tarefa, enviar um e-mail, ou acessar alguma " +
-                            "informação, como o GPS, entre outros.";
+                descricao = "Aplicativos são programas de software presentes em celulares e diversos dispositivos inteligentes, como smart TVs que des" +
+                            "empenham diversas funções: vendas, produtividade, educação, streaming, namoro, gerenciadores, editores de fotos e vídeos," +
+                            " entretenimento, informação, etc. Alguns já vêm instalados de fábrica, enquanto outros podem ser obtidos na Apple Store o" +
+                            "u na Play Store. Podem ser gratuitos ou pagos..";
                 break;
 
             case NomeDeMidia.ProjetorMultimidia:
                 nome = "Projetor Multimídia";
-                descricao = "É um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas, slides à partir da projeção " +
-                            "(em maior escala) do que estiver sendo realizado no computador.";
+                descricao = "Um projetor multimídia é um aparelho óptico mecânico capaz de produzir imagens, como fotos, vídeos, filmes, planilhas, sl" +
+                            "ides, etc. Fornece imagens reais, invertidas e maiores que o objeto, podendo ser um slide ou filme.";
                 break;
 
             default:
