@@ -4,7 +4,7 @@ public class AnimacaoRolagem : MonoBehaviour
 {
     [SerializeField] private GameObject[] itens;
 
-    private float velocidade = Screen.height / 10f;
+    private float velocidade = Screen.height / 5f;
     private Vector2[] posicoesOriginais;
     private int indiceExibicao;
 
