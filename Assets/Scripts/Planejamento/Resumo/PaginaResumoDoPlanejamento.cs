@@ -15,8 +15,13 @@ public class PaginaResumoDoPlanejamento : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
 
+        iconManager.ShowIcon(0);
         iconManager.ShowIcon(1);
+        iconManager.HideIcon(2);
+        iconManager.HideIcon(3);
+
         iconManager.SetIcon(0, primeiroIcone);
         iconManager.SetIcon(1, segundoIcone);
 
@@ -33,7 +38,6 @@ public class PaginaResumoDoPlanejamento : PaginaPlanejamento
 
     private void OnDisable()
     {
-        iconManager.HideIcon(1);
         iconManager.ResetIcon(0);
         iconManager.ResetIcon(1);
     }

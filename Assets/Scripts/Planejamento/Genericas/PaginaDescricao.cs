@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PaginaDescricao : PaginaPlanejamento
@@ -9,7 +7,14 @@ public class PaginaDescricao : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
         textoAjuda.text = ajuda;
+
+        iconManager.ShowIcon(0);
+        iconManager.HideIcon(1);
+        iconManager.HideIcon(2);
+        iconManager.HideIcon(3);
+
         iconManager.SetIcon(indiceDoIcone, iconePadrao);
     }
 

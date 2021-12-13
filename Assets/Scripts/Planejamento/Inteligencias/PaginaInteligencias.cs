@@ -13,13 +13,20 @@ public class PaginaInteligencias : PaginaPlanejamento
     {
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
-    
+
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
+
         textoAjuda.text = ajuda;
+
+        iconManager.ShowIcon(0);
+        iconManager.ShowIcon(1);
+        iconManager.ShowIcon(2);
+        iconManager.ShowIcon(3);
 
         if (iconeSelecionado)
         {

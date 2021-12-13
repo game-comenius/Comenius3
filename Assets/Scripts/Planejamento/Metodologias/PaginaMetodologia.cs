@@ -5,11 +5,11 @@ public class PaginaMetodologia : PaginaPlanejamento
 {
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] private Button botaoConfirmar;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameObject introABP;
+    [SerializeField] private GameObject introSAI;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
-    [SerializeField] private TrocadorDeCena cenaABP;
-    [SerializeField] private TrocadorDeCena cenaInvertida;
-    [SerializeField] private TrocadorDeCena cenaABJ;
 
     private IconeMetodologia iconeSelecionado;
 
@@ -17,29 +17,30 @@ public class PaginaMetodologia : PaginaPlanejamento
     {
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
-    
+
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
+
         textoAjuda.text = ajuda;
+
+        iconManager.ShowIcon(0);
+        iconManager.HideIcon(1);
+        iconManager.HideIcon(2);
+        iconManager.HideIcon(3);
 
         if (iconeSelecionado)
         {
             iconManager.SetIcon(0, iconeSelecionado.GetComponent<Image>().sprite);
         }
-
-        iconManager.HideIcon(1);
-        iconManager.HideIcon(2);
-        iconManager.HideIcon(3);
     }
 
     private void OnDisable()
     {
-        iconManager.ShowIcon(1);
-        iconManager.ShowIcon(2);
-        iconManager.ShowIcon(3);
+        iconManager.ResetIcon(0);
     }
 
     public void Selecao(IconeMetodologia icone)
@@ -73,7 +74,6 @@ public class PaginaMetodologia : PaginaPlanejamento
             resetar();
             resetarEstadoDeJogo();
         }
-
         icone.selecionado = !icone.selecionado;  // Inverte o estado de seleção
     }
 
@@ -112,7 +112,6 @@ public class PaginaMetodologia : PaginaPlanejamento
         EstadoDoJogo.Instance.MetodologiaSelecionada = icone.metodologia;
         EstadoDoJogo.Instance.MetodologiaSelecionada.sprite = icone.GetComponent<Image>().sprite;
 
-        // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
     }
 
@@ -121,7 +120,6 @@ public class PaginaMetodologia : PaginaPlanejamento
         iconManager.ResetIcon(0);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.MetodologiaSelecionada.sprite = null;
         EstadoDoJogo.Instance.MetodologiaSelecionada = null;
 
         botaoConfirmar.interactable = false;
@@ -132,13 +130,10 @@ public class PaginaMetodologia : PaginaPlanejamento
         switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
         {
             case "Aprendizagem Baseada em Problemas":
-                cenaABP.TrocarCena();
+                uiManager.ChangePanel(introABP);
                 break;
             case "Sala de Aula Invertida":
-                cenaInvertida.TrocarCena();
-                break;
-            case "Aprendizagem Baseada em Jogos":
-                cenaInvertida.TrocarCena();
+                uiManager.ChangePanel(introSAI);
                 break;
             default:
                 break;

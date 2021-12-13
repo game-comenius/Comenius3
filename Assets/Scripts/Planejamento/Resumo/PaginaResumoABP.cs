@@ -11,9 +11,15 @@ public class PaginaResumoABP : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
+
         textoAjuda.text = ajuda;
 
+        iconManager.ShowIcon(0);
         iconManager.ShowIcon(1);
+        iconManager.HideIcon(2);
+        iconManager.HideIcon(3);
+
         iconManager.SetIcon(0, primeiroIcone);
         iconManager.SetIcon(1, segundoIcone);
 
@@ -26,7 +32,6 @@ public class PaginaResumoABP : PaginaPlanejamento
 
     private void OnDisable()
     {
-        iconManager.HideIcon(1);
         iconManager.ResetIcon(0);
         iconManager.ResetIcon(1);
     }

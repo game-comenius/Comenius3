@@ -18,35 +18,32 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     [SerializeField] private Button botaoAgrupamentoAnterior;
     [SerializeField] private GameObject setaPrimeiraMidia;
     [SerializeField] private GameObject setaSegundaMidia;
-    [SerializeField] private Image fundo;
-    [SerializeField] private Sprite fundoSprite;
 
     private Sprite[] agrupamentosSprites;
     private int primeiroAgrupamentoSelecionado;
     private int segundoAgrupamentoSelecionado;
     private int agrupamentoEmFoco;
     private bool primeiroAgrupamento;
-    private Sprite fundoSpriteTemp;
 
     protected override void OnEnable()
     {
         textoAjuda.text = ajuda;
 
-        fundoSpriteTemp = fundo.sprite;
-        fundo.sprite = fundoSprite;
+        fundo.sprite = spriteFundo;
 
+        iconManager.ShowIcon(0);
         iconManager.ShowIcon(1);
+        iconManager.HideIcon(2);
+        iconManager.HideIcon(3);
+
         iconManager.SetIcon(0, EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite);
         iconManager.SetIcon(1, EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite);
     }
 
     private void OnDisable()
     {
-        fundo.sprite = fundoSpriteTemp;
-
         iconManager.ResetIcon(0);
         iconManager.ResetIcon(1);
-        iconManager.HideIcon(1);
     }
 
     private void Start()

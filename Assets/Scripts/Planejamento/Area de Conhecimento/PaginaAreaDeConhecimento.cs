@@ -29,6 +29,13 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        fundo.sprite = spriteFundo;
+
+        iconManager.ShowIcon(0);
+        iconManager.ShowIcon(1);
+        iconManager.ShowIcon(2);
+        iconManager.ShowIcon(3);
+
         // Mudar headline com a educação infantil
 
         if (iconeSelecionado)
