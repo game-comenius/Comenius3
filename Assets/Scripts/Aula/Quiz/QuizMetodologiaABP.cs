@@ -54,13 +54,13 @@ public class QuizMetodologiaABP : Quiz
         {
             var quizMultiplaEscolha = Instantiate(prefabQuizMultiplaEscolha, canvas.transform);
 
-            quizMultiplaEscolha.TextoDoEnunciado = "Sobre os papéis do aluno e do professor em ABP é correto afirmar:";
+            quizMultiplaEscolha.TextoDoEnunciado = "Sobre os papéis do estudante e do docente na Aprendizagem Baseada em Problemas (ABP) é correto afirmar:";
             Afirmacao[] afirmacoes =
             {
                 new Afirmacao(true, "O docente organiza seu planejamento em etapas, partindo do entendimento do problema proposto, até a apresentação do trabalho e análises dos resultados."),
-                new Afirmacao(false, "O professor deve ser simples e objetivo, para permitir que o grupo não fique atento no assunto o tempo todo."),
-                new Afirmacao(false, "Os alunos devem selecionar as hipóteses mais adequadas a partir das instruções apresentadas pelo professor."),
-                new Afirmacao(false, "É importante que os alunos se mantenham curiosos sobre o conteúdo, então o professor deve manter as respostas em segredo até a avaliação dos resultados."),
+                new Afirmacao(false, "O docente deve ser simples e objetivo, para que o grupo não fique atento no assunto."),
+                new Afirmacao(false, "Os estudantes devem selecionar as hipóteses mais adequadas a partir das instruções apresentadas pelo docente."),
+                new Afirmacao(false, "Para manter os estudantes curiosos sobre o assunto o docente deve manter as respostas em segredo."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
@@ -69,13 +69,13 @@ public class QuizMetodologiaABP : Quiz
         {
             var quizMultiplaEscolha = Instantiate(prefabQuizMultiplaEscolha, canvas.transform);
 
-            quizMultiplaEscolha.TextoDoEnunciado = "Sobre ABP é correto afirmar:";
+            quizMultiplaEscolha.TextoDoEnunciado = "Sobre a Aprendizagem Baseada em Problemas (ABP) é correto afirmar:";
             Afirmacao[] afirmacoes =
             {
                 new Afirmacao(true, "O problema deve estar relacionado com uma situação bem prática."),
-                new Afirmacao(false, "Deve ser criado um enigma que exija muito trabalho para ser identificado pelos alunos."),
+                new Afirmacao(false, "Deve ser criado um enigma que exija muito trabalho para ser identificado pelos estudantes."),
                 new Afirmacao(false, "O problema precisa ser real, um caso que tenha ocorrido em situação verídica."),
-                new Afirmacao(false, "Os alunos se deparam com um problema e precisam encontrar a solução correta."),
+                new Afirmacao(false, "Os estudantes se deparam com um problema e precisam encontrar a solução correta."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
@@ -84,13 +84,13 @@ public class QuizMetodologiaABP : Quiz
         {
             var quizMultiplaEscolha = Instantiate(prefabQuizMultiplaEscolha, canvas.transform);
 
-            quizMultiplaEscolha.TextoDoEnunciado = "Na metodologia ABP, assinale a alternativa que mostra quais devem ser as características do problema apresentado aos alunos?";
+            quizMultiplaEscolha.TextoDoEnunciado = "Na metodologia Aprendizagem Baseada em Problemas (ABP), assinale a alternativa que mostra quais devem ser as características do problema apresentado aos estudantes?";
             Afirmacao[] afirmacoes =
             {
-                new Afirmacao(true, "Apresentar tema e nível de complexidade compatíveis com o conhecimento prévio dos alunos."),
-                new Afirmacao(false, "Apresentar uma  situação totalmente nova e desconhecida pelos alunos."),
-                new Afirmacao(false, "Para não inviabilizar as discussões em grupo, é melhor que poucos alunos relatem suas experiências prévias com o problema."),
-                new Afirmacao(false, "Um enunciado completo e complexo para permitir a visualização da questão principal como um todo."),
+                new Afirmacao(true, "Apresentar tema e nível de complexidade compatíveis com o conhecimento prévio."),
+                new Afirmacao(false, "Apresentar uma situação totalmente nova e desconhecida."),
+                new Afirmacao(false, "É melhor que poucos estudantes relatem suas experiências prévias com o problema."),
+                new Afirmacao(false, "Um enunciado completo e complexo para permitir a visualização da questão principal."),
             };
             formatoDoQuiz = quizMultiplaEscolha;
             quizMultiplaEscolha.DefinirAfirmacoes(afirmacoes);
@@ -99,13 +99,13 @@ public class QuizMetodologiaABP : Quiz
         {
             var quizOrdenar = Instantiate(prefabQuizOrdenar, canvas.transform);
 
-            quizOrdenar.TextoDoEnunciado = "Clique e arraste as etapas da metodologia Aprendizagem Baseada em Problemas para formar a ordem correta de execução.";
-            Afirmacao[] afirmacoesNaOrdemCorreta =
+            quizOrdenar.TextoDoEnunciado = "Clique e arraste as etapas da metodologia Aprendizagem Baseada em Problemas (ABP) para formar a ordem correta da sequncia didática:";
+            Afirmacao[] afirmacoesNaOrdemCorreta = //Talvez eu tenha invertido a ordem das respostas, não tenho certeza. (10/01/2022)
             {
-                new Afirmacao(true, "Apresentar as respostas e avaliar os resultados."),
-                new Afirmacao(true, "Buscar novas referências para qualificar as propostas, debater e buscar consenso sobre as possíveis soluções."),
-                new Afirmacao(true, "Analisar as variáveis do problema e propor possíveis soluções."),
                 new Afirmacao(true, "Apresentar o problema e levantar os conhecimentos sobre o assunto."),
+                new Afirmacao(true, "Analisar as variáveis do problema e propor possíveis soluções."),
+                new Afirmacao(true, "Buscar novas referências para qualificar as propostas, debater e buscar consenso sobre as possíveis soluções."),
+                new Afirmacao(true, "Apresentar as respostas e avaliar os resultados."),
             };
 
             formatoDoQuiz = quizOrdenar;
