@@ -13,7 +13,7 @@ public class MomentoInteracao : ScriptableObject
     public bool alunoFeliz;
     public static List<MomentoInteracao> momentos { get; private set; }
 
-    public static MomentoInteracao GetMomentoFromArquives()
+    public static MomentoInteracao GetMomentFromArchives()
     {
         if(momentos == null)
         {
@@ -26,7 +26,7 @@ public class MomentoInteracao : ScriptableObject
         return momentos[Random.Range(0, momentos.Count)];
     }
 
-    public static MomentoInteracao GetMomentoFromArquives(NomeDeMidia midia)
+    public static MomentoInteracao GetMomentFromArchives(NomeDeMidia midia)
     {
         if(momentos == null)
         {
@@ -43,7 +43,7 @@ public class MomentoInteracao : ScriptableObject
                     return momento;
             }
         }
-        return GetMomentoFromArquives();
+        return GetMomentFromArchives();
     }
 }
 
