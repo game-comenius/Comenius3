@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PaginaAgrupamentos : PaginaPlanejamento
 {
     [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] [TextArea] private string descricaoPadrao;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Button botaoProximaMidia;
     [SerializeField] private GameObject botaoMidiaAnterior;
@@ -49,8 +50,8 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     private void Start()
     {
         primeiroAgrupamento = true;
-        primeiroAgrupamentoSelecionado = 0;
-        segundoAgrupamentoSelecionado = 0;
+        primeiroAgrupamentoSelecionado = -1;
+        segundoAgrupamentoSelecionado = -1;
         agrupamentoEmFoco = 0;
 
         if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
@@ -63,41 +64,87 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         }
 
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
-
-        descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoEmFoco];
+        descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void atualizar(int agrupamentoSelecionado)
+    private void atualizar(int agrupamentoEmFoco)
     {
-        descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoSelecionado];
-        agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoSelecionado];
+        if (agrupamentoEmFoco != -1)
+        {
+            if (primeiroAgrupamento)
+            {
+                descricaoDoSelecionado.text = primeiroAgrupamentoSelecionado != -1 ? agrupamentosDescricao[primeiroAgrupamentoSelecionado] : descricaoPadrao;
+            }
+            else
+            {
+                descricaoDoSelecionado.text = segundoAgrupamentoSelecionado != -1 ? agrupamentosDescricao[segundoAgrupamentoSelecionado] : descricaoPadrao;
+            }
+
+            agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
+        }
+        else
+        {
+            descricaoDoSelecionado.text = descricaoPadrao;
+            agrupamentoEmFocoImagem.sprite = agrupamentosSprites[0];
+        }
     }
 
     private void atualizarEstadoDeJogo(int agrupamentoSelecionado)
     {
+        if (agrupamentoSelecionado != -1)
+        {
+            descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoSelecionado];
+
+            if (primeiroAgrupamento)
+            {
+                EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento = agrupamentos[agrupamentoSelecionado];
+            }
+            else
+            {
+                EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento = agrupamentos[agrupamentoSelecionado];
+            }
+        }
+    }
+
+    public void Selecao()
+    {
         if (primeiroAgrupamento)
         {
-            EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento = agrupamentos[agrupamentoSelecionado];
+            if (primeiroAgrupamentoSelecionado == agrupamentoEmFoco)
+            {
+                primeiroAgrupamentoSelecionado = -1;
+                botaoProximaMidia.interactable = false;
+            }
+            else
+            {
+                primeiroAgrupamentoSelecionado = agrupamentoEmFoco;
+                botaoProximaMidia.interactable = true;
+            }
+
+            atualizar(primeiroAgrupamentoSelecionado);
+            atualizarEstadoDeJogo(primeiroAgrupamentoSelecionado);
         }
         else
         {
-            EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento = agrupamentos[agrupamentoSelecionado];
+            if (segundoAgrupamentoSelecionado == agrupamentoEmFoco)
+            {
+                segundoAgrupamentoSelecionado = -1;
+                botaoConfirmar.interactable = false;
+            }
+            else
+            {
+                segundoAgrupamentoSelecionado = agrupamentoEmFoco;
+                botaoConfirmar.interactable = true;
+            }
+
+            atualizar(segundoAgrupamentoSelecionado);
+            atualizarEstadoDeJogo(segundoAgrupamentoSelecionado);
         }
     }
 
     public void Confirmar()
     {
-        if (primeiroAgrupamento)
-        {
-            primeiroAgrupamentoSelecionado = agrupamentoEmFoco;
-        }
-        else
-        {
-            segundoAgrupamentoSelecionado = agrupamentoEmFoco;
-        }
-
-        atualizarEstadoDeJogo(agrupamentoEmFoco);
-        agrupamentoEmFoco = segundoAgrupamentoSelecionado;
+        agrupamentoEmFoco = segundoAgrupamentoSelecionado == -1 ? 0 : segundoAgrupamentoSelecionado;
         primeiroAgrupamento = false;
 
         setaPrimeiraMidia.SetActive(false);
@@ -113,7 +160,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
     public void Voltar()
     {
-        agrupamentoEmFoco = primeiroAgrupamentoSelecionado;
+        agrupamentoEmFoco = primeiroAgrupamentoSelecionado == -1 ? 0 : primeiroAgrupamentoSelecionado;
         primeiroAgrupamento = true;
 
         setaPrimeiraMidia.SetActive(true);
