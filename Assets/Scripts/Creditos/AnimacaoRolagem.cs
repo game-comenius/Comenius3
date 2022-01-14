@@ -1,39 +1,67 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class AnimacaoRolagem : MonoBehaviour
 {
-    [SerializeField] private GameObject[] itens;
+    [SerializeField] private GameObject[] items;
+    [SerializeField] private float speedCoeff;
 
-    private float velocidade = Screen.height / 5f;
-    private Vector2[] posicoesOriginais;
-    private int indiceExibicao;
+    private float speed;
+    private Vector2[] initialPositions;
+    private List<int> activeIndexes;
+    private RectTransform rect;
+    private Vector3[] itemCorners;
+    private Vector3[] corners;
 
     private void Start()
     {
-        indiceExibicao = 0;
-        posicoesOriginais = new Vector2[itens.Length];
+        speed = Screen.height * speedCoeff;
+        initialPositions = new Vector2[items.Length];
+        activeIndexes = new List<int>();
+        rect = GetComponent<RectTransform>();
+        itemCorners = new Vector3[4];
+        corners = new Vector3[4];
 
-        for (int i = 0; i < itens.Length; ++i)
+        for (int i = 0; i < items.Length; ++i)
         {
-            posicoesOriginais[i] = itens[i].GetComponent<RectTransform>().anchoredPosition;
+            initialPositions[i] = items[i].GetComponent<RectTransform>().anchoredPosition;
         }
+
+        activeIndexes.Add(0);
     }
 
     void Update()
     {
-        itens[indiceExibicao].transform.Translate(Vector3.up * Time.deltaTime * velocidade);
-
-        RectTransform rect = itens[indiceExibicao].GetComponent<RectTransform>();
-
-
-        if (rect.anchoredPosition.y > Screen.height)
+        for (int i = 0; i < activeIndexes.Count; ++i)
         {
-            rect.anchoredPosition = posicoesOriginais[indiceExibicao];
+            RectTransform itemRect;
 
-            ++indiceExibicao;
-            if (indiceExibicao == itens.Length)
+            items[activeIndexes[i]].transform.Translate(Vector3.up * Time.deltaTime * speed);
+
+            itemRect = items[activeIndexes[activeIndexes.Count - 1]].GetComponent<RectTransform>();
+
+            itemRect.GetWorldCorners(itemCorners);
+            rect.GetWorldCorners(corners);
+
+            if (itemCorners[0].y > corners[0].y)
             {
-                indiceExibicao = 0;
+                int nextIndex = activeIndexes[activeIndexes.Count - 1] + 1;
+
+                if (nextIndex == items.Length)
+                {
+                    nextIndex = 0;
+                }
+
+                activeIndexes.Add(nextIndex);
+            }
+
+            itemRect = items[activeIndexes[0]].GetComponent<RectTransform>();
+            itemRect.GetWorldCorners(itemCorners);
+
+            if (itemCorners[0].y > corners[1].y)
+            {
+                itemRect.anchoredPosition = initialPositions[activeIndexes[i]];
+                activeIndexes.RemoveAt(0);
             }
         }
     }

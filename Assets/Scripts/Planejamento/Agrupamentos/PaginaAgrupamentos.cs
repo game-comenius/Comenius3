@@ -10,6 +10,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     [SerializeField] private GameObject botaoMidiaAnterior;
     [SerializeField] private GameObject botaoPainelAnterior;
     [SerializeField] private Image agrupamentoEmFocoImagem;
+    [SerializeField] private Image molduraDeSelecao;
     [SerializeField] private Agrupamento[] agrupamentos;
     [SerializeField] private Sprite[] agrupamentosSpritesInfantil;
     [SerializeField] private Sprite[] agrupamentosSpritesRegular;
@@ -53,6 +54,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         primeiroAgrupamentoSelecionado = -1;
         segundoAgrupamentoSelecionado = -1;
         agrupamentoEmFoco = 0;
+        molduraDeSelecao.enabled = false;
 
         if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
         {
@@ -74,10 +76,12 @@ public class PaginaAgrupamentos : PaginaPlanejamento
             if (primeiroAgrupamento)
             {
                 descricaoDoSelecionado.text = primeiroAgrupamentoSelecionado != -1 ? agrupamentosDescricao[primeiroAgrupamentoSelecionado] : descricaoPadrao;
+                molduraDeSelecao.enabled = primeiroAgrupamentoSelecionado == agrupamentoEmFoco ? true : false;
             }
             else
             {
                 descricaoDoSelecionado.text = segundoAgrupamentoSelecionado != -1 ? agrupamentosDescricao[segundoAgrupamentoSelecionado] : descricaoPadrao;
+                molduraDeSelecao.enabled = segundoAgrupamentoSelecionado == agrupamentoEmFoco ? true : false;
             }
 
             agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
@@ -86,6 +90,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         {
             descricaoDoSelecionado.text = descricaoPadrao;
             agrupamentoEmFocoImagem.sprite = agrupamentosSprites[0];
+            molduraDeSelecao.enabled = false;
         }
     }
 

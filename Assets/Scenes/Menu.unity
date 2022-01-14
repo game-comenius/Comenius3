@@ -1586,7 +1586,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 75651260}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1928,6 +1928,7 @@ RectTransform:
   - {fileID: 713879350}
   - {fileID: 2133812077}
   - {fileID: 788934350}
+  - {fileID: 1516722275}
   - {fileID: 322670064}
   - {fileID: 67747829}
   - {fileID: 829389401}
@@ -1969,6 +1970,7 @@ MonoBehaviour:
   botaoMidiaAnterior: {fileID: 713879345}
   botaoPainelAnterior: {fileID: 2133812072}
   agrupamentoEmFocoImagem: {fileID: 1245356189}
+  molduraDeSelecao: {fileID: 1516722276}
   agrupamentos: 00000000010000000300000004000000
   agrupamentosSpritesInfantil:
   - {fileID: 21300000, guid: bff8b7e89312211418d35febd4ec6ef2, type: 3}
@@ -8596,7 +8598,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 75651260}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20338,7 +20340,7 @@ PrefabInstance:
     - target: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
@@ -27810,7 +27812,7 @@ PrefabInstance:
     - target: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
@@ -34796,6 +34798,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506444958}
+  m_CullTransparentMesh: 0
+--- !u!1 &1516722274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516722275}
+  - component: {fileID: 1516722277}
+  - component: {fileID: 1516722276}
+  m_Layer: 5
+  m_Name: Moldura de Selecao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1516722275
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516722274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 75651260}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 257.86, y: -39.38}
+  m_SizeDelta: {x: 460, y: 270}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1516722276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516722274}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: eae363f7fc688594cbeabe3c46028e84, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1516722277
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516722274}
   m_CullTransparentMesh: 0
 --- !u!1 &1519937954
 GameObject:
