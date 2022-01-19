@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEditor;
 
 [CustomEditor(typeof(Preview))]

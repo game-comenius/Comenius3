@@ -36,14 +36,9 @@ public class PaginaResumo : PaginaPlanejamento
     // O argumento deveria ser um enum, porém por conveniência no editor foi usado um string
     public void BuildText(string highlightedChoice = "")
     {
-        string preposition = "do";
+        string preposition = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil ? "da" : "do";
 
         string levelPart, areaPart, inteligencePart;
-
-        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
-        {
-            preposition = "da";
-        }
 
         levelPart = $"Você irá jogar uma aula {preposition} {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} ";
         areaPart = $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} ";

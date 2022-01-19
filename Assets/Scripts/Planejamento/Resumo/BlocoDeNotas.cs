@@ -11,4 +11,59 @@ public class BlocoDeNotas : MonoBehaviour
     [SerializeField] private bool ABP;
 
     private int pagina;
+
+    private void OnEnable()
+    {
+        pagina = 0;
+
+        Atualizar();
+    }
+
+    public void AvancarPagina()
+    {
+        int limite = ABP ? 2 : 4;
+
+        if (pagina < limite)
+        {
+            ++pagina;
+
+            if (pagina == limite)
+            {
+                botaoAnterior.interactable = true;
+                botaoProximo.interactable = false;
+            }
+        }
+
+        Atualizar();
+    }
+
+    public void VoltarPagina()
+    {
+        if (pagina > 0)
+        {
+            --pagina;
+
+            if (pagina == 0)
+            {
+                botaoAnterior.interactable = false;
+                botaoProximo.interactable = true;
+            }
+        }
+
+        Atualizar();
+    }
+
+    private void Atualizar()
+    {
+        if (pagina == 0)
+        {
+            icone.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
+            texto.text = EstadoDoJogo.Instance.MetodologiaSelecionada.descricaoLonga;
+        }
+        else
+        {
+            icone.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].sprite;
+            texto.text = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].descricaoLonga;
+        }
+    }
 }
