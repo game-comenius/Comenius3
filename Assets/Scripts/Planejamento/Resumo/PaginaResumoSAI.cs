@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaResumoDoPlanejamento : PaginaPlanejamento
+public class PaginaResumoSAI : PaginaPlanejamento
 {
     [Header("Ícones")]
     [SerializeField] Image IconeMidia1;

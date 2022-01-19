@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EstadoDoJogo : Singleton<EstadoDoJogo>
@@ -87,11 +86,5 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public Sprite SpriteRoupaPersonagem { get; set; }
     public Sprite SpriteIconePersonagem { get; set; }
 
-    public void ResetMetodologia()
-    {
-        midiasSelecionadas = null;
-        metodologiaSelecionada = null;
-    }
-
-    public List<FlagDeEstadoDeJogo> flags;
+    [HideInInspector] public List<FlagDeEstadoDeJogo> flags;  // Não utilizado
 }

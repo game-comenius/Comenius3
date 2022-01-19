@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(EstadoDoJogoDebugger))]
@@ -8,7 +6,6 @@ public class EstadoDeJogoDebuggerInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        
         EditorGUI.BeginDisabledGroup(true);
         base.OnInspectorGUI();
         EditorGUI.EndDisabledGroup();

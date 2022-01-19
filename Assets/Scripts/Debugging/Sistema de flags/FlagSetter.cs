@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlagSetter : MonoBehaviour
 {
@@ -24,6 +22,7 @@ public class FlagSetter : MonoBehaviour
                 return;
             }
         }
+
         EstadoDoJogo.Instance.flags.Add(new FlagDeEstadoDeJogo(nomeDaFlag, estado));
     }
 }
