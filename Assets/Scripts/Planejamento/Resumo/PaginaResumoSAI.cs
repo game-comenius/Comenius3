@@ -15,6 +15,7 @@ public class PaginaResumoSAI : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        textoAjuda.text = ajuda;
         fundo.sprite = spriteFundo;
 
         iconManager.ShowIcon(0);
