@@ -9,6 +9,7 @@ public class PaginaResumo : PaginaPlanejamento
     [SerializeField] private Text texto;
     [SerializeField] private Sprite icone;
 
+    // bom dia mundo 
     protected override void OnEnable()
     {
         fundo.sprite = spriteFundo;
