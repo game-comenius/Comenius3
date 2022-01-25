@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class CelulaReference
 {
-
     public PlanilhaDoGoogle planilha;//Referencia de um scriptable objet do tipo planilha
 
     //Linha e coluna no qual está a celula desejada

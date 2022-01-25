@@ -177,8 +177,8 @@ public class PaginaMidias : PaginaPlanejamento
 
         if (!primeiraMidia)
         {
-            ++indice;
-            ++indiceIcone;
+            indice++;
+            indiceIcone++;
             botaoConfirmar.interactable = true;
         }
         else
@@ -201,8 +201,8 @@ public class PaginaMidias : PaginaPlanejamento
 
         if (!primeiraMidia)
         {
-            ++indice;
-            ++indiceIcone;
+            indice++;
+            indiceIcone++;
             botaoConfirmar.interactable = false;
         }
         else
@@ -254,7 +254,7 @@ public class PaginaMidias : PaginaPlanejamento
     public void AvancarPagina()
     {
         paginas[paginaAtual].SetActive(false);
-        ++paginaAtual;
+        paginaAtual++;
         anelDeSelecao.gameObject.transform.SetParent(paginas[paginaAtual].transform);
         paginas[paginaAtual].SetActive(true);
 
@@ -265,7 +265,7 @@ public class PaginaMidias : PaginaPlanejamento
     public void VoltarPagina()
     {
         paginas[paginaAtual].SetActive(false);
-        --paginaAtual;
+        paginaAtual--;
         anelDeSelecao.gameObject.transform.SetParent(paginas[paginaAtual].transform);
         paginas[paginaAtual].SetActive(true);
 

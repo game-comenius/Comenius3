@@ -12,6 +12,7 @@ public class IconeNivelDeEnsinoEditor : Editor
         var quantidadeDeNiveis = niveisDeEnsino.Length;
         valoresDosNiveisDeEnsino = new int[quantidadeDeNiveis];
         labelsDosNiveisDeEnsino = new string[quantidadeDeNiveis];
+
         for (var i = 0; i < quantidadeDeNiveis; i++)
         {
             valoresDosNiveisDeEnsino[i] = niveisDeEnsino[i].valor;

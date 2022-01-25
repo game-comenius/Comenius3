@@ -38,6 +38,6 @@ public class PlanilhaDoGoogle : ScriptableObject
         if (row >= quantidadeDeLinhas || row < 0 || column >= quantidadeDeColunas || column < 0)
             return null;
 
-        return data[row * quantidadeDeColunas + column]; ;
+        return data[row * quantidadeDeColunas + column];
     }
 }

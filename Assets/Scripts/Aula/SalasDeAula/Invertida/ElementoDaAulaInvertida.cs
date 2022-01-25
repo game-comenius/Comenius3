@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class ElementoDaAulaInvertida : MonoBehaviour
 {
-    
-    [SerializeField] EstadoDeAulaInvertida controladorDaAula;
-    [SerializeField] EstadoDeAula[] estadosNoQualChama;
-    [SerializeField] UnityEvent OnSelectedStates;
-    [SerializeField] UnityEvent OnNotSelectedStates;
+    [SerializeField] private EstadoDeAulaInvertida controladorDaAula;
+    [SerializeField] private EstadoDeAula[] estadosNoQualChama;
+    [SerializeField] private UnityEvent OnSelectedStates;
+    [SerializeField] private UnityEvent OnNotSelectedStates;
 
     void Awake()
     {
@@ -21,11 +18,11 @@ public class ElementoDaAulaInvertida : MonoBehaviour
         controladorDaAula.OnStateChange.RemoveListener(OnStateChange);
     }
 
-    void OnStateChange() 
+    void OnStateChange()
     {
-        foreach(EstadoDeAula estado in estadosNoQualChama)
+        foreach (EstadoDeAula estado in estadosNoQualChama)
         {
-            if(controladorDaAula.estadoAtual == estado)
+            if (controladorDaAula.estadoAtual == estado)
             {
                 OnSelectedStates.Invoke();
                 return;

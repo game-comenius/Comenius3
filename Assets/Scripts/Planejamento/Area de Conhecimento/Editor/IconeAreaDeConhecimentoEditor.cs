@@ -12,6 +12,7 @@ public class IconeAreaDeConhecimentoEditor : Editor
         var quantidadeDeAreas = areasDeConhecimento.Length;
         valoresDasAreasDeConhecimento = new int[quantidadeDeAreas];
         labelsDasAreasDeConhecimento = new string[quantidadeDeAreas];
+
         for (var i = 0; i < quantidadeDeAreas; i++)
         {
             valoresDasAreasDeConhecimento[i] = areasDeConhecimento[i].valor;
