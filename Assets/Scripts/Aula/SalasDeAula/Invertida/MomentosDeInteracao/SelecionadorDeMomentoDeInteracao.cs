@@ -1,23 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ControladorDisplayMomentoInteracao))]
 public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
 {
-    [SerializeField] List<MomentoInteracao> momentos;
-    [SerializeField] List<MomentoInteracao> momentosInfantil;
-    [SerializeField] ControladorDisplayMomentoInteracao controlador;
-    [SerializeField] bool updateOnEnable = true;
-    [SerializeField] EstadoDeAulaInvertida controladorDaAula;
-    [SerializeField] bool cannotRepeat;
-    List<MomentoInteracao> momentosDisponiveis;
+    [SerializeField] private List<MomentoInteracao> momentos;
+    [SerializeField] private List<MomentoInteracao> momentosInfantil;
+    [SerializeField] private ControladorDisplayMomentoInteracao controlador;
+    [SerializeField] private bool updateOnEnable = true;
+    [SerializeField] private EstadoDeAulaInvertida controladorDaAula;
+    [SerializeField] private bool cannotRepeat;
+    private List<MomentoInteracao> momentosDisponiveis;
     bool inicializarMomentosDisponiveis = true;
 
     private void OnEnable()
     {
         controlador = gameObject.GetComponent<ControladorDisplayMomentoInteracao>();
-        if(updateOnEnable)
+        if (updateOnEnable)
             SelecionarMomento();
     }
 
@@ -68,21 +67,21 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
 
         List<MomentoInteracao> possiveisMomentos = new List<MomentoInteracao>();
         List<MomentoInteracao> _momentos;
-        if(nivel == NivelDeEnsino.EducacaoInfantil)
+        if (nivel == NivelDeEnsino.EducacaoInfantil)
             _momentos = momentosInfantil;
         else
             _momentos = momentos;
 
-        foreach(MomentoInteracao momento in _momentos)
+        foreach (MomentoInteracao momento in _momentos)
         {
-            foreach(NomeDeMidia _midia in momento.midias)
+            foreach (NomeDeMidia _midia in momento.midias)
             {
-                if(_midia == midia)
+                if (_midia == midia)
                     possiveisMomentos.Add(momento);
             }
         }
 
-        if(possiveisMomentos.Count == 0)
+        if (possiveisMomentos.Count == 0)
             possiveisMomentos = _momentos;
         controlador.Momento = possiveisMomentos[Random.Range(0, possiveisMomentos.Count)];
     }

@@ -25,7 +25,7 @@ public class BlocoDeNotas : MonoBehaviour
 
         if (pagina < limite)
         {
-            ++pagina;
+            pagina++;
 
             if (pagina == limite)
             {
@@ -41,7 +41,7 @@ public class BlocoDeNotas : MonoBehaviour
     {
         if (pagina > 0)
         {
-            --pagina;
+            pagina--;
 
             if (pagina == 0)
             {

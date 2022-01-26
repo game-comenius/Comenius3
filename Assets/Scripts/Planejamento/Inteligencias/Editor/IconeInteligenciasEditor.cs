@@ -12,6 +12,7 @@ public class IconeInteligenciasEditor : Editor
         var quantidade = paresDeInteligencias.Length;
         valoresDosParesDeInteligencias = new int[quantidade];
         labelsDosParesDeInteligencias = new string[quantidade];
+
         for (var i = 0; i < quantidade; i++)
         {
             valoresDosParesDeInteligencias[i] = paresDeInteligencias[i].valor;

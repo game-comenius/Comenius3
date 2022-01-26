@@ -181,7 +181,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
     public void AvancarAgrupamento()
     {
-        ++agrupamentoEmFoco;
+        agrupamentoEmFoco++;
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
 
         atualizar(agrupamentoEmFoco);
@@ -190,7 +190,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
     public void VoltarAgrupamento()
     {
-        --agrupamentoEmFoco;
+        agrupamentoEmFoco--;
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
 
         atualizar(agrupamentoEmFoco);

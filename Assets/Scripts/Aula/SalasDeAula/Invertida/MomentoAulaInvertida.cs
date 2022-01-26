@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class MomentoAulaInvertida : MonoBehaviour
-{ 
-    [SerializeField]EstadoDeAulaInvertida messenger;
-    [SerializeField]TrocadorDeCena trocadorDeCena;
+{
+    [SerializeField] private EstadoDeAulaInvertida messenger;
+    [SerializeField] private TrocadorDeCena trocadorDeCena;
 
     [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
     public QuizzExitEvent OnPontuacaoMidiaUpdate;
@@ -17,17 +15,16 @@ public class MomentoAulaInvertida : MonoBehaviour
         messenger.Init();
     }
 
-
     [ContextMenu("Avançar Estado")]
     public void AvancarEstado()
     {
         messenger.AvancarEstado();
     }
 
+    [System.Obsolete("Método não utilizado")]
     public void AtualizarPontuacaoDaAula(float quantidadeDeQuizzes)
     {
-        
-
+        Debug.Log("[0]: AtualizarPontuacaoDaAula chamada");
         EstadoDoJogo estadoJogo = EstadoDoJogo.Instance;
         Midia[] midiasSelecionadas = estadoJogo.MidiasSelecionadas;
 
@@ -42,7 +39,7 @@ public class MomentoAulaInvertida : MonoBehaviour
             else
                 pontuacao += 0.25f;
         }
-        
+
         pontuacao /= quantidadeDeQuizzes;
         OnPontuacaoMidiaUpdate.Invoke(pontuacao);
     }
