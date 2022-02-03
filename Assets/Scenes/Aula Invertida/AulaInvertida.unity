@@ -3082,7 +3082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &327663312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4208,7 +4208,7 @@ RectTransform:
   m_Children:
   - {fileID: 646261940}
   m_Father: {fileID: 1026319646}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4747,15 +4747,15 @@ GameObject:
   - component: {fileID: 500054494}
   - component: {fileID: 500054498}
   - component: {fileID: 500054497}
-  - component: {fileID: 500054496}
   - component: {fileID: 500054495}
+  - component: {fileID: 500054499}
   m_Layer: 0
   m_Name: "Bal\xE3oAlunosFeedback"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &500054494
 Transform:
   m_ObjectHideFlags: 0
@@ -4840,45 +4840,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
---- !u!114 &500054496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500054493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc999e26309c444ca7d3c964efecdf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1729727040}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UpdateMomento
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 0
 --- !u!60 &500054497
 PolygonCollider2D:
@@ -4969,6 +4930,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &500054499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500054493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1729727038}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1729727040}
+          m_TargetAssemblyTypeName: ControladorDisplayMomentoInteracao, Assembly-CSharp
+          m_MethodName: UpdateMomento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &504566837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,7 +5077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &555199693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5440,15 +5442,15 @@ GameObject:
   - component: {fileID: 613920495}
   - component: {fileID: 613920498}
   - component: {fileID: 613920497}
-  - component: {fileID: 613920496}
   - component: {fileID: 613920499}
+  - component: {fileID: 613920500}
   m_Layer: 0
   m_Name: "Bal\xE3oAlunos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &613920495
 Transform:
   m_ObjectHideFlags: 0
@@ -5464,45 +5466,6 @@ Transform:
   m_Father: {fileID: 1638439943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &613920496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613920494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc999e26309c444ca7d3c964efecdf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1729727040}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UpdateMomento
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!60 &613920497
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5674,6 +5637,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &613920500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613920494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1729727038}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1729727040}
+          m_TargetAssemblyTypeName: ControladorDisplayMomentoInteracao, Assembly-CSharp
+          m_MethodName: UpdateMomento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &633025998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5921,9 +5925,9 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: Alterar meu planejamento
-      m_Image: {fileID: 0}
     - m_Text: Manter meu planejamento
+      m_Image: {fileID: 0}
+    - m_Text: Alterar meu planejamento
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7213,15 +7217,15 @@ GameObject:
   - component: {fileID: 775415102}
   - component: {fileID: 775415104}
   - component: {fileID: 775415105}
-  - component: {fileID: 775415103}
   - component: {fileID: 775415106}
+  - component: {fileID: 775415107}
   m_Layer: 0
   m_Name: BalaoProfessora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &775415102
 Transform:
   m_ObjectHideFlags: 0
@@ -7237,45 +7241,6 @@ Transform:
   m_Father: {fileID: 1638439943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &775415103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775415101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc999e26309c444ca7d3c964efecdf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1068671430}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: MostrarProximoQuizz
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 774386296}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: AvancarEstado
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!212 &775415104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7412,6 +7377,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &775415107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775415101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1068671430}
+          m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
+          m_MethodName: MostrarProximoQuizz
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 774386296}
+          m_TargetAssemblyTypeName: MomentoAulaInvertida, Assembly-CSharp
+          m_MethodName: AvancarEstado
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &801778353
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,6 +7598,7 @@ GameObject:
   - component: {fileID: 810747695}
   - component: {fileID: 810747694}
   - component: {fileID: 810747693}
+  - component: {fileID: 810747696}
   m_Layer: 5
   m_Name: Botao de Quiz
   m_TagString: Untagged
@@ -7714,6 +7721,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810747691}
   m_CullTransparentMesh: 1
+--- !u!114 &810747696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810747691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: d5592ed48de7b67438f30be83ae62b6b, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 810747691}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &816523952
 GameObject:
   m_ObjectHideFlags: 0
@@ -9853,8 +9893,8 @@ RectTransform:
   - {fileID: 1111530534}
   - {fileID: 130764270}
   - {fileID: 747108315}
-  - {fileID: 1338847214}
   - {fileID: 465302594}
+  - {fileID: 1338847214}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10033,8 +10073,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1068671431}
   - component: {fileID: 1068671430}
+  - component: {fileID: 1068671432}
   m_Layer: 0
-  m_Name: Quizzes
+  m_Name: Gerenciador de quiz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10054,10 +10095,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizzes:
   - {fileID: 254936616}
-  - {fileID: 923747826}
   - {fileID: 2028371529}
   - {fileID: 839298089}
-  estadoDaAulaInvertida: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+  - {fileID: 923747826}
+  estadoDaAulaInvertida: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
     type: 2}
   OnPontuacaoChange:
     m_PersistentCalls:
@@ -10097,7 +10138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068671429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 465.86642, y: 223.17365, z: -75.625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10108,6 +10149,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1068671432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068671429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: d5592ed48de7b67438f30be83ae62b6b, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1068671430}
+        m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
+        m_MethodName: MostrarProximoQuizz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1072122129
 GameObject:
   m_ObjectHideFlags: 0
@@ -12558,7 +12632,7 @@ RectTransform:
   m_Children:
   - {fileID: 962923185}
   m_Father: {fileID: 1026319646}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -14560,6 +14634,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556927773}
   m_CullTransparentMesh: 0
+--- !u!1 &1566130095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566130096}
+  m_Layer: 0
+  m_Name: Gerenciador de imprevistos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566130096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566130095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568149906
 GameObject:
   m_ObjectHideFlags: 0
@@ -15553,15 +15658,15 @@ GameObject:
   - component: {fileID: 1687806117}
   - component: {fileID: 1687806121}
   - component: {fileID: 1687806120}
-  - component: {fileID: 1687806119}
   - component: {fileID: 1687806118}
+  - component: {fileID: 1687806122}
   m_Layer: 0
   m_Name: "Bal\xE3oAlunosFeedbackInicial"
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1687806117
 Transform:
   m_ObjectHideFlags: 0
@@ -15648,81 +15753,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
---- !u!114 &1687806119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687806116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc999e26309c444ca7d3c964efecdf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 465302588}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1729727040}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UpdateMomento
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
-      - m_Target: {fileID: 1687806116}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 465302590}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SelecionarMomento
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1243862317}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: AtualizarAluno
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!60 &1687806120
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15812,6 +15842,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1687806122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687806116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 465302588}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1729727040}
+          m_TargetAssemblyTypeName: ControladorDisplayMomentoInteracao, Assembly-CSharp
+          m_MethodName: UpdateMomento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1687806116}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 465302590}
+          m_TargetAssemblyTypeName: SelecionadorDeMomentoDeInteracao, Assembly-CSharp
+          m_MethodName: SelecionarMomento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1243862317}
+          m_TargetAssemblyTypeName: DisplayDeAluno, Assembly-CSharp
+          m_MethodName: AtualizarAluno
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1716315518
 GameObject:
   m_ObjectHideFlags: 0
@@ -17417,7 +17524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Avan\xE7ar estado"
+  m_text: QUIZ
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20089,12 +20196,12 @@ PrefabInstance:
     - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: messenger
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: trocadorDeCena
       value: 
-      objectReference: {fileID: 210179270}
+      objectReference: {fileID: 0}
     - target: {fileID: 1130288302, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: OnPontuacaoMidiaUpdate.m_PersistentCalls.m_Calls.Array.size
       value: 1

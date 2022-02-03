@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class QuizzManager : MonoBehaviour
 {
-    [SerializeField] Quiz[] quizzes;
+    [SerializeField] private Quiz[] quizzes;
 
-    [SerializeField] EstadoDeAulaInvertida estadoDaAulaInvertida;
+    [SerializeField] private EstadoDeAulaInvertida estadoDaAulaInvertida;
     private int quizzAtual = -1;
 
     [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
     public QuizzExitEvent OnPontuacaoChange;
     [System.Serializable] public class QuizzEndEvent : UnityEvent<int> { }
     public QuizzExitEvent OnQuizzEnd;
-    private void Start() 
+
+    private void Start()
     {
         quizzAtual = -1;
 
@@ -37,14 +35,15 @@ public class QuizzManager : MonoBehaviour
     {
         quizzAtual++;
         //Se acabaram os quizzes nao faz nada
-        if(quizzAtual >= quizzes.Length)
+        if (quizzAtual >= quizzes.Length)
             return;
         Quiz quizzParaMostrar = quizzes[quizzAtual];
-        if(quizzParaMostrar  is QuizDeMidia)
+        if (quizzParaMostrar is QuizDeMidia)
         {
             QuizDeMidia quizz = (QuizDeMidia)quizzParaMostrar;
             quizz.ConfigurarQuiz(estadoDaAulaInvertida.midiaAtual);
-        } else if(quizzParaMostrar  is QuizPerfilDaTurma)
+        }
+        else if (quizzParaMostrar is QuizPerfilDaTurma)
         {
             QuizPerfilDaTurma quizz = (QuizPerfilDaTurma)quizzParaMostrar;
             NivelDeEnsino nivel = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
