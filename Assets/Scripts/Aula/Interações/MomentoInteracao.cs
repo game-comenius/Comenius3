@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "MomentoInteracao", menuName = "Comenius3/MomentoInteracao", order = 0)]
 public class MomentoInteracao : ScriptableObject
@@ -15,7 +13,7 @@ public class MomentoInteracao : ScriptableObject
 
     public static MomentoInteracao GetMomentFromArchives()
     {
-        if(momentos == null)
+        if (momentos == null)
         {
             momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
             if (momentos == null)
@@ -28,18 +26,18 @@ public class MomentoInteracao : ScriptableObject
 
     public static MomentoInteracao GetMomentFromArchives(NomeDeMidia midia)
     {
-        if(momentos == null)
+        if (momentos == null)
         {
             momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
-            if(momentos == null)
+            if (momentos == null)
                 Debug.LogError("Gere os momentos denovo no menu Ferramentas/GerarMomentosDaPlanilha");
         }
 
-        foreach(MomentoInteracao momento in momentos)
+        foreach (MomentoInteracao momento in momentos)
         {
-            foreach(NomeDeMidia _midia in momento.midias)
+            foreach (NomeDeMidia _midia in momento.midias)
             {
-                if(_midia == midia)
+                if (_midia == midia)
                     return momento;
             }
         }
@@ -48,11 +46,14 @@ public class MomentoInteracao : ScriptableObject
 }
 
 [System.Serializable]
-public class PaginaInteracao 
+public class PaginaInteracao
 {
-    [HideInInspector]public string titulo {
-        get {
-            if(professorFalando)
+    [HideInInspector]
+    public string titulo
+    {
+        get
+        {
+            if (professorFalando)
                 return "Professor";
             else
                 return "Aluno";

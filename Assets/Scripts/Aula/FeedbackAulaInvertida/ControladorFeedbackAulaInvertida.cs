@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-//using System.Runtime;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
-using TMPro;
 
 public class ControladorFeedbackAulaInvertida : MonoBehaviour
 {

@@ -1,23 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DisplaySalaDeAulaInvertida : MonoBehaviour
 {
-    [SerializeField]
-    GameObject salaNormal;
-    [SerializeField]
-    GameObject salaInfantil;
-    [SerializeField]
+    [SerializeField] private GameObject salaNormal;
+    [SerializeField] private GameObject salaInfantil;
+    [SerializeField] private EstadoDeAulaInvertida controladorJogo;
 
-    EstadoDeAulaInvertida controladorJogo;
     void OnEnable()
     {
         UpdateDisplay();
         controladorJogo.OnStateChange.AddListener(UpdateDisplay);
     }
 
-    void OnDisable() 
+    void OnDisable()
     {
         controladorJogo.OnStateChange.RemoveListener(UpdateDisplay);
     }
@@ -26,12 +21,15 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
     {
         NivelDeEnsino nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
 
-        salaNormal.SetActive(false);
-        salaInfantil.SetActive(false);
-
-        if(nivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
+        if (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
+        {
             salaInfantil.SetActive(true);
+            salaNormal.SetActive(false);
+        }
         else
+        {
+            salaInfantil.SetActive(false);
             salaNormal.SetActive(true);
+        }
     }
 }

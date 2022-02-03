@@ -6,9 +6,7 @@ using UnityEngine.Events;
 public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
-    [SerializeField] private bool isRamdomAutoSelected = false;
     [SerializeField] private DisplayDeAluno displayAluno;
-    public void SetisRamdomAutoSelected(bool state) { isRamdomAutoSelected = state; }
     [SerializeField] private EstadoDeAulaInvertida estado;
     private bool dontShowDropDown;
 
@@ -20,9 +18,6 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         }
         set
         {
-            if (isRamdomAutoSelected)
-                value = MomentoInteracao.GetMomentFromArchives(estado.midiaAtual.nomeMidia);//TODO
-
             totalDePaginas = value.paginas.Length;
             paginaAtual = 0;
             paginaDropdown = value.paginaDoDropdown;
@@ -144,7 +139,6 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 
     private void AtualizarPagina()
     {
-
         PaginaInteracao pagina = momento.paginas[paginaAtual];
 
         titulo.text = pagina.titulo;

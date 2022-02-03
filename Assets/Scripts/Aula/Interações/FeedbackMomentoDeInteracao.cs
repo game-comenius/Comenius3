@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FeedbackMomentoDeInteracao : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
     }
     public void MostrarFeedback(bool acerto)
     {
-        if(acerto)
+        if (acerto)
             alunoRenderer.estaFeliz = true;
         else
             alunoRenderer.estaFeliz = false;

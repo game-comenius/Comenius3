@@ -23,7 +23,6 @@ public class MomentoAulaInvertida : MonoBehaviour
 
     public void AtualizarPontuacaoDaAula(float quantidadeDeQuizzes)
     {
-        Debug.Log("[MomentoAulaInvertida]: AtualizarPontuacaoDaAula chamada");
         EstadoDoJogo estadoJogo = EstadoDoJogo.Instance;
         Midia[] midiasSelecionadas = estadoJogo.MidiasSelecionadas;
 
