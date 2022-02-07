@@ -4,10 +4,12 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
 {
     [SerializeField] GameObject feedback;
     [SerializeField] DisplayDeAluno alunoRenderer;
+
     private void Start()
     {
         feedback.SetActive(false);
     }
+
     public void MostrarFeedback(bool acerto)
     {
         if (acerto)

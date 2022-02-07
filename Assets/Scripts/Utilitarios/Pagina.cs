@@ -6,16 +6,16 @@ public class Pagina : MonoBehaviour
 
     public virtual void Mostrar()
     {
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public virtual void Esconder()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public virtual void Alternar()
     {
-        this.gameObject.SetActive(!gameObject.activeSelf);
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 }

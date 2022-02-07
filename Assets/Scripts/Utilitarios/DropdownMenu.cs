@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// (¬_¬ ) E aí?
+
 public class DropdownMenu : MonoBehaviour
 {
     [SerializeField] private GameObject dropdownMenu;

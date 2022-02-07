@@ -8,40 +8,9 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
     public UnityEvent OnUpdate;
 
     [Header("GameObjects dos previews")]
-    [SerializeField] GameObject midia1;
-    [SerializeField] GameObject midia2;
-    [SerializeField] GameObject midiaQuarto1;
-    [SerializeField] GameObject midiaQuarto2;
-    [SerializeField] GameObject metodologia;
-    [SerializeField] GameObject inteligencia;
-    [SerializeField] GameObject campoAprendizagem;
-
-    [SerializeField] GameObject feedbackAulaInvertida;
-    [SerializeField] GameObject botaoConfirmarAnterior;
     [SerializeField] GameObject feedbackAulaInvertidaLurdinhaTexto;
     [SerializeField] GameObject feedbackAulaInvertidaAlunoTexto;
     [SerializeField] GameObject feedbackAulaInvertidaAlunoNome;
-
-    [Header("Ícones das mídias")]
-    [SerializeField] Sprite lousaSprite;
-    [SerializeField] Sprite livroDidaticoSprite;
-    [SerializeField] Sprite livrosJornaisERevistasSprite;
-    [SerializeField] Sprite cadernosECartazesSprite;
-    [SerializeField] Sprite televisaoSprite;
-    [SerializeField] Sprite aparelhoDeSomSprite;
-    [SerializeField] Sprite redesSociaisSprite;
-    [SerializeField] Sprite jogosSprite;
-    [SerializeField] Sprite editoresDeAudioEVideoSprite;
-    [SerializeField] Sprite editoresDeTextoEPlanilhasSprite;
-    [SerializeField] Sprite aveasSprite;
-    [SerializeField] Sprite aplicativosSprite;
-    [SerializeField] Sprite projetorMultimidiaSprite;
-
-    [Header("Ícones das inteligências")]
-    [SerializeField] Sprite corporalSprite;
-    [SerializeField] Sprite intrapessoalSprite;
-    [SerializeField] Sprite interpessoalSprite;
-    [SerializeField] Sprite linguisticaSprite;
 
     [Header("Retratos dos alunos")]
     [SerializeField] GameObject retratoAluno;
@@ -52,40 +21,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
 
     // Boa parte do código foi copiado do PaginaResultadoDaAula, vou ver se faço herança depois pra diminuir o código repetido.
-    // Start is called before the first frame update
-
-    private void AtualizarIcones()
-    {
-        var estadoDoJogo = EstadoDoJogo.Instance;
-
-        midia1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[2].sprite;
-        midia2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[3].sprite;
-
-        midiaQuarto1.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[0].sprite;
-        midiaQuarto2.GetComponent<Image>().sprite = estadoDoJogo.MidiasSelecionadas[1].sprite;
-        switch (estadoDoJogo.InteligenciasSelecionadas.valor)
-        {
-
-            case 0:
-                inteligencia.GetComponent<Image>().sprite = corporalSprite;
-                break;
-
-            case 1:
-                inteligencia.GetComponent<Image>().sprite = intrapessoalSprite;
-                break;
-
-            case 2:
-                inteligencia.GetComponent<Image>().sprite = interpessoalSprite;
-                break;
-
-            case 3:
-                inteligencia.GetComponent<Image>().sprite = linguisticaSprite;
-                break;
-
-        }
-
-        campoAprendizagem.GetComponent<Image>().sprite = estadoDoJogo.AreaDeConhecimentoSelecionada.sprite;
-    }
+    // Boa parte do código vai ser apagada.
 
     private void DefinirRetratoAluno(string assinatura)
     {
@@ -154,24 +90,7 @@ public class ControladorFeedbackAulaInvertida : MonoBehaviour
 
     public void Atualizar()
     {
-        AtualizarIcones();
         AtualizarFeedbackDosAlunos();
         OnUpdate.Invoke();
     }
-
-    public void Exibir()
-    {
-
-        feedbackAulaInvertida.SetActive(true);
-        Atualizar();
-
-    }
-
-    public void EsconderConfirmarAnterior()
-    {
-
-        botaoConfirmarAnterior.SetActive(false);
-
-    }
-
 }

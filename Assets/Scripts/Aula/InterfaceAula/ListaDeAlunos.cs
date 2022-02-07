@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "ListaAlunos", menuName = "Comenius3/ListaDeAlunos", order = 0)]
 public class ListaDeAlunos : ScriptableObject
 {
     public List<Aluno> alunos;

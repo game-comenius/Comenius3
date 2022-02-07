@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 public class DisplayDeAluno : MonoBehaviour
 {
@@ -14,9 +12,10 @@ public class DisplayDeAluno : MonoBehaviour
 
     [HideInInspector]
     public Aluno aluno;
+
     private void Start()
     {
-        if(atualizaOnStart)
+        if (atualizaOnStart)
         {
             AtualizarAluno();
         }
@@ -24,7 +23,7 @@ public class DisplayDeAluno : MonoBehaviour
 
     public void AtualizarAluno()
     {
-        if(!usaOutroDeReferencia)
+        if (!usaOutroDeReferencia)
             aluno = alunos.GetAluno();
         else
             aluno = outroDisplayRefencia.aluno;
