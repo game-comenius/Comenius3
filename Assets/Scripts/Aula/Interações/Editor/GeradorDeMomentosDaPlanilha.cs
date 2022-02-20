@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -7,12 +6,12 @@ public static class GeradorDeMomentosDaPlanilha
 {
 
     private static string planilhaPath = "Assets/Resources/PlanilhasGoogle/PlanilhaMomentosDeInteracao.asset";
-    
     private static string momentosParentFolderPath = "Assets/Resources/MomentosInteracao";
     private static string momentosFoldername = "GeradosPelaPlanilha";
 
     private static List<MomentoInteracao> momentos;
     [MenuItem("Ferramentas/GerarMomentosDaPlanilha")]
+
     public static void GerarMomentos()
     {
         //Gera uma nova lista de momentos
@@ -35,7 +34,7 @@ public static class GeradorDeMomentosDaPlanilha
             PaginaInteracao paginaProfessor = new PaginaInteracao();
             paginaProfessor.professorFalando = true;
             paginaProfessor.texto = new CelulaReference(planilha, linha, 1);
-          
+
             //Adiciona as paginas configuradas
             momento.paginas = new PaginaInteracao[] { paginaDoAluno, paginaProfessor };
 
@@ -46,15 +45,18 @@ public static class GeradorDeMomentosDaPlanilha
             momentos.Add(momento);
 
         }
+
         //Salva o momento na pasta
-        AssetDatabase.DeleteAsset(momentosParentFolderPath +"/"+ momentosFoldername);
+        AssetDatabase.DeleteAsset(momentosParentFolderPath + "/" + momentosFoldername);
         AssetDatabase.CreateFolder(momentosParentFolderPath, momentosFoldername);
         int index = 0;
+
         foreach (MomentoInteracao momento in momentos)
         {
             AssetDatabase.CreateAsset(momento, momentosParentFolderPath + "/" + momentosFoldername + "/MomentoPlanilha " + index + ".asset");
             index++;
         }
+
         AssetDatabase.SaveAssets();
     }
 }

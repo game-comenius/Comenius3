@@ -8,7 +8,7 @@ public class ComboChecker
         Arriscada
     }
 
-    private Combo CalcularCombo()
+    public static Combo CalcularCombo()
     {
         CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.MidiasSelecionadas[0].nomeMidia.CategoriasDaMidia();
         CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.MidiasSelecionadas[1].nomeMidia.CategoriasDaMidia();

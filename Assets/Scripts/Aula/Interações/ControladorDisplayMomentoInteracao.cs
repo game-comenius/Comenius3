@@ -28,14 +28,14 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
                 displayAluno.AtualizarDisplay();
             }
 
-            //Prepara o dropdown
+            // Prepara o dropdown
             dropdown.ClearOptions();
             List<Dropdown.OptionData> listaDeEscolhas = new List<Dropdown.OptionData>();
             listaDeEscolhas.Add(new Dropdown.OptionData(""));
 
             List<string> escolhas = new List<string>(value.opcoesDeEscolha.Valor.Split('\n'));
             escolhaErrada = new Dropdown.OptionData(escolhas[escolhas.Count - 1]);
-            //Adiciona as escolhas aleatoriamente
+            // Adiciona as escolhas aleatoriamente
             while (escolhas.Count > 0)
             {
                 int index = Random.Range(0, escolhas.Count);
@@ -99,7 +99,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     [SerializeField] private Button setaEsquerda;
     [SerializeField] private Dropdown dropdown;
 
-    public void OnValidate()//Faz atualizar o momento quando alterado pelo inspector
+    public void OnValidate()  // Faz atualizar o momento quando alterado pelo inspector
     {
         Momento = momento;
     }
@@ -113,7 +113,6 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
         //Atualiza o display para primeira pagina
         paginaAtual = 0;
         AtualizarPagina();
-
 
         //Faz os botões chamarem o avanco/volta pagina
         setaDireita.onClick.AddListener(AvançarPagina);
@@ -155,7 +154,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
             setaDireita.interactable = true;
             dropdown.gameObject.SetActive(false);
         }
-        setaEsquerda.interactable = !(paginaAtual == 0);//Seta esquerda esta ativada com excessão da primeira pagina
+        setaEsquerda.interactable = !(paginaAtual == 0);  // Seta esquerda esta ativada com excessão da primeira pagina
     }
 
     public void AvançarPagina()

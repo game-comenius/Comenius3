@@ -20,7 +20,7 @@ public class MomentoInteracao : ScriptableObject
                 Debug.LogError("Gere os momentos denovo no menu Ferramentas/GerarMomentosDaPlanilha");
         }
 
-        //Pega um momento gerado pela da planilha
+        // Pega um momento gerado pela da planilha
         return momentos[Random.Range(0, momentos.Count)];
     }
 
@@ -62,5 +62,5 @@ public class PaginaInteracao
 
     public CelulaReference texto;
 
-    public bool professorFalando; //Se for falso o aluno esta falando
+    public bool professorFalando;  // Se for falso o aluno esta falando
 }

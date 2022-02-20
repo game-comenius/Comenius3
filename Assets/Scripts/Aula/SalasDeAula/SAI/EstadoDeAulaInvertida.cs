@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
-//[CreateAssetMenu(fileName = "EstadoDeAulaInvertida", menuName = "Comenius3/EstadoDeAulaInvertida", order = 0)]
 public class EstadoDeAulaInvertida : ScriptableObject
 {
     public Midia midiaAtual;
