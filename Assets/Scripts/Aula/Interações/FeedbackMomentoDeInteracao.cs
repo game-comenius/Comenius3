@@ -10,9 +10,9 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
         feedback.SetActive(false);
     }
 
-    public void MostrarFeedback(bool acerto)
+    public void MostrarFeedback(bool acertou)
     {
-        if (acerto)
+        if (acertou)
             alunoRenderer.estaFeliz = true;
         else
             alunoRenderer.estaFeliz = false;

@@ -187,8 +187,11 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
     {
         if (dontShowDropDown)
             return;
+
         bool acertou = escolhaAtual.text != escolhaErrada.text;
+
         OnChoiceConfirm.Invoke(acertou);
+
         if (acertou)
             OnRightChoiceConfirm.Invoke();
         else
