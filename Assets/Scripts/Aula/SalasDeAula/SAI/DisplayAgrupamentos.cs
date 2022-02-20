@@ -1,25 +1,15 @@
-﻿//using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DisplayAgrupamentos : MonoBehaviour
-{   
+{
     [Header("Agrupamentos")]
 
-    [SerializeField]
-    GameObject Individual;
-     [SerializeField]
-    GameObject Duplas;
-     [SerializeField]
-    GameObject PequenosGrupos;
-     [SerializeField]
-    GameObject GrandesGrupos;
-     [SerializeField]
-    GameObject SalaInteira;
-
-    [SerializeField]
-    EstadoDeAulaInvertida controladorJogo;
+    [SerializeField] private GameObject Individual;
+    [SerializeField] private GameObject Duplas;
+    [SerializeField] private GameObject PequenosGrupos;
+    [SerializeField] private GameObject GrandesGrupos;
+    [SerializeField] private GameObject SalaInteira;
+    [SerializeField] private EstadoDeAulaInvertida controladorJogo;
 
     void OnEnable()
     {
@@ -27,14 +17,15 @@ public class DisplayAgrupamentos : MonoBehaviour
         controladorJogo.OnMidiaChange.AddListener(UpdateDisplay);
     }
 
-    void OnDisable() 
+    void OnDisable()
     {
         controladorJogo.OnMidiaChange.RemoveListener(UpdateDisplay);
     }
 
-    public void UpdateDisplay() 
+    public void UpdateDisplay()
     {
         Agrupamento agrupamento = controladorJogo.midiaAtual.agrupamento;
+
         Individual.SetActive(false);
         Duplas.SetActive(false);
         PequenosGrupos.SetActive(false);
@@ -59,6 +50,6 @@ public class DisplayAgrupamentos : MonoBehaviour
                 GrandesGrupos.SetActive(true);
                 break;
         }
-        
+
     }
 }
