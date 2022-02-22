@@ -41,16 +41,18 @@ public abstract class AfirmacaoQuiz : MonoBehaviour, IPointerClickHandler
         GetComponent<Image>().sprite = spriteErrada;
         MostrarResposta();
     }
+
     protected virtual void MostrarResposta()
     {
-        if(marcacaoResposta != null)
+        if (marcacaoResposta != null)
         {
-            if(Afirmacao.Verdadeira)
+            if (Afirmacao.Verdadeira)
             {
                 marcacaoResposta.enabled = true;
-                marcacaoResposta.color = new Color(0,1,0,0.5f);
+                marcacaoResposta.color = new Color(0, 1, 0, 0.5f);
                 marcacaoResposta.text = "V";
-            } else
+            }
+            else
             {
                 marcacaoResposta.enabled = true;
                 marcacaoResposta.color = new Color(1, 0, 0, 0.5f);

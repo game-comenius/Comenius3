@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 
 public abstract class Quiz : MonoBehaviour

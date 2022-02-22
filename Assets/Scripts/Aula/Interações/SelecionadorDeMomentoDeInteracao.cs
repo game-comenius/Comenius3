@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ControladorDisplayMomentoInteracao))]
@@ -12,13 +11,6 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
     [SerializeField] private List<MomentoInteracao> feedbacksSuperior;
     [SerializeField] private ControladorDisplayMomentoInteracao controlador;
     [SerializeField] private EstadoDeAulaInvertida controladorDaAula;
-
-    private int indiceMidiaAtual;
-
-    public void AtualizarMidiaAtual(int indiceMidia)
-    {
-        indiceMidiaAtual = indiceMidia;
-    }
 
     public void SelecionarImprevisto()
     {
@@ -42,12 +34,13 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
 
         bool positivo = ComboChecker.Combo.Arriscada != ComboChecker.CalcularCombo();
 
-        for(int i = 0; i < feedbacks.Count; i++)
+        for (int i = 0; i < feedbacks.Count; i++)
         {
-            if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.MidiasSelecionadas[indiceMidiaAtual].nomeMidia &&
+            if (feedbacks[i].midias[0] == controladorDaAula.midiaAtual.nomeMidia &&
                 positivo == feedbacks[i].alunoFeliz)
             {
                 controlador.Momento = feedbacks[i];
+                break;
             }
         }
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.UI;
 
 public class QuizDeMidia : Quiz
 {

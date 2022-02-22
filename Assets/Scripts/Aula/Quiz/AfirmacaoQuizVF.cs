@@ -7,7 +7,7 @@ public class AfirmacaoQuizVF : AfirmacaoQuiz
 {
     [SerializeField] Sprite spriteNaoSelecionada;
     [SerializeField] Sprite spriteSelecionada;
-    
+
     public bool Selecionada { get; set; }
 
     private FormatoDeQuizVF meuQuizVF;

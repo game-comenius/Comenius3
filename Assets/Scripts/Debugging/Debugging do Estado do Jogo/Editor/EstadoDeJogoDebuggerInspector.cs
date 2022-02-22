@@ -6,12 +6,21 @@ public class EstadoDeJogoDebuggerInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        EditorGUI.BeginDisabledGroup(true);
+        var debuggerScript = target as EstadoDoJogoDebugger;
+
+        debuggerScript.updateOnInit = EditorGUILayout.Toggle("Update on initialization", debuggerScript.updateOnInit);
+
+        EditorGUI.BeginDisabledGroup(!debuggerScript.updateOnInit);
         base.OnInspectorGUI();
         EditorGUI.EndDisabledGroup();
-        if(GUILayout.Button("Update Data"))
+
+        if(GUILayout.Button("Write Data"))
         {
-            (target as EstadoDoJogoDebugger).UpdateData();
+            debuggerScript.WriteData();
+        }
+        else if (GUILayout.Button("Read Data"))
+        {
+            debuggerScript.ReadData();
         }
     }
 }

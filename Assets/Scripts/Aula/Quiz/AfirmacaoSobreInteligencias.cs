@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 // Afirmações verdadeiras e falsas sobre cada um dos pares de inteligências presentes no jogo
 // Afirmações retiradas deste arquivo do Drive: https://docs.google.com/spreadsheets/d/1uW2ZZz8BnagpY9qWkufsmtNI8Bl_A8T1srsZDmPxHM0/edit#gid=0

@@ -75,7 +75,7 @@ public class FormatoDeQuizMultiplaEscolha : FormatoDeQuiz
         var respostaSelecionada = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME => afirmacaoQuizME.Selecionada).Single();
         var respostaVerdadeira = afirmacoesQuizMultiplaEscolha.Where(afirmacaoQuizME => afirmacaoQuizME.Afirmacao.Verdadeira).Single();
         var acertou = (respostaSelecionada == respostaVerdadeira);
-        
+
         if (acertou)
         {
             respostaVerdadeira.DefinirComoAcertoDoJogador();
