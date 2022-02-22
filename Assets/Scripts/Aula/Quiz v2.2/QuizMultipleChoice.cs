@@ -6,15 +6,19 @@ public class QuizMultipleChoice : QuizBase
     [SerializeReference] private List<AffirmationMultipleChoice> affirmations;
     [SerializeField] private List<string> correctAnswers;
     [SerializeField] private List<string> wrongAnswers;
+    [SerializeField] private int scoreOnRightAnswer;
 
     private int selectedAffirmationIndex;
 
     public void NotifySelection(AffirmationMultipleChoice affirmation)
     {
-        if (selectedAffirmationIndex >= 0)
+        if (selectedAffirmationIndex >= 0 && affirmations.IndexOf(affirmation) != selectedAffirmationIndex)
             affirmations[selectedAffirmationIndex].Selection();
 
-        selectedAffirmationIndex = affirmations.IndexOf(affirmation);
+        if (affirmations.IndexOf(affirmation) != selectedAffirmationIndex)
+            selectedAffirmationIndex = affirmations.IndexOf(affirmation);
+        else
+            selectedAffirmationIndex = -1;
     }
 
     protected override void BuildQuiz()
@@ -27,10 +31,13 @@ public class QuizMultipleChoice : QuizBase
             if (i == correctAnswerIndex)
             {
                 affirmations[i].text.text = correctAnswers[Random.Range(0, correctAnswers.Count)];
+                affirmations[i].correct = true;
             }
             else
             {
                 affirmations[i].text.text = wrongAnswers[Random.Range(0, correctAnswers.Count)];
+                affirmations[i].correct = false;
+
                 wrongAnswers.Remove(affirmations[i].text.text);
             }
         }
@@ -38,7 +45,7 @@ public class QuizMultipleChoice : QuizBase
 
     protected override void Evaluate()
     {
-        correctAnswersRatio = 0.0f;
+        score = 0;
 
         for (int i = 0; i < maxAffirmations; i++)
         {
@@ -48,7 +55,7 @@ public class QuizMultipleChoice : QuizBase
                 affirmations[i].UpdateResultColor(false);
 
             if (affirmations[i].selected && affirmations[i].correct)
-                correctAnswersRatio = 1.0f;
+                score = scoreOnRightAnswer;
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class MomentoAulaInvertida : MonoBehaviour
 {
     [SerializeField] private EstadoDeAulaInvertida messenger;
+    [SerializeField] private int score;
 
     [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
     public QuizzExitEvent OnPontuacaoMidiaUpdate;
@@ -18,7 +19,6 @@ public class MomentoAulaInvertida : MonoBehaviour
     public void AvancarEstado()
     {
         messenger.AvancarEstado();
-        Debug.Log($"[MomentoAulaInvertida]: Estado = {messenger.estadoAtual}");
     }
 
     public void AtualizarPontuacaoDaAula(float quantidadeDeQuizzes)

@@ -5,24 +5,30 @@ using UnityEngine.UI;
 public class QuizBase : MonoBehaviour
 {
     public QuizType quizType;
+    public string methodology;
+    public string intelligence;
+    public NomeDeMidia media;
+
     public enum QuizType
     {
-        Metodology,
-        MultipleInteligences,
+        Methodology,
+        MultipleIntelligences,
         Media
     }
 
+    [TextArea]
+    [SerializeReference] protected string question;
     [SerializeReference] protected QuizManager quizManager;
     [SerializeReference] protected int maxAffirmations;
-    [SerializeReference] protected Image icon;
-    [SerializeReference] protected Text question;
+    [SerializeReference] protected Text questionText;
 
-    protected float correctAnswersRatio;
+    protected int score;
     protected bool quizEvaluated;
 
     private void Start()
     {
         quizEvaluated = false;
+        questionText.text = question;
 
         BuildQuiz();
     }
@@ -30,7 +36,7 @@ public class QuizBase : MonoBehaviour
     public void Confirm()
     {
         if (quizEvaluated)
-            quizManager.NotifyQuizEnd(correctAnswersRatio);
+            quizManager.NotifyQuizEnd(score);
         else
             Evaluate();
     }
