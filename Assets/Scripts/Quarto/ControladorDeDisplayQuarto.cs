@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Vai ser refeito")]
 [RequireComponent(typeof(SpriteRenderer))]
 public class ControladorDeDisplayQuarto : MonoBehaviour
 {

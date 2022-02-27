@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
+[System.Obsolete("Vai ser refeito")]
 public class ControladorMidiasEscolhidas : MonoBehaviour
 {
     [SerializeField] GameObject midia0;
