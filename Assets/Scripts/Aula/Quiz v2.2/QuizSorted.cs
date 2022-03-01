@@ -22,36 +22,36 @@ public class QuizSorted : QuizBase
         int oldIndex = affirmations.IndexOf(affirmation);
 
         RectTransform affirmationRect = affirmation.GetComponent<RectTransform>();
-        RectTransform targetPositionAffirmationRect;
 
-        if (affirmationRect.anchoredPosition.y > affirmation.lockedPosition.y && oldIndex > 0)
+        for (int i = 0; i < affirmations.Count; ++i)
         {
-            targetPositionAffirmationRect = affirmations[oldIndex - 1].GetComponent<RectTransform>();
+            if (affirmationRect.anchoredPosition.y > affirmationsPositions[i].y)
+            {
+                if (oldIndex != i)
+                {
+                    affirmations.Remove(affirmation);
+                    affirmations.Insert(i, affirmation);
 
-            affirmationRect.anchoredPosition = targetPositionAffirmationRect.anchoredPosition;
-            affirmation.lockedPosition = affirmationRect.anchoredPosition;
-            targetPositionAffirmationRect.anchoredPosition = affirmationsPositions[oldIndex];
-            affirmations[oldIndex - 1].lockedPosition = targetPositionAffirmationRect.anchoredPosition;
+                    int startIndex = i < oldIndex ? i : oldIndex;
 
-            affirmations.Remove(affirmation);
-            affirmations.Insert(oldIndex - 1, affirmation);
+                    for (int j = startIndex; j < affirmations.Count; j++)
+                    {
+                        RectTransform modifiedAffirmationRect = affirmations[j].GetComponent<RectTransform>();
+
+                        modifiedAffirmationRect.anchoredPosition = affirmationsPositions[j];
+                        affirmations[j].lockedPosition = modifiedAffirmationRect.anchoredPosition;
+                    }
+                }
+                else
+                {
+                    affirmationRect.anchoredPosition = affirmation.lockedPosition;
+                }
+
+                return;
+            }
         }
-        else if (oldIndex < maxAffirmations - 1)
-        {
-            targetPositionAffirmationRect = affirmations[oldIndex + 1].GetComponent<RectTransform>();
 
-            affirmationRect.anchoredPosition = targetPositionAffirmationRect.anchoredPosition;
-            affirmation.lockedPosition = affirmationRect.anchoredPosition;
-            targetPositionAffirmationRect.anchoredPosition = affirmationsPositions[oldIndex];
-            affirmations[oldIndex + 1].lockedPosition = targetPositionAffirmationRect.anchoredPosition;
-
-            affirmations.Remove(affirmation);
-            affirmations.Insert(oldIndex + 1, affirmation);
-        }
-        else
-        {
-            affirmationRect.anchoredPosition = affirmation.lockedPosition;
-        }
+        affirmationRect.anchoredPosition = affirmation.lockedPosition;
     }
 
     protected override void BuildQuiz()

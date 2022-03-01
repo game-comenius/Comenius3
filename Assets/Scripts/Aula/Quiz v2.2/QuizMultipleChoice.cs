@@ -7,6 +7,7 @@ public class QuizMultipleChoice : QuizBase
     [SerializeField] private List<string> correctAnswers;
     [SerializeField] private List<string> wrongAnswers;
     [SerializeField] private int scoreOnRightAnswer;
+    [SerializeField] private bool inverted;
 
     private int selectedAffirmationIndex;
 
@@ -30,12 +31,14 @@ public class QuizMultipleChoice : QuizBase
         {
             if (i == correctAnswerIndex)
             {
-                affirmations[i].text.text = correctAnswers[Random.Range(0, correctAnswers.Count)];
+                affirmations[i].text.text = inverted ? wrongAnswers[Random.Range(0, correctAnswers.Count)] :
+                                                       correctAnswers[Random.Range(0, correctAnswers.Count)];
                 affirmations[i].correct = true;
             }
             else
             {
-                affirmations[i].text.text = wrongAnswers[Random.Range(0, correctAnswers.Count)];
+                affirmations[i].text.text = inverted ? correctAnswers[Random.Range(0, correctAnswers.Count)] :
+                                                       wrongAnswers[Random.Range(0, correctAnswers.Count)];
                 affirmations[i].correct = false;
 
                 wrongAnswers.Remove(affirmations[i].text.text);
