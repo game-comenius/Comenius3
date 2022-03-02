@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class QuizSorted : QuizBase
 {
-    [SerializeReference] private List<AffirmationSorted> affirmations;
+    public Canvas canvas;
+    [SerializeField] private List<AffirmationSorted> affirmations;
+    [SerializeField] private List<Draggable> draggables;
     [SerializeField] private List<string> sortedAnswers;
 
     [Header("Pontuação com mais de dois acertos")]
@@ -59,6 +61,11 @@ public class QuizSorted : QuizBase
         affirmationsPositions = new List<Vector2>();
         List<string> answers = new List<string>(sortedAnswers);
 
+        for (int i = 0; i < draggables.Count; i++)
+        {
+            draggables[i].canvas = canvas;
+        }
+
         for (int i = 0; i < affirmations.Count; i++)
         {
             if (i < maxAffirmations)
@@ -103,5 +110,7 @@ public class QuizSorted : QuizBase
             score = middleScore;
         else
             score = lowerScore;
+
+        quizEvaluated = true;
     }
 }

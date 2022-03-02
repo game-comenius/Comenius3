@@ -4,6 +4,7 @@ using UnityEngine.UI;
 // Renomerar para "Quiz" no futuro
 public class QuizBase : MonoBehaviour
 {
+    public QuizManager quizManager;
     public QuizType quizType;
     public string methodology;
     public string intelligence;
@@ -18,7 +19,6 @@ public class QuizBase : MonoBehaviour
 
     [TextArea]
     [SerializeReference] protected string question;
-    [SerializeReference] protected QuizManager quizManager;
     [SerializeReference] protected int maxAffirmations;
     [SerializeReference] protected Text questionText;
 
@@ -36,9 +36,14 @@ public class QuizBase : MonoBehaviour
     public void Confirm()
     {
         if (quizEvaluated)
+        {
             quizManager.NotifyQuizEnd(score);
+            Destroy(gameObject);
+        }
         else
+        {
             Evaluate();
+        }
     }
 
     protected virtual void BuildQuiz() { }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class QuizMultipleChoice : QuizBase
 {
-    [SerializeReference] private List<AffirmationMultipleChoice> affirmations;
+    [SerializeField] private List<AffirmationMultipleChoice> affirmations;
     [SerializeField] private List<string> correctAnswers;
     [SerializeField] private List<string> wrongAnswers;
     [SerializeField] private int scoreOnRightAnswer;
@@ -31,17 +31,20 @@ public class QuizMultipleChoice : QuizBase
         {
             if (i == correctAnswerIndex)
             {
-                affirmations[i].text.text = inverted ? wrongAnswers[Random.Range(0, correctAnswers.Count)] :
+                affirmations[i].text.text = inverted ? wrongAnswers[Random.Range(0, wrongAnswers.Count)] :
                                                        correctAnswers[Random.Range(0, correctAnswers.Count)];
                 affirmations[i].correct = true;
             }
             else
             {
                 affirmations[i].text.text = inverted ? correctAnswers[Random.Range(0, correctAnswers.Count)] :
-                                                       wrongAnswers[Random.Range(0, correctAnswers.Count)];
+                                                       wrongAnswers[Random.Range(0, wrongAnswers.Count)];
                 affirmations[i].correct = false;
 
-                wrongAnswers.Remove(affirmations[i].text.text);
+                if (inverted)
+                    correctAnswers.Remove(affirmations[i].text.text);
+                else
+                    wrongAnswers.Remove(affirmations[i].text.text);
             }
         }
     }
@@ -60,5 +63,7 @@ public class QuizMultipleChoice : QuizBase
             if (affirmations[i].selected && affirmations[i].correct)
                 score = scoreOnRightAnswer;
         }
+
+        quizEvaluated = true;
     }
 }

@@ -6,8 +6,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     [System.Serializable] public class OnDragEndEvent : UnityEvent { }
     public OnDragEndEvent OnDragEnd;
-
-    [SerializeField] private Canvas canvas;
+    public Canvas canvas;
 
     private Vector2 initialPosition;
 

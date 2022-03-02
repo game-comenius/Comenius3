@@ -5734,17 +5734,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1068671431}
   - component: {fileID: 1068671430}
-  - component: {fileID: 1068671432}
-  - component: {fileID: 1068671433}
-  - component: {fileID: 1068671434}
-  - component: {fileID: 1068671435}
   m_Layer: 0
-  m_Name: Gerenciador de quiz [OBSOLETO]
+  m_Name: Gerenciador de quiz [REMOVER]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1068671430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,198 +5809,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1068671432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068671429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
-  estadosNoQualChama:
-  - {fileID: 11400000, guid: d5592ed48de7b67438f30be83ae62b6b, type: 2}
-  OnSelectedStates:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1068671430}
-        m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
-        m_MethodName: MostrarProximoQuizz
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1729727042}
-        m_TargetAssemblyTypeName: SelecionadorDeMomentoDeInteracao, Assembly-CSharp
-        m_MethodName: AtualizarMidiaAtual
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnNotSelectedStates:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1068671433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068671429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
-  estadosNoQualChama:
-  - {fileID: 11400000, guid: a44ebecc5b728b84785a058af110be3c, type: 2}
-  OnSelectedStates:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1068671430}
-        m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
-        m_MethodName: MostrarProximoQuizz
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnNotSelectedStates:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1068671434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068671429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
-  estadosNoQualChama:
-  - {fileID: 11400000, guid: 28d35274310860e409374145b70d25aa, type: 2}
-  OnSelectedStates:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1068671430}
-        m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
-        m_MethodName: MostrarProximoQuizz
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1729727042}
-        m_TargetAssemblyTypeName: SelecionadorDeMomentoDeInteracao, Assembly-CSharp
-        m_MethodName: AtualizarMidiaAtual
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnNotSelectedStates:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1068671435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068671429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
-  estadosNoQualChama:
-  - {fileID: 11400000, guid: 503e456378f2a2c459a0f567af131e29, type: 2}
-  OnSelectedStates:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1068671430}
-        m_TargetAssemblyTypeName: QuizzManager, Assembly-CSharp
-        m_MethodName: MostrarProximoQuizz
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnNotSelectedStates:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1072122129
 GameObject:
   m_ObjectHideFlags: 0
@@ -11992,6 +11796,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2055673694}
   - component: {fileID: 2055673695}
+  - component: {fileID: 2055673699}
+  - component: {fileID: 2055673698}
+  - component: {fileID: 2055673697}
+  - component: {fileID: 2055673696}
   m_Layer: 0
   m_Name: Quiz Manager
   m_TagString: Untagged
@@ -12026,14 +11834,204 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17d1019f3cb53c47a5c1d57071170ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metodologyQuizList: []
-  multipleInteligencesQuizList: []
-  mediaQuizList: []
+  methodologyQuizList:
+  - {fileID: 1771408153625426345, guid: 30c6f9496a31a5b45a35f286001a4d13, type: 3}
+  - {fileID: 7591310648407459873, guid: 5a398729638ba98439195e086d80b836, type: 3}
+  - {fileID: 7591310648407459873, guid: faaacd9434ce1b148ae8e8c5604e768e, type: 3}
+  multipleInteligencesQuizList:
+  - {fileID: 7591310648407459873, guid: 6d52845fb52ed9f418cd2bdfa2a7de8f, type: 3}
+  - {fileID: 7591310648407459873, guid: 80901b74fc2afcf4d87950e6ccf78107, type: 3}
+  - {fileID: 7591310648407459873, guid: 26691228632720043b201e9971b8671d, type: 3}
+  - {fileID: 7591310648407459873, guid: d4887a0f8a760a54e8c6c7f9fac82e7b, type: 3}
+  mediaQuizList:
+  - {fileID: 7591310648407459873, guid: 5c4ee78680c89164fa9e92a086cb7b4a, type: 3}
+  - {fileID: 7591310648407459873, guid: 0572a60245bc46c4794f116a05009548, type: 3}
   stateController: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  canvas: {fileID: 1026319642}
   OnScoreChange:
     m_PersistentCalls:
       m_Calls: []
   OnQuizEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 774386296}
+        m_TargetAssemblyTypeName: MomentoAulaInvertida, Assembly-CSharp
+        m_MethodName: AvancarEstado
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2055673696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055673693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: 503e456378f2a2c459a0f567af131e29, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1729727038}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2055673695}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMetodologyQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2055673697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055673693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: 28d35274310860e409374145b70d25aa, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1729727038}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2055673695}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMediaQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2055673698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055673693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: a44ebecc5b728b84785a058af110be3c, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1729727038}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2055673695}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMediaQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2055673699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055673693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: d5592ed48de7b67438f30be83ae62b6b, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2055673695}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMultipleInteligenceQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &2056547573
