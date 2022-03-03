@@ -21,6 +21,7 @@ public class QuizBase : MonoBehaviour
     [SerializeReference] protected string question;
     [SerializeReference] protected int maxAffirmations;
     [SerializeReference] protected Text questionText;
+    [SerializeReference] protected bool modularText;
 
     protected int score;
     protected bool quizEvaluated;
@@ -28,7 +29,6 @@ public class QuizBase : MonoBehaviour
     private void Start()
     {
         quizEvaluated = false;
-        questionText.text = question;
 
         BuildQuiz();
     }

@@ -55,6 +55,8 @@ public class QuizManager : MonoBehaviour
 
                 QuizBase quizBase = quiz.GetComponent<QuizBase>();
                 quizBase.quizManager = this;
+
+                break;
             }
         }
     }
@@ -79,6 +81,8 @@ public class QuizManager : MonoBehaviour
 
                 QuizBase quizBase = quiz.GetComponent<QuizBase>();
                 quizBase.quizManager = this;
+
+                break;
             }
         }
     }

@@ -58,6 +58,7 @@ public class QuizSorted : QuizBase
 
     protected override void BuildQuiz()
     {
+        questionText.text = question;
         affirmationsPositions = new List<Vector2>();
         List<string> answers = new List<string>(sortedAnswers);
 
