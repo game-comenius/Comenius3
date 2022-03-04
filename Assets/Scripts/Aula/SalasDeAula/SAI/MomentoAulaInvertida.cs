@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 public class MomentoAulaInvertida : MonoBehaviour
 {
-    [SerializeField] private EstadoDeAulaInvertida messenger;
-    [SerializeField] private int score;
+    [HideInInspector] public int score;
 
-    [System.Serializable] public class QuizzExitEvent : UnityEvent<float> { }
-    public QuizzExitEvent OnPontuacaoMidiaUpdate;
+    [SerializeField] private EstadoDeAulaInvertida messenger;
 
     [ContextMenu("Start")]
     private void Start()
@@ -21,24 +18,8 @@ public class MomentoAulaInvertida : MonoBehaviour
         messenger.AvancarEstado();
     }
 
-    public void AtualizarPontuacaoDaAula(float quantidadeDeQuizzes)
+    public void UpdateScore(int scoreDiff)
     {
-        EstadoDoJogo estadoJogo = EstadoDoJogo.Instance;
-        Midia[] midiasSelecionadas = estadoJogo.MidiasSelecionadas;
-
-        float pontuacao = 0f;
-
-        foreach (Midia midia in midiasSelecionadas)
-        {
-            if (midia.nomeMidia == NomeDeMidia.CadernosECartazes || midia.nomeMidia == NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
-                pontuacao += 0.5f;
-            else if (midia.nomeMidia == NomeDeMidia.Televisao)
-                pontuacao += 0.17f;
-            else
-                pontuacao += 0.25f;
-        }
-
-        pontuacao /= quantidadeDeQuizzes;
-        OnPontuacaoMidiaUpdate.Invoke(pontuacao);
+        score += scoreDiff;
     }
 }

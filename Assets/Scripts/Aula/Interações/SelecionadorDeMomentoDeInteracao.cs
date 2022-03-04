@@ -32,7 +32,7 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
         else
             feedbacks = feedbacksSuperior;
 
-        bool positivo = ComboChecker.Combo.Arriscada != ComboChecker.CalcularCombo();
+        bool positivo = ComboChecker.Combo.Arriscada != ComboChecker.EvaluateCombo();
 
         for (int i = 0; i < feedbacks.Count; i++)
         {
