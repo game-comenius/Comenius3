@@ -69,10 +69,10 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
             if (midiasSelecionadas == null)
                 midiasSelecionadas = new Midia[]
                 {
+                    new Midia(NomeDeMidia.Lousa),
                     new Midia(NomeDeMidia.LivroDidatico),
-                    new Midia(NomeDeMidia.RedesSociais),
-                    new Midia(NomeDeMidia.AparelhoDeSom),
-                    new Midia(NomeDeMidia.Lousa)
+                    new Midia(NomeDeMidia.LivrosJornaisERevistas),
+                    new Midia(NomeDeMidia.CadernosECartazes)
                 };
             return midiasSelecionadas;
         }
@@ -81,10 +81,14 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     }
 
     // Características da personagem selecionada, observar se estes valores != null
-    public Sprite SpriteCorpoPersonagem { get; set; }
-    public Sprite SpriteCabeloPersonagem { get; set; }
-    public Sprite SpriteRoupaPersonagem { get; set; }
-    public Sprite SpriteIconePersonagem { get; set; }
+    public Sprite spriteCorpoPersonagem { get; set; }
+    public Sprite spriteCabeloPersonagem { get; set; }
+    public Sprite spriteRoupaPersonagem { get; set; }
+    public Sprite spriteIconePersonagem { get; set; }
+
+    public Sprite spriteCorpoPersonagemSentado { get; set; }
+    public Sprite spriteCabeloPersonagemSentado { get; set; }
+    public Sprite spriteRoupaPersonagemSentado { get; set; }
 
     [HideInInspector] public List<FlagDeEstadoDeJogo> flags;  // Não utilizado
 }

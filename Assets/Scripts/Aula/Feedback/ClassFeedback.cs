@@ -20,26 +20,26 @@ public class ClassFeedback : MonoBehaviour
     private void OnEnable()
     {
         string greetings;
-        string adjective;
+        string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
         if (controller.score < 33)
         {
-            greetings = "[PLACEHOLDER]";
+            greetings = "";
             adjective = "Confusa";
         }
         else if (controller.score < 66)
         {
-            greetings = "[PLACEHOLDER]";
+            greetings = "";
             adjective = "Comum";
         }
         else
         {
-            greetings = "Parabéns!";
+            greetings = "Parabéns! ";
             adjective = "Reveladora";
         }
 
         // TODO: Modificar a fase no texto no futuro
-        classQualityText.text = $"{greetings} Sua Aula foi {adjective}";
+        classQualityText.text = $"{greetings}Sua Aula foi {adjective}";
 
         StartCoroutine(UpdateBarCoroutine(controller.score));
 

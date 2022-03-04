@@ -7,7 +7,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private List<GameObject> methodologyQuizList;
     [SerializeField] private List<GameObject> multipleInteligencesQuizList;
     [SerializeField] private List<GameObject> mediaQuizList;
-    [SerializeField] private EstadoDeAulaInvertida stateController;
+    [SerializeField] private MomentoAulaInvertida stateMachine;
     [SerializeField] private GameObject canvas;
 
     [System.Serializable] public class ScoreChangeEvent : UnityEvent<int> { }
@@ -65,7 +65,7 @@ public class QuizManager : MonoBehaviour
     {
         for(int i = 0; i < mediaQuizList.Count; i++)
         {
-            if (mediaQuizList[i].GetComponent<QuizBase>().media == stateController.midiaAtual.nomeMidia)
+            if (mediaQuizList[i].GetComponent<QuizBase>().media == stateMachine.MidiaAtual().nomeMidia)
             {
                 GameObject quiz = Instantiate(mediaQuizList[i]);
 

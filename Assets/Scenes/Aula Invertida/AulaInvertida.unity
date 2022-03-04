@@ -478,7 +478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "As anota\xE7\xF5es que fiz no caderno me ajudaram na aula"
+  m_Text: Esqueci meu caderno em casa.
 --- !u!222 &81447462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1569,7 +1569,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: 
+    - m_Text: "Acompanhe pelo livro did\xE1tico."
+      m_Image: {fileID: 0}
+    - m_Text: Sente com um colega.
+      m_Image: {fileID: 0}
+    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
+      m_Image: {fileID: 0}
+    - m_Text: "Voc\xEA vai levar zero."
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5711,7 +5717,7 @@ MonoBehaviour:
   alunos: {fileID: 11400000, guid: 1b6ec2832633709449dd672230aaee51, type: 2}
   atualizaOnStart: 1
   icone: {fileID: 1333716082}
-  estaFeliz: 1
+  estaFeliz: 0
   usaOutroDeReferencia: 0
   outroDisplayRefencia: {fileID: 0}
   aluno:
@@ -5724,6 +5730,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 270658509}
     m_Modifications:
+    - target: {fileID: 1017781576051965390, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5538586308345356557, guid: 26b24e8b109e34f938e3ca2bcdf2b51c,
         type: 3}
       propertyPath: m_RootOrder
@@ -8187,7 +8198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911541077b2f3d4894cf535ba3c3053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momento: {fileID: 11400000, guid: 6043141b6dbe1114294cf1e6cb28ce03, type: 2}
+  momento: {fileID: 11400000, guid: dac54c83f8271f746b40a3e2dec792ce, type: 2}
   displayAluno: {fileID: 1333716085}
   estado: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
   OnChoiceConfirm:
@@ -8295,14 +8306,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imprevistos:
   - {fileID: 11400000, guid: dac54c83f8271f746b40a3e2dec792ce, type: 2}
-  - {fileID: 11400000, guid: 30521c6664f1e7b448fe0ceeb311e972, type: 2}
   - {fileID: 11400000, guid: 162ed8535d2d4164abf2827a0f2912b7, type: 2}
   - {fileID: 11400000, guid: 1c5cd95b05870c04ebe9e499e4788802, type: 2}
   - {fileID: 11400000, guid: 69d1f37e3a6dac240bf641474a3f142b, type: 2}
   - {fileID: 11400000, guid: 881915ec36652d948be96341abffecb8, type: 2}
   - {fileID: 11400000, guid: cfe8ce2c63868df4a8722caac45f3d51, type: 2}
   - {fileID: 11400000, guid: af56dd931f2dd0d4a8256e7acb886177, type: 2}
-  - {fileID: 11400000, guid: 48f0712f7c18dd9459070f58bc379298, type: 2}
   feedbacksInfantil:
   - {fileID: 11400000, guid: 1ab7a139206a66640b818f53b3f90a63, type: 2}
   - {fileID: 11400000, guid: 6fac54f2afe89744d9b24d8418cb07d9, type: 2}
@@ -8404,7 +8413,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03d8df8d8a17fcc4c811f1028a3815eb, type: 2}
   - {fileID: 11400000, guid: 957568c33b1ed3941967769c2ab1907b, type: 2}
   controlador: {fileID: 1729727040}
-  controladorDaAula: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d, type: 2}
+  maquinaDeEstados: {fileID: 774386296}
 --- !u!1 &1746604668
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,7 +9867,7 @@ MonoBehaviour:
   - {fileID: 7591310648407459873, guid: 0572a60245bc46c4794f116a05009548, type: 3}
   - {fileID: 7591310648407459873, guid: 7fb198347f467104caafd5d99a6cd3da, type: 3}
   - {fileID: 7591310648407459873, guid: dcdbfdb876f01c4469b225f186570620, type: 3}
-  stateController: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a, type: 2}
+  stateMachine: {fileID: 774386296}
   canvas: {fileID: 1026319642}
   OnScoreChange:
     m_PersistentCalls:

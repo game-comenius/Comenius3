@@ -30,10 +30,10 @@ public class EstadoDoJogoDebugger : MonoBehaviour
         estadoDoJogo.InteligenciasSelecionadas = inteligenciasSelecionadas;
         estadoDoJogo.MetodologiaSelecionada = metodologiaSelecionada;
         estadoDoJogo.MidiasSelecionadas = midiasSelecionadas;
-        estadoDoJogo.SpriteCorpoPersonagem = SpriteCorpoPersonagem;
-        estadoDoJogo.SpriteCabeloPersonagem = SpriteCabeloPersonagem;
-        estadoDoJogo.SpriteRoupaPersonagem = SpriteRoupaPersonagem;
-        estadoDoJogo.SpriteIconePersonagem = SpriteIconePersonagem;
+        estadoDoJogo.spriteCorpoPersonagem = SpriteCorpoPersonagem;
+        estadoDoJogo.spriteCabeloPersonagem = SpriteCabeloPersonagem;
+        estadoDoJogo.spriteRoupaPersonagem = SpriteRoupaPersonagem;
+        estadoDoJogo.spriteIconePersonagem = SpriteIconePersonagem;
     }
 
     public void ReadData()
@@ -45,10 +45,10 @@ public class EstadoDoJogoDebugger : MonoBehaviour
         inteligenciasSelecionadas = estadoDoJogo.InteligenciasSelecionadas;
         metodologiaSelecionada = estadoDoJogo.MetodologiaSelecionada;
         midiasSelecionadas = estadoDoJogo.MidiasSelecionadas;
-        SpriteCorpoPersonagem = estadoDoJogo.SpriteCorpoPersonagem;
-        SpriteCabeloPersonagem = estadoDoJogo.SpriteCabeloPersonagem;
-        SpriteRoupaPersonagem = estadoDoJogo.SpriteRoupaPersonagem;
-        SpriteIconePersonagem = estadoDoJogo.SpriteIconePersonagem;
+        SpriteCorpoPersonagem = estadoDoJogo.spriteCorpoPersonagem;
+        SpriteCabeloPersonagem = estadoDoJogo.spriteCabeloPersonagem;
+        SpriteRoupaPersonagem = estadoDoJogo.spriteRoupaPersonagem;
+        SpriteIconePersonagem = estadoDoJogo.spriteIconePersonagem;
     }
 
     public void DefaultInitialization()
@@ -67,9 +67,9 @@ public class EstadoDoJogoDebugger : MonoBehaviour
         estadoDoJogo.InteligenciasSelecionadas = Inteligencias.CorporalCinestesicaComNaturalista;
         estadoDoJogo.MetodologiaSelecionada = Metodologia.Invertida;
         estadoDoJogo.MidiasSelecionadas = midias;
-        estadoDoJogo.SpriteCorpoPersonagem = SpriteCorpoPersonagem;
-        estadoDoJogo.SpriteCabeloPersonagem = SpriteCabeloPersonagem;
-        estadoDoJogo.SpriteRoupaPersonagem = SpriteRoupaPersonagem;
-        estadoDoJogo.SpriteIconePersonagem = SpriteIconePersonagem;
+        estadoDoJogo.spriteCorpoPersonagem = SpriteCorpoPersonagem;
+        estadoDoJogo.spriteCabeloPersonagem = SpriteCabeloPersonagem;
+        estadoDoJogo.spriteRoupaPersonagem = SpriteRoupaPersonagem;
+        estadoDoJogo.spriteIconePersonagem = SpriteIconePersonagem;
     }
 }

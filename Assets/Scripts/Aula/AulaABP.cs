@@ -69,7 +69,7 @@ public class AulaABP : Aula
         ConfigurarTrocaDeMidiasDuranteAula(MidiasDaAula);
 
         // Inicializar UI da aula
-        var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.SpriteIconePersonagem;
+        var spriteIconePersonagemSelecionada = EstadoDoJogo.Instance.spriteIconePersonagem;
         if (spriteIconePersonagemSelecionada) iconePersonagemUI.sprite = spriteIconePersonagemSelecionada;
 
         // Configurar e aplicar os quizzes na aula

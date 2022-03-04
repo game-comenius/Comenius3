@@ -12,7 +12,7 @@ public class ResumoGlobal : MonoBehaviour
 
     private void OnEnable()
     {
-        iconePersonagem.sprite = EstadoDoJogo.Instance.SpriteIconePersonagem;
+        iconePersonagem.sprite = EstadoDoJogo.Instance.spriteIconePersonagem;
         iconeNivelDeEnsino.sprite = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite;
         iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite;
         iconeInteligenciasMultiplas.sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;

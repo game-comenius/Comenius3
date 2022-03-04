@@ -18,6 +18,11 @@ public class MomentoAulaInvertida : MonoBehaviour
         messenger.AvancarEstado();
     }
 
+    public Midia MidiaAtual()
+    {
+        return messenger.midiaAtual;
+    }
+
     public void UpdateScore(int scoreDiff)
     {
         score += scoreDiff;
