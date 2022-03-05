@@ -10,13 +10,13 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
     [SerializeField] private List<MomentoInteracao> feedbacksMedio;
     [SerializeField] private List<MomentoInteracao> feedbacksSuperior;
     [SerializeField] private ControladorDisplayMomentoInteracao controlador;
-    [SerializeField] private MomentoAulaInvertida maquinaDeEstados;
+    [SerializeField] private StateMachineController maquinaDeEstados;
 
     public void SelecionarImprevisto()
     {
         for (int i = 0; i < imprevistos.Count; i++)
         {
-            if (imprevistos[i].midias[0] == maquinaDeEstados.MidiaAtual().nomeMidia)
+            if (imprevistos[i].midias[0] == maquinaDeEstados.CurrentMedia().nomeMidia)
             {
                 controlador.Momento = imprevistos[i];
                 break;
@@ -43,7 +43,7 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
 
         for (int i = 0; i < feedbacks.Count; i++)
         {
-            if (feedbacks[i].midias[0] == maquinaDeEstados.MidiaAtual().nomeMidia &&
+            if (feedbacks[i].midias[0] == maquinaDeEstados.CurrentMedia().nomeMidia &&
                 positivo == feedbacks[i].alunoFeliz)
             {
                 controlador.Momento = feedbacks[i];

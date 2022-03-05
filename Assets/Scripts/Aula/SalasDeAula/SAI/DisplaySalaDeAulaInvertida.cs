@@ -4,7 +4,7 @@ public class DisplaySalaDeAulaInvertida : MonoBehaviour
 {
     [SerializeField] private GameObject salaNormal;
     [SerializeField] private GameObject salaInfantil;
-    [SerializeField] private EstadoDeAulaInvertida controladorJogo;
+    [SerializeField] private StateMachine controladorJogo;
 
     void OnEnable()
     {

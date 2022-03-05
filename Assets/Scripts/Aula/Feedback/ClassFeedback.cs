@@ -6,7 +6,7 @@ using TMPro;
 
 public class ClassFeedback : MonoBehaviour
 {
-    [SerializeField] private MomentoAulaInvertida controller;
+    [SerializeField] private StateMachineController controller;
     [SerializeField] private TextMeshProUGUI classQualityText;
     [SerializeField] private Slider classQualityBar;
     [SerializeField] private float animationTime;

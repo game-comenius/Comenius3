@@ -7,7 +7,7 @@ public class ControladorDisplayMomentoInteracao : MonoBehaviour
 {
     [SerializeField] private MomentoInteracao momento;
     [SerializeField] private DisplayDeAluno displayAluno;
-    [SerializeField] private EstadoDeAulaInvertida estado;
+    [SerializeField] private StateMachine estado;
     private bool dontShowDropDown;
 
     public MomentoInteracao Momento

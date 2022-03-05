@@ -9,22 +9,22 @@ public class DisplayAgrupamentos : MonoBehaviour
     [SerializeField] private GameObject PequenosGrupos;
     [SerializeField] private GameObject GrandesGrupos;
     [SerializeField] private GameObject SalaInteira;
-    [SerializeField] private EstadoDeAulaInvertida controladorJogo;
+    [SerializeField] private StateMachine controladorJogo;
 
     void OnEnable()
     {
         UpdateDisplay();
-        controladorJogo.OnMidiaChange.AddListener(UpdateDisplay);
+        controladorJogo.OnMediaChange.AddListener(UpdateDisplay);
     }
 
     void OnDisable()
     {
-        controladorJogo.OnMidiaChange.RemoveListener(UpdateDisplay);
+        controladorJogo.OnMediaChange.RemoveListener(UpdateDisplay);
     }
 
     public void UpdateDisplay()
     {
-        Agrupamento agrupamento = controladorJogo.midiaAtual.agrupamento;
+        Agrupamento agrupamento = controladorJogo.currentMedia.agrupamento;
 
         Individual.SetActive(false);
         Duplas.SetActive(false);

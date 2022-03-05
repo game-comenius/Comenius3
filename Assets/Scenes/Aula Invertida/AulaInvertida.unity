@@ -1569,11 +1569,11 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Acompanhe pelo livro did\xE1tico."
+    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
       m_Image: {fileID: 0}
     - m_Text: Sente com um colega.
       m_Image: {fileID: 0}
-    - m_Text: "Posso te emprestar um material para anota\xE7\xF5es."
+    - m_Text: "Acompanhe pelo livro did\xE1tico."
       m_Image: {fileID: 0}
     - m_Text: "Voc\xEA vai levar zero."
       m_Image: {fileID: 0}
@@ -3239,8 +3239,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 774386296}
-        m_TargetAssemblyTypeName: MomentoAulaInvertida, Assembly-CSharp
-        m_MethodName: AvancarEstado
+        m_TargetAssemblyTypeName: StateMachineController, Assembly-CSharp
+        m_MethodName: AdvanceState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3309,6 +3309,18 @@ MonoBehaviour:
       - m_Target: {fileID: 810747691}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10418,18 +10430,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ControladorFeedbackAulaInvertida, Assembly-CSharp
-        m_MethodName: Atualizar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
       m_Calls: []
@@ -11559,7 +11559,7 @@ PrefabInstance:
     - target: {fileID: 1580642591, guid: 66b6c87d5dad8e74687c4a215641c6d2, type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 2249172361501992717, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
@@ -11576,25 +11576,25 @@ PrefabInstance:
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493575614630952, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493575614630953, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493575614630954, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493575716937744, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
@@ -11690,7 +11690,7 @@ PrefabInstance:
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493576310599310, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
@@ -11711,7 +11711,7 @@ PrefabInstance:
         type: 3}
       propertyPath: controladorJogo
       value: 
-      objectReference: {fileID: 11400000, guid: cb3b384ec36ca3840a7e5a8742c0766d,
+      objectReference: {fileID: 11400000, guid: ce1c58e4eea121147b9a2bbff131396a,
         type: 2}
     - target: {fileID: 3969493576690682509, guid: 66b6c87d5dad8e74687c4a215641c6d2,
         type: 3}
@@ -12035,8 +12035,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 774386296}
-        m_TargetAssemblyTypeName: MomentoAulaInvertida, Assembly-CSharp
-        m_MethodName: AvancarEstado
+        m_TargetAssemblyTypeName: StateMachineController, Assembly-CSharp
+        m_MethodName: AdvanceState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

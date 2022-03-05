@@ -1,31 +1,29 @@
-﻿using System.Runtime.CompilerServices;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MidiasNaSalaInvertida : MonoBehaviour
 {
     [System.Serializable]
-    protected struct ParMidia 
+    protected struct ParMidia
     {
-       public NomeDeMidia nome;
-       public GameObject obj;
+        public NomeDeMidia nome;
+        public GameObject obj;
     }
 
     [SerializeField]
     private ParMidia[] midiasNaSala;
 
     [SerializeField]
-    EstadoDeAulaInvertida controladorJogo;
+    StateMachine controladorJogo;
 
     void OnEnable()
     {
         UpdateDisplay();
-        controladorJogo.OnMidiaChange.AddListener(UpdateDisplay);
+        controladorJogo.OnMediaChange.AddListener(UpdateDisplay);
     }
-    void OnDisable() 
+
+    void OnDisable()
     {
-        controladorJogo.OnMidiaChange.RemoveListener(UpdateDisplay);
+        controladorJogo.OnMediaChange.RemoveListener(UpdateDisplay);
     }
 
     void Esconder()
@@ -39,10 +37,10 @@ public class MidiasNaSalaInvertida : MonoBehaviour
     public void UpdateDisplay()
     {
         Esconder();
-        NomeDeMidia midiaParaMostrar = controladorJogo.midiaAtual.nomeMidia;
+        NomeDeMidia midiaParaMostrar = controladorJogo.currentMedia.nomeMidia;
         foreach (ParMidia midia in midiasNaSala)
         {
-            if(midia.nome == midiaParaMostrar)
+            if (midia.nome == midiaParaMostrar)
             {
                 midia.obj.SetActive(true);
                 return;
