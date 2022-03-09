@@ -10,6 +10,11 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     [SerializeField] GameObject midia0;
     [SerializeField] GameObject midia1;
     [SerializeField] GameObject midia2;
+
+    [SerializeField] GameObject miniMidia0;
+    [SerializeField] GameObject miniMidia1;
+    [SerializeField] GameObject miniMidia2;
+
     [SerializeField] GameObject previewMidia;
 
     [SerializeField] GameObject popUpTipo;
@@ -18,6 +23,8 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     [SerializeField] GameObject painelFeedback;
 
     [SerializeField] GameObject quartoInfo;
+
+    [SerializeField] TextMeshProUGUI TextoMidiaAtual;
 
     [Header("Imagens das mídias e brinquedos")]
     [SerializeField] Sprite estanteSprite;
@@ -43,6 +50,8 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
         midia0.SetActive(false);
         midia1.SetActive(false);
         midia2.SetActive(false);
+
+        TextoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
 
     }
 
@@ -142,14 +151,19 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
         {
             case 0:
                 midia0.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
+                miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
                 midia0.SetActive(true);
+                TextoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[1].nome}.";
                 break;
             case 1:
                 midia1.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
+                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
                 midia1.SetActive(true);
+                TextoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[2].nome}.";
                 break;
             default:
                 midia2.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
+                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
                 midia2.SetActive(true);
                 break;
         }
