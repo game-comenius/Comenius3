@@ -24,6 +24,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
 
     [SerializeField] GameObject quartoInfo;
 
+    [SerializeField] GameObject textoMidiaAtualObjeto;
     [SerializeField] TextMeshProUGUI textoMidiaAtual;
 
     [SerializeField] TextMeshProUGUI textoFeedbackBrinquedo;
@@ -180,17 +181,17 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
                 midia0.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
                 miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
                 midia0.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[1].nome}.";
+                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[0].nome}.";
                 break;
             case 1:
                 midia1.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
-                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
+                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
                 midia1.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[2].nome}.";
+                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[1].nome}.";
                 break;
             default:
                 midia2.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
-                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
+                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
                 midia2.SetActive(true);
                 break;
         }
@@ -210,6 +211,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
             setObjectFeedback(0);
             setObjectFeedback(1);
             painelFeedback.SetActive(true);
+            textoMidiaAtualObjeto.SetActive(false);
             quartoInfo.SetActive(false);
             Debug.Log(midiasDefinitivas[0] + " " + midiasDefinitivas[1] + " " + midiasDefinitivas[2]);
         }
