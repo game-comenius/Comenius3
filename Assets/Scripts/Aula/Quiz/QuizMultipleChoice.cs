@@ -6,9 +6,12 @@ public class QuizMultipleChoice : QuizBase
     [SerializeField] private List<AffirmationMultipleChoice> affirmations;
     [SerializeField] private List<string> correctAnswers;
     [SerializeField] private List<string> wrongAnswers;
-    [SerializeField] private int scoreOnRightAnswer;
+    [SerializeField] private int abpScore;
+    [SerializeField] private int saiScore;
+    [SerializeField] private int abprojScore;
     [SerializeField] private bool inverted;
 
+    private int scoreOnRightAnswer;
     private int selectedAffirmationIndex;
 
     public void NotifySelection(AffirmationMultipleChoice affirmation)
@@ -26,6 +29,22 @@ public class QuizMultipleChoice : QuizBase
     {
         selectedAffirmationIndex = -1;
         int correctAnswerIndex = Random.Range(0, maxAffirmations);
+
+        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        {
+            case "Aprendizagem Baseada em Problemas":
+                scoreOnRightAnswer = abprojScore;
+                break;
+            case "Sala de Aula Invertida":
+                scoreOnRightAnswer = saiScore;
+                break;
+            case "Aprendizagem Baseada em Projetos":
+                scoreOnRightAnswer = abprojScore;
+                break;
+            default:
+                Debug.LogError("Metodologia não selecionada");
+                break;
+        }
 
         for (int i = 0; i < maxAffirmations; i++)
         {

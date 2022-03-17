@@ -7,16 +7,19 @@ public class QuizSorted : QuizBase
     [SerializeField] private List<AffirmationSorted> affirmations;
     [SerializeField] private List<Draggable> draggables;
     [SerializeField] private List<string> sortedAnswers;
+    [SerializeField] private int abpUpperScore;
+    [SerializeField] private int abpMiddleScore;
+    [SerializeField] private int abpLowerScore;
+    [SerializeField] private int saiUpperScore;
+    [SerializeField] private int saiMiddleScore;
+    [SerializeField] private int saiLowerScore;
+    [SerializeField] private int abprojUpperScore;
+    [SerializeField] private int abprojMiddleScore;
+    [SerializeField] private int abprojLowerScore;
 
-    [Header("Pontuação com mais de dois acertos")]
-    [SerializeField] private int upperScore;
-
-    [Header("Pontuação com dois acertos")]
-    [SerializeField] private int middleScore;
-
-    [Header("Pontuação com menos de dois acertos")]
-    [SerializeField] private int lowerScore;
-
+    private int upperScore;
+    private int middleScore;
+    private int lowerScore;
     private List<Vector2> affirmationsPositions;
 
     public void NotifyDrag(AffirmationSorted affirmation)
@@ -62,6 +65,28 @@ public class QuizSorted : QuizBase
         affirmationsPositions = new List<Vector2>();
         List<string> answers = new List<string>(sortedAnswers);
 
+        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        {
+            case "Aprendizagem Baseada em Problemas":
+                upperScore = abpUpperScore;
+                middleScore = abpMiddleScore;
+                lowerScore = abpLowerScore;
+                break;
+            case "Sala de Aula Invertida":
+                upperScore = saiUpperScore;
+                middleScore = saiMiddleScore;
+                lowerScore = saiLowerScore;
+                break;
+            case "Aprendizagem Baseada em Projetos":
+                upperScore = abprojUpperScore;
+                middleScore = abprojMiddleScore;
+                lowerScore = abprojLowerScore;
+                break;
+            default:
+                Debug.LogError("Metodologia não selecionada");
+                break;
+        }
+
         for (int i = 0; i < draggables.Count; i++)
         {
             draggables[i].canvas = canvas;
@@ -103,6 +128,8 @@ public class QuizSorted : QuizBase
             {
                 affirmations[i].UpdateResultColor(false);
             }
+
+            affirmations[i].ShowCorrectPosition();
         }
 
         if (correctAnswers > 2)

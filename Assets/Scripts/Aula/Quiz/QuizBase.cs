@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Renomerar para "Quiz" no futuro
-public class QuizBase : MonoBehaviour
+public abstract class QuizBase : MonoBehaviour
 {
     public QuizManager quizManager;
     public QuizType quizType;
@@ -46,7 +46,7 @@ public class QuizBase : MonoBehaviour
         }
     }
 
-    protected virtual void BuildQuiz() { }
+    protected abstract void BuildQuiz();
 
-    protected virtual void Evaluate() { }
+    protected abstract void Evaluate();
 }

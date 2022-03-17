@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class FeedbackMomentoDeInteracao : MonoBehaviour
 {
     [SerializeField] GameObject feedback;
     [SerializeField] DisplayDeAluno alunoRenderer;
+    [SerializeField] TextMeshProUGUI texto;
 
     private void Start()
     {
