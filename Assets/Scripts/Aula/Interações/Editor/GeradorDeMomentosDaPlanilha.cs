@@ -43,7 +43,6 @@ public static class GeradorDeMomentosDaPlanilha
             momento.paginaDoDropdown = -1;//Sempre utiliza a ultima pagina
             //Salva o momento na lista
             momentos.Add(momento);
-
         }
 
         //Salva o momento na pasta

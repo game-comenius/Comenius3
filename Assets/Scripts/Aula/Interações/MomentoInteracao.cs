@@ -9,6 +9,8 @@ public class MomentoInteracao : ScriptableObject
     public CelulaReference opcoesDeEscolha;
     public int paginaDoDropdown = -1;
     public bool alunoFeliz;
+    public string reacaoPositiva;
+    public string reacaoNegativa;
     public static List<MomentoInteracao> momentos { get; private set; }
 
     public static MomentoInteracao GetMomentFromArchives()
@@ -17,7 +19,7 @@ public class MomentoInteracao : ScriptableObject
         {
             momentos = new List<MomentoInteracao>(Resources.LoadAll<MomentoInteracao>("MomentosInteracao/GeradosPelaPlanilha"));
             if (momentos == null)
-                Debug.LogError("Gere os momentos denovo no menu Ferramentas/GerarMomentosDaPlanilha");
+                Debug.LogError("Gere os momentos de novo no menu Ferramentas/GerarMomentosDaPlanilha");
         }
 
         // Pega um momento gerado pela da planilha

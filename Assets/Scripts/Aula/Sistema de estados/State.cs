@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "EstadoDeAula", menuName = "Comenius3/EstadoDeAula", order = 0)]
+[CreateAssetMenu(fileName = "State", menuName = "Comenius3/State", order = 0)]
 [System.Serializable]
 public class State : ScriptableObject
 {

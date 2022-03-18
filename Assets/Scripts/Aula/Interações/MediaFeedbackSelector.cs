@@ -1,30 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ControladorDisplayMomentoInteracao))]
-public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
+[RequireComponent(typeof(InteractionManager))]
+public class MediaFeedbackSelector : MonoBehaviour
 {
-    [SerializeField] private List<MomentoInteracao> imprevistos;
     [SerializeField] private List<MomentoInteracao> feedbacksInfantil;
     [SerializeField] private List<MomentoInteracao> feedbacksFundamental;
     [SerializeField] private List<MomentoInteracao> feedbacksMedio;
     [SerializeField] private List<MomentoInteracao> feedbacksSuperior;
-    [SerializeField] private ControladorDisplayMomentoInteracao controlador;
-    [SerializeField] private StateMachineController maquinaDeEstados;
+    [SerializeField] private InteractionManager interactionManager;
+    [SerializeField] private StateMachineController stateMachineController;
 
-    public void SelecionarImprevisto()
-    {
-        for (int i = 0; i < imprevistos.Count; i++)
-        {
-            if (imprevistos[i].midias[0] == maquinaDeEstados.CurrentMedia().nomeMidia)
-            {
-                controlador.Momento = imprevistos[i];
-                break;
-            }
-        }
-    }
-
-    public void SelecionarFeedback()
+    public void SelectFeedback()
     {
         // (Switch não usado pois o nível de ensino não é constante)
 
@@ -39,14 +26,14 @@ public class SelecionadorDeMomentoDeInteracao : MonoBehaviour
         else
             feedbacks = feedbacksSuperior;
 
-        bool positivo = ComboChecker.Combo.Arriscada != ComboChecker.EvaluateCombo();
+        bool positive = ComboChecker.Combo.Arriscada != ComboChecker.EvaluateCombo();
 
         for (int i = 0; i < feedbacks.Count; i++)
         {
-            if (feedbacks[i].midias[0] == maquinaDeEstados.CurrentMedia().nomeMidia &&
-                positivo == feedbacks[i].alunoFeliz)
+            if (feedbacks[i].midias[0] == stateMachineController.CurrentMedia().nomeMidia &&
+                positive == feedbacks[i].alunoFeliz)
             {
-                controlador.Momento = feedbacks[i];
+                interactionManager.Interaction = feedbacks[i];
                 break;
             }
         }

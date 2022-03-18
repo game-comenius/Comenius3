@@ -12,13 +12,16 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
         feedback.SetActive(false);
     }
 
-    public void MostrarFeedback(bool acertou)
+    public void MostrarFeedback(bool acertou, string reacao)
     {
         if (acertou)
             alunoRenderer.estaFeliz = true;
         else
             alunoRenderer.estaFeliz = false;
 
+        Debug.Log(acertou);
+        Debug.Log(reacao);
+        texto.text = reacao;
         alunoRenderer.AtualizarAluno();
 
         feedback.SetActive(true);
