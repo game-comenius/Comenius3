@@ -69,10 +69,10 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
             if (midiasSelecionadas == null)
                 midiasSelecionadas = new Midia[]
                 {
-                    new Midia(NomeDeMidia.Lousa),
                     new Midia(NomeDeMidia.LivroDidatico),
-                    new Midia(NomeDeMidia.LivrosJornaisERevistas),
-                    new Midia(NomeDeMidia.CadernosECartazes)
+                    new Midia(NomeDeMidia.ProjetorMultimidia),
+                    new Midia(NomeDeMidia.Lousa),
+                    new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
             return midiasSelecionadas;
         }
