@@ -9,7 +9,6 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private StateMachineController controller;
     [SerializeField] private TextMeshProUGUI classQualityText;
     [SerializeField] private FeedbackBar classQualityBar;
-    [SerializeField] private float animationTime;
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] [TextArea] private List<string> specificFeedbacksIdeal;
@@ -73,7 +72,45 @@ public class ClassFeedback : MonoBehaviour
 
         if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
         {
-            // TODO: Fazer o caso da ABP
+            switch (combo)
+            {
+                case ComboChecker.Combo.abpIdeal:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.abpBoa1:
+                    comboText.text = specificFeedbacksBoa[0];
+                    break;
+                case ComboChecker.Combo.abpBoa2:
+                    comboText.text = specificFeedbacksBoa[1];
+                    break;
+                case ComboChecker.Combo.abpBoa3:
+                    comboText.text = specificFeedbacksBoa[2];
+                    break;
+                case ComboChecker.Combo.abpArriscada1:
+                    comboText.text = specificFeedbacksArriscada[0];
+                    break;
+                case ComboChecker.Combo.abpArriscada2:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+                case ComboChecker.Combo.abpArriscada3:
+                    comboText.text = specificFeedbacksArriscada[2];
+                    break;
+                case ComboChecker.Combo.abpArriscada4:
+                    comboText.text = specificFeedbacksArriscada[3];
+                    break;
+                case ComboChecker.Combo.abpArriscada5:
+                    comboText.text = specificFeedbacksArriscada[4];
+                    break;
+                case ComboChecker.Combo.abpArriscada6:
+                    comboText.text = specificFeedbacksArriscada[5];
+                    break;
+                case ComboChecker.Combo.abpArriscada7:
+                    comboText.text = specificFeedbacksArriscada[6];
+                    break;
+                default:
+                    comboText.text = "[Feedback não encontrado]";
+                    break;
+            }
         }
         else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
         {
