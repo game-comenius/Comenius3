@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(InteractionManager))]
 public class MediaFeedbackSelector : MonoBehaviour
 {
+    [System.Serializable] public class SelectionEvent : UnityEvent<bool, Sprite> { }
+    public SelectionEvent OnSelectionEvent;
+
     [SerializeField] private List<MomentoInteracao> feedbacksInfantil;
     [SerializeField] private List<MomentoInteracao> feedbacksFundamental;
     [SerializeField] private List<MomentoInteracao> feedbacksMedio;
@@ -13,10 +17,9 @@ public class MediaFeedbackSelector : MonoBehaviour
 
     public void SelectFeedback()
     {
-        // (Switch não usado pois o nível de ensino não é constante)
-
         List<MomentoInteracao> feedbacks;
 
+        // (Switch não usado pois o nível de ensino não é constante)
         if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
             feedbacks = feedbacksInfantil;
         else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
@@ -37,5 +40,7 @@ public class MediaFeedbackSelector : MonoBehaviour
                 break;
             }
         }
+
+        OnSelectionEvent.Invoke(positive, stateMachineController.CurrentMedia().sprite);
     }
 }

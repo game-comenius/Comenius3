@@ -19,8 +19,6 @@ public class FeedbackMomentoDeInteracao : MonoBehaviour
         else
             alunoRenderer.estaFeliz = false;
 
-        Debug.Log(acertou);
-        Debug.Log(reacao);
         texto.text = reacao;
         alunoRenderer.AtualizarAluno();
 

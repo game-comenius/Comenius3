@@ -14,17 +14,8 @@ public class DisplayDeAluno : MonoBehaviour
     [SerializeField] private bool usaOutroDeReferencia;
     [SerializeField] private DisplayDeAluno outroDisplayRefencia;
 
-    private Image image;
-
-    private void OnValidate()
-    {
-        image = GetComponent<Image>();
-    }
-
     private void Start()
     {
-        image = GetComponent<Image>();
-
         if (atualizaOnStart)
         {
             AtualizarAluno();
@@ -43,6 +34,6 @@ public class DisplayDeAluno : MonoBehaviour
 
     public void AtualizarDisplay()
     {
-        image.sprite = estaFeliz ? aluno.alunoFeliz : aluno.alunoTriste;
+        GetComponent<Image>().sprite = estaFeliz ? aluno.alunoFeliz : aluno.alunoTriste;
     }
 }

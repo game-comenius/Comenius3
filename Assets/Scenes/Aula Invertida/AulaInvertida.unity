@@ -1523,13 +1523,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
-      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta3"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
-      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o incorreta"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2257,6 +2257,7 @@ GameObject:
   - component: {fileID: 613920498}
   - component: {fileID: 613920497}
   - component: {fileID: 613920500}
+  - component: {fileID: 613920501}
   m_Layer: 0
   m_Name: "Bal\xE3o dos alunos"
   m_TagString: Untagged
@@ -2275,7 +2276,8 @@ Transform:
   m_LocalPosition: {x: 0.5, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2122643595}
   m_Father: {fileID: 1638439943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2421,18 +2423,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1729727042}
-          m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
-          m_MethodName: SelectFeedback
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+--- !u!114 &613920501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613920494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f761105980014f46bba769a668d0817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mediaSriteRenderer: {fileID: 2122643596}
+  positiveFeedbackBalloon: {fileID: 21300000, guid: de489ca64b39a4b78a93e7a6c3d8d9bf,
+    type: 3}
+  negativeFeedbackBalloon: {fileID: 21300000, guid: d4bcd76d045cc4f9e88a804bedb93d3f,
+    type: 3}
 --- !u!1 &636185155
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,6 +8113,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b1482db7f482e42b5a2cfa5720cb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSelectionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 613920494}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 613920501}
+        m_TargetAssemblyTypeName: FeedbackBalloonController, Assembly-CSharp
+        m_MethodName: UpdateBalloon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   feedbacksInfantil:
   - {fileID: 11400000, guid: 1ab7a139206a66640b818f53b3f90a63, type: 2}
   - {fileID: 11400000, guid: 6fac54f2afe89744d9b24d8418cb07d9, type: 2}
@@ -8242,6 +8276,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4807e6516991d87498f6ed34f0a65b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSelectionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1729727038}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   unforeseenEventsInfantil:
   - {fileID: 11400000, guid: 20f34e951d81e7e4a962e6cdb583d2fd, type: 2}
   - {fileID: 11400000, guid: 9f316c5c8b8b62343836796aaa406dc7, type: 2}
@@ -10102,18 +10151,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
       m_Calls: []
@@ -10135,10 +10172,10 @@ MonoBehaviour:
   OnSelectedStates:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613920494}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1729727042}
+        m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
+        m_MethodName: SelectFeedback
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10180,18 +10217,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729727038}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
       m_Calls: []
@@ -10213,17 +10238,17 @@ MonoBehaviour:
   OnSelectedStates:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613920494}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1729727042}
+        m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
+        m_MethodName: SelectFeedback
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
@@ -10341,6 +10366,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110467059}
   m_CullTransparentMesh: 0
+--- !u!1 &2122643594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2122643595}
+  - component: {fileID: 2122643596}
+  m_Layer: 0
+  m_Name: "M\xEDdia"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2122643595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122643594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 613920495}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2122643596
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122643594}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 21
+  m_Sprite: {fileID: 21300000, guid: 95b608be2669cff4d8a42f4a34bed7dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.95, y: 0.71}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2127952739
 GameObject:
   m_ObjectHideFlags: 0

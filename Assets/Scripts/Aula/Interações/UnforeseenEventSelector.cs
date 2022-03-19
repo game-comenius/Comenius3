@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(InteractionManager))]
 public class UnforeseenEventSelector : MonoBehaviour
 {
+    public UnityEvent OnSelectionEvent;
+
     [SerializeField] private List<MomentoInteracao> unforeseenEventsInfantil;
     [SerializeField] private List<MomentoInteracao> UnforeseenEventsFundamental;
     [SerializeField] private List<MomentoInteracao> UnforeseenEventsMedio;
@@ -15,6 +18,7 @@ public class UnforeseenEventSelector : MonoBehaviour
     {
         List<MomentoInteracao> unforeseenEvents;
 
+        // (Switch não usado pois o nível de ensino não é constante)
         if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
             unforeseenEvents = unforeseenEventsInfantil;
         else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
@@ -32,5 +36,7 @@ public class UnforeseenEventSelector : MonoBehaviour
                 break;
             }
         }
+
+        OnSelectionEvent.Invoke();
     }
 }
