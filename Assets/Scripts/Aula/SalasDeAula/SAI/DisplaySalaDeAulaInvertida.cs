@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ClassroomDisplay : MonoBehaviour
+public class DisplaySalaDeAulaInvertida : MonoBehaviour
 {
     [SerializeField] private GameObject salaNormal;
     [SerializeField] private GameObject salaInfantil;
