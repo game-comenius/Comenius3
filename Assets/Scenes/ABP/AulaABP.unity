@@ -6473,6 +6473,8 @@ GameObject:
   - component: {fileID: 399776501}
   - component: {fileID: 399776503}
   - component: {fileID: 399776504}
+  - component: {fileID: 399776505}
+  - component: {fileID: 399776506}
   m_Layer: 0
   m_Name: Quiz Manager
   m_TagString: Untagged
@@ -6614,6 +6616,72 @@ MonoBehaviour:
       - m_Target: {fileID: 399776501}
         m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
         m_MethodName: ShowMediaQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &399776505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399776500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: c14fcb3a1e2f03444a1d153780b515a9, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 399776501}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMediaQuiz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &399776506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399776500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: f9b6f45fc9ea3ae4b9a4e640e136b976, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 399776501}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ShowMultipleInteligenceQuiz
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16401,6 +16469,8 @@ GameObject:
   - component: {fileID: 1196098974}
   - component: {fileID: 1196098975}
   - component: {fileID: 1196098976}
+  - component: {fileID: 1196098977}
+  - component: {fileID: 1196098978}
   m_Layer: 0
   m_Name: State Machine Controller
   m_TagString: Untagged
@@ -16466,6 +16536,72 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1196098977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196098973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: 3ee4cdaef3fa1814299ea516ff372040, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1973033497}
+        m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
+        m_MethodName: SelectFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNotSelectedStates:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1196098978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196098973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  estadosNoQualChama:
+  - {fileID: 11400000, guid: 21fb431d42a689141b72f03142fbae38, type: 2}
+  OnSelectedStates:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1031663354}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
@@ -18030,13 +18166,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
+    - m_Text: "op\xE7\xE3o correta3"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o incorreta"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta"
+    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta3"
+    - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
