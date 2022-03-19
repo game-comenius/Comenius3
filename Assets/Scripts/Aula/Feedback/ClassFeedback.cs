@@ -8,55 +8,55 @@ public class ClassFeedback : MonoBehaviour
 {
     [SerializeField] private StateMachineController controller;
     [SerializeField] private TextMeshProUGUI classQualityText;
-    [SerializeField] private Slider classQualityBar;
+    [SerializeField] private FeedbackBar classQualityBar;
     [SerializeField] private float animationTime;
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
-    [SerializeField] private List<string> specificFeedbacks;
+    [SerializeField] private List<string> specificFeedbacksIdeal;
+    [SerializeField] private List<string> specificFeedbacksBoa;
+    [SerializeField] private List<string> specificFeedbacksArriscada;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
+    [SerializeField] private Image media3Icon;
+    [SerializeField] private Image media4Icon;
 
-    private void OnEnable()
+    private void Start()
     {
-        string greetings;
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
         if (controller.score < 33)
         {
-            greetings = "";
             adjective = "Confusa";
+            classQualityBar.UpdateBar(0.33f);
         }
         else if (controller.score < 66)
         {
-            greetings = "";
             adjective = "Comum";
+            classQualityBar.UpdateBar(0.66f);
         }
         else
         {
-            greetings = "Parabéns! ";
             adjective = "Reveladora";
+            classQualityBar.UpdateBar(1.0f);
         }
 
-        // TODO: Modificar a fase no texto no futuro
-        classQualityText.text = $"{greetings}Sua Aula foi {adjective}";
+        classQualityText.text = $"Sua Aula foi {adjective}";
 
-        StartCoroutine(UpdateBarCoroutine(controller.score));
-
-        ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
+        ComboChecker.ComboClassification comboClass = ComboChecker.EvaluateComboClassification();
 
         string comboClassification;
 
-        switch (combo)
+        switch (comboClass)
         {
-            case ComboChecker.Combo.Ideal:
-                comboClassification = "IDEAL";
+            case ComboChecker.ComboClassification.Ideal:
+                comboClassification = "<b><color=green>IDEAL</color></b>";
                 break;
-            case ComboChecker.Combo.Boa:
-                comboClassification = "BOA";
+            case ComboChecker.ComboClassification.Boa:
+                comboClassification = "<b><color=yellow>BOA</color></b>";
                 break;
-            case ComboChecker.Combo.Arriscada:
-                comboClassification = "ARRISCADA";
+            case ComboChecker.ComboClassification.Arriscada:
+                comboClassification = "<b><color=red>ARRISCADA</color></b>";
                 break;
             default:
                 comboClassification = "[ERRO]";
@@ -65,28 +65,52 @@ public class ClassFeedback : MonoBehaviour
 
         comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.MetodologiaSelecionada.nome}, sua combinação de mídias foi {comboClassification}";
 
-        // TODO: Calcular o índice do combo
-        int comboIndex = 0;
+        ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
 
-        comboText.text = specificFeedbacks[comboIndex];
-
-        methodologyIcon.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
-        media1Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
-        media2Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite;
-    }
-
-    private IEnumerator UpdateBarCoroutine(float score)
-    {
-        float initialValue = classQualityBar.value;
-
-        for (float i = 0; i <= animationTime; i += Time.deltaTime)
+        if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
         {
-            classQualityBar.value = initialValue + ((score - initialValue) / animationTime) * i;
-            yield return null;
+            // TODO: Fazer o caso da ABP
+        }
+        else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
+        {
+            switch (combo)
+            {
+                case ComboChecker.Combo.saiIdeal:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.saiBoa1:
+                    comboText.text = specificFeedbacksBoa[0];
+                    break;
+                case ComboChecker.Combo.saiBoa2:
+                    comboText.text = specificFeedbacksBoa[1];
+                    break;
+                case ComboChecker.Combo.saiBoa3:
+                    comboText.text = specificFeedbacksBoa[2];
+                    break;
+                case ComboChecker.Combo.saiBoa4:
+                    comboText.text = specificFeedbacksBoa[3];
+                    break;
+                case ComboChecker.Combo.saiArriscada1:
+                    comboText.text = specificFeedbacksArriscada[0];
+                    break;
+                case ComboChecker.Combo.saiArriscada2:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+                case ComboChecker.Combo.saiArriscada3:
+                    comboText.text = specificFeedbacksArriscada[2];
+                    break;
+                default:
+                    comboText.text = "[Feedback não encontrado]";
+                    break;
+            }
         }
 
-        classQualityBar.value = score;  // Corretivo final para evitar erros de imprecisão
 
-        yield return null;
+        methodologyIcon.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
+
+        media1Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
+        media2Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
+        media3Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
+        media4Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite;
     }
 }

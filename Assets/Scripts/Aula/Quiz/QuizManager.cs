@@ -4,16 +4,16 @@ using UnityEngine.Events;
 
 public class QuizManager : MonoBehaviour
 {
+    [System.Serializable] public class ScoreChangeEvent : UnityEvent<int> { }
+    public ScoreChangeEvent OnScoreChange;
+    [System.Serializable] public class QuizEndEvent : UnityEvent { }
+    public QuizEndEvent OnQuizEnd;
+
     [SerializeField] private List<GameObject> methodologyQuizList;
     [SerializeField] private List<GameObject> multipleInteligencesQuizList;
     [SerializeField] private List<GameObject> mediaQuizList;
     [SerializeField] private StateMachineController stateMachine;
     [SerializeField] private GameObject canvas;
-
-    [System.Serializable] public class ScoreChangeEvent : UnityEvent<int> { }
-    public ScoreChangeEvent OnScoreChange;
-    [System.Serializable] public class QuizEndEvent : UnityEvent { }
-    public QuizEndEvent OnQuizEnd;
 
     public void ShowMetodologyQuiz()
     {

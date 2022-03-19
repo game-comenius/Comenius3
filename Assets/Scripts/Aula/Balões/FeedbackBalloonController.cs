@@ -9,8 +9,6 @@ public class FeedbackBalloonController : MonoBehaviour
 
     public void UpdateBalloon(bool positive, Sprite mediaIcon)
     {
-        Debug.Log(positive);
-        Debug.Log(mediaIcon);
         GetComponent<SpriteRenderer>().sprite = positive ? positiveFeedbackBalloon : negativeFeedbackBalloon;
         mediaSriteRenderer.sprite = mediaIcon;
     }

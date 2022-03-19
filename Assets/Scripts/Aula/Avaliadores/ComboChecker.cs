@@ -1,11 +1,24 @@
 public class ComboChecker
 {
-    public enum Combo
+    public enum ComboClassification
     {
-        Nenhum,
+        Null,
         Ideal,
         Boa,
         Arriscada
+    }
+
+    public enum Combo
+    {
+        Null,
+        saiIdeal,
+        saiBoa1,
+        saiBoa2,
+        saiBoa3,
+        saiBoa4,
+        saiArriscada1,
+        saiArriscada2,
+        saiArriscada3
     }
 
     public static Combo EvaluateCombo()
@@ -24,12 +37,13 @@ public class ComboChecker
             // Qualquer coisa
             // Combo arriscado 1
             if (flagMidia3.HasFlag(CategoriasDeMidia.Popular))
-                return Combo.Arriscada;
+                return Combo.saiArriscada1;
 
             // Combo arriscado 3
-            if (flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) &&
+            if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                 flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
                 flagMidia4.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
-                return Combo.Arriscada;
+                return Combo.saiArriscada3;
 
             // Duas digitais
             if (flagMidia1.HasFlag(CategoriasDeMidia.Digital) || flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -37,26 +51,20 @@ public class ComboChecker
                 // Combo Ideal
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao))
-                    return Combo.Ideal;
+                    return Combo.saiIdeal;
 
                 // Combo bom 2
                 if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
-                    flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
+                     flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao))
-                    return Combo.Boa;
-
-                // Combo bom 3
-                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
-                    (flagMidia4.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
-                    flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
-                    flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
-                    return Combo.Boa;
+                    return Combo.saiBoa2;
 
                 // Combo bom 4
-                if (flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) &&
+                if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao)) &&
                     (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
-                    flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
-                    return Combo.Boa;
+                     flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
+                    return Combo.saiBoa4;
             }
             // Duas não digitais
             else if (!flagMidia1.HasFlag(CategoriasDeMidia.Digital) && !flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -64,18 +72,48 @@ public class ComboChecker
                 // Combo bom 1
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao))
-                    return Combo.Boa;
+                    return Combo.saiBoa1;
+
+                // Combo bom 3
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
+                    (flagMidia4.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
+                    return Combo.saiBoa3;
 
                 // Combo arriscado 2
                 if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
-                    flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
+                     flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
                     (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
-                    flagMidia4.HasFlag(CategoriasDeMidia.Exposicao) ||
-                    flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
-                    return Combo.Arriscada;
+                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
+                    return Combo.saiArriscada2;
             }
         }
 
-        return Combo.Nenhum;
+        return Combo.Null;
+    }
+
+    public static ComboClassification EvaluateComboClassification()
+    {
+        Combo combo = EvaluateCombo();
+
+        // casos sem retorno ou break agem como "ou"
+        switch (combo)
+        {
+            case Combo.saiIdeal:
+                return ComboClassification.Ideal;
+            case Combo.saiBoa1:
+            case Combo.saiBoa2:
+            case Combo.saiBoa3:
+            case Combo.saiBoa4:
+                return ComboClassification.Boa;
+            case Combo.saiArriscada1:
+            case Combo.saiArriscada2:
+            case Combo.saiArriscada3:
+                return ComboClassification.Arriscada;
+            default:
+                return ComboClassification.Null;
+        }
     }
 }

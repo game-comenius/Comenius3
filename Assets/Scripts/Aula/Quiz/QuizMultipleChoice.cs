@@ -33,7 +33,7 @@ public class QuizMultipleChoice : QuizBase
         switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
         {
             case "Aprendizagem Baseada em Problemas":
-                scoreOnRightAnswer = abprojScore;
+                scoreOnRightAnswer = abpScore;
                 break;
             case "Sala de Aula Invertida":
                 scoreOnRightAnswer = saiScore;

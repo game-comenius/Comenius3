@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Slider))]
-public class BarControl : MonoBehaviour
+public abstract class BarControl : MonoBehaviour
 {
     [System.Serializable] public class BarAnimationEnd : UnityEvent { }
     public BarAnimationEnd OnBarAnimationEnd;

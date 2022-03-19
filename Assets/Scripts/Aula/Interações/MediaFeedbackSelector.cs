@@ -29,7 +29,7 @@ public class MediaFeedbackSelector : MonoBehaviour
         else
             feedbacks = feedbacksSuperior;
 
-        bool positive = ComboChecker.Combo.Arriscada != ComboChecker.EvaluateCombo();
+        bool positive = ComboChecker.ComboClassification.Arriscada != ComboChecker.EvaluateComboClassification();
 
         for (int i = 0; i < feedbacks.Count; i++)
         {
