@@ -27,7 +27,7 @@ public class QuizMultipleChoice : QuizBase
 
     protected override void BuildQuiz()
     {
-        questionText.text = question;
+        questionText.text = quizType == QuizType.Media ? question + new Midia(media).nome : question;
         selectedAffirmationIndex = -1;
         int correctAnswerIndex = Random.Range(0, maxAffirmations);
 
