@@ -37,13 +37,22 @@ public class StateMachine : ScriptableObject
         }
 
         // Atualiza a midia conforme o momento de aula
+        // TODO: Adaptar para a ABProj
         if (currentStateIndex > secondMediaIndex)
         {
-            currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[3];
+            if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+                currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[1];
+            else
+                currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[3];
+
             OnMediaChange.Invoke();
         }
         else
-            currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[2];
+
+            if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+                currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[0];
+            else
+                currentMedia = EstadoDoJogo.Instance.MidiasSelecionadas[2];
 
         OnStateChange.Invoke();
     }
