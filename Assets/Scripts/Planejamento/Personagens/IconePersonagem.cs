@@ -3,9 +3,13 @@ using UnityEngine.EventSystems;
 
 public class IconePersonagem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    // TODO: Corrigir os nomes das variáveis para camelCase
     public Sprite SpriteCorpo;
     public Sprite SpriteCabelo;
     public Sprite SpriteRoupa;
+    public Sprite SpriteCorpoSentado;
+    public Sprite SpriteCabeloSentado;
+    public Sprite SpriteRoupaSentado;
 
     [HideInInspector] public bool selecionado;
 

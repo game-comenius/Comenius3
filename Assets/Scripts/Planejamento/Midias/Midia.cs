@@ -8,11 +8,11 @@ public class Midia
 
     public string nome { get; private set; }
     public string descricao { get; private set; }
-    public string descricaoLonga { get; private set;}
+    public string descricaoLonga { get; private set; }
 
     public Agrupamento agrupamento;
 
-    public Midia (NomeDeMidia nomeMidia)
+    public Midia(NomeDeMidia nomeMidia)
     {
         this.nomeMidia = nomeMidia;
 
@@ -75,17 +75,9 @@ public class Midia
                                  " as emissoras, seus produtos, a arte, a cultura e a ideologia, refletindo de forma criítica o que ali é transmitido, tant" +
                                  "o os pontos de vistas e seus interesses como as diferentes informações ali veiculadas.";
                 break;
-            case NomeDeMidia.AparelhoDeSom:  // Obsoleto?
+            case NomeDeMidia.AparelhoDeSom:  // Obsoleto
                 nome = "Aparelho de Som";
-                descricao = "O <b>aparelho de som</b> é uma mídia de reprodução para propiciar comunicação por intermédio da transcepção de dados e informações como  fitas gravadas, " +
-                    "CDs, DVDs e arquivos de diversos formatos, com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes."
-                     + System.Environment.NewLine +
-                     "  O reprodutor de áudio reproduz o som captado no gravador de áudio, CDs e diferentes formatos."
-                      + System.Environment.NewLine + 
-                      "  Seu uso diretamente ligado à ouvir, possibilitando a reprodução da atividade realizada por ele, seja para estudo, entretenimento ou informação." +
-                      "Pode ser utilizado para estudar conteúdos diversos, as formas, as linguagens da gravação, por exemplo, de diferentes gêneros musicais ou programas literários sonoros, como audiolivros ou podcasts." 
-                       +System.Environment.NewLine +
-                      "  Assim como ser usado como base sonora para complementar qualquer atividade, como ilustração, informação ou acompanhamento.";
+                descricao = "";
                 break;
 
             case NomeDeMidia.RedesSociais:

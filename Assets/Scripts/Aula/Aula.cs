@@ -13,17 +13,6 @@ public abstract class Aula : MonoBehaviour
 
     public abstract float ObterPontuacaoDaAula();
 
-    // Executar uma função sempre que um quiz for aplicado e finalizado com sucesso
-    public event Action<Quiz> UmQuizFoiAplicadoComSucessoEvent;
-
-    public Quiz[] Quizzes { get; set; }
-
-    protected virtual IEnumerator AplicarQuiz(Quiz quiz)
-    {
-        yield return StartCoroutine(quiz.Executar());
-        UmQuizFoiAplicadoComSucessoEvent?.Invoke(quiz);
-    }
-
     protected abstract IEnumerator ApresentarResultadoDaAula();
 
     protected virtual IEnumerator Start()
