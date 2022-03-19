@@ -12,17 +12,21 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private float animationTime;
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
-    [SerializeField] private List<string> specificFeedbacksIdeal;
-    [SerializeField] private List<string> specificFeedbacksBoa;
-    [SerializeField] private List<string> specificFeedbacksArriscada;
+    [SerializeField] [TextArea] private List<string> specificFeedbacksIdeal;
+    [SerializeField] [TextArea] private List<string> specificFeedbacksBoa;
+    [SerializeField] [TextArea] private List<string> specificFeedbacksArriscada;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
     [SerializeField] private Image media3Icon;
     [SerializeField] private Image media4Icon;
+    [SerializeField] private Text helpText;
+    [SerializeField] [TextArea] private string help;
 
     private void Start()
     {
+        helpText.text = help;
+
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
         if (controller.score < 33)
