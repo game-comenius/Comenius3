@@ -16,9 +16,9 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
     {
 
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeInteligencia = estadoDoJogo.InteligenciasSelecionadas.nome;
+        string nomeInteligencia = estadoDoJogo.Inteligencias.nome;
 
-        if (estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Educação Infantil" || estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Ensino Fundamental") 
+        if (estadoDoJogo.NivelDeEnsino.nome == "Educação Infantil" || estadoDoJogo.NivelDeEnsino.nome == "Ensino Fundamental") 
         {
 
             switch(nomeInteligencia)
@@ -48,7 +48,7 @@ public class ControladorFeedbackQuartoInvertido : MonoBehaviour
                     break;
             }
 
-        } else if (estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Ensino Médio" || estadoDoJogo.NivelDeEnsinoSelecionado.nome == "Ensino Superior")
+        } else if (estadoDoJogo.NivelDeEnsino.nome == "Ensino Médio" || estadoDoJogo.NivelDeEnsino.nome == "Ensino Superior")
         {
 
             switch (nomeInteligencia)

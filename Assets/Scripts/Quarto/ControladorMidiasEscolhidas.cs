@@ -63,7 +63,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
         textosFeedback[1] = textoFeedbackObjeto1;
         textosFeedback[2] = textoFeedbackObjeto2;
 
-        textoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
+        textoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
 
     }
 
@@ -179,19 +179,19 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
         {
             case 0:
                 midia0.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
-                miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
+                miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
                 midia0.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[0].nome}.";
+                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
                 break;
             case 1:
                 midia1.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
-                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
+                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 midia1.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.MidiasSelecionadas[1].nome}.";
+                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
                 break;
             default:
                 midia2.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
-                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
+                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[1].sprite;
                 midia2.SetActive(true);
                 break;
         }
@@ -222,7 +222,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     public void setToyFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeInteligencia = estadoDoJogo.InteligenciasSelecionadas.nome;
+        string nomeInteligencia = estadoDoJogo.Inteligencias.nome;
 
         switch (nomeInteligencia)
         {
@@ -351,7 +351,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     public void setObjectFeedback(int index)
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeMidia = estadoDoJogo.MidiasSelecionadas[index].nome;
+        string nomeMidia = estadoDoJogo.Midias[index].nome;
         
         switch(nomeMidia)
         {

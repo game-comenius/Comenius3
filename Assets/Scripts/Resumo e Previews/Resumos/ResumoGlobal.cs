@@ -12,15 +12,15 @@ public class ResumoGlobal : MonoBehaviour
 
     private void OnEnable()
     {
-        iconePersonagem.sprite = EstadoDoJogo.Instance.spriteIconePersonagem;
-        iconeNivelDeEnsino.sprite = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite;
-        iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite;
-        iconeInteligenciasMultiplas.sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
+        iconePersonagem.sprite = EstadoDoJogo.Instance.SpriteIconePersonagem;
+        iconeNivelDeEnsino.sprite = EstadoDoJogo.Instance.NivelDeEnsino.sprite;
+        iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimento.sprite;
+        iconeInteligenciasMultiplas.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
         
-        string preposition = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil ? "da" : "do";
+        string preposition = EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil ? "da" : "do";
 
-        texto.text = $"Você irá jogar uma aula {preposition} {EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome} " +
-                     $"sobre {EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome} " +
-                     $"com uma turma de perfil {EstadoDoJogo.Instance.InteligenciasSelecionadas.nome}.";
+        texto.text = $"Você irá jogar uma aula {preposition} {EstadoDoJogo.Instance.NivelDeEnsino.nome} " +
+                     $"sobre {EstadoDoJogo.Instance.AreaDeConhecimento.nome} " +
+                     $"com uma turma de perfil {EstadoDoJogo.Instance.Inteligencias.nome}.";
     }
 }

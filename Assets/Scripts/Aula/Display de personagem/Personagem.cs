@@ -16,23 +16,23 @@ public class Personagem : MonoBehaviour
         var estadoDoJogo = EstadoDoJogo.Instance;
 
         // Checando o Nível de Ensino para saber se o sprite deve ser sentado ou em pé.
-        if (estadoDoJogo.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        if (estadoDoJogo.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
         {
             personagemDePe.SetActive(false);
             personagemSentado.SetActive(true);
 
-            if (estadoDoJogo.spriteCabeloPersonagemSentado) cabeloSentado.sprite = estadoDoJogo.spriteCabeloPersonagemSentado;
-            if (estadoDoJogo.spriteCorpoPersonagemSentado) corpoSentado.sprite = estadoDoJogo.spriteCorpoPersonagemSentado;
-            if (estadoDoJogo.spriteRoupaPersonagemSentado) roupaSentado.sprite = estadoDoJogo.spriteRoupaPersonagemSentado;
+            if (estadoDoJogo.SpriteCabeloPersonagemSentado) cabeloSentado.sprite = estadoDoJogo.SpriteCabeloPersonagemSentado;
+            if (estadoDoJogo.SpriteCorpoPersonagemSentado) corpoSentado.sprite = estadoDoJogo.SpriteCorpoPersonagemSentado;
+            if (estadoDoJogo.SpriteRoupaPersonagemSentado) roupaSentado.sprite = estadoDoJogo.SpriteRoupaPersonagemSentado;
         }
         else
         {
             personagemSentado.SetActive(false);
             personagemDePe.SetActive(true);
 
-            if (estadoDoJogo.spriteCorpoPersonagem) corpo.sprite = estadoDoJogo.spriteCorpoPersonagem;
-            if (estadoDoJogo.spriteCabeloPersonagem) cabelo.sprite = estadoDoJogo.spriteCabeloPersonagem;
-            if (estadoDoJogo.spriteRoupaPersonagem) roupa.sprite = estadoDoJogo.spriteRoupaPersonagem;
+            if (estadoDoJogo.SpriteCorpoPersonagem) corpo.sprite = estadoDoJogo.SpriteCorpoPersonagem;
+            if (estadoDoJogo.SpriteCabeloPersonagem) cabelo.sprite = estadoDoJogo.SpriteCabeloPersonagem;
+            if (estadoDoJogo.SpriteRoupaPersonagem) roupa.sprite = estadoDoJogo.SpriteRoupaPersonagem;
         }
 
     }

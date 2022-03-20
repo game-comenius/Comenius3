@@ -49,7 +49,7 @@ public sealed class NivelDeEnsino
         descricao: "<b>Ensino Médio</b>\n\nA etapa final da Educação Básica tem como finalidade o aprofundamento dos conhecimentos adquiridos anteriormente, " +
                    "a preparação básica para o trabalho e a cidadania, a formação ética e o aprimoramento do pensamento crítico. Isso se dá através da compreensão " +
                    "dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prática através de quatro grandes áreas do " +
-                   "conhecimento. Dessa forma, produzindo múltiplas culturas juvenis e  promovendo uma educação integral.",
+                   "conhecimento. Dessa forma, produzindo múltiplas culturas juvenis e promovendo uma educação integral.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.LinguagensESuasTecnologias.valor,

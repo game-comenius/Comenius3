@@ -19,11 +19,11 @@ public class UnforeseenEventSelector : MonoBehaviour
         List<MomentoInteracao> unforeseenEvents;
 
         // (Switch não usado pois o nível de ensino não é constante)
-        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
             unforeseenEvents = unforeseenEventsInfantil;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
             unforeseenEvents = UnforeseenEventsFundamental;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
             unforeseenEvents = UnforeseenEventsMedio;
         else
             unforeseenEvents = UnforeseenEventsSuperior;

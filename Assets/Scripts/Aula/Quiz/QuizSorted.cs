@@ -65,7 +65,7 @@ public class QuizSorted : QuizBase
         affirmationsPositions = new List<Vector2>();
         List<string> answers = new List<string>(sortedAnswers);
 
-        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        switch (EstadoDoJogo.Instance.Metodologia.nome)
         {
             case "Aprendizagem Baseada em Problemas":
                 upperScore = abpUpperScore;

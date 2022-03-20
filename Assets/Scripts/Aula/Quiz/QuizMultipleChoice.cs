@@ -31,7 +31,7 @@ public class QuizMultipleChoice : QuizBase
         selectedAffirmationIndex = -1;
         int correctAnswerIndex = Random.Range(0, maxAffirmations);
 
-        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        switch (EstadoDoJogo.Instance.Metodologia.nome)
         {
             case "Aprendizagem Baseada em Problemas":
                 scoreOnRightAnswer = abpScore;

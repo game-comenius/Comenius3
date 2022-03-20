@@ -50,7 +50,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
             ultimoGrupoAtivo.SetActive(false);
         }
 
-        switch (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.valor)
+        switch (EstadoDoJogo.Instance.NivelDeEnsino.valor)
         {
             case 0:
                 iconesInfantil.SetActive(true);
@@ -184,8 +184,8 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         iconManager.SetIcon(2, icone.GetComponent<Image>().sprite);
 
         // Grava a área de conhecimento escolhida
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = icone.areaDeConhecimento;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.AreaDeConhecimento = icone.areaDeConhecimento;
+        EstadoDoJogo.Instance.AreaDeConhecimento.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -196,8 +196,8 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         iconManager.ResetIcon(2);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = null;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = null;
+        EstadoDoJogo.Instance.AreaDeConhecimento.sprite = null;
+        EstadoDoJogo.Instance.AreaDeConhecimento = null;
 
         botaoConfirmar.interactable = false;
     }

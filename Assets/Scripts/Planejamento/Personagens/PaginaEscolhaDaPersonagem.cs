@@ -112,13 +112,13 @@ public class PaginaEscolhaDaPersonagem : PaginaPlanejamento
 
         // Grava no estado do jogo as características da personagem selecionada
         var estadoDoJogo = EstadoDoJogo.Instance;
-        estadoDoJogo.spriteCorpoPersonagem = icone.SpriteCorpo;
-        estadoDoJogo.spriteCabeloPersonagem = icone.SpriteCabelo;
-        estadoDoJogo.spriteRoupaPersonagem = icone.SpriteRoupa;
-        estadoDoJogo.spriteCorpoPersonagemSentado = icone.SpriteCorpoSentado;
-        estadoDoJogo.spriteCabeloPersonagemSentado = icone.SpriteCabeloSentado;
-        estadoDoJogo.spriteRoupaPersonagemSentado = icone.SpriteRoupaSentado;
-        estadoDoJogo.spriteIconePersonagem = icone.GetComponent<Image>().sprite;
+        estadoDoJogo.SpriteCorpoPersonagem = icone.SpriteCorpo;
+        estadoDoJogo.SpriteCabeloPersonagem = icone.SpriteCabelo;
+        estadoDoJogo.SpriteRoupaPersonagem = icone.SpriteRoupa;
+        estadoDoJogo.SpriteCorpoPersonagemSentado = icone.SpriteCorpoSentado;
+        estadoDoJogo.SpriteCabeloPersonagemSentado = icone.SpriteCabeloSentado;
+        estadoDoJogo.SpriteRoupaPersonagemSentado = icone.SpriteRoupaSentado;
+        estadoDoJogo.SpriteIconePersonagem = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -130,13 +130,13 @@ public class PaginaEscolhaDaPersonagem : PaginaPlanejamento
 
         // Reseta a escolha
         var estadoDoJogo = EstadoDoJogo.Instance;
-        estadoDoJogo.spriteCorpoPersonagem = null;
-        estadoDoJogo.spriteCabeloPersonagem = null;
-        estadoDoJogo.spriteRoupaPersonagem = null;
-        estadoDoJogo.spriteCorpoPersonagemSentado = null;
-        estadoDoJogo.spriteCabeloPersonagemSentado = null;
-        estadoDoJogo.spriteRoupaPersonagemSentado = null;
-        estadoDoJogo.spriteIconePersonagem = null;
+        estadoDoJogo.SpriteCorpoPersonagem = null;
+        estadoDoJogo.SpriteCabeloPersonagem = null;
+        estadoDoJogo.SpriteRoupaPersonagem = null;
+        estadoDoJogo.SpriteCorpoPersonagemSentado = null;
+        estadoDoJogo.SpriteCabeloPersonagemSentado = null;
+        estadoDoJogo.SpriteRoupaPersonagemSentado = null;
+        estadoDoJogo.SpriteIconePersonagem = null;
 
         botaoConfirmar.interactable = false;
     }

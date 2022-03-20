@@ -38,8 +38,8 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         iconManager.HideIcon(2);
         iconManager.HideIcon(3);
 
-        iconManager.SetIcon(0, EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite);
-        iconManager.SetIcon(1, EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite);
+        iconManager.SetIcon(0, EstadoDoJogo.Instance.Midias[2].sprite);
+        iconManager.SetIcon(1, EstadoDoJogo.Instance.Midias[3].sprite);
     }
 
     private void OnDisable()
@@ -56,7 +56,7 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         agrupamentoEmFoco = 0;
         molduraDeSelecao.enabled = false;
 
-        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
         {
             agrupamentosSprites = agrupamentosSpritesInfantil;
         }
@@ -102,11 +102,11 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
             if (primeiroAgrupamento)
             {
-                EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento = agrupamentos[agrupamentoSelecionado];
+                EstadoDoJogo.Instance.Midias[2].agrupamento = agrupamentos[agrupamentoSelecionado];
             }
             else
             {
-                EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento = agrupamentos[agrupamentoSelecionado];
+                EstadoDoJogo.Instance.Midias[3].agrupamento = agrupamentos[agrupamentoSelecionado];
             }
         }
     }

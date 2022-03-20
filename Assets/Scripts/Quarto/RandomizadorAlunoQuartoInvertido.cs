@@ -48,7 +48,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
         int alunoIndex = Random.Range(1, 5);
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.NivelDeEnsinoSelecionado.nome != "Educação Infantil") {
+        if (estadoDoJogo.NivelDeEnsino.nome != "Educação Infantil") {
 
             switch(alunoIndex)
             {

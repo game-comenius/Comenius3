@@ -28,25 +28,25 @@ public class ResumoAulaSAI : MonoBehaviour
     private void Start()
     {
         // Sprites
-        iconeNivel.sprite = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite;
-        iconeArea.sprite = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite;
-        iconeInteligencia.sprite = EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite;
-        iconeMetodologia.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
-        iconeSalaMidia1.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
-        iconeSalaMidia2.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite;
-        iconeQuartoMidia1.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
-        iconeQuartoMidia2.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
+        iconeNivel.sprite = EstadoDoJogo.Instance.NivelDeEnsino.sprite;
+        iconeArea.sprite = EstadoDoJogo.Instance.AreaDeConhecimento.sprite;
+        iconeInteligencia.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
+        iconeMetodologia.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
+        iconeSalaMidia1.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
+        iconeSalaMidia2.sprite = EstadoDoJogo.Instance.Midias[3].sprite;
+        iconeQuartoMidia1.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+        iconeQuartoMidia2.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
 
         // Textos
-        textoNivel.text = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.nome;
-        textoArea.text = EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.nome;
-        textoInteligencia.text = EstadoDoJogo.Instance.InteligenciasSelecionadas.nome;
-        textoMetodologia.text = EstadoDoJogo.Instance.MetodologiaSelecionada.nome;
-        textoSalaMidia1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].nome;
-        textoSalaMidia2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].nome;
-        textoQuartoMidia1.text = EstadoDoJogo.Instance.MidiasSelecionadas[0].nome;
-        textoQuartoMidia2.text = EstadoDoJogo.Instance.MidiasSelecionadas[1].nome;
-        textoAgrupamento1.text = EstadoDoJogo.Instance.MidiasSelecionadas[2].agrupamento.ToString(); // TODO: Arrumar
-        textoAgrupamento2.text = EstadoDoJogo.Instance.MidiasSelecionadas[3].agrupamento.ToString(); // TODO: Arrumar
+        textoNivel.text = EstadoDoJogo.Instance.NivelDeEnsino.nome;
+        textoArea.text = EstadoDoJogo.Instance.AreaDeConhecimento.nome;
+        textoInteligencia.text = EstadoDoJogo.Instance.Inteligencias.nome;
+        textoMetodologia.text = EstadoDoJogo.Instance.Metodologia.nome;
+        textoSalaMidia1.text = EstadoDoJogo.Instance.Midias[2].nome;
+        textoSalaMidia2.text = EstadoDoJogo.Instance.Midias[3].nome;
+        textoQuartoMidia1.text = EstadoDoJogo.Instance.Midias[0].nome;
+        textoQuartoMidia2.text = EstadoDoJogo.Instance.Midias[1].nome;
+        textoAgrupamento1.text = EstadoDoJogo.Instance.Midias[2].agrupamento.ToString(); // TODO: Arrumar
+        textoAgrupamento2.text = EstadoDoJogo.Instance.Midias[3].agrupamento.ToString(); // TODO: Arrumar
     }
 }

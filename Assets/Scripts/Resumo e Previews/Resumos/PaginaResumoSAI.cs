@@ -28,12 +28,12 @@ public class PaginaResumoSAI : PaginaPlanejamento
 
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.MetodologiaSelecionada == Metodologia.Invertida)
+        if (estadoDoJogo.Metodologia == Metodologia.Invertida)
         {
-            IconeMidia1.sprite = estadoDoJogo.MidiasSelecionadas[0].sprite;
-            IconeMidia2.sprite = estadoDoJogo.MidiasSelecionadas[1].sprite;
-            IconeMidia3.sprite = estadoDoJogo.MidiasSelecionadas[2].sprite;
-            IconeMidia4.sprite = estadoDoJogo.MidiasSelecionadas[3].sprite;
+            IconeMidia1.sprite = estadoDoJogo.Midias[0].sprite;
+            IconeMidia2.sprite = estadoDoJogo.Midias[1].sprite;
+            IconeMidia3.sprite = estadoDoJogo.Midias[2].sprite;
+            IconeMidia4.sprite = estadoDoJogo.Midias[3].sprite;
         }
     }
 

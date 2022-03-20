@@ -18,7 +18,7 @@ public class ControladorDeDisplayQuarto : MonoBehaviour
         medio.SetActive(false);
         superior.SetActive(false);
 
-        int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.valor;//Verifica o nivel de ensino selecionado
+        int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsino.valor;//Verifica o nivel de ensino selecionado
         //Ativa o gameObject correspondente ao selecionado
         switch (indiceNivelDeEnsino)
         {
