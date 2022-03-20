@@ -6,16 +6,16 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
     // Um campo para cada nome de mídia presente em Metodologia.ABP.NomesDeMidiasDaMetodologia()
     // As mídias do tipo software serão mostradas usando os aparelhosDigitaisParaMidiasTipoSoftware,
     // esses aparelhos representarão todas elas
-    [SerializeField] GameObject lousa;
-    [SerializeField] GameObject livrosDidaticos;
-    [SerializeField] GameObject cadernosECartazes;
-    [SerializeField] GameObject televisao;
-    [SerializeField] GameObject consolesParaJogos;
-    [SerializeField] GameObject projetorMultimidia;
-    [SerializeField] GameObject aparelhosDigitaisParaMidiasTipoSoftware;
+    [SerializeField] private GameObject lousa;
+    [SerializeField] private GameObject livrosDidaticos;
+    [SerializeField] private GameObject cadernosECartazes;
+    [SerializeField] private GameObject televisao;
+    [SerializeField] private GameObject consolesParaJogos;
+    [SerializeField] private GameObject projetorMultimidia;
+    [SerializeField] private GameObject aparelhosDigitaisParaMidiasTipoSoftware;
+    [SerializeField] private StateMachineController stateMachineController;
 
     private Dictionary<NomeDeMidia, GameObject> midiasNaSalaDeAulaPorNome;
-
 
     protected override void Awake()
     {
@@ -38,6 +38,11 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
         // Esconder todas as mídias caso algumas delas ainda estejam visíveis
         foreach (var midiasNaSala in midiasNaSalaDeAulaPorNome.Values)
             midiasNaSala.SetActive(false);
+    }
+
+    public void UpdateMedia()
+    {
+        MostrarMidiasNaSalaDeAula(stateMachineController.CurrentMedia().nomeMidia);
     }
 
     public override bool MostrarMidiasNaSalaDeAula(NomeDeMidia nomeDeMidia)
