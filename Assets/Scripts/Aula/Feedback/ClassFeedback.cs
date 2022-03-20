@@ -66,11 +66,11 @@ public class ClassFeedback : MonoBehaviour
                 break;
         }
 
-        comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.MetodologiaSelecionada.nome}, sua combinação de mídias foi {comboClassification}";
+        comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
 
         ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
 
-        if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
         {
             switch (combo)
             {
@@ -112,7 +112,7 @@ public class ClassFeedback : MonoBehaviour
                     break;
             }
         }
-        else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
         {
             switch (combo)
             {
@@ -147,11 +147,11 @@ public class ClassFeedback : MonoBehaviour
         }
 
 
-        methodologyIcon.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
+        methodologyIcon.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
 
-        media1Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
-        media2Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
-        media3Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
-        media4Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite;
+        media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+        media2Icon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
+        media3Icon.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
+        media4Icon.sprite = EstadoDoJogo.Instance.Midias[3].sprite;
     }
 }

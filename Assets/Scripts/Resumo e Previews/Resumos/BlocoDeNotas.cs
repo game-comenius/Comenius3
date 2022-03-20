@@ -57,13 +57,13 @@ public class BlocoDeNotas : MonoBehaviour
     {
         if (pagina == 0)
         {
-            icone.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
-            texto.text = EstadoDoJogo.Instance.MetodologiaSelecionada.descricaoLonga;
+            icone.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
+            texto.text = EstadoDoJogo.Instance.Metodologia.descricaoLonga;
         }
         else
         {
-            icone.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].sprite;
-            texto.text = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].descricaoLonga;
+            icone.sprite = EstadoDoJogo.Instance.Midias[pagina - 1].sprite;
+            texto.text = EstadoDoJogo.Instance.Midias[pagina - 1].descricaoLonga;
         }
     }
 }

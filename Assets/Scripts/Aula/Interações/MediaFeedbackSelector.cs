@@ -20,11 +20,11 @@ public class MediaFeedbackSelector : MonoBehaviour
         List<MomentoInteracao> feedbacks;
 
         // (Switch não usado pois o nível de ensino não é constante)
-        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
             feedbacks = feedbacksInfantil;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
             feedbacks = feedbacksFundamental;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
             feedbacks = feedbacksFundamental;
         else
             feedbacks = feedbacksSuperior;

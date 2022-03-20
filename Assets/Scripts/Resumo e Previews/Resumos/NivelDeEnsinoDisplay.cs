@@ -26,9 +26,9 @@ public class NivelDeEnsinoDisplay : MonoBehaviour
         var estadoDoJogo = EstadoDoJogo.Instance;
 
         Sprite sprite;
-        texto.text = estadoDoJogo.NivelDeEnsinoSelecionado.nome;
+        texto.text = estadoDoJogo.NivelDeEnsino.nome;
 
-        switch(estadoDoJogo.NivelDeEnsinoSelecionado.valor)
+        switch(estadoDoJogo.NivelDeEnsino.valor)
         {
 
             case 0:

@@ -109,8 +109,8 @@ public class PaginaMetodologia : PaginaPlanejamento
         iconManager.SetIcon(0, icone.GetComponent<Image>().sprite);
 
         // Grava o nível de ensino selecionado
-        EstadoDoJogo.Instance.MetodologiaSelecionada = icone.metodologia;
-        EstadoDoJogo.Instance.MetodologiaSelecionada.sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.Metodologia = icone.metodologia;
+        EstadoDoJogo.Instance.Metodologia.sprite = icone.GetComponent<Image>().sprite;
 
         botaoConfirmar.interactable = true;
     }
@@ -120,14 +120,14 @@ public class PaginaMetodologia : PaginaPlanejamento
         iconManager.ResetIcon(0);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.MetodologiaSelecionada = null;
+        EstadoDoJogo.Instance.Metodologia = null;
 
         botaoConfirmar.interactable = false;
     }
 
     public void Confirmar()
     {
-        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        switch (EstadoDoJogo.Instance.Metodologia.nome)
         {
             case "Aprendizagem Baseada em Problemas":
                 uiManager.ChangePanel(introABP);

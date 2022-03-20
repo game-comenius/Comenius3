@@ -4,56 +4,56 @@ using UnityEngine;
 public class EstadoDoJogo : Singleton<EstadoDoJogo>
 {
     // Propriedades definidas pelo criador de um jogo
-    private NivelDeEnsino nivelDeEnsinoSelecionado;
-    public NivelDeEnsino NivelDeEnsinoSelecionado
+    private NivelDeEnsino nivelDeEnsino;
+    public NivelDeEnsino NivelDeEnsino
     {
         get
         {
-            if (nivelDeEnsinoSelecionado == null)
-                nivelDeEnsinoSelecionado = NivelDeEnsino.EnsinoSuperior;
-            return nivelDeEnsinoSelecionado;
+            if (nivelDeEnsino == null)
+                nivelDeEnsino = NivelDeEnsino.EnsinoSuperior;
+            return nivelDeEnsino;
         }
 
-        set => nivelDeEnsinoSelecionado = value;
+        set => nivelDeEnsino = value;
     }
 
-    private AreaDeConhecimento areaDeConhecimentoSelecionada;
-    public AreaDeConhecimento AreaDeConhecimentoSelecionada
+    private AreaDeConhecimento areaDeConhecimento;
+    public AreaDeConhecimento AreaDeConhecimento
     {
         get
         {
-            if (areaDeConhecimentoSelecionada == null)
-                areaDeConhecimentoSelecionada = AreaDeConhecimento.CienciasHumanas;
-            return areaDeConhecimentoSelecionada;
+            if (areaDeConhecimento == null)
+                areaDeConhecimento = AreaDeConhecimento.CienciasHumanas;
+            return areaDeConhecimento;
         }
 
-        set => areaDeConhecimentoSelecionada = value;
+        set => areaDeConhecimento = value;
     }
 
-    private Inteligencias inteligenciasSelecionadas;
-    public Inteligencias InteligenciasSelecionadas
+    private Inteligencias inteligencias;
+    public Inteligencias Inteligencias
     {
         get
         {
-            if (inteligenciasSelecionadas == null)
-                inteligenciasSelecionadas = Inteligencias.LinguisticaComLogicoMatematica;
-            return inteligenciasSelecionadas;
+            if (inteligencias == null)
+                inteligencias = Inteligencias.LinguisticaComLogicoMatematica;
+            return inteligencias;
         }
 
-        set => inteligenciasSelecionadas = value;
+        set => inteligencias = value;
     }
 
-    private Metodologia metodologiaSelecionada;
-    public Metodologia MetodologiaSelecionada
+    private Metodologia metodologia;
+    public Metodologia Metodologia
     {
         get
         {
-            if (metodologiaSelecionada == null)
-                metodologiaSelecionada = Metodologia.ABP;
-            return metodologiaSelecionada;
+            if (metodologia == null)
+                metodologia = Metodologia.ABP;
+            return metodologia;
         }
 
-        set => metodologiaSelecionada = value;
+        set => metodologia = value;
     }
 
     // Array de midias selecionadas pelo jogador na hora do planejamento.
@@ -61,34 +61,59 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     // isso midiasSelecionadas é um array. O momento aula será responsável por
     // selecionar as x primeiras mídias do array, onde x é o número de mídias
     // que a metodologia escolhida pelo jogador precisa para funcionar bem.
-    private Midia[] midiasSelecionadas;
-    public Midia[] MidiasSelecionadas
+    private Midia[] midias;
+    public Midia[] Midias
     {
         get
         {
-            if (midiasSelecionadas == null)
-                midiasSelecionadas = new Midia[]
+            if (midias == null)
+                midias = new Midia[]
                 {
                     new Midia(NomeDeMidia.LivroDidatico),
                     new Midia(NomeDeMidia.ProjetorMultimidia),
                     new Midia(NomeDeMidia.Lousa),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
-            return midiasSelecionadas;
+            return midias;
         }
 
-        set => midiasSelecionadas = value;
+        set => midias = value;
     }
 
     // Características da personagem selecionada, observar se estes valores != null
-    public Sprite spriteCorpoPersonagem { get; set; }
-    public Sprite spriteCabeloPersonagem { get; set; }
-    public Sprite spriteRoupaPersonagem { get; set; }
-    public Sprite spriteIconePersonagem { get; set; }
+    public Sprite SpriteCorpoPersonagem { get; set; }
+    public Sprite SpriteCabeloPersonagem { get; set; }
+    public Sprite SpriteRoupaPersonagem { get; set; }
+    public Sprite SpriteIconePersonagem { get; set; }
 
-    public Sprite spriteCorpoPersonagemSentado { get; set; }
-    public Sprite spriteCabeloPersonagemSentado { get; set; }
-    public Sprite spriteRoupaPersonagemSentado { get; set; }
+    public Sprite SpriteCorpoPersonagemSentado { get; set; }
+    public Sprite SpriteCabeloPersonagemSentado { get; set; }
+    public Sprite SpriteRoupaPersonagemSentado { get; set; }
+
+    public int FaseAtual { get; set; }
+
+    // Temas de cada fase
+    public string TemaFase1 { get; set; }
+    public string TemaFase2 { get; set; }
+    public string TemaFase3 { get; set; }
+
+    // Dados de cada fase
+    public RegisteredState Fase1 { get; set; }
+    public RegisteredState Fase2 { get; set; }
+    public RegisteredState Fase3 { get; set; }
+
+    // Esta estrutura é um container para armazenar dados de cada fase. Os dados serão reacessados para a consulta no
+    // futuro
+    public struct RegisteredState
+    {
+        public NivelDeEnsino NivelDeEnsino { get; set; }
+        public AreaDeConhecimento AreaDeConhecimento { get; set; }
+        public Inteligencias Inteligencias { get; set; }
+        public Metodologia metodologia { get; set; }
+        public Midia[] midias { get; set; }
+        public Sprite SpriteIconePersonagem { get; set; }
+        public string Tema { get; set; }
+    }
 
     [HideInInspector] public List<FlagDeEstadoDeJogo> flags;  // Não utilizado
 }

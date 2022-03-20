@@ -188,10 +188,10 @@ public class PaginaMidias : PaginaPlanejamento
 
         iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
 
-        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        Midia[] temp = EstadoDoJogo.Instance.Midias;
         temp[indice] = icone.midia;
         temp[indice].sprite = icone.GetComponent<Image>().sprite;
-        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
+        EstadoDoJogo.Instance.Midias = temp;
     }
 
     private void resetarEstadoDeJogo()
@@ -212,9 +212,9 @@ public class PaginaMidias : PaginaPlanejamento
 
         iconManager.ResetIcon(indiceIcone);
 
-        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        Midia[] temp = EstadoDoJogo.Instance.Midias;
         temp[indice] = null;
-        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
+        EstadoDoJogo.Instance.Midias = temp;
     }
 
     public void Confirmar()

@@ -34,12 +34,12 @@ public class ComboChecker
 
     public static Combo EvaluateCombo()
     {
-        CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.MidiasSelecionadas[0].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.MidiasSelecionadas[1].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.MidiasSelecionadas[2].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.MidiasSelecionadas[3].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia();
 
-        if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
         {
             // Pelo menos uma é digital
             if (flagMidia1.HasFlag(CategoriasDeMidia.Digital) || flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -121,7 +121,7 @@ public class ComboChecker
                 return Combo.abpArriscada2;
             }
         }
-        else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
         {
             // Qualquer coisa
             // Combo arriscado 1

@@ -39,7 +39,7 @@ public class QuizManager : MonoBehaviour
     {
         for(int i = 0; i < multipleInteligencesQuizList.Count; i++)
         {
-            if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligence == EstadoDoJogo.Instance.InteligenciasSelecionadas.nome)
+            if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligence == EstadoDoJogo.Instance.Inteligencias.nome)
             {
                 GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
 
