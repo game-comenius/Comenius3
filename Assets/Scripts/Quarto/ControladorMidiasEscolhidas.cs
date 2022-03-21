@@ -20,7 +20,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     [SerializeField] GameObject popUpTipo;
     [SerializeField] GameObject popUpNome;
 
-    [SerializeField] GameObject painelFeedback;
+    [SerializeField] GameObject confirmacaoFeedback;
 
     [SerializeField] GameObject quartoInfo;
 
@@ -210,7 +210,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
             setToyFeedback();
             setObjectFeedback(0);
             setObjectFeedback(1);
-            painelFeedback.SetActive(true);
+            confirmacaoFeedback.SetActive(true);
             textoMidiaAtualObjeto.SetActive(false);
             quartoInfo.SetActive(false);
             Debug.Log(midiasDefinitivas[0] + " " + midiasDefinitivas[1] + " " + midiasDefinitivas[2]);
