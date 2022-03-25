@@ -26,6 +26,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
 
     [SerializeField] GameObject textoMidiaAtualObjeto;
     [SerializeField] TextMeshProUGUI textoMidiaAtual;
+    [SerializeField] Image iconeMidiaAtual;
 
     [SerializeField] TextMeshProUGUI textoFeedbackBrinquedo;
     [SerializeField] TextMeshProUGUI textoFeedbackObjeto1;
@@ -64,6 +65,7 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
         textosFeedback[2] = textoFeedbackObjeto2;
 
         textoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
+        iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
 
     }
 
@@ -182,12 +184,14 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
                 miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
                 midia0.SetActive(true);
                 textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 break;
             case 1:
                 midia1.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
                 miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 midia1.SetActive(true);
                 textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
                 break;
             default:
                 midia2.GetComponent<SpriteRenderer>().sprite = spriteProvisorio;
