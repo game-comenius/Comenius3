@@ -25,7 +25,7 @@ public class MediaFeedbackSelector : MonoBehaviour
         else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
             feedbacks = feedbacksFundamental;
         else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
-            feedbacks = feedbacksFundamental;
+            feedbacks = feedbacksMedio;
         else
             feedbacks = feedbacksSuperior;
 
