@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
         GameObject quiz = Instantiate(quizPrefab);
 
         quiz.transform.SetParent(canvas.transform, false);
+        quiz.transform.SetAsFirstSibling();
         quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
