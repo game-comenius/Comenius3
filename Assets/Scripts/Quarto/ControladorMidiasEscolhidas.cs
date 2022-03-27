@@ -223,6 +223,13 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
 
     }
 
+    public void reset()
+    {
+        midiaAtual = 0;
+        midiasDefinitivas = new string[3];
+        Start();
+    }
+
     public void setToyFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
