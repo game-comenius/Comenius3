@@ -4,15 +4,15 @@ using UnityEngine.UI;
 public abstract class Affirmation : MonoBehaviour
 {
     [SerializeReference] public Text text;
-    [SerializeReference] protected Color selectedColor;
-    [SerializeReference] protected Color correctColor;
-    [SerializeReference] protected Color wrongColor;
+    [SerializeReference] protected Sprite selectedSprite;
+    [SerializeReference] protected Sprite correctSprite;
+    [SerializeReference] protected Sprite wrongSprite;
 
     public virtual void UpdateResultColor(bool correct)
     {
         if (correct)
-            gameObject.GetComponent<Image>().color = correctColor;
+            gameObject.GetComponent<Image>().sprite = correctSprite;
         else
-            gameObject.GetComponent<Image>().color = wrongColor;
+            gameObject.GetComponent<Image>().sprite = wrongSprite;
     }
 }

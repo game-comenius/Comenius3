@@ -118,6 +118,8 @@ public class QuizSorted : QuizBase
 
         for (int i = 0; i < maxAffirmations; i++)
         {
+            affirmations[i].GetComponent<Draggable>().enabled = false;
+
             if (i == affirmations[i].correctPosition)
             {
                 correctAnswers++;
