@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizMultipleChoice : QuizBase
 {
@@ -75,6 +76,8 @@ public class QuizMultipleChoice : QuizBase
 
         for (int i = 0; i < maxAffirmations; i++)
         {
+            affirmations[i].GetComponent<Button>().interactable = false;
+
             if (affirmations[i].correct)
                 affirmations[i].UpdateResultColor(true);
             else
