@@ -47,7 +47,6 @@ public class PaginaMidias : PaginaPlanejamento
         if (primeiroIconeSelecionado)
         {
             iconManager.SetIcon(0, primeiroIconeSelecionado.GetComponent<Image>().sprite);
-            // primeiraMidia = false;  // Avaliar isso aqui
         }
         else
         {
@@ -221,7 +220,12 @@ public class PaginaMidias : PaginaPlanejamento
     {
         primeiraMidia = false;
 
-        primeiroIconeSelecionado.selecionado = false;
+        primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
+
+        if (segundoIconeSelecionado)
+        {
+            segundoIconeSelecionado.GetComponent<Button>().interactable = true;
+        }
 
         setaPrimeiraMidia.SetActive(false);
         setaSegundaMidia.SetActive(true);
@@ -238,7 +242,12 @@ public class PaginaMidias : PaginaPlanejamento
     {
         primeiraMidia = true;
 
-        segundoIconeSelecionado.selecionado = false;
+        primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
+    
+        if (segundoIconeSelecionado)
+        {
+            segundoIconeSelecionado.GetComponent<Button>().interactable = false;
+        }
 
         setaPrimeiraMidia.SetActive(true);
         setaSegundaMidia.SetActive(false);
