@@ -1,50 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
-[System.Obsolete("Vai ser refeito")]
 public class ControladorMidiasEscolhidas : MonoBehaviour
 {
-    [SerializeField] GameObject midia0;
-    [SerializeField] GameObject midia1;
-    [SerializeField] GameObject midia2;
+    [SerializeField] private GameObject midia0;
+    [SerializeField] private GameObject midia1;
+    [SerializeField] private GameObject midia2;
 
-    [SerializeField] GameObject miniMidia0;
-    [SerializeField] GameObject miniMidia1;
-    [SerializeField] GameObject miniMidia2;
+    [SerializeField] private GameObject miniMidia0;
+    [SerializeField] private GameObject miniMidia1;
+    [SerializeField] private GameObject miniMidia2;
 
-    [SerializeField] GameObject previewMidia;
+    [SerializeField] private GameObject previewMidia;
 
-    [SerializeField] GameObject popUpTipo;
-    [SerializeField] GameObject popUpNome;
+    [SerializeField] private GameObject popUpTipo;
+    [SerializeField] private GameObject popUpNome;
 
-    [SerializeField] GameObject confirmacaoFeedback;
+    [SerializeField] private GameObject confirmacaoFeedback;
 
-    [SerializeField] GameObject quartoInfo;
+    [SerializeField] private GameObject quartoInfo;
 
-    [SerializeField] GameObject textoMidiaAtualObjeto;
-    [SerializeField] TextMeshProUGUI textoMidiaAtual;
-    [SerializeField] Image iconeMidiaAtual;
+    [SerializeField] private GameObject textoMidiaAtualObjeto;
+    [SerializeField] private TextMeshProUGUI textoMidiaAtual;
+    [SerializeField] private Image iconeMidiaAtual;
 
-    [SerializeField] TextMeshProUGUI textoFeedbackBrinquedo;
-    [SerializeField] TextMeshProUGUI textoFeedbackObjeto1;
-    [SerializeField] TextMeshProUGUI textoFeedbackObjeto2;
+    [SerializeField] private TextMeshProUGUI textoFeedbackBrinquedo;
+    [SerializeField] private TextMeshProUGUI textoFeedbackObjeto1;
+    [SerializeField] private TextMeshProUGUI textoFeedbackObjeto2;
 
     [Header("Imagens das mídias e brinquedos")]
-    [SerializeField] Sprite estanteSprite;
-    [SerializeField] Sprite televisaoSprite;
-    [SerializeField] Sprite tabletSprite;
-    [SerializeField] Sprite consoleSprite;
-    [SerializeField] Sprite computadorSprite;
-    [SerializeField] Sprite celularSprite;
-    [SerializeField] Sprite legosSprite;
-    [SerializeField] Sprite quebraCabecaSprite;
-    [SerializeField] Sprite ioioSprite;
-    [SerializeField] Sprite blocosSprite;
-    [SerializeField] Sprite tecladoSprite;
-    [SerializeField] Sprite bolaSprite;
+    [SerializeField] private Sprite estanteSprite;
+    [SerializeField] private Sprite televisaoSprite;
+    [SerializeField] private Sprite tabletSprite;
+    [SerializeField] private Sprite consoleSprite;
+    [SerializeField] private Sprite computadorSprite;
+    [SerializeField] private Sprite celularSprite;
+    [SerializeField] private Sprite legosSprite;
+    [SerializeField] private Sprite quebraCabecaSprite;
+    [SerializeField] private Sprite ioioSprite;
+    [SerializeField] private Sprite blocosSprite;
+    [SerializeField] private Sprite tecladoSprite;
+    [SerializeField] private Sprite bolaSprite;
+    [SerializeField] private Sprite livroDidaticoSprite;
 
     private int midiaAtual = 0;
     private string midiaProvisoria;
@@ -66,7 +64,6 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
 
         textoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
         iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
-
     }
 
     public void onClickProvisorio(string midia)
@@ -167,6 +164,14 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
                 spriteProvisorio = bolaSprite;
                 popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
                 popUpNome.GetComponent<TextMeshProUGUI>().text = "Bola";
+                previewMidia.GetComponent<Image>().sprite = spriteProvisorio;
+                Debug.Log(midia);
+                break;
+            case "livro didático":
+                midiaProvisoria = midia;
+                spriteProvisorio = livroDidaticoSprite;
+                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
+                popUpNome.GetComponent<TextMeshProUGUI>().text = "Livro Didático";
                 previewMidia.GetComponent<Image>().sprite = spriteProvisorio;
                 Debug.Log(midia);
                 break;
@@ -363,11 +368,11 @@ public class ControladorMidiasEscolhidas : MonoBehaviour
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
         string nomeMidia = estadoDoJogo.Midias[index].nome;
-        
-        switch(nomeMidia)
+
+        switch (nomeMidia)
         {
             case ("Jogos"):
-                switch(midiasDefinitivas[index + 1])
+                switch (midiasDefinitivas[index + 1])
                 {
                     case ("console"):
                         textosFeedback[index + 1].text = index == 0 ? "Consegui fazer as atividades com o console" : "e consegui fazer as atividades com o console";

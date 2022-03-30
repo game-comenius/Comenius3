@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[System.Obsolete("Vai ser refeito")]
 [RequireComponent(typeof(SpriteRenderer))]
 public class ControladorDeDisplayQuarto : MonoBehaviour
 {
@@ -18,23 +15,24 @@ public class ControladorDeDisplayQuarto : MonoBehaviour
         medio.SetActive(false);
         superior.SetActive(false);
 
-        int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsino.valor;//Verifica o nivel de ensino selecionado
-        //Ativa o gameObject correspondente ao selecionado
+        int indiceNivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsino.valor; // Verifica o nivel de ensino selecionado
+
+        // Ativa o gameObject correspondente ao selecionado
         switch (indiceNivelDeEnsino)
         {
-            case 0://Educacao infantil
+            case 0:  // Educacao infantil
                 infantil.SetActive(true);
                 break;
-            case 1://Ensino Fundamental
+            case 1:  // Ensino Fundamental
                 fundamental.SetActive(true);
                 break;
-            case 2://Ensino Medio
+            case 2:  // Ensino Medio
                 medio.SetActive(true);
                 break;
-            default://Ensino Superior
+            default:  // Ensino Superior
                 superior.SetActive(true);
                 break;
         }
-        
+
     }
 }
