@@ -8,51 +8,45 @@ public class RoomManager : MonoBehaviour
     public GameObject[] toyObjects;
     public GameObject[] mediaObjects;
 
-    [SerializeField] private GameObject midia0;
-    [SerializeField] private GameObject midia1;
-    [SerializeField] private GameObject midia2;
+    [SerializeField] private GameObject toyIcon;
+    [SerializeField] private GameObject media1Icon;
+    [SerializeField] private GameObject media2Icon;
+    [SerializeField] private GameObject intelligenceMiniIcon;
+    [SerializeField] private GameObject media1MiniIcon;
+    [SerializeField] private GameObject media2MiniIcon;
+    [SerializeField] private Image previewMedia;
+    [SerializeField] private TextMeshProUGUI objectName;
+    [SerializeField] private GameObject feedbackConfirmation;
+    [SerializeField] private GameObject roomInfo;
+    [SerializeField] private GameObject currentMediaHover;
+    [SerializeField] private TextMeshProUGUI currentMediaText;
+    [SerializeField] private Image currentMediaIcon;
 
-    [SerializeField] private GameObject miniMidia0;
-    [SerializeField] private GameObject miniMidia1;
-    [SerializeField] private GameObject miniMidia2;
+    [SerializeField] private TextMeshProUGUI toyFeedbackText;
+    [SerializeField] private TextMeshProUGUI mediaFeedbackText;
 
-    [SerializeField] private GameObject previewMidia;
-
-    [SerializeField] private GameObject popUpTipo;
-    [SerializeField] private GameObject popUpNome;
-
-    [SerializeField] private GameObject confirmacaoFeedback;
-
-    [SerializeField] private GameObject quartoInfo;
-
-    [SerializeField] private GameObject textoMidiaAtualObjeto;
-    [SerializeField] private TextMeshProUGUI textoMidiaAtual;
-    [SerializeField] private Image iconeMidiaAtual;
-
-    [SerializeField] private TextMeshProUGUI textoFeedbackBrinquedo;
-    [SerializeField] private TextMeshProUGUI textoFeedbackObjeto1;
-    [SerializeField] private TextMeshProUGUI textoFeedbackObjeto2;
-
-    [Header("Imagens das mídias e brinquedos")]
-    [SerializeField] private Sprite estanteSprite;
-    [SerializeField] private Sprite televisaoSprite;
-    [SerializeField] private Sprite tabletSprite;
+    [Header("Sprites das mídias e brinquedos")]
     [SerializeField] private Sprite consoleSprite;
-    [SerializeField] private Sprite computadorSprite;
-    [SerializeField] private Sprite celularSprite;
+    [SerializeField] private Sprite computerSprite;
+    [SerializeField] private Sprite smartphoneSprite;
+    [SerializeField] private Sprite tabletSprite;
+    [SerializeField] private Sprite notebookAndCaseSprite;
+    [SerializeField] private Sprite tvSprite;
+    [SerializeField] private Sprite ballSprite;
+    [SerializeField] private Sprite buildingBlocksSprite;
     [SerializeField] private Sprite legosSprite;
-    [SerializeField] private Sprite quebraCabecaSprite;
-    [SerializeField] private Sprite ioioSprite;
-    [SerializeField] private Sprite blocosSprite;
-    [SerializeField] private Sprite tecladoSprite;
-    [SerializeField] private Sprite bolaSprite;
-    [SerializeField] private Sprite livroDidaticoSprite;
+    [SerializeField] private Sprite puzzleSprite;
+    [SerializeField] private Sprite comicsAndLiteratureSprite;
+    [SerializeField] private Sprite musicBoardSprite;
+
+    [Header("Tesxtos dos briquedos")]
+    [SerializeField] private string[] positiveToyFeedbacks;
+    [SerializeField] private string[] negativeToyFeedbacks;
 
     private int currentMedia;
     private string tempMedia;
     private string[] medias;
     private Sprite tempSprite;
-    private TextMeshProUGUI[] feedbackTexts;
     private bool mediaCanBeSelected;
 
     void Start()
@@ -60,18 +54,13 @@ public class RoomManager : MonoBehaviour
         currentMedia = 0;
         mediaCanBeSelected = false;
         medias = new string[3];
-        feedbackTexts = new TextMeshProUGUI[3];
 
-        midia0.SetActive(false);
-        midia1.SetActive(false);
-        midia2.SetActive(false);
+        toyIcon.SetActive(false);
+        media1Icon.SetActive(false);
+        media2Icon.SetActive(false);
 
-        feedbackTexts[0] = textoFeedbackBrinquedo;
-        feedbackTexts[1] = textoFeedbackObjeto1;
-        feedbackTexts[2] = textoFeedbackObjeto2;
-
-        textoMidiaAtual.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
-        iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
+        currentMediaText.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
+        currentMediaIcon.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
 
         UpdateObjects();
     }
@@ -80,116 +69,95 @@ public class RoomManager : MonoBehaviour
     {
         switch (name)
         {
-            case "estante":
-                tempMedia = name;
-                tempSprite = estanteSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Livros";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "televisao":
-                tempMedia = name;
-                tempSprite = televisaoSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Televisão";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "tablet":
-                tempMedia = name;
-                tempSprite = tabletSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Tablet";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "console":
+            case "Mídia Console":
                 tempMedia = name;
                 tempSprite = consoleSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Jogos";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                objectName.text = "Console";
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = false;
                 break;
-            case "computador":
+            case "Computador":
                 tempMedia = name;
-                tempSprite = computadorSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Computador";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = computerSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = false;
                 break;
-            case "celular":
+            case "Celular":
                 tempMedia = name;
-                tempSprite = celularSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Celular";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = smartphoneSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = false;
                 break;
-            case "livro didático":
+            case "Tablet":
                 tempMedia = name;
-                tempSprite = livroDidaticoSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Livro Didático";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = tabletSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = false;
                 break;
-            case "caderno e estojo":
+            case "Caderno e Estojo":
                 tempMedia = name;
-                tempSprite = livroDidaticoSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Mídia";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Caderno e Estojo";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = notebookAndCaseSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = false;
                 break;
-            case "legos":
+            case "Televisão":
+                tempMedia = name;
+                tempSprite = tvSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                mediaCanBeSelected = false;
+                break;
+            case "Bola":
+                tempMedia = name;
+                tempSprite = ballSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                mediaCanBeSelected = true;
+                break;
+            case "Blocos de Montar":
+                tempMedia = name;
+                tempSprite = buildingBlocksSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                mediaCanBeSelected = true;
+                break;
+            case "Legos":
                 tempMedia = name;
                 tempSprite = legosSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Legos";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = true;
                 break;
-            case "quebra cabeca":
+            case "Quebra-Cabeças":
                 tempMedia = name;
-                tempSprite = quebraCabecaSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Quebra-cabeça";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = puzzleSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = true;
                 break;
-            case "io io":
+            case "Gibi e Literatura":
                 tempMedia = name;
-                tempSprite = ioioSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Ioiô";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = puzzleSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = true;
                 break;
-            case "blocos":
+            case "Brinquedo Console":
                 tempMedia = name;
-                tempSprite = blocosSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Blocos";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = puzzleSprite;
+                objectName.text = "Console";
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = true;
                 break;
-            case "teclado":
+            case "Teclado":
                 tempMedia = name;
-                tempSprite = tecladoSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Teclado";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
-                mediaCanBeSelected = true;
-                break;
-            case "bola":
-                tempMedia = name;
-                tempSprite = bolaSprite;
-                popUpTipo.GetComponent<TextMeshProUGUI>().text = "Tipo: Atividade de Lazer";
-                popUpNome.GetComponent<TextMeshProUGUI>().text = "Bola";
-                previewMidia.GetComponent<Image>().sprite = tempSprite;
+                tempSprite = musicBoardSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 mediaCanBeSelected = true;
                 break;
             default:
@@ -199,50 +167,46 @@ public class RoomManager : MonoBehaviour
         UpdateObjects();
     }
 
-    [System.Obsolete("Este método não é usado.")]
-    public void onClickDefinitivo()
+    public void ConfirmSelection()
     {
         switch (currentMedia)
         {
             case 0:
-                midia0.GetComponent<SpriteRenderer>().sprite = tempSprite;
-                miniMidia0.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
-                midia0.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
-                iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+                toyIcon.GetComponent<Image>().sprite = tempSprite;
+                intelligenceMiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
+                toyIcon.SetActive(true);
+                currentMediaText.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 break;
             case 1:
-                midia1.GetComponent<SpriteRenderer>().sprite = tempSprite;
-                miniMidia1.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
-                midia1.SetActive(true);
-                textoMidiaAtual.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
-                iconeMidiaAtual.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
+                media1Icon.GetComponent<Image>().sprite = tempSprite;
+                media1MiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+                media1Icon.SetActive(true);
+                currentMediaText.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
                 break;
             default:
-                midia2.GetComponent<SpriteRenderer>().sprite = tempSprite;
-                miniMidia2.GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[1].sprite;
-                midia2.SetActive(true);
+                media2Icon.GetComponent<Image>().sprite = tempSprite;
+                media2MiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Midias[1].sprite;
+                media2Icon.SetActive(true);
                 break;
         }
 
         if (currentMedia < 2)
         {
             medias[currentMedia] = tempMedia;
-            Debug.Log(currentMedia);
             currentMedia++;
-            Debug.Log(currentMedia);
         }
         else
         {
             medias[currentMedia] = tempMedia;
-            Debug.Log(currentMedia);
+
             setToyFeedback();
-            setObjectFeedback(0);
-            setObjectFeedback(1);
-            confirmacaoFeedback.SetActive(true);
-            textoMidiaAtualObjeto.SetActive(false);
-            quartoInfo.SetActive(false);
-            Debug.Log(medias[0] + " " + medias[1] + " " + medias[2]);
+            setObjectFeedback();
+
+            feedbackConfirmation.SetActive(true);
+            currentMediaHover.SetActive(false);
+            roomInfo.SetActive(false);
         }
     }
 
@@ -256,121 +220,120 @@ public class RoomManager : MonoBehaviour
     public void setToyFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeInteligencia = estadoDoJogo.Inteligencias.nome;
+        string intelligenceName = estadoDoJogo.Inteligencias.nome;
 
-        switch (nomeInteligencia)
+        string positivePrefix = "Me diverti muito";
+        string negativePrefix = "Não me diverti muito, pra mim";
+
+        switch (intelligenceName)
         {
-
             case ("Corporal-cinestésica e Naturalista"):
                 switch (medias[0])
                 {
-                    case "console":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim jogar videogame é meio chato";
+                    case "Bola":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[0]}";
                         break;
-                    case "legos":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim montar legos é meio chato";
+                    case "Blocos de Montar":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "quebra cabeca":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim resolver quebra-cabeças é meio chato";
+                    case "Legos":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "io io":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim brincar com iô-iô não tem graça";
+                    case "Quebra-Cabeças":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[2]}";
                         break;
-                    case "blocos":
-                        textoFeedbackBrinquedo.text = "Me diverti muito montando os blocos";
+                    case "Gibi e Literatura":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[3]}";
+                        break;
+                    case "Brinquedo Console":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[4]}";
                         break;
                     case "teclado":
-                        textoFeedbackBrinquedo.text = "Me diverti muito criando músicas novas";
-                        break;
-                    case "bola":
-                        textoFeedbackBrinquedo.text = "Me diverti muito jogando com a bola";
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[5]}";
                         break;
                     default:
                         break;
                 }
                 break;
-
             case ("Intrapessoal e Espacial-visual"):
                 switch (medias[0])
                 {
-                    case "console":
-                        textoFeedbackBrinquedo.text = "Me diverti muito jogando um game";
+                    case "Bola":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[0]}";
                         break;
-                    case "legos":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não tenho certeza se me diverti com legos";
+                    case "Blocos de Montar":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "quebra cabeca":
-                        textoFeedbackBrinquedo.text = "Me diverti muito conseguindo montar o quebra-cabeças";
+                    case "Legos":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "io io":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não tenho certeza se me diverti com iô-iô";
+                    case "Quebra-Cabeças":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[2]}";
                         break;
-                    case "blocos":
-                        textoFeedbackBrinquedo.text = "Me diverti muito montando os blocos";
+                    case "Gibi e Literatura":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[3]}";
+                        break;
+                    case "Brinquedo Console":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[4]}";
                         break;
                     case "teclado":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim tocar teclado é meio chato";
-                        break;
-                    case "bola":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim jogar bola é meio chato";
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[5]}";
                         break;
                     default:
                         break;
                 }
                 break;
-
-            case ("Interpessoal e Musical"):
-                switch (medias[0])
-                {
-                    case "console":
-                        textoFeedbackBrinquedo.text = "Me diverti muito jogando um game";
-                        break;
-                    case "legos":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim montar legos é meio chato";
-                        break;
-                    case "quebra cabeca":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim resolver quebra-cabeças é meio chato";
-                        break;
-                    case "io io":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim brincar com iô-iô não tem graça";
-                        break;
-                    case "blocos":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim montar blocos é meio chato";
-                        break;
-                    case "teclado":
-                        textoFeedbackBrinquedo.text = "Me diverti muito criando músicas novas";
-                        break;
-                    case "bola":
-                        textoFeedbackBrinquedo.text = "Me diverti muito jogando com a bola";
-                        break;
-                    default:
-                        break;
-                }
-                break;
-
             case ("Linguística e Lógico-matemática"):
                 switch (medias[0])
                 {
-                    case "console":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim jogar videogame é meio chato";
+                    case "Bola":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[0]}";
                         break;
-                    case "legos":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não tenho certeza se me diverti com legos";
+                    case "Blocos de Montar":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "quebra cabeca":
-                        textoFeedbackBrinquedo.text = "Me diverti muito conseguindo montar o quebra-cabeças";
+                    case "Legos":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "io io":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não tenho certeza se me diverti com iô-iô";
+                    case "Quebra-Cabeças":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[2]}";
                         break;
-                    case "blocos":
-                        textoFeedbackBrinquedo.text = "Me diverti muito montando os blocos";
+                    case "Gibi e Literatura":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[3]}";
+                        break;
+                    case "Brinquedo Console":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[4]}";
                         break;
                     case "teclado":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim tocar teclado é meio chato";
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[5]}";
                         break;
-                    case "bola":
-                        textoFeedbackBrinquedo.text = $"<color=red>Não me diverti muito, pra mim jogar bola é meio chato";
+                    default:
+                        break;
+                }
+                break;
+            case ("Interpessoal e Musical"):
+                switch (medias[0])
+                {
+                    case "Bola":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[0]}";
+                        break;
+                    case "Blocos de Montar":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[1]}";
+                        break;
+                    case "Legos":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[1]}";
+                        break;
+                    case "Quebra-Cabeças":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[2]}";
+                        break;
+                    case "Gibi e Literatura":
+                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[3]}";
+                        break;
+                    case "Brinquedo Console":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[4]}";
+                        break;
+                    case "teclado":
+                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[5]}";
                         break;
                     default:
                         break;
@@ -381,223 +344,254 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    public void setObjectFeedback(int index)
+    public void setObjectFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
-        string nomeMidia = estadoDoJogo.Midias[index].nome;
 
-        switch (nomeMidia)
+        bool[] selectionIsPositive = new bool[2];
+        string[] adjustedString = new string[2];
+
+        for (int i = 0; i < 2; i++)
         {
-            case ("Jogos"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o console" : "e consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o celular" : "e consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+            string mediaName = estadoDoJogo.Midias[i].nome;
 
-            case ("Redes Sociais"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o celular" : "e consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+            switch (medias[i])
+            {
+                case "Mídia Console":
+                    adjustedString[i] = "o console";
+                    break;
+                case "Computador":
+                    adjustedString[i] = "o computador";
+                    break;
+                case "Celular":
+                    adjustedString[i] = "o celular";
+                    break;
+                case "Tablet":
+                    adjustedString[i] = "o tablet";
+                    break;
+                case "Caderno e Estojo":
+                    adjustedString[i] = "o caderno e estojo";
+                    break;
+                case "Televisão":
+                    adjustedString[i] = "a televisão";
+                    break;
+            }
 
-            case ("Editores de Áudio e Vídeo"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o celular" : "e consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+            switch (mediaName)
+            {
+                case "Jogos":
 
-            case ("Plataformas"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o celular" : "e consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Redes Sociais":
 
-            case ("Aplicativos"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o celular" : "e consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Editores de Áudio e Vídeo":
 
-            case ("Editores de Texto e Planilhas Eletrônicas"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o computador" : "e consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o celular" : $"<color=red>e não consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o tablet" : "e consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Plataformas":
 
-            case ("Cadernos e Cartazes"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o computador" : $"<color=red>e não consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o celular" : $"<color=red>e não consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o tablet" : $"<color=red>e não consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com o livro" : "e consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com a televisão" : $"<color=red>e não consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Aplicativos":
 
-            case ("Televisão"):
-                switch (medias[index + 1])
-                {
-                    case ("console"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o console" : $"<color=red>e não consegui fazer as atividades com o console";
-                        break;
-                    case ("computador"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o computador" : $"<color=red>e não consegui fazer as atividades com o computador";
-                        break;
-                    case ("celular"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o celular" : $"<color=red>e não consegui fazer as atividades com o celular";
-                        break;
-                    case ("tablet"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o tablet" : $"<color=red>e não consegui fazer as atividades com o tablet";
-                        break;
-                    case ("estante"):
-                        feedbackTexts[index + 1].text = index == 0 ? $"<color=red>Não consegui fazer as atividades com o livro" : $"<color=red>e não consegui fazer as atividades com o livro";
-                        break;
-                    case ("televisao"):
-                        feedbackTexts[index + 1].text = index == 0 ? "Consegui fazer as atividades com a televisão" : "e consegui fazer as atividades com a televisão";
-                        break;
-                    default:
-                        break;
-                }
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Editores de Texto e Planilhas Eletrônicas":
 
-            default:
-                break;
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Cadernos e Cartazes":
+
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = true;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = false;
+                            break;
+                    }
+                    break;
+                case "Televisão":
+
+                    switch (medias[i])
+                    {
+                        case "Mídia Console":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Computador":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Celular":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Tablet":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Caderno e Estojo":
+                            selectionIsPositive[i] = false;
+                            break;
+                        case "Televisão":
+                            selectionIsPositive[i] = true;
+                            break;
+                    }
+                    break;
+                default:
+                    selectionIsPositive[i] = false;
+                    break;
+            }
+        }
+
+        if (selectionIsPositive[0] && selectionIsPositive[1])
+        {
+            mediaFeedbackText.text = $"Consegui fazer todas as tarefas com {adjustedString[0]} e {adjustedString[1]}";
+        }
+        else if (selectionIsPositive[0])
+        {
+            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[0]} mas tive dificuldades para fazer outras tarefas com {adjustedString[1]}";
+        }
+        else if (selectionIsPositive[1])
+        {
+            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[1]} mas tive dificuldades para fazer outras tarefas com {adjustedString[0]}";
+        }
+        else
+        {
+            mediaFeedbackText.text = $"Tive dificuldades para fazer as tarefas com {adjustedString[0]} e {adjustedString[1]}";
         }
     }
 

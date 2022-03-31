@@ -555,17 +555,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 995688246}
-          m_TargetAssemblyTypeName: ControladorMidiasEscolhidas, Assembly-CSharp
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: 
-          m_Mode: 5
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: legos
-            m_BoolArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &72700401
 GameObject:
@@ -1282,7 +1282,7 @@ GameObject:
   - component: {fileID: 192929352}
   - component: {fileID: 192929354}
   m_Layer: 5
-  m_Name: HUDMidiaEscolhida1Midia
+  m_Name: "M\xEDdia"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3003,7 +3003,7 @@ GameObject:
   - component: {fileID: 358917659}
   - component: {fileID: 358917658}
   m_Layer: 5
-  m_Name: HUDCanvasBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3169,7 +3169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &396204222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4579,7 +4579,7 @@ GameObject:
   - component: {fileID: 675618134}
   - component: {fileID: 675618133}
   m_Layer: 5
-  m_Name: HUDCanvasIcone
+  m_Name: "\xCDcone"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5617,7 +5617,7 @@ GameObject:
   - component: {fileID: 820705591}
   - component: {fileID: 820705593}
   m_Layer: 5
-  m_Name: HUDMidiasEscolhidas
+  m_Name: "\xCDcones"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6340,36 +6340,51 @@ MonoBehaviour:
   - {fileID: 6229931141997047051}
   - {fileID: 2022761560}
   - {fileID: 1352144709}
-  midia0: {fileID: 1158122011}
-  midia1: {fileID: 1276795744}
-  midia2: {fileID: 1424664872}
-  miniMidia0: {fileID: 1871356970}
-  miniMidia1: {fileID: 192929349}
-  miniMidia2: {fileID: 1461551968}
-  previewMidia: {fileID: 652492925}
-  popUpTipo: {fileID: 1708951770}
-  popUpNome: {fileID: 230581220}
-  confirmacaoFeedback: {fileID: 396204221}
-  quartoInfo: {fileID: 0}
-  textoMidiaAtualObjeto: {fileID: 1887688681}
-  textoMidiaAtual: {fileID: 1006204418}
-  iconeMidiaAtual: {fileID: 675618133}
-  textoFeedbackBrinquedo: {fileID: 264088147}
-  textoFeedbackObjeto1: {fileID: 2102543806}
-  textoFeedbackObjeto2: {fileID: 418929955}
-  estanteSprite: {fileID: 21300000, guid: 8376b4eeb5c93ab4c8f074508962fc0e, type: 3}
-  televisaoSprite: {fileID: 21300000, guid: 17bdab3c1d85f174f92b48a3235c0cef, type: 3}
-  tabletSprite: {fileID: 21300000, guid: 006a7458849291643a15e8ea6b8fc3f4, type: 3}
-  consoleSprite: {fileID: 21300000, guid: 27109d2d93570c34d8f755afbf5afa08, type: 3}
-  computadorSprite: {fileID: 21300000, guid: 30f019afb18f727438faba10a64ed4d1, type: 3}
-  celularSprite: {fileID: 21300000, guid: 857e1d1b69a0ab741a3d4603ab5ef060, type: 3}
+  toyIcon: {fileID: 1158122011}
+  media1Icon: {fileID: 1276795744}
+  media2Icon: {fileID: 1424664872}
+  intelligenceMiniIcon: {fileID: 1871356970}
+  media1MiniIcon: {fileID: 192929349}
+  media2MiniIcon: {fileID: 1461551968}
+  previewMedia: {fileID: 652492928}
+  objectName: {fileID: 230581222}
+  feedbackConfirmation: {fileID: 396204221}
+  roomInfo: {fileID: 0}
+  currentMediaHover: {fileID: 1887688681}
+  currentMediaText: {fileID: 1006204418}
+  currentMediaIcon: {fileID: 675618133}
+  toyFeedbackText: {fileID: 264088147}
+  media1FeedbackText: {fileID: 2102543806}
+  media2FeedbackText: {fileID: 418929955}
+  consoleSprite: {fileID: 21300000, guid: 68f60242b28726c4983a8fce5c387ce5, type: 3}
+  computerSprite: {fileID: 21300000, guid: 797780165ae1354418dcaa5fb2242290, type: 3}
+  smartphoneSprite: {fileID: 21300000, guid: 9bdacbd9f36f23947a9f7907c027fec0, type: 3}
+  tabletSprite: {fileID: 21300000, guid: 5ed7e4783cb5d194aac45176ab61a445, type: 3}
+  notebookAndCaseSprite: {fileID: 21300000, guid: 0afbed0444c940d48815cb41b7087205,
+    type: 3}
+  tvSprite: {fileID: 21300000, guid: f175392ca9e162a4f9ab354cb3e5eff5, type: 3}
+  ballSprite: {fileID: 21300000, guid: 498fe65be67a80046bae5b0caf268483, type: 3}
+  buildingBlocksSprite: {fileID: 21300000, guid: 5b4825c68b1114b44be738e5f6fa31b1,
+    type: 3}
   legosSprite: {fileID: 21300000, guid: 5b4825c68b1114b44be738e5f6fa31b1, type: 3}
-  quebraCabecaSprite: {fileID: 21300000, guid: a49e5075a3f6d0b44bf8fc9934d0111e, type: 3}
-  ioioSprite: {fileID: 21300000, guid: 3a84d30003770684a9ef4f631e3b81e5, type: 3}
-  blocosSprite: {fileID: 21300000, guid: 2fe0d38b6bade264597e085f56c09360, type: 3}
-  tecladoSprite: {fileID: 21300000, guid: 617175bd121905d4cb5e211bbe6a2ded, type: 3}
-  bolaSprite: {fileID: 21300000, guid: 498fe65be67a80046bae5b0caf268483, type: 3}
-  livroDidaticoSprite: {fileID: 0}
+  puzzleSprite: {fileID: 21300000, guid: a49e5075a3f6d0b44bf8fc9934d0111e, type: 3}
+  comicsAndLiteratureSprite: {fileID: 21300000, guid: 4b13e843b15c4b7418d34872b688c39a,
+    type: 3}
+  musicBoardSprite: {fileID: 21300000, guid: 617175bd121905d4cb5e211bbe6a2ded, type: 3}
+  positiveToyFeedbacks:
+  - jogando com a bola
+  - montando os blocos
+  - "conseguindo montar o quebra-cabe\xE7as"
+  - "imaginando as hist\xF3rias que li"
+  - jogando um game
+  - "criando m\xFAsicas novas"
+  negativeToyFeedbacks:
+  - "jogar bola \xE9 meio chato"
+  - "montar blocos \xE9 meio chato"
+  - "resolver quebra-cabe\xE7as \xE9 meio chato"
+  - "ler hist\xF3rias e quadrinhos \xE9 meio chato"
+  - "jogar videogame \xE9 meio chato"
+  - "tocar teclado \xE9 meio chato"
 --- !u!212 &1001334883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6597,7 +6612,7 @@ GameObject:
   - component: {fileID: 1006204419}
   - component: {fileID: 1006204418}
   m_Layer: 5
-  m_Name: HUDCanvasTextoMidiaAtual
+  m_Name: Texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7568,7 +7583,7 @@ GameObject:
   - component: {fileID: 1158122014}
   - component: {fileID: 1158122016}
   m_Layer: 5
-  m_Name: HUDBrincadeiraEscolhida
+  m_Name: Brinquedo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8260,7 +8275,7 @@ GameObject:
   - component: {fileID: 1276795747}
   - component: {fileID: 1276795749}
   m_Layer: 5
-  m_Name: HUDMidiaEscolhida1
+  m_Name: "M\xEDdia 1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10578,7 +10593,7 @@ GameObject:
   - component: {fileID: 1424664875}
   - component: {fileID: 1424664877}
   m_Layer: 5
-  m_Name: HUDMidiaEscolhida2
+  m_Name: "M\xEDdia 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10742,7 +10757,7 @@ GameObject:
   - component: {fileID: 1461551971}
   - component: {fileID: 1461551973}
   m_Layer: 5
-  m_Name: HUDMidiaEscolhida2Midia
+  m_Name: "M\xEDdia"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13997,7 +14012,7 @@ GameObject:
   - component: {fileID: 1871356973}
   - component: {fileID: 1871356975}
   m_Layer: 5
-  m_Name: HUDBrincadeiraEscolhidaInteligencia
+  m_Name: "Intelig\xEAncia"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14072,7 +14087,7 @@ GameObject:
   - component: {fileID: 1887688682}
   - component: {fileID: 1887688684}
   m_Layer: 5
-  m_Name: HUDCanvas
+  m_Name: Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
