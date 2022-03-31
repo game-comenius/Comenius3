@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,9 +10,9 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private FeedbackBar classQualityBar;
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksIdeal;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksBoa;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksArriscada;
+    [SerializeField] [TextArea] private string[] specificFeedbacksIdeal;
+    [SerializeField] [TextArea] private string[] specificFeedbacksBoa;
+    [SerializeField] [TextArea] private string[] specificFeedbacksArriscada;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
