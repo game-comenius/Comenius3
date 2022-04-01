@@ -34,7 +34,6 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private Sprite tvSprite;
     [SerializeField] private Sprite ballSprite;
     [SerializeField] private Sprite buildingBlocksSprite;
-    [SerializeField] private Sprite legosSprite;
     [SerializeField] private Sprite puzzleSprite;
     [SerializeField] private Sprite comicsAndLiteratureSprite;
     [SerializeField] private Sprite musicBoardSprite;
@@ -47,12 +46,12 @@ public class RoomManager : MonoBehaviour
     private string tempMedia;
     private string[] medias;
     private Sprite tempSprite;
-    private bool mediaCanBeSelected;
+    private bool mediaShouldBeSelected;
 
     void Start()
     {
         currentMedia = 0;
-        mediaCanBeSelected = false;
+        mediaShouldBeSelected = false;
         medias = new string[3];
 
         toyIcon.SetActive(false);
@@ -69,96 +68,83 @@ public class RoomManager : MonoBehaviour
     {
         switch (name)
         {
-            case "Mídia Console":
-                tempMedia = name;
-                tempSprite = consoleSprite;
-                objectName.text = "Console";
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "Computador":
-                tempMedia = name;
-                tempSprite = computerSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "Celular":
-                tempMedia = name;
-                tempSprite = smartphoneSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "Tablet":
-                tempMedia = name;
-                tempSprite = tabletSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "Caderno e Estojo":
-                tempMedia = name;
-                tempSprite = notebookAndCaseSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
-            case "Televisão":
-                tempMedia = name;
-                tempSprite = tvSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = false;
-                break;
             case "Bola":
                 tempMedia = name;
                 tempSprite = ballSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
                 break;
             case "Blocos de Montar":
                 tempMedia = name;
                 tempSprite = buildingBlocksSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
-                break;
-            case "Legos":
-                tempMedia = name;
-                tempSprite = legosSprite;
-                objectName.text = name;
-                previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
                 break;
             case "Quebra-Cabeças":
                 tempMedia = name;
                 tempSprite = puzzleSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
                 break;
             case "Gibi e Literatura":
                 tempMedia = name;
                 tempSprite = puzzleSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
                 break;
             case "Brinquedo Console":
                 tempMedia = name;
                 tempSprite = puzzleSprite;
                 objectName.text = "Console";
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
                 break;
             case "Teclado":
                 tempMedia = name;
                 tempSprite = musicBoardSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaCanBeSelected = true;
+                mediaShouldBeSelected = true;
+                break;
+            case "Mídia Console":
+                tempMedia = name;
+                tempSprite = consoleSprite;
+                objectName.text = "Console";
+                previewMedia.sprite = tempSprite;
+                break;
+            case "Computador":
+                tempMedia = name;
+                tempSprite = computerSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                break;
+            case "Celular":
+                tempMedia = name;
+                tempSprite = smartphoneSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                break;
+            case "Tablet":
+                tempMedia = name;
+                tempSprite = tabletSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                break;
+            case "Caderno e Estojo":
+                tempMedia = name;
+                tempSprite = notebookAndCaseSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
+                break;
+            case "Televisão":
+                tempMedia = name;
+                tempSprite = tvSprite;
+                objectName.text = name;
+                previewMedia.sprite = tempSprite;
                 break;
             default:
                 break;
@@ -236,9 +222,6 @@ public class RoomManager : MonoBehaviour
                     case "Blocos de Montar":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "Legos":
-                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
-                        break;
                     case "Quebra-Cabeças":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[2]}";
                         break;
@@ -248,7 +231,7 @@ public class RoomManager : MonoBehaviour
                     case "Brinquedo Console":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[4]}";
                         break;
-                    case "teclado":
+                    case "Teclado":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[5]}";
                         break;
                     default:
@@ -264,9 +247,6 @@ public class RoomManager : MonoBehaviour
                     case "Blocos de Montar":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "Legos":
-                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
-                        break;
                     case "Quebra-Cabeças":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[2]}";
                         break;
@@ -276,7 +256,7 @@ public class RoomManager : MonoBehaviour
                     case "Brinquedo Console":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[4]}";
                         break;
-                    case "teclado":
+                    case "Teclado":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[5]}";
                         break;
                     default:
@@ -292,9 +272,6 @@ public class RoomManager : MonoBehaviour
                     case "Blocos de Montar":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
                         break;
-                    case "Legos":
-                        toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[1]}";
-                        break;
                     case "Quebra-Cabeças":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[2]}";
                         break;
@@ -304,7 +281,7 @@ public class RoomManager : MonoBehaviour
                     case "Brinquedo Console":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[4]}";
                         break;
-                    case "teclado":
+                    case "Teclado":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[5]}";
                         break;
                     default:
@@ -320,9 +297,6 @@ public class RoomManager : MonoBehaviour
                     case "Blocos de Montar":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[1]}";
                         break;
-                    case "Legos":
-                        toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[1]}";
-                        break;
                     case "Quebra-Cabeças":
                         toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[2]}";
                         break;
@@ -332,7 +306,7 @@ public class RoomManager : MonoBehaviour
                     case "Brinquedo Console":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[4]}";
                         break;
-                    case "teclado":
+                    case "Teclado":
                         toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[5]}";
                         break;
                     default:
@@ -597,7 +571,7 @@ public class RoomManager : MonoBehaviour
 
     private void UpdateObjects()
     {
-        if (mediaCanBeSelected)
+        if (mediaShouldBeSelected)
         {
             for (int i = 0; i < toyObjects.Length; i++)
             {
