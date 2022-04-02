@@ -1,46 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
 {
-    [SerializeField] Sprite corpoAluno1;
-    [SerializeField] Sprite corpoAluno2;
-    [SerializeField] Sprite corpoAluno3;
-    [SerializeField] Sprite corpoAluno4;
+    [SerializeField] private Sprite corpoAluno1;
+    [SerializeField] private Sprite corpoAluno2;
+    [SerializeField] private Sprite corpoAluno3;
+    [SerializeField] private Sprite corpoAluno4;
 
-    [SerializeField] Sprite cabeloAluno1;
-    [SerializeField] Sprite cabeloAluno2;
-    [SerializeField] Sprite cabeloAluno3;
-    [SerializeField] Sprite cabeloAluno4;
+    [SerializeField] private Sprite cabeloAluno1;
+    [SerializeField] private Sprite cabeloAluno2;
+    [SerializeField] private Sprite cabeloAluno3;
+    [SerializeField] private Sprite cabeloAluno4;
 
     [Header("Rostos")]
-    [SerializeField] Sprite rostoFeliz1;
-    [SerializeField] Sprite rostoFeliz2;
-    [SerializeField] Sprite rostoFeliz3;
-    [SerializeField] Sprite rostoFeliz4;
+    [SerializeField] private Sprite rostoFeliz1;
+    [SerializeField] private Sprite rostoFeliz2;
+    [SerializeField] private Sprite rostoFeliz3;
+    [SerializeField] private Sprite rostoFeliz4;
 
-    [SerializeField] Sprite rostoTriste1;
-    [SerializeField] Sprite rostoTriste2;
-    [SerializeField] Sprite rostoTriste3;
-    [SerializeField] Sprite rostoTriste4;
+    [SerializeField] private Sprite rostoTriste1;
+    [SerializeField] private Sprite rostoTriste2;
+    [SerializeField] private Sprite rostoTriste3;
+    [SerializeField] private Sprite rostoTriste4;
 
     [Header("SpriteRenderer dos alunos")]
-    [SerializeField] SpriteRenderer corpoInfantil;
-    [SerializeField] SpriteRenderer corpoFundamental;
-    [SerializeField] SpriteRenderer corpoMedio;
-    [SerializeField] SpriteRenderer corpoSuperior;
+    [SerializeField] private SpriteRenderer corpoFundamental;
+    [SerializeField] private SpriteRenderer corpoMedio;
+    [SerializeField] private SpriteRenderer corpoSuperior;
 
-    [SerializeField] SpriteRenderer cabeloInfantil;
-    [SerializeField] SpriteRenderer cabeloFundamental;
-    [SerializeField] SpriteRenderer cabeloMedio;
-    [SerializeField] SpriteRenderer cabeloSuperior;
+    [SerializeField] private SpriteRenderer cabeloFundamental;
+    [SerializeField] private SpriteRenderer cabeloMedio;
+    [SerializeField] private SpriteRenderer cabeloSuperior;
 
-    [Header("Image do aluno no feedback")]
-    [SerializeField] Image retratoFeedbackFeliz;
-    [SerializeField] Image retratoFeedbackTriste;
+    [Header("Retratos do aluno")]
+    [SerializeField] private Image retratoIntroducao;
+    [SerializeField] private Image retratoFeedbackFeliz;
+    [SerializeField] private Image retratoFeedbackTriste;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +44,10 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
         int alunoIndex = Random.Range(1, 5);
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.NivelDeEnsino.nome != "Educação Infantil") {
-
-            switch(alunoIndex)
+        if (estadoDoJogo.NivelDeEnsino.nome != "Educação Infantil")
+        {
+            switch (alunoIndex)
             {
-
                 case 1:
                     corpoFundamental.sprite = corpoAluno1;
                     corpoMedio.sprite = corpoAluno1;
@@ -61,6 +56,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno1;
                     cabeloSuperior.sprite = cabeloAluno1;
 
+                    retratoIntroducao.sprite = rostoFeliz1;
                     retratoFeedbackFeliz.sprite = rostoFeliz1;
                     retratoFeedbackTriste.sprite = rostoTriste1;
                     break;
@@ -72,6 +68,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno2;
                     cabeloSuperior.sprite = cabeloAluno2;
 
+                    retratoIntroducao.sprite = rostoFeliz2;
                     retratoFeedbackFeliz.sprite = rostoFeliz2;
                     retratoFeedbackTriste.sprite = rostoTriste2;
                     break;
@@ -83,6 +80,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno3;
                     cabeloSuperior.sprite = cabeloAluno3;
 
+                    retratoIntroducao.sprite = rostoFeliz3;
                     retratoFeedbackFeliz.sprite = rostoFeliz3;
                     retratoFeedbackTriste.sprite = rostoTriste3;
                     break;
@@ -94,15 +92,11 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno4;
                     cabeloSuperior.sprite = cabeloAluno4;
 
+                    retratoIntroducao.sprite = rostoFeliz4;
                     retratoFeedbackFeliz.sprite = rostoFeliz4;
                     retratoFeedbackTriste.sprite = rostoTriste4;
                     break;
-
             }
-
         }
-
-
     }
-
 }

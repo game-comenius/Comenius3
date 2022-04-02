@@ -8,6 +8,7 @@ public class MediaFeedbackSelector : MonoBehaviour
     [System.Serializable] public class SelectionEvent : UnityEvent<bool, Sprite> { }
     public SelectionEvent OnSelectionEvent;
 
+    // TODO: Trocar as listas por arrays
     [SerializeField] private List<MomentoInteracao> feedbacksInfantil;
     [SerializeField] private List<MomentoInteracao> feedbacksFundamental;
     [SerializeField] private List<MomentoInteracao> feedbacksMedio;

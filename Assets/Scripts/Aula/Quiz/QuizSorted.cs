@@ -61,7 +61,8 @@ public class QuizSorted : QuizBase
 
     protected override void BuildQuiz()
     {
-        questionText.text = quizType == QuizType.Media ? question + new Midia(media).nome : question;
+        base.BuildQuiz();
+
         affirmationsPositions = new List<Vector2>();
         List<string> answers = new List<string>(sortedAnswers);
 
