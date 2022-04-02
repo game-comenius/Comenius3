@@ -33,7 +33,8 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
     [SerializeField] private SpriteRenderer cabeloMedio;
     [SerializeField] private SpriteRenderer cabeloSuperior;
 
-    [Header("Image do aluno no feedback")]
+    [Header("Retratos do aluno")]
+    [SerializeField] private Image retratoIntroducao;
     [SerializeField] private Image retratoFeedbackFeliz;
     [SerializeField] private Image retratoFeedbackTriste;
 
@@ -55,6 +56,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno1;
                     cabeloSuperior.sprite = cabeloAluno1;
 
+                    retratoIntroducao.sprite = rostoFeliz1;
                     retratoFeedbackFeliz.sprite = rostoFeliz1;
                     retratoFeedbackTriste.sprite = rostoTriste1;
                     break;
@@ -66,6 +68,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno2;
                     cabeloSuperior.sprite = cabeloAluno2;
 
+                    retratoIntroducao.sprite = rostoFeliz2;
                     retratoFeedbackFeliz.sprite = rostoFeliz2;
                     retratoFeedbackTriste.sprite = rostoTriste2;
                     break;
@@ -77,6 +80,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno3;
                     cabeloSuperior.sprite = cabeloAluno3;
 
+                    retratoIntroducao.sprite = rostoFeliz3;
                     retratoFeedbackFeliz.sprite = rostoFeliz3;
                     retratoFeedbackTriste.sprite = rostoTriste3;
                     break;
@@ -88,6 +92,7 @@ public class RandomizadorAlunoQuartoInvertido : MonoBehaviour
                     cabeloMedio.sprite = cabeloAluno4;
                     cabeloSuperior.sprite = cabeloAluno4;
 
+                    retratoIntroducao.sprite = rostoFeliz4;
                     retratoFeedbackFeliz.sprite = rostoFeliz4;
                     retratoFeedbackTriste.sprite = rostoTriste4;
                     break;

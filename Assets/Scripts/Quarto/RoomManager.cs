@@ -19,14 +19,16 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private GameObject media2IconOutline;
     [SerializeField] private Image previewMedia;
     [SerializeField] private TextMeshProUGUI objectName;
-    [SerializeField] private GameObject feedbackConfirmation;
-    [SerializeField] private GameObject roomInfo;
+    [SerializeField] private Text helpText;
     [SerializeField] private GameObject currentMediaHover;
+    [SerializeField] private GameObject selectedMediaPopup;
     [SerializeField] private TextMeshProUGUI currentMediaText;
     [SerializeField] private Image currentMediaIcon;
     [SerializeField] private Color correctColor;
     [SerializeField] private Color wrongColor;
-
+    [SerializeField] private GameObject feedbackPopup;
+    [SerializeField] private GameObject happyStudent;
+    [SerializeField] private GameObject sadStudent;
     [SerializeField] private TextMeshProUGUI toyFeedbackText;
     [SerializeField] private TextMeshProUGUI mediaFeedbackText;
 
@@ -43,9 +45,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private Sprite comicsAndLiteratureSprite;
     [SerializeField] private Sprite musicBoardSprite;
 
-    [Header("Tesxtos dos briquedos")]
+    [Header("Textos dos briquedos")]
     [SerializeField] private string[] positiveToyFeedbacks;
     [SerializeField] private string[] negativeToyFeedbacks;
+    [Header("Textos de ajuda")]
+    [SerializeField] [TextArea] private string feedbackHelp;
 
     private int currentMedia;
     private string tempMedia;
@@ -58,6 +62,10 @@ public class RoomManager : MonoBehaviour
         currentMedia = 0;
         mediaShouldBeSelected = false;
         medias = new string[3];
+
+        toyIcon.SetActive(false);
+        media1Icon.SetActive(false);
+        media2Icon.SetActive(false);
 
         currentMediaText.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
         currentMediaIcon.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
@@ -74,42 +82,36 @@ public class RoomManager : MonoBehaviour
                 tempSprite = ballSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Blocos de Montar":
                 tempMedia = name;
                 tempSprite = buildingBlocksSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Quebra-Cabeças":
                 tempMedia = name;
                 tempSprite = puzzleSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Gibi e Literatura":
                 tempMedia = name;
-                tempSprite = puzzleSprite;
+                tempSprite = comicsAndLiteratureSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Brinquedo Console":
                 tempMedia = name;
-                tempSprite = puzzleSprite;
+                tempSprite = consoleSprite;
                 objectName.text = "Console";
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Teclado":
                 tempMedia = name;
                 tempSprite = musicBoardSprite;
                 objectName.text = name;
                 previewMedia.sprite = tempSprite;
-                mediaShouldBeSelected = true;
                 break;
             case "Mídia Console":
                 tempMedia = name;
@@ -151,11 +153,27 @@ public class RoomManager : MonoBehaviour
                 break;
         }
 
-        UpdateObjects();
+        selectedMediaPopup.SetActive(true);
     }
 
     public void ConfirmSelection()
     {
+        switch (tempMedia)
+        {
+            case "Bola":
+            case "Blocos de Montar":
+            case "Quebra-Cabeças":
+            case "Gibi e Literatura":
+            case "Brinquedo Console":
+            case "Teclado":
+                mediaShouldBeSelected = true;
+                break;
+            default:
+                break;
+        }
+
+        UpdateObjects();
+
         switch (currentMedia)
         {
             case 0:
@@ -188,12 +206,26 @@ public class RoomManager : MonoBehaviour
         {
             medias[currentMedia] = tempMedia;
 
-            setToyFeedback();
-            setObjectFeedback();
+            // Se a maioria das escolhas foi certa, o estudante fica feliz
+            float score = 0.0f;
 
-            feedbackConfirmation.SetActive(true);
+            score += setToyFeedback();     // Retorna 0.0 ou 1.0 pontos
+            score += setObjectFeedback();  // Retorna 0.0, 1.0 ou 2.0 pontos
+
+            if (score > 1.5f)
+            {
+                happyStudent.SetActive(true);
+                sadStudent.SetActive(false);
+            }
+            else
+            {
+                happyStudent.SetActive(false);
+                sadStudent.SetActive(true);
+            }
+
+            helpText.text = feedbackHelp;
+            feedbackPopup.SetActive(true);
             currentMediaHover.SetActive(false);
-            roomInfo.SetActive(false);
         }
     }
 
@@ -204,7 +236,7 @@ public class RoomManager : MonoBehaviour
         Start();
     }
 
-    public void setToyFeedback()
+    private float setToyFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
         string intelligenceName = estadoDoJogo.Inteligencias.nome;
@@ -374,17 +406,19 @@ public class RoomManager : MonoBehaviour
             toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[index]}";
             toyIconOutline.GetComponent<Image>().color = correctColor;
             toyIconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
+            return 1.0f;
         }
         else
         {
             toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[index]}";
             toyIconOutline.GetComponent<Image>().color = wrongColor;
             toyIconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
+            return 0.0f;
         }
 
     }
 
-    public void setObjectFeedback()
+    private float setObjectFeedback()
     {
         var estadoDoJogo = EstadoDoJogo.Instance;
 
@@ -395,7 +429,7 @@ public class RoomManager : MonoBehaviour
         {
             string mediaName = estadoDoJogo.Midias[i].nome;
 
-            switch (medias[i])
+            switch (medias[i + 1])
             {
                 case "Mídia Console":
                     adjustedString[i] = "o console";
@@ -421,7 +455,7 @@ public class RoomManager : MonoBehaviour
             {
                 case "Jogos":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = true;
@@ -445,7 +479,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Redes Sociais":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -469,7 +503,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Editores de Áudio e Vídeo":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -493,7 +527,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Plataformas":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -517,7 +551,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Aplicativos":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -541,7 +575,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Editores de Texto e Planilhas Eletrônicas":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -565,7 +599,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Cadernos e Cartazes":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -589,7 +623,7 @@ public class RoomManager : MonoBehaviour
                     break;
                 case "Televisão":
 
-                    switch (medias[i])
+                    switch (medias[i + 1])
                     {
                         case "Mídia Console":
                             selectionIsPositive[i] = false;
@@ -629,36 +663,44 @@ public class RoomManager : MonoBehaviour
 
             media2IconOutline.GetComponent<Image>().color = correctColor;
             media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
+
+            return 2.0f;
         }
         else if (selectionIsPositive[0])
         {
-            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[0]} mas tive dificuldades para fazer outras tarefas com {adjustedString[1]}";
+            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[0]} <color=red>mas tive dificuldades para fazer outras tarefas com {adjustedString[1]}";
 
             media1IconOutline.GetComponent<Image>().color = correctColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
 
             media2IconOutline.GetComponent<Image>().color = wrongColor;
             media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
+
+            return 1.0f;
         }
         else if (selectionIsPositive[1])
         {
-            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[1]} mas tive dificuldades para fazer outras tarefas com {adjustedString[0]}";
+            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[1]} <color=red>mas tive dificuldades para fazer outras tarefas com {adjustedString[0]}";
 
             media1IconOutline.GetComponent<Image>().color = wrongColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
 
             media2IconOutline.GetComponent<Image>().color = correctColor;
             media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
+
+            return 1.0f;
         }
         else
         {
-            mediaFeedbackText.text = $"Tive dificuldades para fazer as tarefas com {adjustedString[0]} e {adjustedString[1]}";
+            mediaFeedbackText.text = $"<color=red>Tive dificuldades para fazer as tarefas com {adjustedString[0]} e {adjustedString[1]}";
 
             media1IconOutline.GetComponent<Image>().color = wrongColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
 
             media2IconOutline.GetComponent<Image>().color = wrongColor;
             media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
+
+            return 0.0f;
         }
     }
 
@@ -668,28 +710,24 @@ public class RoomManager : MonoBehaviour
         {
             for (int i = 0; i < toyObjects.Length; i++)
             {
-                toyObjects[i].GetComponent<EventTrigger>().enabled = false;
-                toyObjects[i].GetComponent<OutlineOnHover>().enabled = false;
+                toyObjects[i].GetComponent<PolygonCollider2D>().enabled = false;
             }
 
             for (int i = 0; i < mediaObjects.Length; i++)
             {
-                mediaObjects[i].GetComponent<EventTrigger>().enabled = false;
-                mediaObjects[i].GetComponent<OutlineOnHover>().enabled = false;
+                mediaObjects[i].GetComponent<PolygonCollider2D>().enabled = true;
             }
         }
         else
         {
             for (int i = 0; i < toyObjects.Length; i++)
             {
-                toyObjects[i].GetComponent<EventTrigger>().enabled = true;
-                toyObjects[i].GetComponent<OutlineOnHover>().enabled = true;
+                toyObjects[i].GetComponent<PolygonCollider2D>().enabled = true;
             }
 
             for (int i = 0; i < mediaObjects.Length; i++)
             {
-                mediaObjects[i].GetComponent<EventTrigger>().enabled = true;
-                mediaObjects[i].GetComponent<OutlineOnHover>().enabled = true;
+                mediaObjects[i].GetComponent<PolygonCollider2D>().enabled = false;
             }
         }
     }
