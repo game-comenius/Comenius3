@@ -11310,8 +11310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53.2, y: -1.621}
-  m_SizeDelta: {x: 495.327, y: 22.082}
+  m_AnchoredPosition: {x: 53.2, y: -2.85}
+  m_SizeDelta: {x: 495.327, y: 46.2479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379411275
 MonoBehaviour:
@@ -11340,7 +11340,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 199
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -15819,6 +15819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558014018}
   - component: {fileID: 558014017}
+  - component: {fileID: 558014019}
   m_Layer: 5
   m_Name: Icon Manager
   m_TagString: Untagged
@@ -15864,6 +15865,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &558014019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558014016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0f15ab73ad48f43b166bff391c31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icons:
+  - {fileID: 300745013}
+  - {fileID: 777632334}
+  - {fileID: 856674336}
+  - {fileID: 2047427290}
+  defaultIcon: {fileID: 0}
 --- !u!1 &560107327
 GameObject:
   m_ObjectHideFlags: 0
@@ -54961,10 +54980,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedOption: 0
-  quartoInfantil: {fileID: 21300000, guid: 1b13bc429dd18c649b573ecb8684c94d, type: 3}
-  quartoFundamental: {fileID: 21300000, guid: 9f0aa43ebb624d24d9f5d105c14c49dc, type: 3}
-  quartoMedio: {fileID: 21300000, guid: 07302796d637a54419db51a4d4932d0c, type: 3}
-  quartoSuperior: {fileID: 21300000, guid: 4e8391ba959e5b9408cf0ed97f9d1c1e, type: 3}
+  quartoInfantil: {fileID: 21300000, guid: 159d9c1765866c640afb1229ef252429, type: 3}
+  quartoFundamental: {fileID: 21300000, guid: 10fb3461ddd478943956e8903c042f50, type: 3}
+  quartoMedio: {fileID: 21300000, guid: 98a9add1ffc2df3409db807888d4045d, type: 3}
+  quartoSuperior: {fileID: 21300000, guid: e375ef04b47bed54b911d5d99da54646, type: 3}
   salaInfantilU: {fileID: 0}
   salaInfantilIndividual: {fileID: 0}
   salaInfantilDuplasETrios: {fileID: 0}
