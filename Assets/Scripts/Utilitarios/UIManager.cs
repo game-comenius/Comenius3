@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Script para o controle dos painéis na interface
 
@@ -10,12 +11,18 @@ public class UIManager : MonoBehaviour
     public GameObject defaultStartingPanelGroup;
     private GameObject currentPanel;
     private GameObject currentPanelGroup;
+    public GameObject secondLevelPanelGroup;
+    public GameObject secondLevelPanel;
 
     private void Start()
     {
         // Inicializa os atributos
         currentPanel = defaultStartingPanel;
         currentPanelGroup = defaultStartingPanelGroup;
+
+        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual == 1) {
+            SecondLevel();
+        }
     }
 
     public void ChangePanel(GameObject panel)
@@ -30,5 +37,18 @@ public class UIManager : MonoBehaviour
         currentPanelGroup.SetActive(false);
         mainPanel.SetActive(true);
         currentPanelGroup = mainPanel;
+    }
+
+    public void SecondLevel()
+    {
+        //Change panel group.
+        currentPanelGroup.SetActive(false);
+        secondLevelPanelGroup.SetActive(true);
+        currentPanelGroup = secondLevelPanelGroup;
+
+        //Change panel.
+        currentPanel.SetActive(false);
+        secondLevelPanel.SetActive(true);
+        currentPanel = secondLevelPanel;
     }
 }
