@@ -93,9 +93,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public int FaseAtual { get; set; }
 
     // Temas de cada fase
-    public string TemaFase1 { get; set; }
-    public string TemaFase2 { get; set; }
-    public string TemaFase3 { get; set; }
+    public string Tema { get; set; }
 
     // Dados de cada fase
     public RegisteredState Fase1 { get; set; }

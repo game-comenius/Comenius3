@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     // Atributos iniciais padrões
-    public GameObject defaultStartingPanel;
+    [SerializeField] private GameObject defaultStartingPanel;
     // Um grupo de paineis se refere a um painel que contém outros painéis
-    public GameObject defaultStartingPanelGroup;
+    [SerializeField] private GameObject defaultStartingPanelGroup;
+    [SerializeField] private GameObject secondLevelPanelGroup;
+    [SerializeField] private GameObject secondLevelPanel;
+
     private GameObject currentPanel;
     private GameObject currentPanelGroup;
-    public GameObject secondLevelPanelGroup;
-    public GameObject secondLevelPanel;
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class UIManager : MonoBehaviour
         currentPanel = defaultStartingPanel;
         currentPanelGroup = defaultStartingPanelGroup;
 
-        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual == 1) {
+        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual == 1)
+        {
             SecondLevel();
         }
     }
