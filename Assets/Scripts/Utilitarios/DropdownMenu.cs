@@ -48,10 +48,7 @@ public class DropdownMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        if (open)
-        {
-            ButtonPress();
-        }
+        Disable();
     }
 
     public void ButtonPress()
@@ -64,5 +61,13 @@ public class DropdownMenu : MonoBehaviour
         }
 
         open = !open;
+    }
+
+    public void Disable()
+    {
+        if (open)
+        {
+            ButtonPress();
+        }
     }
 }
