@@ -5,6 +5,7 @@ public class ScoreBar : BarControl
     {
         progress += (float)scoreDiff / 100.0f;
 
+        StartCoroutine(UpdatePercentageTextCoroutine(slider.value));
         StartCoroutine(UpdateBarCoroutine());
     }
 }
