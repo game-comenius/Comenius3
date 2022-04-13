@@ -8,6 +8,7 @@ public class ClassDurationBar : BarControl
     {
         progress += 1.0f / totalClassSteps;
 
+        StartCoroutine(UpdatePercentageTextCoroutine(slider.value));
         StartCoroutine(UpdateBarCoroutine());
     }
 }
