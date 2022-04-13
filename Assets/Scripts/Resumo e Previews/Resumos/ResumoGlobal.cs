@@ -19,7 +19,7 @@ public class ResumoGlobal : MonoBehaviour
         iconeInteligenciasMultiplas.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
 
         if (EstadoDoJogo.Instance.Tema != null && EstadoDoJogo.Instance.Tema != "")
-            tema.text = $"Este é o tema da sua primeira aula:\n<color=#b45f06><b>{EstadoDoJogo.Instance.Tema}</b>";
+            tema.text = $"Este é o tema da sua <b>primeira</b> aula:\n<color=#b45f06><b>{EstadoDoJogo.Instance.Tema}</b>";
         else
             tema.text = "";
 
