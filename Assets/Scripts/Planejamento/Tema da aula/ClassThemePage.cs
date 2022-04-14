@@ -14,11 +14,13 @@ public class ClassThemePage : PaginaPlanejamento
     [SerializeField] private OnHoverPopUp knowledgeAreaHoverController;
     [SerializeField] private OnHoverPopUp intelligenceHoverController;
     [SerializeField] private Button okButton;
+    [SerializeField] [TextArea] private string initialHelp;
 
     protected override void OnEnable()
     {
         fundo.sprite = spriteFundo;
-        textoAjuda.text = ajuda;
+
+        UpdateHelpText();
 
         iconManager.ShowIcon(0);
         iconManager.HideIcon(1);
@@ -43,14 +45,16 @@ public class ClassThemePage : PaginaPlanejamento
 
     public void CheckTheme(string theme)
     {
-        if (theme != "")
-            okButton.interactable = true;
-        else
-            okButton.interactable = false;
+        okButton.interactable = theme != "";
     }
 
     public void ConfirmClassTheme()
     {
         EstadoDoJogo.Instance.Tema = themeInput.text;
+    }
+
+    public void UpdateHelpText()
+    {
+        textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelp : ajuda;
     }
 }

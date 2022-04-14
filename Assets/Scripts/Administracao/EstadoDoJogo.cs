@@ -80,6 +80,19 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         set => midias = value;
     }
 
+    private string tema;
+    public string Tema
+    {
+        get
+        {
+            if (tema == null)
+                tema = "";
+            return tema;
+        }
+
+        set => tema = value;
+    }
+
     // Características da personagem selecionada, observar se estes valores != null
     public Sprite SpriteCorpoPersonagem { get; set; }
     public Sprite SpriteCabeloPersonagem { get; set; }
@@ -93,7 +106,6 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public int FaseAtual { get; set; }
 
     // Temas de cada fase
-    public string Tema { get; set; }
 
     // Dados de cada fase
     public RegisteredState Fase1 { get; set; }

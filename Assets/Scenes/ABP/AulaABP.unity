@@ -2135,9 +2135,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Neste momento do jogo voc\xEA responde perguntas de quiz relacionadas
     com suas escolhas, e isso ir\xE1 definir sua pontua\xE7\xE3o! Os coment\xE1rios
-    feitos pelos alunos sobre as m\xEDdias tem rela\xE7\xE3o com o quanto elas s\xE3o
-    proveitosas na metodologia Aprendizagem Baseada em Problemas. A aula termina
-    quando a barra de dura\xE7\xE3o da aula estiver cheia."
+    feitos pelos estudantes sobre as m\xEDdias t\xEAm rela\xE7\xE3o com o quanto
+    elas s\xE3o proveitosas na metodologia Aprendizagem Baseada em Problemas (ABP).
+    A aula termina quando a barra de dura\xE7\xE3o da aula estiver cheia."
 --- !u!222 &126259173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4993,10 +4993,11 @@ MonoBehaviour:
   media3Icon: {fileID: 164522032}
   media4Icon: {fileID: 392901668}
   helpText: {fileID: 126259172}
-  help: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
-    sua pontua\xE7\xE3o de acordo com seu desempenho no quiz e nos imprevistos e
-    obter o feedback da Lurdinha sobre as m\xEDdias escolhidas para o laborat\xF3rio
-    de acordo com a metodologia Aprendizagem Baseada em Problemas!"
+  firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
+    sua pontua\xE7\xE3o de acordo com seu desempenho no quiz!"
+  secondHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode
+    conferir o feedback da Lurdinha sobre as m\xEDdias escolhidas para o laborat\xF3rio
+    de acordo com a metodologia Aprendizagem Baseada em Problemas (ABP)!"
 --- !u!222 &337604323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11003,7 +11004,7 @@ PrefabInstance:
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
@@ -11017,6 +11018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1276670388}
@@ -11027,12 +11033,22 @@ PrefabInstance:
       objectReference: {fileID: 49847063}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 337604322}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
@@ -11047,6 +11063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UpdateHelpText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -11054,6 +11075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ClassFeedback, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
@@ -11073,6 +11099,11 @@ PrefabInstance:
     - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156064139281120446, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17977,11 +18008,11 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta2"
+      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta3"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o incorreta"
       m_Image: {fileID: 0}
