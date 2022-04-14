@@ -19,11 +19,12 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private Image media3Icon;
     [SerializeField] private Image media4Icon;
     [SerializeField] private Text helpText;
-    [SerializeField] [TextArea] private string help;
+    [SerializeField] [TextArea] private string firstHelp;
+    [SerializeField] [TextArea] private string secondHelp;
 
     private void Start()
     {
-        helpText.text = help;
+        helpText.text = firstHelp;
 
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
@@ -152,5 +153,10 @@ public class ClassFeedback : MonoBehaviour
         media2Icon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
         media3Icon.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
         media4Icon.sprite = EstadoDoJogo.Instance.Midias[3].sprite;
+    }
+
+    public void UpdateHelpText()
+    {
+        helpText.text = secondHelp;
     }
 }
