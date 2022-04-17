@@ -17,7 +17,7 @@ public enum NomeDeMidia
     Jogos = 8,
     EditoresDeAudioEVideo = 9,
     EditoresDeTextoEPlanilhasEletronicas = 10,
-    AVEAs = 11,
+    Plataformas = 11,
     Aplicativos = 12,
     ProjetorMultimidia = 13,
 }
@@ -35,7 +35,7 @@ public static class NomeDeMidiaExtensions
             case NomeDeMidia.LivroDidatico:
                 return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Impressa;
             case NomeDeMidia.Aplicativos:
-            case NomeDeMidia.AVEAs:
+            case NomeDeMidia.Plataformas:
                 return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Digital;
             case NomeDeMidia.LivrosJornaisERevistas:
                 return CategoriasDeMidia.Popular | CategoriasDeMidia.Impressa;

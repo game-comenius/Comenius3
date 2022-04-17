@@ -130,7 +130,7 @@ public sealed class Metodologia
                 NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
                 NomeDeMidia.EditoresDeAudioEVideo,
                 NomeDeMidia.Aplicativos,
-                NomeDeMidia.AVEAs,
+                NomeDeMidia.Plataformas,
                 NomeDeMidia.Jogos,
                 NomeDeMidia.ProjetorMultimidia,
             };
