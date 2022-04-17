@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaMidias : PaginaPlanejamento
 {
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -30,7 +31,7 @@ public class PaginaMidias : PaginaPlanejamento
         primeiraMidia = true;
         paginaAtual = 0;
 
-        descricaoDoSelecionado.text = descricaoPadrao;
+        descriptionText.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -161,12 +162,12 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizar(IconeMidias icone)
     {
-        descricaoDoSelecionado.text = icone.midia.descricao;
+        descriptionText.text = icone.midia.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        descriptionText.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeMidias icone)

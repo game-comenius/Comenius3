@@ -57,7 +57,7 @@ public class EstadoDoJogoDebugger : MonoBehaviour
 
         Midia[] midias = new Midia[4];
 
-        midias[0] = new Midia(NomeDeMidia.AVEAs);
+        midias[0] = new Midia(NomeDeMidia.Plataformas);
         midias[1] = new Midia(NomeDeMidia.CadernosECartazes);
         midias[2] = new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas);
         midias[3] = new Midia(NomeDeMidia.Lousa);
