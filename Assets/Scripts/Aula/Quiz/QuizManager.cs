@@ -45,6 +45,7 @@ public class QuizManager : MonoBehaviour
                 GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
 
                 quiz.transform.SetParent(canvas.transform);
+                quiz.transform.SetAsFirstSibling();
                 quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
                 QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
@@ -71,6 +72,7 @@ public class QuizManager : MonoBehaviour
                 GameObject quiz = Instantiate(mediaQuizList[i]);
 
                 quiz.transform.SetParent(canvas.transform);
+                quiz.transform.SetAsFirstSibling();
                 quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
                 QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();

@@ -27,6 +27,7 @@ public class ComboChecker
         saiBoa2,
         saiBoa3,
         saiBoa4,
+        saiBoa5,
         saiArriscada1,
         saiArriscada2,
         saiArriscada3
@@ -149,11 +150,18 @@ public class ComboChecker
                     return Combo.saiBoa2;
 
                 // Combo bom 4
-                if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
-                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao)) &&
-                    (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
+                    (flagMidia4.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
                      flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
                     return Combo.saiBoa4;
+
+                // Combo bom 5
+                if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
+                    (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
+                    return Combo.saiBoa5;
             }
             else
             {
@@ -199,6 +207,7 @@ public class ComboChecker
             case Combo.saiBoa2:
             case Combo.saiBoa3:
             case Combo.saiBoa4:
+            case Combo.saiBoa5:
                 return ComboClassification.Boa;
             case Combo.abpArriscada1:
             case Combo.abpArriscada2:

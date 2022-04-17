@@ -53,13 +53,13 @@ public class ClassFeedback : MonoBehaviour
         switch (comboClass)
         {
             case ComboChecker.ComboClassification.Ideal:
-                comboClassification = "<b><color=green>IDEAL</color></b>";
+                comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
                 break;
             case ComboChecker.ComboClassification.Boa:
-                comboClassification = "<b><color=yellow>BOA</color></b>";
+                comboClassification = "<b><color=#029FCF>BOA</color></b>";
                 break;
             case ComboChecker.ComboClassification.Arriscada:
-                comboClassification = "<b><color=red>ARRISCADA</color></b>";
+                comboClassification = "<b><color=#CC0000>ARRISCADA</color></b>";
                 break;
             default:
                 comboClassification = "[ERRO]";
