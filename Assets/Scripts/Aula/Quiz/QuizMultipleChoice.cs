@@ -55,13 +55,13 @@ public class QuizMultipleChoice : QuizBase
             {
                 affirmations[i].text.text = inverted ? wrongAnswers[Random.Range(0, wrongAnswers.Count)] :
                                                        correctAnswers[Random.Range(0, correctAnswers.Count)];
-                affirmations[i].correct = true;
+                affirmations[i].correct = !inverted;
             }
             else
             {
                 affirmations[i].text.text = inverted ? correctAnswers[Random.Range(0, correctAnswers.Count)] :
                                                        wrongAnswers[Random.Range(0, wrongAnswers.Count)];
-                affirmations[i].correct = false;
+                affirmations[i].correct = inverted;
 
                 if (inverted)
                     correctAnswers.Remove(affirmations[i].text.text);
@@ -84,7 +84,7 @@ public class QuizMultipleChoice : QuizBase
             else
                 affirmations[i].UpdateResultColor(false);
 
-            if (affirmations[i].selected && affirmations[i].correct)
+            if (affirmations[i].selected && affirmations[i].correct == !inverted)
                 score = scoreOnRightAnswer;
         }
 
