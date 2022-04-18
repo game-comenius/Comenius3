@@ -18,8 +18,17 @@ public class ResumoGlobal : MonoBehaviour
         iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimento.sprite;
         iconeInteligenciasMultiplas.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
 
+        string fase;
+
+        if (EstadoDoJogo.Instance.FaseAtual == 0)
+            fase = "primeira";
+        else if (EstadoDoJogo.Instance.FaseAtual == 1)
+            fase = "segunda";
+        else
+            fase = "terceira";
+
         if (EstadoDoJogo.Instance.Tema != null && EstadoDoJogo.Instance.Tema != "")
-            tema.text = $"Este é o tema da sua <b>primeira</b> aula:\n<color=#b45f06><b>{EstadoDoJogo.Instance.Tema}</b>";
+            tema.text = $"Este é o tema da sua <b>{fase}</b> aula:\n<color=#b45f06><b>{EstadoDoJogo.Instance.Tema}</b>";
         else
             tema.text = "";
 
