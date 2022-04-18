@@ -16,40 +16,23 @@ public class BlocoDeNotas : MonoBehaviour
     {
         pagina = 0;
 
+        UpdateButtons();
         Atualizar();
     }
 
     public void AvancarPagina()
     {
-        int limite = ABP ? 2 : 4;
+        pagina++;
 
-        if (pagina < limite)
-        {
-            pagina++;
-
-            if (pagina == limite)
-            {
-                botaoAnterior.interactable = true;
-                botaoProximo.interactable = false;
-            }
-        }
-
+        UpdateButtons();
         Atualizar();
     }
 
     public void VoltarPagina()
     {
-        if (pagina > 0)
-        {
-            pagina--;
+        pagina--;
 
-            if (pagina == 0)
-            {
-                botaoAnterior.interactable = false;
-                botaoProximo.interactable = true;
-            }
-        }
-
+        UpdateButtons();
         Atualizar();
     }
 
@@ -65,5 +48,11 @@ public class BlocoDeNotas : MonoBehaviour
             icone.sprite = EstadoDoJogo.Instance.Midias[pagina - 1].sprite;
             texto.text = EstadoDoJogo.Instance.Midias[pagina - 1].descricaoLonga;
         }
+    }
+
+    private void UpdateButtons()
+    {
+        botaoAnterior.interactable = pagina > 0;
+        botaoProximo.interactable = pagina < (ABP ? 2 : 4);
     }
 }
