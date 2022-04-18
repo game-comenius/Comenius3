@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : PaginaPlanejamento
 {
     [SerializeField] private Text titulo;
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -24,7 +25,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
 
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -170,12 +171,12 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     private void atualizar(IconeAreaDeConhecimento icone)
     {
-        descricaoDoSelecionado.text = icone.areaDeConhecimento.descricao;
+        description.text = icone.areaDeConhecimento.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeAreaDeConhecimento icone)
