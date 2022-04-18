@@ -338,7 +338,7 @@ PrefabInstance:
     - target: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
         type: 3}
@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 718459797}
   - component: {fileID: 718459796}
   - component: {fileID: 718459795}
+  - component: {fileID: 718459799}
   m_Layer: 5
   m_Name: BotaoReiniciar
   m_TagString: Untagged
@@ -666,6 +667,30 @@ MonoBehaviour:
           m_StringArgument: confirmar
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 718459799}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: changeLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &718459799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718459793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08dc29d5baeb6ed44afc046719dfc6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875636019
 GameObject:
   m_ObjectHideFlags: 0

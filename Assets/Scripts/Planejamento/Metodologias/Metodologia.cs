@@ -48,6 +48,7 @@ public sealed class Metodologia
         descricaoLonga: ""
     );
 
+    // OBSOLETA
     public static readonly Metodologia ABJ = new Metodologia
     (
         valor: 3,
