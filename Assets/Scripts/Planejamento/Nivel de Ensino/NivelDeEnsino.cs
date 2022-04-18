@@ -8,11 +8,12 @@ public sealed class NivelDeEnsino
     (
         valor: 0,
         nome: "Educação Infantil",
-        descricao: "<b>Educação Infantil</b>\n\nÉ a primeira etapa da Educação Básica, tendo os princípios de educar e cuidar como indissociáveis. " +
-                   "Tem o objetivo de ampliar o universo de experiências, conhecimentos e habilidades de bebês e crianças por meio da parceria com a " +
-                   "família. É oferecida em creches para crianças de até 3 anos de idade, em pré-escolas para crianças de 4 a 5 anos (sendo esta obrigatória " +
-                   "a matrícula). Tem como eixos estruturantes das práticas pedagógicas as interações e a brincadeira, tendo como finalidade o desenvolvimento " +
-                   "integral da criança até 5 anos.",
+        descricao: "<style=\"title\">Educação Infantil</style>\n\nÉ a primeira etapa da Educação Básica, tendo os princípios" +
+                   " de educar e cuidar como indissociáveis. Tem o objetivo de ampliar o universo de experiências, con" +
+                   "hecimentos e habilidades de bebês e crianças por meio da parceria com a família. É oferecida em cr" +
+                   "eches para crianças de até 3 anos de idade, em pré-escolas para crianças de 4 a 5 anos (sendo esta" +
+                   " obrigatória a matrícula). Tem como eixos estruturantes das práticas pedagógicas as interações e a" +
+                   " brincadeira, tendo como finalidade o desenvolvimento integral da criança até 5 anos.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.EuOutroNos.valor,
@@ -27,10 +28,12 @@ public sealed class NivelDeEnsino
     (
         valor: 1,
         nome: "Ensino Fundamental",
-        descricao: "<b>Ensino Fundamental</b>\n\nEtapa obrigatória com duração de 9 anos (dos 6 aos 14 anos), tendo como objetivo a formação básica do cidadão. " +
-                   "É dividido em duas fases: Anos Iniciais (1º ao 5º ano) e Anos Finais (6º ao 9º ano), que inicia-se em torno dos interesses manifestados pelas " +
-                   "crianças até desafios de maior complexidade. Sendo importante buscar o fortalecimento da autonomia dos estudantes, desenvolvendo sua capacidade " +
-                   "de aprendizagem tendo em vista a aquisição de conhecimentos e habilidades e a formação de atitudes e valores que se fundamentam a sociedade.",
+        descricao: "<style=\"title\">Ensino Fundamental</style>\n\nEtapa obrigatória com duração de 9 anos (dos 6 aos 14 a" +
+                   "nos), tendo como objetivo a formação básica do cidadão. É dividido em duas fases: Anos Iniciais (1" +
+                   "º ao 5º ano) e Anos Finais (6º ao 9º ano), que inicia-se em torno dos interesses manifestados pela" +
+                   "s crianças até desafios de maior complexidade. Sendo importante buscar o fortalecimento da autonom" +
+                   "ia dos estudantes, desenvolvendo sua capacidade de aprendizagem tendo em vista a aquisição de conh" +
+                   "ecimentos e habilidades e a formação de atitudes e valores que se fundamentam a sociedade.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.Linguagens.valor,
@@ -46,10 +49,12 @@ public sealed class NivelDeEnsino
     (
         valor: 2,
         nome: "Ensino Médio",
-        descricao: "<b>Ensino Médio</b>\n\nA etapa final da Educação Básica tem como finalidade o aprofundamento dos conhecimentos adquiridos anteriormente, " +
-                   "a preparação básica para o trabalho e a cidadania, a formação ética e o aprimoramento do pensamento crítico. Isso se dá através da compreensão " +
-                   "dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prática através de quatro grandes áreas do " +
-                   "conhecimento. Dessa forma, produzindo múltiplas culturas juvenis e promovendo uma educação integral.",
+        descricao: "<style=\"title\">Ensino Médio</style>\n\nA etapa final da Educação Básica tem como finalidade o aprofu" +
+                   "ndamento dos conhecimentos adquiridos anteriormente, a preparação básica para o trabalho e a cidad" +
+                   "ania, a formação ética e o aprimoramento do pensamento crítico. Isso se dá através da compreensão " +
+                   "dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prát" +
+                   "ica através de quatro grandes áreas do conhecimento. Dessa forma, produzindo múltiplas culturas ju" +
+                   "venis e  promovendo uma educação integral.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.LinguagensESuasTecnologias.valor,
@@ -63,10 +68,12 @@ public sealed class NivelDeEnsino
     (
         valor: 3,
         nome: "Ensino Superior",
-        descricao: "<b>Ensino Superior</b>\n\nÉ o nível que busca o desejo de aperfeiçoamento cultural e profissional, estimulando o conhecimento dos problemas " +
-                   "do mundo presente. Busca prestar serviços especializados à comunidade através da pesquisa científica e tecnológica. Além de buscar o " +
-                   "aprimoramento da educação básica mediante a formação e a capacitação de profissionais, por meio de pesquisas pedagógicas e o desenvolvimento " +
-                   "de atividades de extensão, em prol do desenvolvimento da sociedade brasileira.",
+        descricao: "<style=\"title\">Ensino Superior</style>\n\nÉ o nível que busca o desejo de aperfeiçoamento cultural e" +
+                   " profissional, estimulando o conhecimento dos problemas do mundo presente. Busca prestar serviços " +
+                   "especializados à comunidade através da pesquisa científica e tecnológica. Além de buscar o aprimor" +
+                   "amento da educação básica mediante a formação e a capacitação de profissionais, por meio de pesqui" +
+                   "sas pedagógicas e o desenvolvimento de atividades de extensão, em prol do desenvolvimento da socie" +
+                   "dade brasileira.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.CienciasAgrarias.valor,

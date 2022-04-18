@@ -8,7 +8,7 @@ public sealed class Inteligencias
         valor: 0,
         nome: "Corporal-cinestésica e Naturalista",
         descricao: "<b>Corporal-cinestésica</b>\n\nImplica o uso do próprio corpo para resolver problemas. Diz respeito à capacidade " +
-                   "de controlar os movimentos corporais, ao equilíbrio, à coordenação e à expressão por meio do corpo.\n\n<b>Natruralista</b>\n\nRefere-se " +
+                   "de controlar os movimentos corporais, ao equilíbrio, à coordenação e à expressão por meio do corpo.\n\n<b>Naturalista</b>\n\nRefere-se " +
                    "à capacidade de compreender o mundo natural, identificando e distinguindo entre diferentes tipos de plantas, animais e formações climáticas."
     );
 

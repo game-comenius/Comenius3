@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaNivelDeEnsino : PaginaPlanejamento
 {
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -14,7 +15,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
     
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -87,12 +88,12 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
 
     private void atualizar(IconeNivelDeEnsino icone)
     {
-        descricaoDoSelecionado.text = icone.nivelDeEnsino.descricao;
+        description.text = icone.nivelDeEnsino.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)
