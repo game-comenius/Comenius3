@@ -48,6 +48,7 @@ public sealed class Metodologia
         descricaoLonga: ""
     );
 
+    // OBSOLETA
     public static readonly Metodologia ABJ = new Metodologia
     (
         valor: 3,
@@ -130,7 +131,7 @@ public sealed class Metodologia
                 NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
                 NomeDeMidia.EditoresDeAudioEVideo,
                 NomeDeMidia.Aplicativos,
-                NomeDeMidia.AVEAs,
+                NomeDeMidia.Plataformas,
                 NomeDeMidia.Jogos,
                 NomeDeMidia.ProjetorMultimidia,
             };

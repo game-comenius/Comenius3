@@ -46,7 +46,21 @@ public abstract class QuizBase : MonoBehaviour
         }
     }
 
-    protected abstract void BuildQuiz();
+    protected virtual void BuildQuiz()
+    {
+        if (quizType == QuizType.MultipleIntelligences)
+        {
+            questionText.text = question + intelligence;
+        }
+        else if (quizType == QuizType.Media)
+        {
+            questionText.text = question + new Midia(media).nome;
+        }
+        else
+        {
+            questionText.text = question;
+        }
+    }
 
     protected abstract void Evaluate();
 }

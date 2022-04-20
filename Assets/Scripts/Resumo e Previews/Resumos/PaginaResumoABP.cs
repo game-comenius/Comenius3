@@ -23,11 +23,11 @@ public class PaginaResumoABP : PaginaPlanejamento
         iconManager.SetIcon(0, primeiroIcone);
         iconManager.SetIcon(1, segundoIcone);
 
-        iconePrimeiraMidia.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
-        iconeSegundaMidia.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
+        iconePrimeiraMidia.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+        iconeSegundaMidia.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
 
         texto.text = "Sua aula será feita no <b>Laboratório utilizando a metodologia Aprendizagem Baseada em Problemas (ABP)</b> com as mídias " +
-                    $"<b>{EstadoDoJogo.Instance.MidiasSelecionadas[0].nome}</b> e <b>{EstadoDoJogo.Instance.MidiasSelecionadas[1].nome}</b>.";
+                    $"<b>{EstadoDoJogo.Instance.Midias[0].nome}</b> e <b>{EstadoDoJogo.Instance.Midias[1].nome}</b>.";
     }
 
     private void OnDisable()

@@ -27,6 +27,7 @@ public class ComboChecker
         saiBoa2,
         saiBoa3,
         saiBoa4,
+        saiBoa5,
         saiArriscada1,
         saiArriscada2,
         saiArriscada3
@@ -34,12 +35,12 @@ public class ComboChecker
 
     public static Combo EvaluateCombo()
     {
-        CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.MidiasSelecionadas[0].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.MidiasSelecionadas[1].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.MidiasSelecionadas[2].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.MidiasSelecionadas[3].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia();
 
-        if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
         {
             // Pelo menos uma é digital
             if (flagMidia1.HasFlag(CategoriasDeMidia.Digital) || flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -121,7 +122,7 @@ public class ComboChecker
                 return Combo.abpArriscada2;
             }
         }
-        else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
         {
             // Qualquer coisa
             // Combo arriscado 1
@@ -149,11 +150,18 @@ public class ComboChecker
                     return Combo.saiBoa2;
 
                 // Combo bom 4
-                if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
-                     flagMidia4.HasFlag(CategoriasDeMidia.Exposicao)) &&
-                    (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) &&
+                    (flagMidia4.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
                      flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
                     return Combo.saiBoa4;
+
+                // Combo bom 5
+                if ((flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio) ||
+                     flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
+                    (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
+                     flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
+                    return Combo.saiBoa5;
             }
             else
             {
@@ -199,6 +207,7 @@ public class ComboChecker
             case Combo.saiBoa2:
             case Combo.saiBoa3:
             case Combo.saiBoa4:
+            case Combo.saiBoa5:
                 return ComboClassification.Boa;
             case Combo.abpArriscada1:
             case Combo.abpArriscada2:

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaNivelDeEnsino : PaginaPlanejamento
 {
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -14,7 +15,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
     
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -87,12 +88,12 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
 
     private void atualizar(IconeNivelDeEnsino icone)
     {
-        descricaoDoSelecionado.text = icone.nivelDeEnsino.descricao;
+        description.text = icone.nivelDeEnsino.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)
@@ -101,8 +102,8 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         iconManager.SetIcon(1, icone.GetComponent<Image>().sprite);
 
         // Grava o nível de ensino selecionado
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = icone.nivelDeEnsino;
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.NivelDeEnsino = icone.nivelDeEnsino;
+        EstadoDoJogo.Instance.NivelDeEnsino.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -113,8 +114,8 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         iconManager.ResetIcon(1);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.sprite = null;
-        EstadoDoJogo.Instance.NivelDeEnsinoSelecionado = null;
+        EstadoDoJogo.Instance.NivelDeEnsino.sprite = null;
+        EstadoDoJogo.Instance.NivelDeEnsino = null;
 
         botaoConfirmar.interactable = false;
     }

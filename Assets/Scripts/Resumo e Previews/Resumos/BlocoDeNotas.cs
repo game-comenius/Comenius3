@@ -16,40 +16,23 @@ public class BlocoDeNotas : MonoBehaviour
     {
         pagina = 0;
 
+        UpdateButtons();
         Atualizar();
     }
 
     public void AvancarPagina()
     {
-        int limite = ABP ? 2 : 4;
+        pagina++;
 
-        if (pagina < limite)
-        {
-            pagina++;
-
-            if (pagina == limite)
-            {
-                botaoAnterior.interactable = true;
-                botaoProximo.interactable = false;
-            }
-        }
-
+        UpdateButtons();
         Atualizar();
     }
 
     public void VoltarPagina()
     {
-        if (pagina > 0)
-        {
-            pagina--;
+        pagina--;
 
-            if (pagina == 0)
-            {
-                botaoAnterior.interactable = false;
-                botaoProximo.interactable = true;
-            }
-        }
-
+        UpdateButtons();
         Atualizar();
     }
 
@@ -57,13 +40,19 @@ public class BlocoDeNotas : MonoBehaviour
     {
         if (pagina == 0)
         {
-            icone.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
-            texto.text = EstadoDoJogo.Instance.MetodologiaSelecionada.descricaoLonga;
+            icone.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
+            texto.text = EstadoDoJogo.Instance.Metodologia.descricaoLonga;
         }
         else
         {
-            icone.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].sprite;
-            texto.text = EstadoDoJogo.Instance.MidiasSelecionadas[pagina - 1].descricaoLonga;
+            icone.sprite = EstadoDoJogo.Instance.Midias[pagina - 1].sprite;
+            texto.text = EstadoDoJogo.Instance.Midias[pagina - 1].descricaoLonga;
         }
+    }
+
+    private void UpdateButtons()
+    {
+        botaoAnterior.interactable = pagina > 0;
+        botaoProximo.interactable = pagina < (ABP ? 2 : 4);
     }
 }

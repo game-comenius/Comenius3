@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,20 +10,21 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private FeedbackBar classQualityBar;
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksIdeal;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksBoa;
-    [SerializeField] [TextArea] private List<string> specificFeedbacksArriscada;
+    [SerializeField] [TextArea] private string[] specificFeedbacksIdeal;
+    [SerializeField] [TextArea] private string[] specificFeedbacksBoa;
+    [SerializeField] [TextArea] private string[] specificFeedbacksArriscada;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
     [SerializeField] private Image media3Icon;
     [SerializeField] private Image media4Icon;
     [SerializeField] private Text helpText;
-    [SerializeField] [TextArea] private string help;
+    [SerializeField] [TextArea] private string firstHelp;
+    [SerializeField] [TextArea] private string secondHelp;
 
     private void Start()
     {
-        helpText.text = help;
+        helpText.text = firstHelp;
 
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
@@ -53,24 +53,24 @@ public class ClassFeedback : MonoBehaviour
         switch (comboClass)
         {
             case ComboChecker.ComboClassification.Ideal:
-                comboClassification = "<b><color=green>IDEAL</color></b>";
+                comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
                 break;
             case ComboChecker.ComboClassification.Boa:
-                comboClassification = "<b><color=yellow>BOA</color></b>";
+                comboClassification = "<b><color=#029FCF>BOA</color></b>";
                 break;
             case ComboChecker.ComboClassification.Arriscada:
-                comboClassification = "<b><color=red>ARRISCADA</color></b>";
+                comboClassification = "<b><color=#CC0000>ARRISCADA</color></b>";
                 break;
             default:
                 comboClassification = "[ERRO]";
                 break;
         }
 
-        comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.MetodologiaSelecionada.nome}, sua combinação de mídias foi {comboClassification}";
+        comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
 
         ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
 
-        if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Aprendizagem Baseada em Problemas")
+        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
         {
             switch (combo)
             {
@@ -112,7 +112,7 @@ public class ClassFeedback : MonoBehaviour
                     break;
             }
         }
-        else if (EstadoDoJogo.Instance.MetodologiaSelecionada.nome == "Sala de Aula Invertida")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
         {
             switch (combo)
             {
@@ -147,11 +147,16 @@ public class ClassFeedback : MonoBehaviour
         }
 
 
-        methodologyIcon.sprite = EstadoDoJogo.Instance.MetodologiaSelecionada.sprite;
+        methodologyIcon.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
 
-        media1Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[0].sprite;
-        media2Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[1].sprite;
-        media3Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[2].sprite;
-        media4Icon.sprite = EstadoDoJogo.Instance.MidiasSelecionadas[3].sprite;
+        media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
+        media2Icon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
+        media3Icon.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
+        media4Icon.sprite = EstadoDoJogo.Instance.Midias[3].sprite;
+    }
+
+    public void UpdateHelpText()
+    {
+        helpText.text = secondHelp;
     }
 }

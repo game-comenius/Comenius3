@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
         GameObject quiz = Instantiate(quizPrefab);
 
         quiz.transform.SetParent(canvas.transform, false);
+        quiz.transform.SetAsFirstSibling();
         quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
@@ -39,11 +40,12 @@ public class QuizManager : MonoBehaviour
     {
         for(int i = 0; i < multipleInteligencesQuizList.Count; i++)
         {
-            if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligence == EstadoDoJogo.Instance.InteligenciasSelecionadas.nome)
+            if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligence == EstadoDoJogo.Instance.Inteligencias.nome)
             {
                 GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
 
                 quiz.transform.SetParent(canvas.transform);
+                quiz.transform.SetAsFirstSibling();
                 quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
                 QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
@@ -70,6 +72,7 @@ public class QuizManager : MonoBehaviour
                 GameObject quiz = Instantiate(mediaQuizList[i]);
 
                 quiz.transform.SetParent(canvas.transform);
+                quiz.transform.SetAsFirstSibling();
                 quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
                 QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();

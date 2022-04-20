@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PaginaPlanejamento : MonoBehaviour
+public abstract class PaginaPlanejamento : MonoBehaviour
 {
     [SerializeReference] protected IconManager iconManager;
     [SerializeReference] [TextArea] protected string ajuda;

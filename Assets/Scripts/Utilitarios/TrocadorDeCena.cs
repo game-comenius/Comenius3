@@ -18,4 +18,15 @@ public class TrocadorDeCena : MonoBehaviour
             Debug.LogWarning("É preciso definir uma cena através do Inspector antes de chamar o método TrocarCena()!");
         }
     }
+
+    public void CarregarCena(string sceneName)
+    {
+        try
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+        }
+        catch(System.Exception e) {
+            Debug.LogWarning(e);
+        }
+    }
 }

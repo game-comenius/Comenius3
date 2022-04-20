@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaAreaDeConhecimento : PaginaPlanejamento
 {
     [SerializeField] private Text titulo;
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -24,7 +25,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
 
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -50,7 +51,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
             ultimoGrupoAtivo.SetActive(false);
         }
 
-        switch (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado.valor)
+        switch (EstadoDoJogo.Instance.NivelDeEnsino.valor)
         {
             case 0:
                 iconesInfantil.SetActive(true);
@@ -170,12 +171,12 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     private void atualizar(IconeAreaDeConhecimento icone)
     {
-        descricaoDoSelecionado.text = icone.areaDeConhecimento.descricao;
+        description.text = icone.areaDeConhecimento.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        description.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeAreaDeConhecimento icone)
@@ -184,8 +185,8 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         iconManager.SetIcon(2, icone.GetComponent<Image>().sprite);
 
         // Grava a área de conhecimento escolhida
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = icone.areaDeConhecimento;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.AreaDeConhecimento = icone.areaDeConhecimento;
+        EstadoDoJogo.Instance.AreaDeConhecimento.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -196,8 +197,8 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         iconManager.ResetIcon(2);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada.sprite = null;
-        EstadoDoJogo.Instance.AreaDeConhecimentoSelecionada = null;
+        EstadoDoJogo.Instance.AreaDeConhecimento.sprite = null;
+        EstadoDoJogo.Instance.AreaDeConhecimento = null;
 
         botaoConfirmar.interactable = false;
     }

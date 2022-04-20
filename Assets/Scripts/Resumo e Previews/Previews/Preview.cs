@@ -32,15 +32,15 @@ public class Preview : MonoBehaviour
         {
             case 0:
 
-                if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+                if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
                 {
                     imagemAlvo.sprite = quartoInfantil;
                 }
-                else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
+                else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
                 {
                     imagemAlvo.sprite = quartoFundamental;
                 }
-                else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
+                else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
                 {
                     imagemAlvo.sprite = quartoMedio;
                 }
@@ -52,7 +52,7 @@ public class Preview : MonoBehaviour
                 break;
             case 1:
 
-                if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+                if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
                 {
                     imagemAlvo.sprite = salaInfantilIndividual;
                 }
@@ -64,11 +64,11 @@ public class Preview : MonoBehaviour
                 break;
             case 2:
 
-                if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+                if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
                 {
                     int indice = segundoAgrupamento ? 3 : 2;
 
-                    switch (EstadoDoJogo.Instance.MidiasSelecionadas[indice].agrupamento)
+                    switch (EstadoDoJogo.Instance.Midias[indice].agrupamento)
                     {
                         case Agrupamento.FormatoU:
                             imagemAlvo.sprite = salaInfantilU;
@@ -91,7 +91,7 @@ public class Preview : MonoBehaviour
                 {
                     int indice = segundoAgrupamento ? 3 : 2;
 
-                    switch (EstadoDoJogo.Instance.MidiasSelecionadas[indice].agrupamento)
+                    switch (EstadoDoJogo.Instance.Midias[indice].agrupamento)
                     {
                         case Agrupamento.FormatoU:
                             imagemAlvo.sprite = salaRegularU;

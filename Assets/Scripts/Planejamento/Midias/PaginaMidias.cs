@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PaginaMidias : PaginaPlanejamento
 {
-    [SerializeField] private Text descricaoDoSelecionado;
+    [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
@@ -30,7 +31,7 @@ public class PaginaMidias : PaginaPlanejamento
         primeiraMidia = true;
         paginaAtual = 0;
 
-        descricaoDoSelecionado.text = descricaoPadrao;
+        descriptionText.text = descricaoPadrao;
     }
 
     protected override void OnEnable()
@@ -47,7 +48,6 @@ public class PaginaMidias : PaginaPlanejamento
         if (primeiroIconeSelecionado)
         {
             iconManager.SetIcon(0, primeiroIconeSelecionado.GetComponent<Image>().sprite);
-            // primeiraMidia = false;  // Avaliar isso aqui
         }
         else
         {
@@ -162,12 +162,12 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizar(IconeMidias icone)
     {
-        descricaoDoSelecionado.text = icone.midia.descricao;
+        descriptionText.text = icone.midia.descricao;
     }
 
     private void resetar()
     {
-        descricaoDoSelecionado.text = descricaoPadrao;
+        descriptionText.text = descricaoPadrao;
     }
 
     private void atualizarEstadoDeJogo(IconeMidias icone)
@@ -188,10 +188,10 @@ public class PaginaMidias : PaginaPlanejamento
 
         iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
 
-        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        Midia[] temp = EstadoDoJogo.Instance.Midias;
         temp[indice] = icone.midia;
         temp[indice].sprite = icone.GetComponent<Image>().sprite;
-        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
+        EstadoDoJogo.Instance.Midias = temp;
     }
 
     private void resetarEstadoDeJogo()
@@ -212,16 +212,21 @@ public class PaginaMidias : PaginaPlanejamento
 
         iconManager.ResetIcon(indiceIcone);
 
-        Midia[] temp = EstadoDoJogo.Instance.MidiasSelecionadas;
+        Midia[] temp = EstadoDoJogo.Instance.Midias;
         temp[indice] = null;
-        EstadoDoJogo.Instance.MidiasSelecionadas = temp;
+        EstadoDoJogo.Instance.Midias = temp;
     }
 
     public void Confirmar()
     {
         primeiraMidia = false;
 
-        primeiroIconeSelecionado.selecionado = false;
+        primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
+
+        if (segundoIconeSelecionado)
+        {
+            segundoIconeSelecionado.GetComponent<Button>().interactable = true;
+        }
 
         setaPrimeiraMidia.SetActive(false);
         setaSegundaMidia.SetActive(true);
@@ -238,7 +243,12 @@ public class PaginaMidias : PaginaPlanejamento
     {
         primeiraMidia = true;
 
-        segundoIconeSelecionado.selecionado = false;
+        primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
+    
+        if (segundoIconeSelecionado)
+        {
+            segundoIconeSelecionado.GetComponent<Button>().interactable = false;
+        }
 
         setaPrimeiraMidia.SetActive(true);
         setaSegundaMidia.SetActive(false);

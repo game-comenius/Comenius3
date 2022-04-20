@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizMultipleChoice : QuizBase
 {
@@ -27,11 +28,12 @@ public class QuizMultipleChoice : QuizBase
 
     protected override void BuildQuiz()
     {
-        questionText.text = quizType == QuizType.Media ? question + new Midia(media).nome : question;
+        base.BuildQuiz();
+
         selectedAffirmationIndex = -1;
         int correctAnswerIndex = Random.Range(0, maxAffirmations);
 
-        switch (EstadoDoJogo.Instance.MetodologiaSelecionada.nome)
+        switch (EstadoDoJogo.Instance.Metodologia.nome)
         {
             case "Aprendizagem Baseada em Problemas":
                 scoreOnRightAnswer = abpScore;
@@ -53,13 +55,13 @@ public class QuizMultipleChoice : QuizBase
             {
                 affirmations[i].text.text = inverted ? wrongAnswers[Random.Range(0, wrongAnswers.Count)] :
                                                        correctAnswers[Random.Range(0, correctAnswers.Count)];
-                affirmations[i].correct = true;
+                affirmations[i].correct = !inverted;
             }
             else
             {
                 affirmations[i].text.text = inverted ? correctAnswers[Random.Range(0, correctAnswers.Count)] :
                                                        wrongAnswers[Random.Range(0, wrongAnswers.Count)];
-                affirmations[i].correct = false;
+                affirmations[i].correct = inverted;
 
                 if (inverted)
                     correctAnswers.Remove(affirmations[i].text.text);
@@ -75,12 +77,14 @@ public class QuizMultipleChoice : QuizBase
 
         for (int i = 0; i < maxAffirmations; i++)
         {
+            affirmations[i].GetComponent<Button>().interactable = false;
+
             if (affirmations[i].correct)
                 affirmations[i].UpdateResultColor(true);
             else
                 affirmations[i].UpdateResultColor(false);
 
-            if (affirmations[i].selected && affirmations[i].correct)
+            if (affirmations[i].selected && affirmations[i].correct == !inverted)
                 score = scoreOnRightAnswer;
         }
 

@@ -8,6 +8,7 @@ public class MediaFeedbackSelector : MonoBehaviour
     [System.Serializable] public class SelectionEvent : UnityEvent<bool, Sprite> { }
     public SelectionEvent OnSelectionEvent;
 
+    // TODO: Trocar as listas por arrays
     [SerializeField] private List<MomentoInteracao> feedbacksInfantil;
     [SerializeField] private List<MomentoInteracao> feedbacksFundamental;
     [SerializeField] private List<MomentoInteracao> feedbacksMedio;
@@ -20,12 +21,12 @@ public class MediaFeedbackSelector : MonoBehaviour
         List<MomentoInteracao> feedbacks;
 
         // (Switch não usado pois o nível de ensino não é constante)
-        if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EducacaoInfantil)
+        if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
             feedbacks = feedbacksInfantil;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoFundamental)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
             feedbacks = feedbacksFundamental;
-        else if (EstadoDoJogo.Instance.NivelDeEnsinoSelecionado == NivelDeEnsino.EnsinoMedio)
-            feedbacks = feedbacksFundamental;
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
+            feedbacks = feedbacksMedio;
         else
             feedbacks = feedbacksSuperior;
 

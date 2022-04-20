@@ -20,8 +20,8 @@ public class Midia
         {
             case NomeDeMidia.Lousa:
                 nome = "Lousa";
-                descricao = "A <b>lousa</b> é uma superfície reutilizável, geralmente riscada com giz branco, utilizada para exposição do conteúdo do docente" +
-                            " ou de forma colaborativa para docente e estudante.";
+                descricao = "<style=\"title\">Lousa</style>\n\nA lousa é uma superfície reutilizável, geralmente riscada com giz branco, utilizada para exp" +
+                            "osição do conteúdo do docente ou de forma colaborativa para docente e estudante.\n\nCategoria:\nMídia de exposição tradicional";
                 descricaoLonga = "A lousa é uma mídia de exposição que acompanha o ofício do docente há algumas décadas, podendo ser utilizado de diversas " +
                                  "formas, de acordo com a  proposta metodológica de cada docente. Também pode ser trabalhada como espaço de expressão dos e" +
                                  "studantes. A lousa no formato digital permite a conexão com a internet, abrindo possibilidade para novas maneiras de expo" +
@@ -31,8 +31,9 @@ public class Midia
 
             case NomeDeMidia.LivroDidatico:
                 nome = "Livro Didático";
-                descricao = "O <b>livro didático</b> é uma mídia de consulta comum do docente e aluno, de cunho pedagógico, composto de exercícios, textos e " +
-                            "imagens do conteúdo estudado, que acompanham o currículo escolar.";
+                descricao = "<style=\"title\">Livro Didático</style>\n\nO livro didático é uma mídia de consulta comum do docente e estudante, de cunho ped" +
+                            "agógico, composto de exercícios, textos e imagens do conteúdo estudado, que acompanham o currículo escolar.\n\nCategoria:\nMíd" +
+                            "ia de consulta tradicional";
                 descricaoLonga = "O livro didático impresso é fornecido pela escola para o estudante. Traz informações sobre todos os conteúdos do ano leti" +
                                  "vo, normalmente utilizado como leitura do material didático complementar para as disciplinas específicas, com a mediação " +
                                  "do docente. Possui conteúdos e recursos como imagens, gráficos e diversos gêneros textuais, podendo também incluir questõ" +
@@ -41,9 +42,9 @@ public class Midia
 
             case NomeDeMidia.LivrosJornaisERevistas:
                 nome = "Livros, Jornais e Revistas";
-                descricao = "<b>Livros, jornais e revistas</b> são publicações de cunho literário, informativo, jornalístico ou de entretenimento. Contém pág" +
-                            "inas impressas em papel com textos e imagens. Podem ser usados como material para leitura, consulta, ou base de recorte p" +
-                            "ara atividades.";
+                descricao = "<style=\"title\">Livros, Jornais e Revistas</style>\n\nLivros, jornais e revistas são publicações de cunho literário, informat" +
+                            "ivo, jornalístico ou de entretenimento. Contém páginas impressas em papel com textos e imagens. Podem ser usados como material" +
+                            " para leitura, consulta, ou base de recorte para atividades.\n\nCategoria:\nMídia popular tracional";
                 descricaoLonga = "Livros, jornais e revistas são mídias de circulação social, que podem ser utilizadas para trabalhar a leitura e interpret" +
                                  "ação de diversos temas de forma mais aprofundada. É possível refletir sobre o tratamento dos textos e imagens de acordo c" +
                                  "om cada gênero, ou as diferenças entre revistas, jornais e livros que são idealizadas e produzidas com objetivos e formas" +
@@ -53,9 +54,9 @@ public class Midia
 
             case NomeDeMidia.CadernosECartazes:
                 nome = "Cadernos e Cartazes";
-                descricao = "<b>Cadernos e cartazes</b> são mídias utilizadas para produção e armazenamento de informações por uso da escrita ou das imagens. " +
-                            "Auxiliam no exercício de autonomia, colaborando para que os estudantes aprendam a sistematizar o conhecimento adquirido, " +
-                            "as dúvidas e as descobertas feitas.";
+                descricao = "<style=\"title\">Caderno e Cartazes</style>\n\nCaderno e cartazes são mídias utilizadas para produção e armazenamento de infor" +
+                            "mações por uso da escrita ou das imagens. Auxiliam no exercício de autonomia, colaborando para que os estudantes aprendam a si" +
+                            "stematizar o conhecimento adquirido, as dúvidas e as descobertas feitas.\n\nCategoria:\nMídia de produção tradicional";
                 descricaoLonga = "Caderno e cartazes geralmente são feitos pelos próprios estudantes, utilizados para atividades pedagógicas individuais ou" +
                                  " em grupo para proporcionar a produção coletiva. Com os cartazes, os estudantes podem apresentar e socializar o que foi p" +
                                  "roduzido com o grupo a partir de pesquisa, produção textual, produção visual e gráfica, expressando de forma artística op" +
@@ -64,9 +65,9 @@ public class Midia
 
             case NomeDeMidia.Televisao:
                 nome = "Televisão";
-                descricao = "A <b>televisão aberta</b> é um meio de comunição de massa que exibe uma programação fixa. Um sistema eletrônico de transmissão e" +
-                                 " recepção de imagens e sons gerados ao vivo ou previamente gravadas, com programações artísticas, culturais, educativas, " +
-                                 "informativas etc.";
+                descricao = "<style=\"title\">Televisão</style>\n\nA televisão aberta é um meio de comunição de massa que exibe uma programação fixa. Um si" +
+                            "stema eletrônico de transmissão e recepção de imagens e sons gerados ao vivo ou previamente gravadas, com programações artísti" +
+                            "cas, culturais, educativas, informativas etc.\n\nCategoria:\nMídia popular audiovisual.";
                 descricaoLonga = "A televisão é tanto um sistema de transmissão, como o dispositivo ou aparelho de visualização das imagens e sons, como a " +
                                  "programação televisiva e como a emissora que transmite os programas, tanto em rede aberta gratuita ou canais fechados e p" +
                                  "agos. Como ferramenta, pode ser utilizada na sala de aula para mostrar vídeos, filmes e documentários que contribuam com " +
@@ -82,11 +83,11 @@ public class Midia
 
             case NomeDeMidia.RedesSociais:
                 nome = "Redes Sociais";
-                descricao = "<b>Redes Sociais</b> são estruturas dinâmicas e complexas formadas por pessoas com valores e/ou objetivos em comum, interligadas" +
-                            " de forma horizontal e predominantemente descentralizada, que existem desde o início da sociedade humana. As redes sociai" +
-                            "s online se articulam através das mídias sociais que são espaços de comunicação e de relacionamento, a partir da conexão " +
-                            "pela internet, que permitem a troca de mensagens e a partilha de conteúdos entre indivíduos e grupos, ampliando as possib" +
-                            "ilidades de todo tipo de relacionamento entre eles.";
+                descricao = "<style=\"title\">Redes Sociais</style>\n\nRedes Sociais são estruturas dinâmicas e complexas formadas por pessoas com valores " +
+                            "e/ou objetivos em comum, interligadas de forma horizontal e predominantemente descentralizada, que existem desde o início da s" +
+                            "ociedade humana. As redes sociais online se articulam pela internet através das mídias sociais para comunicação, troca de mens" +
+                            "agens e partilha de conteúdos entre indivíduos e grupos, ampliando as possibilidades de todo tipo de relacionamento entre eles" +
+                            ".\n\nCategoria:\nMídia popular digital";
                 descricaoLonga = "As redes sociais online têm o objetivo de conectar pessoas e compartilhar informações entre os que compactuam dos mesmos " +
                                  "valores e interesses. As escolas podem usá-las para contribuir para a mobilização de saberes e de aprendizagens colaborat" +
                                  "ivas, por meio de frequentes trocas, debates, de diferentes perspectivas, fortalecendo as relações interpessoais da turma" +
@@ -99,9 +100,9 @@ public class Midia
 
             case NomeDeMidia.Jogos:
                 nome = "Jogos";
-                descricao = "Um <b>Jogo digital</b> é uma atividade lúdica composta por mecânicas, estéticas e narrativas, suportadas por uma tecnologia, ond" +
-                            "e o jogador realiza uma série de ações e decisões, que estão limitadas por regras e pelo contexto do contexto do game, re" +
-                            "cebendo feedback constante e buscando alcançar um meta.";
+                descricao = "<style=\"title\">Jogos</style>\n\nUm Jogo digital é uma atividade lúdica composta por mecânicas, estéticas e narrativas, suporta" +
+                            "das por uma tecnologia, onde o jogador realiza uma série de ações e decisões, que estão limitadas por regras e pelo contexto d" +
+                            "o contexto do game, recebendo feedback constante e buscando alcançar um meta.\n\nCategoria:\nMídia popular digital";
                 descricaoLonga = "Os jogos digitais são sistemas de simulações da realidade que substituída por situações lúdicas, permitindo aos jogadores" +
                                  " uma visão de distintos modelos de realidade. Estudos demostram que os jogos digitais podem desenvolver habilidades como " +
                                  "o pensamento crítico e o sistemático, a resolução de problemas, o desenvolvimento da ortografia, do vocabulário e da leit" +
@@ -114,8 +115,9 @@ public class Midia
 
             case NomeDeMidia.EditoresDeAudioEVideo:
                 nome = "Editores de Áudio e Vídeo";
-                descricao = "<b>Editores de áudio e vídeo</b> são softwares que proporcionam a edição de conteúdos que contenham som e imagem, por meio de op" +
-                            "ções para cortar, copiar e colar trechos de áudio e video, bem como aplicar efeitos diversos.";
+                descricao = "<style=\"title\">Editores de áudio e vídeo</style>\n\nEditores de áudio e vídeo são softwares que proporcionam a edição de con" +
+                            "teúdos que contenham som e imagem, por meio de opções para cortar, copiar e colar trechos de áudio e video, bem como aplicar e" +
+                            "feitos diversos.\n\nCategoria:\nMídia de produção digital.";
                 descricaoLonga = "Os sotwares de edição de áudio e vídeo são ferramentas que instigam a pesquisa em sala de aula, pois, ao produzir com ess" +
                                  "as mídias podemos incentivar a reflexão de diferentes temas, a criatividade e o trabalho em equipe. Muitos destes softwar" +
                                  "es apresentam um conjunto de ferramentas versáteis, dinâmicas e de fácil aprendizado. Para fazer seus vídeos ou áudios, o" +
@@ -127,9 +129,10 @@ public class Midia
 
             case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                 nome = "Editores de Texto e Planilhas Eletrônicas";
-                descricao = "Um <b>editor de texto</b> é um software que permite aos usuários criar, alterar ou editar arquivos de texto simples. Planilha el" +
-                            "etrônica é um programa de computador que utiliza tabelas para realização de cálculos ou apresentação de dados. Editores e" +
-                            " planilhas permitem personalizar o conteúdo criado como definição de cores, fonte, espaçamentos e muito mais.";
+                descricao = "<style=\"title\">Editor de Texto e Planilhas</style>\n\nUm editor de texto é um software que permite aos usuários criar, alter" +
+                            "ar ou editar arquivos de texto simples. Planilha eletrônica é um programa de computador que utiliza tabelas para realização de" +
+                            " cálculos ou apresentação de dados. Editores e planilhas permitem personalizar o conteúdo criado como definição de cores, font" +
+                            "e, espaçamentos e muito mais.\n\nCategoria:\nMídia de produção audiovisual.";
                 descricaoLonga = "O funcionamento desses softwares é bem simples, ao mesmo tempo em que permitem que os estudantes sejam protagonistas da p" +
                                  "rópria aprendizagem. Nas páginas em branco é possível criar, formatar, editar, salvar documentos eletrônicos, misturando " +
                                  "elementos visuais e verbais. Por ser composto de recursos de escolha da fonte, inseção de imagens, criação de gráficos e " +
@@ -138,11 +141,11 @@ public class Midia
                                  "resentação de dados de forma visual e complexa.";
                 break;
 
-            case NomeDeMidia.AVEAs:
+            case NomeDeMidia.Plataformas:
                 nome = "Plataformas";
-                descricao = "<b>Plataformas virtuais de aprendizagem</b> são softwares que agregam ferrramentas para a criação, tutoria, gestão e compartilha" +
-                            "mento de atividades com o objetivo de auxiliar o usuário à desenvolver e distribuir conteúdos diversos para cursos online" +
-                            " e disciplinas semipresenciais para estudantes em geral.";
+                descricao = "<style=\"title\">Plataformas</style>\n\nPlataformas virtuais de aprendizagem são softwares que agregam ferrramentas para a cri" +
+                            "ação, tutoria, gestão e compartilhamento de atividades com o objetivo de auxiliar o usuário à desenvolver e distribuir conteúd" +
+                            "os diversos para cursos online e disciplinas semipresenciais para estudantes em geral.\n\nCategoria:\nMídia de consulta digital";
                 descricaoLonga = "As plataformas de ambiente virtual de aprendizagem disponibilizam diversas ferramentas de comunicação,  gestão e interaçã" +
                                  "o. Uma plataforma perpassa todo o processo de aprendizagem de um aluno, no caso de cursos ou disciplinas a distância, sej" +
                                  "a para o planejamento de atividades a distância, semi-presenciais ou para complementar aulas presenciais com conteúdos vi" +
@@ -153,10 +156,10 @@ public class Midia
 
             case NomeDeMidia.Aplicativos:
                 nome = "Aplicativos";
-                descricao = "<b>App ou aplicativos</b> são softwares cujo objetivo é ajudar o usuário a realizar determinadas tarefas, relacionad" +
-                            "as a trabalho ou entretenimento, adaptados para os dispositivos móveis que passaram a fazer parte da vida das pess" +
-                            "oas. Geralmente se refere aos softwares presentes em celulares e dispositivos inteligentes, como smart TVs, para as mais " +
-                            "diversas funções.";
+                descricao = "<style=\"title\">Aplicativos</style>\n\nApp ou aplicativos são softwares  cujo  objetivo  é  ajudar  o  usuário  a  realizar d" +
+                            "eterminadas   tarefas,   relacionadas   a   trabalho  ou entretenimento, adaptados  para  os dispositivos móveis que passaram " +
+                            "a fazer parte da vida das pessoas. Geralmente se refere aos softwares presentes em celulares e dispositivos inteligentes, como" +
+                            " smart TVs, para as mais diversas funções.\n\nCategoria:\nMídia de consulta digital";
                 descricaoLonga = "Existem inúmeros aplicativos relacionados a diferentes necessidades e domínios. Para a utilização deles na educação é nec" +
                                  "essário traçar o objetivo pedagógico, em seguida analisar as possibidades da ferramenta e desenhar uma estratégia. O trab" +
                                  "alho com aplicativos permite hibridez e personalização do ensino. Traz diversos benefícios como ajudar a organizar tarefa" +
@@ -167,9 +170,9 @@ public class Midia
 
             case NomeDeMidia.ProjetorMultimidia:
                 nome = "Projetor Multimídia";
-                descricao = "Um <b>O projetor multimídia, ou datashow,</b> é um aparelho óptico, mecânico, capaz de projetar em uma superfície lisa e clara, tod" +
-                            "o tipo de imagem, fixa e em movimento, acoplado a um computador. Bastante usado para aulas expositivas mas também para " +
-                            "apresentação de trabalhos dos estudantes.";
+                descricao = "<style=\"title\">Projetor Multimídia</style>\n\nO projetor multimídia, ou datashow, é um aparelho óptico, mecânico, capaz de p" +
+                            "rojetar em uma superfície lisa e clara, todo tipo de imagem, fixa e em movimento,  acoplado a um computador.  Bastante usado p" +
+                            "ara aulas expositivas mas também para apresentação de trabalhos dos estudantes.\n\nCategoria:\nMídia de exposição digital.";
                 descricaoLonga = "O projetor multimídia tem sido cada vez mais utilizado pelos docentes como recurso pedagógico.  Acoplado ao computador, a" +
                                  " uma caixa de som e conectado na internet, o projetor permite inúmeras atividades interativas, como uma tela criativa tan" +
                                  "to para docentes como estudantes, pois permite trabalhar não apenas com imagens fixas *fotos, planilhas, slides) mas tamb" +

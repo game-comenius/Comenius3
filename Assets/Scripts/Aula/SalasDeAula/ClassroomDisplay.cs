@@ -19,7 +19,7 @@ public class ClassroomDisplay : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        NivelDeEnsino nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsinoSelecionado;
+        NivelDeEnsino nivelDeEnsino = EstadoDoJogo.Instance.NivelDeEnsino;
 
         if (nivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
         {

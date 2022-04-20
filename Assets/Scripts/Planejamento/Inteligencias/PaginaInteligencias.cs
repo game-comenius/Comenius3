@@ -101,8 +101,8 @@ public class PaginaInteligencias : PaginaPlanejamento
         iconManager.SetIcon(3, icone.GetComponent<Image>().sprite);
 
         // Grava o nível de ensino selecionado
-        EstadoDoJogo.Instance.InteligenciasSelecionadas = icone.inteligencia;
-        EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite = icone.GetComponent<Image>().sprite;
+        EstadoDoJogo.Instance.Inteligencias = icone.inteligencia;
+        EstadoDoJogo.Instance.Inteligencias.sprite = icone.GetComponent<Image>().sprite;
 
         // Ativar o botão de confirmar agora que há uma seleção
         botaoConfirmar.interactable = true;
@@ -113,8 +113,8 @@ public class PaginaInteligencias : PaginaPlanejamento
         iconManager.ResetIcon(3);
 
         // Reseta a escolha
-        EstadoDoJogo.Instance.InteligenciasSelecionadas.sprite = null;
-        EstadoDoJogo.Instance.InteligenciasSelecionadas = null;
+        EstadoDoJogo.Instance.Inteligencias.sprite = null;
+        EstadoDoJogo.Instance.Inteligencias = null;
 
         botaoConfirmar.interactable = false;
     }

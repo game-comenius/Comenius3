@@ -32,7 +32,7 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
             { NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas, aparelhosDigitaisParaMidiasTipoSoftware },
             { NomeDeMidia.EditoresDeAudioEVideo, aparelhosDigitaisParaMidiasTipoSoftware },
             { NomeDeMidia.Aplicativos, aparelhosDigitaisParaMidiasTipoSoftware },
-            { NomeDeMidia.AVEAs, aparelhosDigitaisParaMidiasTipoSoftware },
+            { NomeDeMidia.Plataformas, aparelhosDigitaisParaMidiasTipoSoftware },
         };
 
         // Esconder todas as mídias caso algumas delas ainda estejam visíveis

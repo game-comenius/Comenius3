@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -10,6 +11,7 @@ public abstract class BarControl : MonoBehaviour
     public BarAnimationEnd OnBarAnimationEnd;
 
     [SerializeReference] protected float animationTime;
+    [SerializeReference] protected TextMeshProUGUI percentageText;
 
     protected Slider slider;
     protected float progress;
@@ -36,6 +38,19 @@ public abstract class BarControl : MonoBehaviour
         slider.value = progress;  // Corretivo final para evitar erros de imprecisão
 
         OnBarAnimationEnd.Invoke();
+        yield return null;
+    }
+
+    protected IEnumerator UpdatePercentageTextCoroutine(float initialValue)
+    {
+        for (float i = 0; i <= animationTime; i += Time.deltaTime)
+        {
+            percentageText.text = $"{(int)((initialValue + ((progress - initialValue) / animationTime) * i) * 100.0f)}%";
+            yield return null;
+        }
+
+        percentageText.text = $"{(int)(progress * 100.0f)}%";  // Corretivo final para evitar erros de imprecisão
+
         yield return null;
     }
 }
