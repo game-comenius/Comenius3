@@ -7,11 +7,10 @@ assignees: ''
 
 ---
 
-**Descreva o bug**
+**Descrição**
 Explicação simples do que o bug é.
 
 **Como reproduzir o bug**
-Para reproduzir o bug:
 1. Vá para '...'
 2. Clique em '....'
 3. Escolha '....'
