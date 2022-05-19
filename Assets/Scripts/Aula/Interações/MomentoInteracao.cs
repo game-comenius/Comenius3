@@ -58,7 +58,7 @@ public class PaginaInteracao
             if (professorFalando)
                 return "Professor";
             else
-                return "Aluno";
+                return "Estudante";
         }
     }
 
