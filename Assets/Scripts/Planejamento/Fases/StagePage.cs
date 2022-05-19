@@ -4,6 +4,7 @@ public class StagePage : PaginaPlanejamento
 {
     [SerializeField] private Methodology methodology;
     [SerializeField] private Sprite methodologySprite;
+    [SerializeField] private Animator iconAnimator;
 
     private enum Methodology
     {
@@ -23,6 +24,8 @@ public class StagePage : PaginaPlanejamento
         iconManager.HideIcon(3);
 
         iconManager.SetIcon(0, methodologySprite);
+
+        iconAnimator.Play("Ícone-Anim", 0);
     }
 
     private void OnDisable()
