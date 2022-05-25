@@ -254,6 +254,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4017957565427540490, guid: b67b623554d3cbe47a1bdc9799b5a68b,
@@ -317,12 +318,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b67b623554d3cbe47a1bdc9799b5a68b, type: 3}
 --- !u!1001 &498216943
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1384982661}
     m_Modifications:
     - target: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
@@ -436,12 +439,20 @@ PrefabInstance:
       value: "Bot\xE3oAudio"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 21216db89663f8246818f107542c6595, type: 3}
+--- !u!224 &498216944 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 335052584658776108, guid: 21216db89663f8246818f107542c6595,
+    type: 3}
+  m_PrefabInstance: {fileID: 498216943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631744957
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1989386248766843569, guid: f5690d0bd685f4bb78efdfe7ac22bed0,
@@ -505,6 +516,7 @@ PrefabInstance:
       value: Admin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f5690d0bd685f4bb78efdfe7ac22bed0, type: 3}
 --- !u!1 &718459793
 GameObject:
@@ -668,9 +680,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 718459799}
-        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
-        m_MethodName: changeLevel
-        m_Mode: 3
+        m_TargetAssemblyTypeName: GameStateMethodCaller, Assembly-CSharp
+        m_MethodName: Reset
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -688,7 +700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 718459793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08dc29d5baeb6ed44afc046719dfc6bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 162aa7f1acc853242a8e180a446a93ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &875636019
@@ -1271,6 +1283,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 252911715488622149, guid: 02c3bfe348f684b1f9499cf6d8644a16,
@@ -1394,6 +1407,27 @@ PrefabInstance:
       value: CanvasMenuPrincipal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1825061352}
+    - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1320251778}
+    - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 718459794}
+    - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1978761266}
+    - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 498216944}
   m_SourcePrefab: {fileID: 100100000, guid: 02c3bfe348f684b1f9499cf6d8644a16, type: 3}
 --- !u!224 &1384982661 stripped
 RectTransform:
