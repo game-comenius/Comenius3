@@ -39,14 +39,14 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
         // Mudar headline com a educação infantil
 
-        if (iconeSelecionado)
+        if (iconeSelecionado != null)
         {
             iconManager.SetIcon(2, iconeSelecionado.GetComponent<Image>().sprite);
         }
 
         // Atualiza qual grupo deve ser exibido no momento
 
-        if (ultimoGrupoAtivo)
+        if (ultimoGrupoAtivo != null)
         {
             ultimoGrupoAtivo.SetActive(false);
         }
@@ -59,7 +59,11 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
                 if (ultimoGrupoAtivo != iconesInfantil)
                 {
-                    iconeSelecionado = null;
+                    if (iconeSelecionado != null)
+                        iconeSelecionado.selecionado = false;
+                    else
+                        iconeSelecionado = null;
+
                     anelDeSelecao.enabled = false;
 
                     resetar();
@@ -74,7 +78,11 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
                 if (ultimoGrupoAtivo != iconesFundamental)
                 {
-                    iconeSelecionado = null;
+                    if (iconeSelecionado != null)
+                        iconeSelecionado.selecionado = false;
+                    else
+                        iconeSelecionado = null;
+
                     anelDeSelecao.enabled = false;
 
                     resetar();
@@ -89,7 +97,11 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
                 if (ultimoGrupoAtivo != iconesMedio)
                 {
-                    iconeSelecionado = null;
+                    if (iconeSelecionado != null)
+                        iconeSelecionado.selecionado = false;
+                    else
+                        iconeSelecionado = null;
+
                     anelDeSelecao.enabled = false;
 
                     resetar();
@@ -104,7 +116,11 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
                 if (ultimoGrupoAtivo != iconesSuperior)
                 {
-                    iconeSelecionado = null;
+                    if (iconeSelecionado != null)
+                        iconeSelecionado.selecionado = false;
+                    else
+                        iconeSelecionado = null;
+
                     anelDeSelecao.enabled = false;
 
                     resetar();
@@ -125,7 +141,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (iconeSelecionado)
+            if (iconeSelecionado != null)
             {
                 iconeSelecionado.selecionado = false;
             }
@@ -155,7 +171,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     public void HoverEnter(IconeAreaDeConhecimento icone)
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             atualizar(icone);
         }
@@ -163,7 +179,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     public void HoverExit()
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             resetar();
         }

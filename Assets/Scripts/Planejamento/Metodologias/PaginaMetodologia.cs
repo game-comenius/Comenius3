@@ -32,7 +32,7 @@ public class PaginaMetodologia : PaginaPlanejamento
         iconManager.HideIcon(2);
         iconManager.HideIcon(3);
 
-        if (iconeSelecionado)
+        if (iconeSelecionado != null)
         {
             iconManager.SetIcon(0, iconeSelecionado.GetComponent<Image>().sprite);
         }
@@ -50,7 +50,7 @@ public class PaginaMetodologia : PaginaPlanejamento
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (iconeSelecionado)
+            if (iconeSelecionado != null)
             {
                 iconeSelecionado.selecionado = false;
             }
@@ -79,7 +79,7 @@ public class PaginaMetodologia : PaginaPlanejamento
 
     public void HoverEnter(IconeMetodologia icone)
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             atualizar(icone);
         }
@@ -87,7 +87,7 @@ public class PaginaMetodologia : PaginaPlanejamento
 
     public void HoverExit()
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             resetar();
         }
