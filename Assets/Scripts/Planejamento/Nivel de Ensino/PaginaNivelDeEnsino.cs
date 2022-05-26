@@ -29,7 +29,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         iconManager.ShowIcon(2);
         iconManager.ShowIcon(3);
 
-        if (iconeSelecionado)
+        if (iconeSelecionado != null)
         {
             iconManager.SetIcon(1, iconeSelecionado.GetComponent<Image>().sprite);
         }
@@ -42,7 +42,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (iconeSelecionado)
+            if (iconeSelecionado != null)
             {
                 iconeSelecionado.selecionado = false;
             }
@@ -72,7 +72,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
 
     public void HoverEnter(IconeNivelDeEnsino icone)
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             atualizar(icone);
         }
@@ -80,7 +80,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
 
     public void HoverExit()
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             resetar();
         }

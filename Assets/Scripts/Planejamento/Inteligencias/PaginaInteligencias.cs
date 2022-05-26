@@ -28,7 +28,7 @@ public class PaginaInteligencias : PaginaPlanejamento
         iconManager.ShowIcon(2);
         iconManager.ShowIcon(3);
 
-        if (iconeSelecionado)
+        if (iconeSelecionado != null)
         {
             iconManager.SetIcon(3, iconeSelecionado.GetComponent<Image>().sprite);
         }
@@ -41,7 +41,7 @@ public class PaginaInteligencias : PaginaPlanejamento
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             // Marca o último ícone selecionado como falso
-            if (iconeSelecionado)
+            if (iconeSelecionado != null)
             {
                 iconeSelecionado.selecionado = false;
             }
@@ -71,7 +71,7 @@ public class PaginaInteligencias : PaginaPlanejamento
 
     public void HoverEnter(IconeInteligencias icone)
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             atualizar(icone);
         }
@@ -79,7 +79,7 @@ public class PaginaInteligencias : PaginaPlanejamento
 
     public void HoverExit()
     {
-        if (!iconeSelecionado)
+        if (iconeSelecionado == null)
         {
             resetar();
         }

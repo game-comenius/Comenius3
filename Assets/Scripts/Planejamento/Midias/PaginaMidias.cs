@@ -45,7 +45,7 @@ public class PaginaMidias : PaginaPlanejamento
         iconManager.HideIcon(2);
         iconManager.HideIcon(3);
 
-        if (primeiroIconeSelecionado)
+        if (primeiroIconeSelecionado != null)
         {
             iconManager.SetIcon(0, primeiroIconeSelecionado.GetComponent<Image>().sprite);
         }
@@ -54,7 +54,7 @@ public class PaginaMidias : PaginaPlanejamento
             iconManager.ResetIcon(0);
         }
 
-        if (segundoIconeSelecionado)
+        if (segundoIconeSelecionado != null)
         {
             iconManager.SetIcon(1, segundoIconeSelecionado.GetComponent<Image>().sprite);
         }
@@ -78,7 +78,7 @@ public class PaginaMidias : PaginaPlanejamento
         {
             if (primeiraMidia)
             {
-                if (primeiroIconeSelecionado)
+                if (primeiroIconeSelecionado != null)
                 {
                     primeiroIconeSelecionado.selecionado = false;
                 }
@@ -87,7 +87,7 @@ public class PaginaMidias : PaginaPlanejamento
             }
             else
             {
-                if (segundoIconeSelecionado)
+                if (segundoIconeSelecionado != null)
                 {
                     segundoIconeSelecionado.selecionado = false;
                 }
@@ -128,14 +128,14 @@ public class PaginaMidias : PaginaPlanejamento
     {
         if (primeiraMidia)
         {
-            if (!primeiroIconeSelecionado)
+            if (primeiroIconeSelecionado == null)
             {
                 atualizar(icone);
             }
         }
         else
         {
-            if (!segundoIconeSelecionado)
+            if (segundoIconeSelecionado == null)
             {
                 atualizar(icone);
             }
@@ -146,14 +146,14 @@ public class PaginaMidias : PaginaPlanejamento
     {
         if (primeiraMidia)
         {
-            if (!primeiroIconeSelecionado)
+            if (primeiroIconeSelecionado == null)
             {
                 resetar();
             }
         }
         else
         {
-            if (!segundoIconeSelecionado)
+            if (segundoIconeSelecionado == null)
             {
                 resetar();
             }
@@ -223,7 +223,7 @@ public class PaginaMidias : PaginaPlanejamento
 
         primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
 
-        if (segundoIconeSelecionado)
+        if (segundoIconeSelecionado != null)
         {
             segundoIconeSelecionado.GetComponent<Button>().interactable = true;
         }
@@ -245,7 +245,7 @@ public class PaginaMidias : PaginaPlanejamento
 
         primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
     
-        if (segundoIconeSelecionado)
+        if (segundoIconeSelecionado != null)
         {
             segundoIconeSelecionado.GetComponent<Button>().interactable = false;
         }
