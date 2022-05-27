@@ -69,22 +69,29 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         descricaoDoSelecionado.text = descricaoPadrao;
     }
 
-    private void atualizar(int agrupamentoEmFoco)
+    private void atualizar(int agrupamentoEmFocoArg, bool mostrarSemSelecao = false)
     {
-        if (agrupamentoEmFoco != -1)
+        if (agrupamentoEmFocoArg != -1)
         {
-            if (primeiroAgrupamento)
+            if (mostrarSemSelecao)
             {
-                descricaoDoSelecionado.text = primeiroAgrupamentoSelecionado != -1 ? agrupamentosDescricao[primeiroAgrupamentoSelecionado] : descricaoPadrao;
-                molduraDeSelecao.enabled = primeiroAgrupamentoSelecionado == agrupamentoEmFoco ? true : false;
+                descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoEmFocoArg];
             }
             else
             {
-                descricaoDoSelecionado.text = segundoAgrupamentoSelecionado != -1 ? agrupamentosDescricao[segundoAgrupamentoSelecionado] : descricaoPadrao;
-                molduraDeSelecao.enabled = segundoAgrupamentoSelecionado == agrupamentoEmFoco ? true : false;
-            }
+                if (primeiroAgrupamento)
+                {
+                    descricaoDoSelecionado.text = primeiroAgrupamentoSelecionado != -1 ? agrupamentosDescricao[primeiroAgrupamentoSelecionado] : descricaoPadrao;
+                    molduraDeSelecao.enabled = primeiroAgrupamentoSelecionado == agrupamentoEmFocoArg ? true : false;
+                }
+                else
+                {
+                    descricaoDoSelecionado.text = segundoAgrupamentoSelecionado != -1 ? agrupamentosDescricao[segundoAgrupamentoSelecionado] : descricaoPadrao;
+                    molduraDeSelecao.enabled = segundoAgrupamentoSelecionado == agrupamentoEmFocoArg ? true : false;
+                }
 
-            agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
+                agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFocoArg];
+            }
         }
         else
         {
@@ -195,6 +202,16 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
         atualizar(agrupamentoEmFoco);
         atualizarBotoes();
+    }
+
+    public void HoverEnter()
+    {
+        atualizar(agrupamentoEmFoco, true);
+    }
+
+    public void HoverExit()
+    {
+        atualizar(agrupamentoEmFoco);
     }
 
     private void ResetarAgrupamentos()
