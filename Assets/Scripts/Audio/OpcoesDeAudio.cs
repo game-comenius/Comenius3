@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class OpcoesDeAudio :  MonoBehaviour
 {
     AudioSource trilhaSonora;
-    DisplaySlider displaySlider;
-    public GameObject sliderObject;// Referencia feita pelo inspetor
+    public DisplaySlider displaySlider;
+    public GameObject sliderObject; // Referencia feita pelo inspetor
     Slider sliderScript;
     bool mutado = false; 
     float ultimoVolume;
@@ -24,7 +24,6 @@ public class OpcoesDeAudio :  MonoBehaviour
     {
         //Referência do objeto da trilha sonora
         trilhaSonora = GameObject.Find("AudioManager/TrilhaSonora").GetComponent<AudioSource>();
-        displaySlider = GetComponent<DisplaySlider>();
         sliderScript = sliderObject.GetComponent<Slider>();
         // if (SceneManager.GetActiveScene().name == "Menu" && trilhaSonora.volume == 1f) { trilhaSonora.volume = 0.4f; }
         sliderScript.value = trilhaSonora.volume;//Queremos que o valor do slider seja o mesmo quando trocamos de cena.
@@ -35,8 +34,6 @@ public class OpcoesDeAudio :  MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Fazer com que o objeto slider seja ativado apenas se o cursor estiver sobre este objeto e suas crianças;
-        sliderObject.SetActive(displaySlider.highLighted);
         // Se o volume for zerado manualmente(sem apertar o botão de mutar), a variavel mutado sera considerada verdadeira.
         if (sliderScript.value == 0f)
         {            
@@ -56,22 +53,24 @@ public class OpcoesDeAudio :  MonoBehaviour
     }
     public void Mutar()
     {
-        if (!mutado)
-        {
-            if(sliderScript.value != 0.0f)
+        if (displaySlider.highLighted) {
+            if (!mutado)
             {
-                ultimoVolume = sliderScript.value;
+                if(sliderScript.value != 0.0f)
+                {
+                    ultimoVolume = sliderScript.value;
+                }
+                sliderScript.value = 0;
+                imagemBotaoAudio.texture = botaoMutado;
+                imagemBotaoAudio.color = new Color(imagemBotaoAudio.color.r, imagemBotaoAudio.color.g, imagemBotaoAudio.color.b, 0.3f);
+                mutado = true;
             }
-            sliderScript.value = 0;
-            imagemBotaoAudio.texture = botaoMutado;
-            imagemBotaoAudio.color = new Color(imagemBotaoAudio.color.r, imagemBotaoAudio.color.g, imagemBotaoAudio.color.b, 0.3f);
-            mutado = true;
+            else
+            {
+                sliderScript.value = ultimoVolume;
+                mutado = false;
+            }
         }
-        else
-        {
-            sliderScript.value = ultimoVolume;
-            mutado = false;
-        }        
     }
     void EstadoImagemDoBotao()
     {
