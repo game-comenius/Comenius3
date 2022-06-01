@@ -9972,6 +9972,7 @@ GameObject:
   - component: {fileID: 1183673679}
   - component: {fileID: 1183673678}
   - component: {fileID: 1183673677}
+  - component: {fileID: 1183673680}
   m_Layer: 5
   m_Name: Sim
   m_TagString: Untagged
@@ -10044,6 +10045,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1183673680}
+        m_TargetAssemblyTypeName: GameStateMethodCaller, Assembly-CSharp
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1926857494}
         m_TargetAssemblyTypeName: TrocadorDeCena, Assembly-CSharp
         m_MethodName: TrocarCena
@@ -10094,6 +10107,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183673675}
   m_CullTransparentMesh: 0
+--- !u!114 &1183673680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162aa7f1acc853242a8e180a446a93ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1185207349
 SpriteRenderer:
   m_ObjectHideFlags: 0
