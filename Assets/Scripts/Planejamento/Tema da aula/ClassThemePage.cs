@@ -51,6 +51,7 @@ public class ClassThemePage : PaginaPlanejamento
     public void ConfirmClassTheme()
     {
         EstadoDoJogo.Instance.Tema = themeInput.text;
+        EstadoDoJogo.Instance.SaveState();  // Salva o estado de jogo atual para consultas futuras
     }
 
     public void UpdateHelpText()

@@ -105,12 +105,8 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
 
     public int FaseAtual { get; set; }
 
-    // Temas de cada fase
-
     // Dados de cada fase
-    public RegisteredState Fase1 { get; set; }
-    public RegisteredState Fase2 { get; set; }
-    public RegisteredState Fase3 { get; set; }
+    public RegisteredState[] RegisteredStates;
 
     // Esta estrutura é um container para armazenar dados de cada fase. Os dados serão reacessados para a consulta no
     // futuro
@@ -119,10 +115,44 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         public NivelDeEnsino NivelDeEnsino { get; set; }
         public AreaDeConhecimento AreaDeConhecimento { get; set; }
         public Inteligencias Inteligencias { get; set; }
-        public Metodologia metodologia { get; set; }
-        public Midia[] midias { get; set; }
+        public Metodologia Metodologia { get; set; }
+        public Midia[] Midias { get; set; }
         public Sprite SpriteIconePersonagem { get; set; }
         public string Tema { get; set; }
+    }
+
+    public void SaveState()
+    {
+        if (RegisteredStates == null)
+            RegisteredStates = new RegisteredState[3];
+
+        RegisteredStates[FaseAtual].NivelDeEnsino = nivelDeEnsino;
+        RegisteredStates[FaseAtual].AreaDeConhecimento = areaDeConhecimento;
+        RegisteredStates[FaseAtual].Inteligencias = inteligencias;
+        RegisteredStates[FaseAtual].Metodologia = metodologia;
+        RegisteredStates[FaseAtual].Midias = midias;
+        RegisteredStates[FaseAtual].SpriteIconePersonagem = SpriteIconePersonagem;
+        RegisteredStates[FaseAtual].Tema = tema;
+    }
+
+    public void AdvanceLevel()
+    {
+        FaseAtual++;
+        midias = null;
+        Tema = "";
+    }
+
+    // TODO: Adicionar o reset geral no final dos créditos
+    public void Reset()
+    {
+        NivelDeEnsino = null;
+        AreaDeConhecimento = null;
+        Inteligencias = null;
+        Metodologia = null;
+        Midias = null;
+        Tema = null;
+        FaseAtual = 0;
+        RegisteredStates = null;
     }
 
     [HideInInspector] public List<FlagDeEstadoDeJogo> flags;  // Não utilizado
