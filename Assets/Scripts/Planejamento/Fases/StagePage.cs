@@ -24,8 +24,6 @@ public class StagePage : PaginaPlanejamento
         iconManager.HideIcon(3);
 
         iconManager.SetIcon(0, methodologySprite);
-
-        iconAnimator.Play("Ícone-Anim", 0);
     }
 
     private void OnDisable()
