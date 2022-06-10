@@ -4,7 +4,6 @@ public class StagePage : PaginaPlanejamento
 {
     [SerializeField] private Methodology methodology;
     [SerializeField] private Sprite methodologySprite;
-    [SerializeField] private Animator iconAnimator;
 
     private enum Methodology
     {
