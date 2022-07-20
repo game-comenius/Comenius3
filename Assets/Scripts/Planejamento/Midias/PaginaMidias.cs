@@ -330,22 +330,7 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void atualizarBotoes()
     {
-        if (paginaAtual + 1 == paginas.Length)
-        {
-            botaoProximaPagina.interactable = false;
-        }
-        else
-        {
-            botaoProximaPagina.interactable = true;
-        }
-
-        if (paginaAtual == 0)
-        {
-            botaoPaginaAnterior.interactable = false;
-        }
-        else
-        {
-            botaoPaginaAnterior.interactable = true;
-        }
+        botaoProximaPagina.interactable = paginaAtual + 1 < paginas.Length;
+        botaoPaginaAnterior.interactable = paginaAtual > 0;
     }
 }
