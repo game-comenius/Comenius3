@@ -7,6 +7,7 @@ public class UnforeseenEventSelector : MonoBehaviour
 {
     public UnityEvent OnSelectionEvent;
 
+    // TODO: Trocar as listas por arrays
     [SerializeField] private List<MomentoInteracao> unforeseenEventsInfantil;
     [SerializeField] private List<MomentoInteracao> UnforeseenEventsFundamental;
     [SerializeField] private List<MomentoInteracao> UnforeseenEventsMedio;
