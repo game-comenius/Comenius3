@@ -4840,7 +4840,7 @@ GameObject:
   - component: {fileID: 378707593}
   - component: {fileID: 378707592}
   m_Layer: 5
-  m_Name: Aviso de fim de aula
+  m_Name: Resultado do lugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8936,6 +8936,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &685417921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685417922}
+  - component: {fileID: 685417924}
+  - component: {fileID: 685417923}
+  m_Layer: 5
+  m_Name: Preview
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &685417922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685417921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1397575438}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &685417923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685417921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &685417924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685417921}
+  m_CullTransparentMesh: 1
 --- !u!1 &690016826
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13871,7 @@ GameObject:
   - component: {fileID: 1113159287}
   - component: {fileID: 1113159288}
   - component: {fileID: 1113159289}
-  - component: {fileID: 1113159290}
+  - component: {fileID: 1113159291}
   m_Layer: 0
   m_Name: Interaction Manager
   m_TagString: GameController
@@ -13867,18 +13943,6 @@ MonoBehaviour:
   OnScoreChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScoreBar, Assembly-CSharp
-        m_MethodName: UpdateBar
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1636123738}
         m_TargetAssemblyTypeName: StateMachineController, Assembly-CSharp
         m_MethodName: UpdateScore
@@ -13894,10 +13958,10 @@ MonoBehaviour:
   OnExitWithNoDropdown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ClassDurationBar, Assembly-CSharp
-        m_MethodName: UpdateBar
-        m_Mode: 1
+      - m_Target: {fileID: 1113159286}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13906,10 +13970,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1113159286}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1636123738}
+        m_TargetAssemblyTypeName: StateMachineController, Assembly-CSharp
+        m_MethodName: AdvanceState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13925,7 +13989,7 @@ MonoBehaviour:
   text: {fileID: 1660486534}
   okButton: {fileID: 1967263025}
   dropdown: {fileID: 1660384718}
-  scoreOnRightAnswer: 10
+  scoreOnRightAnswer: 0
 --- !u!114 &1113159289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13941,7 +14005,7 @@ MonoBehaviour:
   feedback: {fileID: 1936688008}
   alunoRenderer: {fileID: 1924354354}
   texto: {fileID: 1004943021}
---- !u!114 &1113159290
+--- !u!114 &1113159291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13950,7 +14014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1113159286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b1482db7f482e42b5a2cfa5720cb83, type: 3}
+  m_Script: {fileID: 11500000, guid: 9282fdccfb334784eb0d3b0e3137b24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnSelectionEvent:
@@ -13968,104 +14032,41 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1569693888}
-        m_TargetAssemblyTypeName: FeedbackBalloonController, Assembly-CSharp
-        m_MethodName: UpdateBalloon
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  feedbacksInfantil:
-  - {fileID: 11400000, guid: 21f48908cf27b494ebc8c42b206a995b, type: 2}
-  - {fileID: 11400000, guid: 1ab7a139206a66640b818f53b3f90a63, type: 2}
-  - {fileID: 11400000, guid: 246a6b02622bad541bcd51d89b6b77d7, type: 2}
-  - {fileID: 11400000, guid: d294d0a0df4efd448af9ed8ef477c6b7, type: 2}
-  - {fileID: 11400000, guid: 9571a791a9eae0e459f32939392fef2a, type: 2}
-  - {fileID: 11400000, guid: 1f52b2d82a59cf24081619bc14faaae4, type: 2}
-  - {fileID: 11400000, guid: 6fac54f2afe89744d9b24d8418cb07d9, type: 2}
-  - {fileID: 11400000, guid: 204940d5da3f8c84da52d2f00764f38e, type: 2}
-  - {fileID: 11400000, guid: 0a5f91dbf76f8b24a99b4dcf34a6afa2, type: 2}
-  - {fileID: 11400000, guid: 6dba5be7dafb58343bc8bec10271be31, type: 2}
-  - {fileID: 11400000, guid: b54e1d7e96b44544aadb66a2b0afb846, type: 2}
-  - {fileID: 11400000, guid: 21782a7dedf774f41ac3cd35871db8f0, type: 2}
-  - {fileID: 11400000, guid: bad38d1c03a2b88449c48947160e4948, type: 2}
-  - {fileID: 11400000, guid: 5e82ea1830d4a014a84549ad947ed06e, type: 2}
-  - {fileID: 11400000, guid: 943153059bce7cf40921b7c386c56070, type: 2}
-  - {fileID: 11400000, guid: 570b339f1f005804cbf52508e88257df, type: 2}
-  - {fileID: 11400000, guid: 0a06b7c620ff7e94c9fa4596086bfeba, type: 2}
-  - {fileID: 11400000, guid: acff3e1506ad07143ade8f9f449aae0d, type: 2}
-  - {fileID: 11400000, guid: 09050db9dc2fb114e89066639ba65419, type: 2}
-  - {fileID: 11400000, guid: 48d46123d2305294ebf5e4031aef034a, type: 2}
-  feedbacksFundamental:
-  - {fileID: 11400000, guid: f068b91c3e904bb4ba08841fb5085f36, type: 2}
-  - {fileID: 11400000, guid: 46c8eb536d0667c4cb0a304848a2400b, type: 2}
-  - {fileID: 11400000, guid: 82717e260c26798418e25f93d107162a, type: 2}
-  - {fileID: 11400000, guid: bfc981ef215401d4ea313cd4b70a5e2a, type: 2}
-  - {fileID: 11400000, guid: a720ceac2cf77bf45a984aec53ceadbe, type: 2}
-  - {fileID: 11400000, guid: 28db0447b84ff3647ac43a8213534569, type: 2}
-  - {fileID: 11400000, guid: c15bef9759d629148855a4b555b7130e, type: 2}
-  - {fileID: 11400000, guid: df6be7d627f35194da3660271c63a7c2, type: 2}
-  - {fileID: 11400000, guid: 46af7bb6758c6ea448a594fa4fe65aa9, type: 2}
-  - {fileID: 11400000, guid: cb21e7f1826c82247b8b82d60c6ac134, type: 2}
-  - {fileID: 11400000, guid: 44ff77ad956ffe04fbbb57f58c584284, type: 2}
-  - {fileID: 11400000, guid: ecf9e9609011a9a47b02248b9f0944d8, type: 2}
-  - {fileID: 11400000, guid: a75537a26af3bdc4aaac7ca50a8ced52, type: 2}
-  - {fileID: 11400000, guid: e0aad68b0ac4da248a4be81b5ecd35d7, type: 2}
-  - {fileID: 11400000, guid: bbc9a095290f0224d812df6352263b5a, type: 2}
-  - {fileID: 11400000, guid: 29bc99632a7711b4aa5c94edb9543d66, type: 2}
-  - {fileID: 11400000, guid: 3bd39bc211830e34ab54e0cca4b3a50c, type: 2}
-  - {fileID: 11400000, guid: 7a5867adc742eaf4a9657f029e308d3f, type: 2}
-  - {fileID: 11400000, guid: 9770f1d4835e75a41be63534684e7996, type: 2}
-  - {fileID: 11400000, guid: cb0fd40021bd7e34586ff48db43ccfe0, type: 2}
-  feedbacksMedio:
-  - {fileID: 11400000, guid: 3e1eee1319780c54fb04b285bb06ad45, type: 2}
-  - {fileID: 11400000, guid: 7e2dec1fc9c72a241bc86d753cf3aae1, type: 2}
-  - {fileID: 11400000, guid: 3a6543ecb0b29a34489899922a74dce3, type: 2}
-  - {fileID: 11400000, guid: f5cafbbebab4c40439d6ed67209d68f4, type: 2}
-  - {fileID: 11400000, guid: a50fdf560a9ef614baf19aac99bcd537, type: 2}
-  - {fileID: 11400000, guid: 4f8bd88e84aba9240a0d4fc0e82d002c, type: 2}
-  - {fileID: 11400000, guid: 82ee53af042c20d4abec166488edf4df, type: 2}
-  - {fileID: 11400000, guid: b894fc7ced7ad474b956275ab440ad56, type: 2}
-  - {fileID: 11400000, guid: a4044cb5fd8192f41b997822fd80186e, type: 2}
-  - {fileID: 11400000, guid: de5a3071e8c245b45887956d23b0d70f, type: 2}
-  - {fileID: 11400000, guid: 417b1c823bd268d48a52f704a3912057, type: 2}
-  - {fileID: 11400000, guid: 93451e6f18a7ef94d9bdf9ad6e65fef7, type: 2}
-  - {fileID: 11400000, guid: 3feef31acbce1b64cad8adaa12d6920d, type: 2}
-  - {fileID: 11400000, guid: 36f782b7ea62c144bb981ded3097d955, type: 2}
-  - {fileID: 11400000, guid: e7c86461f75e1d443951d638d3609a76, type: 2}
-  - {fileID: 11400000, guid: 0d76280f84a094e478cb6eb08e185898, type: 2}
-  - {fileID: 11400000, guid: 662914722f548394c804fc80b62a294a, type: 2}
-  - {fileID: 11400000, guid: 4594142a4b3c37a44b3941f1ba436202, type: 2}
-  - {fileID: 11400000, guid: 433f232656bfbe246a5f9c883099361b, type: 2}
-  - {fileID: 11400000, guid: 5423661dd4def37458edea2cdbbccbd5, type: 2}
-  feedbacksSuperior:
-  - {fileID: 11400000, guid: 91e0c73ccd17c9a4bb566364fca61085, type: 2}
-  - {fileID: 11400000, guid: 5c9709a242e89394f9d9afbb8ec8f614, type: 2}
-  - {fileID: 11400000, guid: dad5921103425a446a1cb512fea6afaf, type: 2}
-  - {fileID: 11400000, guid: 606072adf2f058349af66f0c26c21ca3, type: 2}
-  - {fileID: 11400000, guid: 77c93060e1869e449a812b4ac4965361, type: 2}
-  - {fileID: 11400000, guid: d209f5f5e46896e4bb5f3a548c104599, type: 2}
-  - {fileID: 11400000, guid: cde75bb3a60eb00459c5dce742e11199, type: 2}
-  - {fileID: 11400000, guid: 6e9aa9f85a1a72e4e84aeb07e2b5c750, type: 2}
-  - {fileID: 11400000, guid: 96b03d4d7d415b44b92ba4b908b6c0bb, type: 2}
-  - {fileID: 11400000, guid: 8b28e19a6860c1c498ee9edbc9fb7b58, type: 2}
-  - {fileID: 11400000, guid: 827d01ad4ebac9d49a19b355fdada0aa, type: 2}
-  - {fileID: 11400000, guid: 10bbbb1c3599de045ae3e8c9d4d5753a, type: 2}
-  - {fileID: 11400000, guid: bf77414d233507944ba20d3e8e70f0dd, type: 2}
-  - {fileID: 11400000, guid: 94f72023aa620744b83087d205a7b7c4, type: 2}
-  - {fileID: 11400000, guid: 432c605c10d8b884982f637f37fd198d, type: 2}
-  - {fileID: 11400000, guid: 6ee1a7c7d09d98b4c9ec90ac7b649fcb, type: 2}
-  - {fileID: 11400000, guid: 6fbabc6b165d21c459c1cb97dcfbe614, type: 2}
-  - {fileID: 11400000, guid: 1541409e5e017bb4f8916f82b2845fa7, type: 2}
-  - {fileID: 11400000, guid: 957568c33b1ed3941967769c2ab1907b, type: 2}
-  - {fileID: 11400000, guid: d0b23a6a3a613074687092f21309343a, type: 2}
+  locationCharacteristicComment:
+  - {fileID: 11400000, guid: a3c088a876ad37046a9ae294154d89e4, type: 2}
+  - {fileID: 11400000, guid: 692a6a924a6204b45918209abc83c8a2, type: 2}
+  - {fileID: 11400000, guid: 6afd7cf3ba29aee40a1cf6cba41a5afe, type: 2}
+  - {fileID: 11400000, guid: 14025ee0ab1954d4091779adec1f7dfd, type: 2}
+  - {fileID: 11400000, guid: c810d6b84c7e28d4fa370ab5505ca1b0, type: 2}
+  - {fileID: 11400000, guid: 3bd4632032ff99f42a6c645b29cd72c7, type: 2}
+  - {fileID: 11400000, guid: 7e27b567026f2ea4c918ca5d3504257a, type: 2}
+  - {fileID: 11400000, guid: e4b7647849c6b8246bfb2b1ee94feffa, type: 2}
+  - {fileID: 11400000, guid: 93533bb4e5517014c92a866582e77a3b, type: 2}
+  - {fileID: 11400000, guid: e9ae87b5214b53045af2ce64ad8bdfc2, type: 2}
+  - {fileID: 11400000, guid: 4f829613ecbeae04584b2fcfd7793d84, type: 2}
+  - {fileID: 11400000, guid: 7cf57c2cd0424754da96f3499b156b3b, type: 2}
+  - {fileID: 11400000, guid: 4c05fb9eba803f94fb4e6a4fe867c42a, type: 2}
+  - {fileID: 11400000, guid: ccbcd1c297c52a540a4240f20ba09728, type: 2}
+  - {fileID: 11400000, guid: f4985d44fc1ec004b909dda65fa2b216, type: 2}
+  - {fileID: 11400000, guid: 26fe090a3fd67b54695ef52f1a9588c4, type: 2}
+  locationDefinitionComments:
+  - {fileID: 11400000, guid: b83c835142d603c4b93f8864cb5fe1a3, type: 2}
+  - {fileID: 11400000, guid: b866715d1c9b2d74694b96918abb6189, type: 2}
+  - {fileID: 11400000, guid: ae91e18fb4d290d438e86d8bd0230065, type: 2}
+  - {fileID: 11400000, guid: 8a00810159afe74408c76e1d7307f6ac, type: 2}
+  - {fileID: 11400000, guid: 2e305db3e28bea34f94f8588a0d4dc9b, type: 2}
+  - {fileID: 11400000, guid: b2eb76c3af7dffc41aa3617c8b716243, type: 2}
+  - {fileID: 11400000, guid: 033490315a93e924b89db2b009d6be77, type: 2}
+  - {fileID: 11400000, guid: 927eba5b70f666c4fbde946f430cf136, type: 2}
+  - {fileID: 11400000, guid: aa5d8146d4df36b4098f975613b4b64f, type: 2}
+  - {fileID: 11400000, guid: 55fc9046770536a4d82d3df90c9fbb30, type: 2}
+  - {fileID: 11400000, guid: f7881bc499d1e384eb7b5a838471c0f9, type: 2}
+  - {fileID: 11400000, guid: 4c316aa4439e2de47a61f40b68cdcd26, type: 2}
+  - {fileID: 11400000, guid: ebebd0e860a34b248bf6019464e8cfd8, type: 2}
+  - {fileID: 11400000, guid: dbaab65688ec11545bbb61ca8e3a6ef1, type: 2}
+  - {fileID: 11400000, guid: 61982371d43fcfc4a8c33684b913cd96, type: 2}
+  - {fileID: 11400000, guid: 44c77a9b09252b044bf2c47573059846, type: 2}
   interactionManager: {fileID: 1113159288}
-  stateMachineController: {fileID: 1636123738}
 --- !u!1 &1113486720
 GameObject:
   m_ObjectHideFlags: 0
@@ -19081,7 +19082,7 @@ GameObject:
   - component: {fileID: 1397575440}
   - component: {fileID: 1397575439}
   m_Layer: 5
-  m_Name: "Moldura do \xEDcone"
+  m_Name: Moldura do Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19099,14 +19100,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1889562702}
+  - {fileID: 685417922}
   m_Father: {fileID: 1997371717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397575439
 MonoBehaviour:
@@ -19128,7 +19129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e168ababea7fbd94b9cf91e9c73144f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13cd6fe16b9f42f419a8e28f3c829a92, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -21858,7 +21859,7 @@ GameObject:
   - component: {fileID: 1534189888}
   - component: {fileID: 1534189887}
   m_Layer: 0
-  m_Name: "M\xEDdia"
+  m_Name: "\xCDcone do lugar"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21905,7 +21906,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: 38a3cde6383fd0b42bfbd92ae927868d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d596dc657e498f4448d086c6cb9c027d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21925,7 +21926,7 @@ Transform:
   m_GameObject: {fileID: 1534189886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1569693889}
@@ -22237,7 +22238,6 @@ GameObject:
   - component: {fileID: 1569693893}
   - component: {fileID: 1569693892}
   - component: {fileID: 1569693891}
-  - component: {fileID: 1569693888}
   - component: {fileID: 1569693890}
   m_Layer: 0
   m_Name: "Bal\xE3o dos alunos"
@@ -22246,23 +22246,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1569693888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569693887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f761105980014f46bba769a668d0817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mediaSriteRenderer: {fileID: 1534189887}
-  positiveFeedbackBalloon: {fileID: 21300000, guid: de489ca64b39a4b78a93e7a6c3d8d9bf,
-    type: 3}
-  negativeFeedbackBalloon: {fileID: 21300000, guid: d4bcd76d045cc4f9e88a804bedb93d3f,
-    type: 3}
 --- !u!4 &1569693889
 Transform:
   m_ObjectHideFlags: 0
@@ -22680,7 +22663,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mediaIcon: {fileID: 951965867}
+  locationPreview: {fileID: 685417923}
+  locationText: {fileID: 2026059702}
   firstMedia: 1
+  observatorySprite: {fileID: 0}
+  circusSprite: {fileID: 0}
+  aquariumSprite: {fileID: 0}
+  theaterSprite: {fileID: 0}
+  librarySprite: {fileID: 0}
+  museumSprite: {fileID: 0}
+  parkSprite: {fileID: 0}
+  radioSprite: {fileID: 0}
+  universitySprite: {fileID: 0}
+  cinemaSprite: {fileID: 0}
+  gymSprite: {fileID: 0}
+  musicalSprite: {fileID: 0}
+  researchCenterSprite: {fileID: 0}
+  startupSprite: {fileID: 0}
+  botanicalGardenSprite: {fileID: 0}
+  NGOSprite: {fileID: 0}
 --- !u!4 &1603697012
 Transform:
   m_ObjectHideFlags: 0
@@ -23359,7 +23360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  messenger: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  messenger: {fileID: 11400000, guid: e6f0c8d0f7b979e429214f1bc7080c17, type: 2}
 --- !u!114 &1636123739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23372,9 +23373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  controladorDaAula: {fileID: 11400000, guid: e6f0c8d0f7b979e429214f1bc7080c17, type: 2}
   estadosNoQualChama:
-  - {fileID: 11400000, guid: 21fb431d42a689141b72f03142fbae38, type: 2}
+  - {fileID: 11400000, guid: 1042ac50374284f42b87428208956c6a, type: 2}
   OnSelectedStates:
     m_PersistentCalls:
       m_Calls:
@@ -23405,23 +23406,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  controladorDaAula: {fileID: 11400000, guid: e6f0c8d0f7b979e429214f1bc7080c17, type: 2}
   estadosNoQualChama:
-  - {fileID: 11400000, guid: 3ee4cdaef3fa1814299ea516ff372040, type: 2}
+  - {fileID: 11400000, guid: e074c2495df0df948a6fd856f7a8db66, type: 2}
   OnSelectedStates:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1113159290}
-        m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
-        m_MethodName: SelectFeedback
-        m_Mode: 1
+      - m_Target: {fileID: 1113159291}
+        m_TargetAssemblyTypeName: LocationCommentSelector, Assembly-CSharp
+        m_MethodName: SelectComment
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   OnNotSelectedStates:
     m_PersistentCalls:
@@ -23438,16 +23439,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f4876be71858a4eb80da08bcee890d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controladorDaAula: {fileID: 11400000, guid: 5a8eb49f4769d2746935fc579eaaea41, type: 2}
+  controladorDaAula: {fileID: 11400000, guid: e6f0c8d0f7b979e429214f1bc7080c17, type: 2}
   estadosNoQualChama:
-  - {fileID: 11400000, guid: 221c15cff663f8448a0c6c46e62bd09a, type: 2}
+  - {fileID: 11400000, guid: f95edb1241a846141a486ae5724802ee, type: 2}
   OnSelectedStates:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1113159290}
-        m_TargetAssemblyTypeName: MediaFeedbackSelector, Assembly-CSharp
-        m_MethodName: SelectFeedback
-        m_Mode: 1
+      - m_Target: {fileID: 1113159291}
+        m_TargetAssemblyTypeName: LocationCommentSelector, Assembly-CSharp
+        m_MethodName: SelectComment
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23969,13 +23970,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
-      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta3"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o incorreta"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24898,54 +24899,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1502330427}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -24962,6 +24915,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1636123738}
+        m_TargetAssemblyTypeName: StateMachineController, Assembly-CSharp
+        m_MethodName: AdvanceState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27404,103 +27369,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!1 &1889562701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1889562702}
-  - component: {fileID: 1889562705}
-  - component: {fileID: 1889562704}
-  - component: {fileID: 1889562703}
-  m_Layer: 5
-  m_Name: Sino
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1889562702
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889562701}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1397575438}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1889562703
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889562701}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 50adff97d34b1b242b50de7d185ee6b2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1889562704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889562701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1889562705
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889562701}
-  m_CullTransparentMesh: 1
 --- !u!1 &1904314511
 GameObject:
   m_ObjectHideFlags: 0
@@ -28817,7 +28685,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 235}
+  m_SizeDelta: {x: 900, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997371718
 MonoBehaviour:
@@ -29031,7 +28899,7 @@ GameObject:
   - component: {fileID: 2026059703}
   - component: {fileID: 2026059702}
   m_Layer: 5
-  m_Name: Qualidade da aula
+  m_Name: Lugar escolhido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

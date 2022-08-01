@@ -6,30 +6,24 @@ public class LocationCommentSelector : MonoBehaviour
 {
     public UnityEvent OnSelectionEvent;
 
-    [SerializeField] private MomentoInteracao[] commentsInfantil;
-    [SerializeField] private MomentoInteracao[] commentsFundamental;
-    [SerializeField] private MomentoInteracao[] commentsMedio;
-    [SerializeField] private MomentoInteracao[] commentsSuperior;
+    [SerializeField] private MomentoInteracao[] locationCharacteristicComment;
+    [SerializeField] private MomentoInteracao[] locationDefinitionComments;
     [SerializeField] private InteractionManager interactionManager;
-    [SerializeField] private StateMachineController stateMachine;
 
-    public void SelectUnforeseenEvent()
+    public void SelectComment(bool isDefinitionComment)
     {
+        EstadoDoJogo gameState = EstadoDoJogo.Instance;
+
         MomentoInteracao[] comments;
 
-        // (Switch não usado pois o nível de ensino não é constante)
-        if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
-            comments = commentsInfantil;
-        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
-            comments = commentsFundamental;
-        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
-            comments = commentsMedio;
+        if (isDefinitionComment)
+            comments = locationDefinitionComments;
         else
-            comments = commentsSuperior;
+            comments = locationCharacteristicComment;
 
         for (int i = 0; i < comments.Length; i++)
         {
-            if (comments[i].midias[0] == stateMachine.CurrentMedia().nomeMidia)
+            if (comments[i].lugar == gameState.Lugar)
             {
                 interactionManager.Interaction = comments[i];
                 break;
