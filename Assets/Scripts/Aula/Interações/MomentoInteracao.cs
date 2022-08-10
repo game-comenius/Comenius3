@@ -11,6 +11,10 @@ public class MomentoInteracao : ScriptableObject
     public bool alunoFeliz;
     public string reacaoPositiva;
     public string reacaoNegativa;
+
+    [Header("Usado apenas na ABProj")]
+    public LocationChecker.Location lugar;
+
     public static List<MomentoInteracao> momentos { get; private set; }
 
     public static MomentoInteracao GetMomentFromArchives()
