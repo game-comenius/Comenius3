@@ -65,7 +65,7 @@ public class EstadoDoJogoDebugger : MonoBehaviour
         estadoDoJogo.NivelDeEnsino = NivelDeEnsino.EducacaoInfantil;
         estadoDoJogo.AreaDeConhecimento = AreaDeConhecimento.CienciasBiologicas;
         estadoDoJogo.Inteligencias = Inteligencias.CorporalCinestesicaComNaturalista;
-        estadoDoJogo.Metodologia = Metodologia.Invertida;
+        estadoDoJogo.Metodologia = Metodologia.SAI;
         estadoDoJogo.Midias = midias;
         estadoDoJogo.SpriteCorpoPersonagem = SpriteCorpoPersonagem;
         estadoDoJogo.SpriteCabeloPersonagem = SpriteCabeloPersonagem;

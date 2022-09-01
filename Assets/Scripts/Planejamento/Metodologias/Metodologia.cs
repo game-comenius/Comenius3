@@ -21,7 +21,7 @@ public sealed class Metodologia
                         "Apresentar as respostas e avaliar os resultados."
     );
 
-    public static readonly Metodologia Invertida = new Metodologia
+    public static readonly Metodologia SAI = new Metodologia
     (
         valor: 1,
         nome: "Sala de Aula Invertida",
@@ -44,17 +44,23 @@ public sealed class Metodologia
     (
         valor: 2,
         nome: "Aprendizagem Baseada em Projetos",
-        descricao: "",
-        descricaoLonga: ""
-    );
-
-    // OBSOLETA
-    public static readonly Metodologia ABJ = new Metodologia
-    (
-        valor: 3,
-        nome: "Aprendizagem Baseada em Jogos",
-        descricao: "",
-        descricaoLonga: ""
+        descricao: "<bAprendizagem Baseada em Projeto</b>\n\n A Aprendizagem Baseada em Projetos é focada na construção de conhecimento por intermédio de um trabalho " +
+                   "longo e contínuo de estudo, cujo propósito é atender a uma indagação, a um desafio ou a um problema. Dessa" +
+                   " forma, permite que vários estudantes trabalhem juntos em torno de um problema e aprendam uns com os outros.",
+        descricaoLonga: "O problema do projeto é multidimensional e altamente interativo, uma vez que insere os participantes em " +
+                        "um processo de investigação estruturado em torno de questões complexas. Diante disso, a grande contribuição" +
+                        " dessa metodologia em sala de aula reside na ênfase ao processo de aprendizagem e na interação entre os " +
+                        "estudantes.\nOs projetos permitem unificar vários aspectos importantes do processo de aprendizagem: a ação " +
+                        "protagonizada pelo aluno, a intencionalidade dessa ação e sua inserção em um contexto social. Por meio dos " +
+                        "princípios de autonomia, pesquisa, ação e reflexão, o desenvolvimento de um projeto parte da definição de um " +
+                        "tema, da proposição de desafios e do planejamento e execução de estratégias para o cumprimento das ações " +
+                        "propostas.\n\nPara tanto, o docente deve observar os seguintes aspectos:\n• Conteúdo significativo: relevância " +
+                        "para os estudantes.\n• Perguntas instigantes: mobilizar o grupo para a investigação, apresentando diferentes " +
+                        "possibilidades de solução.\n• Pesquisa e inovação: consultar diferentes fontes especializadas, buscando resultados " +
+                        "criativos e inovadores.\n• Valorização do processo: Aspectos relacionais e cognitivos do processo são fundamentais " +
+                        "para a vida dos estudantes.\n\n- Sequência Didática\n1. Definir o escopo / Planejar as etapas do projeto - " +
+                        "Sala de Aula\n2. Executar as ações previstas / Monitorar o desenvolvimento do projeto - Cidade\n3. Apresentar " +
+                        "os resultados - Sala de Aula - Colégio (epílogo)"
     );
 
     public readonly int valor;
@@ -76,9 +82,8 @@ public sealed class Metodologia
         Metodologia[] TodasAsMetodologias =
         {
             ABP,
-            Invertida,
-            ABProj,
-            ABJ
+            SAI,
+            ABProj
         };
         return TodasAsMetodologias;
     }
@@ -115,76 +120,18 @@ public sealed class Metodologia
     // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=0
     public NomeDeMidia[] NomesDeMidiasDaMetodologia()
     {
-        if (this == Metodologia.ABJ)
+        return new NomeDeMidia[]
         {
-            // TODO
-            return null;
-        }
-        else // this == Metodologia.ABP:
-        {
-            return new NomeDeMidia[]
-            {
-                NomeDeMidia.Lousa,
-                NomeDeMidia.LivroDidatico,
-                NomeDeMidia.CadernosECartazes,
-                NomeDeMidia.Televisao,
-                NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
-                NomeDeMidia.EditoresDeAudioEVideo,
-                NomeDeMidia.Aplicativos,
-                NomeDeMidia.Plataformas,
-                NomeDeMidia.Jogos,
-                NomeDeMidia.ProjetorMultimidia,
-            };
-        }
-    }
-
-    // Cada metodologia define a pontuação das mídias usadas nela de acordo com as categorias dessas mídias
-    // Fonte = https://docs.google.com/spreadsheets/d/1sndl_nQUZNEWMg2jXrBp6sa1fAIk7xq5WFwrJDtTWHI/edit#gid=1166836280
-    // A pontuação será entre [0, 1] (inclusive)
-    public float PontuacaoParaCategoriasDeMidia(CategoriasDeMidia categoria, bool receberaPenalidade)
-    {
-        float pontuacao = 0;
-
-        float incrementoPadrao = 1.0f;
-
-        float multiplicadorMidiaOtima = 1 / 1f;
-        float multiplicadorMidiaBoa = 1 / 2f;
-        float multiplicadorMidiaRegular = 1 / 3f;
-
-        // Se a pontuação receberá penalidade, os multiplicadores serão diferentes
-        if (receberaPenalidade)
-        {
-            multiplicadorMidiaOtima = multiplicadorMidiaBoa;
-            multiplicadorMidiaBoa = multiplicadorMidiaRegular;
-            multiplicadorMidiaRegular = 0;
-        }
-
-        // Número máximo de categorias simultaneas em um objeto CategoriasDeMidia, padrão = 2
-        // Ou seja, uma mídia pode pertencer à, no máximo, x categorias simultaneamente.
-        int numeroMaxDeCategoriasSimultaneas = 2;
-
-        if (this == Metodologia.ABJ)
-        {
-            // TODO
-            return 0;
-        }
-        else if (this == Metodologia.ABP)
-        {
-            if (categoria.HasFlag(CategoriasDeMidia.ConsultaRepositorio)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
-            if (categoria.HasFlag(CategoriasDeMidia.Digital)) pontuacao += incrementoPadrao * multiplicadorMidiaOtima;
-
-            if (categoria.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
-            if (categoria.HasFlag(CategoriasDeMidia.Exposicao)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
-            if (categoria.HasFlag(CategoriasDeMidia.Impressa)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
-            if (categoria.HasFlag(CategoriasDeMidia.AudioVisual)) pontuacao += incrementoPadrao * multiplicadorMidiaBoa;
-
-            if (categoria.HasFlag(CategoriasDeMidia.Popular)) pontuacao += incrementoPadrao * multiplicadorMidiaRegular;
-        }
-        else //this == Metodologia.Invertida
-        {
-
-        }
-
-        return pontuacao / numeroMaxDeCategoriasSimultaneas;
+            NomeDeMidia.Lousa,
+            NomeDeMidia.LivroDidatico,
+            NomeDeMidia.CadernosECartazes,
+            NomeDeMidia.Televisao,
+            NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas,
+            NomeDeMidia.EditoresDeAudioEVideo,
+            NomeDeMidia.Aplicativos,
+            NomeDeMidia.Plataformas,
+            NomeDeMidia.Jogos,
+            NomeDeMidia.ProjetorMultimidia,
+        };
     }
 }
