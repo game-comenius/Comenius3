@@ -1,9 +1,16 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PaginaMidias : PaginaPlanejamento
 {
+    [System.Serializable] public class ViewAdvance : UnityEvent<PaginaMidias> { }
+    public ViewAdvance OnViewAdvance;
+
+    [System.Serializable] public class ViewReturn : UnityEvent<PaginaMidias> { }
+    public ViewReturn OnViewReturn;
+
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
@@ -97,8 +104,8 @@ public class PaginaMidias : PaginaPlanejamento
 
             // Posiciona o anel de seleção sobre o botão selecionado
             anelDeSelecao.enabled = true;
-            var posicaoDoIcone = icone.GetComponent<RectTransform>().anchoredPosition;
-            anelDeSelecao.rectTransform.anchoredPosition = posicaoDoIcone;
+            anelDeSelecao.transform.SetParent(icone.transform);
+            anelDeSelecao.rectTransform.anchoredPosition = Vector2.zero;
 
             atualizar(icone);
             atualizarEstadoDeJogo(icone);
@@ -219,6 +226,7 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Confirmar()
     {
+        OnViewAdvance.Invoke(this);
         primeiraMidia = false;
 
         primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
@@ -241,6 +249,7 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Voltar()
     {
+        OnViewReturn.Invoke(this);
         primeiraMidia = true;
 
         primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
@@ -269,7 +278,7 @@ public class PaginaMidias : PaginaPlanejamento
         paginas[paginaAtual].SetActive(true);
 
         DefinirEstadoDoAnelDeSelecao();
-        atualizarBotoes();
+        AtualizarBotoes();
     }
 
     public void VoltarPagina()
@@ -280,7 +289,17 @@ public class PaginaMidias : PaginaPlanejamento
         paginas[paginaAtual].SetActive(true);
 
         DefinirEstadoDoAnelDeSelecao();
-        atualizarBotoes();
+        AtualizarBotoes();
+    }
+
+    public void UpdateViewData(string defaultDescription, GameObject[] pages, Button nextButton, Button backButton)
+    {
+        descricaoPadrao = defaultDescription;
+        paginas = pages;
+        botaoProximaPagina = nextButton;
+        botaoPaginaAnterior = backButton;
+
+        AtualizarBotoes();
     }
 
     private void ResetarPaginas()
@@ -328,24 +347,9 @@ public class PaginaMidias : PaginaPlanejamento
         anelDeSelecao.enabled = false;
     }
 
-    private void atualizarBotoes()
+    private void AtualizarBotoes()
     {
-        if (paginaAtual + 1 == paginas.Length)
-        {
-            botaoProximaPagina.interactable = false;
-        }
-        else
-        {
-            botaoProximaPagina.interactable = true;
-        }
-
-        if (paginaAtual == 0)
-        {
-            botaoPaginaAnterior.interactable = false;
-        }
-        else
-        {
-            botaoPaginaAnterior.interactable = true;
-        }
+        botaoProximaPagina.interactable = paginaAtual + 1 < paginas.Length;
+        botaoPaginaAnterior.interactable = paginaAtual > 0;
     }
 }

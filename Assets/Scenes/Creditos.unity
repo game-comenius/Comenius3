@@ -764,7 +764,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 470, y: 100}
+  m_SizeDelta: {x: 470, y: 170}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &875636021
 MonoBehaviour:
@@ -879,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>UX e Gest\xE3o</b>\n\nIsadora Beagle"
+  m_Text: "<b>UX, Gest\xE3o e QA</b>\n\nIsadora Beagle"
 --- !u!222 &1061776081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.18039216, g: 0.18431373, b: 0.2, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 1210776065}
   - component: {fileID: 1210776064}
   m_Layer: 5
-  m_Name: Arte
+  m_Name: Arte e UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Arte</b>\n\nIndra Rosa da Silva\nLucas Emanuel Leite da Rosa Gomes\nMaria
+  m_Text: "<b>Arte e UI</b>\n\nIndra Rosa da Silva\nLucas Emanuel Leite da Rosa Gomes\nMaria
     Ant\xF4nia Petrassi\nNatan Salles Medeiros\nVit Duarte"
 --- !u!222 &1210776065
 CanvasRenderer:
@@ -1234,6 +1234,7 @@ RectTransform:
   - {fileID: 875636020}
   - {fileID: 1894611801}
   - {fileID: 1210776063}
+  - {fileID: 1478647995}
   - {fileID: 1720810538}
   - {fileID: 1729549210}
   - {fileID: 1061776079}
@@ -1299,6 +1300,7 @@ MonoBehaviour:
   - {fileID: 875636019}
   - {fileID: 1894611800}
   - {fileID: 1210776062}
+  - {fileID: 1478647994}
   - {fileID: 1720810537}
   - {fileID: 1729549209}
   - {fileID: 1061776078}
@@ -1478,6 +1480,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758467b616a2d94dbef9433ceadd761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1478647994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478647995}
+  - component: {fileID: 1478647997}
+  - component: {fileID: 1478647996}
+  m_Layer: 5
+  m_Name: Arte da Cidade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1478647995
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478647994}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1320251778}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -400}
+  m_SizeDelta: {x: 470, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1478647996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478647994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: be5c4f40e5a266847892aac5c8427204, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "<b>Cen\xE1rio da Cidade</b>\n\nVit Duarte"
+--- !u!222 &1478647997
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478647994}
+  m_CullTransparentMesh: 0
 --- !u!1 &1720810537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1835,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 470, y: 130}
+  m_SizeDelta: {x: 470, y: 170}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1894611802
 MonoBehaviour:
@@ -1788,7 +1870,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Game Design</b>\n\nF\xE1bio Medeiros\nMatheus Leutchuk Cademartori"
+  m_Text: "<b>Game Design</b>\n\nF\xE1bio Medeiros\nMatheus Leutchuk Cademartori\nIsadora
+    Beagle"
 --- !u!222 &1894611803
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class PaginaResumoSAI : PaginaPlanejamento
 
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.Metodologia == Metodologia.Invertida)
+        if (estadoDoJogo.Metodologia == Metodologia.SAI)
         {
             IconeMidia1.sprite = estadoDoJogo.Midias[0].sprite;
             IconeMidia2.sprite = estadoDoJogo.Midias[1].sprite;

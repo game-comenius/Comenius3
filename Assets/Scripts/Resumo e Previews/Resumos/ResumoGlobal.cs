@@ -43,6 +43,7 @@ public class ResumoGlobal : MonoBehaviour
     private void UpdatePage()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
+        string fase;
 
         if (pageIndex == EstadoDoJogo.Instance.FaseAtual)
         {
@@ -50,8 +51,6 @@ public class ResumoGlobal : MonoBehaviour
             iconeNivelDeEnsino.sprite = gameState.NivelDeEnsino.sprite;
             iconeAreaDeConhecimento.sprite = gameState.AreaDeConhecimento.sprite;
             iconeInteligenciasMultiplas.sprite = gameState.Inteligencias.sprite;
-
-            string fase;
 
             if (gameState.FaseAtual == 0)
                 fase = "primeira";
@@ -77,8 +76,6 @@ public class ResumoGlobal : MonoBehaviour
             iconeNivelDeEnsino.sprite = gameState.RegisteredStates[pageIndex].NivelDeEnsino.sprite;
             iconeAreaDeConhecimento.sprite = gameState.RegisteredStates[pageIndex].AreaDeConhecimento.sprite;
             iconeInteligenciasMultiplas.sprite = gameState.RegisteredStates[pageIndex].Inteligencias.sprite;
-
-            string fase;
 
             if (pageIndex == 0)
                 fase = "primeira";

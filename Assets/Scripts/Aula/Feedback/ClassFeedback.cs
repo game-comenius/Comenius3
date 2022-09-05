@@ -146,7 +146,6 @@ public class ClassFeedback : MonoBehaviour
             }
         }
 
-
         methodologyIcon.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
 
         media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;

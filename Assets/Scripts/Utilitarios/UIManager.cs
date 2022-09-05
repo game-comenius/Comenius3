@@ -9,8 +9,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject defaultStartingPanel;
     // Um grupo de paineis se refere a um painel que contém outros painéis
     [SerializeField] private GameObject defaultStartingPanelGroup;
-    [SerializeField] private GameObject secondLevelPanelGroup;
-    [SerializeField] private GameObject secondLevelPanel;
+    [SerializeField] private GameObject[] levelPanels;
+    [SerializeField] private GameObject levelStartPanelGroup;
 
     private GameObject currentPanel;
     private GameObject currentPanelGroup;
@@ -21,9 +21,9 @@ public class UIManager : MonoBehaviour
         currentPanel = defaultStartingPanel;
         currentPanelGroup = defaultStartingPanelGroup;
 
-        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual == 1)
+        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual > 0)
         {
-            SecondLevel();
+            AdvanceLevel();
         }
     }
 
@@ -41,16 +41,10 @@ public class UIManager : MonoBehaviour
         currentPanelGroup = mainPanel;
     }
 
-    public void SecondLevel()
+    public void AdvanceLevel()
     {
-        //Change panel group.
-        currentPanelGroup.SetActive(false);
-        secondLevelPanelGroup.SetActive(true);
-        currentPanelGroup = secondLevelPanelGroup;
-
-        //Change panel.
-        currentPanel.SetActive(false);
-        secondLevelPanel.SetActive(true);
-        currentPanel = secondLevelPanel;
+        EstadoDoJogo gameState = EstadoDoJogo.Instance;
+        ChangePanelGroup(levelStartPanelGroup);
+        ChangePanel(levelPanels[gameState.FaseAtual]);
     }
 }

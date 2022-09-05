@@ -93,6 +93,9 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         set => tema = value;
     }
 
+    private LocationChecker.Location lugar;
+    public LocationChecker.Location Lugar { get; set; }
+
     // Características da personagem selecionada, observar se estes valores != null
     public Sprite SpriteCorpoPersonagem { get; set; }
     public Sprite SpriteCabeloPersonagem { get; set; }
