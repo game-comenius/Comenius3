@@ -26,7 +26,7 @@ public class PaginaResumoABProj : PaginaPlanejamento
 
         var estadoDoJogo = EstadoDoJogo.Instance;
 
-        if (estadoDoJogo.Metodologia == Metodologia.ABProj)
+        if (estadoDoJogo.Metodologia == Metodologia.ABProj || true)
         {
             IconeMidia1.sprite = estadoDoJogo.Midias[0].sprite;
             IconeMidia2.sprite = estadoDoJogo.Midias[1].sprite;
