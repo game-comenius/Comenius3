@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(InteractionManager))]
 public class UnforeseenEventSelector : MonoBehaviour
@@ -17,8 +18,8 @@ public class UnforeseenEventSelector : MonoBehaviour
 
     public void SelectUnforeseenEvent()
     {
+       int num = Random.Range(0, 2);
         List<MomentoInteracao> unforeseenEvents;
-
         // (Switch não usado pois o nível de ensino não é constante)
         if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
             unforeseenEvents = unforeseenEventsInfantil;
@@ -29,14 +30,26 @@ public class UnforeseenEventSelector : MonoBehaviour
         else
             unforeseenEvents = UnforeseenEventsSuperior;
 
-        for (int i = 0; i < unforeseenEvents.Count; i++)
+        if(num == 1 && SceneManager.GetActiveScene().name == "CidadeFuncional")
         {
-            if (unforeseenEvents[i].midias[0] == stateMachine.CurrentMedia().nomeMidia)
+            int random1 = Random.Range(14, 18);
+            interactionManager.Interaction = unforeseenEvents[random1];
+        }
+        else
+        {
+         
+
+            for (int i = 0; i < unforeseenEvents.Count; i++)
             {
-                interactionManager.Interaction = unforeseenEvents[i];
-                break;
+             
+                if (unforeseenEvents[i].midias[0] == stateMachine.CurrentMedia().nomeMidia)
+                {
+                    interactionManager.Interaction = unforeseenEvents[i];
+                    break;
+                }
             }
         }
+    
 
         OnSelectionEvent.Invoke();
     }

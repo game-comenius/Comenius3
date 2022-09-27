@@ -20,6 +20,9 @@ public enum NomeDeMidia
     Plataformas = 11,
     Aplicativos = 12,
     ProjetorMultimidia = 13,
+    Celular = 14,
+    Tablet = 15,
+    Notebook = 16,
 }
 
 public static class NomeDeMidiaExtensions
@@ -43,6 +46,12 @@ public static class NomeDeMidiaExtensions
                 return CategoriasDeMidia.Popular | CategoriasDeMidia.AudioVisual;
             case NomeDeMidia.RedesSociais:
             case NomeDeMidia.Jogos:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
+            case NomeDeMidia.Celular:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
+            case NomeDeMidia.Tablet:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
+            case NomeDeMidia.Notebook:
                 return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
             case NomeDeMidia.CadernosECartazes:
                 return CategoriasDeMidia.ProducaoArmazenamento | CategoriasDeMidia.Impressa;

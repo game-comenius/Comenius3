@@ -146,6 +146,70 @@ public class ClassFeedback : MonoBehaviour
             }
         }
 
+        else if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Projetos")
+        {
+            Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia +" " + EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
+            Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
+            Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
+            Debug.Log(EstadoDoJogo.Instance.Inteligencias);
+            Debug.Log(combo);
+            switch (combo)
+            {
+                case ComboChecker.Combo.abpjIdeal1:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.abpjIdeal2:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.abpjIdeal3:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.abpjIdeal4:
+                    comboText.text = specificFeedbacksIdeal[0];
+                    break;
+                case ComboChecker.Combo.abpjBoa1:
+                    comboText.text = specificFeedbacksBoa[0];
+                    break;
+
+                case ComboChecker.Combo.abpjBoa2:
+                    comboText.text = specificFeedbacksBoa[1];
+                    break;
+
+                case ComboChecker.Combo.abpjBoa3:
+                    comboText.text = specificFeedbacksBoa[1];
+                    break;
+
+                case ComboChecker.Combo.abpjBoa4:
+                    comboText.text = specificFeedbacksBoa[2];
+                    break;
+
+                case ComboChecker.Combo.abpjArriscado1:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+
+                case ComboChecker.Combo.abpjArriscado2:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+
+                case ComboChecker.Combo.abpjArriscado3:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+
+                case ComboChecker.Combo.abpjArriscado4:
+                    comboText.text = specificFeedbacksArriscada[1];
+                    break;
+
+                case ComboChecker.Combo.abpjArriscado5:
+                    comboText.text = specificFeedbacksArriscada[0];
+                    break;
+
+
+                default:
+                    comboText.text = "[Feedback não encontrado]";
+                    break;
+            }
+        }
+
         methodologyIcon.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
 
         media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;

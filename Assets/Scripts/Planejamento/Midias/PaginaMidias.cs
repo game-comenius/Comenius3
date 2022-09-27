@@ -1,7 +1,9 @@
-﻿using TMPro;
+﻿
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PaginaMidias : PaginaPlanejamento
 {
@@ -24,14 +26,39 @@ public class PaginaMidias : PaginaPlanejamento
     [SerializeField] private bool segundaEtapa;
     [SerializeField] private GameObject setaPrimeiraMidia;
     [SerializeField] private GameObject setaSegundaMidia;
+    [SerializeField] private GameObject setaTerceiraMidia;
 
+    [SerializeField] private Image mediaIcon;
+    [SerializeField] private bool firstMedia;
+
+    [SerializeField] private Text subtitulo;
     private IconeMidias primeiroIconeSelecionado;
     private IconeMidias segundoIconeSelecionado;
+    private IconeMidias terceiroIconeSelecionado;
+    public IconeMidias help;
     private bool primeiraMidia;
     private int paginaAtual;
-
+    private string locationName;
+    public Text tituloSala2;
     private void Start()
     {
+        EstadoDoJogo gameState = EstadoDoJogo.Instance;
+        gameState.Lugar = LocationChecker.EvaluateLocation();
+        locationName = LocationChecker.EvaluateLocationName();
+
+      
+        if(SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1") {
+            if (firstMedia)
+            {
+                mediaIcon.sprite = gameState.Midias[0].sprite;
+            }
+        
+            else
+                mediaIcon.sprite = gameState.Midias[1].sprite;
+
+            subtitulo.text = "Escolha a mídia que será usada no: " + locationName;
+        }
+
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
         botaoProximaMidia.interactable = false;
@@ -39,17 +66,30 @@ public class PaginaMidias : PaginaPlanejamento
         paginaAtual = 0;
 
         descriptionText.text = descricaoPadrao;
+
+        if(tituloSala2)
+        tituloSala2.text = "<b>Pegue dentro do armário mídias para utilizar </b>" + "<b>" +  locationName +"</b>";
     }
 
     protected override void OnEnable()
     {
+        if(textoAjuda)                           
         textoAjuda.text = ajuda;
 
+        if(spriteFundo)
         fundo.sprite = spriteFundo;
 
         iconManager.ShowIcon(0);
         iconManager.ShowIcon(1);
-        iconManager.HideIcon(2);
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
+            iconManager.ShowIcon(2);
+        }
+        else
+        {
+            iconManager.HideIcon(2);
+        }
+         
         iconManager.HideIcon(3);
 
         if (primeiroIconeSelecionado != null)
@@ -79,8 +119,13 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Selecao(IconeMidias icone)
     {
-        AudioManager.instance.TocarSFX("clique");
+        Debug.Log(EstadoDoJogo.Instance.Midias.Length);
 
+        AudioManager.instance.TocarSFX("clique");
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
+            iconManager.ShowIcon(2);
+        }
         if (!icone.selecionado)  // O ícone foi selecionado
         {
             if (primeiraMidia)
@@ -194,11 +239,29 @@ public class PaginaMidias : PaginaPlanejamento
         }
 
         iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
+        if(SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
+            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            temp[indice + 1] = icone.midia;
+            temp[indice + 1].sprite = icone.GetComponent<Image>().sprite;
+            EstadoDoJogo.Instance.Midias = temp;
+        }
 
-        Midia[] temp = EstadoDoJogo.Instance.Midias;
-        temp[indice] = icone.midia;
-        temp[indice].sprite = icone.GetComponent<Image>().sprite;
-        EstadoDoJogo.Instance.Midias = temp;
+        else if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-2")
+        {
+            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            temp[indice + 3] = icone.midia;
+            temp[indice + 3].sprite = icone.GetComponent<Image>().sprite;
+            EstadoDoJogo.Instance.Midias = temp;
+        }
+        else
+        {
+            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            temp[indice] = icone.midia;
+            temp[indice].sprite = icone.GetComponent<Image>().sprite;
+            EstadoDoJogo.Instance.Midias = temp;
+        }
+     
     }
 
     private void resetarEstadoDeJogo()
@@ -226,7 +289,11 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Confirmar()
     {
-        OnViewAdvance.Invoke(this);
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
+            subtitulo.text = "Escolha a mídia para o momento final da aula";
+        }
+            OnViewAdvance.Invoke(this);
         primeiraMidia = false;
 
         primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
@@ -235,9 +302,21 @@ public class PaginaMidias : PaginaPlanejamento
         {
             segundoIconeSelecionado.GetComponent<Button>().interactable = true;
         }
+        if (setaPrimeiraMidia.activeInHierarchy)
+        {
+            setaPrimeiraMidia.SetActive(false);
+            setaSegundaMidia.SetActive(true);
+        }
+        else if(setaSegundaMidia.activeInHierarchy)
+        {
+            setaSegundaMidia.SetActive(false);
+            if (setaTerceiraMidia)
+                setaTerceiraMidia.SetActive(true);
+        }
+        else
+        {
 
-        setaPrimeiraMidia.SetActive(false);
-        setaSegundaMidia.SetActive(true);
+        }
         botaoPainelAnterior.SetActive(false);
         botaoProximaMidia.gameObject.SetActive(false);
         botaoMidiaAnterior.SetActive(true);
@@ -259,8 +338,23 @@ public class PaginaMidias : PaginaPlanejamento
             segundoIconeSelecionado.GetComponent<Button>().interactable = false;
         }
 
-        setaPrimeiraMidia.SetActive(true);
-        setaSegundaMidia.SetActive(false);
+
+        if (setaPrimeiraMidia.activeInHierarchy)
+        {
+            setaPrimeiraMidia.SetActive(true);
+            setaSegundaMidia.SetActive(false);
+        }
+        else if (setaSegundaMidia.activeInHierarchy)
+        {
+            setaSegundaMidia.SetActive(false);
+            if(setaTerceiraMidia)
+            setaPrimeiraMidia.SetActive(true);
+        }
+        else if (setaTerceiraMidia.activeInHierarchy)
+        {
+            setaTerceiraMidia.SetActive(false);
+            setaSegundaMidia.SetActive(true);
+        }
         botaoPainelAnterior.SetActive(true);
         botaoProximaMidia.gameObject.SetActive(true);
         botaoMidiaAnterior.SetActive(false);

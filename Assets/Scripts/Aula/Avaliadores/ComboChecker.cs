@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public class ComboChecker
 {
     public enum ComboClassification
@@ -30,7 +32,20 @@ public class ComboChecker
         saiBoa5,
         saiArriscada1,
         saiArriscada2,
-        saiArriscada3
+        saiArriscada3,
+        abpjIdeal1,
+        abpjIdeal2,
+        abpjIdeal3,
+        abpjIdeal4,
+        abpjBoa1,
+        abpjBoa2,
+        abpjBoa3,
+        abpjBoa4,
+        abpjArriscado1,
+        abpjArriscado2,
+        abpjArriscado3,
+        abpjArriscado4,
+        abpjArriscado5,
     }
 
     public static Combo EvaluateCombo()
@@ -187,18 +202,97 @@ public class ComboChecker
             }
         }
 
+
+        if(EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Projetos")
+        {
+         
+           if(EstadoDoJogo.Instance.Inteligencias.nome == "Linguística e Lógico-matemática")
+            {
+                // Combo ideal1
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                {
+                    return Combo.abpjIdeal1;
+                }
+
+                if(flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) 
+                    && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && 
+                    flagMidia3.HasFlag(CategoriasDeMidia.Popular) ||
+                    flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
+                {
+                    return Combo.abpjBoa1;
+                }
+
+                if(flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
+                    return Combo.abpjArriscado1;
+
+                return Combo.abpjArriscado1;
+            }
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Intrapessoal e Espacial-visual")
+            {
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                {
+                    return Combo.abpjIdeal2;
+                }
+
+                if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
+                    NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                    return Combo.abpjBoa2;
+
+                if (flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
+                    return Combo.abpjArriscado2;
+
+                return Combo.abpjArriscado2;
+            }
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Corporal-cinestésica e Naturalista")
+            {
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                    return Combo.abpjIdeal3;
+                
+
+                if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
+                   NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao) )
+                    return Combo.abpjBoa3;
+
+                if (flagMidia2.HasFlag(CategoriasDeMidia.Plataformas))
+                    return Combo.abpjArriscado3;
+
+                return Combo.abpjArriscado3;
+            }
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Interpessoal e Musical")
+            {
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia                          && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                    return Combo.abpjIdeal4;
+
+                if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
+               NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Popular) || flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
+                    return Combo.abpjBoa4;
+
+                if (flagMidia2.HasFlag(CategoriasDeMidia.Apps))
+                    return Combo.abpjArriscado4;
+            }
+            else
+            {
+                return Combo.abpjArriscado5;
+            }
+                
+        }
+
         return Combo.Null;
     }
 
     public static ComboClassification EvaluateComboClassification()
     {
         Combo combo = EvaluateCombo();
-
+    
         // casos sem retorno ou break agem como "ou"
         switch (combo)
         {
             case Combo.abpIdeal:
             case Combo.saiIdeal:
+            case Combo.abpjIdeal1:
+            case Combo.abpjIdeal2:
+            case Combo.abpjIdeal3:
+            case Combo.abpjIdeal4:
                 return ComboClassification.Ideal;
             case Combo.abpBoa1:
             case Combo.abpBoa2:
@@ -208,6 +302,10 @@ public class ComboChecker
             case Combo.saiBoa3:
             case Combo.saiBoa4:
             case Combo.saiBoa5:
+            case Combo.abpjBoa1:
+            case Combo.abpjBoa2:
+            case Combo.abpjBoa3:
+            case Combo.abpjBoa4:
                 return ComboClassification.Boa;
             case Combo.abpArriscada1:
             case Combo.abpArriscada2:
@@ -219,6 +317,11 @@ public class ComboChecker
             case Combo.saiArriscada1:
             case Combo.saiArriscada2:
             case Combo.saiArriscada3:
+            case Combo.abpjArriscado1:
+            case Combo.abpjArriscado2:
+            case Combo.abpjArriscado3:
+            case Combo.abpjArriscado4:
+            case Combo.abpjArriscado5:
                 return ComboClassification.Arriscada;
             default:
                 return ComboClassification.Null;

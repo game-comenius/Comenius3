@@ -16,4 +16,7 @@ public enum CategoriasDeMidia
     Impressa = 0b_0001_0000,
     AudioVisual = 0b_0010_0000,
     Digital = 0b_0100_0000,
+    Plataformas = 0b_1000_0000,
+    Apps = 0b_1000_0001,
+    RedesSociais = 0b_1000_0010,
 }

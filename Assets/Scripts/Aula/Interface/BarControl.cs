@@ -15,7 +15,7 @@ public abstract class BarControl : MonoBehaviour
 
     protected Slider slider;
     protected float progress;
-
+    //
     private void Start()
     {
         slider = GetComponent<Slider>();

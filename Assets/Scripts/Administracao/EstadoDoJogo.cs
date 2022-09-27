@@ -1,10 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EstadoDoJogo : Singleton<EstadoDoJogo>
 {
     // Propriedades definidas pelo criador de um jogo
     private NivelDeEnsino nivelDeEnsino;
+
+    public float score;
+
+
+    public void AtualizarScore(float s)
+    {
+        score += s;
+    }
     public NivelDeEnsino NivelDeEnsino
     {
         get
@@ -72,7 +81,9 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
                     new Midia(NomeDeMidia.LivroDidatico),
                     new Midia(NomeDeMidia.ProjetorMultimidia),
                     new Midia(NomeDeMidia.Lousa),
-                    new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
+                    new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
+                      new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
+                        new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
             return midias;
         }

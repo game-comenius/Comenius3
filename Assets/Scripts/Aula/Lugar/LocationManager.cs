@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,8 @@ public class LocationManager : MonoBehaviour
     [SerializeField] private Sprite startupSprite;
     [SerializeField] private Sprite botanicalGardenSprite;
     [SerializeField] private Sprite NGOSprite;
-
+    private string locationName;
+    
     private void Start()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
@@ -41,7 +43,7 @@ public class LocationManager : MonoBehaviour
             mediaIcon.sprite = gameState.Midias[1].sprite;
 
         gameState.Lugar = LocationChecker.EvaluateLocation();
-        string locationName = LocationChecker.EvaluateLocationName();
+        locationName = LocationChecker.EvaluateLocationName();
 
         locationText.text = $"Os estudantes escolheram fazer o projeto no <color=blue>{locationName}</color>";
 
@@ -97,5 +99,11 @@ public class LocationManager : MonoBehaviour
                 locationPreview.sprite = NGOSprite;
                 break;
         }
+
+   
+    }
+    public string ObterTextoLugar()
+    {
+        return locationName;
     }
 }

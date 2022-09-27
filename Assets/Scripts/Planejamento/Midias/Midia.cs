@@ -40,6 +40,24 @@ public class Midia
                                  "es transversais.";
                 break;
 
+            case NomeDeMidia.Notebook:
+                nome = "Notebook";
+                descricao = "";
+                descricaoLonga = "";
+                break;
+
+            case NomeDeMidia.Celular:
+                nome = "Celular";
+                descricao = "";
+                descricaoLonga = "";
+                break;
+
+            case NomeDeMidia.Tablet:
+                nome = "Tablet";
+                descricao = "";
+                descricaoLonga = "";
+                break;
+
             case NomeDeMidia.LivrosJornaisERevistas:
                 nome = "Livros, Jornais e Revistas";
                 descricao = "<style=\"title\">Livros, Jornais e Revistas</style>\n\nLivros, jornais e revistas são publicações de cunho literário, informat" +

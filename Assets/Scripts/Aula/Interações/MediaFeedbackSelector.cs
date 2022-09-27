@@ -31,17 +31,22 @@ public class MediaFeedbackSelector : MonoBehaviour
             feedbacks = feedbacksSuperior;
 
         bool positive = ComboChecker.ComboClassification.Arriscada != ComboChecker.EvaluateComboClassification();
-
+        Debug.Log(ComboChecker.EvaluateComboClassification());
+        int sorteio = Random.Range(4, 6);
+        Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
         for (int i = 0; i < feedbacks.Count; i++)
         {
-            if (feedbacks[i].midias[0] == stateMachineController.CurrentMedia().nomeMidia &&
+            if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia &&
                 positive == feedbacks[i].alunoFeliz)
             {
                 interactionManager.Interaction = feedbacks[i];
                 break;
             }
-        }
 
+            if(feedbacks[i].midias[0] == stateMachineController.CurrentMedia().nomeMidia)
+            {
+            }
+        }
         OnSelectionEvent.Invoke(positive, stateMachineController.CurrentMedia().sprite);
     }
 }
