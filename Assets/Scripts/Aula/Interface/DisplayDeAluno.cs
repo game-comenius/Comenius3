@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 [RequireComponent(typeof(Image))]
 public class DisplayDeAluno : MonoBehaviour
@@ -16,6 +17,7 @@ public class DisplayDeAluno : MonoBehaviour
     [SerializeField] private DisplayDeAluno outroDisplayRefencia;
     public Image imgAluno;
     public Image imgAlunoFrente;
+    public Image imgRetratoAceitacao;
     public Sprite[] personagensSprite = new Sprite[3];
     private int value;
 
@@ -39,7 +41,9 @@ public class DisplayDeAluno : MonoBehaviour
 
     public void AtualizarDisplay()
     {
+     
         GetComponent<Image>().sprite = estaFeliz ? aluno.alunoFeliz : aluno.alunoTriste;
+        /*
         if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-3")
         {
             if (imgAluno && imgAlunoFrente)
@@ -57,12 +61,7 @@ public class DisplayDeAluno : MonoBehaviour
 
             }
         }
-
-    }
-    private void OnEnable()
-    {
-   
-
+        */
     }
 
 

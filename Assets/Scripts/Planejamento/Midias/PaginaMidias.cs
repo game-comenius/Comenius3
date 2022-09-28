@@ -40,6 +40,7 @@ public class PaginaMidias : PaginaPlanejamento
     private int paginaAtual;
     private string locationName;
     public Text tituloSala2;
+    private IconeMidias iconeSelecionado;
     private void Start()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
@@ -119,8 +120,6 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Selecao(IconeMidias icone)
     {
-        Debug.Log(EstadoDoJogo.Instance.Midias.Length);
-
         AudioManager.instance.TocarSFX("clique");
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
@@ -151,9 +150,26 @@ public class PaginaMidias : PaginaPlanejamento
             anelDeSelecao.enabled = true;
             anelDeSelecao.transform.SetParent(icone.transform);
             anelDeSelecao.rectTransform.anchoredPosition = Vector2.zero;
-
+            iconeSelecionado = icone;
             atualizar(icone);
-            atualizarEstadoDeJogo(icone);
+
+
+
+            int indice = segundaEtapa ? 2 : 0;
+            int indiceIcone = 0;
+            if (!primeiraMidia)
+            {
+                indice++;
+                indiceIcone++;
+                botaoConfirmar.interactable = true;
+            }
+            else
+            {
+                botaoProximaMidia.interactable = true;
+            }
+
+            iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
+
         }
         else  // Cancela a seleção do ícone caso o jogador clique nele de novo
         {
@@ -226,20 +242,12 @@ public class PaginaMidias : PaginaPlanejamento
     {
         int indice = segundaEtapa ? 2 : 0;
         int indiceIcone = 0;
-
         if (!primeiraMidia)
         {
             indice++;
-            indiceIcone++;
-            botaoConfirmar.interactable = true;
-        }
-        else
-        {
-            botaoProximaMidia.interactable = true;
         }
 
-        iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
-        if(SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
             Midia[] temp = EstadoDoJogo.Instance.Midias;
             temp[indice + 1] = icone.midia;
@@ -261,7 +269,13 @@ public class PaginaMidias : PaginaPlanejamento
             temp[indice].sprite = icone.GetComponent<Image>().sprite;
             EstadoDoJogo.Instance.Midias = temp;
         }
-     
+
+        Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.Midias[4].nomeMidia);
+
     }
 
     private void resetarEstadoDeJogo()
@@ -289,6 +303,7 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Confirmar()
     {
+        atualizarEstadoDeJogo(iconeSelecionado);
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
             subtitulo.text = "Escolha a mídia para o momento final da aula";

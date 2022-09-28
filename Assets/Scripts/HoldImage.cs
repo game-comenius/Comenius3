@@ -11,6 +11,9 @@ public class HoldImage : MonoBehaviour
         valor = 0;
 
     }
+    private void Start()
+    {
+    }
 
     public void AtualizarSprite()
     {
