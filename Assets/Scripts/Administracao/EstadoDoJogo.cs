@@ -8,11 +8,12 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     private NivelDeEnsino nivelDeEnsino;
 
     public float score;
-
+    public bool pVez;
 
     public void AtualizarScore(float s)
     {
-        score += s;
+        score +=s;
+        Debug.Log("att score" + score);
     }
     public NivelDeEnsino NivelDeEnsino
     {

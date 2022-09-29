@@ -225,7 +225,8 @@ public class ComboChecker
                 if(flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
                     return Combo.abpjArriscado1;
 
-                return Combo.abpjArriscado1;
+
+                return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Intrapessoal e Espacial-visual")
             {
@@ -241,7 +242,8 @@ public class ComboChecker
                 if (flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
                     return Combo.abpjArriscado2;
 
-                return Combo.abpjArriscado2;
+
+                return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Corporal-cinestésica e Naturalista")
             {
@@ -256,11 +258,12 @@ public class ComboChecker
                 if (flagMidia2.HasFlag(CategoriasDeMidia.Plataformas))
                     return Combo.abpjArriscado3;
 
-                return Combo.abpjArriscado3;
+
+                return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Interpessoal e Musical")
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia                          && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia  && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal4;
 
                 if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
@@ -269,11 +272,12 @@ public class ComboChecker
 
                 if (flagMidia2.HasFlag(CategoriasDeMidia.Apps))
                     return Combo.abpjArriscado4;
+
+
+                    return Combo.abpjArriscado5;
+                
             }
-            else
-            {
-                return Combo.abpjArriscado5;
-            }
+      
                 
         }
 

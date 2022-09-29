@@ -42,19 +42,19 @@ public class Midia
 
             case NomeDeMidia.Notebook:
                 nome = "Notebook";
-                descricao = "";
+                descricao = " <style=\"title\">Notebook</style>\n\n Computador portátil, provido de monitor de vídeo, geralmente de cristal líquido, e ativado por bateria, com peso inferior a 6 kg e dimensões compatíveis para ser utilizado no colo ou sobre uma pequena superfície plana. Normalmente exige que a pessoa esteja sentada.";
                 descricaoLonga = "";
                 break;
 
             case NomeDeMidia.Celular:
                 nome = "Celular";
-                descricao = "";
+                descricao = "<style=\"title\">Celular</style>\n\n O smartphone é um celular com tecnologias que incluem programas executados num sistema operacional, equivalente aos computadores. Os smartphones possibilitam que qualquer pessoa possa desenvolver e utilizar aplicativos. Existem apps dos mais variados tipos e para os mais variados objetivos. São capazes de conectar redes de dados para acesso à internet, sincronizar dados como um computador, além da agenda de contatos.";
                 descricaoLonga = "";
                 break;
 
             case NomeDeMidia.Tablet:
                 nome = "Tablet";
-                descricao = "";
+                descricao = " <style=\"title\">Tablet</style>\n\n Dispositivo eletrónico portátil, fino e retangular, com tela tátil, usado para visualização de vários tipos de arquivos digitais, comunicação móvel, entretenimento. Possui funcionalidades diversas, como acesso a internet, visualização de fotos e arquivos e até leitura de livros. O Tablet é um meio termo entre o smartphone e o notebook.";
                 descricaoLonga = "";
                 break;
 
@@ -198,6 +198,13 @@ public class Midia
                                  "e ir além das aulas expositivas incluindo atividades interativas, servindo como uma tela criativa tanto para docentes com" +
                                  "o estudantes em aula presencial.";
                 break;
+
+            case NomeDeMidia.VideoGamePortatil:
+                nome = "Video game Portátil";
+                descricao = "<style=\"title\">Video game Portátil</style>\n\n É um console de videogame com tela e controles embutidos e dimensões reduzidas para que possa ser facilmente transportado. Tem como objetivo executar jogos eletrônicos como num videogame, é a opção ideal para jogar em espaços externos, quando estiver em trânsito ou para quem quer jogar online ou localmente no modo multiplayer.";
+                descricaoLonga = "";
+                break;
+
 
             default:
                 nome = "Sem nome";

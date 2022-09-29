@@ -13,8 +13,6 @@ public class CameraMapaControll : MonoBehaviour
       var lugar =   EstadoDoJogo.Instance.Lugar = LocationChecker.EvaluateLocation();
 
 
-
-        Debug.Log(lugar);
         switch (lugar)
         {
             case LocationChecker.Location.Observatory:

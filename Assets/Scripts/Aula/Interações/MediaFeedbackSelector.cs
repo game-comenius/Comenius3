@@ -32,7 +32,7 @@ public class MediaFeedbackSelector : MonoBehaviour
 
         bool positive = ComboChecker.ComboClassification.Arriscada != ComboChecker.EvaluateComboClassification();
         Debug.Log(ComboChecker.EvaluateComboClassification());
-        int sorteio = Random.Range(4, 6);
+        int sorteio = Random.Range(3, 5);
         Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
         for (int i = 0; i < feedbacks.Count; i++)
         {

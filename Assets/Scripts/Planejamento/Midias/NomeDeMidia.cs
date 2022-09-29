@@ -23,6 +23,7 @@ public enum NomeDeMidia
     Celular = 14,
     Tablet = 15,
     Notebook = 16,
+    VideoGamePortatil = 17,
 }
 
 public static class NomeDeMidiaExtensions

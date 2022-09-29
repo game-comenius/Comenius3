@@ -11,7 +11,15 @@ public class TrocadorDeCena : MonoBehaviour
     {
         try
         {
-            SceneManager.LoadScene(IndiceDaCenaAlvo);
+            if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-2" || SceneManager.GetActiveScene().name == "CidadeFuncional")
+            {
+                Invoke("CarregarCenaDelay", 1);
+            }
+            else
+            {
+                SceneManager.LoadScene(IndiceDaCenaAlvo);
+            }
+         
         }
         catch (System.Exception)
         {
@@ -28,5 +36,10 @@ public class TrocadorDeCena : MonoBehaviour
         catch(System.Exception e) {
             Debug.LogWarning(e);
         }
+    }
+
+    private void CarregarCenaDelay()
+    {
+        SceneManager.LoadScene(IndiceDaCenaAlvo);
     }
 }
