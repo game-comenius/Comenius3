@@ -150,9 +150,10 @@ public class ClassFeedback : MonoBehaviour
         {
             Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia +" " + EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
             Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
-            Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
+            Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia + " " + EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia());
             Debug.Log(EstadoDoJogo.Instance.Inteligencias);
-            Debug.Log(combo);
+            Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString());
+          Debug.Log(combo);
             switch (combo)
             {
                 case ComboChecker.Combo.abpjIdeal1:

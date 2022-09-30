@@ -18,11 +18,12 @@ public class HoldImage : MonoBehaviour
 
     public void AtualizarSprite()
     {
-        valor++;
+        valor++;/*
         Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[4].nomeMidia);
+        */
     }
 }

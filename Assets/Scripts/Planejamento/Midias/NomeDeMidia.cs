@@ -39,6 +39,7 @@ public static class NomeDeMidiaExtensions
             case NomeDeMidia.LivroDidatico:
                 return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Impressa;
             case NomeDeMidia.Aplicativos:
+                return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Digital;
             case NomeDeMidia.Plataformas:
                 return CategoriasDeMidia.ConsultaRepositorio | CategoriasDeMidia.Digital;
             case NomeDeMidia.LivrosJornaisERevistas:
@@ -46,6 +47,7 @@ public static class NomeDeMidiaExtensions
             case NomeDeMidia.Televisao:
                 return CategoriasDeMidia.Popular | CategoriasDeMidia.AudioVisual;
             case NomeDeMidia.RedesSociais:
+                return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
             case NomeDeMidia.Jogos:
                 return CategoriasDeMidia.Popular | CategoriasDeMidia.Digital;
             case NomeDeMidia.Celular:

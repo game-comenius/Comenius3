@@ -105,7 +105,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -118,7 +118,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -254,7 +254,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4017957565427540490, guid: b67b623554d3cbe47a1bdc9799b5a68b,
@@ -318,14 +318,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67b623554d3cbe47a1bdc9799b5a68b, type: 3}
 --- !u!1001 &498216943
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1384982661}
     m_Modifications:
     - target: {fileID: 335052583354544188, guid: 21216db89663f8246818f107542c6595,
@@ -464,7 +466,9 @@ PrefabInstance:
       value: "Bot\xE3oAudio"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21216db89663f8246818f107542c6595, type: 3}
 --- !u!224 &498216944 stripped
 RectTransform:
@@ -477,7 +481,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1989386248766843569, guid: f5690d0bd685f4bb78efdfe7ac22bed0,
@@ -541,7 +545,9 @@ PrefabInstance:
       value: Admin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5690d0bd685f4bb78efdfe7ac22bed0, type: 3}
 --- !u!1 &718459793
 GameObject:
@@ -928,9 +934,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1163,6 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1310,7 +1325,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 252911715488622149, guid: 02c3bfe348f684b1f9499cf6d8644a16,
@@ -1434,6 +1449,7 @@ PrefabInstance:
       value: CanvasMenuPrincipal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5017544119719838878, guid: 02c3bfe348f684b1f9499cf6d8644a16,
         type: 3}
@@ -1455,6 +1471,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 498216944}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8115735780321581232, guid: 02c3bfe348f684b1f9499cf6d8644a16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1384982663}
   m_SourcePrefab: {fileID: 100100000, guid: 02c3bfe348f684b1f9499cf6d8644a16, type: 3}
 --- !u!224 &1384982661 stripped
 RectTransform:
@@ -1633,7 +1654,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "<b>Programa\xE7\xE3o</b>\n\nAlexis Mendes Sequeira\nBruno Souza da Silva\nNicole
     Alves Guglielmetti\nMatheus Aparicio da Silva\nBernardo Gomes Duarte\nTh\xE9o
-    Floriano dos Santos\nEric Fernandes Evaristo"
+    Floriano dos Santos\nEric Fernandes Evaristo\nLuccas Baillo Lopes Floriano"
 --- !u!222 &1720810540
 CanvasRenderer:
   m_ObjectHideFlags: 0

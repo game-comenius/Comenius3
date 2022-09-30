@@ -208,8 +208,9 @@ public class ComboChecker
          
            if(EstadoDoJogo.Instance.Inteligencias.nome == "Linguística e Lógico-matemática")
             {
+                
                 // Combo ideal1
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && "Plataformas" == EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString() && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
                     return Combo.abpjIdeal1;
                 }
@@ -222,15 +223,16 @@ public class ComboChecker
                     return Combo.abpjBoa1;
                 }
 
-                if(flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
+                if(NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia)
                     return Combo.abpjArriscado1;
 
 
-                return Combo.abpjArriscado5;
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
+                    return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Intrapessoal e Espacial-visual")
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
                     return Combo.abpjIdeal2;
                 }
@@ -239,15 +241,16 @@ public class ComboChecker
                     NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjBoa2;
 
-                if (flagMidia2.HasFlag(CategoriasDeMidia.RedesSociais))
+                if (NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia)
                     return Combo.abpjArriscado2;
 
 
-                return Combo.abpjArriscado5;
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
+                    return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Corporal-cinestésica e Naturalista")
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal3;
                 
 
@@ -255,25 +258,25 @@ public class ComboChecker
                    NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao) )
                     return Combo.abpjBoa3;
 
-                if (flagMidia2.HasFlag(CategoriasDeMidia.Plataformas))
+                if (NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia)
                     return Combo.abpjArriscado3;
 
-
-                return Combo.abpjArriscado5;
+                if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
+                    return Combo.abpjArriscado5;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Interpessoal e Musical")
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia  && flagMidia1.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia  && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal4;
 
                 if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
                NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Popular) || flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
                     return Combo.abpjBoa4;
 
-                if (flagMidia2.HasFlag(CategoriasDeMidia.Apps))
+                if (NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia)
                     return Combo.abpjArriscado4;
 
-
+                if(flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
                     return Combo.abpjArriscado5;
                 
             }

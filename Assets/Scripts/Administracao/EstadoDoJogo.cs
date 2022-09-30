@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -12,8 +12,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
 
     public void AtualizarScore(float s)
     {
-        score +=s;
-        Debug.Log("att score" + score);
+        score +=s;                                               
     }
     public NivelDeEnsino NivelDeEnsino
     {

@@ -12,7 +12,8 @@ public class textoCutScne : MonoBehaviour
     public GameObject[] botaoVoltar;
     public GameObject[] baloes;
     public Image lurdinha;
-    public Sprite[] lurdinhaPosicoes;
+    public GameObject lurdinhaDeLado;
+    public GameObject lurdinhaDeFrente;
     public GameObject botaoPronto;
     public GameObject botaoFinal;
     public Image comenius;
@@ -77,7 +78,6 @@ public class textoCutScne : MonoBehaviour
             }
             baloes[0].SetActive(true);
             textosMostrados[0].text = textosCutscene[paginaAtual];
-            lurdinha.sprite = lurdinhaPosicoes[0];
             if(paginaAtual == 4)
             {
                 botaoPronto.SetActive(true);
@@ -96,7 +96,6 @@ public class textoCutScne : MonoBehaviour
             }
             baloes[1].SetActive(true);
             textosMostrados[1].text = textosCutscene[paginaAtual];
-            lurdinha.sprite = lurdinhaPosicoes[0];
         }
 
         if(paginaAtual == 2)
@@ -107,7 +106,6 @@ public class textoCutScne : MonoBehaviour
             }
             baloes[2].SetActive(true);
             textosMostrados[2].text = textosCutscene[paginaAtual];
-            lurdinha.sprite = lurdinhaPosicoes[1];
         }
     }
 
@@ -117,26 +115,38 @@ public class textoCutScne : MonoBehaviour
         {
             case 0:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Maozinha];
+                lurdinhaDeLado.SetActive(true);
+                lurdinhaDeFrente.SetActive(false);
                 break;
 
             case 1:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(true);
+                lurdinhaDeFrente.SetActive(false);
                 break;
 
             case 2:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(false);
+                lurdinhaDeFrente.SetActive(true);
                 break;
 
             case 3:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(true);
+                lurdinhaDeFrente.SetActive(false);
                 break;
 
             case 4:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Maozinha];
+                lurdinhaDeLado.SetActive(true);
+                lurdinhaDeFrente.SetActive(false);
                 break;
 
             case 5:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(false);
+                lurdinhaDeFrente.SetActive(true);
                 break;
 
         }
