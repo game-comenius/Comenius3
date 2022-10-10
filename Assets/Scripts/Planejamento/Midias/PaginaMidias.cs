@@ -334,7 +334,7 @@ public class PaginaMidias : PaginaPlanejamento
         }
         botaoPainelAnterior.SetActive(false);
         botaoProximaMidia.gameObject.SetActive(false);
-        botaoMidiaAnterior.SetActive(true);
+        // botaoMidiaAnterior.SetActive(true);
         botaoConfirmar.gameObject.SetActive(true);
 
         ResetarPaginas();

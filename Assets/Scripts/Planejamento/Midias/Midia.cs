@@ -62,7 +62,7 @@ public class Midia
                 nome = "Livros, Jornais e Revistas";
                 descricao = "<style=\"title\">Livros, Jornais e Revistas</style>\n\nLivros, jornais e revistas são publicações de cunho literário, informat" +
                             "ivo, jornalístico ou de entretenimento. Contém páginas impressas em papel com textos e imagens. Podem ser usados como material" +
-                            " para leitura, consulta, ou base de recorte para atividades.\n\n<b>Categoria:</b>\nMídia popular tracional";
+                            " para leitura, consulta, ou base de recorte para atividades.\n\n<b>Categoria:</b>\nMídia popular tradicional";
                 descricaoLonga = "Livros, jornais e revistas são mídias de circulação social, que podem ser utilizadas para trabalhar a leitura e interpret" +
                                  "ação de diversos temas de forma mais aprofundada. É possível refletir sobre o tratamento dos textos e imagens de acordo c" +
                                  "om cada gênero, ou as diferenças entre revistas, jornais e livros que são idealizadas e produzidas com objetivos e formas" +
@@ -119,8 +119,8 @@ public class Midia
             case NomeDeMidia.Jogos:
                 nome = "Jogos";
                 descricao = "<style=\"title\">Jogos</style>\n\nUm Jogo digital é uma atividade lúdica composta por mecânicas, estéticas e narrativas, suporta" +
-                            "das por uma tecnologia, onde o jogador realiza uma série de ações e decisões, que estão limitadas por regras e pelo contexto d" +
-                            "o contexto do game, recebendo feedback constante e buscando alcançar um meta.\n\nCategoria:\nMídia popular digital";
+                            "das por uma tecnologia, onde o jogador realiza uma série de ações e decisões, que estão limitadas por regras e pelo o contexto " +
+                            "do game, recebendo feedback constante e buscando alcançar um meta.\n\nCategoria:\nMídia popular digital ";
                 descricaoLonga = "Os jogos digitais são sistemas de simulações da realidade que substituída por situações lúdicas, permitindo aos jogadores" +
                                  " uma visão de distintos modelos de realidade. Estudos demostram que os jogos digitais podem desenvolver habilidades como " +
                                  "o pensamento crítico e o sistemático, a resolução de problemas, o desenvolvimento da ortografia, do vocabulário e da leit" +

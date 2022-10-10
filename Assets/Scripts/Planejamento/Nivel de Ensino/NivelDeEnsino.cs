@@ -31,7 +31,7 @@ public sealed class NivelDeEnsino
         descricao: "<style=\"title\">Ensino Fundamental</style>\n\nEtapa obrigatória com duração de 9 anos (dos 6 aos 14 a" +
                    "nos), tendo como objetivo a formação básica do cidadão. É dividido em duas fases: Anos Iniciais (1" +
                    "º ao 5º ano) e Anos Finais (6º ao 9º ano), que inicia-se em torno dos interesses manifestados pela" +
-                   "s crianças até desafios de maior complexidade. Sendo importante buscar o fortalecimento da autonom" +
+                   "s crianças até desafios de maior complexidade. Sendo importante busca o aprimoramento. da autonom" +
                    "ia dos estudantes, desenvolvendo sua capacidade de aprendizagem tendo em vista a aquisição de conh" +
                    "ecimentos e habilidades e a formação de atitudes e valores que se fundamentam a sociedade.",
         areasDeConhecimento: new int[]
@@ -53,8 +53,8 @@ public sealed class NivelDeEnsino
                    "ndamento dos conhecimentos adquiridos anteriormente, a preparação básica para o trabalho e a cidad" +
                    "ania, a formação ética e o aprimoramento do pensamento crítico. Isso se dá através da compreensão " +
                    "dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prát" +
-                   "ica através de quatro grandes áreas do conhecimento. Dessa forma, produzindo múltiplas culturas ju" +
-                   "venis e  promovendo uma educação integral.",
+                   "ica através de quatro grandes áreas do conhecimento. Dessa forma produz múltiplas culturas juvenis" +
+                   " e  promove uma educação integral.",
         areasDeConhecimento: new int[]
         {
             AreaDeConhecimento.LinguagensESuasTecnologias.valor,
@@ -70,7 +70,7 @@ public sealed class NivelDeEnsino
         nome: "Ensino Superior",
         descricao: "<style=\"title\">Ensino Superior</style>\n\nÉ o nível que busca o desejo de aperfeiçoamento cultural e" +
                    " profissional, estimulando o conhecimento dos problemas do mundo presente. Busca prestar serviços " +
-                   "especializados à comunidade através da pesquisa científica e tecnológica. Além de buscar o aprimor" +
+                   "especializados à comunidade através da pesquisa científica e tecnológica. Busca também o aprimor" +
                    "amento da educação básica mediante a formação e a capacitação de profissionais, por meio de pesqui" +
                    "sas pedagógicas e o desenvolvimento de atividades de extensão, em prol do desenvolvimento da socie" +
                    "dade brasileira.",

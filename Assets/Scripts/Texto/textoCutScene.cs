@@ -6,11 +6,11 @@ using TMPro;
 
 public class textoCutScne : MonoBehaviour
 {
-    private string[] textosCutscene = new string[6];
-    public TextMeshProUGUI[] textosMostrados = new TextMeshProUGUI[7];
+    private string[] textosCutscene = new string[9];
+    public TextMeshProUGUI[] textosMostrados = new TextMeshProUGUI[7]; 
     private int paginaAtual;
     public GameObject[] botaoVoltar;
-    public GameObject[] baloes;
+    public GameObject[] baloes;  
     public Image lurdinha;
     public GameObject lurdinhaDeLado;
     public GameObject lurdinhaDeFrente;
@@ -20,14 +20,21 @@ public class textoCutScne : MonoBehaviour
     public Sprite[] comeniusPosicoes;
     enum ComeniusPos
     {       Cruzado, Maozinha,   }
+
+    enum BaloesNames
+    { ComeniusCurto,  ComeniusMedio, Lurdinha }
     void Start()
     {
-        textosCutscene[0] = "Olá, Jogador(a).\n Eu sou o Comenius e você \n está aqui com a missão de transformara \n educação da cidade! ";
-        textosCutscene[1] = "Precisamos criar práticas didáticas mais ágeis,\n tornando os estudantes protagonistas no processo.\n Durante o jogo serão apresentadas três metodologias\n ativas que vão te ajudar nesta tarefa. ";
-        textosCutscene[2] = "Para isso, você precisa estender os espaços de\n aprendizagem que existem para além das paredes da\n sala de aula e dos muros da escola";
-        textosCutscene[3] = "Você pode utilizar os laboratórios, instigar os estudantes a pesquisar, realizar partes das atividades em casa,  levá-los à cidade para aprender de maneira envolvente e a partir de diferentes contextos.";
-        textosCutscene[4] = "Você está pronto para começar\n jornada ? ";
-        textosCutscene[5] = "Ótimo! Agora vamos juntos explorar os vários\n usos de mídias digitais na educação";
+
+        textosCutscene[0] = "Olá, Jogador(a).\n Eu sou o Comenius, o pai da Didática. \n Vou te mostrar como planejar melhor suas \n aulas com as mídias. ";
+        textosCutscene[1] = "E eu sou a professora Maria de Lourdes,\n mas pode me chamar de Lurdinha.";
+        textosCutscene[2] = "Venho aprendendo muito sobre os usos das novas \nmídias nos planejamentos escolares, e vou ajudar você\n nessa missão!";
+        textosCutscene[3] = "Precisamos criar práticas didáticas mais ágeis e\n tornar os estudantes protagonistas no processo. \nDurante o jogo serão apresentadas três metodologias ativas que vão te ajudar nesta tarefa.";
+        textosCutscene[4] = "Aqui no jogo você vai estender os espaços de\n aprendizagem para além das paredes da sala de aula e dos muros da escola.";
+        textosCutscene[5] = "Para isso, você vai poder utilizar os laboratórios, instigar os \n estudantes a pesquisar, realizar partes das atividades \n em casa, levá-los à cidade para aprender de maneira \nenvolvente e a partir de diferentes contextos.";
+        textosCutscene[6] = "Aqui você vai criar sequências didáticas com as mídias\n do século XXI, planejando com metodologias ativas e \n considerando as inteligências múltiplas das suas turmas.";
+        textosCutscene[7] = "Você está pronto(a) para começar \nnossa jornada?";
+        textosCutscene[8] = "<u><b>Ótimo!</b></u> Então  vamos juntos explorar o potencial e o \n desafio de incluir as mídias digitais na educação. \nVamos lá?";
 
         textosMostrados[0].text = textosCutscene[paginaAtual];
     }
@@ -66,11 +73,11 @@ public class textoCutScne : MonoBehaviour
             botaoFinal.SetActive(false);
         }
 
-        AjustarComenius(paginaAtual);
+        AjustarSprites(paginaAtual);
 
 
 
-        if (paginaAtual == 0 || paginaAtual == 4 || paginaAtual == 5)
+        if (paginaAtual == 0 || paginaAtual == 7 || paginaAtual == 8)
         {
             for (int i = 0; i < baloes.Length; i++)
             {
@@ -78,38 +85,38 @@ public class textoCutScne : MonoBehaviour
             }
             baloes[0].SetActive(true);
             textosMostrados[0].text = textosCutscene[paginaAtual];
-            if(paginaAtual == 4)
+            if(paginaAtual == 7)
             {
                 botaoPronto.SetActive(true);
             }
-            if(paginaAtual == 5)
+            if(paginaAtual == 8)
             {
                 botaoFinal.SetActive(true);
             }
         }
 
-        if(paginaAtual == 1 || paginaAtual == 3)
+        if(paginaAtual == 1 || paginaAtual == 2 || paginaAtual == 4 || paginaAtual == 6 || paginaAtual == 8)
         {
             for (int i = 0; i < baloes.Length; i++)
             {
                 baloes[i].SetActive(false);
             }
-            baloes[1].SetActive(true);
-            textosMostrados[1].text = textosCutscene[paginaAtual];
+            baloes[(int)BaloesNames.Lurdinha].SetActive(true);
+            textosMostrados[(int)BaloesNames.Lurdinha].text = textosCutscene[paginaAtual];
         }
 
-        if(paginaAtual == 2)
+        if(paginaAtual == 3 || paginaAtual == 5 )
         {
             for (int i = 0; i < baloes.Length; i++)
             {
                 baloes[i].SetActive(false);
             }
-            baloes[2].SetActive(true);
-            textosMostrados[2].text = textosCutscene[paginaAtual];
+            baloes[(int)BaloesNames.ComeniusMedio].SetActive(true);
+            textosMostrados[(int)BaloesNames.ComeniusMedio].text = textosCutscene[paginaAtual];
         }
     }
 
-    private void AjustarComenius(int valor)
+    private void AjustarSprites(int valor)
     {
         switch (valor)
         {
@@ -121,8 +128,8 @@ public class textoCutScne : MonoBehaviour
 
             case 1:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
-                lurdinhaDeLado.SetActive(true);
-                lurdinhaDeFrente.SetActive(false);
+                lurdinhaDeLado.SetActive(false);
+                lurdinhaDeFrente.SetActive(true);
                 break;
 
             case 2:
@@ -138,12 +145,32 @@ public class textoCutScne : MonoBehaviour
                 break;
 
             case 4:
+                comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(false);
+                lurdinhaDeFrente.SetActive(true);
+                break;
+
+            case 5:
+                comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(true);
+                lurdinhaDeFrente.SetActive(false);
+                break;
+
+            case 6:
+                comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
+                lurdinhaDeLado.SetActive(false);
+                lurdinhaDeFrente.SetActive(true);
+                break;
+
+
+            case 7:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Maozinha];
                 lurdinhaDeLado.SetActive(true);
                 lurdinhaDeFrente.SetActive(false);
                 break;
 
-            case 5:
+
+            case 8:
                 comenius.sprite = comeniusPosicoes[(int)ComeniusPos.Cruzado];
                 lurdinhaDeLado.SetActive(false);
                 lurdinhaDeFrente.SetActive(true);

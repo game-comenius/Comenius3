@@ -35,8 +35,7 @@ public class MediaFeedbackSelector : MonoBehaviour
         Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
         for (int i = 0; i < feedbacks.Count; i++)
         {
-            if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia &&
-                positive == feedbacks[i].alunoFeliz)
+            if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia   )
             {
                 Debug.Log("achei interação");
                 interactionManager.Interaction = feedbacks[i];

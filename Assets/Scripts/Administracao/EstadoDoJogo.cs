@@ -167,6 +167,8 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         Tema = null;
         FaseAtual = 0;
         RegisteredStates = null;
+        score = 0;
+        PlayerPrefs.DeleteAll();
     }
 
     [HideInInspector] public List<FlagDeEstadoDeJogo> flags;  // Não utilizado

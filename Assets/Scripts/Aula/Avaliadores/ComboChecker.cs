@@ -229,6 +229,8 @@ public class ComboChecker
 
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
                     return Combo.abpjArriscado5;
+
+                return Combo.abpjArriscado4;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Intrapessoal e Espacial-visual")
             {
@@ -247,6 +249,8 @@ public class ComboChecker
 
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
                     return Combo.abpjArriscado5;
+
+                return Combo.abpjArriscado4;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Corporal-cinestésica e Naturalista")
             {
@@ -263,6 +267,8 @@ public class ComboChecker
 
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
                     return Combo.abpjArriscado5;
+
+                return Combo.abpjArriscado4;
             }
            else if(EstadoDoJogo.Instance.Inteligencias.nome == "Interpessoal e Musical")
             {
@@ -278,10 +284,12 @@ public class ComboChecker
 
                 if(flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
                     return Combo.abpjArriscado5;
-                
+
+                return Combo.abpjArriscado4;
             }
       
                 
+
         }
 
         return Combo.Null;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ColocarIconeFinal : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Sprite bosta;
     void Start()
     {
         if (GetComponent<Image>())
@@ -14,8 +14,9 @@ public class ColocarIconeFinal : MonoBehaviour
         }
         else
         {
-            //
             GetComponent<SpriteRenderer>().sprite = EstadoDoJogo.Instance.Midias[2].sprite;
+           
+
         }
 
     }

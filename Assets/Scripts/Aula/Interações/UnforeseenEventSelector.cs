@@ -18,7 +18,8 @@ public class UnforeseenEventSelector : MonoBehaviour
 
     public void SelectUnforeseenEvent()
     {
-       int num = Random.Range(0, 2);
+       int num = Random.Range(0, 3);
+        Debug.Log(num);
         List<MomentoInteracao> unforeseenEvents;
         // (Switch não usado pois o nível de ensino não é constante)
         if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
@@ -33,11 +34,25 @@ public class UnforeseenEventSelector : MonoBehaviour
         if(num == 1 && SceneManager.GetActiveScene().name == "CidadeFuncional")
         {
             int random1 = Random.Range(14, 18);
+            Debug.Log("random 0 " + random1);
+            while (PlayerPrefs.GetInt("valorSorteado") == random1)
+            {
+                 random1 = Random.Range(14, 18);
+                Debug.Log("random 1 " + random1);
+            }
+            PlayerPrefs.SetInt("valorSorteado", random1);
             interactionManager.Interaction = unforeseenEvents[random1];
         }
         else
         {
-         
+            int random = (Random.Range(3, 5));
+            while (random == PlayerPrefs.GetInt("random"))
+            {
+                random = (Random.Range(3, 5));
+            }
+            PlayerPrefs.SetInt("random", random);
+
+
 
             for (int i = 0; i < unforeseenEvents.Count; i++)
             {

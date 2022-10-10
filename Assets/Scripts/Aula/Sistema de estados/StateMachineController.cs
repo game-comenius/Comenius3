@@ -36,8 +36,10 @@ public class StateMachineController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "CidadeFuncional")
         {
-            int valor = Random.Range(3, 5);
-            return EstadoDoJogo.Instance.Midias[valor];
+          
+
+         
+            return EstadoDoJogo.Instance.Midias[PlayerPrefs.GetInt("random")];
         }
         return messenger.currentMedia;
     }

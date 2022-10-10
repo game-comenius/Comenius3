@@ -6,10 +6,12 @@ public class FeedbackBalloonController : MonoBehaviour
     [SerializeField] private SpriteRenderer mediaSriteRenderer;
     [SerializeField] private Sprite positiveFeedbackBalloon;
     [SerializeField] private Sprite negativeFeedbackBalloon;
-
+    [SerializeField] private Sprite teste;
     public void UpdateBalloon(bool positive, Sprite mediaIcon)
     {
         GetComponent<SpriteRenderer>().sprite = positive ? positiveFeedbackBalloon : negativeFeedbackBalloon;
         mediaSriteRenderer.sprite = mediaIcon;
+        mediaSriteRenderer.transform.localScale = new Vector3(0.36F, 0.36F, 0.36F);
+        Debug.Log("atualizei escala balao fdp");
     }
 }
