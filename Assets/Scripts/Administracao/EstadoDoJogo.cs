@@ -82,8 +82,8 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
                     new Midia(NomeDeMidia.ProjetorMultimidia),
                     new Midia(NomeDeMidia.Lousa),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
-                      new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
-                        new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
+                    new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
+                    new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
             return midias;
         }

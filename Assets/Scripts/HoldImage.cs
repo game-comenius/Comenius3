@@ -6,9 +6,11 @@ public class HoldImage : MonoBehaviour
 {
     public Sprite[] personagensSprite = new Sprite[3];
     public int valor = 0;
+    public static HoldImage instance;
     private void Awake()
     {
         valor = 0;
+        instance = this;
 
     }
     private void Start()

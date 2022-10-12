@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(InteractionManager))]
@@ -7,7 +8,7 @@ public class MediaFeedbackSelector : MonoBehaviour
 {
     [System.Serializable] public class SelectionEvent : UnityEvent<bool, Sprite> { }
     public SelectionEvent OnSelectionEvent;
-
+    private List<int> listaMidiasPossiveis;
     // TODO: Trocar as listas por arrays
     [SerializeField] private List<MomentoInteracao> feedbacksInfantil;
     [SerializeField] private List<MomentoInteracao> feedbacksFundamental;
@@ -18,6 +19,7 @@ public class MediaFeedbackSelector : MonoBehaviour
 
     public void SelectFeedback()
     {
+        Debug.Log("SelectFeedback");
         List<MomentoInteracao> feedbacks;
 
         // (Switch não usado pois o nível de ensino não é constante)
@@ -32,17 +34,28 @@ public class MediaFeedbackSelector : MonoBehaviour
 
         bool positive = ComboChecker.ComboClassification.Arriscada != ComboChecker.EvaluateComboClassification();
         int sorteio = Random.Range(0, 5);
-        Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
-        for (int i = 0; i < feedbacks.Count; i++)
+        if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-3")
         {
-            if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia   )
+            sorteio = OrganizadorListas.instance.ObterOpcoesMidia();
+        }
+        int calculador = 0;
+        if(positive == true)
+        {
+            calculador = 14;
+        }
+            for (int i = calculador; i < feedbacks.Count; i++)
             {
-                Debug.Log("achei interação");
-                interactionManager.Interaction = feedbacks[i];
-                break;
+                if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia)
+                {
+                
+                    Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
+                    interactionManager.Interaction = feedbacks[i];
+                    break;
+                }
+
             }
 
-        }
+        Debug.Log("cheguei no fim");
         OnSelectionEvent.Invoke(positive, stateMachineController.CurrentMedia().sprite);
     }
 }

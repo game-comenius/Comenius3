@@ -17,13 +17,6 @@ public class StateMachineController : MonoBehaviour
           score = EstadoDoJogo.Instance.score;
         }
 
-        Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia);
-
-        Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[4].nomeMidia);
-
     }
 
     [ContextMenu("Avançar Estado")]
@@ -36,10 +29,7 @@ public class StateMachineController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "CidadeFuncional")
         {
-          
-
-         
-            return EstadoDoJogo.Instance.Midias[PlayerPrefs.GetInt("random")];
+            return EstadoDoJogo.Instance.Midias[PlayerPrefs.GetInt("valorMidia")];
         }
         return messenger.currentMedia;
     }

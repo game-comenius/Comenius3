@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Image))]
 public class DisplayDeAluno : MonoBehaviour
@@ -19,6 +22,8 @@ public class DisplayDeAluno : MonoBehaviour
     public Image imgAlunoFrente;
     public Image imgRetratoAceitacao;
     public Sprite[] personagensSprite = new Sprite[3];
+    public Sprite[] personagensFeliz = new Sprite[3];
+    public Sprite[] personagensTristes = new Sprite[3];
     private int value;
 
     private void Start()
@@ -31,17 +36,39 @@ public class DisplayDeAluno : MonoBehaviour
 
     public void AtualizarAluno()
     {
-        if (!usaOutroDeReferencia)
-            aluno = alunos.GetAluno();
+        if(SceneManager.GetActiveScene().name == "CidadeFuncional")
+        {
+            if (estaFeliz)
+            {
+                GetComponent<Image>().sprite = personagensFeliz[HoldImage.instance.valor];
+            }
+            else
+            {
+                GetComponent<Image>().sprite = personagensTristes[HoldImage.instance.valor];
+            }
+        }
         else
-            aluno = outroDisplayRefencia.aluno;
+        {
+            if (!usaOutroDeReferencia)
+                aluno = alunos.GetAluno();
+            else
+                aluno = outroDisplayRefencia.aluno;
+        }
+
 
         AtualizarDisplay();
+    }
+    private void OnEnable()
+    {
+        if (atualizaOnStart)
+        {
+            AtualizarAluno();
+        }
     }
 
     public void AtualizarDisplay()
     {
-     
+     if(SceneManager.GetActiveScene().name != "CidadeFuncional")
         GetComponent<Image>().sprite = estaFeliz ? aluno.alunoFeliz : aluno.alunoTriste;
         /*
         if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-3")
@@ -62,6 +89,15 @@ public class DisplayDeAluno : MonoBehaviour
             }
         }
         */
+
+
+
+    }
+
+    IEnumerator tt()
+    {
+        yield return new WaitForSeconds(0.001f);
+        GetComponent<Image>().sprite = personagensTristes[HoldImage.instance.valor];
     }
 
 
