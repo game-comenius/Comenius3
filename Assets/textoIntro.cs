@@ -8,7 +8,7 @@ public class textoIntro : MonoBehaviour
     public Text texto;
     void Start()
     {
-        texto.text = "Os estudantes irão reagir à sua escolha de mídia\nBoa Sorte!\r\n O tema da aula é: " + EstadoDoJogo.Instance.Tema;
+        texto.text = "Agora os estudantes vão reagir ao seu tema de aula!\nBoa Sorte!\r\n O tema da aula é: " + EstadoDoJogo.Instance.Tema;
      }
 
 }

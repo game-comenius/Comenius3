@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
 {
+
     // Um campo para cada nome de mídia presente em Metodologia.ABP.NomesDeMidiasDaMetodologia()
     // As mídias do tipo software serão mostradas usando os aparelhosDigitaisParaMidiasTipoSoftware,
     // esses aparelhos representarão todas elas
@@ -33,6 +35,8 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
             { NomeDeMidia.EditoresDeAudioEVideo, aparelhosDigitaisParaMidiasTipoSoftware },
             { NomeDeMidia.Aplicativos, aparelhosDigitaisParaMidiasTipoSoftware },
             { NomeDeMidia.Plataformas, aparelhosDigitaisParaMidiasTipoSoftware },
+            { NomeDeMidia.RedesSociais, aparelhosDigitaisParaMidiasTipoSoftware },
+            { NomeDeMidia.LivrosJornaisERevistas, cadernosECartazes},
         };
 
         // Esconder todas as mídias caso algumas delas ainda estejam visíveis
@@ -42,6 +46,20 @@ public class MidiasNoLaboratorioABP : MidiasNaSalaDeAula
 
     public void UpdateMedia()
     {
+        if (SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-1" )
+        {
+            MostrarMidiasNaSalaDeAula(EstadoDoJogo.Instance.Midias[0].nomeMidia);
+            return;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-3")
+        {
+            MostrarMidiasNaSalaDeAula(EstadoDoJogo.Instance.Midias[2].nomeMidia);
+            return;
+        }
+
+
+
         MostrarMidiasNaSalaDeAula(stateMachineController.CurrentMedia().nomeMidia);
     }
 

@@ -11,6 +11,6 @@ public class FeedbackBalloonController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = positive ? positiveFeedbackBalloon : negativeFeedbackBalloon;
         mediaSriteRenderer.sprite = mediaIcon;
-        mediaSriteRenderer.transform.localScale = new Vector3(0.36F, 0.36F, 0.36F);
+        mediaSriteRenderer.transform.localScale = new Vector3(0.20F, 0.20F, 0.20F);
     }
 }
