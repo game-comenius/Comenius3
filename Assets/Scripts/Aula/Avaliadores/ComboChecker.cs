@@ -55,6 +55,7 @@ public class ComboChecker
         CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia();
         CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia();
 
+
         if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
         {
             // Pelo menos uma é digital

@@ -306,7 +306,6 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void HoverExit()
     {
-        Debug.Log("entrei aqui");
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
             if (primeiraMidia)

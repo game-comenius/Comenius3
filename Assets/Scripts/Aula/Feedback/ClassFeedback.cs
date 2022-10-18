@@ -46,6 +46,11 @@ public class ClassFeedback : MonoBehaviour
 
         classQualityText.text = $"Sua Aula foi {adjective}";
 
+        Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
+        Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
+        Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia());
+        Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia());
+        Debug.Log(ComboChecker.EvaluateCombo());
         ComboChecker.ComboClassification comboClass = ComboChecker.EvaluateComboClassification();
 
         string comboClassification;
