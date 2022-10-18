@@ -29,13 +29,12 @@ public class DidaticSequencePopup : MonoBehaviour
             mediasFlags[0] = EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia();
             mediasFlags[1] = EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia();
             mediasFlags[2] = EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia();
-  
+
             media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
 
             media2Icon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
 
             media3Icon.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
-
 
             string type1;
             string type2;

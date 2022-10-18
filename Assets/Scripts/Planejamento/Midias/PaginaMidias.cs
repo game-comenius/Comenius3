@@ -41,6 +41,10 @@ public class PaginaMidias : PaginaPlanejamento
     private string locationName;
     public Text tituloSala2;
     private IconeMidias iconeSelecionado;
+    public Image icone2;
+    public Image icone3;
+    public Sprite fundoRoxo;
+
     private void Start()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
@@ -124,108 +128,220 @@ public class PaginaMidias : PaginaPlanejamento
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
             iconManager.ShowIcon(2);
-        }
-        if (!icone.selecionado)  // O ícone foi selecionado
-        {
-            if (primeiraMidia)
+            if (!icone.selecionado)  // O ícone foi selecionado
             {
-                if (primeiroIconeSelecionado != null)
+                if (primeiraMidia)
                 {
-                    primeiroIconeSelecionado.selecionado = false;
+                    if (segundoIconeSelecionado != null)
+                    {
+                        segundoIconeSelecionado.selecionado = false;
+                    }
+
+                    segundoIconeSelecionado = icone;
+                }
+                else
+                {
+                    if (terceiroIconeSelecionado != null)
+                    {
+                        terceiroIconeSelecionado.selecionado = false;
+                    }
+
+                    terceiroIconeSelecionado = icone;
                 }
 
-                primeiroIconeSelecionado = icone;
-            }
-            else
-            {
-                if (segundoIconeSelecionado != null)
+                // Posiciona o anel de seleção sobre o botão selecionado
+                anelDeSelecao.enabled = true;
+                anelDeSelecao.transform.SetParent(icone.transform);
+                anelDeSelecao.rectTransform.anchoredPosition = Vector2.zero;
+                iconeSelecionado = icone;
+                atualizar(icone);
+
+
+
+                int indice = segundaEtapa ? 2 : 0;
+                int indiceIcone = 0;
+                if (!primeiraMidia)
                 {
-                    segundoIconeSelecionado.selecionado = false;
+                    indice++;
+                    indiceIcone++;
+                    botaoConfirmar.interactable = true;
+                }
+                else
+                {
+                    botaoProximaMidia.interactable = true;
                 }
 
-                segundoIconeSelecionado = icone;
+                iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
+
             }
-
-            // Posiciona o anel de seleção sobre o botão selecionado
-            anelDeSelecao.enabled = true;
-            anelDeSelecao.transform.SetParent(icone.transform);
-            anelDeSelecao.rectTransform.anchoredPosition = Vector2.zero;
-            iconeSelecionado = icone;
-            atualizar(icone);
-
-
-
-            int indice = segundaEtapa ? 2 : 0;
-            int indiceIcone = 0;
-            if (!primeiraMidia)
+            else  // Cancela a seleção do ícone caso o jogador clique nele de novo
             {
-                indice++;
-                indiceIcone++;
-                botaoConfirmar.interactable = true;
-            }
-            else
-            {
-                botaoProximaMidia.interactable = true;
-            }
+                // Redefine a seleção
+                if (primeiraMidia)
+                {
+                    segundoIconeSelecionado = null;
+                }
+                else
+                {
+                    terceiroIconeSelecionado = null;
+                }
 
-            iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
+                anelDeSelecao.enabled = false;
 
+                resetar();
+         //       resetarEstadoDeJogo();
+            }
         }
-        else  // Cancela a seleção do ícone caso o jogador clique nele de novo
+        else
         {
-            // Redefine a seleção
-            if (primeiraMidia)
-            {
-                primeiroIconeSelecionado = null;
-            }
-            else
-            {
-                segundoIconeSelecionado = null;
-            }
 
-            anelDeSelecao.enabled = false;
+            if (!icone.selecionado)  // O ícone foi selecionado
+            {
+                if (primeiraMidia)
+                {
+                    if (primeiroIconeSelecionado != null)
+                    {
+                        primeiroIconeSelecionado.selecionado = false;
+                    }
 
-            resetar();
-            resetarEstadoDeJogo();
+                    primeiroIconeSelecionado = icone;
+                }
+                else
+                {
+                    if (segundoIconeSelecionado != null)
+                    {
+                        segundoIconeSelecionado.selecionado = false;
+                    }
+
+                    segundoIconeSelecionado = icone;
+                }
+
+                // Posiciona o anel de seleção sobre o botão selecionado
+                anelDeSelecao.enabled = true;
+                anelDeSelecao.transform.SetParent(icone.transform);
+                anelDeSelecao.rectTransform.anchoredPosition = Vector2.zero;
+                iconeSelecionado = icone;
+                atualizar(icone);
+
+
+
+                int indice = segundaEtapa ? 2 : 0;
+                int indiceIcone = 0;
+                if (!primeiraMidia)
+                {
+                    indice++;
+                    indiceIcone++;
+                    botaoConfirmar.interactable = true;
+                }
+                else
+                {
+                    botaoProximaMidia.interactable = true;
+                }
+
+                iconManager.SetIcon(indiceIcone, icone.GetComponent<Image>().sprite);
+
+            }
+            else  // Cancela a seleção do ícone caso o jogador clique nele de novo
+            {
+                // Redefine a seleção
+                if (primeiraMidia)
+                {
+                    primeiroIconeSelecionado = null;
+                }
+                else
+                {
+                    segundoIconeSelecionado = null;
+                }
+
+                anelDeSelecao.enabled = false;
+
+                resetar();
+                resetarEstadoDeJogo();
+            }
         }
+        
 
         icone.selecionado = !icone.selecionado;  // Inverte o estado de seleção
     }
 
     public void HoverEnter(IconeMidias icone)
     {
-        if (primeiraMidia)
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
-            if (primeiroIconeSelecionado == null)
+            if (primeiraMidia)
             {
-                atualizar(icone);
+                if (segundoIconeSelecionado == null)
+                {
+                    atualizar(icone);
+                }
+            }
+            else
+            {
+                if (terceiroIconeSelecionado == null)
+                {
+                    atualizar(icone);
+                }
             }
         }
         else
         {
-            if (segundoIconeSelecionado == null)
+            if (primeiraMidia)
             {
-                atualizar(icone);
+                if (primeiroIconeSelecionado == null)
+                {
+                    atualizar(icone);
+                }
+            }
+            else
+            {
+                if (segundoIconeSelecionado == null)
+                {
+                    atualizar(icone);
+                }
             }
         }
+
+    
     }
 
     public void HoverExit()
     {
-        if (primeiraMidia)
+        Debug.Log("entrei aqui");
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
-            if (primeiroIconeSelecionado == null)
+            if (primeiraMidia)
             {
-                resetar();
+                if (segundoIconeSelecionado == null)
+                {
+                    resetar();
+                }
+            }
+            else
+            {
+                if (terceiroIconeSelecionado == null)
+                {
+                    resetar();
+                }
             }
         }
         else
         {
-            if (segundoIconeSelecionado == null)
+            if (primeiraMidia)
             {
-                resetar();
+                if (primeiroIconeSelecionado == null)
+                {
+                    resetar();
+                }
+            }
+            else
+            {
+                if (segundoIconeSelecionado == null)
+                {
+                    resetar();
+                }
             }
         }
+   
     }
 
     private void atualizar(IconeMidias icone)
@@ -273,8 +389,6 @@ public class PaginaMidias : PaginaPlanejamento
         Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia);
         Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[4].nomeMidia);
 
     }
 
@@ -308,31 +422,54 @@ public class PaginaMidias : PaginaPlanejamento
         {
             subtitulo.text = "Escolha a mídia para o momento final da aula";
         }
-            OnViewAdvance.Invoke(this);
+        OnViewAdvance.Invoke(this);
         primeiraMidia = false;
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
 
-        primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
+            segundoIconeSelecionado.GetComponent<Button>().interactable = false;
 
-        if (segundoIconeSelecionado != null)
-        {
-            segundoIconeSelecionado.GetComponent<Button>().interactable = true;
-        }
-        if (setaPrimeiraMidia.activeInHierarchy)
-        {
-            setaPrimeiraMidia.SetActive(false);
-            setaSegundaMidia.SetActive(true);
-        }
-        else if(setaSegundaMidia.activeInHierarchy)
-        {
-            setaSegundaMidia.SetActive(false);
-            if (setaTerceiraMidia)
-                setaTerceiraMidia.SetActive(true);
+            if (terceiroIconeSelecionado != null)
+            {
+                terceiroIconeSelecionado.GetComponent<Button>().interactable = true;
+            }
+            if (setaPrimeiraMidia.activeInHierarchy)
+            {
+                setaPrimeiraMidia.SetActive(false);
+                setaSegundaMidia.SetActive(true);
+            }
+            else if (setaSegundaMidia.activeInHierarchy)
+            {
+                setaSegundaMidia.SetActive(false);
+                if (setaTerceiraMidia)
+                    setaTerceiraMidia.SetActive(true);
+            }
         }
         else
         {
 
+            primeiroIconeSelecionado.GetComponent<Button>().interactable = false;
+
+            if (segundoIconeSelecionado != null)
+            {
+                segundoIconeSelecionado.GetComponent<Button>().interactable = true;
+            }
+            if (setaPrimeiraMidia.activeInHierarchy)
+            {
+                setaPrimeiraMidia.SetActive(false);
+                setaSegundaMidia.SetActive(true);
+            }
+            else if (setaSegundaMidia.activeInHierarchy)
+            {
+                setaSegundaMidia.SetActive(false);
+                if (setaTerceiraMidia)
+                    setaTerceiraMidia.SetActive(true);
+            }
         }
+
+        if(botaoPainelAnterior)
         botaoPainelAnterior.SetActive(false);
+
         botaoProximaMidia.gameObject.SetActive(false);
         // botaoMidiaAnterior.SetActive(true);
         botaoConfirmar.gameObject.SetActive(true);
@@ -343,38 +480,58 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void Voltar()
     {
+        Debug.Log("cliquei voltar");
         OnViewReturn.Invoke(this);
         primeiraMidia = true;
+  
+        if(SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
 
-        primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
-    
-        if (segundoIconeSelecionado != null)
-        {
-            segundoIconeSelecionado.GetComponent<Button>().interactable = false;
-        }
-
-
-        if (setaPrimeiraMidia.activeInHierarchy)
-        {
-            setaPrimeiraMidia.SetActive(true);
-            setaSegundaMidia.SetActive(false);
-        }
-        else if (setaSegundaMidia.activeInHierarchy)
-        {
-            setaSegundaMidia.SetActive(false);
-            if(setaTerceiraMidia)
-            setaPrimeiraMidia.SetActive(true);
-        }
-        else if (setaTerceiraMidia.activeInHierarchy)
-        {
             setaTerceiraMidia.SetActive(false);
             setaSegundaMidia.SetActive(true);
-        }
-        botaoPainelAnterior.SetActive(true);
-        botaoProximaMidia.gameObject.SetActive(true);
-        botaoMidiaAnterior.SetActive(false);
-        botaoConfirmar.gameObject.SetActive(false);
+            segundoIconeSelecionado.GetComponent<Button>().interactable = true;
+            icone2.sprite = fundoRoxo;
+            icone3.sprite = fundoRoxo;
+            if (terceiroIconeSelecionado != null)
+            {
+                terceiroIconeSelecionado.selecionado = false;
+            }
 
+        }
+        else
+        {
+            primeiroIconeSelecionado.GetComponent<Button>().interactable = true;
+
+            if (segundoIconeSelecionado != null)
+            {
+                segundoIconeSelecionado.GetComponent<Button>().interactable = false;
+            }
+
+
+            if (setaPrimeiraMidia.activeInHierarchy)
+            {
+                setaPrimeiraMidia.SetActive(true);
+                setaSegundaMidia.SetActive(false);
+            }
+            else if (setaSegundaMidia.activeInHierarchy)
+            {
+                setaSegundaMidia.SetActive(false);
+                if (setaTerceiraMidia)
+                    setaPrimeiraMidia.SetActive(true);
+            }
+            else if (setaTerceiraMidia.activeInHierarchy)
+            {
+                setaTerceiraMidia.SetActive(false);
+                setaSegundaMidia.SetActive(true);
+            }
+        }
+   
+        if(botaoPainelAnterior)
+        botaoPainelAnterior.SetActive(true);
+
+        botaoProximaMidia.gameObject.SetActive(true);
+        botaoConfirmar.gameObject.SetActive(false);
+        botaoMidiaAnterior.SetActive(false);
         ResetarPaginas();
         resetar();
     }
@@ -392,6 +549,7 @@ public class PaginaMidias : PaginaPlanejamento
 
     public void VoltarPagina()
     {
+
         paginas[paginaAtual].SetActive(false);
         paginaAtual--;
         anelDeSelecao.gameObject.transform.SetParent(paginas[paginaAtual].transform);
@@ -416,7 +574,15 @@ public class PaginaMidias : PaginaPlanejamento
         paginas[paginaAtual].SetActive(false);
         paginaAtual = 0;
         anelDeSelecao.gameObject.transform.SetParent(paginas[paginaAtual].transform);
+        if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
+        {
+            for (int i = 0; i < paginas.Length; i++)
+            {
+                paginas[i].SetActive(false);
+            }
+        }
         paginas[paginaAtual].SetActive(true);
+
 
         DefinirEstadoDoAnelDeSelecao();
 
@@ -459,6 +625,7 @@ public class PaginaMidias : PaginaPlanejamento
     private void AtualizarBotoes()
     {
         botaoProximaPagina.interactable = paginaAtual + 1 < paginas.Length;
+        if(botaoPaginaAnterior)
         botaoPaginaAnterior.interactable = paginaAtual > 0;
     }
 }

@@ -41,21 +41,23 @@ public class MediaFeedbackSelector : MonoBehaviour
         int calculador = 0;
         if(positive == true)
         {
-            calculador = 14;
+            calculador = 15;
         }
-            for (int i = calculador; i < feedbacks.Count; i++)
+        Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.NivelDeEnsino.nome);
+        for (int i = calculador; i < feedbacks.Count; i++)
             {
                 if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia)
                 {
                 
-                    Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nomeMidia);
+            
                     interactionManager.Interaction = feedbacks[i];
+                    Debug.Log(interactionManager.Interaction);
+               
                     break;
                 }
 
             }
-
-        Debug.Log("cheguei no fim");
         OnSelectionEvent.Invoke(positive, stateMachineController.CurrentMedia().sprite);
     }
 }
