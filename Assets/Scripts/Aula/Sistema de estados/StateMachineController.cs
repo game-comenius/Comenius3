@@ -12,6 +12,11 @@ public class StateMachineController : MonoBehaviour
     private void Start()
     {
         messenger.Init();
+        if (SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-2")
+        {
+            EstadoDoJogo.Instance.score = 0;
+            score = 0;
+        }
         if (SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-3" || SceneManager.GetActiveScene().name == "CidadeFuncional")
         {
           score = EstadoDoJogo.Instance.score;

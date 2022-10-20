@@ -189,7 +189,14 @@ public class PaginaMidias : PaginaPlanejamento
                 anelDeSelecao.enabled = false;
 
                 resetar();
-         //       resetarEstadoDeJogo();
+                if (!primeiraMidia)
+                {
+                    botaoConfirmar.interactable = false;
+                }
+                else
+                {
+                    botaoProximaMidia.interactable = false;
+                }
             }
         }
         else

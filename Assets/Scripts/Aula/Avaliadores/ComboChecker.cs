@@ -177,7 +177,7 @@ public class ComboChecker
                      flagMidia3.HasFlag(CategoriasDeMidia.Exposicao)) &&
                     (flagMidia4.HasFlag(CategoriasDeMidia.Popular) ||
                      flagMidia4.HasFlag(CategoriasDeMidia.ProducaoArmazenamento)))
-                    return Combo.saiBoa5;
+                    return Combo.saiBoa4;
             }
             else
             {
