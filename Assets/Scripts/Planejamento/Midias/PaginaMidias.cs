@@ -525,11 +525,15 @@ public class PaginaMidias : PaginaPlanejamento
                 if (setaTerceiraMidia)
                     setaPrimeiraMidia.SetActive(true);
             }
-            else if (setaTerceiraMidia.activeInHierarchy)
+            else if (setaTerceiraMidia)
             {
-                setaTerceiraMidia.SetActive(false);
-                setaSegundaMidia.SetActive(true);
+                if (setaTerceiraMidia.activeInHierarchy)
+                {
+                    setaTerceiraMidia.SetActive(false);
+                    setaSegundaMidia.SetActive(true);
+                }
             }
+        
         }
    
         if(botaoPainelAnterior)
