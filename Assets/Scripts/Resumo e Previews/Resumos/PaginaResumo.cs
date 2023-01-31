@@ -8,18 +8,17 @@ public class PaginaResumo : PaginaPlanejamento
     [SerializeField] private Image iconeInteligencia;
     [SerializeField] private Text texto;
     [SerializeField] private Sprite icone;
-
+    [SerializeField] private Image iconeGo;
     protected override void OnEnable()
     {
         fundo.sprite = spriteFundo;
         textoAjuda.text = ajuda;
 
-        iconManager.ShowIcon(0);
+        iconManager.HideIcon(0);
         iconManager.HideIcon(1);
         iconManager.HideIcon(2);
         iconManager.HideIcon(3);
-
-        iconManager.SetIcon(0, icone);
+        iconeGo.sprite = icone;
 
         iconeNivelDeEnsino.sprite = EstadoDoJogo.Instance.NivelDeEnsino.sprite;
         iconeAreaDeConhecimento.sprite = EstadoDoJogo.Instance.AreaDeConhecimento.sprite;
@@ -28,10 +27,6 @@ public class PaginaResumo : PaginaPlanejamento
         BuildText();
     }
 
-    private void OnDisable()
-    {
-        iconManager.ResetIcon(0);
-    }
 
     // O argumento deveria ser um enum, porém por conveniência no editor foi usado um string
     public void BuildText(string highlightedChoice = "")

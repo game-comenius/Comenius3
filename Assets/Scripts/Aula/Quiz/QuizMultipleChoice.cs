@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,19 @@ public class QuizMultipleChoice : QuizBase
     [SerializeField] private int saiScore;
     [SerializeField] private int abprojScore;
     [SerializeField] private bool inverted;
-
+    public AudioSource audioSourceVitoria;
+    public AudioSource audioSourceDerrota;
+    public ParticleSystem particulaWin;
+    private bool acertei;
     private int scoreOnRightAnswer;
     private int selectedAffirmationIndex;
 
+    private void OnEnable()
+    {
+        audioSourceVitoria = GameObject.Find("AudiosourceAcerto").GetComponent<AudioSource>();
+        audioSourceDerrota = GameObject.Find("AudiosourceDerrota").GetComponent<AudioSource>();
+        particulaWin = GameObject.Find("ParticulaConfete").GetComponent<ParticleSystem>();
+    }
     public void NotifySelection(AffirmationMultipleChoice affirmation)
     {
         if (selectedAffirmationIndex >= 0 && affirmations.IndexOf(affirmation) != selectedAffirmationIndex)
@@ -45,7 +55,7 @@ public class QuizMultipleChoice : QuizBase
                 scoreOnRightAnswer = abprojScore;
                 break;
             default:
-                Debug.LogError("Metodologia não selecionada");
+                UnityEngine.Debug.LogError("Metodologia não selecionada");
                 break;
         }
 
@@ -64,7 +74,11 @@ public class QuizMultipleChoice : QuizBase
                 affirmations[i].correct = inverted;
 
                 if (inverted)
+                {
+                    
                     correctAnswers.Remove(affirmations[i].text.text);
+                }
+                
                 else
                     wrongAnswers.Remove(affirmations[i].text.text);
             }
@@ -84,10 +98,18 @@ public class QuizMultipleChoice : QuizBase
             else
                 affirmations[i].UpdateResultColor(false);
 
-            if (affirmations[i].selected && affirmations[i].correct == !inverted)
+            if (affirmations[i].selected && affirmations[i].correct == !inverted) {
                 score = scoreOnRightAnswer;
+               UnityEngine.Debug.Log("correto");
+                acertei = true;
+                audioSourceVitoria.Play();
+                particulaWin.Play();
+            }
         }
+        if(!acertei)
+        audioSourceDerrota.Play();
 
-        quizEvaluated = true;
+        acertei = false;
+           quizEvaluated = true;
     }
 }

@@ -22,8 +22,7 @@ public class UIManager : MonoBehaviour
         currentPanelGroup = defaultStartingPanelGroup;
 
         if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual > 0)
-        {
-                
+        {        
             AdvanceLevel();
         }
     }
