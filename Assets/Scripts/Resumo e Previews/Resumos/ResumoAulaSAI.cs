@@ -24,7 +24,7 @@ public class ResumoAulaSAI : MonoBehaviour
     [SerializeField] private Text textoQuartoMidia2;
     [SerializeField] private Text textoAgrupamento1;
     [SerializeField] private Text textoAgrupamento2;
-
+    [SerializeField] private Text textoTema;
     private void Start()
     {
         // Sprites
@@ -48,5 +48,6 @@ public class ResumoAulaSAI : MonoBehaviour
         textoQuartoMidia2.text = EstadoDoJogo.Instance.Midias[1].nome;
         textoAgrupamento1.text = EstadoDoJogo.Instance.Midias[2].agrupamento.ToString(); // TODO: Arrumar
         textoAgrupamento2.text = EstadoDoJogo.Instance.Midias[3].agrupamento.ToString(); // TODO: Arrumar
+        textoTema.text = EstadoDoJogo.Instance.Tema;
     }
 }

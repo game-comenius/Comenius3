@@ -18,6 +18,7 @@ public class ResumoAulaABP : MonoBehaviour
     [SerializeField] private Text textoMetodologia;
     [SerializeField] private Text textoLaboratorioMidia1;
     [SerializeField] private Text textoLaboratorioMidia2;
+    [SerializeField] private Text temaAula;
     private void Start()
     {
         // Sprites
@@ -35,5 +36,6 @@ public class ResumoAulaABP : MonoBehaviour
         textoMetodologia.text = EstadoDoJogo.Instance.Metodologia.nome;
         textoLaboratorioMidia1.text = EstadoDoJogo.Instance.Midias[0].nome;
         textoLaboratorioMidia2.text = EstadoDoJogo.Instance.Midias[1].nome;
+        temaAula.text = EstadoDoJogo.Instance.Tema;
     }
 }
