@@ -10,6 +10,7 @@ public class IconManager : MonoBehaviour
     {
         icons[index].GetComponent<Image>().sprite = sprite;
         icons[index].GetComponent<Animator>().Play("PopStart", 0);
+        EstadoDoJogo.Instance.Metodologia.sprite = sprite;  
     }
 
     public Sprite GetIconSprite(int index)
