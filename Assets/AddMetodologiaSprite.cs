@@ -12,4 +12,5 @@ public class AddMetodologiaSprite : MonoBehaviour
         metolodologiaIcon.sprite =  EstadoDoJogo.Instance.Metodologia.sprite;
     }
 
+
 }

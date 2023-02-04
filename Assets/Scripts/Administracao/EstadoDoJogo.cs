@@ -9,6 +9,10 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
 
     public float score;
     public bool pVez;
+    private bool modoClassico;
+    public bool telaSelecao;
+
+    public bool menuGame;
 
     public void AtualizarScore(float s)
     {
@@ -24,6 +28,17 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         }
 
         set => nivelDeEnsino = value;
+    }
+
+    public void SetarModoDeJogo(bool status)
+    {
+        modoClassico = status;
+        Debug.Log(modoClassico);
+    }
+
+    public bool ModoDeJogoEscolhido()
+    {
+        return modoClassico;
     }
 
     private AreaDeConhecimento areaDeConhecimento;
@@ -151,9 +166,37 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
 
     public void AdvanceLevel()
     {
+        Debug.Log(modoClassico);
+        if(modoClassico)
         FaseAtual++;
+
         midias = null;
         Tema = "";
+    }
+
+
+    public void TelaSelecao()
+    {
+        telaSelecao = true;
+        midias = null;
+        Tema = "";
+
+    }
+
+    public void JogarNovamente()
+    {
+        telaSelecao = true;
+        midias = null;
+        Tema = "";
+        if (!modoClassico)
+        {
+            Reset();
+        }
+    }
+    public void MenuGame()
+    {
+        menuGame = true;
+        Reset();
     }
 
     // TODO: Adicionar o reset geral no final dos créditos
