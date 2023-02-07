@@ -13,7 +13,7 @@ public class TrocadorDeCena : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-2" || SceneManager.GetActiveScene().name == "CidadeFuncional")
             {
-                Invoke("CarregarCenaDelay", 1);
+                Invoke("CarregarCenaDelay", 0.3f);
             }
             else
             {

@@ -15,25 +15,28 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject panelEscolhaModo;
     [SerializeField] private GameObject panelIntro;
+    [SerializeField] private GameObject planejamento;
     private GameObject currentPanel;
+    private EstadoDoJogo estadoDoJogo;
 
     private GameObject currentPanelGroup;
     private int faseEscolhida;
 
     private void Start()
     {
+        estadoDoJogo = EstadoDoJogo.Instance;
         // Inicializa os atributos
         currentPanel = defaultStartingPanel;
         currentPanelGroup = defaultStartingPanelGroup;
 
-        if (SceneManager.GetActiveScene().name == "Menu" && EstadoDoJogo.Instance.FaseAtual > 0  && !EstadoDoJogo.Instance.menuGame|| EstadoDoJogo.Instance.telaSelecao && !EstadoDoJogo.Instance.menuGame)
+        if (SceneManager.GetActiveScene().name == "Menu" && estadoDoJogo.FaseAtual > 0  && !estadoDoJogo.menuGame|| estadoDoJogo.telaSelecao && !estadoDoJogo.menuGame || estadoDoJogo.jogarNovamente)
         {        
             AdvanceLevel();
             return;
         }
-
-        EstadoDoJogo.Instance.menuGame = false;
-        EstadoDoJogo.Instance.telaSelecao = false;
+        estadoDoJogo.jogarNovamente = false;
+        estadoDoJogo.menuGame = false;
+        estadoDoJogo.telaSelecao = false;
     }
 
     public void ChangePanel(GameObject panel)
@@ -45,8 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void FaseEscolhido(int fase)
     {
-
-         EstadoDoJogo.Instance.FaseAtual = fase;
+        estadoDoJogo.FaseAtual = fase;
         faseEscolhida = fase;
   
     }
@@ -67,18 +69,21 @@ public class UIManager : MonoBehaviour
     public void AdvanceLevel()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
-        if (gameState.menuGame)
+        if (gameState.telaSelecao)
         {
-            ChangePanelGroup(panelEscolhaModo);
+            Debug.Log("entrei tela selecao");
+            ChangePanelGroup(planejamento);
+            ChangePanel(panelEscolhaModo);
         }
         else
         {
+            Debug.Log("Panel fase");
             ChangePanelGroup(levelStartPanelGroup);
-
             ChangePanel(levelPanels[gameState.FaseAtual]);
         }
         panelIntro.SetActive(false);
 
+        gameState.jogarNovamente = false;
         gameState.menuGame = false;
         gameState.telaSelecao = false;
     }

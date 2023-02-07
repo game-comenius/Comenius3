@@ -11,12 +11,12 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public bool pVez;
     private bool modoClassico;
     public bool telaSelecao;
-
+    public bool jogarNovamente;
     public bool menuGame;
 
     public void AtualizarScore(float s)
     {
-        score +=s;                                               
+        score +=s;              
     }
     public NivelDeEnsino NivelDeEnsino
     {
@@ -180,18 +180,21 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
         telaSelecao = true;
         midias = null;
         Tema = "";
+        if (!modoClassico)
+        {
+            Reset();
+        }
+    }
+    public void ReseteSelecao()
+    {
 
     }
 
     public void JogarNovamente()
     {
-        telaSelecao = true;
+        jogarNovamente = true;
         midias = null;
         Tema = "";
-        if (!modoClassico)
-        {
-            Reset();
-        }
     }
     public void MenuGame()
     {

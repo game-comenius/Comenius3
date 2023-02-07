@@ -19,7 +19,6 @@ public class MediaFeedbackSelector : MonoBehaviour
 
     public void SelectFeedback()
     {
-        Debug.Log("SelectFeedback");
         List<MomentoInteracao> feedbacks;
 
         // (Switch não usado pois o nível de ensino não é constante)
@@ -52,8 +51,6 @@ public class MediaFeedbackSelector : MonoBehaviour
                 
             
                     interactionManager.Interaction = feedbacks[i];
-                    Debug.Log(interactionManager.Interaction);
-               
                     break;
                 }
 
