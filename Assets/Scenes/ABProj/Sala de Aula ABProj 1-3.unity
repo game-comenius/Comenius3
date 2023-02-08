@@ -3311,6 +3311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TelaFinalCompleto
       objectReference: {fileID: 0}
+    - target: {fileID: 486477779104864000, guid: 286bf61ff8e5cba4fb30515350c26fb8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 486477779104864007, guid: 286bf61ff8e5cba4fb30515350c26fb8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3379,17 +3384,17 @@ PrefabInstance:
     - target: {fileID: 486477779104864007, guid: 286bf61ff8e5cba4fb30515350c26fb8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 486477779104864007, guid: 286bf61ff8e5cba4fb30515350c26fb8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 486477779104864007, guid: 286bf61ff8e5cba4fb30515350c26fb8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 486477779104864007, guid: 286bf61ff8e5cba4fb30515350c26fb8,
         type: 3}
@@ -3415,6 +3420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301074999744127595, guid: 286bf61ff8e5cba4fb30515350c26fb8,
+        type: 3}
+      propertyPath: m_Text
+      value: "Voc\xEA finalizou a Metodologia Baseada em Projetos"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7699,7 +7709,7 @@ MonoBehaviour:
   mediaSriteRenderer: {fileID: 324296862}
   positiveFeedbackBalloon: {fileID: 21300000, guid: de489ca64b39a4b78a93e7a6c3d8d9bf,
     type: 3}
-  negativeFeedbackBalloon: {fileID: 21300000, guid: d4bcd76d045cc4f9e88a804bedb93d3f,
+  negativeFeedbackBalloon: {fileID: 21300000, guid: de489ca64b39a4b78a93e7a6c3d8d9bf,
     type: 3}
   teste: {fileID: 21300000, guid: adfe682d0a0270140ac54ba0156057c1, type: 3}
 --- !u!114 &468548964
@@ -17084,6 +17094,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5017544119880334752}
     m_Modifications:
+    - target: {fileID: 2914463586332331948, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 866479908}
+    - target: {fileID: 2914463586332331948, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1893853904}
+    - target: {fileID: 2914463586332331948, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarCena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914463586332331948, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: VoltarMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914463586607730764, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 866479908}
+    - target: {fileID: 2914463586607730764, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1893853904}
+    - target: {fileID: 2914463586607730764, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarCena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914463586607730764, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TelaSelecao
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914463587163820449, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 866479908}
+    - target: {fileID: 2914463587163820449, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1893853904}
+    - target: {fileID: 2914463587163820449, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarCena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914463587163820449, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: JogarNovamente
+      objectReference: {fileID: 0}
     - target: {fileID: 8097616855411295524, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17234,6 +17304,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TelaFinalAvulso
       objectReference: {fileID: 0}
+    - target: {fileID: 8097616855811234172, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8097616856392507556, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17253,6 +17328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: JogarNovamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097616856395419603, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_text
+      value: "Voc\xEA finalizou a Metodologia Baseada em Projetos"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20127,13 +20207,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
+    - m_Text: "op\xE7\xE3o correta3"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta3"
+    - m_Text: "op\xE7\xE3o incorreta"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -29359,7 +29439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalHistoria: {fileID: 218275503}
   finalAvulso: {fileID: 1165006406}
-  trocadorDeCena: {fileID: 853448156}
+  trocadorDeCena: {fileID: 866479908}
+  trocadorDeCenaCreditos: {fileID: 853448156}
 --- !u!1 &1895598176
 GameObject:
   m_ObjectHideFlags: 0
@@ -33783,6 +33864,7 @@ MonoBehaviour:
   finalHistoria: {fileID: 0}
   finalAvulso: {fileID: 0}
   trocadorDeCena: {fileID: 0}
+  trocadorDeCenaCreditos: {fileID: 0}
 --- !u!1 &2134798565
 GameObject:
   m_ObjectHideFlags: 0
@@ -44635,8 +44717,8 @@ RectTransform:
   - {fileID: 1973033494}
   - {fileID: 1031663355}
   - {fileID: 337604321}
-  - {fileID: 1165006405}
   - {fileID: 218275502}
+  - {fileID: 1165006405}
   - {fileID: 835714522}
   - {fileID: 819048786}
   - {fileID: 1955507845}

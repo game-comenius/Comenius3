@@ -6,6 +6,7 @@ public class GameStateMethodCaller : MonoBehaviour
     public GameObject finalHistoria;
     public GameObject finalAvulso;
     public TrocadorDeCena trocadorDeCena;
+    public TrocadorDeCena trocadorDeCenaCreditos;
     public void AdvanceLevel()
     {
         EstadoDoJogo.Instance.AdvanceLevel();
@@ -31,23 +32,22 @@ public class GameStateMethodCaller : MonoBehaviour
     }
     public void DecidirQualFimAbrir()
     {
-        if(EstadoDoJogo.Instance.FaseAtual != 2)
+        if (EstadoDoJogo.Instance.ModoDeJogoEscolhido())
         {
-            if (EstadoDoJogo.Instance.ModoDeJogoEscolhido())
+          
+            if (EstadoDoJogo.Instance.FaseAtual == 2)
             {
-                finalHistoria.SetActive(true);
+                trocadorDeCena.TrocarCena();
             }
             else
             {
-                finalAvulso.SetActive(true);
+                finalHistoria.SetActive(true);
             }
-
         }
         else
         {
-            trocadorDeCena.TrocarCena();
+            finalAvulso.SetActive(true);
         }
-
 
     }
 }
