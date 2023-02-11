@@ -13,11 +13,6 @@ public class HoldImage : MonoBehaviour
         instance = this;
 
     }
-    private void Start()
-    {
-   
-    }
-
     public void AtualizarSprite()
     {
         valor++;/*

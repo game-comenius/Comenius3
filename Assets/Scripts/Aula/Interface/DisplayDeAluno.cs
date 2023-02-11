@@ -50,7 +50,12 @@ public class DisplayDeAluno : MonoBehaviour
         else
         {
             if (!usaOutroDeReferencia)
+            {
+
                 aluno = alunos.GetAluno();
+
+            }
+               
             else
                 aluno = outroDisplayRefencia.aluno;
         }

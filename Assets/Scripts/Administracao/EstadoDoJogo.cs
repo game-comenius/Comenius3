@@ -193,7 +193,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public void JogarNovamente()
     {
         jogarNovamente = true;
-        midias = null;
+       // midias = null;
         Tema = "";
     }
     public void MenuGame()
