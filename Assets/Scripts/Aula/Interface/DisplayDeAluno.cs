@@ -24,6 +24,7 @@ public class DisplayDeAluno : MonoBehaviour
     public Sprite[] personagensSprite = new Sprite[3];
     public Sprite[] personagensFeliz = new Sprite[3];
     public Sprite[] personagensTristes = new Sprite[3];
+    public List<Aluno> alunosRepitidos;
     private int value;
 
     private void Start()
@@ -51,12 +52,18 @@ public class DisplayDeAluno : MonoBehaviour
         {
             if (!usaOutroDeReferencia)
             {
-
                 aluno = alunos.GetAluno();
 
-            }
-               
+               while (alunosRepitidos.Contains(aluno))
+               {
+                    aluno = alunos.GetAluno();
+               }
+                alunosRepitidos.Add(aluno);
+
+             }
+
             else
+           
                 aluno = outroDisplayRefencia.aluno;
         }
 

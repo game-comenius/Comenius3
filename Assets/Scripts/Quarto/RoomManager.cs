@@ -180,14 +180,14 @@ public class RoomManager : MonoBehaviour
                 toyIcon.GetComponent<Image>().sprite = tempSprite;
                 intelligenceMiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
                 toyIcon.SetActive(true);
-                currentMediaText.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
                 currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 break;
             case 1:
                 media1Icon.GetComponent<Image>().sprite = tempSprite;
                 media1MiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 media1Icon.SetActive(true);
-                currentMediaText.text = $"Escolha o objeto que com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
                 currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
                 break;
             default:

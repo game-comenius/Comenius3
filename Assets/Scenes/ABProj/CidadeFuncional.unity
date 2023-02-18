@@ -1291,6 +1291,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   pVez: 0
+  telaSelecao: 0
+  jogarNovamente: 0
+  menuGame: 0
   flags: []
 --- !u!4 &526159475
 Transform:
@@ -25570,6 +25573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162aa7f1acc853242a8e180a446a93ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalHistoria: {fileID: 0}
+  finalAvulso: {fileID: 0}
+  trocadorDeCena: {fileID: 0}
+  trocadorDeCenaCreditos: {fileID: 0}
 --- !u!1 &8590174702320491371
 GameObject:
   m_ObjectHideFlags: 0
@@ -28495,13 +28502,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Vejam se ele n\xE3o est\xE1 no banheiro!  \r"
-      m_Image: {fileID: 0}
     - m_Text: Tudo bem, depois procuramos ele!
       m_Image: {fileID: 0}
-    - m_Text: "Maria, chama ele para se juntar ao grupo.\r"
+    - m_Text: "Vejam se ele n\xE3o est\xE1 no banheiro!  \r"
       m_Image: {fileID: 0}
     - m_Text: "Avisem a seguran\xE7a do local!\r"
+      m_Image: {fileID: 0}
+    - m_Text: "Maria, chama ele para se juntar ao grupo.\r"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -34783,6 +34790,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162aa7f1acc853242a8e180a446a93ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalHistoria: {fileID: 0}
+  finalAvulso: {fileID: 0}
+  trocadorDeCena: {fileID: 0}
+  trocadorDeCenaCreditos: {fileID: 0}
 --- !u!224 &8590174703664536568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35942,7 +35953,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.020469915, g: 0.13775244, b: 0.8679245, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
