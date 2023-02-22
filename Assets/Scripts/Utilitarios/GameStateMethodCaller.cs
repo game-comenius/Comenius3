@@ -37,7 +37,7 @@ public class GameStateMethodCaller : MonoBehaviour
           
             if (EstadoDoJogo.Instance.FaseAtual == 2)
             {
-                trocadorDeCena.TrocarCena();
+                trocadorDeCenaCreditos.TrocarCena();
             }
             else
             {

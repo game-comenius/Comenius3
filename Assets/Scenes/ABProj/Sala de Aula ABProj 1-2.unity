@@ -4285,6 +4285,7 @@ GameObject:
   - component: {fileID: 318848509}
   - component: {fileID: 318848511}
   - component: {fileID: 318848510}
+  - component: {fileID: 318848512}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -4350,6 +4351,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318848508}
   m_CullTransparentMesh: 1
+--- !u!114 &318848512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318848508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4a7c3d36ea43f4194d5c09eb698265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagemTrocar: {fileID: 318848510}
 --- !u!1 &319631865
 GameObject:
   m_ObjectHideFlags: 0
@@ -13304,6 +13318,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  alunosRepitidos: []
 --- !u!114 &1010701196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17686,13 +17701,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
+    - m_Text: "op\xE7\xE3o incorreta"
       m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta"
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
-      m_Image: {fileID: 0}
     - m_Text: "op\xE7\xE3o correta3"
+      m_Image: {fileID: 0}
+    - m_Text: "op\xE7\xE3o correta2"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20376,6 +20391,7 @@ GameObject:
   - component: {fileID: 1512469529}
   - component: {fileID: 1512469531}
   - component: {fileID: 1512469530}
+  - component: {fileID: 1512469532}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -20441,6 +20457,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512469528}
   m_CullTransparentMesh: 1
+--- !u!114 &1512469532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512469528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4a7c3d36ea43f4194d5c09eb698265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagemTrocar: {fileID: 1512469530}
 --- !u!1 &1513282698
 GameObject:
   m_ObjectHideFlags: 0
@@ -20580,6 +20609,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  alunosRepitidos: []
 --- !u!114 &1530796333
 MonoBehaviour:
   m_ObjectHideFlags: 0
