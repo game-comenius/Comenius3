@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [TextArea] public string Content;
+    public string Content;
+    public string ContentPt;
+     public string ContentEua;
+     public string ContentSpanish;
 
     public enum Orientation
     {
@@ -73,7 +76,16 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         popUpRect.position = popUpPosition;
-        text.text = Content;
+        if(Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
+        {
+            text.text = ContentPt;
+        }
+        else if(Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
+        {
+            text.text = ContentEua;
+        }
+        else
+            text.text = ContentSpanish;
         popUp.SetActive(true);
     }
 

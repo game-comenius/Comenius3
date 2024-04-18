@@ -28,5 +28,20 @@ public class TextosPortugues : Textos
 			"\r\naprendizagem se desenvolve.\r\n\r\n";
         textos[(int)ChaveTextos.METODOLOGIAS_ATIVAS] = "Metodologias Ativas:";
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROBLEMAS] = "Aprendizagem Baseada em Problemas (ABP)";
+        textos[(int)ChaveTextos.METODOLOGIA] = "<color=#1E0B5C>Metodologia 1 </color>";
+        textos[(int)ChaveTextos.METODOLOGIA2] = "<color=#1E0B5C>Metodologia 2</color>";
+        textos[(int)ChaveTextos.METODOLOGIA3] = "<color=#1E0B5C>Metodologia 3</color>";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA] = "Metodologia que parte de um\r\nproblema de complexidade adequada para\r\ntraçar uma solução adequada.";
+        textos[(int)ChaveTextos.LABORATORIO] = "LABORATÓRIO";
+        textos[(int)ChaveTextos.CONHECA_AS_METODOLOGIAS] = "Conheça as metodologias:";
+        textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Sala de Aula Invertida (SAI)";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Metodologia na qual os estudantes estudam\r\nsobre um tema em casa e trazem sua\r\nprodução e dúvidas para discutir com a\r\nturma em aula.";
+		textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "QUARTO DO ALUNO";
+        textos[(int)ChaveTextos.SALA_DE_AULA] = "SALA DE AULA";
+
+        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizagem baseada em projetos";
+        textos[(int)ChaveTextos.CIDADE] = "CIDADE";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodologia na qual propõe-se um projeto\r\ntemático que deve ser planejado e\r\n executado a fim de cumprir com as ações\r\npropostas.";
+
     }
 }

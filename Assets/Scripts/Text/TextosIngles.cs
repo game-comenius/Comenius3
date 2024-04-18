@@ -28,5 +28,23 @@ public class TextosIngles : Textos
 "\r\nlearning develops.\r\n\r\n";
         textos[(int)ChaveTextos.METODOLOGIAS_ATIVAS] = "Active Methodologies";
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROBLEMAS] = "Problem-Based Learning (PBL)";
+
+        textos[(int)ChaveTextos.METODOLOGIA] = "<color=#1E0B5C>Methodology 1</color>";
+        textos[(int)ChaveTextos.METODOLOGIA2] = "<color=#1E0B5C>Methodology 2</color>";
+        textos[(int)ChaveTextos.METODOLOGIA3] = "<color=#1E0B5C>Methodology 3</color>";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA] = "Methodology that starts from a\r\nproblem of adequate complexity for\r\ndevise a suitable solution.";
+        textos[(int)ChaveTextos.LABORATORIO] = "LABORATORY";
+        textos[(int)ChaveTextos.CONHECA_AS_METODOLOGIAS] = "Discover the methodologies:";
+        textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Flipped Classroom (SAI)";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Methodology in which students study\r\nabout a topic at home and bring their\r\nproduction and questions to discuss with\r\nclass to class.";
+        textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "STUDENT'S ROOM";
+        textos[(int)ChaveTextos.SALA_DE_AULA] = "CLASSROOM";
+        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Project-Based Learning";
+
+        textos[(int)ChaveTextos.CIDADE] = "CITY";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Methodology in which a\r\ntematic project is proposed that must be planned and\r\nexecuted in order to comply with the\r\nproposed actions";
+
+
     }
+    
 }
