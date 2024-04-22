@@ -19,6 +19,7 @@ public class PaginaEscolhaDaPersonagem : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
 
         textoAjuda.text = ajuda;

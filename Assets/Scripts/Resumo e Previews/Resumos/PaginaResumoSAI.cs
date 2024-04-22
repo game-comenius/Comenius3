@@ -15,6 +15,7 @@ public class PaginaResumoSAI : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         textoAjuda.text = ajuda;
         fundo.sprite = spriteFundo;
 

@@ -14,6 +14,7 @@ public class StagePage : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
         textoAjuda.text = ajuda;
 

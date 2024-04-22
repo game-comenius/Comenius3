@@ -19,6 +19,7 @@ public class PaginaInteligencias : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
 
         textoAjuda.text = ajuda;

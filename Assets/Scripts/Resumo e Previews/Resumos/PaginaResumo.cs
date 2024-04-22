@@ -11,6 +11,7 @@ public class PaginaResumo : PaginaPlanejamento
     [SerializeField] private Image iconeGo;
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
         textoAjuda.text = ajuda;
 

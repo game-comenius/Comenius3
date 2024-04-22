@@ -39,9 +39,23 @@ public class TextosPortugues : Textos
 		textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "QUARTO DO ALUNO";
         textos[(int)ChaveTextos.SALA_DE_AULA] = "SALA DE AULA";
 
-        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizagem baseada em projetos";
+        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizagem baseada em projetos (ABPj)";
         textos[(int)ChaveTextos.CIDADE] = "CIDADE";
         textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodologia na qual propõe-se um projeto\r\ntemático que deve ser planejado e\r\n executado a fim de cumprir com as ações\r\npropostas.";
 
+        textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>Agora é com você! </color>\r\n";
+        textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Selecione uma das opções:\r\nVocê quer jogar a <color=#0B355D>EXPERIENCIA COMPLETA?</color>";
+        textos[(int)ChaveTextos.OU_METODOLOGIAS_ATIVAS] = "Ou <color=#0B355D>UMA DAS METODOLOGIAS ATIVAS?</color>";
+        textos[(int)ChaveTextos.POP_INTRO_2] = "Juntos vamos explorar os vários\r\nusos de mídias digitais na educação.\r\n\r\nVocê começa o jogo escolhendo a sua fisionomia e montando as características da sua turma, que vão se manter ao longo das fases,\r\nservindo como base do seu planejamento.\r\n\r\nNo botão  =  você encontra as opções do menu,\r\ne se tiver dúvidas basta clicar no botão : ?\r\n \r\nPara iniciar, clique em  OK  e divirta-se escolhendo\r\nseu personagem e personalizando sua turma!";
+
+        textos[(int)ChaveTextos.PERSONAGEM] = "<b>Character</b>";
+        textos[(int)ChaveTextos.ESCOLHA_AVATAR] = "Choose your classroom avatar.";
+        textos[(int)ChaveTextos.ESTE_AVATAR] = "Este avatar representará você dentro de jogo, sua escolha não tem impacto na jogabilidade do game, é apenas uma escolha estética.";
+        textos[(int)ChaveTextos.MENU_PRINCIPAL] = "Menu Principal";
+        textos[(int)ChaveTextos.VOLTAR_MENU] = "Voltar ao Menu";
+        textos[(int)ChaveTextos.INFORMACOES] = "Informações";
+        textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "      O Game Comenius 3 é um jogo casual, de estratégia e simulação que foca nas mídias digitais, nas metodologias ativas e nas inteligências múltiplas.\r\n      O Game Comenius faz parte um projeto de mídia-educação que investiga como um jogo digital pode ensinar alunos de licenciatura e professores de todos os níveis de ensino a utilizar as mídias na sala de aula, para educar “com”, “sobre” e “através” delas. ";
+        textos[(int)ChaveTextos.AVALIAR_JOGO] = "Avaliar Jogo";
     }
+
 }

@@ -78,7 +78,9 @@ public class PaginaMidias : PaginaPlanejamento
 
     protected override void OnEnable()
     {
-        if(textoAjuda)                           
+        AtualizarTextos();
+
+        if (textoAjuda)                           
         textoAjuda.text = ajuda;
 
         if(spriteFundo)

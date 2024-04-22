@@ -18,6 +18,7 @@ public class ClassThemePage : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
 
         UpdateHelpText();
@@ -56,6 +57,7 @@ public class ClassThemePage : PaginaPlanejamento
 
     public void UpdateHelpText()
     {
+        AtualizarTextos();
         textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelp : ajuda;
     }
 }

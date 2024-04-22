@@ -7,6 +7,7 @@ public class PaginaDescricao : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
         textoAjuda.text = ajuda;
 

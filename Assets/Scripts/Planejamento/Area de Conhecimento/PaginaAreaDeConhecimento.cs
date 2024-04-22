@@ -30,6 +30,7 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     protected override void OnEnable()
     {
+        AtualizarTextos();
         fundo.sprite = spriteFundo;
 
         iconManager.ShowIcon(0);

@@ -35,15 +35,28 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.TEXT_METODOLOGIA] = "Metodología que parte de un\r\nproblema de complejidad adecuada para\r\ncrear una solución adecuada.";
         textos[(int)ChaveTextos.LABORATORIO] = "LABORATORIO";
         textos[(int)ChaveTextos.CONHECA_AS_METODOLOGIAS] = "Descubre las metodologías:";
-        textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Aula invertida (SAI)";
+        textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Aula invertida (AI)";
         textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Metodología en la que los estudiantes estudian\r\nun tema en casa y traen su\r\nproducción y dudas para discutir con la\r\nclase";
         textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "HABITACIÓN DE ESTUDIANTES";
         textos[(int)ChaveTextos.SALA_DE_AULA] = "AULA";
-        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizaje en base a proyectos";
+        textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizaje en base a proyectos (ABPj)";
 
         textos[(int)ChaveTextos.CIDADE] = "CIUDAD";
         textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodologia na qual propõe-se um projeto\r\ntemático que deve ser planejado e\r\n executado a fim de cumprir com as ações\r\npropostas.";
 
+        textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>¡Ahora depende de ti! </color>\r\n";
+        textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Selecciona una de las opciones:\r\n¿Quieres jugar la <color=#0B355D>EXPERIENCIA COMPLETA?</color>";
+        textos[(int)ChaveTextos.OU_METODOLOGIAS_ATIVAS] = "¿O <color=#0B355D>UNA DE LAS METODOLOGÍAS ACTIVAS?</color>";
+        textos[(int)ChaveTextos.POP_INTRO_2] = "Juntos exploraremos los diversos\r\nUsos de los medios digitales en la educación.\r\n\r\nComienzas el juego eligiendo tu apariencia y creando las características de tu clase, que se mantendrán a lo largo de las fases.\r\nsirviendo como base de su planificación.\r\n\r\nDebajo del botón = encontrarás las opciones del menú,\r\ny si tienes preguntas, simplemente haz clic en el botón: ?\r\n \r\nPara comenzar, haga clic en Aceptar y diviértase eligiendo\r\n¡Tu personaje y personaliza tu clase!";
+
+        textos[(int)ChaveTextos.PERSONAGEM] = "<b>Personaje</b>";
+        textos[(int)ChaveTextos.ESCOLHA_AVATAR] = "Elige tu avatar de clase.";
+        textos[(int)ChaveTextos.ESTE_AVATAR] = "Este avatar te representará en el juego, tu elección no tiene ningún impacto en la jugabilidad del juego, es sólo una elección estética.";
+        textos[(int)ChaveTextos.MENU_PRINCIPAL] = "Menú principal";
+        textos[(int)ChaveTextos.VOLTAR_MENU] = "Volver al menú";
+        textos[(int)ChaveTextos.INFORMACOES] = "Información";
+        textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "Game Comenius 3 es un juego casual, de estrategia y simulación que apuesta por los medios digitales, las metodologías activas y las inteligencias múltiples.\r\n      Game Comenius es parte de un proyecto de educación en medios que investiga cómo un juego digital puede enseñar a estudiantes universitarios y profesores de todos los niveles educativos a utilizar los medios en el aula, a educar “con”, “sobre” y “a través” de ellos.";
+        textos[(int)ChaveTextos.AVALIAR_JOGO] = "Califica el juego";
     }
 
 }
