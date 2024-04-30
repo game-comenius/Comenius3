@@ -56,6 +56,19 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.INFORMACOES] = "Informações";
         textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "      O Game Comenius 3 é um jogo casual, de estratégia e simulação que foca nas mídias digitais, nas metodologias ativas e nas inteligências múltiplas.\r\n      O Game Comenius faz parte um projeto de mídia-educação que investiga como um jogo digital pode ensinar alunos de licenciatura e professores de todos os níveis de ensino a utilizar as mídias na sala de aula, para educar “com”, “sobre” e “através” delas. ";
         textos[(int)ChaveTextos.AVALIAR_JOGO] = "Avaliar Jogo";
+        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Produção e Coordenação</b>\r\n\r\nDulce Márcia Cruz";
+        textos[(int)ChaveTextos.GAME_DESIGN] = "<b>Game Design</b>\r\n\r\nFábio Medeiros\r\nMatheus Leutchuk Cademartori\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.ARTE_UI] = "<b>Arte e UI</b>\r\n\r\nIndra Rosa da Silva\r\nLucas Emanuel Leite da Rosa Gomes\r\nMaria Antônia Petrassi\r\nNatan Salles Medeiros\r\nVit Duarte";
+        textos[(int)ChaveTextos.ARTE_DA_CIDADE] = "<b>Cenário da Cidade</b>\r\n\r\nVit Duarte";
+        textos[(int)ChaveTextos.PROGRAMACAO] = "<b>Programação</b>\r\n\r\nAlexis Mendes Sequeira\r\nBruno Souza da Silva\r\nNicole Alves Guglielmetti\r\nMatheus Aparicio da Silva\r\nBernardo Gomes Duarte\r\nThéo Floriano dos Santos\r\nEric Fernandes Evaristo\r\nLuccas Baillo Lopes Floriano";
+        textos[(int)ChaveTextos.PEDAGOGICO] = "<b>Pedagógico</b>\r\n\r\nDenise Figueredo Loch\r\nLucas Souza Pinheiro\r\nRaquel Ferreira da Rosa Oliveira\r\nRicardo Kerscher\r\nJayziela Jessica Fuck\r\nJeremias Martin Calandrini Coelho\r\nVicente Campana Bif";
+        textos[(int)ChaveTextos.UX_GESTAO] = "<b>UX, Gestão e QA</b>\r\n\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.CNPG] = "<b>Financeamento CNPq</b>\r\n\r\nIsadora Beagle";
+
+        textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Escolha o estágio de aprendizagem da turma:";
+        textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Com base no nível de ensino, o que será estudado?";
+        textos[(int)ChaveTextos.QUAL_PERFIL] = "Qual será o perfil dos estudantes desta turma?";
+
     }
 
 }

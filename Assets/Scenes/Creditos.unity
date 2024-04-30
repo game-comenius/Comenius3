@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 235077965}
   - component: {fileID: 235077967}
   - component: {fileID: 235077966}
+  - component: {fileID: 235077968}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -204,6 +205,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235077964}
   m_CullTransparentMesh: 0
+--- !u!114 &235077968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235077964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 33
+  caixaAlta: 0
 --- !u!1 &397991889
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +578,6 @@ GameObject:
   - component: {fileID: 718459796}
   - component: {fileID: 718459795}
   - component: {fileID: 718459799}
-  - component: {fileID: 718459800}
   m_Layer: 5
   m_Name: BotaoReiniciar
   m_TagString: Untagged
@@ -739,20 +753,6 @@ MonoBehaviour:
   finalAvulso: {fileID: 0}
   trocadorDeCena: {fileID: 0}
   trocadorDeCenaCreditos: {fileID: 0}
---- !u!114 &718459800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718459793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chave: 29
-  caixaAlta: 0
 --- !u!1 &875636019
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +764,7 @@ GameObject:
   - component: {fileID: 875636020}
   - component: {fileID: 875636022}
   - component: {fileID: 875636021}
+  - component: {fileID: 875636023}
   m_Layer: 5
   m_Name: ProducaoECoord
   m_TagString: Untagged
@@ -833,6 +834,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875636019}
   m_CullTransparentMesh: 0
+--- !u!114 &875636023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875636019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 34
+  caixaAlta: 0
 --- !u!1 &1061776078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1031,7 @@ GameObject:
   - component: {fileID: 1175006816}
   - component: {fileID: 1175006818}
   - component: {fileID: 1175006817}
+  - component: {fileID: 1175006819}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -1085,6 +1101,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175006815}
   m_CullTransparentMesh: 0
+--- !u!114 &1175006819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175006815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 29
+  caixaAlta: 0
 --- !u!1 &1210776062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1705,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "<b>Programa\xE7\xE3o</b>\n\nAlexis Mendes Sequeira\nBruno Souza da Silva\nNicole
     Alves Guglielmetti\nMatheus Aparicio da Silva\nBernardo Gomes Duarte\nTh\xE9o
-    Floriano dos Santos\nEric Fernandes Evaristo\nLuccas Baillo Lopes Floriano"
+    Floriano dos Santos\nEric Fernandes Evaristo\nLuccas Baillo Lopes"
 --- !u!222 &1720810540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1937,7 +1967,6 @@ GameObject:
   - component: {fileID: 1978761267}
   - component: {fileID: 1978761270}
   - component: {fileID: 1978761271}
-  - component: {fileID: 1978761272}
   m_Layer: 5
   m_Name: BotaoAvaliar
   m_TagString: Untagged
@@ -2097,20 +2126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dda92635df86488987f8453859f7dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1978761272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978761265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chave: 33
-  caixaAlta: 0
 --- !u!1 &2121623306
 GameObject:
   m_ObjectHideFlags: 0

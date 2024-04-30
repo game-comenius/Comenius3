@@ -33,7 +33,7 @@ public class UnforeseenEventSelector : MonoBehaviour
         // (Switch não usado pois o nível de ensino não é constante)
         if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EducacaoInfantil)
             unforeseenEvents = unforeseenEventsInfantil;
-        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
+        else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental())
             unforeseenEvents = UnforeseenEventsFundamental;
         else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoMedio)
             unforeseenEvents = UnforeseenEventsMedio;

@@ -57,6 +57,18 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.INFORMACOES] = "Information";
         textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "Game Comenius 3 is a casual, strategy and simulation game that focuses on digital media, active methodologies and multiple intelligences.\r\n      Game Comenius is part of a media education project that investigates how a digital game can teach undergraduate students and teachers at all levels of education to use media in the classroom, to educate “with”, “about” and “ through” them.";
         textos[(int)ChaveTextos.AVALIAR_JOGO] = "Review Game";
+        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Production and Coordination</b>\r\n\r\nSweet Márcia Cruz";
+        textos[(int)ChaveTextos.GAME_DESIGN] = "<b>Game Design</b>\r\n\r\nFábio Medeiros\r\nMatheus Leutchuk Cademartori\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.ARTE_UI] = "<b>Art and UI</b>\r\n\r\nIndra Rosa da Silva\r\nLucas Emanuel Leite da Rosa Gomes\r\nMaria Antônia Petrassi\r\nNatan Salles Medeiros\r\nVit Duarte";
+        textos[(int)ChaveTextos.ARTE_DA_CIDADE] = "<b>City Scenery</b>\r\n\r\nVit Duarte";
+        textos[(int)ChaveTextos.PROGRAMACAO] = "<b>Programming</b>\r\n\r\nAlexis Mendes Sequeira\r\nBruno Souza da Silva\r\nNicole Alves Guglielmetti\r\nMatheus Aparicio da Silva\r\nBernardo Gomes Duarte\r\nThéo Floriano dos Santos\r\nEric Fernandes Evaristo\r\nLuccas Baillo Lopes";
+        textos[(int)ChaveTextos.PEDAGOGICO] = "<b>Pedagogical</b>\r\n\r\nDenise Figueredo Loch\r\nLucas Souza Pinheiro\r\nRaquel Ferreira da Rosa Oliveira\r\nRicardo Kerscher\r\nJayziela Jessica Fuck\r\nJeremias Martin Calandrini Coelho\r\nVicente Campana Bif";
+        textos[(int)ChaveTextos.UX_GESTAO] = "<b>UX, Management and QA</b>\r\n\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.CNPG] = "<b>CNPq Financing</b>\r\n\r\nIsadora Beagle";
+
+        textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Choose the class's learning stage:";
+        textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Based on the level of education, what will be studied?";
+        textos[(int)ChaveTextos.QUAL_PERFIL] = "What will be the profile of the students in this class?";
     }
     
 }

@@ -42,7 +42,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizaje en base a proyectos (ABPj)";
 
         textos[(int)ChaveTextos.CIDADE] = "CIUDAD";
-        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodologia na qual propõe-se um projeto\r\ntemático que deve ser planejado e\r\n executado a fim de cumprir com as ações\r\npropostas.";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodología en la que\\r\\nse plantea un proyecto\\r\\ntemático que se debe planificar y\\r\\ejecutar para dar cumplimiento a las\\r\\nacciones propuestas";
 
         textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>¡Ahora depende de ti! </color>\r\n";
         textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Selecciona una de las opciones:\r\n¿Quieres jugar la <color=#0B355D>EXPERIENCIA COMPLETA?</color>";
@@ -57,6 +57,19 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.INFORMACOES] = "Información";
         textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "Game Comenius 3 es un juego casual, de estrategia y simulación que apuesta por los medios digitales, las metodologías activas y las inteligencias múltiples.\r\n      Game Comenius es parte de un proyecto de educación en medios que investiga cómo un juego digital puede enseñar a estudiantes universitarios y profesores de todos los niveles educativos a utilizar los medios en el aula, a educar “con”, “sobre” y “a través” de ellos.";
         textos[(int)ChaveTextos.AVALIAR_JOGO] = "Califica el juego";
+        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Producción y Coordinación</b>\r\n\r\nDulce Marcia Cruz";
+        textos[(int)ChaveTextos.GAME_DESIGN] = "<b>Diseño de juegos</b>\r\n\r\nFábio Medeiros\r\nMatheus Leutchuk Cademartori\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.ARTE_UI] = "<b>Arte y interfaz de usuario</b>\r\n\r\nIndra Rosa da Silva\r\nLucas Emanuel Leite da Rosa Gomes\r\nMaría Antônia Petrassi\r\nNatan Salles Medeiros\r\nVit Duarte";
+        textos[(int)ChaveTextos.ARTE_DA_CIDADE] = "<b>Paisaje de la ciudad</b>\r\n\r\nVit Duarte";
+        textos[(int)ChaveTextos.PROGRAMACAO] = "<b>Programación</b>\r\n\r\nAlexis Mendes Sequeira\r\nBruno Souza da Silva\r\nNicole Alves Guglielmetti\r\nMatheus Aparicio da Silva\r\nBernardo Gomes Duarte\r\nThéo Floriano dos Santos\r\nEric Fernandes Evaristo\r\nLuccas Baillo Lopes";
+        textos[(int)ChaveTextos.PEDAGOGICO] = "<b>Pedagógico</b>\r\n\r\nDenise Figueredo Loch\r\nLucas Souza Pinheiro\r\nRaquel Ferreira da Rosa Oliveira\r\nRicardo Kerscher\r\nJayziela Jessica Mierda\r\nJeremías Martín Calandrini Coelho\r\nVicente Campana Bif";
+        textos[(int)ChaveTextos.UX_GESTAO] = "<b>UX, Gestión y Control de Calidad</b>\r\n\r\nIsadora Beagle";
+        textos[(int)ChaveTextos.CNPG] = "<b>Financiamiento CNPq</b>\r\n\r\nIsadora Beagle";
+
+        textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Elige la etapa de aprendizaje de la clase:";
+        textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Según el nivel de estudios ¿qué se estudiará?";
+        textos[(int)ChaveTextos.QUAL_PERFIL] = "¿Cuál será el perfil de los estudiantes de esta clase?";
+
     }
 
 }
