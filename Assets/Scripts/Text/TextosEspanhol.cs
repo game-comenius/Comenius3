@@ -65,11 +65,15 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.PEDAGOGICO] = "<b>Pedagógico</b>\r\n\r\nDenise Figueredo Loch\r\nLucas Souza Pinheiro\r\nRaquel Ferreira da Rosa Oliveira\r\nRicardo Kerscher\r\nJayziela Jessica Mierda\r\nJeremías Martín Calandrini Coelho\r\nVicente Campana Bif";
         textos[(int)ChaveTextos.UX_GESTAO] = "<b>UX, Gestión y Control de Calidad</b>\r\n\r\nIsadora Beagle";
         textos[(int)ChaveTextos.CNPG] = "<b>Financiamiento CNPq</b>\r\n\r\nIsadora Beagle";
-
         textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Elige la etapa de aprendizaje de la clase:";
         textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Según el nivel de estudios ¿qué se estudiará?";
         textos[(int)ChaveTextos.QUAL_PERFIL] = "¿Cuál será el perfil de los estudiantes de esta clase?";
-
+        textos[(int)ChaveTextos.NIVEL_DE_ENSINO] = "<b>Nivel de educación</b>";
+        textos[(int)ChaveTextos.CAMPOS_DE_EXPERIENCIA] = "<b>Campos de experiencia</b>";
+        textos[(int)ChaveTextos.INTELIGENCIAS_MULTIPLAS] = "<b>Inteligencias multiples</b>";
+        textos[(int)ChaveTextos.CARACTERISTICAS_DA_TURMA] = "<b>Hoja 1: Características de Clase</b>";
+        textos[(int)ChaveTextos.PERFIL_ESTUDANTES_TURMA] = "¿Cuál será el perfil de los estudiantes de esta clase?";
+        textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "¡Estas son las características de tu clase! Puedes consultarlos durante el juego accediendo\r\nal menú y haciendo clic en el botón \"Tu pandilla\".";
     }
 
 }
