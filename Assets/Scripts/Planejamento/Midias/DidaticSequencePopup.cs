@@ -41,21 +41,136 @@ public class DidaticSequencePopup : MonoBehaviour
 
             for (int i = 0; i < 3; i++)
             {
+                type1 = "";
                 if (mediasFlags[i].HasFlag(CategoriasDeMidia.Popular))
-                    type1 = "Popular";
+                {
+
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Popular";
+                            break;
+                        default:
+                            type1 = "Popular";
+                            break;
+                    }
+                }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
-                    type1 = "Produção";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1 = "Production";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Producción";
+                            break;
+                        default:
+                            type1 = "Popular";
+                            break;
+                    }
+                }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.ConsultaRepositorio))
-                    type1 = "Consulta";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1= "Query";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Consulta";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Exhibición";
+                            break;
+                        default:
+                            type1 = "Consulta";
+                            break;
+                    }
+                }
                 else
-                    type1 = "Exposição";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Exhibition";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Exposição";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Exhibición";
+                            break;
+                        default:
+                            type2 = "Exposição";
+                            break;
+                    }
+                }
 
                 if (mediasFlags[i].HasFlag(CategoriasDeMidia.Digital))
-                    type2 = "Digital";
+                {
+
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Digital";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Digital";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Digital";
+                            break;
+                        default:
+                            type2 = "Digital";
+                            break;
+                    }
+                }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.Impressa))
-                    type2 = "Tradicional";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Traditional";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Tradicional";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Tradicional";
+                            break;
+                        default:
+                            type2 = "Tradicional";
+                            break;
+                    }
+                }
                 else
-                    type2 = "Audiovisual";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Audio-visual";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Audiovisual";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Audiovisual";
+                            break;
+                        default:
+                            type2 = "Audiovisual";
+                            break;
+                    }
+                }
 
                 if (i == 0)
                     media1TypesText.text = $"{type1}\n{type2}";
@@ -67,6 +182,15 @@ public class DidaticSequencePopup : MonoBehaviour
                 }
             }
         }
+
+
+     
+
+
+
+
+
+
         else
         {
             int startingIndex = firstStageSelection ? 0 : 2;
@@ -84,21 +208,131 @@ public class DidaticSequencePopup : MonoBehaviour
 
             for (int i = 0; i < 2; i++)
             {
+                type1 = "";
                 if (mediasFlags[i].HasFlag(CategoriasDeMidia.Popular))
-                    type1 = "Popular";
+                {
+
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Popular";
+                            break;
+                        default:
+                            type1 = "Popular";
+                            break;
+                    }
+                }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
-                    type1 = "Produção";
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1 = "Production";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Popular";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Producción";
+                            break;
+                        default:
+                            type1 = "Popular";
+                            break;
+                    }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.ConsultaRepositorio))
-                    type1 = "Consulta";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type1 = "Query";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type1 = "Consulta";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type1 = "Exhibición";
+                            break;
+                        default:
+                            type1 = "Consulta";
+                            break;
+                    }
+                }
+
                 else
-                    type1 = "Exposição";
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Exhibition";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Exposição";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Exhibición";
+                            break;
+                        default:
+                            type2 = "Exposição";
+                            break;
+                    }
 
                 if (mediasFlags[i].HasFlag(CategoriasDeMidia.Digital))
-                    type2 = "Digital";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Digital";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Digital";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Digital";
+                            break;
+                        default:
+                            type2 = "Digital";
+                            break;
+                    }
+                }
                 else if (mediasFlags[i].HasFlag(CategoriasDeMidia.Impressa))
-                    type2 = "Tradicional";
+                {
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Traditional";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Tradicional";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Tradicional";
+                            break;
+                        default:
+                            type2 = "Tradicional";
+                            break;
+                    }
+                }
+      
                 else
-                    type2 = "Audiovisual";
+                    switch (Textos.GetIdiomaSelecionado())
+                    {
+                        case Idiomas.INGLES:
+                            type2 = "Audio-visual";
+                            break;
+                        case Idiomas.PORTUGUES:
+                            type2 = "Audiovisual";
+                            break;
+                        case Idiomas.ESPANHOL:
+                            type2 = "Audiovisual";
+                            break;
+                        default:
+                            type2 = "Audiovisual";
+                            break;
+                    }
 
                 if (i == 0)
                     media1TypesText.text = $"{type1}\n{type2}";

@@ -37,7 +37,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Sala de Aula Invertida (SAI)";
         textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Metodologia na qual os estudantes estudam\r\nsobre um tema em casa e trazem sua\r\nprodução e dúvidas para discutir com a\r\nturma em aula.";
 		textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "QUARTO DO ALUNO";
-        textos[(int)ChaveTextos.SALA_DE_AULA] = "SALA DE AULA";
+        textos[(int)ChaveTextos.SALA_DE_AULAB] = "SALA DE AULA";
 
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizagem baseada em projetos (ABPj)";
         textos[(int)ChaveTextos.CIDADE] = "CIDADE";
@@ -74,7 +74,78 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.PERFIL_ESTUDANTES_TURMA] = "Qual será o perfil dos estudantes desta turma?";
 
         textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "Essas são as características da sua turma! Você\r\npoderá consultá-las ao longo do jogo acessando\r\no menu e clicando no botão \"Sua Turma\".";
+        textos[(int)ChaveTextos.CLIQUE_EM_CONFIRMAR] = "Clique em confirmar para começar a primeira fase\r\ndo jogo. Caso tenha mudado de ideia, clique em \r\npara alterar alguma opção.";
+        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "           Seus estudantes devem conseguir consultar\r\n informações atuais sobre o tema para depois aplicar o que descobriram de forma empírica!\r\n";
+        textos[(int)ChaveTextos.OLA_SOU_LURDINHA] = "Olá, sou a Lurdinha, sou coordenadora pedagógica e vou\r\nte ajudar com seu planejamento!\r\n";
+        textos[(int)ChaveTextos.AGORA_VOCE] = "Agora que você sabe o desafio da primeira metodologia, finalize sua\r\npersonalização com o tema da sua aula, usando como base as características da turma:\r\n";
+        textos[(int)ChaveTextos.QUAL_SERA_O_TEMA] = "\r\nQual será o tema da sua aula na metodologia 1, que acontecerá no Laboratório utilizando a Metodologia Aprendizagem Baseada em Problemas?";
+        textos[(int)ChaveTextos.CRIEI_UM_TEMA] = "Crie um tema que vai guiar seu planejamento e as escolhas de mídias adequadas para sua aula. ";
+        textos[(int)ChaveTextos.ESSA_ESCOLHA] = "Essa escolha não reflete na pontuação.";
+        textos[(int)ChaveTextos.NO_MAXIMO_45] = "(No máximo 45 caracteres)";
+        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "Na Aprendizagem Baseada em Problemas (ABP)\r\ndeve-se atentar para a descrição de um contexto no qual variáveis, sujeitos e situações possam ser \r\nclaramente identificados pelos estudantes\r\n\r\nO problema deve conter as seguintes características:\r\n\r\n* Apresentar tema e nível de complexidade\r\ncompatíveis com o conhecimento prévio dos\r\nestudantes;\r\n\r\n* Conter sugestões ou dicas que os estimulem a\r\nidentificar possíveis pontso de partida;\r\n\r\n* Ser simples e objetivo, para evitar que o grupo\r\ndesvie a atenção do tema;\r\n\r\n* Mobilizar de forma articulada os elementos de \r\ncompetência.\r\n";
+        textos[(int)ChaveTextos.APRENSENTAR_O_PROBLEMA] = "1.Apresentar o problema e levantar os \r\nconhecimentos sobre o assunto;\r\n2.Analisar as variáveis do problema e\r\npropor possíveis soluções;\r\n3. Buscar novas referências para qualificar\r\nas propostas, debater e buscar consenso\r\nsobre as possíveis soluções;";
+        textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "SEQUÊNCIA DIDÁTICA:";
+        textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1° Momento";
+        textos[(int)ChaveTextos.SEGUNDO_MOMENTO] = "2° Momento";
+        textos[(int)ChaveTextos.QUARTO_APRESENTAR] = "4.Apresentar as respostas e avaliar os \r\nresultados.";
+        textos[(int)ChaveTextos.ESPACO_DE_APRENDIZAGEM] = "<b>Espaço de Aprendizagem</b>";
+        textos[(int)ChaveTextos.SUA_AULA_ACONTECERA] = "Sua aula acontecerá no espaço:";
+        textos[(int)ChaveTextos.DURANTE_O_MOMENTO] = "Durante o momento da aula você irá responder quizes sobre sua turma, metodologia e as mídias escolhidas a seguir!\r\n";
+        textos[(int)ChaveTextos.VOCE_IRA_JOGAR_UMA_AULA] = "Você irá jogar uma aula do Ensino Superior sobre Linguística, Letras e Artes com uma turma de perfil Linguística e Lógico-matemática.";
+        textos[(int)ChaveTextos.NA_SEQUENCIA_DA_APRENDIZAGEM] = "Na sequência da Aprendizagem Baseada em Problemas, a aula é pensada em dois momentos onde os estudantes irão:";
+        textos[(int)ChaveTextos.APRESENTAR_O_PROBLEMA] = "Apresentar o problema e levantar os conhecimentos sobre o assunto";
+        textos[(int)ChaveTextos.APRESENTAR_AS_RESPOSTAS] = "Apresentar as respostas e avaliar os resultados";
+        textos[(int)ChaveTextos.ESCOLHA_AS_MIDIAS] = "Escolha as midias adequadas para estes objetivos!";
+        textos[(int)ChaveTextos.MIDIAS_PRIMEIRO_MOMENTO] = "<b>Midias - Primeiro momento</b>";
+        textos[(int)ChaveTextos.ESCOLHA_DUAS_MIDIAS] = "Escolhas as duas mídias que serão utilizadas na sala de aula";
+        textos[(int)ChaveTextos.POPULAR] = "<style=\"title\">Popular</style>\r\n\r\nSão mídias muito utilizadas fora da escola, tanto para informação quanto para conversação. \r\nEstratégias que incluem o debate, o resgate de conhecimentos prévios e a contextualização dos saberes escolares com a realidade podem aproveitar as mídias populares.";
+        textos[(int)ChaveTextos.PRODUCAO] = "<style=\"title\">Produção</style>\r\n\r\nMídias que permitem ao estudante fazer, criar, desenvolver,  construir, montar, inventar, ou seja, ter autoria, construindo e organizando saberes durante as atividades. Atividades que geram produtos, seja na forma de exercícios, escrita em diferentes linguagens, esquemas para compreensão ou protótipos, são estratégias didáticas que utilizam mídias de produção.";
+        textos[(int)ChaveTextos.CONSULTA] = " <style=\"title\">Consulta</style>\r\n\r\nSão mídias utilizadas para consulta dos estudantes sobre o conteúdo escolar. Apoiam todo tipo de busca de informação e ajudam no embasamento para tomadas de decisão e aprofundar o conhecimento. Todas as as atividades que envolvem pesquisa, leitura, compilação e análise de dados geralmente vão exigir mídias de consulta.";
+        textos[(int)ChaveTextos.EXPOSICAO] = "<style=\"title\">Exposição</style>\r\n\r\nMídias utilizadas para apresentação dos conteúdos, tanto por professores quanto pelos estudantes. A apresentação de ideias ou problemas, de trabalhos realizados, a explicação sobre temas específicos e a divulgação de resultados e reflexões são estratégias que se beneficiam das mídias de exposição.";
+        textos[(int)ChaveTextos.DIGITAL] = "<style=\"title\">Digital</style>\r\n\r\nAs mídias digitais são as mais atuais. Seu desenvolvimento acelerou no século XXI. Elas têm como base o tratamento de dados em diferentes suportes físicos (equipamentos como computador, videogame, notebook, tablet, celular, etc) mas também virtuais como os aplicativos (programas que perimitem permitem gravar, editar e compartilhar textos, imagens e sons). São as mídias da cultura digital e participativa, da inteligência coletiva e do ciberespaço. Suas principais características são a interatividade, a ubiquidade (estar em todos os lugares), a velocidade, a virtualidade e geralmente são utilizadas a partir de uma interface . Permitem criação, tratamento, compartilhamento, armazenamento e conversão de dados em projetos que tenham como suporte a internet, a comunicação online ou offline tais como produções gráficas, videogames, conteúdos audiovisuais ou hipertextuais, etc. Seu conteúdo pode ser reproduzido, remixado e reutilizado sem perda de qualidade, o que garante um fluxo de trabalho dinâmico e multimidiático, favorecendo a interdisciplinaridade e a integração entre os diferentes meios.";
+        textos[(int)ChaveTextos.TRADICIONAL] = "<style=\"title\">Tradicional</style>\r\n\r\nAs mídias tradicionais são aquelas consideradas a base da educação escolar e compõem o padrão \"sala de aula\" no imaginário da sociedade ocidental há séculos. Estão presentes em todos os espaços educativos e considera-se que os professores sabem como planejar com elas pela experiência vivida na própria formação. Seu suporte é material e físico podendo ser em papel (cadernos, cartazes ou fotos), em papel impresso (livro, jornais e revistas), ou estar fixo na sala de aula, como o quadro de giz.";
+        textos[(int)ChaveTextos.AUDIO_VISUAL] = "<style=\"title\">Audiovisual</style>\r\n\r\nAs mídias audiovisuais são a geração de mídias que dominou o século XX. São aquelas da comunicação de massa, que atingiam grandes públicos e traziam imagem e som como base de sua linguagem, como o cinema, o rádio e a televisão e os equipamentos eram caros, grandes e profissionais. Por isso, essas mídias faziam parte de grandes empresas de comunicação e seus protudos eram recebidos nos locais, por antenas, cabos ou diretamente em filmes, fitas cassete, CDs ou DVDs. Os produtos eram consumidos por inteiro (programas) e poucas pessoas po, como fitas cassete ou CD/DVD.";
+        textos[(int)ChaveTextos.CONFIRA_SE_SUA_ESCOLHA] = "Confira se sua escolha é a melhor opção para este objetivo!";
+        textos[(int)ChaveTextos.AREA_DE_CONHECIMENTO] = "Áreas de Conhecimento";
+        textos[(int)ChaveTextos.FICHA_DOIS] = "<b>Ficha 2: Planejamento</b>";
+        textos[(int)ChaveTextos.SALA_DE_AULA] = "Seus estudantes devem conseguir consultar\r\n informações atuais sobre o tema para depois aplicar o que descobriram de forma empírica!\r\n";
+        textos[(int)ChaveTextos.REVISE_AS_CARACTERISTICAS] = "Revise as características da sua turma e planejamento clicando no bloco de notas antes de avançar para a última etapa, onde um quiz irá testar seus conhecimentos e vamos descobrir o que os estudantes acharam da sua aula!";
+        textos[(int)ChaveTextos.SUA_AULA] = "Sua aula será ministrada em laboratório utilizando a metodologia de Aprendizagem Baseada em Problemas (PBL) com as mídias [...] e [...].";
+        textos[(int)ChaveTextos.CONFIRMAR] = "CONFIRMAR";
+        textos[(int)ChaveTextos.NASA_SALA_INVERTIDA] = "Na Sala de Aula Invertida há a possibilidade de concentrar na plataforma ou ambiente virtual as informações necessárias para o decorrer da disciplina ou curso, o que é um grande atrativo desse método.";
+        textos[(int)ChaveTextos.SEQUENCIA_DICATICA2] = "Sequência Didática, na sala de aula:\r\n\r\n1. Explorar o material\r\n\r\n2. Discutir com o grupo em sala de aula\r\n\r\n3. Realizar atividades";
+        textos[(int)ChaveTextos.NA_SALA_DE_AULA_INVERTIDA_DOCENTE] = "Na Sala de Aula Invertida, o docente propõe um conteúdo e atividades para serem feitas em casa pelos estudantes, por meio de materiais como vídeos, podcasts ou leitura de textos, etc. Após o estudo prévio do tema, os estudantes levam para a sala de aula suas dúvidas, realizam reflexões em grupos e desenvolvem projetos.";
+        textos[(int)ChaveTextos.MIDIAS_QUARTO] = "<b>Mídias - Quarto</b>";
+        textos[(int)ChaveTextos.NA_SEQUENCIA] = "Na sequência da <b>Sala de Aula Invertida</b>, este é o momento em que os estudantes irão:";
+        textos[(int)ChaveTextos.MIDIAS_SALA] = "<b>Mídias - Sala de Aula</b>";
+        textos[(int)ChaveTextos.CONHECER_SALA_INVERTIDA] = "Vamos conhecer um pouco mais sobre a Sala de Aula Invertida?";
+        textos[(int)ChaveTextos.QUARTO_ESTUDANTE] = "SALA DE ESTUDANTES";
+        textos[(int)ChaveTextos.NO_MOMENTO] = "Durante a aula você responde questionários sobre sua aula, metodologia e a mídia escolhida para seguir!";
+        textos[(int)ChaveTextos.NO_MOMENTO_DO_QUARTO] = "Na sala você interage como aluno utilizando objetos para realizar atividades!";
+        textos[(int)ChaveTextos.FICHA_2_RESUMO_2] = "<b>Ficha Resumo 2: Planejamento da Aula</b>";
+        textos[(int)ChaveTextos.LOGO_APOS] = "Logo após, um quiz irá testa seus conhecimentos e vamos descobrir o que os estudantes acharam da sua aula!  Boa sorte!";
+        textos[(int)ChaveTextos.QUAL_SERA_O_SEU] = "Qual será o seu projeto na metodologia 3, que acontecerá na \r\ncidade utilizando a Metodologia Aprendizagem Baseada em Projetos?\r\n";
+        textos[(int)ChaveTextos.DESEJA_REALMENTE] = "Deseja realmente voltar ao menu principal?";
+        textos[(int)ChaveTextos.SIM] = "SIM";
+        textos[(int)ChaveTextos.NAO] = "NAO";
+        textos[(int)ChaveTextos.O_PROBLEMA_DO_PROJETO] = "O problema do projeto é multidimensional e altamente interativo, uma vez que insere os participantes em um processo de investigação estruturado em torno de questões complexas. Diante disso, a grande contribuição dessa metodologia em sala de aula reside na ênfase ao processo de aprendizagem e na interação entre os estudantes.\r\n\r\n\r\nOs projetos permitem unificar vários aspectos importantes do processo de aprendizagem: a ação protagonizada pelo aluno, a intencionalidade dessa ação e sua inserção em um contexto social.\r\n";
 
+        textos[(int)ChaveTextos.POR_MEIO] = "Por meio dos princípios de autonomia, pesquisa, ação e reflexão, o desenvolvimento de um projeto parte da definição de um tema, da proposição de desafios e do planejamento e execução de estratégias para o cumprimento das ações propostas.\r\n\r\nPara tanto, o docente deve observar os seguintes aspectos: \r\n\r\n• Conteúdo significativo: relevância para os estudantes.\r\n\r\n• Perguntas instigantes: mobilizar o grupo para a investigação, apresentando diferentes possibilidades de solução. \r\n\r\n• Pesquisa e inovação: consultar diferentes fontes especializadas, buscando resultados criativos e inovadores. \r\n\r\n• Valorização do processo: Aspectos relacionais e cognitivos do processo são fundamentais para a vida dos estudantes. ";
+        textos[(int)ChaveTextos.A_SEQUENCIA_DIDATICA] = "A sequência didática na aprendizagem baseada em projetos pode ser dividida em três momentos:\r\n\r\n• <b>Definir o escopo</b>, Planejar as etapas do projeto: é o planejamento, feito não só previamente, mas durante as primeiras aulas, contando com a participação dos alunos.\r\n\r\n• <b>Executar as ações previstas</b>, Monitorar o desenvolvimento do projeto: É o momento de prática e execução do projeto, que deve ser realizado pelos alunos e acompanhado pelo professor. \r\n\r\n• <b>Apresentar os resultados</b>: De volta em sala de aula, agora os alunos devem apresentar suas análises e resultados. ";
+        textos[(int)ChaveTextos.NO_MOMENTO_DA_CIDADE] = "No momento da cidade você interage com os estudantes, dando suporte para suas pesquisas.";
+        textos[(int)ChaveTextos.NO_MOMENTO_AULA] = "No momento da aula você responde quizzes sobre sua turma, metodologia e as mídias escolhidas a seguir!";
+        textos[(int)ChaveTextos.NA_SEQUENCIA_PROJETOS] = "Na sequência da Aprendizagem Baseada em Projetos,\r\nestes serão os moentos em que os estudantes irão vivenciar";
+        textos[(int)ChaveTextos.DEFINIR_ESCOPO] = "Definir o escopo, Planejar\r\nas etapas do projeto";
+        textos[(int)ChaveTextos.APRESENTAR_RESULTADOS] = "Apresentar os resultados";
+        textos[(int)ChaveTextos.TERCEIRO_MOMENTO] = "Terceiro momento";
+        textos[(int)ChaveTextos.EXERCUTAR_ACOES] = "Executar ás ações previstas,\r\nMonitorar o desenvolvimento \r\ndo projeto";
+        textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Vamos para a terceira metodologia? \r\nAgora você deve escolher um tema para sua última aula do jogo!";
+        textos[(int)ChaveTextos.RELEMBRAR_CARACTERISTICAS] = "Relembrando as características da turma:";
+        textos[(int)ChaveTextos.SEMPRE_QUE_POSSIVEL] = "             Sempre que possível, nesta metodologia, parta do interesse dos\r\n estudantes, de uma questão norteadora, de um problema real. Converse\r\ncom os alunos para que encontrem motivação, relevância e significado.\r\n";
+        textos[(int)ChaveTextos.DICA] = "Dica:";
+        textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Vamos para a terceira metodologia? \r\nAgora você deve escolher um tema para sua última aula do jogo!";
+        textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Vamos para a terceira metodologia? \r\nAgora você deve escolher um tema para sua última aula do jogo!";
+        textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Vamos para a terceira metodologia? \r\nAgora você deve escolher um tema para sua última aula do jogo!";
     }
 
 }
