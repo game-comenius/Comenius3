@@ -36,13 +36,13 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.LABORATORIO] = "LABORATORIO";
         textos[(int)ChaveTextos.CONHECA_AS_METODOLOGIAS] = "Descubre las metodologías:";
         textos[(int)ChaveTextos.SALA_DE_AULA_INVERTIDA] = "Aula invertida (AI)";
-        textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Metodología en la que los estudiantes estudian\r\nun tema en casa y traen su\r\nproducción y dudas para discutir con la\r\nclase";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA2] = "Metodología en la que los estudiantes estudian \r\n un tema en casa y traen su\r\nproducción y dudas para discutir con la\r\nclase";
         textos[(int)ChaveTextos.QUARTO_DO_ALUNO] = "HABITACIÓN DE ESTUDIANTES";
         textos[(int)ChaveTextos.SALA_DE_AULA] = "AULA";
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Aprendizaje en base a proyectos (ABPj)";
 
         textos[(int)ChaveTextos.CIDADE] = "CIUDAD";
-        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodología en la que\\r\\nse plantea un proyecto\\r\\ntemático que se debe planificar y\\r\\ejecutar para dar cumplimiento a las\\r\\nacciones propuestas";
+        textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodología en la que\r\nse plantea un proyecto \r\n temático que se debe  planificar y\r\n ejecutar para dar cumplimiento a las\r\nacciones propuestas";
 
         textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>¡Ahora depende de ti! </color>\r\n";
         textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Selecciona una de las opciones:\r\n¿Quieres jugar la <color=#0B355D>EXPERIENCIA COMPLETA?</color>";
