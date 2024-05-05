@@ -65,10 +65,15 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.PEDAGOGICO] = "<b>Pedagogical</b>\r\n\r\nDenise Figueredo Loch\r\nLucas Souza Pinheiro\r\nRaquel Ferreira da Rosa Oliveira\r\nRicardo Kerscher\r\nJayziela Jessica Fuck\r\nJeremias Martin Calandrini Coelho\r\nVicente Campana Bif";
         textos[(int)ChaveTextos.UX_GESTAO] = "<b>UX, Management and QA</b>\r\n\r\nIsadora Beagle";
         textos[(int)ChaveTextos.CNPG] = "<b>CNPq Financing</b>\r\n\r\nIsadora Beagle";
-
         textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Choose the class's learning stage:";
         textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Based on the level of education, what will be studied?";
         textos[(int)ChaveTextos.QUAL_PERFIL] = "What will be the profile of the students in this class?";
+        textos[(int)ChaveTextos.NIVEL_DE_ENSINO] = "<b>Level of education</b>";
+        textos[(int)ChaveTextos.CAMPOS_DE_EXPERIENCIA] = "<b>Fields of Experience</b>";
+        textos[(int)ChaveTextos.INTELIGENCIAS_MULTIPLAS] = "<b>Multiple Intelligences</b>";
+        textos[(int)ChaveTextos.CARACTERISTICAS_DA_TURMA] = "<b>Sheet 1: Class Characteristics</b>";
+        textos[(int)ChaveTextos.PERFIL_ESTUDANTES_TURMA] = "What will be the profile of the students in this class?";
+        textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "These are the characteristics of your class! You\r\ncan consult them throughout the game by accessing\r\nthe menu and clicking the \"Your Gang\" button.";
     }
     
 }

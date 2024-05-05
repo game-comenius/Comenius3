@@ -67,7 +67,13 @@ public class TextosPortugues : Textos
 
         textos[(int)ChaveTextos.ESCOLHA_ESTAGIO_APRENDIZAGEM] = "Escolha o estágio de aprendizagem da turma:";
         textos[(int)ChaveTextos.COM_BASE_ENSINO] = "Com base no nível de ensino, o que será estudado?";
-        textos[(int)ChaveTextos.QUAL_PERFIL] = "Qual será o perfil dos estudantes desta turma?";
+        textos[(int)ChaveTextos.NIVEL_DE_ENSINO] = "<b>Nível de Ensino</b>";
+        textos[(int)ChaveTextos.CAMPOS_DE_EXPERIENCIA] = "<b>Campos de Experiências</b>";
+        textos[(int)ChaveTextos.INTELIGENCIAS_MULTIPLAS] = "<b>Inteligências Múltiplas</b>";
+        textos[(int)ChaveTextos.CARACTERISTICAS_DA_TURMA] = "<b>Ficha 1: Características da Turma</b>";
+        textos[(int)ChaveTextos.PERFIL_ESTUDANTES_TURMA] = "Qual será o perfil dos estudantes desta turma?";
+
+        textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "Essas são as características da sua turma! Você\r\npoderá consultá-las ao longo do jogo acessando\r\no menu e clicando no botão \"Sua Turma\".";
 
     }
 
