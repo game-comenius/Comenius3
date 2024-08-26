@@ -2169,6 +2169,12 @@ MonoBehaviour:
   media: 5
   question: "Analise as afirmativas abaixo e selecione a resposta <b><color=#EFBF00>INCORRETA</color></b>
     sobre a m\xEDdia: "
+  questionPtbr: "Analise as afirmativas abaixo e selecione a resposta <b><color=#EFBF00>INCORRETA</color></b>
+    sobre a m\xEDdia: "
+  questionEua: 'Analyze the statements below and select the answer <b><color=#EFBF00>INCORRECT</color></b>
+    about the media:'
+  questionEsp: 'Analiza las siguientes afirmaciones y selecciona la respuesta <b><color=#EFBF00>INCORRECTA</color></b>
+    sobre los medios:'
   maxAffirmations: 4
   questionText: {fileID: 7591310647770252955}
   modularText: 0
@@ -2190,6 +2196,44 @@ MonoBehaviour:
     e sons gerados ao vivo ou previamente gravados."
   - "\xC9 uma m\xEDdia que exibe programa\xE7\xF5es art\xEDsticas, culturais, educativas,
     informativas etc."
+  correctPtbr:
+  - "A televis\xE3o aberta \xE9 um meio de comuni\xE7\xE3o de massa que exibe uma
+    programa\xE7\xE3o fixa."
+  - "Pode ser utilizada na sala de aula para mostrar v\xEDdeos, filmes e document\xE1rios
+    para contribuir com os conte\xFAdos trabalhados."
+  - "\xC9 poss\xEDvel refletir sobre esta m\xEDdia como um ve\xEDculo de informa\xE7\xE3o
+    de massa, que pode atingir diversos lugares ao mesmo tempo."
+  - "\xC9 uma m\xEDdia que permite a possibilidade de discutir sobre a criticidade
+    das informa\xE7\xF5es que s\xE3o passadas nela."
+  - "\xC9 um sistema eletr\xF4nico de transmiss\xE3o e recep\xE7\xE3o de imagens
+    e sons gerados ao vivo ou previamente gravados."
+  - "\xC9 uma m\xEDdia que exibe programa\xE7\xF5es art\xEDsticas, culturais, educativas,
+    informativas etc."
+  correctEua:
+  - Open television is a means of mass communication that displays fixed programming.
+  - It can be used in the classroom to show videos, films and documentaries to contribute
+    to the content covered.
+  - It is possible to reflect on this media as a vehicle of mass information, which
+    can reach several places at the same time.
+  - It is a medium that allows the possibility of discussing the criticality of the
+    information that is transmitted through it.
+  - It is an electronic system for transmitting and receiving images and sounds generated
+    live or previously recorded.
+  - It is a media that displays artistic, cultural, educational, informative programs,
+    etc.
+  correctEsp:
+  - "La televisi\xF3n abierta es un medio de comunicaci\xF3n masiva que muestra programaci\xF3n
+    fija."
+  - "Se puede utilizar en el aula para mostrar v\xEDdeos, pel\xEDculas y documentales
+    que contribuyan al contenido tratado."
+  - "Es posible reflexionar sobre este medio como veh\xEDculo de informaci\xF3n masiva,
+    que puede llegar a varios lugares al mismo tiempo."
+  - "Es un medio que permite la posibilidad de discutir la criticidad de la informaci\xF3n
+    que a trav\xE9s de \xE9l se transmite."
+  - "Es un sistema electr\xF3nico de transmisi\xF3n y recepci\xF3n de im\xE1genes
+    y sonidos generados en vivo o previamente grabados."
+  - "Es un medio que muestra programas art\xEDsticos, culturales, educativos, informativos,
+    etc."
   wrongAnswers:
   - "Por ser uma m\xEDdia que j\xE1 apresenta o conte\xFAdo fechado fica invi\xE1vel
     a media\xE7\xE3o do docente."
@@ -2199,10 +2243,39 @@ MonoBehaviour:
     apenas a produ\xE7\xE3o coletiva."
   - "Usada somente em situa\xE7\xF5es de lazer, essa m\xEDdia pouco tem a oferecer
     em situa\xE7oes de aprendizagem."
+  wrongAnswersPtbr:
+  - "\xC9 um meio que demonstra programas art\xEDsticos, culturais, educativos, informativos,
+    etc."
+  - "Cabe o docente apenas garantir o acesso a essa m\xEDdia, deixando o estudante
+    interpret\xE1-las por si s\xF3."
+  - "Utilizada para atividades pedag\xF3gicas individuais ou em grupo por proporcionar
+    apenas a produ\xE7\xE3o coletiva."
+  - "Usada somente em situa\xE7\xF5es de lazer, essa m\xEDdia pouco tem a oferecer
+    em situa\xE7oes de aprendizagem."
+  wrongAnswersEua:
+  - It is a medium that demonstrates artistic, cultural, educational, informative
+    programs, etc.
+  - It is only up to the teacher to guarantee access to this media, letting the student
+    interpret them on their own.
+  - Used for individual or group pedagogical activities as it only provides collective
+    production.
+  - Used only in leisure situations, this media has little to offer in learning situations.
+  wrongAnswersEsp:
+  - "Es un medio que muestra programas art\xEDsticos, culturales, educativos, informativos,
+    etc."
+  - "S\xF3lo corresponde al profesor garantizar el acceso a estos medios, dejando
+    que el alumno los interprete por su cuenta."
+  - "Se utiliza para actividades pedag\xF3gicas individuales o grupales ya que s\xF3lo
+    proporciona producci\xF3n colectiva."
+  - "Utilizado s\xF3lo en situaciones de ocio, este medio tiene poco que ofrecer
+    en situaciones de aprendizaje."
   abpScore: 25
   saiScore: 20
   abprojScore: 20
   inverted: 1
+  audioSourceVitoria: {fileID: 0}
+  audioSourceDerrota: {fileID: 0}
+  particulaWin: {fileID: 0}
 --- !u!1 &7591310648415115703
 GameObject:
   m_ObjectHideFlags: 0

@@ -136,6 +136,54 @@ public enum ChaveTextos
     RELEMBRAR_CARACTERISTICAS,
     SEMPRE_QUE_POSSIVEL,
     DICA,
+    CARACTERISTICAS_TURMA,
+    MIDIAS,
+    TEMA,
+    CAMPOS_DE_APRENDIZAGEM,
+    METODOLOGIA_SIMPLES,
+    LABORATORIO_1,
+    LABORATORIO_2,
+    SUA_AULA_ACABOU,
+    ESTUDANTES_IRAO_REAGIR,
+    FINALIZOU_ABP,
+    CONTINUAR,
+    JOGAR_NOVAMENTE,
+    VOLTAR_PARA_O_MENU,
+    PARABENS,
+    AGORA_ESCOLHA_COMO_CONTINUAR,
+    NESTE_MOMENTO_DO_JOGO,
+    DESEJA_REALMENTE_VOLTAR,
+    SUA_TURMA,
+    FIQUE_ATENTO,
+    ESTUDANTE,
+    MIDIAS_ESPACO_DE_ENSINO,
+    ESCOLHAS_AS_DUAS_MIDIAS,
+    AGORA_OS_ESTUDANTES,
+    COM_ESSA_INFORMACAO,
+    OS_ESTUDANTES_TROUXERAM,
+    AGRUPAMENTOS,
+    AGRUPAMENTOS_1,
+    AGRUPAMENTOS_2,
+    QUARTO_MIDIA_1,
+    QUARTO_MIDIA_2,
+    SALA_MIDIA_1,
+    SALA_MIDIA_2,
+    AGORA_VOCE_ESTA,
+    HORA_DE_ESTUDAR,
+    VOU_FAZER_AS_TAREFAS,
+    VOCE_CONCLUIU,
+    TERMINEI_TUDO,
+    ESPERE, 
+    ESCREVA_AQUI,
+    ESCOLHA_AS_MIDIAS_ADEQUADAS,
+    EXPLORANDO_SOBRE_O_TEMA,
+    ESCOLHA_O_AGRUPAMENTO,
+    ESPERE_NA_AB,
+    FICHA_NUMERO_2,
+    QUIZ,
+    AULA_CONFUSA,
+    AULA_COMUM,
+    AULA_REVELADO,
     _chaveFinal
 }
 
@@ -160,13 +208,18 @@ public class Textos
 
     public static Textos GetInstance()
     {
-        if (instance == null && PlayerPrefs.HasKey("Idioma")) TrocarIdioma((Idiomas)PlayerPrefs.GetInt("Idioma"));
-        else if (instance == null)
+       // if (instance == null && PlayerPrefs.HasKey("Idioma")) TrocarIdioma((Idiomas)PlayerPrefs.GetInt("Idioma"));
+        if (instance == null)
         {
+            TrocarIdioma(Idiomas.PORTUGUES);
+
+            /*
             if (Application.systemLanguage == SystemLanguage.Portuguese) TrocarIdioma(Idiomas.PORTUGUES);
             else if (Application.systemLanguage == SystemLanguage.Spanish) TrocarIdioma(Idiomas.ESPANHOL);
             else TrocarIdioma(Idiomas.INGLES);
+            */
         }
+
 
         return instance;
     }
@@ -192,7 +245,7 @@ public class Textos
                 PlayerPrefs.SetInt("Idioma", (int)idioma);
                 break;
         }
-
+        Debug.Log(idiomaSelecionado);
         AtualizarUITexts();
     }
 

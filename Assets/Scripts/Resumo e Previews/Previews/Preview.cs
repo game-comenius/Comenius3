@@ -36,7 +36,7 @@ public class Preview : MonoBehaviour
                 {
                     imagemAlvo.sprite = quartoInfantil;
                 }
-                else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental())
+                else if (EstadoDoJogo.Instance.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
                 {
                     imagemAlvo.sprite = quartoFundamental;
                 }

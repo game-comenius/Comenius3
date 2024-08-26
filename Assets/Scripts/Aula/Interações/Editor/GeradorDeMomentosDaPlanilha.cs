@@ -36,6 +36,23 @@ public static class GeradorDeMomentosDaPlanilha
             paginaProfessor.texto = new CelulaReference(planilha, linha, 1);
 
             //Adiciona as paginas configuradas
+            switch (Textos.GetIdiomaSelecionado())  
+            {
+                case Idiomas.INGLES:
+                    momento.paginas = momento.paginasEua;
+                    momento.opcoesDeEscolha = momento.opcoesDeEscolhaEua;
+                    break;
+                case Idiomas.PORTUGUES:
+                    momento.paginas = momento.paginasPtbr;
+                    momento.opcoesDeEscolha = momento.opcoesDeEscolhaPtbr;
+                    break;
+                case Idiomas.ESPANHOL:
+                    momento.paginas = momento.paginasEsp;
+                    momento.opcoesDeEscolha = momento.opcoesDeEscolhaEsp;
+                    break;
+                default:
+                    break;
+            }
             momento.paginas = new PaginaInteracao[] { paginaDoAluno, paginaProfessor };
 
             //Configura selecao

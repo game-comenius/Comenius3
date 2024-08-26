@@ -6,11 +6,23 @@ public class MomentoInteracao : ScriptableObject
 {
     public List<NomeDeMidia> midias;
     public PaginaInteracao[] paginas;
+    public PaginaInteracao[] paginasPtbr;
+    public PaginaInteracao[] paginasEua;
+    public PaginaInteracao[] paginasEsp;
     public CelulaReference opcoesDeEscolha;
+    public CelulaReference opcoesDeEscolhaPtbr;
+    public CelulaReference opcoesDeEscolhaEua;
+    public CelulaReference opcoesDeEscolhaEsp;
     public int paginaDoDropdown = -1;
     public bool alunoFeliz;
     public string reacaoPositiva;
+    public string reacaoPositivaPtbr;
+    public string reacaoPositivaEua;
+    public string reacaoPositivaEsp;
     public string reacaoNegativa;
+    public string reacaoNegativaPtbr;
+    public string reacaoNegativaEua;
+    public string reacaoNegativaEsp;
 
     [Header("Usado apenas na ABProj")]
     public LocationChecker.Location lugar;

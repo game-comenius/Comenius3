@@ -7,6 +7,8 @@ public class PaginaInteligencias : PaginaPlanejamento
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField][TextArea] private string descricaoEua;
+    [SerializeField][TextArea] private string descricaoEspanhol;
     private IconeInteligencias iconeSelecionado;
 
     private void Start()
@@ -14,7 +16,22 @@ public class PaginaInteligencias : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
 
-        descricaoDoSelecionado.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoPadrao = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoPadrao = descricaoEspanhol;
+                break;
+            default:
+                break;
+
+        }
+        resetar();
     }
 
     protected override void OnEnable()
@@ -22,6 +39,20 @@ public class PaginaInteligencias : PaginaPlanejamento
         AtualizarTextos();
         fundo.sprite = spriteFundo;
 
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoPadrao = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoPadrao = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
         textoAjuda.text = ajuda;
 
         iconManager.ShowIcon(0);
@@ -33,6 +64,7 @@ public class PaginaInteligencias : PaginaPlanejamento
         {
             iconManager.SetIcon(3, iconeSelecionado.GetComponent<Image>().sprite);
         }
+        resetar();
     }
 
     public void Selecao(IconeInteligencias icone)
@@ -93,7 +125,9 @@ public class PaginaInteligencias : PaginaPlanejamento
 
     private void resetar()
     {
+        Inteligencias.AtualizarTextosLinguas();
         descricaoDoSelecionado.text = descricaoPadrao;
+
     }
 
     private void atualizarEstadoDeJogo(IconeInteligencias icone)

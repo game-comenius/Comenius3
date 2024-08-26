@@ -8,14 +8,31 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField][TextArea] private string descricaoEua;
+    [SerializeField][TextArea] private string descricaoEspanhol;
     private IconeNivelDeEnsino iconeSelecionado;
 
     private void Start()
     {
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
-    
-        description.text = descricaoPadrao;
+
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                description.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                description.text = descricaoPadrao;
+                break;
+            case Idiomas.ESPANHOL:
+                description.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
+   
     }
 
     protected override void OnEnable()
@@ -34,6 +51,7 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
         {
             iconManager.SetIcon(1, iconeSelecionado.GetComponent<Image>().sprite);
         }
+        resetar();
     }
 
     public void Selecao(IconeNivelDeEnsino icone)
@@ -89,12 +107,26 @@ public class PaginaNivelDeEnsino : PaginaPlanejamento
 
     private void atualizar(IconeNivelDeEnsino icone)
     {
+        NivelDeEnsino.AtualizarTextosLinguas();
         description.text = icone.nivelDeEnsino.descricao;
     }
 
     private void resetar()
     {
-        description.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                description.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                description.text = descricaoPadrao;
+                break;
+            case Idiomas.ESPANHOL:
+                description.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     private void atualizarEstadoDeJogo(IconeNivelDeEnsino icone)

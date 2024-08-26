@@ -41,6 +41,7 @@ public class BlocoDeNotas : MonoBehaviour
         if (pagina == 0)
         {
             icone.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
+            Metodologia.AtualizarTextosLinguas();
             texto.text = EstadoDoJogo.Instance.Metodologia.descricaoLonga;
         }
         else

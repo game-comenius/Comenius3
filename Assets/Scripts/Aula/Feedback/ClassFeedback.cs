@@ -28,23 +28,90 @@ public class ClassFeedback : MonoBehaviour
 
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
+
         if (controller.score < 33)
         {
-            adjective = "Confusa";
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    adjective = "Confused";
+                    break;
+                case Idiomas.PORTUGUES:
+                    adjective = "Confusa";
+                    break;
+                case Idiomas.ESPANHOL:
+                    adjective = "Confundido";
+                    break;
+
+                default:
+                          adjective = "Confusa";
+                    break;
+
+            }
+
             classQualityBar.UpdateBar(0.33f);
         }
         else if (controller.score < 66)
         {
-            adjective = "Comum";
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    adjective = "Common";
+                    break;
+                case Idiomas.PORTUGUES:
+                    adjective = "Comum";
+                    break;
+                case Idiomas.ESPANHOL:
+                    adjective = "Común";
+                    break;
+
+                default:
+                    adjective = "Comum";
+                    break;
+
+            }
             classQualityBar.UpdateBar(0.66f);
         }
         else
         {
-            adjective = "Reveladora";
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    adjective = "Revealing";
+                    break;
+                case Idiomas.PORTUGUES:
+                    adjective = "Reveladora";
+                    break;
+                case Idiomas.ESPANHOL:
+                    adjective = "Revelador";
+                    break;
+
+                default:
+                    adjective = "Reveladora";
+                    break;
+
+            }
             classQualityBar.UpdateBar(1.0f);
         }
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                classQualityText.text = $"Your class was {adjective}";
+                break;
+            case Idiomas.PORTUGUES:
+                classQualityText.text = $"Sua Aula foi {adjective}";
+                break;
+            case Idiomas.ESPANHOL:
+                classQualityText.text = $"Tu clase fue {adjective}";
+                break;
 
-        classQualityText.text = $"Sua Aula foi {adjective}";
+            default:
+                classQualityText.text = $"Sua Aula foi {adjective}";
+                break;
+
+        }
+
+     
 
         Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
         Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
@@ -71,11 +138,29 @@ public class ClassFeedback : MonoBehaviour
                 break;
         }
 
-        comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                comboClassificationText.text = $"For the {EstadoDoJogo.Instance.Metodologia.nome}, his combination of media was {comboClassification}";
+                break;
+            case Idiomas.PORTUGUES:
+                comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
+                break;
+            case Idiomas.ESPANHOL:
+                comboClassificationText.text = $"Para el {EstadoDoJogo.Instance.Metodologia.nome}, su combinación de medios fue {comboClassification}";
+                break;
+
+            default:
+                comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
+                break;
+
+        }
+    
 
         ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
 
-        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
+        
+        if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABP.nome)
         {
             switch (combo)
             {
@@ -117,7 +202,7 @@ public class ClassFeedback : MonoBehaviour
                     break;
             }
         }
-        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.SAI.nome)
         {
             switch (combo)
             {
@@ -151,7 +236,7 @@ public class ClassFeedback : MonoBehaviour
             }
         }
 
-        else if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Projetos")
+        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABProj.nome)
         {
             Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia +" " + EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
             Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());

@@ -1496,18 +1496,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TrocadorDeCena, Assembly-CSharp
-        m_MethodName: TrocarCena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Menu
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameStateMethodCaller, Assembly-CSharp
         m_MethodName: JogarNovamente
         m_Mode: 1
@@ -1517,6 +1505,18 @@ MonoBehaviour:
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TrocadorDeCena, Assembly-CSharp
+        m_MethodName: TrocarCena
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &486477778373270130
@@ -1757,7 +1757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &486477779104864007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1825,7 +1825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -108, y: -0}
+  m_AnchoredPosition: {x: -108, y: 0}
   m_SizeDelta: {x: 412.7, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &495905969815245993
@@ -1877,6 +1877,7 @@ GameObject:
   - component: {fileID: 3995940585796797056}
   - component: {fileID: 8952065164781331692}
   - component: {fileID: 5505249251639779336}
+  - component: {fileID: 486477777572095069}
   m_Layer: 5
   m_Name: Text (Legacy) (2)
   m_TagString: Untagged
@@ -1946,6 +1947,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Continuar
+--- !u!114 &486477777572095069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247299791861273825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 130
+  caixaAlta: 0
 --- !u!1 &1590385233174806486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +1972,7 @@ GameObject:
   - component: {fileID: 918641143995796309}
   - component: {fileID: 5804949703735791799}
   - component: {fileID: 1709681865443935256}
+  - component: {fileID: 486477777572095067}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -2026,6 +2042,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Voltar para o menu de sele\xE7\xE3o"
+--- !u!114 &486477777572095067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590385233174806486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 132
+  caixaAlta: 0
 --- !u!1 &2151300309726142225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2147,7 @@ GameObject:
   - component: {fileID: 6594040511252327852}
   - component: {fileID: 266187064462960460}
   - component: {fileID: 4843040838167997884}
+  - component: {fileID: 486477777572095066}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -2186,6 +2217,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "PARAB\xC9NS!"
+--- !u!114 &486477777572095066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496484067059874154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 133
+  caixaAlta: 0
 --- !u!1 &4944539211343326065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,6 +2318,7 @@ GameObject:
   - component: {fileID: 6976330733081730969}
   - component: {fileID: 9071481017985877084}
   - component: {fileID: 2897771871821635682}
+  - component: {fileID: 486477777572095065}
   m_Layer: 5
   m_Name: Text (Legacy) (2)
   m_TagString: Untagged
@@ -2342,6 +2388,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Agora escolha como continuar:'
+--- !u!114 &486477777572095065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998050903341331825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 134
+  caixaAlta: 0
 --- !u!1 &7968896297878665817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2489,7 @@ GameObject:
   - component: {fileID: 534256238891642090}
   - component: {fileID: 6472168676731440123}
   - component: {fileID: 123978337430819333}
+  - component: {fileID: 486477777572095068}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -2498,6 +2559,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Jogar novamente
+--- !u!114 &486477777572095068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460810830054506990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 131
+  caixaAlta: 0
 --- !u!1001 &945136146684207973
 PrefabInstance:
   m_ObjectHideFlags: 0

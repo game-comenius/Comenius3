@@ -16,7 +16,10 @@ public class PaginaMidias : PaginaPlanejamento
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
-    [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField] [TextArea] private string descricaoPT;
+    [SerializeField][TextArea] private string descricaoPadrao;
+    [SerializeField][TextArea] private string descricaoEua;
+    [SerializeField][TextArea] private string descricaoEspanhol;
     [SerializeField] private Button botaoProximaMidia;
     [SerializeField] private GameObject botaoMidiaAnterior;
     [SerializeField] private GameObject botaoPainelAnterior;
@@ -70,9 +73,22 @@ public class PaginaMidias : PaginaPlanejamento
         primeiraMidia = true;
         paginaAtual = 0;
 
-        descriptionText.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descriptionText.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descriptionText.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descriptionText.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
 
-        if(tituloSala2)
+        if (tituloSala2)
         tituloSala2.text = "<b>Pegue dentro do armário mídias para utilizar </b>" + "<b>" +  locationName +"</b>";
     }
 
@@ -115,6 +131,21 @@ public class PaginaMidias : PaginaPlanejamento
         else
         {
             iconManager.ResetIcon(1);
+        }
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descriptionText.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descriptionText.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descriptionText.text = descricaoEspanhol;
+                break;
+            default:
+                break;
         }
     }
 
@@ -359,7 +390,20 @@ public class PaginaMidias : PaginaPlanejamento
 
     private void resetar()
     {
-        descriptionText.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descriptionText.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descriptionText.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descriptionText.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     private void atualizarEstadoDeJogo(IconeMidias icone)

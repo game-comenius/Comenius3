@@ -5,6 +5,9 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 {
     [SerializeField] private Text descricaoDoSelecionado;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField][TextArea] private string descricaoPT;
+    [SerializeField][TextArea] private string descricaoEua;
+    [SerializeField][TextArea] private string descricaoEspanhol;
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Button botaoProximaMidia;
     [SerializeField] private GameObject botaoMidiaAnterior;
@@ -16,6 +19,9 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     [SerializeField] private Sprite[] agrupamentosSpritesRegular;
     [SerializeField] private string[] agrupamentosNomes;
     [SerializeField] [TextArea] private string[] agrupamentosDescricao;
+    [SerializeField][TextArea] private string[] agrupamentosDescricaoPtbr;
+    [SerializeField][TextArea] private string[] agrupamentosDescricaoEua;
+    [SerializeField][TextArea] private string[] agrupamentosDescricaoEspanhol;
     [SerializeField] private Button botaoProximoAgrupamento;
     [SerializeField] private Button botaoAgrupamentoAnterior;
     [SerializeField] private GameObject setaPrimeiraMidia;
@@ -41,6 +47,21 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
         iconManager.SetIcon(0, EstadoDoJogo.Instance.Midias[2].sprite);
         iconManager.SetIcon(1, EstadoDoJogo.Instance.Midias[3].sprite);
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoDoSelecionado.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descricaoDoSelecionado.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoDoSelecionado.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnDisable()
@@ -67,7 +88,20 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         }
 
         agrupamentoEmFocoImagem.sprite = agrupamentosSprites[agrupamentoEmFoco];
-        descricaoDoSelecionado.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoDoSelecionado.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descricaoDoSelecionado.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoDoSelecionado.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     private void atualizar(int agrupamentoEmFocoArg, bool mostrarSemSelecao = false)
@@ -76,18 +110,103 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         {
             if (mostrarSemSelecao)
             {
-                descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoEmFocoArg];
+             //   descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoEmFocoArg];
+
+
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        descricaoDoSelecionado.text = agrupamentosDescricaoEua[agrupamentoEmFocoArg];
+                        break;
+                    case Idiomas.PORTUGUES:
+                        descricaoDoSelecionado.text = agrupamentosDescricaoPtbr[agrupamentoEmFocoArg];
+                        break;
+                    case Idiomas.ESPANHOL:
+                        descricaoDoSelecionado.text = agrupamentosDescricaoEspanhol[agrupamentoEmFocoArg];
+                        break;
+                    default:
+                        break;
+                }
             }
             else
             {
                 if (primeiroAgrupamento)
                 {
-                    descricaoDoSelecionado.text = primeiroAgrupamentoSelecionado != -1 ? agrupamentosDescricao[primeiroAgrupamentoSelecionado] : descricaoPadrao;
+                    if(primeiroAgrupamentoSelecionado != -1)
+                    {
+                        switch (Textos.GetIdiomaSelecionado())
+                        {
+                            case Idiomas.INGLES:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoEua[primeiroAgrupamentoSelecionado];
+                                break;
+                            case Idiomas.PORTUGUES:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoPtbr[primeiroAgrupamentoSelecionado];
+                                break;
+                            case Idiomas.ESPANHOL:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoEspanhol[primeiroAgrupamentoSelecionado];
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (Textos.GetIdiomaSelecionado())
+                        {
+                            case Idiomas.INGLES:
+                                descricaoDoSelecionado.text = descricaoEua;
+                                break;
+                            case Idiomas.PORTUGUES:
+                                descricaoDoSelecionado.text = descricaoPT;
+                                break;
+                            case Idiomas.ESPANHOL:
+                                descricaoDoSelecionado.text = descricaoEspanhol;
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
                     molduraDeSelecao.enabled = primeiroAgrupamentoSelecionado == agrupamentoEmFocoArg ? true : false;
                 }
                 else
                 {
-                    descricaoDoSelecionado.text = segundoAgrupamentoSelecionado != -1 ? agrupamentosDescricao[segundoAgrupamentoSelecionado] : descricaoPadrao;
+
+                    if (segundoAgrupamentoSelecionado != -1)
+                    {
+                        switch (Textos.GetIdiomaSelecionado())
+                        {
+                            case Idiomas.INGLES:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoEua[segundoAgrupamentoSelecionado];
+                                break;
+                            case Idiomas.PORTUGUES:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoPtbr[segundoAgrupamentoSelecionado];
+                                break;
+                            case Idiomas.ESPANHOL:
+                                descricaoDoSelecionado.text = agrupamentosDescricaoEspanhol[segundoAgrupamentoSelecionado];
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (Textos.GetIdiomaSelecionado())
+                        {
+                            case Idiomas.INGLES:
+                                descricaoDoSelecionado.text = descricaoEua;
+                                break;
+                            case Idiomas.PORTUGUES:
+                                descricaoDoSelecionado.text = descricaoPT;
+                                break;
+                            case Idiomas.ESPANHOL:
+                                descricaoDoSelecionado.text = descricaoEspanhol;
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
                     molduraDeSelecao.enabled = segundoAgrupamentoSelecionado == agrupamentoEmFocoArg ? true : false;
                 }
 
@@ -96,7 +215,20 @@ public class PaginaAgrupamentos : PaginaPlanejamento
         }
         else
         {
-            descricaoDoSelecionado.text = descricaoPadrao;
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    descricaoDoSelecionado.text = descricaoEua;
+                    break;
+                case Idiomas.PORTUGUES:
+                    descricaoDoSelecionado.text = descricaoPT;
+                    break;
+                case Idiomas.ESPANHOL:
+                    descricaoDoSelecionado.text = descricaoEspanhol;
+                    break;
+                default:
+                    break;
+            }
             agrupamentoEmFocoImagem.sprite = agrupamentosSprites[0];
             molduraDeSelecao.enabled = false;
         }
@@ -106,7 +238,20 @@ public class PaginaAgrupamentos : PaginaPlanejamento
     {
         if (agrupamentoSelecionado != -1)
         {
-            descricaoDoSelecionado.text = agrupamentosDescricao[agrupamentoSelecionado];
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    descricaoDoSelecionado.text = agrupamentosDescricaoEua[agrupamentoSelecionado];
+                    break;
+                case Idiomas.PORTUGUES:
+                    descricaoDoSelecionado.text = agrupamentosDescricaoPtbr[agrupamentoSelecionado];
+                    break;
+                case Idiomas.ESPANHOL:
+                    descricaoDoSelecionado.text = agrupamentosDescricaoEspanhol[agrupamentoSelecionado];
+                    break;
+                default:
+                    break;
+            }
 
             if (primeiroAgrupamento)
             {
@@ -224,6 +369,22 @@ public class PaginaAgrupamentos : PaginaPlanejamento
 
         botaoProximoAgrupamento.interactable = true;
         botaoAgrupamentoAnterior.interactable = false;
+
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoDoSelecionado.text = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descricaoDoSelecionado.text = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoDoSelecionado.text = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     private void atualizarBotoes()

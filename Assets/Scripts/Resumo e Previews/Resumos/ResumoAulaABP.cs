@@ -29,13 +29,18 @@ public class ResumoAulaABP : MonoBehaviour
         iconeLaboratorioMidia1.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
         iconeLaboratorioMidia2.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
 
+        NivelDeEnsino.TodosOsNiveisDeEnsino();
+        AreaDeConhecimento.AtualizarTextosLinguas();
+        Inteligencias.AtualizarTextosLinguas();
+        Metodologia.AtualizarTextosLinguas();
+   
         // Textos
         textoNivel.text = EstadoDoJogo.Instance.NivelDeEnsino.nome;
         textoArea.text = EstadoDoJogo.Instance.AreaDeConhecimento.nome;
         textoInteligencia.text = EstadoDoJogo.Instance.Inteligencias.nome;
         textoMetodologia.text = EstadoDoJogo.Instance.Metodologia.nome;
-        textoLaboratorioMidia1.text = EstadoDoJogo.Instance.Midias[0].nome;
-        textoLaboratorioMidia2.text = EstadoDoJogo.Instance.Midias[1].nome;
+        textoLaboratorioMidia1.text = Midia.AtualizarTextosLinguas(EstadoDoJogo.Instance.Midias[0].nomeMidia, 2);
+        textoLaboratorioMidia2.text = Midia.AtualizarTextosLinguas(EstadoDoJogo.Instance.Midias[1].nomeMidia, 2);
         temaAula.text = EstadoDoJogo.Instance.Tema;
     }
 }

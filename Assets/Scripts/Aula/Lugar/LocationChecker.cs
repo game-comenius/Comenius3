@@ -37,7 +37,7 @@ public class LocationChecker
             else
                 return Location.Theater;
         }
-        else if (gameState.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental())
+        else if (gameState.NivelDeEnsino == NivelDeEnsino.EnsinoFundamental)
         {
             if (gameState.Inteligencias == Inteligencias.LinguisticaComLogicoMatematica)
                 return Location.Library;

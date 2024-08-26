@@ -9,6 +9,9 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
     [SerializeField] private Button botaoConfirmar;
     [SerializeField] private Image anelDeSelecao;
     [SerializeField] [TextArea] private string descricaoPadrao;
+    [SerializeField][TextArea] private string descricaoPT;
+    [SerializeField][TextArea] private string descricaoEua;
+    [SerializeField][TextArea] private string descricaoEspanhol;
     [SerializeField] private GameObject iconesInfantil;
     [SerializeField] private GameObject iconesFundamental;
     [SerializeField] private GameObject iconesMedio;
@@ -25,7 +28,20 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
         anelDeSelecao.enabled = false;
         botaoConfirmar.interactable = false;
 
-        description.text = descricaoPadrao;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoPadrao = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descricaoPadrao = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoPadrao = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
     }
 
     protected override void OnEnable()
@@ -193,7 +209,23 @@ public class PaginaAreaDeConhecimento : PaginaPlanejamento
 
     private void resetar()
     {
-        description.text = descricaoPadrao;
+        AreaDeConhecimento.AtualizarTextosLinguas();
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                descricaoPadrao = descricaoEua;
+                break;
+            case Idiomas.PORTUGUES:
+                descricaoPadrao = descricaoPT;
+                break;
+            case Idiomas.ESPANHOL:
+                descricaoPadrao = descricaoEspanhol;
+                break;
+            default:
+                break;
+        }
+        description.text = descricaoPadrao; 
     }
 
     private void atualizarEstadoDeJogo(IconeAreaDeConhecimento icone)

@@ -13,6 +13,20 @@ public class InteractionManager : MonoBehaviour
         }
         set
         {
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    value.paginas = value.paginasEua;
+                    break;
+                case Idiomas.PORTUGUES:
+                    value.paginas = value.paginasPtbr;
+                    break;
+                case Idiomas.ESPANHOL:
+                    value.paginas = value.paginasEsp;
+                    break;
+                default:
+                    break;
+            }
             totalPageCount = value.paginas.Length;
             currentPage = 0;
             pageDropdown = value.paginaDoDropdown;
@@ -30,6 +44,25 @@ public class InteractionManager : MonoBehaviour
             listaDeEscolhas.Add(new Dropdown.OptionData(""));
 
             List<string> escolhas = new List<string>(value.opcoesDeEscolha.Valor.Split('\n'));
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    escolhas = new List<string>(value.opcoesDeEscolhaEua.Valor.Split('\n'));
+                    break;
+                case Idiomas.PORTUGUES:
+                    escolhas = new List<string>(value.opcoesDeEscolhaPtbr.Valor.Split('\n'));
+                    break;
+                case Idiomas.ESPANHOL:
+                    escolhas = new List<string>(value.opcoesDeEscolhaEsp.Valor.Split('\n'));
+                    break;
+                default:
+
+                    break;
+            }
+
+
+
+  
             wrongChoice = new Dropdown.OptionData(escolhas[escolhas.Count - 1]);
 
             // Adiciona as escolhas aleatoriamente
@@ -137,6 +170,22 @@ public class InteractionManager : MonoBehaviour
     private void UpdatePage()
     {
         PaginaInteracao page = interaction.paginas[currentPage];
+        switch (Textos.GetIdiomaSelecionado())      
+        {
+            case Idiomas.INGLES:
+                page = interaction.paginasEua[currentPage];
+                break;
+            case Idiomas.PORTUGUES:
+                page = interaction.paginasPtbr[currentPage];
+                break;
+            case Idiomas.ESPANHOL:
+                page = interaction.paginasEsp[currentPage];
+                break;
+            default:
+                page = interaction.paginas[currentPage];
+                break;
+        }
+     
 
         title.text = page.titulo;
         text.text = page.texto.Valor;

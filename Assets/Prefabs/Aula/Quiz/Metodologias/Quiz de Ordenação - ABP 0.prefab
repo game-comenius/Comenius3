@@ -431,6 +431,12 @@ MonoBehaviour:
   media: 0
   question: "Clique e arraste as etapas da metodologia Aprendizagem Baseada em Problemas
     (ABP) para formar a ordem correta da sequncia did\xE1tica:"
+  questionPtbr: "Clique e arraste as etapas da metodologia Aprendizagem Baseada em
+    Problemas (ABP) para formar a ordem correta da sequncia did\xE1tica:"
+  questionEua: 'Click and drag the steps of the Problem-Based Learning (PBL) methodology
+    to form the correct order of the teaching sequence:'
+  questionEsp: "Haz clic y arrastra los pasos de la metodolog\xEDa de Aprendizaje
+    Basado en Problemas (ABP) para formar el orden correcto de la secuencia de ense\xF1anza:"
   maxAffirmations: 4
   questionText: {fileID: 6228023815373840691}
   modularText: 0
@@ -451,6 +457,24 @@ MonoBehaviour:
   - "Buscar novas refer\xEAncias para qualificar as propostas, debater e buscar consenso
     sobre as poss\xEDveis solu\xE7\xF5es."
   - Apresentar as respostas e avaliar os resultados.
+  sortedAnswersPtbr:
+  - Apresentar o problema e levantar os conhecimentos sobre o assunto.
+  - "Analisar as vari\xE1veis do problema e propor poss\xEDveis solu\xE7\xF5es."
+  - "Buscar novas refer\xEAncias para qualificar as propostas, debater e buscar consenso
+    sobre as poss\xEDveis solu\xE7\xF5es."
+  - Apresentar as respostas e avaliar os resultados.
+  sortedAnswersEua:
+  - Present the problem and raise knowledge on the subject.
+  - Analyze the variables of the problem and propose possible solutions.
+  - Search for new references to qualify proposals, debate and seek consensus on
+    possible solutions.
+  - Present the answers and evaluate the results.
+  sortedAnswersEsp:
+  - Presentar el problema y elevar conocimientos sobre el tema.
+  - Analizar las variables del problema y proponer posibles soluciones.
+  - Buscar nuevos referentes para calificar propuestas, debatir y buscar consensos
+    sobre posibles soluciones.
+  - Presentar las respuestas y evaluar los resultados.
   abpUpperScore: 25
   abpMiddleScore: 15
   abpLowerScore: 0
@@ -2271,6 +2295,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6228023814948456500}
     m_Modifications:
     - target: {fileID: 7539204262320745380, guid: ffc9d87799071e049b84a327838fd731,
@@ -2459,6 +2484,9 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc9d87799071e049b84a327838fd731, type: 3}
 --- !u!114 &477233123042912785 stripped
 MonoBehaviour:

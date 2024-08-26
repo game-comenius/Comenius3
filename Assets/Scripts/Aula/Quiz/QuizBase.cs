@@ -19,6 +19,12 @@ public abstract class QuizBase : MonoBehaviour
 
     [TextArea]
     [SerializeReference] protected string question;
+    [TextArea]
+    [SerializeReference] protected string questionPtbr;
+    [TextArea]
+    [SerializeReference] protected string questionEua;
+    [TextArea]
+    [SerializeReference] protected string questionEsp;
     [SerializeReference] protected int maxAffirmations;
     [SerializeReference] protected Text questionText;
     [SerializeReference] protected bool modularText;
@@ -29,6 +35,21 @@ public abstract class QuizBase : MonoBehaviour
     private void Start()
     {
         quizEvaluated = false;
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                question = questionEua;
+                break;
+            case Idiomas.PORTUGUES:
+                question = questionPtbr;
+                break;
+            case Idiomas.ESPANHOL:
+                question = questionEsp;
+                break;
+            default:
+                break;
+        }
 
         BuildQuiz();
     }
@@ -54,7 +75,8 @@ public abstract class QuizBase : MonoBehaviour
         }
         else if (quizType == QuizType.Media)
         {
-            questionText.text = question + new Midia(media).nome;
+
+            questionText.text = question + Midia.AtualizarTextosLinguas(new Midia(media).nomeMidia, 2);
         }
         else
         {
