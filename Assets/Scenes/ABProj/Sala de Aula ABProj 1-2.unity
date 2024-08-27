@@ -2832,7 +2832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aconteceu alguma coisa Y
+  m_Text: 
 --- !u!222 &231087388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4600,6 +4600,9 @@ MonoBehaviour:
     que, no segundo momento, aplicassem o conhecimento de forma criativa e autoral
     com uma m\xEDdia de produ\xE7\xE3o. Al\xE9m disto, utilizar m\xEDdias digitais
     aumentou o contato dos estudantes com assuntos diversos.\r"
+  specificFeedbacksIdealPtbr: []
+  specificFeedbacksIdealEua: []
+  specificFeedbacksIdealEsp: []
   specificFeedbacksBoa:
   - "Escolher uma m\xEDdia de consulta no primeiro momento ajudou os alunos a aprofundar
     seus conhecimentos por meio da pesquisa, mas seria ideal utilizar uma m\xEDdia
@@ -4613,6 +4616,9 @@ MonoBehaviour:
     n\xE3o \xE9 o ideal, pois pode deixar os trabalhos sem muita densidade. Se a
     produ\xE7\xE3o for para observar o conhecimento pr\xE9vio dos estudantes, levantando
     quest\xF5es para apresentar para eles, este pode ser um bom planejamento. \r\n"
+  specificFeedbacksBoaPtbr: []
+  specificFeedbacksBoaEua: []
+  specificFeedbacksBoaEsp: []
   specificFeedbacksArriscada:
   - "Esta combina\xE7\xE3o \xE9 arriscada pois pode deixar os trabalhos sem muita
     informa\xE7\xE3o inicial. O ideal seria trocar a ordem para que, ap\xF3s pesquisarem
@@ -4648,6 +4654,9 @@ MonoBehaviour:
     sintematizando e aplicando o conhecimento de forma criativa e autoral. A ordem
     das suas escolhas foi arriscada pois dificulta o processo de pesquisa e a participa\xE7\xE3o
     ativa dos estudantes com o conte\xFAdo da aula. \r\n"
+  specificFeedbacksArriscadaPtbr: []
+  specificFeedbacksArriscadaEua: []
+  specificFeedbacksArriscadaEsp: []
   methodologyIcon: {fileID: 1542839618}
   media1Icon: {fileID: 721518363}
   media2Icon: {fileID: 1366618627}
@@ -8617,6 +8626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Dura\xE7\xE3o da aula"
+  ContentPt: 
+  ContentEua: 
+  ContentSpanish: 
   popUp: {fileID: 817927080}
   popUpArrow: {fileID: 55981712}
   text: {fileID: 592527343}
@@ -14627,6 +14639,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!224 &1134313097 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2101136692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1137356704
 GameObject:
   m_ObjectHideFlags: 0
@@ -17649,7 +17667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1302237974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17701,13 +17719,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta3"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
+    - m_Text: 
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -26404,6 +26416,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Pontua\xE7\xE3o"
+  ContentPt: 
+  ContentEua: 
+  ContentSpanish: 
   popUp: {fileID: 1181940740}
   popUpArrow: {fileID: 234791921}
   text: {fileID: 1952085640}
@@ -29450,6 +29465,129 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097613250}
   m_CullTransparentMesh: 0
+--- !u!1001 &2101136692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5017544119880334752}
+    m_Modifications:
+    - target: {fileID: 8541668870042985360, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Name
+      value: PaisesTraducao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 626
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 638b9cf57ef10c644917c0d1a0cd21d6, type: 3}
 --- !u!1 &2106995787
 GameObject:
   m_ObjectHideFlags: 0
@@ -37022,6 +37160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconManager: {fileID: 1020552881366763557}
+  ajudaPT: 
+  ajudaSP: 
+  ajudaEUA: 
   ajuda: Escolha midias para levar para a cidade
   textoAjuda: {fileID: 1778931130}
   fundo: {fileID: 2008281511351510032}
@@ -37035,7 +37176,10 @@ MonoBehaviour:
   descriptionText: {fileID: 2008281509962186956}
   botaoConfirmar: {fileID: 852855234537322266}
   anelDeSelecao: {fileID: 2008281510864623037}
+  descricaoPT: 
   descricaoPadrao: Selecione midias para levar a cidade
+  descricaoEua: 
+  descricaoEspanhol: 
   botaoProximaMidia: {fileID: 852855233972086801}
   botaoMidiaAnterior: {fileID: 2008281510032207876}
   botaoPainelAnterior: {fileID: 2008281509580786671}
@@ -40676,6 +40820,7 @@ RectTransform:
   - {fileID: 1955507845}
   - {fileID: 771276190}
   - {fileID: 1930713477}
+  - {fileID: 1134313097}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

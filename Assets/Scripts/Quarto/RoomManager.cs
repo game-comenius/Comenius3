@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class RoomManager : MonoBehaviour
 {
@@ -47,7 +48,13 @@ public class RoomManager : MonoBehaviour
 
     [Header("Textos dos briquedos")]
     [SerializeField] private string[] positiveToyFeedbacks;
+    [SerializeField] private string[] positiveToyFeedbacksPtbr;
+    [SerializeField] private string[] positiveToyFeedbacksEua;
+    [SerializeField] private string[] positiveToyFeedbacksEsp;
     [SerializeField] private string[] negativeToyFeedbacks;
+    [SerializeField] private string[] negativeToyFeedbacksPtbr;
+    [SerializeField] private string[] negativeToyFeedbacksEua;
+    [SerializeField] private string[] negativeToyFeedbacksEsp;
     [Header("Textos de ajuda")]
     [SerializeField] [TextArea] private string feedbackHelp;
 
@@ -67,7 +74,26 @@ public class RoomManager : MonoBehaviour
         media1Icon.SetActive(false);
         media2Icon.SetActive(false);
 
-        currentMediaText.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
+        switch (Textos.GetIdiomaSelecionado())  
+        {
+            case Idiomas._chaveInicial:
+                break;
+            case Idiomas.INGLES:
+                currentMediaText.text = $"Choose leisure activity according to multiple intelligence {EstadoDoJogo.Instance.Inteligencias.nome}.";
+                break;
+            case Idiomas.PORTUGUES:
+                currentMediaText.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
+                break;
+            case Idiomas.ESPANHOL:
+                currentMediaText.text = $"Elige una actividad de ocio según las inteligencias múltiples {EstadoDoJogo.Instance.Inteligencias.nome}.";
+                break;
+            case Idiomas._chaveFinal:
+                break;
+            default:
+                currentMediaText.text = $"Escolha a atividade de lazer de acordo com a inteligência múltipla {EstadoDoJogo.Instance.Inteligencias.nome}.";
+                break;
+        }
+        
         currentMediaIcon.sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
 
         UpdateObjects();
@@ -180,14 +206,51 @@ public class RoomManager : MonoBehaviour
                 toyIcon.GetComponent<Image>().sprite = tempSprite;
                 intelligenceMiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Inteligencias.sprite;
                 toyIcon.SetActive(true);
-                currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        currentMediaText.text = $"Choose the object with which the media will be used {EstadoDoJogo.Instance.Midias[0].nome}.";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        currentMediaText.text = $"Elija el objeto con el que se utilizará el soporte.{EstadoDoJogo.Instance.Midias[0].nome}.";
+                        break;
+                    case Idiomas._chaveFinal:
+                        break;
+                    default:
+                        currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[0].nome}.";
+                        break;
+                }
+
                 currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 break;
             case 1:
                 media1Icon.GetComponent<Image>().sprite = tempSprite;
                 media1MiniIcon.GetComponent<Image>().sprite = EstadoDoJogo.Instance.Midias[0].sprite;
                 media1Icon.SetActive(true);
-                currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        currentMediaText.text = $"Choose the object with which the media will be used {EstadoDoJogo.Instance.Midias[1].nome}.";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        currentMediaText.text = $"Elija el objeto con el que se utilizará el soporte.{EstadoDoJogo.Instance.Midias[1].nome}.";
+                        break;
+                    case Idiomas._chaveFinal:
+                        break;
+                    default:
+                        currentMediaText.text = $"Escolha o objeto com o qual será utilizado a mídia {EstadoDoJogo.Instance.Midias[1].nome}.";
+                        break;
+                }
                 currentMediaIcon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
                 break;
             default:
@@ -241,8 +304,10 @@ public class RoomManager : MonoBehaviour
         var estadoDoJogo = EstadoDoJogo.Instance;
         string intelligenceName = estadoDoJogo.Inteligencias.nome;
 
-        string positivePrefix = "Me diverti muito";
-        string negativePrefix = "Não me diverti muito, pra mim";
+        string positivePrefix = Textos.GetInstance().ObterTexto(ChaveTextos.POSITIVE_PRE_FIX);
+        string negativePrefix = Textos.GetInstance().ObterTexto(ChaveTextos.NEGATIVE_PRE_FIX);
+
+
 
         int index;
         bool selectionIsPositive;
@@ -403,19 +468,133 @@ public class RoomManager : MonoBehaviour
 
         if (selectionIsPositive)
         {
-            toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[index]}";
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas._chaveInicial:
+                    break;
+                case Idiomas.INGLES:
+                    toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacksEua[index]}";
+                    break;
+                case Idiomas.PORTUGUES:
+                    toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacksPtbr[index]}";
+                    break;
+                case Idiomas.ESPANHOL:
+                    toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacksEsp[index]}";
+                    break;
+                case Idiomas._chaveFinal:
+                    break;
+                default:
+                    toyFeedbackText.text = $"{positivePrefix} {positiveToyFeedbacks[index]}";
+                    break;  
+            }
+     
             toyIconOutline.GetComponent<Image>().color = correctColor;
             toyIconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
             return 1.0f;
         }
         else
         {
-            toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[index]}";
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas._chaveInicial:
+                    break;
+                case Idiomas.INGLES:
+                    toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacksEua[index]}";
+                    break;
+                case Idiomas.PORTUGUES:
+                    toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacksPtbr[index]}";
+                    break;
+                case Idiomas.ESPANHOL:
+                    toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacksEsp[index]}";
+                    break;
+                case Idiomas._chaveFinal:
+                    break;
+                default:
+                    toyFeedbackText.text = $"<color=red>{negativePrefix} {negativeToyFeedbacks[index]}";
+                    break;
+            }
+      
             toyIconOutline.GetComponent<Image>().color = wrongColor;
             toyIconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
             return 0.0f;
         }
 
+    }
+    private string TextoCorretoTansos(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return  "The console";
+                    case Idiomas.PORTUGUES:
+                        return  "O console";
+                    case Idiomas.ESPANHOL:
+                        return "La consola";
+                }
+                break;
+            case 1:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return "The PC";
+                    case Idiomas.PORTUGUES:
+                        return "O Computador";
+                    case Idiomas.ESPANHOL:
+                        return "La computadora";
+                }
+                break;
+            case 2:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return "Cell phone";
+                    case Idiomas.PORTUGUES:
+                        return "Celular";
+                    case Idiomas.ESPANHOL:
+                        return "Teléfono móvil";
+                }
+                break;
+            case 3:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return "Tablet";
+                    case Idiomas.PORTUGUES:
+                        return "Tablet";
+                    case Idiomas.ESPANHOL:
+                        return "Tableta";
+                }
+                break;
+            case 4:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return "Notebook and Case";
+                    case Idiomas.PORTUGUES:
+                        return "Caderno e Estojo";
+                    case Idiomas.ESPANHOL:
+                        return "Cuaderno y estuche";
+                }
+                break;
+            case 5:
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        return "Television";
+                    case Idiomas.PORTUGUES:
+                        return "Televisão";
+                    case Idiomas.ESPANHOL:
+                        return "Televisión";
+                }
+                break;
+
+            default:
+                return "Null";
+        }
+        return "Null";
     }
 
     private float setObjectFeedback()
@@ -428,26 +607,26 @@ public class RoomManager : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             string mediaName = estadoDoJogo.Midias[i].nome;
-
+          //  Midia.AtualizarTextosLinguas(NomeDeMidia., 2);
             switch (medias[i + 1])
             {
                 case "Mídia Console":
-                    adjustedString[i] = "o console";
+                    adjustedString[i] = TextoCorretoTansos(0);
                     break;
                 case "Computador":
-                    adjustedString[i] = "o computador";
+                    adjustedString[i] = TextoCorretoTansos(1);
                     break;
                 case "Celular":
-                    adjustedString[i] = "o celular";
+                    adjustedString[i] = TextoCorretoTansos(2);
                     break;
                 case "Tablet":
-                    adjustedString[i] = "o tablet";
+                    adjustedString[i] = TextoCorretoTansos(3);
                     break;
                 case "Caderno e Estojo":
-                    adjustedString[i] = "o caderno e estojo";
+                    adjustedString[i] = TextoCorretoTansos(4);
                     break;
                 case "Televisão":
-                    adjustedString[i] = "a televisão";
+                    adjustedString[i] = TextoCorretoTansos(5);
                     break;
             }
 
@@ -656,7 +835,7 @@ public class RoomManager : MonoBehaviour
 
         if (selectionIsPositive[0] && selectionIsPositive[1])
         {
-            mediaFeedbackText.text = $"Consegui fazer todas as tarefas com {adjustedString[0]} e {adjustedString[1]}";
+            mediaFeedbackText.text = Textos.GetInstance().ObterTexto(ChaveTextos.CONSEGUI_FAZER_AS_ATIVIDADES) + $" {adjustedString[0]}" + Textos.GetInstance().ObterTexto(ChaveTextos.E) + $"{adjustedString[1]}";
 
             media1IconOutline.GetComponent<Image>().color = correctColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
@@ -668,7 +847,8 @@ public class RoomManager : MonoBehaviour
         }
         else if (selectionIsPositive[0])
         {
-            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[0]} <color=red>mas tive dificuldades para fazer outras tarefas com {adjustedString[1]}";
+            mediaFeedbackText.text = Textos.GetInstance().ObterTexto(ChaveTextos.CONSEGUI_FAZER_AS_ATIVIDADES) +
+                $" {adjustedString[0]}" + Textos.GetInstance().ObterTexto(ChaveTextos.CONSEGUI_FAZER_AS_ATIVIDADES) + $" {adjustedString[1]}";
 
             media1IconOutline.GetComponent<Image>().color = correctColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
@@ -680,7 +860,8 @@ public class RoomManager : MonoBehaviour
         }
         else if (selectionIsPositive[1])
         {
-            mediaFeedbackText.text = $" Consegui fazer as atividades com {adjustedString[1]} <color=red>mas tive dificuldades para fazer outras tarefas com {adjustedString[0]}";
+            mediaFeedbackText.text = Textos.GetInstance().ObterTexto(ChaveTextos.CONSEGUI_FAZER_AS_ATIVIDADES) +
+                $" {adjustedString[1]}" + Textos.GetInstance().ObterTexto(ChaveTextos.CONSEGUI_FAZER_AS_ATIVIDADES) +$" { adjustedString[0]}";
 
             media1IconOutline.GetComponent<Image>().color = wrongColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
@@ -689,10 +870,13 @@ public class RoomManager : MonoBehaviour
             media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = correctColor;
 
             return 1.0f;
+            
         }
         else
         {
-            mediaFeedbackText.text = $"<color=red>Tive dificuldades para fazer as tarefas com {adjustedString[0]} e {adjustedString[1]}";
+        
+            mediaFeedbackText.text = Textos.GetInstance().ObterTexto(ChaveTextos.TIVE_DIFICULDADE_PARA_FAZER_AS_TAREFAS) +
+                $"{adjustedString[0]}" +Textos.GetInstance().ObterTexto(ChaveTextos.E) + $" {adjustedString[1]}";
 
             media1IconOutline.GetComponent<Image>().color = wrongColor;
             media1IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;

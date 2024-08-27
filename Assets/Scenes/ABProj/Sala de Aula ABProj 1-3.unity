@@ -3429,7 +3429,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 382505211636085807, guid: 286bf61ff8e5cba4fb30515350c26fb8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 218275505}
   m_SourcePrefab: {fileID: 100100000, guid: 286bf61ff8e5cba4fb30515350c26fb8, type: 3}
 --- !u!224 &218275502 stripped
 RectTransform:
@@ -3443,6 +3447,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 218275501}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &218275504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 382505211636085807, guid: 286bf61ff8e5cba4fb30515350c26fb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 218275501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &218275505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218275504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 179
+  caixaAlta: 0
 --- !u!1 &223890613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,7 +3609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aconteceu alguma coisa Y
+  m_Text: 
 --- !u!222 &231087388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4448,6 +4472,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000030517578, y: 0}
   m_SizeDelta: {x: -60.00006, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &304302817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8097616856395419613, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165006404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &304302818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304302817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 179
+  caixaAlta: 0
 --- !u!1 &305392328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5563,32 @@ MonoBehaviour:
     os alunos a apresentar os resultados e an\xE1lises feitas a partir da execu\xE7\xE3o
     do projeto.\r\nE a utiliza\xE7\xE3o correta da m\xEDdia digital m\xF3vel favorece
     a aprendizagem da turma baseada em seus perfis de Intelig\xEAncias M\xFAltiplas."
+  specificFeedbacksIdealPtbr:
+  - "Perfeito!\r\nAs M\xEDdias de consulta s\xE3o ideais para que os alunos possam
+    pesquisar, entender o projeto e se apropriar das informa\xE7\xF5es necess\xE1rias
+    para tomar decis\xF5es.\r\nJ\xE1 as M\xEDdias de Exposi\xE7\xE3o v\xE3o ajudar
+    os alunos a apresentar os resultados e an\xE1lises feitas a partir da execu\xE7\xE3o
+    do projeto.\r\nE a utiliza\xE7\xE3o correta da m\xEDdia digital m\xF3vel favorece
+    a aprendizagem da turma baseada em seus perfis de Intelig\xEAncias M\xFAltiplas."
+  specificFeedbacksIdealEua:
+  - 'Perfect!
+
+    Consultation media is ideal for students to research, understand
+    the project and obtain the information necessary to make decisions.
+
+    The
+    Exhibition Media will help students present the results and analyzes made from
+    the execution of the project.
+
+    And the correct use of mobile digital media
+    favors class learning based on their Multiple Intelligence profiles.'
+  specificFeedbacksIdealEsp:
+  - "\xA1Perfecto!\r\nEl medio de consulta es ideal para que los estudiantes investiguen,
+    comprendan el proyecto y obtengan la informaci\xF3n necesaria para tomar decisiones.\r\nLos
+    Medios de Exposici\xF3n ayudar\xE1n a los estudiantes a presentar los resultados
+    y an\xE1lisis realizados a partir de la ejecuci\xF3n del proyecto.\r\nY el correcto
+    uso de los medios digitales m\xF3viles favorece el aprendizaje en clase basado
+    en sus perfiles de Inteligencias M\xFAltiples."
   specificFeedbacksBoa:
   - "Que bom.\r\nM\xEDdias de consulta s\xE3o ideais para que os alunos possam pesquisar,
     entender o projeto e se apropriar das informa\xE7\xF5es necess\xE1rias para tomar
@@ -5541,12 +5611,110 @@ MonoBehaviour:
     os resultados do projeto.\r\nAs Intelig\xEAncias M\xFAltiplas demonstram maneiras
     como os alunos aprendem e as suas escolhas de m\xEDdias digitais m\xF3veis devem
     favorecer o perfil de aprendizagem predominante da turma."
+  specificFeedbacksBoaPtbr:
+  - "Que bom.\r\nM\xEDdias de consulta s\xE3o ideais para que os alunos possam pesquisar,
+    entender o projeto e se apropriar das informa\xE7\xF5es necess\xE1rias para tomar
+    decis\xF5es. \r\nAs m\xEDdias populares ou de consulta n\xE3o s\xE3o as mais
+    adequadas para o momento final da aula porque os alunos precisam apresentar os
+    resultados do projeto.\r\nAs Intelig\xEAncias M\xFAltiplas demonstram maneiras
+    como os alunos aprendem e as suas escolhas de m\xEDdias digitais m\xF3veis devem
+    favorecer o perfil de aprendizagem predominante da turma."
+  - "Que bom.\r\nNo primeiro momento da aula os alunos precisam utilizar m\xEDdias
+    adequadas para obter conte\xFAdos acad\xEAmicos, e com isso, poderem planejar
+    e preparar seu projeto.\r\nM\xEDdias de Exposi\xE7\xE3o v\xE3o ajudar os alunos
+    a apresentar os resultados e an\xE1lises feitas a partir da execu\xE7\xE3o do
+    projeto.\r\nAs Intelig\xEAncias M\xFAltiplas demonstram maneiras como os alunos
+    aprendem e as suas escolhas de m\xEDdias digitais m\xF3veis devem favorecer o
+    perfil de aprendizagem predominante da turma."
+  - "Que bom.\r\nNo primeiro momento da aula os alunos precisam utilizar m\xEDdias
+    adequadas para obter conte\xFAdos acad\xEAmicos, e com isso, poderem planejar
+    e preparar seu projeto.\r\nAs m\xEDdias populares ou de consulta n\xE3o s\xE3o
+    as mais adequadas para o momento final da aula porque os alunos precisam apresentar
+    os resultados do projeto.\r\nAs Intelig\xEAncias M\xFAltiplas demonstram maneiras
+    como os alunos aprendem e as suas escolhas de m\xEDdias digitais m\xF3veis devem
+    favorecer o perfil de aprendizagem predominante da turma."
+  specificFeedbacksBoaEua:
+  - "Great.\r\nConsultation media are ideal for students to research, understand
+    the project and obtain the information necessary to make decisions. \r\nPopular
+    or consultation media are not the most appropriate for the final moment of the
+    class because students need to present the results of the project.\r\nMultiple
+    Intelligences demonstrate ways in which students learn and their choices of mobile
+    digital media should favor the predominant learning profile of the class."
+  - 'Great.
+
+    In the first moment of the class, students need to use appropriate
+    media to obtain academic content, and with this, they can plan and prepare their
+    project.
+
+    Exhibition Media will help students present the results and analyzes
+    made from the execution of the project.
+
+    Multiple Intelligences demonstrate
+    ways in which students learn and their choices of mobile digital media should
+    favor the predominant learning profile of the class.'
+  - 'Great.
+
+    In the first moment of the class, students need to use appropriate
+    media to obtain academic content, and with this, they can plan and prepare their
+    project.
+
+    Popular or consultation media are not the most appropriate for
+    the final moment of the class because students need to present the results of
+    the project.
+
+    Multiple Intelligences demonstrate ways in which students learn
+    and their choices of mobile digital media should favor the predominant learning
+    profile of the class.'
+  specificFeedbacksBoaEsp:
+  - "Excelente.\r\nLos medios de consulta son ideales para que los estudiantes investiguen,
+    comprendan el proyecto y obtengan la informaci\xF3n necesaria para tomar decisiones.
+    \r\nLos medios populares o de consulta no son los m\xE1s adecuados para el momento
+    final de la clase porque los estudiantes necesitan presentar los resultados del
+    proyecto.\r\nLas inteligencias m\xFAltiples demuestran formas en que los estudiantes
+    aprenden y sus elecciones de medios digitales m\xF3viles deber\xEDan favorecer
+    el perfil de aprendizaje predominante de la clase."
+  - "Excelente.\r\nEn el primer momento de la clase, los estudiantes necesitan utilizar
+    medios adecuados para obtener contenidos acad\xE9micos, y con esto pueden planificar
+    y preparar su proyecto.\r\nExhibition Media ayudar\xE1 a los estudiantes a presentar
+    los resultados y an\xE1lisis realizados a partir de la ejecuci\xF3n del proyecto.\r\nLas
+    inteligencias m\xFAltiples demuestran formas en que los estudiantes aprenden
+    y sus elecciones de medios digitales m\xF3viles deber\xEDan favorecer el perfil
+    de aprendizaje predominante de la clase."
+  - "Excelente.\r\nEn el primer momento de la clase, los estudiantes necesitan utilizar
+    medios adecuados para obtener contenidos acad\xE9micos, y con esto pueden planificar
+    y preparar su proyecto.\r\nLos medios populares o de consulta no son los m\xE1s
+    adecuados para el momento final de la clase porque los estudiantes necesitan
+    presentar los resultados del proyecto.\r\nLas inteligencias m\xFAltiples demuestran
+    formas en que los estudiantes aprenden y sus elecciones de medios digitales m\xF3viles
+    deber\xEDan favorecer el perfil de aprendizaje predominante de la clase."
   specificFeedbacksArriscada:
   - "Cuidado!\r\nAs m\xEDdias de produ\xE7\xE3o sendo utilizadas no final do projeto,
     j\xE1 no momento de apresentar os resultados pode provocar atrasos no cronograma
     e dificultar a socializa\xE7\xE3o dos projetos.\r"
   - "Cuidado!\r\nAlinhe a escolha das m\xEDdias digitais m\xF3veis com o perfil de
     Intelig\xEAncias M\xFAltiplas da turma.\r"
+  specificFeedbacksArriscadaPtbr:
+  - "Cuidado!\r\nAs m\xEDdias de produ\xE7\xE3o sendo utilizadas no final do projeto,
+    j\xE1 no momento de apresentar os resultados pode provocar atrasos no cronograma
+    e dificultar a socializa\xE7\xE3o dos projetos.\r"
+  - "Cuidado!\r\nAlinhe a escolha das m\xEDdias digitais m\xF3veis com o perfil de
+    Intelig\xEAncias M\xFAltiplas da turma.\r"
+  specificFeedbacksArriscadaEua:
+  - 'Careful!
+
+    Production media being used at the end of the project, already
+    at the moment of presenting the results, can cause delays in the schedule and
+    make it difficult to socialize projects.'
+  - 'Careful!
+
+    Align the choice of mobile digital media with the class''s Multiple
+    Intelligences profile.'
+  specificFeedbacksArriscadaEsp:
+  - "\xA1Cuidadoso!\r\nLa utilizaci\xF3n de medios de producci\xF3n al final del
+    proyecto, ya en el momento de presentar los resultados, puede provocar retrasos
+    en el cronograma y dificultar la socializaci\xF3n de los proyectos."
+  - "\xA1Cuidadoso!\r\nAlinear la elecci\xF3n de medios digitales m\xF3viles con
+    el perfil de Inteligencias M\xFAltiples de la clase."
   methodologyIcon: {fileID: 1542839618}
   media1Icon: {fileID: 721518363}
   media2Icon: {fileID: 1366618627}
@@ -9491,6 +9659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Dura\xE7\xE3o da aula"
+  ContentPt: 
+  ContentEua: 
+  ContentSpanish: 
   popUp: {fileID: 817927080}
   popUpArrow: {fileID: 55981712}
   text: {fileID: 592527343}
@@ -13341,6 +13512,7 @@ GameObject:
   - component: {fileID: 868015348}
   - component: {fileID: 868015350}
   - component: {fileID: 868015349}
+  - component: {fileID: 868015351}
   m_Layer: 5
   m_Name: Aula Reveladora
   m_TagString: Untagged
@@ -13465,6 +13637,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868015347}
   m_CullTransparentMesh: 0
+--- !u!114 &868015351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868015347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 167
+  caixaAlta: 0
 --- !u!1 &896221885
 GameObject:
   m_ObjectHideFlags: 0
@@ -14783,6 +14969,7 @@ GameObject:
   - component: {fileID: 1000395957}
   - component: {fileID: 1000395959}
   - component: {fileID: 1000395958}
+  - component: {fileID: 1000395960}
   m_Layer: 5
   m_Name: Aula Comum
   m_TagString: Untagged
@@ -14907,6 +15094,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000395956}
   m_CullTransparentMesh: 0
+--- !u!114 &1000395960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000395956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 166
+  caixaAlta: 0
 --- !u!1 &1010701194
 GameObject:
   m_ObjectHideFlags: 0
@@ -14961,6 +15162,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  alunosRepitidos: []
 --- !u!114 &1010701196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17094,6 +17296,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5017544119880334752}
     m_Modifications:
+    - target: {fileID: 2914463586332331947, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f5db384ad1531f4fac9f8d25fffe421,
+        type: 3}
     - target: {fileID: 2914463586332331948, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17114,6 +17322,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: VoltarMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2914463586607730763, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f5db384ad1531f4fac9f8d25fffe421,
+        type: 3}
     - target: {fileID: 2914463586607730764, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17134,6 +17348,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: TelaSelecao
       objectReference: {fileID: 0}
+    - target: {fileID: 2914463587163820448, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f5db384ad1531f4fac9f8d25fffe421,
+        type: 3}
     - target: {fileID: 2914463587163820449, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17153,6 +17373,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: JogarNovamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080330770503648866, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610944173369011541, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618258839763630170, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8097616855411295524, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
@@ -17337,7 +17572,27 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8097616856395419613, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304302818}
+    - targetCorrespondingSourceObject: {fileID: 4610944173369011541, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165006412}
+    - targetCorrespondingSourceObject: {fileID: 6618258839763630170, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165006411}
+    - targetCorrespondingSourceObject: {fileID: 4080330770503648866, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165006410}
+    - targetCorrespondingSourceObject: {fileID: 2176382649947701470, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1892731472}
   m_SourcePrefab: {fileID: 100100000, guid: 9fb2f56cbb652694fba524a902b7475b, type: 3}
 --- !u!224 &1165006405 stripped
 RectTransform:
@@ -17351,6 +17606,66 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1165006404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165006407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4080330770503648866, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165006404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165006408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6618258839763630170, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165006404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165006409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4610944173369011541, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165006404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165006410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165006407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 29
+  caixaAlta: 0
+--- !u!114 &1165006411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165006408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 132
+  caixaAlta: 0
+--- !u!114 &1165006412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165006409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 131
+  caixaAlta: 0
 --- !u!1 &1167732522
 GameObject:
   m_ObjectHideFlags: 0
@@ -20137,6 +20452,12 @@ Transform:
   m_Father: {fileID: 466090844}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1296069015 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762483916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1302237973
 GameObject:
   m_ObjectHideFlags: 0
@@ -20155,7 +20476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1302237974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20207,13 +20528,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta3"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o incorreta"
-      m_Image: {fileID: 0}
-    - m_Text: "op\xE7\xE3o correta2"
+    - m_Text: 
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21703,6 +22018,7 @@ GameObject:
   - component: {fileID: 1368003289}
   - component: {fileID: 1368003291}
   - component: {fileID: 1368003290}
+  - component: {fileID: 1368003292}
   m_Layer: 5
   m_Name: Aula Confusa
   m_TagString: Untagged
@@ -21827,6 +22143,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368003288}
   m_CullTransparentMesh: 0
+--- !u!114 &1368003292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368003288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 165
+  caixaAlta: 0
 --- !u!1 &1379454066
 GameObject:
   m_ObjectHideFlags: 0
@@ -23412,6 +23742,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  alunosRepitidos: []
 --- !u!114 &1530796333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25522,6 +25853,7 @@ GameObject:
   - component: {fileID: 1645432763}
   - component: {fileID: 1645432762}
   - component: {fileID: 1645432761}
+  - component: {fileID: 1645432764}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -25602,6 +25934,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645432759}
   m_Mesh: {fileID: 0}
+--- !u!114 &1645432764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645432759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 178
+  caixaAlta: 0
 --- !u!1 &1652637538
 GameObject:
   m_ObjectHideFlags: 0
@@ -27345,6 +27691,129 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da7cf7180acf91748a41b114f138f6b8, type: 3}
+--- !u!1001 &1762483916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5017544119880334752}
+    m_Modifications:
+    - target: {fileID: 8541668870042985360, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Name
+      value: PaisesTraducao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 626
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 638b9cf57ef10c644917c0d1a0cd21d6, type: 3}
 --- !u!1 &1772115789
 GameObject:
   m_ObjectHideFlags: 0
@@ -29118,6 +29587,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1892731471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2176382649947701470, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165006404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1892731472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892731471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 133
+  caixaAlta: 0
 --- !u!1 &1892843213
 GameObject:
   m_ObjectHideFlags: 0
@@ -30174,6 +30663,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Pontua\xE7\xE3o"
+  ContentPt: 
+  ContentEua: 
+  ContentSpanish: 
   popUp: {fileID: 1181940740}
   popUpArrow: {fileID: 234791921}
   text: {fileID: 1952085640}
@@ -41061,6 +41553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconManager: {fileID: 1020552881366763557}
+  ajudaPT: 
+  ajudaSP: 
+  ajudaEUA: 
   ajuda: "A escolha das m\xEDdias influencia nas perguntas do quiz e na rea\xE7\xE3o
     dos estudantes durante a aula. Algumas escolhas s\xE3o mais arriscadas de acordo
     com a proposta da metodologia de cada fase."
@@ -41076,12 +41571,15 @@ MonoBehaviour:
   descriptionText: {fileID: 2008281509962186956}
   botaoConfirmar: {fileID: 852855234537322266}
   anelDeSelecao: {fileID: 2008281510864623037}
+  descricaoPT: 
   descricaoPadrao: "Agora voc\xEA deve escolher as m\xEDdias que ir\xE1 utilizar
     em sua aula! Para isso \xE9 bom pensar nas diferentes etapas da metodologia.
     Voc\xEA pode escolher duas m\xEDdias diferentes em cada espa\xE7o de ensino.
     Pense bem quais ser\xE3o mais \xFAteis para os estudantes! As m\xEDdias deste
     jogo est\xE3o divididas nas categorias Produ\xE7\xE3o, Consulta, Popular e Exposi\xE7\xE3o,
     podendo ser Digitais, Tradicionais ou Audiovisuais. "
+  descricaoEua: 
+  descricaoEspanhol: 
   botaoProximaMidia: {fileID: 852855233972086801}
   botaoMidiaAnterior: {fileID: 2008281510032207876}
   botaoPainelAnterior: {fileID: 2008281509580786671}
@@ -44726,6 +45224,7 @@ RectTransform:
   - {fileID: 253794434}
   - {fileID: 1930713477}
   - {fileID: 1234746877}
+  - {fileID: 1296069015}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
