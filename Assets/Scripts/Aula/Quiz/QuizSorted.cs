@@ -115,12 +115,12 @@ public class QuizSorted : QuizBase
         for (int i = 0; i < affirmations.Count; i++)
         {
             if (i < maxAffirmations)
-            {
+            {/*
                 affirmations[i].text.text = answers[Random.Range(0, answers.Count)];
                 affirmations[i].correctPosition = sortedAnswers.IndexOf(affirmations[i].text.text);
                 answers.Remove(affirmations[i].text.text);
                 affirmationsPositions.Add(affirmations[i].GetComponent<RectTransform>().anchoredPosition);
-
+                */
 
                 switch (Textos.GetIdiomaSelecionado())
                 {

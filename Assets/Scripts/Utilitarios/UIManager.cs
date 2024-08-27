@@ -71,13 +71,11 @@ public class UIManager : MonoBehaviour
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
         if (gameState.telaSelecao)
         {
-            Debug.Log("entrei tela selecao");
             ChangePanelGroup(planejamento);
             ChangePanel(panelEscolhaModo);
         }
         else
         {
-            Debug.Log("Panel fase");
             ChangePanelGroup(levelStartPanelGroup);
             ChangePanel(levelPanels[gameState.FaseAtual]);
         }

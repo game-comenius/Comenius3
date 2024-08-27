@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class StateMachine : ScriptableObject
 {
-    [HideInInspector] public Midia currentMedia;
+     public Midia currentMedia;
 
     private int currentStateIndex;
 

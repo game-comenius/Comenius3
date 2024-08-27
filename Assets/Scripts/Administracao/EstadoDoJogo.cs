@@ -100,6 +100,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
+            Debug.Log(midias.Length + "Quantidade midias");
             return midias;
         }
 

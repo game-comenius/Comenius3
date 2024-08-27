@@ -662,12 +662,51 @@ public class Midia
             }
         }
 
+        else if(valor == 3)
+        {
+            switch (nomeMidia)
+            {
+                case NomeDeMidia.Lousa:
+                    return "Lousa";
+                case NomeDeMidia.LivroDidatico:
+                    return "LivroDidatico";
+                case NomeDeMidia.Notebook:
+                    return "Notebook";
+                case NomeDeMidia.Celular:
+                    return "Celular";
+                case NomeDeMidia.Tablet:
+                    return "Tablet";
+                case NomeDeMidia.LivrosJornaisERevistas:
+                    return "LivrosJornaisERevistas";
+                case NomeDeMidia.CadernosECartazes:
+                    return "CadernosECartazes";
+                case NomeDeMidia.Televisao:
+                    return "Televisao";
+                case NomeDeMidia.AparelhoDeSom:
+                    return "AparelhoDeSom";
+                case NomeDeMidia.RedesSociais:
+                    return "RedesSociais";
+                case NomeDeMidia.Jogos:
+                    return "Jogos";
+                case NomeDeMidia.EditoresDeAudioEVideo:
+                    return "EditoresDeAudioEVideo";
+                case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
+                    return "EditoresDeTextoEPlanilhasEletronicas";
+                case NomeDeMidia.Plataformas:
+                    return "Plataformas";
+                case NomeDeMidia.Aplicativos:
+                    return "Aplicativos";
+                case NomeDeMidia.ProjetorMultimidia:
+                    return "ProjetorMultimidia";
+                case NomeDeMidia.VideoGamePortatil:
+                    return "VideoGamePortatil";
+            }
+        }
         return "true";
     }
     public Midia(NomeDeMidia nomeMidia)
     {
         this.nomeMidia = nomeMidia;
-
         nome = AtualizarTextosLinguas(nomeMidia, 2);
         descricao = AtualizarTextosLinguas(nomeMidia, 0);
         descricaoLonga = AtualizarTextosLinguas(nomeMidia, 1);

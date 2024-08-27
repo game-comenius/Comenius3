@@ -245,7 +245,6 @@ public class Textos
                 PlayerPrefs.SetInt("Idioma", (int)idioma);
                 break;
         }
-        Debug.Log(idiomaSelecionado);
         AtualizarUITexts();
     }
 

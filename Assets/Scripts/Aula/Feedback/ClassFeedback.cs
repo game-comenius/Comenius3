@@ -11,8 +11,19 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] [TextArea] private string[] specificFeedbacksIdeal;
+    [SerializeField][TextArea] private string[] specificFeedbacksIdealPtbr;
+    [SerializeField][TextArea] private string[] specificFeedbacksIdealEua;
+    [SerializeField][TextArea] private string[] specificFeedbacksIdealEsp;
+
     [SerializeField] [TextArea] private string[] specificFeedbacksBoa;
+    [SerializeField][TextArea] private string[] specificFeedbacksBoaPtbr;
+    [SerializeField][TextArea] private string[] specificFeedbacksBoaEua;
+    [SerializeField][TextArea] private string[] specificFeedbacksBoaEsp;
+
     [SerializeField] [TextArea] private string[] specificFeedbacksArriscada;
+    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaPtbr;
+    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaEua;
+    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaEsp;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
@@ -35,12 +46,21 @@ public class ClassFeedback : MonoBehaviour
             {
                 case Idiomas.INGLES:
                     adjective = "Confused";
+                    specificFeedbacksIdeal = specificFeedbacksIdealEua;
+                    specificFeedbacksBoa = specificFeedbacksBoaEua;
+                    specificFeedbacksArriscada = specificFeedbacksArriscadaEua;
                     break;
                 case Idiomas.PORTUGUES:
                     adjective = "Confusa";
+                    specificFeedbacksIdeal = specificFeedbacksIdealPtbr;
+                    specificFeedbacksBoa = specificFeedbacksBoaPtbr;
+                    specificFeedbacksArriscada = specificFeedbacksArriscadaPtbr;
                     break;
                 case Idiomas.ESPANHOL:
                     adjective = "Confundido";
+                    specificFeedbacksIdeal = specificFeedbacksIdealEsp;
+                    specificFeedbacksBoa = specificFeedbacksBoaEsp;
+                    specificFeedbacksArriscada = specificFeedbacksArriscadaEsp;
                     break;
 
                 default:
@@ -125,13 +145,62 @@ public class ClassFeedback : MonoBehaviour
         switch (comboClass)
         {
             case ComboChecker.ComboClassification.Ideal:
-                comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        comboClassification = "<b><color=#00CC00>Fancy</color></b>";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
+                        break;
+
+                    default:
+                        comboClassification = "<b><color=#00CC00>IDEAL</color></b>";
+                        break;
+
+                }
+           
                 break;
             case ComboChecker.ComboClassification.Boa:
-                comboClassification = "<b><color=#029FCF>BOA</color></b>";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        comboClassification = "<b><color=#00CC00>Good</color></b>";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        comboClassification = "<b><color=#00CC00>BOA</color></b>";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        comboClassification = "<b><color=#00CC00>BIEN</color></b>";
+                        break;
+
+                    default:
+                        comboClassification = "<b><color=#00CC00>Boa</color></b>";
+                        break;
+
+                }
                 break;
             case ComboChecker.ComboClassification.Arriscada:
-                comboClassification = "<b><color=#CC0000>ARRISCADA</color></b>";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        comboClassification = "<b><color=#00CC00>Risky</color></b>";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        comboClassification = "<b><color=#00CC00>ARRISCADA</color></b>";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        comboClassification = "<b><color=#00CC00>ARRIESGADO</color></b>";
+                        break;
+
+                    default:
+                        comboClassification = "<b><color=#00CC00>ARRIESGADO</color></b>";
+                        break;
+
+                }
                 break;
             default:
                 comboClassification = "[ERRO]";

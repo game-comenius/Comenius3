@@ -170,6 +170,10 @@ public class InteractionManager : MonoBehaviour
     private void UpdatePage()
     {
         PaginaInteracao page = interaction.paginas[currentPage];
+        Debug.Log(page);
+
+     //   page = 
+        /*
         switch (Textos.GetIdiomaSelecionado())      
         {
             case Idiomas.INGLES:
@@ -185,6 +189,7 @@ public class InteractionManager : MonoBehaviour
                 page = interaction.paginas[currentPage];
                 break;
         }
+        */
      
 
         title.text = page.titulo;
@@ -231,9 +236,27 @@ public class InteractionManager : MonoBehaviour
         if (dontShowDropDown)
             return;
 
+        string reaction = "sal";
+
         bool choseRightAnswer = currentChoice.text != wrongChoice.text;
 
-        string reaction = choseRightAnswer ? interaction.reacaoPositiva : interaction.reacaoNegativa;
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                reaction = choseRightAnswer ? interaction.reacaoNegativaEua : interaction.reacaoNegativaEua;
+                break;
+            case Idiomas.PORTUGUES:
+                reaction = choseRightAnswer ? interaction.reacaoNegativaPtbr : interaction.reacaoNegativaPtbr;
+                break;
+            case Idiomas.ESPANHOL:
+                reaction = choseRightAnswer ? interaction.reacaoPositivaEsp : interaction.reacaoNegativaEsp;
+                break;
+            default:
+                reaction = choseRightAnswer ? interaction.reacaoPositiva : interaction.reacaoNegativa;
+                break;
+        }
+
+
 
         OnChoiceConfirm.Invoke(choseRightAnswer, reaction);
 

@@ -56,7 +56,7 @@ public class ComboChecker
         CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia();
 
 
-        if (EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Problemas")
+        if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABP.nome)
         {
             // Pelo menos uma é digital
             if (flagMidia1.HasFlag(CategoriasDeMidia.Digital) || flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -138,7 +138,9 @@ public class ComboChecker
                 return Combo.abpArriscada2;
             }
         }
-        else if (EstadoDoJogo.Instance.Metodologia.nome == "Sala de Aula Invertida")
+
+       
+        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.SAI.nome)
         {
             // Qualquer coisa
             // Combo arriscado 1
@@ -204,14 +206,15 @@ public class ComboChecker
         }
 
 
-        if(EstadoDoJogo.Instance.Metodologia.nome == "Aprendizagem Baseada em Projetos")
+        if(EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABProj.nome)
         {
-         
-           if(EstadoDoJogo.Instance.Inteligencias.nome == "Linguística e Lógico-matemática")
+            Inteligencias.AtualizarTextosLinguas();
+            
+           if (EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.LinguisticaComLogicoMatematica.nome)
             {
                 
                 // Combo ideal1
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && "Plataformas" == EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString() && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && Midia.AtualizarTextosLinguas(NomeDeMidia.Plataformas, 2) == EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString() && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
                     return Combo.abpjIdeal1;
                 }
@@ -233,7 +236,7 @@ public class ComboChecker
 
                 return Combo.abpjArriscado4;
             }
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Intrapessoal e Espacial-visual")
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.IntrapessoalComEspacialVisual.nome)
             {
                 if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
@@ -253,7 +256,8 @@ public class ComboChecker
 
                 return Combo.abpjArriscado4;
             }
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Corporal-cinestésica e Naturalista")
+          
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.CorporalCinestesicaComNaturalista.nome)
             {
                 if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal3;
@@ -271,7 +275,9 @@ public class ComboChecker
 
                 return Combo.abpjArriscado4;
             }
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == "Interpessoal e Musical")
+
+    
+           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.InterpessoalComMusical.nome)
             {
                 if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia  && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal4;

@@ -8,6 +8,9 @@ public abstract class QuizBase : MonoBehaviour
     public QuizType quizType;
     public string methodology;
     public string intelligence;
+    public string intelligencePtbr;
+    public string intelligenceEua;
+    public string intelligenceEsp;
     public NomeDeMidia media;
 
     public enum QuizType

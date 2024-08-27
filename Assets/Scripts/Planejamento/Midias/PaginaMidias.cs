@@ -438,14 +438,15 @@ public class PaginaMidias : PaginaPlanejamento
             EstadoDoJogo.Instance.Midias = temp;
         }
 
-        Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia);
-        Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia);
+        Debug.Log(EstadoDoJogo.Instance.Midias[0].sprite);
+        Debug.Log(EstadoDoJogo.Instance.Midias[1].sprite);
+        Debug.Log(EstadoDoJogo.Instance.Midias[2].sprite);
 
     }
 
     private void resetarEstadoDeJogo()
     {
+        Debug.Log("Resetei");
         int indice = segundaEtapa ? 2 : 0;
         int indiceIcone = 0;
 

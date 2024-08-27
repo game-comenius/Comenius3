@@ -38,31 +38,85 @@ public class QuizManager : MonoBehaviour
 
     public void ShowMultipleInteligenceQuiz()
     {
-        for(int i = 0; i < multipleInteligencesQuizList.Count; i++)
+        Debug.Log("Cheguei até aqui");
+        Inteligencias.AtualizarTextosLinguas();
+        for (int i = 0; i < multipleInteligencesQuizList.Count; i++)
         {
-            if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligence == EstadoDoJogo.Instance.Inteligencias.nome)
+            switch (Textos.GetIdiomaSelecionado())
             {
-                GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
+                case Idiomas.INGLES:
 
-                quiz.transform.SetParent(canvas.transform);
-                quiz.transform.SetAsFirstSibling();
-                quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                    if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligenceEua == EstadoDoJogo.Instance.Inteligencias.nome)
+                    {
+                        GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
 
-                QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
+                        quiz.transform.SetParent(canvas.transform);
+                        quiz.transform.SetAsFirstSibling();
+                        quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-                if (quizSorted != null)
-                {
-                    quizSorted.canvas = canvas.GetComponent<Canvas>();
-                }
+                        QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
 
-                QuizBase quizBase = quiz.GetComponent<QuizBase>();
-                quizBase.quizManager = this;
+                        if (quizSorted != null)
+                        {
+                            quizSorted.canvas = canvas.GetComponent<Canvas>();
+                        }
 
-                break;
+                        QuizBase quizBase = quiz.GetComponent<QuizBase>();
+                        quizBase.quizManager = this;
+
+                        break;
+                    }
+                    break;
+                case Idiomas.PORTUGUES:
+                    if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligencePtbr == EstadoDoJogo.Instance.Inteligencias.nome)
+                    {
+                        GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
+
+                        quiz.transform.SetParent(canvas.transform);
+                        quiz.transform.SetAsFirstSibling();
+                        quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+                        QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
+
+                        if (quizSorted != null)
+                        {
+                            quizSorted.canvas = canvas.GetComponent<Canvas>();
+                        }
+
+                        QuizBase quizBase = quiz.GetComponent<QuizBase>();
+                        quizBase.quizManager = this;
+
+                        break;
+                    }
+                    break;
+                case Idiomas.ESPANHOL:
+                    if (multipleInteligencesQuizList[i].GetComponent<QuizBase>().intelligenceEsp == EstadoDoJogo.Instance.Inteligencias.nome)
+                    {
+                        GameObject quiz = Instantiate(multipleInteligencesQuizList[i]);
+
+                        quiz.transform.SetParent(canvas.transform);
+                        quiz.transform.SetAsFirstSibling();
+                        quiz.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+                        QuizSorted quizSorted = quiz.GetComponent<QuizSorted>();
+
+                        if (quizSorted != null)
+                        {
+                            quizSorted.canvas = canvas.GetComponent<Canvas>();
+                        }
+
+                        QuizBase quizBase = quiz.GetComponent<QuizBase>();
+                        quizBase.quizManager = this;
+
+                        break;
+                    }
+                    break;
+                default:
+                    break;
             }
+          
         }
     }
-
     public void ShowMediaQuiz()
     {
         for(int i = 0; i < mediaQuizList.Count; i++)
