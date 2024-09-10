@@ -234,10 +234,10 @@ public sealed class NivelDeEnsino
                 NivelDeEnsino.EnsinoFundamental.descricao = ensinoFundamentalDescricaoEua;
                 NivelDeEnsino.EnsinoMedio.descricao = ensinoMedioDescricaoEua;
                 NivelDeEnsino.EnsinoSuperior.descricao = ensinoSuperiorDescricaoEua;
-                NivelDeEnsino.EducacaoInfantil.nome = "Early childhood education";
-                NivelDeEnsino.EnsinoFundamental.nome = "Elementary school";
-                NivelDeEnsino.EnsinoMedio.nome = "High school";
-                NivelDeEnsino.EnsinoSuperior.nome = "Higher education";
+                NivelDeEnsino.EducacaoInfantil.nome = "Early Childhood Education";
+                NivelDeEnsino.EnsinoFundamental.nome = "Elementary School";
+                NivelDeEnsino.EnsinoMedio.nome = "High School";
+                NivelDeEnsino.EnsinoSuperior.nome = "Higher Education";
 
 
                 break;

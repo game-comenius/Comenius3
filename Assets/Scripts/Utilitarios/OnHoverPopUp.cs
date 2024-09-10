@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public string Content;
+   public string Content;
+   // public int Content { get; set; }
     public string ContentPt;
      public string ContentEua;
      public string ContentSpanish;
@@ -86,6 +87,8 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         }
         else
             text.text = ContentSpanish;
+
+        text.text = Content;
         popUp.SetActive(true);
     }
 

@@ -217,6 +217,12 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.NA_SEQUENCIA_DA_APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Siguiendo el <b>aprendizaje basado en proyectos</b>, \r\nEstos serán los momentos en los que los estudiantes experimentarán";
         textos[(int)ChaveTextos.OBSERVE_SE_SUA_ESCOLHA] = "¡Vea si su elección es la mejor opción para estos objetivos!";
         textos[(int)ChaveTextos.PEGUE_DENTRO_DO_ARMARIO] = "<b>Saca medios del armario para usarlos en la ciudad</b>";
+        textos[(int)ChaveTextos.SUA_AULA_LAB] = "Tu clase se llevará a cabo en el LABORATORIO";
+        textos[(int)ChaveTextos.TEMA] = "";
+        textos[(int)ChaveTextos.DESBLOQUEOU_ABP] = "Has desbloqueado la metodología activa de";
+        textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Su clase se llevará a cabo en el DORMITORIO DEL ESTUDIANTE y en el AULA.";
+        textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Tu clase se realizará en la CIUDAD y en el AULA";
+        textos[(int)ChaveTextos.PARA_COMECAR] = "Para empezar:";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";

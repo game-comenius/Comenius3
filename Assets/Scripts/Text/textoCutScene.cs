@@ -28,13 +28,13 @@ public class textoCutScne : MonoBehaviour
         if (Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
         {
             textosCutscene[0] = "Hello, Player.\n I'm Comenius, the father of Didactics. \n I'll show you how to better plan your \n classes with media. ";
-            textosCutscene[1] = "And I'm professor Maria de Lourdes,\nbut you can call me Lurdinha.";
+            textosCutscene[1] = "And I'm teacher Maria de Lourdes,\nbut you can call me Lurdinha.";
             textosCutscene[2] = "I've been learning a lot about the uses of new media in school planning, and I'm going to help you in this mission!";
             textosCutscene[3] = "We need to create more agile teaching practices and\r\n make students protagonists in the process. \r\nDuring the game, three active\r\n methodologies will be presented that will help you in this\r\n task.";
             textosCutscene[4] = "Here in the game you will extend the\nlearning spaces beyond the walls of the classroom and the walls of the school.";
             textosCutscene[5] = "To do this, you will be able to use the laboratories, encourage \r\n students to research, carry out parts of the activities \r\n at home, take them to the city to learn in an \r\nengaging way and from different contexts.";
             textosCutscene[6] = "Here you will create didactic sequences using 21st century media\n, planning with active methodologies and\n considering the multiple intelligences of your classes.";
-            textosCutscene[7] = "Are you ready to begin \nnour journey?";
+            textosCutscene[7] = "Are you ready to begin \nour journey?";
             textosCutscene[8] = "<b>Great!</b> So let's explore together the potential and the challenge of including digital media in education. Shall we go?";
         }
         else if(Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)

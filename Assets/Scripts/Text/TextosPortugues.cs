@@ -82,7 +82,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.CRIEI_UM_TEMA] = "Crie um tema que vai guiar seu planejamento e as escolhas de mídias adequadas para sua aula. ";
         textos[(int)ChaveTextos.ESSA_ESCOLHA] = "Essa escolha não reflete na pontuação.";
         textos[(int)ChaveTextos.NO_MAXIMO_45] = "(No máximo 45 caracteres)";
-        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "Na Aprendizagem Baseada em Problemas (ABP)\r\ndeve-se atentar para a descrição de um contexto no qual variáveis, sujeitos e situações possam ser \r\nclaramente identificados pelos estudantes\r\n\r\nO problema deve conter as seguintes características:\r\n\r\n* Apresentar tema e nível de complexidade\r\ncompatíveis com o conhecimento prévio dos\r\nestudantes;\r\n\r\n* Conter sugestões ou dicas que os estimulem a\r\nidentificar possíveis pontso de partida;\r\n\r\n* Ser simples e objetivo, para evitar que o grupo\r\ndesvie a atenção do tema;\r\n\r\n* Mobilizar de forma articulada os elementos de \r\ncompetência.\r\n";
+        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "Na Aprendizagem Baseada em Problemas (ABP)\r\ndeve-se atentar para a descrição de um contexto no qual variáveis, sujeitos e situações possam ser \r\nclaramente identificados pelos estudantes\r\n\r\nO problema deve conter as seguintes características:\r\n\r\n* Apresentar tema e nível de complexidade\r\ncompatíveis com o conhecimento prévio dos\r\nestudantes;\r\n\r\n* Conter sugestões ou dicas que os estimulem a\r\nidentificar possíveis pontos de partida;\r\n\r\n* Ser simples e objetivo, para evitar que o grupo\r\ndesvie a atenção do tema;\r\n\r\n* Mobilizar de forma articulada os elementos de \r\ncompetência.\r\n";
         textos[(int)ChaveTextos.APRENSENTAR_O_PROBLEMA] = "1.Apresentar o problema e levantar os \r\nconhecimentos sobre o assunto;\r\n2.Analisar as variáveis do problema e\r\npropor possíveis soluções;\r\n3. Buscar novas referências para qualificar\r\nas propostas, debater e buscar consenso\r\nsobre as possíveis soluções;";
         textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "SEQUÊNCIA DIDÁTICA:";
         textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1° Momento";
@@ -216,6 +216,13 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.NA_SEQUENCIA_DA_APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Na sequência da <b>Aprendizagem Baseada em Projetos</b>, \r\nestes serão os momentos em que os estudantes irão vivenciar\r\n";
         textos[(int)ChaveTextos.OBSERVE_SE_SUA_ESCOLHA] = "Observe se sua escolha é a melhor opção para estes objetivos!";
         textos[(int)ChaveTextos.PEGUE_DENTRO_DO_ARMARIO] = "<b>Pegue dentro do armário mídias para utilizar na cidade</b>";
+        textos[(int)ChaveTextos.SUA_AULA_LAB] = "Sua aula acontecerá no LABORATÓRIO";
+        textos[(int)ChaveTextos.DESBLOQUEOU_ABP] = "Você desbloqueou a metodologia ativa de";
+        textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Sua aula acontecerá QUARTO DO ALUNO e na SALA DE AULA.";
+        textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Sua aula acontecerá na CIDADE e na SALA DE AULA";
+        textos[(int)ChaveTextos.PARA_COMECAR] = "Para começar:";
+        textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";

@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using static UnityEditor.PlayerSettings.Switch;
 
 [Serializable]
 public sealed class AreaDeConhecimento

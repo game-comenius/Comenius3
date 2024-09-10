@@ -38,6 +38,7 @@ public class PaginaResumo : PaginaPlanejamento
         switch (Textos.GetIdiomaSelecionado())  
         {
             case Idiomas.INGLES:
+                preposition = "";
                 levelPart = $"You will play a class  {preposition} {EstadoDoJogo.Instance.NivelDeEnsino.nome} ";
                 areaPart = $"about {EstadoDoJogo.Instance.AreaDeConhecimento.nome} ";
                 inteligencePart = $"with a profile class {EstadoDoJogo.Instance.Inteligencias.nome}.";
@@ -48,6 +49,7 @@ public class PaginaResumo : PaginaPlanejamento
                 inteligencePart = $"com uma turma de perfil {EstadoDoJogo.Instance.Inteligencias.nome}.";
                 break;
             case Idiomas.ESPANHOL:
+                preposition = "";
                 levelPart = $"Jugarás una clase {preposition} {EstadoDoJogo.Instance.NivelDeEnsino.nome} ";
                 areaPart = $"acerca de {EstadoDoJogo.Instance.AreaDeConhecimento.nome} ";
                 inteligencePart = $"con una clase de perfil {EstadoDoJogo.Instance.Inteligencias.nome}.";

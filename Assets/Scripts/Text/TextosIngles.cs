@@ -18,13 +18,13 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.SOBREOJOGO] = "About the game";
         textos[(int)ChaveTextos.INTRO_METODOLOGIAS_TXT] = "This game has<color=#330BB3> 3 methodologies</color> and you will" +
 "\r\n<color=#330BB3>plan a lesson</color> in each of them" +
-"<color=#330BB3> using </color><color=#330BB3> " +
+"<color=#330BB3> using</color><color=#330BB3> " +
 "different active methodologies!\r\n </color>\r\n\r" +
-"Active methodologies are strategies\r\n" +
-"pedagogical practices that have students like\r\n" +
-"center of the teaching and learning process." +
-"\r\n\r\nThe teachers mediate, guiding and" +
-"\r\nafollowing the interaction processes in which the" +
+"Active methodologies are pedagogical\r\n" +
+"strategies that place students at the center\r\n" +
+"of the teaching and learning process." +
+"\r\n\r\nTeachers act as mediators, guiding and" +
+"\r\nmonitoring the interaction processes through which" +
 "\r\nlearning develops.\r\n\r\n";
         textos[(int)ChaveTextos.METODOLOGIAS_ATIVAS] = "Active Methodologies";
         textos[(int)ChaveTextos.APRENDIZAGEM_BASEADA_EM_PROBLEMAS] = "Problem-Based Learning (PBL)";
@@ -47,7 +47,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>Now it's up to you! </color>\r\n";
         textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Select one of the options:\r\nDo you want to play the <color=#0B355D>FULL EXPERIENCE?</color>";
         textos[(int)ChaveTextos.OU_METODOLOGIAS_ATIVAS] = "Or <color=#0B355D>ONE OF THE ACTIVE METHODOLOGIES?</color>";
-        textos[(int)ChaveTextos.POP_INTRO_2] = "Together we will explore the various\r\nuses of digital media in education.\r\n\r\nYou start the game by choosing your appearance and creating the characteristics of your class, which will be maintained throughout the phases,\r\nserving as the basis of your planning.\r\n\r\nUnder the button = you will find the menu options,\r\nand if you have questions, just click the button: ?\r\n \r\nTo get started, click OK and have fun choosing\r\nyour character and customizing your class!";
+        textos[(int)ChaveTextos.POP_INTRO_2] = "Together we will explore the various\r\nuses of digital media in education.\r\n\r\nYou start the game by choosing your appearance and creating the characteristics of your class, which will be maintained throughout the phases,\r\nserving as the basis of your planning.\r\n\r\nUnder the button = you will find the menu options,\r\nand if you have questions, just click the button\r\n \r\nTo get started, click OK and have fun choosing\r\nyour character and customizing your class!";
 
         textos[(int)ChaveTextos.PERSONAGEM] = "\r\n<b>Personaje</b>";
         textos[(int)ChaveTextos.ESCOLHA_AVATAR] = "Chose your character.";
@@ -217,6 +217,13 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.NA_SEQUENCIA_DA_APRENDIZAGEM_BASEADA_EM_PROJETOS] = "Following <b>Project-Based Learning</b>, \r\nThese will be the moments in which students will experience";
         textos[(int)ChaveTextos.OBSERVE_SE_SUA_ESCOLHA] = "See if your choice is the best option for these objectives!";
         textos[(int)ChaveTextos.PEGUE_DENTRO_DO_ARMARIO] = "<b>Take media from the closet to use in the city</b>";
+        textos[(int)ChaveTextos.SUA_AULA_LAB] = "Your class will take place in the LABORATORY";
+        textos[(int)ChaveTextos.DESBLOQUEOU_ABP] = "You have unlocked the active methodology of";
+        textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Your class will take place in the STUDENT'S BEDROOM and in the CLASSROOM.";
+        textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Your class will take place in the CITY and in the CLASSROOM";
+        textos[(int)ChaveTextos.PARA_COMECAR] = "To start:";
+        textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
