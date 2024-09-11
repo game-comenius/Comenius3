@@ -221,11 +221,8 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Sua aula acontecerá QUARTO DO ALUNO e na SALA DE AULA.";
         textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Sua aula acontecerá na CIDADE e na SALA DE AULA";
         textos[(int)ChaveTextos.PARA_COMECAR] = "Para começar:";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.PRONTO] = "PRONTO";
+        textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Escolha do tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
     }
 

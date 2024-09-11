@@ -88,7 +88,6 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         else
             text.text = ContentSpanish;
 
-        text.text = Content;
         popUp.SetActive(true);
     }
 

@@ -215,6 +215,8 @@ public enum ChaveTextos
     SUA_AULA_QUARTO,
     SUA_AULA_CIDADE,
     PARA_COMECAR,
+    PRONTO,
+    ESCOLHA_DO_TEMA,
     _chaveFinal
 }
 

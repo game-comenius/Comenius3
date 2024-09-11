@@ -222,11 +222,10 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Your class will take place in the STUDENT'S BEDROOM and in the CLASSROOM.";
         textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Your class will take place in the CITY and in the CLASSROOM";
         textos[(int)ChaveTextos.PARA_COMECAR] = "To start:";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.PRONTO] = "READY";
+        textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Choice of theme";
+        textos[(int)ChaveTextos.TEMA] = "Theme";
+
     }
     
 }

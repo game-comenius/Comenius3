@@ -130,10 +130,10 @@ public class Midia
                             ".\n\n<b>Category:</b>\nDigital popular media";
                         case NomeDeMidia.Jogos:
                             return "<style=\"title\">Games</style>\n\nA digital game is a playful activity composed of mechanics, aesthetics and narratives, supports" +
-                            "given by a technology, where the player carries out a series of actions and decisions, which are limited by rules and the context" +
+                            "given by a technology, where the player carries out a series of actions and decisions, which are limited by rules and the context " +
                             "of the game, receiving constant feedback and seeking to achieve a goal.\n\nCategory:\nDigital popular media ";
                         case NomeDeMidia.EditoresDeAudioEVideo:
-                            return "<style=\"title\">Audio and video editors</style>\n\nAudio and video editors are software that provide video editing" +
+                            return "<style=\"title\">Audio and video editors</style>\n\nAudio and video editors are software that provide video editing " +
                             "content that contains sound and image, through options to cut, copy and paste audio and video excerpts, as well as apply and" +
                             "miscellaneous feats.\n\n<b>Category:</b>\nDigital production media.";
                         case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
@@ -142,12 +142,12 @@ public class Midia
                             "calculations or data presentation. Editors and spreadsheets allow you to customize the created content such as defining colors, font" +
                             "and, spacing and much more.\n\n<b>Category:</b>\nAudiovisual production media.";
                         case NomeDeMidia.Plataformas:
-                            return "<style=\"title\">Platforms</style>\n\nVirtual learning platforms are software that add tools for learning" +
-                            "action, mentoring, management and sharing of activities with the aim of helping the user to develop and distribute content" +
+                            return "<style=\"title\">Platforms</style>\n\nVirtual learning platforms are software that add tools for learning " +
+                            "action, mentoring, management and sharing of activities with the aim of helping the user to develop and distribute content " +
                             "the various ones for online courses and blended subjects for students in general.\n\n<b>Category:</b>\nDigital consultation media";
                         case NomeDeMidia.Aplicativos:
-                            return "<style=\"title\">Applications</style>\n\nApp or applications are software whose objective is to help the user perform d" +
-                            "specific tasks, related to work or entertainment, adapted for the mobile devices that have passed" +
+                            return "<style=\"title\">Applications</style>\n\nApp or applications are software whose objective is to help the user perform " +
+                            "specific tasks, related to work or entertainment, adapted for the mobile devices that have passed " +
                             "to be part of people's lives. It generally refers to software present on cell phones and smart devices, such as" +
                             " smart TVs, for the most diverse functions.\n\n<b>Category:</b>\nDigital consultation media";
                         case NomeDeMidia.ProjetorMultimidia:

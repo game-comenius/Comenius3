@@ -223,9 +223,8 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.SUA_AULA_QUARTO] = "Su clase se llevará a cabo en el DORMITORIO DEL ESTUDIANTE y en el AULA.";
         textos[(int)ChaveTextos.SUA_AULA_CIDADE] = "Tu clase se realizará en la CIUDAD y en el AULA";
         textos[(int)ChaveTextos.PARA_COMECAR] = "Para empezar:";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
-        textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.PRONTO] = "Listo";
+        textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Elección del tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
     }
 

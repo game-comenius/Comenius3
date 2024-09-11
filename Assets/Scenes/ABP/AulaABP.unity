@@ -3440,6 +3440,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &233416753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8097616856395419613, guid: 9fb2f56cbb652694fba524a902b7475b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8097616855687734683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &233416757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233416753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 129
+  caixaAlta: 0
 --- !u!1 &234791921
 GameObject:
   m_ObjectHideFlags: 0
@@ -7289,6 +7309,7 @@ GameObject:
   - component: {fileID: 459736240}
   - component: {fileID: 459736239}
   - component: {fileID: 459736238}
+  - component: {fileID: 459736241}
   m_Layer: 0
   m_Name: "T\xEDtulo"
   m_TagString: Untagged
@@ -7358,6 +7379,20 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: -30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &459736241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459736237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 139
+  caixaAlta: 0
 --- !u!1 &463649839
 GameObject:
   m_ObjectHideFlags: 0
@@ -28137,9 +28172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Pontua\xE7\xE3o"
-  ContentPt: 
-  ContentEua: 
-  ContentSpanish: 
+  ContentPt: "Pontua\xE7\xE3o"
+  ContentEua: Score
+  ContentSpanish: Puntaje
   popUp: {fileID: 1181940740}
   popUpArrow: {fileID: 234791921}
   text: {fileID: 1952085640}
@@ -37111,6 +37146,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8097616855687734695}
+    - targetCorrespondingSourceObject: {fileID: 8097616856395419613, guid: 9fb2f56cbb652694fba524a902b7475b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233416757}
     - targetCorrespondingSourceObject: {fileID: 4610944173369011541, guid: 9fb2f56cbb652694fba524a902b7475b,
         type: 3}
       insertIndex: -1
