@@ -256,8 +256,8 @@ public sealed class AreaDeConhecimento
     #endregion
     #region Eua
     private static string EuOutroNosEua =
-    "<style=\"title\">The Self, the Other and We</style>\n\nIt is through interaction with peers and adults that children thrive" +
-    "enhance their learning, differentiating themselves and identifying themselves as individual and social beings, valuing themselves" +
+    "<style=\"title\">The Self, the Other and We</style>\n\nIt is through interaction with peers and adults that children thrive " +
+    "enhance their learning, differentiating themselves and identifying themselves as individual and social beings, valuing themselves " +
     "your identity, respecting others and recognizing their differences that constitute us as human beings.";
 
     private static string CorpoGestosMovimentosEua =
@@ -267,20 +267,20 @@ public sealed class AreaDeConhecimento
       "action and use of space with the body.";
 
     private static string TracosSonsCoresFormasEua =
-        "<style=\"title\">Traces, Sounds, Colors and Shapes</style>\n\nThrough diverse experiences, experience di" +
-        "Discover forms of expression and languages, contributing to developing sensitivity, aesthetic and creative sense" +
-        "tico, in addition to creativity and personal expression to create their own artistic and cultural repertoire.";
+        "<style=\"title\">Traces, Sounds, Colors and Shapes</style>\n\nThrough diverse experiences, experience" +
+        "Discover forms of expression and languages, contributing to developing sensitivity, aesthetic and creative sensetico," +
+        "in addition to creativity and personal expression to create their own artistic and cultural repertoire.";
 
     private static string EscutaFalaPensamentoImaginacaEua =
         "<style=\"title\">Listening, Speaking, Thinking and Imagination</style>\n\nThrough interactions, progressively," +
-        "Children expand their understanding of oral language and its means of communication in everyday life. Just like" +
+        "Children expand their understanding of oral language and its means of communication in everyday life. Just like " +
         "your curiosity about culture written through children's literature, developing your imagination and broadening" +
         "I walk your knowledge of the world.";
 
     private static string EspacosTemposQuantidadesRelacoesTransformacoesEua =
-        "<style=\"title\">Spaces, Times, Quantities, Relations and Transformations</style>\n\nChildren demonstrate ass" +
-        "riosity about spaces and times of different dimensions in a world made up of natural phenomena and s" +
-        "ociocultural, in which mathematical knowledge is also inserted, making the little ones, through" +
+        "<style=\"title\">Spaces, Times, Quantities, Relations and Transformations</style>\n\nChildren demonstrate" +
+        "curiosity about spaces and times of different dimensions in a world made up of natural phenomena and s" +
+        "ociocultural, in which mathematical knowledge is also inserted, making the little ones, through " +
         "the exploration of the environment, better understanding its use in everyday life and its relationships and transformations.";
 
 

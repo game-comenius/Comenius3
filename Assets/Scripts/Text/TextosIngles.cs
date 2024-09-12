@@ -73,7 +73,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.INTELIGENCIAS_MULTIPLAS] = "<b>Multiple Intelligences</b>";
         textos[(int)ChaveTextos.CARACTERISTICAS_DA_TURMA] = "<b>Sheet 1: Class Characteristics</b>";
         textos[(int)ChaveTextos.PERFIL_ESTUDANTES_TURMA] = "What will be the profile of the students in this class?";
-        textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "These are the characteristics of your class! You\r\ncan consult them throughout the game by accessing\r\nthe menu and clicking the \"Your Gang\" button.";
+        textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "These are the characteristics of your class! You\r\ncan consult them throughout the game by accessing\r\nthe menu and clicking the \"Your Class\" button.";
 
         textos[(int)ChaveTextos.CLIQUE_EM_CONFIRMAR] = "Click confirm to start the first phase\r\ngame. If you have changed your mind, click \r\nto change any option.";
         textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "           Your students must be able to consult\r\n current information on the topic and then apply what they discovered empirically!\r\n";

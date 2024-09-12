@@ -87,7 +87,7 @@ public sealed class Inteligencias
     private static string LinguisticaComLogicoMatematicaEua =
 "<b>Logical-mathematical</b>\n\nAimed at conclusions based on reason, and describes the ability to solve equations and " +
                    "tests, to have logical thinking, detect patterns, make calculations and solve abstract problems.\n\n<b>Linguistics</b>\n\nRefers to " +
-                   "an individual's ability to express themselves, whether through language or gestures. As well as the way of analyzing and interpreting ideas" +
+                   "an individual's ability to express themselves, whether through language or gestures. As well as the way of analyzing and interpreting ideas " +
                    "and information, and produce work involving oral and written language.";
 
 
