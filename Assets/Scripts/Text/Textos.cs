@@ -217,6 +217,7 @@ public enum ChaveTextos
     PARA_COMECAR,
     PRONTO,
     ESCOLHA_DO_TEMA,
+    EXPLORAR_O_MATERIAL,
     _chaveFinal
 }
 

@@ -113,14 +113,14 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.REVISE_AS_CARACTERISTICAS] = "Review the characteristics of your class and planning by clicking on the notepad before moving on to the last step, where a quiz will test your knowledge and we will find out what the students thought of your class !";
         textos[(int)ChaveTextos.SUA_AULA] = "Your class will be taught in the laboratory using the Problem-Based Learning (PBL) methodology with the media [...] and [...].";
         textos[(int)ChaveTextos.CONFIRMAR] = "CONFIRM";
-        textos[(int)ChaveTextos.NASA_SALA_INVERTIDA] = "In the Flipped Classroom there is the possibility of concentrating on the platform or virtual environment the information necessary for the course of the subject or course, which is a great attraction of this method.";
+        textos[(int)ChaveTextos.NASA_SALA_INVERTIDA] = "In a Flipped Classroom, there is the possibility of concentrating the necessary information for the course or subject on the platform or virtual environment, which is a great attraction of this method.";
         textos[(int)ChaveTextos.SEQUENCIA_DICATICA2] = "Didactic Sequence, in the classroom:\r\n\r\n1. Explore the material\r\n\r\n2. Discuss with the group in the classroom\r \n\r\n3. Carry out activities";
         textos[(int)ChaveTextos.NA_SALA_DE_AULA_INVERTIDA_DOCENTE] = "In the Flipped Classroom, the teacher proposes content and activities to be done at home by students, through materials such as videos, podcasts or reading texts, etc. After studying prior to the topic, students take their doubts to the classroom, reflect in groups and develop projects.";
-        textos[(int)ChaveTextos.MIDIAS_QUARTO] = "<b>Medias - Quarto</b>";
+        textos[(int)ChaveTextos.MIDIAS_QUARTO] = "<b>Midias - Bedroom</b>";
         textos[(int)ChaveTextos.NA_SEQUENCIA] = "Following the <b>Flipped Classroom</b>, this is the moment when students will:";
         textos[(int)ChaveTextos.MIDIAS_SALA] = "<b>Media - Classroom</b>";
         textos[(int)ChaveTextos.CONHECER_SALA_INVERTIDA] = "Let's learn a little more about the Flipped Classroom?";
-        textos[(int)ChaveTextos.QUARTO_ESTUDANTE] = "STUDIAN ROOM";
+        textos[(int)ChaveTextos.QUARTO_ESTUDANTE] = "STUDENT ROOM";
         textos[(int)ChaveTextos.NO_MOMENTO] = "During the class you answer questions about your class, methodology and the methods chosen next!";
         textos[(int)ChaveTextos.NO_MOMENTO_DO_QUARTO] = "In the room you interact as a student using objects to carry out activities!";
         textos[(int)ChaveTextos.FICHA_2_RESUMO_2] = "<b>Summary Sheet 2: Lesson Planning</b>";
@@ -128,7 +128,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.QUAL_SERA_O_SEU] = "What will be your project in methodology 3, which will take place in \r\nthe city using the Project-Based Learning Methodology?\r\n";
         textos[(int)ChaveTextos.DESEJA_REALMENTE] = "Do you really want to return to the main menu?";
         textos[(int)ChaveTextos.SIM] = "YES";
-        textos[(int)ChaveTextos.NAO] = "NAO";
+        textos[(int)ChaveTextos.NAO] = "NO";
         textos[(int)ChaveTextos.O_PROBLEMA_DO_PROJETO] = "The project problem is multidimensional and highly interactive, as it inserts participants into an investigation process structured around complex issues. Given this, the great contribution of this methodology in the classroom class lies in the emphasis on the learning process and the interaction between students.\r\n\r\n\r\nThe projects allow to unify several important aspects of the learning process: the action carried out by the student, the intentionality of this action and its insertion into a social context.\r\n";
 
         textos[(int)ChaveTextos.POR_MEIO] = "Through the principles of autonomy, research, action and reflection, the development of a project starts from defining a theme, proposing challenges and planning and executing strategies for compliance of the proposed actions.\r\n\r\nTo this end, the teacher must observe the following aspects: \r\n\r\n• Significant content: relevance for students.\r\n\r\n• Thought-provoking questions : mobilize the group for research, presenting different solution possibilities. \r\n\r\n• Research and innovation: consult different specialized sources, seeking creative and innovative results. : Relational and cognitive aspects of the process are fundamental to students' lives ";
@@ -225,6 +225,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.PRONTO] = "READY";
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Choice of theme";
         textos[(int)ChaveTextos.TEMA] = "Theme";
+        textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explore the material";
 
     }
     

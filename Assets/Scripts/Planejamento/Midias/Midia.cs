@@ -96,12 +96,12 @@ public class Midia
                     switch (nomeMidia)
                     {
                         case NomeDeMidia.Lousa:
-                            return "<style=\"title\">Blackboard</style>\n\nThe blackboard is a reusable surface, usually scratched with white chalk, used for exp" +
+                            return "<style=\"title\">Blackboard</style>\n\nThe blackboard is a reusable surface, usually scratched with white chalk, used for " +
                                 "presentation of content by the teacher or collaboratively for teacher and student.\n\n<b>Category:</b>\nTraditional exhibition media";
                         case NomeDeMidia.LivroDidatico:
-                            return "<style=\"title\">Textbook</style>\n\nThe textbook is a means of common consultation for teachers and students, with a pedagogical nature" +
-                            "agogical, composed of exercises, texts and images of the content studied, which accompany the school curriculum.\n\n<b>Category:</b>\nMedium" +
-                            "traditional consultation ia";
+                            return "<style=\"title\">Textbook</style>\n\nThe textbook is a common resource for teachers and students, with a pedagogical nature, consisting of exercises, " +
+                            " texts, and images related to the studied content, which follows the school curriculum\n\n<b>Category:</b>\n" +
+                            "Traditional medium of consultation.";
                         case NomeDeMidia.Notebook:
                             return " <style=\"title\">Notebook</style>\n\n Portable computer, equipped with a video monitor, usually liquid crystal, and activated by battery, weighing less than 6 kg and dimensions compatible for use on the lap or on a small flat surface. Typically requires the person to be seated.";
                         case NomeDeMidia.Celular:
@@ -109,38 +109,38 @@ public class Midia
                         case NomeDeMidia.Tablet:
                             return " <style=\"title\">Tablet</style>\n\nPortable electronic device, thin and rectangular, with touch screen, used for viewing various types of digital files, mobile communication, entertainment. It has diverse functionalities, such as accessing the internet, viewing photos and files and even reading books. The Tablet is a middle ground between the smartphone and the notebook.";
                         case NomeDeMidia.LivrosJornaisERevistas:
-                            return "<style=\"title\">Books, Newspapers and Magazines</style>\n\nBooks, newspapers and magazines are publications of a literary, informational nature" +
+                            return "<style=\"title\">Books, Newspapers and Magazines</style>\n\nBooks, newspapers and magazines are publications of a literary, informational nature " +
                             "active, journalistic or entertainment. Contains pages printed on paper with texts and images. Can be used as material" +
                             " for reading, consultation, or clipping base for activities.\n\n<b>Category:</b>\nTraditional popular media";
                         case NomeDeMidia.CadernosECartazes:
-                            return "<style=\"title\">Notebook and Posters</style>\n\nNotebook and posters are media used to produce and store information" +
-                            "mations through the use of writing or images. They help in the exercise of autonomy, helping students to learn themselves" +
+                            return "<style=\"title\">Notebook and Posters</style>\n\nNotebook and posters are media used to produce and store information " +
+                            "through the use of writing or images. They help in the exercise of autonomy, helping students to learn themselves " +
                             "systematize the knowledge acquired, doubts and discoveries made.\n\n<b>Category:</b>\nTraditional production media";
                         case NomeDeMidia.Televisao:
-                            return "<style=\"title\">Television</style>\n\nOpen television is a means of mass communication that displays fixed programming. One si" +
-                            "electronic system for transmitting and receiving images and sounds generated live or previously recorded, with artistic programming" +
-                            "cas, cultural, educational, informative, etc.\n\n<b>Category:</b>\nPopular audiovisual media.";
+                            return "<style=\"title\">Television</style>\n\nOpen television is a means of mass communication that displays fixed programming. An electronic" +
+                            "system for transmitting and receiving images and sounds generated live or from previously recorded programming,  such as cultural, " +
+                            "educational, and informational content.\n\n<b>Category:</b>\nPopular audiovisual media.";
                         case NomeDeMidia.AparelhoDeSom:
                             return "";
                         case NomeDeMidia.RedesSociais:
                             return "<style=\"title\">Social Networks</style>\n\nSocial Networks are dynamic and complex structures formed by people with values ​​" +
-                            "and/or common objectives, interconnected in a horizontal and predominantly decentralized way, which have existed since the beginning of s" +
-                            "human society. Online social networks are articulated via the internet through social media for communication, exchange of messages" +
+                            "and/or common objectives, interconnected in a horizontal and predominantly decentralized way, which have existed since the beginning of " +
+                            "human society. Online social networks are articulated via the internet through social media for communication, exchange of messages " +
                             "actions and sharing of content between individuals and groups, expanding the possibilities of all types of relationships between them" +
                             ".\n\n<b>Category:</b>\nDigital popular media";
                         case NomeDeMidia.Jogos:
-                            return "<style=\"title\">Games</style>\n\nA digital game is a playful activity composed of mechanics, aesthetics and narratives, supports" +
+                            return "<style=\"title\">Games</style>\n\nA digital game is a playful activity composed of mechanics, aesthetics and narratives, supports " +
                             "given by a technology, where the player carries out a series of actions and decisions, which are limited by rules and the context " +
                             "of the game, receiving constant feedback and seeking to achieve a goal.\n\nCategory:\nDigital popular media ";
                         case NomeDeMidia.EditoresDeAudioEVideo:
                             return "<style=\"title\">Audio and video editors</style>\n\nAudio and video editors are software that provide video editing " +
-                            "content that contains sound and image, through options to cut, copy and paste audio and video excerpts, as well as apply and" +
+                            "content that contains sound and image, through options to cut, copy and paste audio and video excerpts, as well as apply and " +
                             "miscellaneous feats.\n\n<b>Category:</b>\nDigital production media.";
                         case NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas:
                             return "<style=\"title\">Text and Spreadsheet Editor</style>\n\nA text editor is software that allows users to create, change" +
-                            "ar or edit simple text files. A spreadsheet is a computer program that uses tables to carry out" +
-                            "calculations or data presentation. Editors and spreadsheets allow you to customize the created content such as defining colors, font" +
-                            "and, spacing and much more.\n\n<b>Category:</b>\nAudiovisual production media.";
+                            " or edit simple text files. A spreadsheet is a computer program that uses tables to carry out " +
+                            "calculations or data presentation. Editors and spreadsheets allow you to customize the created content such as defining colors, fonts," +
+                            " spacing and much more.\n\n<b>Category:</b>\nAudiovisual production media.";
                         case NomeDeMidia.Plataformas:
                             return "<style=\"title\">Platforms</style>\n\nVirtual learning platforms are software that add tools for learning " +
                             "action, mentoring, management and sharing of activities with the aim of helping the user to develop and distribute content " +
@@ -151,8 +151,8 @@ public class Midia
                             "to be part of people's lives. It generally refers to software present on cell phones and smart devices, such as" +
                             " smart TVs, for the most diverse functions.\n\n<b>Category:</b>\nDigital consultation media";
                         case NomeDeMidia.ProjetorMultimidia:
-                            return "<style=\"title\">Multimedia Projector</style>\n\nThe multimedia projector, or datashow, is an optical, mechanical device, capable of p" +
-                            "to project on a smooth and clear surface, all types of images, fixed and moving, coupled to a computer. Widely used for" +
+                            return "<style=\"title\">Multimedia Projector</style>\n\nThe multimedia projector, or datashow, is an optical, mechanical device, capable of " +
+                            "project on a smooth and clear surface, all types of images, fixed and moving, coupled to a computer. Widely used " +
                             "for expository classes but also for presenting student work.\n\n<b>Category:</b>Category:\nDigital exhibition media.";
                         case NomeDeMidia.VideoGamePortatil:
                             return "<style=\"title\">Portable Video Game</style>\n\n It is a video game console with a screen and built-in controls and reduced dimensions so that it can be easily transported. Its objective is to play electronic games like a video game, is the ideal option for playing outdoors, when on the go or for those who want to play online or locally in multiplayer mode.";

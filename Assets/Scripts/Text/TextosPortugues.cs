@@ -224,6 +224,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.PRONTO] = "PRONTO";
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Escolha do tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explorar o material";
     }
 
 }

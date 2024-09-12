@@ -226,6 +226,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.PRONTO] = "Listo";
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Elección del tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
+        textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explora el material";
     }
 
 }
