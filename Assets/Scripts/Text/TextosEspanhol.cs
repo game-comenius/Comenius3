@@ -44,7 +44,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.CIDADE] = "CIUDAD";
         textos[(int)ChaveTextos.TEXT_METODOLOGIA3] = "Metodología en la que\r\nse plantea un proyecto \r\n temático que se debe  planificar y\r\n ejecutar para dar cumplimiento a las\r\nacciones propuestas";
 
-        textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>¡Ahora depende de ti! </color>\r\n";
+        textos[(int)ChaveTextos.AGORA_E_COM_VOCE] = "<color=#0B355D>¡Ahora les toca decidir a ustedes! </color>\r\n";
         textos[(int)ChaveTextos.SELECIONE_UMA_DAS_OPCOES] = "Selecciona una de las opciones:\r\n¿Quieres jugar la <color=#0B355D>EXPERIENCIA COMPLETA?</color>";
         textos[(int)ChaveTextos.OU_METODOLOGIAS_ATIVAS] = "¿O <color=#0B355D>UNA DE LAS METODOLOGÍAS ACTIVAS?</color>";
         textos[(int)ChaveTextos.POP_INTRO_2] = "Juntos exploraremos los diversos\r\nUsos de los medios digitales en la educación.\r\n\r\nComienzas el juego eligiendo tu apariencia y creando las características de tu clase, que se mantendrán a lo largo de las fases.\r\nsirviendo como base de su planificación.\r\n\r\nDebajo del botón = encontrarás las opciones del menú,\r\ny si tienes preguntas, simplemente haz clic en el botón: ?\r\n \r\nPara comenzar, haga clic en Aceptar y diviértase eligiendo\r\n¡Tu personaje y personaliza tu clase!";
@@ -142,7 +142,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.EXERCUTAR_ACOES] = "Ejecutar las acciones planificadas,\r\nMonitorear el desarrollo del proyecto";
         textos[(int)ChaveTextos.RELEMBRAR_CARACTERISTICAS] = "Recordando las características de la clase:";
         textos[(int)ChaveTextos.SEMPRE_QUE_POSSIVEL] = " Siempre que sea posible, en esta metodología, se parte del interés\r\n de los estudiantes, de una pregunta orientadora, de un problema real.\r\nConversa con los estudiantes para que encuentren motivación, relevancia y significado.\r\n";
-        textos[(int)ChaveTextos.DICA] = "Dica:";
+        textos[(int)ChaveTextos.DICA] = "Consejo:";
         textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "¿Pasamos a la tercera metodología? \r\n¡Ahora debes elegir un tema para tu última clase en el juego!";
         textos[(int)ChaveTextos.CARACTERISTICAS_TURMA] = "Características de la Clase";
         textos[(int)ChaveTextos.MIDIAS] = "Medias";

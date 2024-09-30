@@ -22,7 +22,7 @@ public class TextosIngles : Textos
 "different active methodologies!\r\n </color>\r\n\r" +
 "Active methodologies are pedagogical\r\n" +
 "strategies that place students at the center\r\n" +
-"of the teaching and learning process." +
+"of the teaching and learning proctipess." +
 "\r\n\r\nTeachers act as mediators, guiding and" +
 "\r\nmonitoring the interaction processes through which" +
 "\r\nlearning develops.\r\n\r\n";
@@ -142,7 +142,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.EXERCUTAR_ACOES] = "Execute the planned actions,\r\nMonitor the development of the project";
         textos[(int)ChaveTextos.RELEMBRAR_CARACTERISTICAS] = "Remembering the characteristics of the class:";
         textos[(int)ChaveTextos.SEMPRE_QUE_POSSIVEL] = " Whenever possible, in this methodology, start from the\r\n students' interest, from a guiding question, from a real problem. Talk\r\nwith the students so that they find motivation, relevance and meaning.\r\n";
-        textos[(int)ChaveTextos.DICA] = "Dica:";
+        textos[(int)ChaveTextos.DICA] = "Tip:";
         textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Shall we go to the third methodology? \r\nNow you must choose a theme for your last class in the game!";
         textos[(int)ChaveTextos.CARACTERISTICAS_TURMA] = "Characteristics of the Class";
         textos[(int)ChaveTextos.MIDIAS] = "Medias";
