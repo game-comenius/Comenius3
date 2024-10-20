@@ -64,7 +64,16 @@ public class PaginaMidias : PaginaPlanejamento
             else
                 mediaIcon.sprite = gameState.Midias[1].sprite;
 
-            subtitulo.text = "Escolha a mídia que será usada no: " + locationName;
+            if (Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
+            {
+                subtitulo.text = "Escolha a mídia que será usada no: " + locationName;
+            }
+            else if (Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
+            {
+                subtitulo.text = "Choose the media that will be used in the: " + locationName;
+            }
+            else
+                subtitulo.text = "Elija los medios que se utilizarán en el: " + locationName;
         }
 
         anelDeSelecao.enabled = false;
@@ -89,7 +98,19 @@ public class PaginaMidias : PaginaPlanejamento
         }
 
         if (tituloSala2)
-        tituloSala2.text = "<b>Pegue dentro do armário mídias para utilizar </b>" + "<b>" +  locationName +"</b>";
+        {
+            if (Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
+            {
+                tituloSala2.text = "<b>Pegue dentro do armário mídias para utilizar </b>" + "<b>" +  locationName +"</b>";
+            }
+            else if (Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
+            {
+                tituloSala2.text = "<b>Take media from the closet to use </b>" + "<b>" + locationName + "</b>";
+            }
+            else
+                tituloSala2.text = "<b>Saque los medios del armario para usarlos. </b>" + "<b>" + locationName + "</b>";
+        }
+   
     }
 
     protected override void OnEnable()
@@ -473,7 +494,16 @@ public class PaginaMidias : PaginaPlanejamento
         atualizarEstadoDeJogo(iconeSelecionado);
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
-            subtitulo.text = "Escolha a mídia para o momento final da aula";
+            if (Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
+            {
+                subtitulo.text = "Escolha a mídia para o momento final da aula";
+            }
+            else if (Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
+            {
+                subtitulo.text = "Choose the media for the final moment of the class";
+            }
+            else
+                subtitulo.text = "Elige el medio para el momento final de la clase.";
         }
         OnViewAdvance.Invoke(this);
         primeiraMidia = false;

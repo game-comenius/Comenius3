@@ -166,7 +166,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.ESTUDANTE] = "Estudiante";
         textos[(int)ChaveTextos.MIDIAS_ESPACO_DE_ENSINO] = "<b>Medios - Espacio Docente</b>";
         textos[(int)ChaveTextos.ESCOLHAS_AS_DUAS_MIDIAS] = "Elegir los dos medios que se utilizarán en el aula";
-        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Ahora los estudiantes reaccionarán a su tema de clase\r\n¡Buena suerte!\r\n El tema de clase es: ";
+        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Ahora los estudiantes reaccionarán a su tema de clase\r\n¡Buena suerte!\r\n El tema de clase es: " + EstadoDoJogo.Instance.Tema;
         textos[(int)ChaveTextos.COM_ESSA_INFORMACAO] = "¡Con esta información continúa tu planificación!";
         textos[(int)ChaveTextos.OS_ESTUDANTES_TROUXERAM] = "Los estudiantes trajeron las tareas que realizaron en casa.\r\nAhora un cuestionario pondrá a prueba sus conocimientos y\r\ndademás de descubrir la reacción de los estudiantes ante su elección de medio, \r\n Les ayudarás con situaciones imprevistas en el aula.\r\n¡Buena suerte!\r\n";
         textos[(int)ChaveTextos.AGRUPAMENTOS] = "Grupos";
@@ -227,6 +227,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Elección del tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explora el material";
+        textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Haz clic en los objetos de la escena para seleccionarlos, combinándolos con tus múltiples opciones de inteligencia y medios para las actividades que se realizarán en casa";
     }
 
 }

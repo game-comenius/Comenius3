@@ -15,6 +15,9 @@ public class ClassThemePage : PaginaPlanejamento
     [SerializeField] private OnHoverPopUp intelligenceHoverController;
     [SerializeField] private Button okButton;
     [SerializeField] [TextArea] private string initialHelp;
+    [SerializeField][TextArea] private string initialHelpPt;
+    [SerializeField][TextArea] private string initialHelpEua;
+    [SerializeField][TextArea] private string initialHelpEsp;
 
     protected override void OnEnable()
     {
@@ -58,6 +61,24 @@ public class ClassThemePage : PaginaPlanejamento
     public void UpdateHelpText()
     {
         AtualizarTextos();
-        textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelp : ajuda;
+        AtualizarTextosInicial();
+
+    }
+     void AtualizarTextosInicial()
+    {
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelpEua : ajuda;
+                break;
+            case Idiomas.PORTUGUES:
+                textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelpPt : ajuda;
+                break;
+            case Idiomas.ESPANHOL:
+                textoAjuda.text = EstadoDoJogo.Instance.Tema == "" ? initialHelpEsp : ajuda;
+                break;
+            default:
+                break;
+        }
     }
 }

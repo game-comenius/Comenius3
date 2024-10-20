@@ -166,7 +166,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.ESTUDANTE] = "Student";
         textos[(int)ChaveTextos.MIDIAS_ESPACO_DE_ENSINO] = "<b>Medias - Teaching space</b>";
         textos[(int)ChaveTextos.ESCOLHAS_AS_DUAS_MIDIAS] = "Choose the two media that will be used in the classroom";
-        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Now the students will react to your class topic\r\nGood Luck!\r\n The class topic is: ";
+        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Now the students will react to your class topic\r\nGood Luck!\r\n The class topic is: " + EstadoDoJogo.Instance.Tema;
         textos[(int)ChaveTextos.COM_ESSA_INFORMACAO] = "With this information, continue your planning!";
         textos[(int)ChaveTextos.OS_ESTUDANTES_TROUXERAM] = "The students brought the tasks they carried out at home.\r\nNow a quiz will test their knowledge and in addition to\r\nddiscovering the students' reaction to their choice of media,\r\n You will help them with unforeseen situations in the classroom.\r\nGood Luck!\r\n";
         textos[(int)ChaveTextos.AGRUPAMENTOS] = "Groups";
@@ -226,6 +226,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Choice of theme";
         textos[(int)ChaveTextos.TEMA] = "Theme";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explore the material";
+        textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Click on the objects in the scene to select them, combining them with your multiple intelligence and media choices for the activities that will be done at home";
 
     }
     

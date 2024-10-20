@@ -166,7 +166,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.ESTUDANTE] = "Estudante";
         textos[(int)ChaveTextos.MIDIAS_ESPACO_DE_ENSINO] = "<b>Midias - Espaço de ensino</b>";
         textos[(int)ChaveTextos.ESCOLHAS_AS_DUAS_MIDIAS] = "Escolhas as duas mídias que serão utilizadas na sala de aula";
-        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Agora os estudantes vão reagir ao seu tema de aula\r\nBoa Sorte!\r\n O tema da aula é: ";
+        textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Agora os estudantes vão reagir ao seu tema de aula\r\nBoa Sorte!\r\n O tema da aula é: " + EstadoDoJogo.Instance.Tema;
         textos[(int)ChaveTextos.COM_ESSA_INFORMACAO] = "Com essa informação dê continuidade ao seu planejamento!";
         textos[(int)ChaveTextos.OS_ESTUDANTES_TROUXERAM] = "Os estudantes trouxeram as tarefas realizadas em casa.\r\nAgora um quiz irá testar seus conhecimentos e além de\r\ndescobrir a reação dos estudantes à sua escolha de mídias,\r\nvocê irá ajuda-los em imprevistos da sala de aula.\r\nBoa Sorte!\r\n";
         textos[(int)ChaveTextos.AGRUPAMENTOS] = "Agrupamentos";
@@ -225,6 +225,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.ESCOLHA_DO_TEMA] = "Escolha do tema";
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explorar o material";
+        textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Clique nos objetos do cenário para selecioná-los, combinando-os às suas escolhas de inteligência múltipla e de mídias para as atividades que serão feitas em casa.";
     }
 
 }

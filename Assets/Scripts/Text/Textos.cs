@@ -218,6 +218,7 @@ public enum ChaveTextos
     PRONTO,
     ESCOLHA_DO_TEMA,
     EXPLORAR_O_MATERIAL,
+    CLIQUE_NOS_OBJETOS,
     _chaveFinal
 }
 

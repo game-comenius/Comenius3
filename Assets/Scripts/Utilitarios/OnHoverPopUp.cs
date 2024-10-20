@@ -79,14 +79,14 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         popUpRect.position = popUpPosition;
         if(Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
         {
-            text.text = ContentPt;
+            text.text = Content;
         }
         else if(Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
         {
-            text.text = ContentEua;
+            text.text = Content;
         }
         else
-            text.text = ContentSpanish;
+            text.text = Content;
 
         popUp.SetActive(true);
     }
