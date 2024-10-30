@@ -34,6 +34,7 @@ public class GameStateMethodCaller : MonoBehaviour
     {
         if (EstadoDoJogo.Instance.ModoDeJogoEscolhido())
         {
+            Debug.Log("Fase atual Decidir: " + EstadoDoJogo.Instance.FaseAtual);
           
             if (EstadoDoJogo.Instance.FaseAtual == 2)
             {

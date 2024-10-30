@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void FaseEscolhido(int fase)
     {
+        Debug.Log("Fase atual: " + fase);
         estadoDoJogo.FaseAtual = fase;
         faseEscolhida = fase;
   
@@ -69,20 +70,23 @@ public class UIManager : MonoBehaviour
     public void AdvanceLevel()
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
+        Debug.Log("Tela selecao: " + gameState.telaSelecao);
         if (gameState.telaSelecao)
         {
             ChangePanelGroup(planejamento);
             ChangePanel(panelEscolhaModo);
         }
         else
+  
         {
             ChangePanelGroup(levelStartPanelGroup);
             ChangePanel(levelPanels[gameState.FaseAtual]);
+    
         }
         panelIntro.SetActive(false);
-
         gameState.jogarNovamente = false;
         gameState.menuGame = false;
         gameState.telaSelecao = false;
+        Debug.Log("Fase atual: " + gameState.FaseAtual);
     }
 }

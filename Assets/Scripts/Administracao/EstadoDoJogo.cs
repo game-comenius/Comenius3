@@ -133,7 +133,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public Sprite SpriteCabeloPersonagemSentado { get; set; }
     public Sprite SpriteRoupaPersonagemSentado { get; set; }
 
-    public int FaseAtual { get; set; }
+    public int FaseAtual { get; set ;  }
 
     // Dados de cada fase
     public RegisteredState[] RegisteredStates;
@@ -167,7 +167,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
 
     public void AdvanceLevel()
     {
-        Debug.Log(modoClassico);
+        Debug.Log("AvanceiLevel");
         if(modoClassico)
         FaseAtual++;
 
