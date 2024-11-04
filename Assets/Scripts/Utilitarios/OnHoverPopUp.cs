@@ -8,9 +8,9 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
    public string Content;
    // public int Content { get; set; }
-    public string ContentPt;
-     public string ContentEua;
-     public string ContentSpanish;
+   public string ContentPt;
+   public string ContentEua;
+   public string ContentSpanish;
 
     public enum Orientation
     {
@@ -25,6 +25,7 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField] private Text text;
     [SerializeField] private Orientation orientation;
 
+    public bool getDentro;
     private RectTransform rect;
     private RectTransform popUpRect;
     private RectTransform popUpArrowRect;
@@ -54,6 +55,20 @@ public class OnHoverPopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         float arrowHeight = popUpArrowRectWorldCorners[1].y - popUpArrowRectWorldCorners[0].y;
         float arrowWidth = popUpArrowRectWorldCorners[3].x - popUpArrowRectWorldCorners[0].x;
+
+        if (getDentro)
+        {
+            if (Textos.GetIdiomaSelecionado() == Idiomas.PORTUGUES)
+            {
+                Content = ContentPt;
+            }
+            else if (Textos.GetIdiomaSelecionado() == Idiomas.INGLES)
+            {
+                Content = ContentEua;
+            }
+            else
+                Content = ContentSpanish;
+        }
 
         switch (orientation)
         {

@@ -11,19 +11,19 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboClassificationText;
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] [TextArea] private string[] specificFeedbacksIdeal;
-    [SerializeField][TextArea] private string[] specificFeedbacksIdealPtbr;
-    [SerializeField][TextArea] private string[] specificFeedbacksIdealEua;
-    [SerializeField][TextArea] private string[] specificFeedbacksIdealEsp;
+    [SerializeField] [TextArea] private string[] specificFeedbacksIdealPtbr;
+    [SerializeField] [TextArea] private string[] specificFeedbacksIdealEua;
+    [SerializeField] [TextArea] private string[] specificFeedbacksIdealEsp;
 
     [SerializeField] [TextArea] private string[] specificFeedbacksBoa;
-    [SerializeField][TextArea] private string[] specificFeedbacksBoaPtbr;
-    [SerializeField][TextArea] private string[] specificFeedbacksBoaEua;
-    [SerializeField][TextArea] private string[] specificFeedbacksBoaEsp;
+    [SerializeField] [TextArea] private string[] specificFeedbacksBoaPtbr;
+    [SerializeField] [TextArea] private string[] specificFeedbacksBoaEua;
+    [SerializeField] [TextArea] private string[] specificFeedbacksBoaEsp;
 
     [SerializeField] [TextArea] private string[] specificFeedbacksArriscada;
-    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaPtbr;
-    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaEua;
-    [SerializeField][TextArea] private string[] specificFeedbacksArriscadaEsp;
+    [SerializeField] [TextArea] private string[] specificFeedbacksArriscadaPtbr;
+    [SerializeField] [TextArea] private string[] specificFeedbacksArriscadaEua;
+    [SerializeField] [TextArea] private string[] specificFeedbacksArriscadaEsp;
     [SerializeField] private Image methodologyIcon;
     [SerializeField] private Image media1Icon;
     [SerializeField] private Image media2Icon;
@@ -31,13 +31,15 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private Image media4Icon;
     [SerializeField] private Text helpText;
     [SerializeField] [TextArea] private string firstHelp;
+    private EstadoDoJogo estadoDoJogo;
     [SerializeField] [TextArea] private string secondHelp;
 
     private void Start()
     {
         helpText.text = firstHelp;
-
+        estadoDoJogo = EstadoDoJogo.Instance;
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
+
 
 
         if (controller.score < 33)
@@ -46,21 +48,12 @@ public class ClassFeedback : MonoBehaviour
             {
                 case Idiomas.INGLES:
                     adjective = "Confused";
-                    specificFeedbacksIdeal = specificFeedbacksIdealEua;
-                    specificFeedbacksBoa = specificFeedbacksBoaEua;
-                    specificFeedbacksArriscada = specificFeedbacksArriscadaEua;
                     break;
                 case Idiomas.PORTUGUES:
                     adjective = "Confusa";
-                    specificFeedbacksIdeal = specificFeedbacksIdealPtbr;
-                    specificFeedbacksBoa = specificFeedbacksBoaPtbr;
-                    specificFeedbacksArriscada = specificFeedbacksArriscadaPtbr;
                     break;
                 case Idiomas.ESPANHOL:
                     adjective = "Confundido";
-                    specificFeedbacksIdeal = specificFeedbacksIdealEsp;
-                    specificFeedbacksBoa = specificFeedbacksBoaEsp;
-                    specificFeedbacksArriscada = specificFeedbacksArriscadaEsp;
                     break;
 
                 default:
@@ -131,13 +124,26 @@ public class ClassFeedback : MonoBehaviour
 
         }
 
-     
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                specificFeedbacksIdeal = specificFeedbacksIdealEua;
+                specificFeedbacksBoa = specificFeedbacksBoaEua;
+                specificFeedbacksArriscada = specificFeedbacksArriscadaEua;
+                break;
+            case Idiomas.PORTUGUES:
+                specificFeedbacksIdeal = specificFeedbacksIdealPtbr;
+                specificFeedbacksBoa = specificFeedbacksBoaPtbr;
+                specificFeedbacksArriscada = specificFeedbacksArriscadaPtbr;
+                break;
+            case Idiomas.ESPANHOL:
+                specificFeedbacksIdeal = specificFeedbacksIdealEsp;
+                specificFeedbacksBoa = specificFeedbacksBoaEsp;
+                specificFeedbacksArriscada = specificFeedbacksArriscadaEsp;
+                break;
 
-        Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
-        Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
-        Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia());
-        Debug.Log(EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia());
-        Debug.Log(ComboChecker.EvaluateCombo());
+        }
+
         ComboChecker.ComboClassification comboClass = ComboChecker.EvaluateComboClassification();
 
         string comboClassification;
@@ -210,17 +216,17 @@ public class ClassFeedback : MonoBehaviour
         switch (Textos.GetIdiomaSelecionado())
         {
             case Idiomas.INGLES:
-                comboClassificationText.text = $"For the {EstadoDoJogo.Instance.Metodologia.nome}, his combination of media was {comboClassification}";
+                comboClassificationText.text = $"For the {estadoDoJogo.Metodologia.nome}, his combination of media was {comboClassification}";
                 break;
             case Idiomas.PORTUGUES:
-                comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
+                comboClassificationText.text = $"Para a {estadoDoJogo.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
                 break;
             case Idiomas.ESPANHOL:
-                comboClassificationText.text = $"Para el {EstadoDoJogo.Instance.Metodologia.nome}, su combinación de medios fue {comboClassification}";
+                comboClassificationText.text = $"Para el {estadoDoJogo.Metodologia.nome}, su combinación de medios fue {comboClassification}";
                 break;
 
             default:
-                comboClassificationText.text = $"Para a {EstadoDoJogo.Instance.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
+                comboClassificationText.text = $"Para a {estadoDoJogo.Metodologia.nome}, sua combinação de mídias foi {comboClassification}";
                 break;
 
         }
@@ -229,7 +235,7 @@ public class ClassFeedback : MonoBehaviour
         ComboChecker.Combo combo = ComboChecker.EvaluateCombo();
 
         
-        if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABP.nome)
+        if (estadoDoJogo.Metodologia.nome == Metodologia.ABP.nome)
         {
             switch (combo)
             {
@@ -271,7 +277,7 @@ public class ClassFeedback : MonoBehaviour
                     break;
             }
         }
-        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.SAI.nome)
+        else if (estadoDoJogo.Metodologia.nome == Metodologia.SAI.nome)
         {
             switch (combo)
             {
@@ -305,13 +311,13 @@ public class ClassFeedback : MonoBehaviour
             }
         }
 
-        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABProj.nome)
+        else if (estadoDoJogo.Metodologia.nome == Metodologia.ABProj.nome)
         {
-            Debug.Log(EstadoDoJogo.Instance.Midias[0].nomeMidia +" " + EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia());
-            Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia + " " + EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia());
-            Debug.Log(EstadoDoJogo.Instance.Midias[2].nomeMidia + " " + EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia());
-            Debug.Log(EstadoDoJogo.Instance.Inteligencias);
-            Debug.Log(EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString());
+            Debug.Log(estadoDoJogo.Midias[0].nomeMidia +" " + estadoDoJogo.Midias[0].nomeMidia.CategoriasDaMidia());
+            Debug.Log(estadoDoJogo.Midias[1].nomeMidia + " " + estadoDoJogo.Midias[1].nomeMidia.CategoriasDaMidia());
+            Debug.Log(estadoDoJogo.Midias[2].nomeMidia + " " + estadoDoJogo.Midias[2].nomeMidia.CategoriasDaMidia());
+            Debug.Log(estadoDoJogo.Inteligencias);
+            Debug.Log(estadoDoJogo.Midias[1].nomeMidia.ToString());
           Debug.Log(combo);
             switch (combo)
             {
@@ -370,12 +376,12 @@ public class ClassFeedback : MonoBehaviour
             }
         }
 
-        methodologyIcon.sprite = EstadoDoJogo.Instance.Metodologia.sprite;
+        methodologyIcon.sprite = estadoDoJogo.Metodologia.sprite;
 
-        media1Icon.sprite = EstadoDoJogo.Instance.Midias[0].sprite;
-        media2Icon.sprite = EstadoDoJogo.Instance.Midias[1].sprite;
-        media3Icon.sprite = EstadoDoJogo.Instance.Midias[2].sprite;
-        media4Icon.sprite = EstadoDoJogo.Instance.Midias[3].sprite;
+        media1Icon.sprite = estadoDoJogo.Midias[0].sprite;
+        media2Icon.sprite = estadoDoJogo.Midias[1].sprite;
+        media3Icon.sprite = estadoDoJogo.Midias[2].sprite;
+        media4Icon.sprite = estadoDoJogo.Midias[3].sprite;
     }
 
     public void UpdateHelpText()

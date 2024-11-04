@@ -949,7 +949,11 @@ MonoBehaviour:
     classroom, with production media, they were able to actively organize ideas and
     create knowledge. Finally, using the exposure media, they reflected and discussed
     the topic with the teacher and other colleagues!
-  - 
+  - It was good to have taken advantage of digital media for students to research
+    content and do practical activities at home. For this combination to be ideal
+    in the classroom, they were missing a production media so that they could express
+    their reflections in a creative and active way before sharing them with the class
+    using the exhibition media.
   - We needed to take advantage of the potential of digital media at home, giving
     students access to a variety of options to explore and complete tasks! In the
     classroom, it was a great choice to start with production media, so that students
@@ -4610,8 +4614,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1156064139449578375, guid: 6f5df890fcbd01249af1010f58900971,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 434364233}
   m_SourcePrefab: {fileID: 100100000, guid: 6f5df890fcbd01249af1010f58900971, type: 3}
+--- !u!1 &434364232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1156064139449578375, guid: 6f5df890fcbd01249af1010f58900971,
+    type: 3}
+  m_PrefabInstance: {fileID: 434364231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &434364233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434364232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 130
+  caixaAlta: 0
 --- !u!1 &434500173
 GameObject:
   m_ObjectHideFlags: 0
@@ -10166,6 +10194,7 @@ MonoBehaviour:
   popUpArrow: {fileID: 243091142}
   text: {fileID: 1023540782}
   orientation: 1
+  getDentro: 0
 --- !u!224 &1173395243 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
@@ -17225,6 +17254,7 @@ MonoBehaviour:
   popUpArrow: {fileID: 1629673840}
   text: {fileID: 365455557}
   orientation: 1
+  getDentro: 0
 --- !u!1 &1839857000
 GameObject:
   m_ObjectHideFlags: 0

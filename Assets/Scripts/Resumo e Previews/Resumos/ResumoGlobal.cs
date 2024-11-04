@@ -44,7 +44,7 @@ public class ResumoGlobal : MonoBehaviour
     {
         EstadoDoJogo gameState = EstadoDoJogo.Instance;
         string fase;
-
+        Debug.Log("Update page");
         if (pageIndex == EstadoDoJogo.Instance.FaseAtual)
         {
             iconePersonagem.sprite = gameState.SpriteIconePersonagem;

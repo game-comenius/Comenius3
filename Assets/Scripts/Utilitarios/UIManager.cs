@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
 
     public void ModoEscolhido(bool status)
     {
-        EstadoDoJogo.Instance.SetarModoDeJogo(status);
+        estadoDoJogo.SetarModoDeJogo(status);
     }
 
 
@@ -69,9 +69,9 @@ public class UIManager : MonoBehaviour
 
     public void AdvanceLevel()
     {
-        EstadoDoJogo gameState = EstadoDoJogo.Instance;
-        Debug.Log("Tela selecao: " + gameState.telaSelecao);
-        if (gameState.telaSelecao)
+        Debug.Log("Modo de jogo: " + estadoDoJogo.ModoDeJogoEscolhido());
+        Debug.Log("Fase atual: " + estadoDoJogo.FaseAtual);
+        if (estadoDoJogo.telaSelecao)
         {
             ChangePanelGroup(planejamento);
             ChangePanel(panelEscolhaModo);
@@ -80,13 +80,13 @@ public class UIManager : MonoBehaviour
   
         {
             ChangePanelGroup(levelStartPanelGroup);
-            ChangePanel(levelPanels[gameState.FaseAtual]);
+            ChangePanel(levelPanels[estadoDoJogo.FaseAtual]);
     
         }
         panelIntro.SetActive(false);
-        gameState.jogarNovamente = false;
-        gameState.menuGame = false;
-        gameState.telaSelecao = false;
-        Debug.Log("Fase atual: " + gameState.FaseAtual);
+        estadoDoJogo.jogarNovamente = false;
+        estadoDoJogo.menuGame = false;
+        estadoDoJogo.telaSelecao = false;
+
     }
 }

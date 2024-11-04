@@ -227,7 +227,7 @@ public class Textos
     private static Idiomas idiomaSelecionado;
     protected static Textos instance;
     protected string[] textos;
-
+    private  EstadoDoJogo estadoDoJogo;
     public static Idiomas GetIdiomaSelecionado()
     {
         if (PlayerPrefs.HasKey("Idioma")) idiomaSelecionado = (Idiomas)PlayerPrefs.GetInt("Idioma");

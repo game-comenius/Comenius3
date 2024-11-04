@@ -12,12 +12,12 @@ public class UITextsHelper : MonoBehaviour
     private Text text;
     private TextMeshProUGUI tmp;
 
-	private void OnEnable()
-	{
-		AtualizarTexto();
-	}
+    private void Start()
+    {
+        AtualizarTexto();
+    }
 
-	public void AtualizarTexto()
+    public void AtualizarTexto()
 	{
 		if (GetComponent<Text>() != null) text = GetComponent<Text>(); //se for objeto com Text normal, preenche a variavel
 		else if (GetComponent<TextMeshProUGUI>() != null) tmp = GetComponent<TextMeshProUGUI>(); //se for objeto com TextMeshPro, preenche a variavel

@@ -29,6 +29,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
 		{
 			if (instance == null)
 			{
+				Debug.Log("Essa porra é nulo carai");
 				instance = FindObjectOfType<T>();
 				if (instance == null)
 				{

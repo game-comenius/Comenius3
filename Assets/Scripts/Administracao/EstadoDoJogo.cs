@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class EstadoDoJogo : Singleton<EstadoDoJogo>
+public class EstadoDoJogo : MonoBehaviour
 {
     // Propriedades definidas pelo criador de um jogo
     private NivelDeEnsino nivelDeEnsino;
@@ -13,6 +13,20 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public bool telaSelecao;
     public bool jogarNovamente;
     public bool menuGame;
+
+    public static EstadoDoJogo Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Garante que o objeto não seja destruído ao trocar de cena
+        }
+        else
+        {
+            Destroy(gameObject); // Destrói o objeto caso outra instância já exista
+        }
+    }
 
     public void AtualizarScore(float s)
     {
@@ -33,7 +47,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     public void SetarModoDeJogo(bool status)
     {
         modoClassico = status;
-        Debug.Log(modoClassico);
+        Debug.Log("Modo classico: " +modoClassico);
     }
 
     public bool ModoDeJogoEscolhido()
@@ -100,7 +114,6 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)
                 };
-            Debug.Log(midias.Length + "Quantidade midias");
             return midias;
         }
 
@@ -206,6 +219,7 @@ public class EstadoDoJogo : Singleton<EstadoDoJogo>
     // TODO: Adicionar o reset geral no final dos créditos
     public void Reset()
     {
+        Debug.Log("Dei um reset");
         NivelDeEnsino = null;
         AreaDeConhecimento = null;
         Inteligencias = null;

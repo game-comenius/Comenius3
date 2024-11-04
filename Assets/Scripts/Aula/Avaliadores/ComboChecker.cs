@@ -50,13 +50,14 @@ public class ComboChecker
 
     public static Combo EvaluateCombo()
     {
-        CategoriasDeMidia flagMidia1 = EstadoDoJogo.Instance.Midias[0].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia2 = EstadoDoJogo.Instance.Midias[1].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia3 = EstadoDoJogo.Instance.Midias[2].nomeMidia.CategoriasDaMidia();
-        CategoriasDeMidia flagMidia4 = EstadoDoJogo.Instance.Midias[3].nomeMidia.CategoriasDaMidia();
+        EstadoDoJogo estadoDoJogo = EstadoDoJogo.Instance;
+        CategoriasDeMidia flagMidia1 = estadoDoJogo.Midias[0].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia2 = estadoDoJogo.Midias[1].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia3 = estadoDoJogo.Midias[2].nomeMidia.CategoriasDaMidia();
+        CategoriasDeMidia flagMidia4 = estadoDoJogo.Midias[3].nomeMidia.CategoriasDaMidia();
 
 
-        if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABP.nome)
+        if (estadoDoJogo.Metodologia.nome == Metodologia.ABP.nome)
         {
             // Pelo menos uma é digital
             if (flagMidia1.HasFlag(CategoriasDeMidia.Digital) || flagMidia2.HasFlag(CategoriasDeMidia.Digital))
@@ -140,7 +141,7 @@ public class ComboChecker
         }
 
        
-        else if (EstadoDoJogo.Instance.Metodologia.nome == Metodologia.SAI.nome)
+        else if (estadoDoJogo.Metodologia.nome == Metodologia.SAI.nome)
         {
             // Qualquer coisa
             // Combo arriscado 1
@@ -206,28 +207,28 @@ public class ComboChecker
         }
 
 
-        if(EstadoDoJogo.Instance.Metodologia.nome == Metodologia.ABProj.nome)
+        if(estadoDoJogo.Metodologia.nome == Metodologia.ABProj.nome)
         {
             Inteligencias.AtualizarTextosLinguas();
             
-           if (EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.LinguisticaComLogicoMatematica.nome)
+           if (estadoDoJogo.Inteligencias.nome == Inteligencias.LinguisticaComLogicoMatematica.nome)
             {
                 
                 // Combo ideal1
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && Midia.AtualizarTextosLinguas(NomeDeMidia.Plataformas, 2) == EstadoDoJogo.Instance.Midias[1].nomeMidia.ToString() && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && Midia.AtualizarTextosLinguas(NomeDeMidia.Plataformas, 2) == estadoDoJogo.Midias[1].nomeMidia.ToString() && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
                     return Combo.abpjIdeal1;
                 }
 
                 if(flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) 
-                    && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && 
+                    && NomeDeMidia.Aplicativos == estadoDoJogo.Midias[1].nomeMidia && 
                     flagMidia3.HasFlag(CategoriasDeMidia.Popular) ||
                     flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
                 {
                     return Combo.abpjBoa1;
                 }
 
-                if(NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia)
+                if(NomeDeMidia.RedesSociais == estadoDoJogo.Midias[1].nomeMidia)
                     return Combo.abpjArriscado1;
 
 
@@ -236,18 +237,18 @@ public class ComboChecker
 
                 return Combo.abpjArriscado4;
             }
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.IntrapessoalComEspacialVisual.nome)
+           else if(estadoDoJogo.Inteligencias.nome == Inteligencias.IntrapessoalComEspacialVisual.nome)
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == estadoDoJogo.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                 {
                     return Combo.abpjIdeal2;
                 }
 
                 if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
-                    NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                    NomeDeMidia.Plataformas == estadoDoJogo.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjBoa2;
 
-                if (NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia)
+                if (NomeDeMidia.RedesSociais == estadoDoJogo.Midias[1].nomeMidia)
                     return Combo.abpjArriscado2;
 
 
@@ -257,17 +258,17 @@ public class ComboChecker
                 return Combo.abpjArriscado4;
             }
           
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.CorporalCinestesicaComNaturalista.nome)
+           else if(estadoDoJogo.Inteligencias.nome == Inteligencias.CorporalCinestesicaComNaturalista.nome)
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.Aplicativos == estadoDoJogo.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal3;
                 
 
                 if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
-                   NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao) )
+                   NomeDeMidia.RedesSociais == estadoDoJogo.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao) )
                     return Combo.abpjBoa3;
 
-                if (NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia)
+                if (NomeDeMidia.Plataformas == estadoDoJogo.Midias[1].nomeMidia)
                     return Combo.abpjArriscado3;
 
                 if (flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))
@@ -277,16 +278,16 @@ public class ComboChecker
             }
 
     
-           else if(EstadoDoJogo.Instance.Inteligencias.nome == Inteligencias.InterpessoalComMusical.nome)
+           else if(estadoDoJogo.Inteligencias.nome == Inteligencias.InterpessoalComMusical.nome)
             {
-                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == EstadoDoJogo.Instance.Midias[1].nomeMidia  && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
+                if (flagMidia1.HasFlag(CategoriasDeMidia.ConsultaRepositorio) && NomeDeMidia.RedesSociais == estadoDoJogo.Midias[1].nomeMidia  && flagMidia3.HasFlag(CategoriasDeMidia.Exposicao))
                     return Combo.abpjIdeal4;
 
                 if (flagMidia1.HasFlag(CategoriasDeMidia.Popular) || flagMidia1.HasFlag(CategoriasDeMidia.ProducaoArmazenamento) || flagMidia1.HasFlag(CategoriasDeMidia.Exposicao) &&
-               NomeDeMidia.Plataformas == EstadoDoJogo.Instance.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Popular) || flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
+               NomeDeMidia.Plataformas == estadoDoJogo.Midias[1].nomeMidia && flagMidia3.HasFlag(CategoriasDeMidia.Popular) || flagMidia3.HasFlag(CategoriasDeMidia.ConsultaRepositorio))
                     return Combo.abpjBoa4;
 
-                if (NomeDeMidia.Aplicativos == EstadoDoJogo.Instance.Midias[1].nomeMidia)
+                if (NomeDeMidia.Aplicativos == estadoDoJogo.Midias[1].nomeMidia)
                     return Combo.abpjArriscado4;
 
                 if(flagMidia3.HasFlag(CategoriasDeMidia.ProducaoArmazenamento))

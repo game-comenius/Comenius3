@@ -47,10 +47,11 @@ public class PaginaMidias : PaginaPlanejamento
     public Image icone2;
     public Image icone3;
     public Sprite fundoRoxo;
+    private EstadoDoJogo gameState;
 
     private void Start()
     {
-        EstadoDoJogo gameState = EstadoDoJogo.Instance;
+        gameState = EstadoDoJogo.Instance;
         gameState.Lugar = LocationChecker.EvaluateLocation();
         locationName = LocationChecker.EvaluateLocationName();
 
@@ -438,30 +439,27 @@ public class PaginaMidias : PaginaPlanejamento
 
         if (SceneManager.GetActiveScene().name == "Mídias Pós Sala 1.1")
         {
-            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            Midia[] temp = gameState.Midias;
             temp[indice + 1] = icone.midia;
             temp[indice + 1].sprite = icone.GetComponent<Image>().sprite;
-            EstadoDoJogo.Instance.Midias = temp;
+            gameState.Midias = temp;
         }
 
         else if(SceneManager.GetActiveScene().name == "Sala de Aula ABProj 1-2")
         {
-            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            Midia[] temp = gameState.Midias;
             temp[indice + 3] = icone.midia;
             temp[indice + 3].sprite = icone.GetComponent<Image>().sprite;
-            EstadoDoJogo.Instance.Midias = temp;
+            gameState.Midias = temp;
         }
         else
         {
-            Midia[] temp = EstadoDoJogo.Instance.Midias;
+            Midia[] temp = gameState.Midias;
             temp[indice] = icone.midia;
             temp[indice].sprite = icone.GetComponent<Image>().sprite;
-            EstadoDoJogo.Instance.Midias = temp;
+            gameState.Midias = temp;
         }
 
-        Debug.Log(EstadoDoJogo.Instance.Midias[0].sprite);
-        Debug.Log(EstadoDoJogo.Instance.Midias[1].sprite);
-        Debug.Log(EstadoDoJogo.Instance.Midias[2].sprite);
 
     }
 
@@ -484,9 +482,9 @@ public class PaginaMidias : PaginaPlanejamento
 
         iconManager.ResetIcon(indiceIcone);
 
-        Midia[] temp = EstadoDoJogo.Instance.Midias;
+        Midia[] temp = gameState.Midias;
         temp[indice] = null;
-        EstadoDoJogo.Instance.Midias = temp;
+        gameState.Midias = temp;
     }
 
     public void Confirmar()
