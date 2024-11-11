@@ -228,6 +228,12 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explora el material";
         textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Haz clic en los objetos de la escena para seleccionarlos, combinándolos con tus múltiples opciones de inteligencia y medios para las actividades que se realizarán en casa";
+        textos[(int)ChaveTextos.SITE_COMENIUS] = "Sitio web Comenius";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2] = "Jugar comenio 1";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_3] = "Jugar comenio 2";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Juega comenius 2 personalizable";
+        textos[(int)ChaveTextos.CREDITOS] = "Créditos";
+
     }
 
 }

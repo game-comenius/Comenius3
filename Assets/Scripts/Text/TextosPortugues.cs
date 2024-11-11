@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.VR;
 using UnityEngine;
 
 public class TextosPortugues : Textos
@@ -226,6 +227,15 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.TEMA] = "Tema";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explorar o material";
         textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Clique nos objetos do cenário para selecioná-los, combinando-os às suas escolhas de inteligência múltipla e de mídias para as atividades que serão feitas em casa.";
+        textos[(int)ChaveTextos.SITE_COMENIUS] = "Site comenius";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2] = "Jogar comenius 1";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_3] = "Jogar comenius 2";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Jogar comenius 2 costumizável";
+        textos[(int)ChaveTextos.CREDITOS] = "Créditos";
+
+
+ 
+
     }
 
 }

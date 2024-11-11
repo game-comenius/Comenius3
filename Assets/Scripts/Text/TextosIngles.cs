@@ -227,6 +227,11 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.TEMA] = "Theme";
         textos[(int)ChaveTextos.EXPLORAR_O_MATERIAL] = "Explore the material";
         textos[(int)ChaveTextos.CLIQUE_NOS_OBJETOS] = "Click on the objects in the scene to select them, combining them with your multiple intelligence and media choices for the activities that will be done at home";
+        textos[(int)ChaveTextos.SITE_COMENIUS] = "comenius Website";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2] = "Play comenius 1";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_3] = "Play comenius 2";
+        textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Play comenius 2 customizable";
+        textos[(int)ChaveTextos.CREDITOS] = "Credits";
 
     }
     
