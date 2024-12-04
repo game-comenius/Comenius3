@@ -31,8 +31,14 @@ public class ClassFeedback : MonoBehaviour
     [SerializeField] private Image media4Icon;
     [SerializeField] private Text helpText;
     [SerializeField] [TextArea] private string firstHelp;
+    [SerializeField][TextArea] private string firstHelpPt;
+    [SerializeField][TextArea] private string firstHelpEua;
+    [SerializeField][TextArea] private string firstHelpEsp;
     private EstadoDoJogo estadoDoJogo;
     [SerializeField] [TextArea] private string secondHelp;
+    [SerializeField][TextArea] private string secondHelpPt;
+    [SerializeField][TextArea] private string secondHelpEua;
+    [SerializeField][TextArea] private string secondHelpEsp;
 
     private void Start()
     {
@@ -40,6 +46,18 @@ public class ClassFeedback : MonoBehaviour
         estadoDoJogo = EstadoDoJogo.Instance;
         string adjective;  // TODO: Mudar isso aqui em relação as metodologias
 
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                helpText.text = firstHelpEua;
+                break;
+            case Idiomas.PORTUGUES:
+                helpText.text = firstHelpPt;
+                break;
+            case Idiomas.ESPANHOL:
+                helpText.text = firstHelpEsp;
+                break;
+        }
 
 
         if (controller.score < 33)
@@ -387,5 +405,19 @@ public class ClassFeedback : MonoBehaviour
     public void UpdateHelpText()
     {
         helpText.text = secondHelp;
+
+        switch (Textos.GetIdiomaSelecionado())
+        {
+            case Idiomas.INGLES:
+                helpText.text = secondHelpEua;
+                break;
+            case Idiomas.PORTUGUES:
+                helpText.text = secondHelpPt;
+                break;
+            case Idiomas.ESPANHOL:
+                helpText.text = secondHelpEsp;
+                break;
+        }
+
     }
 }

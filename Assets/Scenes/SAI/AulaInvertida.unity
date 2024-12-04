@@ -1072,9 +1072,15 @@ MonoBehaviour:
   helpText: {fileID: 205504693}
   firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
     sua pontua\xE7\xE3o de acordo com seu desempenho no quiz e nos imprevistos!"
+  firstHelpPt: 
+  firstHelpEua: 
+  firstHelpEsp: 
   secondHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode
     conferir o feedback da Lurdinha sobre as m\xEDdias escolhidas para o quarto e
     sala de aula de acordo com a metodologia Sala de Aula Invertida!"
+  secondHelpPt: 
+  secondHelpEua: 
+  secondHelpEsp: 
 --- !u!1 &129668132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1304,7 @@ GameObject:
   - component: {fileID: 137584042}
   - component: {fileID: 137584044}
   - component: {fileID: 137584043}
+  - component: {fileID: 137584045}
   m_Layer: 0
   m_Name: "T\xEDtulo"
   m_TagString: Untagged
@@ -1367,6 +1374,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137584041}
   m_CullTransparentMesh: 0
+--- !u!114 &137584045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137584041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 139
+  caixaAlta: 0
 --- !u!1 &157800056
 GameObject:
   m_ObjectHideFlags: 0
@@ -10187,14 +10208,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Dura\xE7\xE3o da aula"
-  ContentPt: 
-  ContentEua: 
-  ContentSpanish: 
+  ContentPt: "Dura\xE7\xE3o da aula"
+  ContentEua: Class duration
+  ContentSpanish: "Duraci\xF3n de la clase"
   popUp: {fileID: 751744120}
   popUpArrow: {fileID: 243091142}
   text: {fileID: 1023540782}
   orientation: 1
-  getDentro: 0
+  getDentro: 1
 --- !u!224 &1173395243 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1156064139281120434, guid: 6f5df890fcbd01249af1010f58900971,
@@ -16869,6 +16890,7 @@ GameObject:
   - component: {fileID: 1808479675}
   - component: {fileID: 1808479677}
   - component: {fileID: 1808479676}
+  - component: {fileID: 1808479678}
   m_Layer: 0
   m_Name: Texto
   m_TagString: Untagged
@@ -16993,6 +17015,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808479674}
   m_CullTransparentMesh: 1
+--- !u!114 &1808479678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808479674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 139
+  caixaAlta: 0
 --- !u!1 &1822467988
 GameObject:
   m_ObjectHideFlags: 0
@@ -17247,14 +17283,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Pontua\xE7\xE3o"
-  ContentPt: 
-  ContentEua: 
-  ContentSpanish: 
+  ContentPt: "Pontua\xE7\xE3o"
+  ContentEua: Scoring
+  ContentSpanish: Puntaje
   popUp: {fileID: 73557799}
   popUpArrow: {fileID: 1629673840}
   text: {fileID: 365455557}
   orientation: 1
-  getDentro: 0
+  getDentro: 1
 --- !u!1 &1839857000
 GameObject:
   m_ObjectHideFlags: 0

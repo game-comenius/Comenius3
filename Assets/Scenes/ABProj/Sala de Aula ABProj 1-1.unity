@@ -8144,7 +8144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584345828}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ad36a75d6854ad4db4f1a6aaaac3d27, type: 3}
   m_Name: 
@@ -8157,7 +8157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584345828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
   m_Name: 
@@ -12080,9 +12080,15 @@ MonoBehaviour:
   helpText: {fileID: 643728409}
   firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
     sua pontua\xE7\xE3o de acordo com seu desempenho no quiz!"
+  firstHelpPt: 
+  firstHelpEua: 
+  firstHelpEsp: 
   secondHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode
     conferir o feedback da Lurdinha sobre as m\xEDdias escolhidas para o laborat\xF3rio
     de acordo com a metodologia Aprendizagem Baseada em Problemas (ABP)!"
+  secondHelpPt: 
+  secondHelpEua: 
+  secondHelpEsp: 
 --- !u!222 &950241515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14031,7 +14037,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080972377}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
   m_Name: 
@@ -15103,7 +15109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Estudante
+  m_Text: Student
 --- !u!222 &1125728092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21728,6 +21734,7 @@ GameObject:
   - component: {fileID: 1469483605}
   - component: {fileID: 1469483607}
   - component: {fileID: 1469483606}
+  - component: {fileID: 1469483608}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -21797,6 +21804,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469483604}
   m_CullTransparentMesh: 0
+--- !u!114 &1469483608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469483604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 130
+  caixaAlta: 0
 --- !u!1 &1472879247
 GameObject:
   m_ObjectHideFlags: 0

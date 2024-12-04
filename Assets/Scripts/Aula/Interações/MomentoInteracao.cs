@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MomentoInteracao", menuName = "Comenius3/MomentoInteracao", order = 0)]
@@ -72,9 +73,36 @@ public class PaginaInteracao
         get
         {
             if (professorFalando)
-                return "Professor";
+            {
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        return "Teacher";
+                    case Idiomas.PORTUGUES:
+                        return "Professor";
+                    case Idiomas.ESPANHOL:
+                        return "Maestro";
+                  
+                }
+                return "Prof";
+            }
+          
             else
-                return "Estudante";
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        return "Student";
+                    case Idiomas.PORTUGUES:
+                        return "Estudante";
+                    case Idiomas.ESPANHOL:
+                        return "Alumno";
+
+                }
+            return "Estudante";
         }
     }
 

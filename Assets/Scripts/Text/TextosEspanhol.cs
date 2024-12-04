@@ -57,7 +57,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.INFORMACOES] = "Información";
         textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "Game Comenius 3 es un juego casual, de estrategia y simulación que apuesta por los medios digitales, las metodologías activas y las inteligencias múltiples.\r\n      Game Comenius es parte de un proyecto de educación en medios que investiga cómo un juego digital puede enseñar a estudiantes universitarios y profesores de todos los niveles educativos a utilizar los medios en el aula, a educar “con”, “sobre” y “a través” de ellos.";
         textos[(int)ChaveTextos.AVALIAR_JOGO] = "Califica el juego";
-        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Producción y Coordinación</b>\r\n\r\nDulce Marcia Cruz";
+        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Producción y Coordinación</b>\r\n\r\nDulce Márcia Cruz";
         textos[(int)ChaveTextos.GAME_DESIGN] = "<b>Diseño de juegos</b>\r\n\r\nFábio Medeiros\r\nMatheus Leutchuk Cademartori\r\nIsadora Beagle";
         textos[(int)ChaveTextos.ARTE_UI] = "<b>Arte y interfaz de usuario</b>\r\n\r\nIndra Rosa da Silva\r\nLucas Emanuel Leite da Rosa Gomes\r\nMaría Antônia Petrassi\r\nNatan Salles Medeiros\r\nVit Duarte";
         textos[(int)ChaveTextos.ARTE_DA_CIDADE] = "<b>Paisaje de la ciudad</b>\r\n\r\nVit Duarte";

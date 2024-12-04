@@ -57,7 +57,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.INFORMACOES] = "Information";
         textos[(int)ChaveTextos.SOBRE_O_COMMENIUS_3] = "Game Comenius 3 is a casual, strategy and simulation game that focuses on digital media, active methodologies and multiple intelligences.\r\n      Game Comenius is part of a media education project that investigates how a digital game can teach undergraduate students and teachers at all levels of education to use media in the classroom, to educate “with”, “about” and “ through” them.";
         textos[(int)ChaveTextos.AVALIAR_JOGO] = "Review Game";
-        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Production and Coordination</b>\r\n\r\nSweet Márcia Cruz";
+        textos[(int)ChaveTextos.PRODUCAO_COORDENACAO] = "<b>Production and Coordination</b>\r\n\r\nDulce Márcia Cruz";
         textos[(int)ChaveTextos.GAME_DESIGN] = "<b>Game Design</b>\r\n\r\nFábio Medeiros\r\nMatheus Leutchuk Cademartori\r\nIsadora Beagle";
         textos[(int)ChaveTextos.ARTE_UI] = "<b>Art and UI</b>\r\n\r\nIndra Rosa da Silva\r\nLucas Emanuel Leite da Rosa Gomes\r\nMaria Antônia Petrassi\r\nNatan Salles Medeiros\r\nVit Duarte";
         textos[(int)ChaveTextos.ARTE_DA_CIDADE] = "<b>City Scenery</b>\r\n\r\nVit Duarte";
@@ -88,7 +88,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "FOLLOWING TEACHING:";
         textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1st Moment";
         textos[(int)ChaveTextos.SEGUNDO_MOMENTO] = "2nd Moment";
-        textos[(int)ChaveTextos.QUARTO_APRESENTAR] = "4. Present the answers and evaluate the \r\nresults";
+        textos[(int)ChaveTextos.QUARTO_APRESENTAR] = "4. Present the answers and evaluate the results";
         textos[(int)ChaveTextos.ESPACO_DE_APRENDIZAGEM] = "<b>Learning Space</b>";
         textos[(int)ChaveTextos.SUA_AULA_ACONTECERA] = "Your class will take place in the space:";
         textos[(int)ChaveTextos.DURANTE_O_MOMENTO] = "During the class you will answer quizzes about your class, methodology and the media chosen below!\r\n";

@@ -104,75 +104,254 @@ public class RoomManager : MonoBehaviour
         switch (name)
         {
             case "Bola":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:tempMedia = "Ball";
+                        objectName.text = "Ball";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Bola";
+                        objectName.text = "Bola";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Pelota";
+                        objectName.text = "Pelota";
+                        break;
+                }
                 tempSprite = ballSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Blocos de Montar":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Building Blocks";
+                        objectName.text = "Building Blocks";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Blocos de Montar";
+                        objectName.text = "Blocos de Montar";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Bloques de construcción";
+                        objectName.text = "Bloques de construcción";
+                        break;
+                }
                 tempSprite = buildingBlocksSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Quebra-Cabeças":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Puzzles";
+                        objectName.text = "Puzzles";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Quebra-Cabeças";
+                        objectName.text = "Quebra-Cabeças";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Rompecabezas";
+                        objectName.text = "Rompecabezas";
+                        break;
+                }
                 tempSprite = puzzleSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Gibi e Literatura":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Comics and Literature";
+                        objectName.text = "Comics and Literature";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Gibi e Literatura";
+                        objectName.text = "Gibi e Literatura";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Cómics y literatura";
+                        objectName.text = "Cómics y literatura";
+                        break;
+                }
                 tempSprite = comicsAndLiteratureSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Brinquedo Console":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Console toy";
+                        objectName.text = "Console toy";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Brinquedo Console";
+                        objectName.text = "Brinquedo Console";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Juguete de consola";
+                        objectName.text = "Juguete de consola";
+                        break;
+                }
                 tempSprite = consoleSprite;
-                objectName.text = "Console";
                 previewMedia.sprite = tempSprite;
                 break;
             case "Teclado":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Keyboard";
+                        objectName.text = "Teclado";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Teclado";
+                        objectName.text = "Teclado";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Teclado";
+                        objectName.text = "Teclado";
+                        break;
+                }
                 tempSprite = musicBoardSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Mídia Console":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Media Console";
+                        objectName.text = "Media Console";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Mídia Console";
+                        objectName.text = "Mídia Console";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Consola multimedia";
+                        objectName.text = "Consola multimedia";
+                        break;
+                }
                 tempSprite = consoleSprite;
-                objectName.text = "Console";
                 previewMedia.sprite = tempSprite;
                 break;
             case "Computador":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Computer";
+                        objectName.text = "Computer";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Computador";
+                        objectName.text = "Computador";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Computadora";
+                        objectName.text = "Computadora";
+                        break;
+                }
                 tempSprite = computerSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Celular":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Cell phone";
+                        objectName.text = "Cell phone";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Celular";
+                        objectName.text = "Celular";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Celular";
+                        objectName.text = "Celular";
+                        break;
+                }
                 tempSprite = smartphoneSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Tablet":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Tablet";
+                        objectName.text = "Tablet";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Tablet";
+                        objectName.text = "Tablet";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Tableta";
+                        objectName.text = "Tableta";
+                        break;
+                }
                 tempSprite = tabletSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Caderno e Estojo":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Notebook and Pencil Case";
+                        objectName.text = "TabNotebook and Pencil Caselet";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Caderno e Estojo";
+                        objectName.text = "Caderno e Estojo";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Caderno e Estojo";
+                        objectName.text = "Caderno e Estojo";
+                        break;
+                }
                 tempSprite = notebookAndCaseSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             case "Televisão":
-                tempMedia = name;
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas._chaveInicial:
+                        break;
+                    case Idiomas.INGLES:
+                        tempMedia = "Television";
+                        objectName.text = "Television";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        tempMedia = "Televisão";
+                        objectName.text = "Televisão";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        tempMedia = "Televisión";
+                        objectName.text = "Televisión";
+                        break;
+                }
                 tempSprite = tvSprite;
-                objectName.text = name;
                 previewMedia.sprite = tempSprite;
                 break;
             default:
