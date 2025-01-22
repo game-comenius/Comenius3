@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class TextosPortugues : Textos
 {
@@ -75,14 +77,14 @@ public class TextosPortugues : Textos
 
         textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "Essas são as características da sua turma! Você\r\npoderá consultá-las ao longo do jogo acessando\r\no menu e clicando no botão \"Sua Turma\".";
         textos[(int)ChaveTextos.CLIQUE_EM_CONFIRMAR] = "Clique em confirmar para começar a primeira fase\r\ndo jogo. Caso tenha mudado de ideia, clique em \r\npara alterar alguma opção.";
-        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "           Seus estudantes devem conseguir consultar\r\n informações atuais sobre o tema para depois aplicar o que descobriram de forma empírica!\r\n";
+        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "Seus estudantes devem conseguir consultar informações atuais sobre o tema para depois aplicar o que descobriram de forma empírica!";
         textos[(int)ChaveTextos.OLA_SOU_LURDINHA] = "Olá, sou a Lurdinha, sou coordenadora pedagógica e vou\r\nte ajudar com seu planejamento!\r\n";
         textos[(int)ChaveTextos.AGORA_VOCE] = "Agora que você sabe o desafio da primeira metodologia, finalize sua\r\npersonalização com o tema da sua aula, usando como base as características da turma:\r\n";
         textos[(int)ChaveTextos.QUAL_SERA_O_TEMA] = "\r\nQual será o tema da sua aula na metodologia 1, que acontecerá no Laboratório utilizando a Metodologia Aprendizagem Baseada em Problemas?";
         textos[(int)ChaveTextos.CRIEI_UM_TEMA] = "Crie um tema que vai guiar seu planejamento e as escolhas de mídias adequadas para sua aula. ";
         textos[(int)ChaveTextos.ESSA_ESCOLHA] = "Essa escolha não reflete na pontuação.";
         textos[(int)ChaveTextos.NO_MAXIMO_45] = "(No máximo 45 caracteres)";
-        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "Na Aprendizagem Baseada em Problemas (ABP)\r\ndeve-se atentar para a descrição de um contexto no qual variáveis, sujeitos e situações possam ser \r\nclaramente identificados pelos estudantes\r\n\r\nO problema deve conter as seguintes características:\r\n\r\n* Apresentar tema e nível de complexidade\r\ncompatíveis com o conhecimento prévio dos\r\nestudantes;\r\n\r\n* Conter sugestões ou dicas que os estimulem a\r\nidentificar possíveis pontos de partida;\r\n\r\n* Ser simples e objetivo, para evitar que o grupo\r\ndesvie a atenção do tema;\r\n\r\n* Mobilizar de forma articulada os elementos de \r\ncompetência.\r\n";
+        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "Na Aprendizagem Baseada em Problemas (ABP)\r\ndeve-se atentar para a descrição de um contexto no qual variáveis, sujeitos e situações possam ser \r\nclaramente identificados pelos estudantes\r\n\r\nO problema deve conter as seguintes características:\r\n\r\nApresentar tema e nível de complexidade\r\ncompatíveis com o conhecimento prévio dos\r\nestudantes;\r\n\r\nConter sugestões ou dicas que os estimulem a\r\nidentificar possíveis pontos de partida;\r\n\r\nSer simples e objetivo, para evitar que o grupo\r\ndesvie a atenção do tema;\r\n\r\nMobilizar de forma articulada os elementos de \r\ncompetência.\r\n";
         textos[(int)ChaveTextos.APRENSENTAR_O_PROBLEMA] = "1.Apresentar o problema e levantar os \r\nconhecimentos sobre o assunto;\r\n2.Analisar as variáveis do problema e\r\npropor possíveis soluções;\r\n3. Buscar novas referências para qualificar\r\nas propostas, debater e buscar consenso\r\nsobre as possíveis soluções;";
         textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "SEQUÊNCIA DIDÁTICA:";
         textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1° Momento";
@@ -137,7 +139,7 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.NA_SEQUENCIA_PROJETOS] = "Na sequência da Aprendizagem Baseada em Projetos,\r\nestes serão os moentos em que os estudantes irão vivenciar";
         textos[(int)ChaveTextos.DEFINIR_ESCOPO] = "Definir o escopo, Planejar\r\nas etapas do projeto";
         textos[(int)ChaveTextos.APRESENTAR_RESULTADOS] = "Apresentar os resultados";
-        textos[(int)ChaveTextos.TERCEIRO_MOMENTO] = "Terceiro momento";
+        textos[(int)ChaveTextos.TERCEIRO_MOMENTO] = "3° momento";
         textos[(int)ChaveTextos.EXERCUTAR_ACOES] = "Executar ás ações previstas,\r\nMonitorar o desenvolvimento \r\ndo projeto";
         textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Vamos para a terceira metodologia? \r\nAgora você deve escolher um tema para sua última aula do jogo!";
         textos[(int)ChaveTextos.RELEMBRAR_CARACTERISTICAS] = "Relembrando as características da turma:";
@@ -232,8 +234,10 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Jogar comenius 2 costumizável";
         textos[(int)ChaveTextos.CREDITOS] = "Créditos";
 
+        textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Aqui você revisa e confirma seu plano de aula.Em seguida será iniciado um quiz sobre suas escolhas.Se preferir, você pode alterar seu plano clicando na seta localizada na aba superior.\r\n";
+     
 
- 
+
 
     }
 

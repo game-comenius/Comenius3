@@ -119,7 +119,8 @@ public class QuizManager : MonoBehaviour
     }
     public void ShowMediaQuiz()
     {
-        for(int i = 0; i < mediaQuizList.Count; i++)
+        Debug.Log(stateMachine.CurrentMedia());
+        for (int i = 0; i < mediaQuizList.Count; i++)
         {
             if (mediaQuizList[i].GetComponent<QuizBase>().media == stateMachine.CurrentMedia().nomeMidia)
             {

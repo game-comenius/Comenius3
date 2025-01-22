@@ -48,7 +48,6 @@ public class MediaFeedbackSelector : MonoBehaviour
             calculador = 15;
         }
         Debug.Log(EstadoDoJogo.Instance.Midias[sorteio].nome);
-        Debug.Log(EstadoDoJogo.Instance.NivelDeEnsino.nome);
         for (int i = calculador; i < feedbacks.Count; i++)
             {
                 if (feedbacks[i].midias[0] == EstadoDoJogo.Instance.Midias[sorteio].nomeMidia)

@@ -76,14 +76,14 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "These are the characteristics of your class! You\r\ncan consult them throughout the game by accessing\r\nthe menu and clicking the \"Your Class\" button.";
 
         textos[(int)ChaveTextos.CLIQUE_EM_CONFIRMAR] = "Click confirm to start the first phase\r\ngame. If you have changed your mind, click \r\nto change any option.";
-        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "           Your students must be able to consult\r\n current information on the topic and then apply what they discovered empirically!\r\n";
+        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "Your students must be able to consult current information on the topic and then apply what they discovered empirically!";
         textos[(int)ChaveTextos.OLA_SOU_LURDINHA] = "Hello, I'm Lurdinha, I'm a pedagogical coordinator and I'll\r\nhelp you with your planning!\r\n";
         textos[(int)ChaveTextos.AGORA_VOCE] = "Now that you know the challenge of the first methodology, finish your\r\npersonalization with the theme of your class, using the characteristics of the class as a basis:\r\n";
         textos[(int)ChaveTextos.QUAL_SERA_O_TEMA] = "\r\nWhat will be the topic of your class in methodology 1, which will take place in the Laboratory using the Problem-Based Learning Methodology?";
         textos[(int)ChaveTextos.CRIEI_UM_TEMA] = "Create a theme that will guide your planning and appropriate media choices for your class. ";
         textos[(int)ChaveTextos.ESSA_ESCOLHA] = "This choice does not reflect on the score.";
         textos[(int)ChaveTextos.NO_MAXIMO_45] = "(Maximum 45 characters)";
-        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "In Problem-Based Learning (PBL)\r\nattention must be paid to the description of a context in which variables, subjects and situations can be \r\nclearly identified by students\r\n\r\nThe problem must contain the following characteristics:\r\n\r\n* Present a topic and level of complexity\r\ncompatible with the students' prior knowledge;\r\n\r\n* Contain suggestions or tips that encourage them to\r \nidentify possible starting points;\r\n\r\n* Be simple and objective, to prevent the group\r\ndfrom diverting attention from the topic;\r\n\r\n* Mobilize the elements in an articulated way of \r\ncompetence.\r\n";
+        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "In Problem-Based Learning (PBL)\r\nattention must be paid to the description of a context in which variables, subjects and situations can be \r\nclearly identified by students\r\n\r\nThe problem must contain the following characteristics:\r\n\r\nPresent a topic and level of complexity\r\ncompatible with the students' prior knowledge;\r\n\r\nContain suggestions or tips that encourage them to\r \nidentify possible starting points;\r\n\r\nBe simple and objective, to prevent the group\r\n from diverting attention from the topic;\r\n\r\nMobilize the elements in an articulated way of \r\ncompetence.\r\n";
         textos[(int)ChaveTextos.APRENSENTAR_O_PROBLEMA] = "1. Present the problem and gather \r\nknowledge about the subject;\r\n2.Analyze the problem variables and\r\npropose possible solutions;\r\n3. Search for new references to qualify\r\nthe proposals, debate and seek consensus\r\non possible solutions";
         textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "FOLLOWING TEACHING:";
         textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1st Moment";
@@ -232,7 +232,8 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.JOGAR_COMENIUS_3] = "Play comenius 2";
         textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Play comenius 2 customizable";
         textos[(int)ChaveTextos.CREDITOS] = "Credits";
+        textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Here you review and confirm your lesson plan. Then a quiz will start about your choices. If you prefer, you can change your plan by clicking on the arrow located in the top tab.\r\n";
 
     }
-    
+
 }

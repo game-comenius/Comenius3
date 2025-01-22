@@ -58,7 +58,7 @@ public class textoCutScne : MonoBehaviour
             textosCutscene[3] = "Necesitamos crear prácticas de enseñanza más ágiles y\n hacer que los estudiantes sean protagonistas en el proceso. \nDurante el juego, se presentarán tres\n metodologías activas que te ayudarán en esta tarea.";
             textosCutscene[4] = "Aquí, en el juego, extenderás los\nespacios de aprendizaje más allá de las paredes del aula y de la escuela.";
             textosCutscene[5] = "Para hacer esto, podrás utilizar los laboratorios, animar \r\na los estudiantes a investigar,realizar partes\r\nde las actividades en casa, llevarlos a la ciudad\r\n para aprender de una manera \r\ninteractiva y de diferentes contextos.";
-            textosCutscene[6] = "Aquí crearás secuencias didácticas utilizando medios del siglo XXI\n, planificando con metodologías activas y\n considerando las inteligencias múltiples de tus clases.";
+            textosCutscene[6] = "Aquí crearás secuencias didácticas utilizando medios del siglo, XXI\n planificando con metodologías activas y\n considerando las inteligencias múltiples de tus clases.";
             textosCutscene[7] = "¿Estás listo para comenzar nuestro viaje?";
             textosCutscene[8] = "<b>¡Genial!</b> Así que exploremos juntos el potencial y el desafío de incluir los medios digitales en la educación. ¿Vamos?";
         }

@@ -5743,9 +5743,15 @@ MonoBehaviour:
   helpText: {fileID: 126259172}
   firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
     sua pontua\xE7\xE3o de acordo com seu desempenho no quiz!"
+  firstHelpPt: 
+  firstHelpEua: 
+  firstHelpEsp: 
   secondHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode
     conferir o feedback da Lurdinha sobre as m\xEDdias escolhidas para o laborat\xF3rio
     de acordo com a metodologia Aprendizagem Baseada em Problemas (ABP)!"
+  secondHelpPt: 
+  secondHelpEua: 
+  secondHelpEsp: 
 --- !u!222 &337604323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6700,6 +6706,7 @@ GameObject:
   - component: {fileID: 399579315}
   - component: {fileID: 399579314}
   - component: {fileID: 399579313}
+  - component: {fileID: 399579316}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -6781,6 +6788,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399579311}
   m_CullTransparentMesh: 0
+--- !u!114 &399579316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399579311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 104
+  caixaAlta: 0
 --- !u!1 &399634259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7648,7 +7669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Estudante
+  m_Text: Student
 --- !u!222 &459736239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9686,6 +9707,7 @@ MonoBehaviour:
   popUpArrow: {fileID: 55981712}
   text: {fileID: 592527343}
   orientation: 1
+  getDentro: 0
 --- !u!1 &605504900
 GameObject:
   m_ObjectHideFlags: 0
@@ -12679,6 +12701,7 @@ GameObject:
   - component: {fileID: 813837819}
   - component: {fileID: 813837821}
   - component: {fileID: 813837820}
+  - component: {fileID: 813837822}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -12748,6 +12771,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813837818}
   m_CullTransparentMesh: 0
+--- !u!114 &813837822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813837818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 105
+  caixaAlta: 0
 --- !u!1 &817927080
 GameObject:
   m_ObjectHideFlags: 0
@@ -24956,6 +24993,7 @@ GameObject:
   - component: {fileID: 1591825536}
   - component: {fileID: 1591825538}
   - component: {fileID: 1591825537}
+  - component: {fileID: 1591825539}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -25025,6 +25063,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591825535}
   m_CullTransparentMesh: 0
+--- !u!114 &1591825539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591825535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 103
+  caixaAlta: 0
 --- !u!1 &1592811535
 GameObject:
   m_ObjectHideFlags: 0
@@ -30723,6 +30775,7 @@ MonoBehaviour:
   popUpArrow: {fileID: 234791921}
   text: {fileID: 1952085640}
   orientation: 1
+  getDentro: 0
 --- !u!1 &1947416184
 GameObject:
   m_ObjectHideFlags: 0

@@ -170,7 +170,6 @@ public class InteractionManager : MonoBehaviour
     private void UpdatePage()
     {
         PaginaInteracao page = interaction.paginas[currentPage];
-        Debug.Log(page);
 
      //   page = 
         /*

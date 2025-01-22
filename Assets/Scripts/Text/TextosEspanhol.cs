@@ -76,14 +76,14 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.SAO_AS_CARACTERISTICAS] = "¡Estas son las características de tu clase! Puedes consultarlos durante el juego accediendo\r\nal menú y haciendo clic en el botón \"Tu pandilla\".";
 
         textos[(int)ChaveTextos.CLIQUE_EM_CONFIRMAR] = "Haz clic en confirmar para iniciar la primera fase\r\ndel juego. Si has cambiado de opinión, haz clic en \r\npara cambiar cualquier opción.";
-        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "Sus estudiantes deben poder consultar\r\n información actual sobre el tema y luego aplicar lo que descubrieron empíricamente!\r\n";
+        textos[(int)ChaveTextos.DICA_SEUS_ESTUDANTES] = "Sus estudiantes deben poder consultar información actual sobre el tema y luego aplicar lo que descubrieron empíricamente!";
         textos[(int)ChaveTextos.OLA_SOU_LURDINHA] = "Hola, soy Lurdinha, soy coordinadora pedagógica y\r\n te ayudo con tu planificación!\r\n";
         textos[(int)ChaveTextos.AGORA_VOCE] = "Ahora que conoces el desafío de la primera metodología, finaliza tu\r\npersonalización con la temática de tu clase, tomando como base las características de la clase:\r\n";
         textos[(int)ChaveTextos.QUAL_SERA_O_TEMA] = "\r\n¿Cuál será el tema de su clase de metodología 1, que se llevará a cabo en el Laboratorio utilizando la Metodología de Aprendizaje Basado en Problemas?";
         textos[(int)ChaveTextos.CRIEI_UM_TEMA] = "Crea un tema que guiará tu planificación y elección de medios apropiados para tu clase.";
         textos[(int)ChaveTextos.ESSA_ESCOLHA] = "Esta elección no se refleja en la puntuación.";
         textos[(int)ChaveTextos.NO_MAXIMO_45] = "(Máximo 45 caracteres)";
-        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "En el Aprendizaje Basado en Problemas (ABP)\r\nse debe prestar atención a la descripción de un contexto en el que las variables, temas y situaciones puedan ser \r\nidentificadas claramente por los estudiantes\r \n\r\nEl problema debe contener las siguientes características:\r\n\r\n* Presentar un tema y nivel de complejidad\r\ncompatible con\r\nlos conocimientos previos de los estudiantes;\r\n\r\n *Contener sugerencias o consejos que los alienten a\r\nidentificar posibles puntos de partida;\r\n\r\n* Ser simple y objetivo, para evitar que el grupo\r\ndesvíe la atención del tema;\r\n \r\n* Movilizar los elementos de \r\ncompetencia de manera articulada.\r\n";
+        textos[(int)ChaveTextos.NA_APRENDIZAGEM_BASEADA] = "En el Aprendizaje Basado en Problemas (ABP)\r\nse debe prestar atención a la descripción de un contexto en el que las variables, temas y situaciones puedan ser \r\nidentificadas claramente por los estudiantes\r \n\r\nEl problema debe contener las siguientes características:\r\n\r\nPresentar un tema y nivel de complejidad\r\ncompatible con\r\nlos conocimientos previos de los estudiantes;\r\n\r\nContener sugerencias o consejos que los alienten a\r\nidentificar posibles puntos de partida;\r\n\r\nSer simple y objetivo, para evitar que el grupo\r\ndesvíe la atención del tema;\r\n \r\nMovilizar los elementos de \r\ncompetencia de manera articulada.\r\n";
         textos[(int)ChaveTextos.APRENSENTAR_O_PROBLEMA] = "1. Presentar el problema y recoger \r\nconocimientos sobre el tema;\r\n2.Analizar las variables del problema y\r\nproponer posibles soluciones;\r\n3. Buscar nuevos referentes para calificar\r\nlas propuestas, debatir y buscar consenso\r\nsobre posibles soluciones;";
         textos[(int)ChaveTextos.SEQUENCIA_DIDATICA] = "SECUENCIA DIDÁTICA:";
         textos[(int)ChaveTextos.PRIMEIRO_MOMENTO] = "1er Momento";
@@ -138,7 +138,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.NA_SEQUENCIA_PROJETOS] = "Siguiendo el Aprendizaje Basado en Proyectos,\r\n estos serán los momentos que vivirán los estudiantes";
         textos[(int)ChaveTextos.DEFINIR_ESCOPO] = "Definir el alcance, Planificar\r\n las etapas del proyecto";
         textos[(int)ChaveTextos.APRESENTAR_RESULTADOS] = "Mostrar los resultados";
-        textos[(int)ChaveTextos.TERCEIRO_MOMENTO] = "Tercer momento";
+        textos[(int)ChaveTextos.TERCEIRO_MOMENTO] = "3° momento";
         textos[(int)ChaveTextos.EXERCUTAR_ACOES] = "Ejecutar las acciones planificadas,\r\nMonitorear el desarrollo del proyecto";
         textos[(int)ChaveTextos.RELEMBRAR_CARACTERISTICAS] = "Recordando las características de la clase:";
         textos[(int)ChaveTextos.SEMPRE_QUE_POSSIVEL] = " Siempre que sea posible, en esta metodología, se parte del interés\r\n de los estudiantes, de una pregunta orientadora, de un problema real.\r\nConversa con los estudiantes para que encuentren motivación, relevancia y significado.\r\n";
@@ -233,6 +233,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.JOGAR_COMENIUS_3] = "Jugar comenio 2";
         textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Juega comenius 2 personalizable";
         textos[(int)ChaveTextos.CREDITOS] = "Créditos";
+        textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Aquí revisas y confirmas tu plan de lección. Luego comenzará un cuestionario sobre tus elecciones. Si lo prefieres, puedes cambiar tu plan haciendo clic en la flecha ubicada en la pestaña superior.\r\n"; ;
 
     }
 

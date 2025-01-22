@@ -108,8 +108,8 @@ public class EstadoDoJogo : MonoBehaviour
                 midias = new Midia[]
                 {
                     new Midia(NomeDeMidia.LivroDidatico),
-                    new Midia(NomeDeMidia.ProjetorMultimidia),
-                    new Midia(NomeDeMidia.Lousa),
+                    new Midia(NomeDeMidia.LivroDidatico),
+                    new Midia(NomeDeMidia.LivroDidatico),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas),
                     new Midia(NomeDeMidia.EditoresDeTextoEPlanilhasEletronicas)

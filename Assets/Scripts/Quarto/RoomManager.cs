@@ -3,9 +3,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Diagnostics;
 
 public class RoomManager : MonoBehaviour
 {
+
+    enum ItensInvertidos
+    {
+        BOLA,
+        BLOCO_DE_MONTAR,
+        QUEDRA_CABEÇA,
+        GIBI,
+        CONSOLE,
+        TECLADO
+    }
+    private int objetoZero;
     public GameObject[] toyObjects;
     public GameObject[] mediaObjects;
 
@@ -101,9 +113,15 @@ public class RoomManager : MonoBehaviour
 
     public void SelectObject(string name)
     {
+        UnityEngine.Debug.Log(name);
         switch (name)
         {
+      
             case "Bola":
+                if(currentMedia == 0)
+                {
+                    objetoZero = 0;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
                     case Idiomas._chaveInicial:
@@ -124,8 +142,14 @@ public class RoomManager : MonoBehaviour
                 previewMedia.sprite = tempSprite;
                 break;
             case "Blocos de Montar":
+
+                if (currentMedia == 0)
+                {
+                    objetoZero = 1;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
+
                     case Idiomas._chaveInicial:
                         break;
                     case Idiomas.INGLES:
@@ -145,6 +169,10 @@ public class RoomManager : MonoBehaviour
                 previewMedia.sprite = tempSprite;
                 break;
             case "Quebra-Cabeças":
+                if (currentMedia == 0)
+                {
+                    objetoZero = 2;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
                     case Idiomas._chaveInicial:
@@ -166,6 +194,10 @@ public class RoomManager : MonoBehaviour
                 previewMedia.sprite = tempSprite;
                 break;
             case "Gibi e Literatura":
+                if (currentMedia == 3)
+                {
+                    objetoZero = 0;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
                     case Idiomas._chaveInicial:
@@ -187,6 +219,10 @@ public class RoomManager : MonoBehaviour
                 previewMedia.sprite = tempSprite;
                 break;
             case "Brinquedo Console":
+                if (currentMedia == 4)
+                {
+                    objetoZero = 0;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
                     case Idiomas._chaveInicial:
@@ -208,13 +244,17 @@ public class RoomManager : MonoBehaviour
                 previewMedia.sprite = tempSprite;
                 break;
             case "Teclado":
+                if (currentMedia == 5)
+                {
+                    objetoZero = 0;
+                }
                 switch (Textos.GetIdiomaSelecionado())
                 {
                     case Idiomas._chaveInicial:
                         break;
                     case Idiomas.INGLES:
                         tempMedia = "Keyboard";
-                        objectName.text = "Teclado";
+                        objectName.text = "Keyboard";
                         break;
                     case Idiomas.PORTUGUES:
                         tempMedia = "Teclado";
@@ -503,145 +543,170 @@ public class RoomManager : MonoBehaviour
         media2IconOutline.GetComponent<Image>().color = wrongColor;
         media2IconOutline.transform.GetChild(0).GetComponent<Image>().color = wrongColor;
 
-        switch (intelligenceName)
+        //Continuar daqui tirando as strings e puxando os scripts
+        UnityEngine.Debug.Log(objetoZero);
+        UnityEngine.Debug.Log(intelligenceName);
+        if (intelligenceName == Inteligencias.CorporalCinestesicaComNaturalista.nome)
         {
-            case ("Corporal-cinestésica e Naturalista"):
-                switch (medias[0])
-                {
-                    case "Bola":
-                        index = 0;
-                        selectionIsPositive = true;
-                        break;
-                    case "Blocos de Montar":
-                        index = 1;
-                        selectionIsPositive = true;
-                        break;
-                    case "Quebra-Cabeças":
-                        index = 2;
-                        selectionIsPositive = false;
-                        break;
-                    case "Gibi e Literatura":
-                        index = 3;
-                        selectionIsPositive = false;
-                        break;
-                    case "Brinquedo Console":
-                        index = 4;
-                        selectionIsPositive = false;
-                        break;
-                    case "Teclado":
-                        index = 5;
-                        selectionIsPositive = true;
-                        break;
-                    default:
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                }
-                break;
-            case ("Intrapessoal e Espacial-visual"):
-                switch (medias[0])
-                {
-                    case "Bola":
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                    case "Blocos de Montar":
-                        index = 1;
-                        selectionIsPositive = true;
-                        break;
-                    case "Quebra-Cabeças":
-                        index = 2;
-                        selectionIsPositive = true;
-                        break;
-                    case "Gibi e Literatura":
-                        index = 3;
-                        selectionIsPositive = true;
-                        break;
-                    case "Brinquedo Console":
-                        index = 4;
-                        selectionIsPositive = true;
-                        break;
-                    case "Teclado":
-                        index = 5;
-                        selectionIsPositive = false;
-                        break;
-                    default:
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                }
-                break;
-            case ("Linguística e Lógico-matemática"):
-                switch (medias[0])
-                {
-                    case "Bola":
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                    case "Blocos de Montar":
-                        index = 1;
-                        selectionIsPositive = true;
-                        break;
-                    case "Quebra-Cabeças":
-                        index = 2;
-                        selectionIsPositive = true;
-                        break;
-                    case "Gibi e Literatura":
-                        index = 3;
-                        selectionIsPositive = true;
-                        break;
-                    case "Brinquedo Console":
-                        index = 4;
-                        selectionIsPositive = false;
-                        break;
-                    case "Teclado":
-                        index = 5;
-                        selectionIsPositive = false;
-                        break;
-                    default:
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                }
-                break;
-            case ("Interpessoal e Musical"):
-                switch (medias[0])
-                {
-                    case "Bola":
-                        index = 0;
-                        selectionIsPositive = true;
-                        break;
-                    case "Blocos de Montar":
-                        index = 1;
-                        selectionIsPositive = false;
-                        break;
-                    case "Quebra-Cabeças":
-                        index = 2;
-                        selectionIsPositive = false;
-                        break;
-                    case "Gibi e Literatura":
-                        index = 3;
-                        selectionIsPositive = false;
-                        break;
-                    case "Brinquedo Console":
-                        index = 4;
-                        selectionIsPositive = true;
-                        break;
-                    case "Teclado":
-                        index = 5;
-                        selectionIsPositive = true;
-                        break;
-                    default:
-                        index = 0;
-                        selectionIsPositive = false;
-                        break;
-                }
-                break;
-            default:
+            if (objetoZero == (int)ItensInvertidos.BOLA)
+            {
+                index = 0;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.BLOCO_DE_MONTAR)
+            {
+                index = 1;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.QUEDRA_CABEÇA)
+            {
+                index = 2;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.GIBI)
+            {
+                index = 3;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.CONSOLE)
+            {
+                index = 4;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.TECLADO)
+            {
+                index = 5;
+                selectionIsPositive = true;
+            }
+            else
+            {
                 index = 0;
                 selectionIsPositive = false;
-                break;
+            }
         }
+
+        else if (intelligenceName == Inteligencias.IntrapessoalComEspacialVisual.nome)
+        {
+            if (objetoZero == (int)ItensInvertidos.BOLA)
+            {
+                index = 0;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.BLOCO_DE_MONTAR)
+            {
+                index = 1;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.QUEDRA_CABEÇA)
+            {
+                index = 2;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.GIBI)
+            {
+                index = 3;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.CONSOLE)
+            {
+                index = 4;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.TECLADO)
+            {
+                index = 5;
+                selectionIsPositive = false;
+            }
+            else
+            {
+                index = 0;
+                selectionIsPositive = false;
+            }
+        }
+        
+        else if (intelligenceName == Inteligencias.LinguisticaComLogicoMatematica.nome)
+        {
+            if (objetoZero == (int)ItensInvertidos.BOLA)
+            {
+                index = 0;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.BLOCO_DE_MONTAR)
+            {
+                index = 1;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.QUEDRA_CABEÇA)
+            {
+                index = 2;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.GIBI)
+            {
+                index = 3;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.CONSOLE)
+            {
+                index = 4;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.TECLADO)
+            {
+                index = 5;
+                selectionIsPositive = false;
+            }
+            else
+            {
+                index = 0;
+                selectionIsPositive = false;
+            }
+        }
+       
+        else if (intelligenceName == Inteligencias.InterpessoalComMusical.nome)
+        {
+            if (objetoZero == (int)ItensInvertidos.BOLA)
+            {
+                index = 0;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.BLOCO_DE_MONTAR)
+            {
+                index = 1;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.QUEDRA_CABEÇA)
+            {
+                index = 2;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.GIBI)
+            {
+                index = 3;
+                selectionIsPositive = false;
+            }
+            else if (objetoZero == (int)ItensInvertidos.CONSOLE)
+            {
+                index = 4;
+                selectionIsPositive = true;
+            }
+            else if (objetoZero == (int)ItensInvertidos.TECLADO)
+            {
+                index = 5;
+                selectionIsPositive = true;
+            }
+            else
+            {
+                index = 0;
+                selectionIsPositive = false;
+            }
+        }
+        else
+        {
+            index = 0;
+            selectionIsPositive = false;
+        }
+
 
         toyIconOutline.SetActive(true);
 

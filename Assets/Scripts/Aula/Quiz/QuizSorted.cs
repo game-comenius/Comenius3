@@ -138,7 +138,7 @@ public class QuizSorted : QuizBase
                         break;
                     case Idiomas.ESPANHOL:
                         affirmations[i].text.text = answers[Random.Range(0, answers.Count)];
-                        affirmations[i].correctPosition = sortedAnswersEua.IndexOf(affirmations[i].text.text);
+                        affirmations[i].correctPosition = sortedAnswersEsp.IndexOf(affirmations[i].text.text);
                         sortedAnswersEsp.Remove(affirmations[i].text.text);
                         affirmationsPositions.Add(affirmations[i].GetComponent<RectTransform>().anchoredPosition);
                         break;

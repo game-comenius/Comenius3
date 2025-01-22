@@ -77,17 +77,17 @@ public class QuizMultipleChoice : QuizBase
                 {
                     case Idiomas.INGLES:
                         affirmations[i].text.text = inverted ? wrongAnswersEua[Random.Range(0, wrongAnswersEua.Count)] :
-                             correctEua[Random.Range(0, correctEua.Count)];
+                         correctEua[Random.Range(0, correctEua.Count)];
                         affirmations[i].correct = !inverted;
                         break;
                     case Idiomas.PORTUGUES:
                         affirmations[i].text.text = inverted ? wrongAnswersPtbr[Random.Range(0, wrongAnswersPtbr.Count)] :
-                                            correctPtbr[Random.Range(0, correctPtbr.Count)];
+                         correctPtbr[Random.Range(0, correctPtbr.Count)];
                         affirmations[i].correct = !inverted;
                         break;
                     case Idiomas.ESPANHOL:
                         affirmations[i].text.text = inverted ? wrongAnswersEsp[Random.Range(0, wrongAnswersEsp.Count)] :
-                        correctEsp[Random.Range(0, correctEua.Count)];
+                         correctEsp[Random.Range(0, correctEsp.Count)];
                         affirmations[i].correct = !inverted;
                         break;
                     default:
@@ -103,17 +103,17 @@ public class QuizMultipleChoice : QuizBase
                 {
                     case Idiomas.INGLES:
                         affirmations[i].text.text = inverted ? correctEua[Random.Range(0, correctEua.Count)] :
-                                                          wrongAnswersEua[Random.Range(0, wrongAnswersEua.Count)];
+                         wrongAnswersEua[Random.Range(0, wrongAnswersEua.Count)];
                         affirmations[i].correct = inverted;
                         break;
                     case Idiomas.PORTUGUES:
                         affirmations[i].text.text = inverted ? correctPtbr[Random.Range(0, correctPtbr.Count)] :
-                                                          wrongAnswersPtbr[Random.Range(0, wrongAnswersPtbr.Count)];
+                          wrongAnswersPtbr[Random.Range(0, wrongAnswersPtbr.Count)];
                         affirmations[i].correct = inverted;
                         break;
                     case Idiomas.ESPANHOL:
                         affirmations[i].text.text = inverted ? correctEsp[Random.Range(0, correctEsp.Count)] :
-                                                  wrongAnswersEsp[Random.Range(0, wrongAnswersEsp.Count)];
+                          wrongAnswersEsp[Random.Range(0, wrongAnswersEsp.Count)];
                         affirmations[i].correct = inverted;
                         break;
                     default:

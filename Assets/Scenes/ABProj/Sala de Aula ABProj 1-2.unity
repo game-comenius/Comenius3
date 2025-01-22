@@ -3687,6 +3687,26 @@ Transform:
   m_Father: {fileID: 292048055}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &301987809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680011383709605, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &301987811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301987809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 47
+  caixaAlta: 0
 --- !u!1 &302239627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4695,9 +4715,15 @@ MonoBehaviour:
   helpText: {fileID: 126259172}
   firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
     sua pontua\xE7\xE3o de acordo com seu desempenho no quiz!"
+  firstHelpPt: 
+  firstHelpEua: 
+  firstHelpEsp: 
   secondHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode
     conferir o feedback da Lurdinha sobre as m\xEDdias escolhidas para o laborat\xF3rio
     de acordo com a metodologia Aprendizagem Baseada em Problemas (ABP)!"
+  secondHelpPt: 
+  secondHelpEua: 
+  secondHelpEsp: 
 --- !u!222 &337604323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5725,6 +5751,7 @@ GameObject:
   - component: {fileID: 399579315}
   - component: {fileID: 399579314}
   - component: {fileID: 399579313}
+  - component: {fileID: 399579316}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -5806,6 +5833,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399579311}
   m_CullTransparentMesh: 0
+--- !u!114 &399579316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399579311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 104
+  caixaAlta: 0
 --- !u!1 &399634259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6680,7 +6721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Estudante
+  m_Text: Student
 --- !u!222 &459736239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8084,6 +8125,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &560319335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680012664587131, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &560319337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560319335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 8
+  caixaAlta: 0
 --- !u!1 &571623220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8656,9 +8717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Dura\xE7\xE3o da aula"
-  ContentPt: 
-  ContentEua: 
-  ContentSpanish: 
+  ContentPt: "Dura\xE7\xE3o da aula"
+  ContentEua: Class duration
+  ContentSpanish: "Duraci\xF3n de la clase"
   popUp: {fileID: 817927080}
   popUpArrow: {fileID: 55981712}
   text: {fileID: 592527343}
@@ -10387,6 +10448,7 @@ GameObject:
   - component: {fileID: 772998976}
   - component: {fileID: 772998978}
   - component: {fileID: 772998977}
+  - component: {fileID: 772998979}
   m_Layer: 5
   m_Name: Tema
   m_TagString: Untagged
@@ -10458,6 +10520,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772998975}
   m_CullTransparentMesh: 0
+--- !u!114 &772998979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772998975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 122
+  caixaAlta: 0
 --- !u!1 &774295926
 GameObject:
   m_ObjectHideFlags: 0
@@ -11207,6 +11283,7 @@ GameObject:
   - component: {fileID: 813837819}
   - component: {fileID: 813837821}
   - component: {fileID: 813837820}
+  - component: {fileID: 813837822}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -11276,6 +11353,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813837818}
   m_CullTransparentMesh: 0
+--- !u!114 &813837822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813837818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 105
+  caixaAlta: 0
 --- !u!1 &817927080
 GameObject:
   m_ObjectHideFlags: 0
@@ -11814,6 +11905,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &844660463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680011074696214, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &844660465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844660463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 126
+  caixaAlta: 0
 --- !u!1 &853448155
 GameObject:
   m_ObjectHideFlags: 0
@@ -19264,6 +19375,26 @@ Transform:
   m_Father: {fileID: 714785165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1394005938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680010977243847, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1394005940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394005938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 125
+  caixaAlta: 0
 --- !u!1 &1398066951
 GameObject:
   m_ObjectHideFlags: 0
@@ -21511,6 +21642,7 @@ GameObject:
   - component: {fileID: 1591825536}
   - component: {fileID: 1591825538}
   - component: {fileID: 1591825537}
+  - component: {fileID: 1591825539}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -21580,6 +21712,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591825535}
   m_CullTransparentMesh: 0
+--- !u!114 &1591825539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591825535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 103
+  caixaAlta: 0
 --- !u!1 &1592811535
 GameObject:
   m_ObjectHideFlags: 0
@@ -24180,6 +24326,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &1793278464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680012105266332, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793278466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793278464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 0
+  caixaAlta: 0
 --- !u!1 &1800421939
 GameObject:
   m_ObjectHideFlags: 0
@@ -24462,6 +24628,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!1 &1808519179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680012279078417, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1808519181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808519179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 123
+  caixaAlta: 0
 --- !u!1 &1825239260
 GameObject:
   m_ObjectHideFlags: 0
@@ -26477,9 +26663,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: "Pontua\xE7\xE3o"
-  ContentPt: 
-  ContentEua: 
-  ContentSpanish: 
+  ContentPt: "Pontua\xE7\xE3o"
+  ContentEua: Scoring
+  ContentSpanish: Puntaje
   popUp: {fileID: 1181940740}
   popUpArrow: {fileID: 234791921}
   text: {fileID: 1952085640}
@@ -28746,6 +28932,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &2065420030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6482680011460908940, guid: da7cf7180acf91748a41b114f138f6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482680012790202936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2065420032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065420030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 45
+  caixaAlta: 0
 --- !u!1 &2065441635
 GameObject:
   m_ObjectHideFlags: 0
@@ -42203,7 +42409,35 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1638648823}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6482680011460908940, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2065420032}
+    - targetCorrespondingSourceObject: {fileID: 6482680012279078417, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1808519181}
+    - targetCorrespondingSourceObject: {fileID: 6482680012105266332, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1793278466}
+    - targetCorrespondingSourceObject: {fileID: 6482680011383709605, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 301987811}
+    - targetCorrespondingSourceObject: {fileID: 6482680012664587131, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 560319337}
+    - targetCorrespondingSourceObject: {fileID: 6482680010977243847, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1394005940}
+    - targetCorrespondingSourceObject: {fileID: 6482680011074696214, guid: da7cf7180acf91748a41b114f138f6b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 844660465}
   m_SourcePrefab: {fileID: 100100000, guid: da7cf7180acf91748a41b114f138f6b8, type: 3}
 --- !u!4 &6521654543178876014
 Transform:

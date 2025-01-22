@@ -24,7 +24,6 @@ public class StateMachineListener : MonoBehaviour
         {
             if (controladorDaAula.currentState == estado)
             {
-                Debug.Log(estado.ToString());
                 OnSelectedStates.Invoke();
                 return;
             }

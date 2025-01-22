@@ -74,7 +74,20 @@ public abstract class QuizBase : MonoBehaviour
     {
         if (quizType == QuizType.MultipleIntelligences)
         {
-            questionText.text = question + intelligence;
+            switch (Textos.GetIdiomaSelecionado())
+            {
+                case Idiomas.INGLES:
+                    questionText.text = questionEua + intelligenceEua;
+                    break;
+                case Idiomas.PORTUGUES:
+                    questionText.text = questionPtbr + intelligencePtbr;
+                    break;
+                case Idiomas.ESPANHOL:
+                    questionText.text = questionEsp + intelligenceEsp;
+                    break;
+                default:
+                    break;
+            }
         }
         else if (quizType == QuizType.Media)
         {
