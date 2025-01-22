@@ -234,6 +234,7 @@ public class TextosEspanhol : Textos
         textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Juega comenius 2 personalizable";
         textos[(int)ChaveTextos.CREDITOS] = "Créditos";
         textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Aquí revisas y confirmas tu plan de lección. Luego comenzará un cuestionario sobre tus elecciones. Si lo prefieres, puedes cambiar tu plan haciendo clic en la flecha ubicada en la pestaña superior.\r\n"; ;
+        textos[(int)ChaveTextos.A_AULA_TERMINA] = "En este punto del juego, respondes preguntas relacionadas con tus elecciones, ¡y esto definirá tu puntuación! Los comentarios realizados por los estudiantes sobre los medios están relacionados con su utilidad en la metodología de Aprendizaje Basado en Problemas (ABP). La clase finaliza cuando la barra de duración de la clase está llena.";
 
     }
 

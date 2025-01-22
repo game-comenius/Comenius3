@@ -225,6 +225,7 @@ public enum ChaveTextos
     JOGAR_COMENIUS_2_COSTUMIZAVEIS,
     CREDITOS,
     AQUI_VC_REVISA,
+    A_AULA_TERMINA,
     _chaveFinal
 }
 

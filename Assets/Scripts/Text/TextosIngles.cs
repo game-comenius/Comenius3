@@ -233,6 +233,8 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.JOGAR_COMENIUS_2_COSTUMIZAVEIS] = "Play comenius 2 customizable";
         textos[(int)ChaveTextos.CREDITOS] = "Credits";
         textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Here you review and confirm your lesson plan. Then a quiz will start about your choices. If you prefer, you can change your plan by clicking on the arrow located in the top tab.\r\n";
+        textos[(int)ChaveTextos.A_AULA_TERMINA] = "At this point in the game you answer quiz questions related to your choices, and this will define your score! The comments made by students about the media are related to how useful they are in the Problem-Based Learning (PBL) methodology. The class ends when the class duration bar is full.";
+
 
     }
 

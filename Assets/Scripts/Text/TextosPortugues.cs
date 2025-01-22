@@ -235,7 +235,8 @@ public class TextosPortugues : Textos
         textos[(int)ChaveTextos.CREDITOS] = "Créditos";
 
         textos[(int)ChaveTextos.AQUI_VC_REVISA] = "Aqui você revisa e confirma seu plano de aula.Em seguida será iniciado um quiz sobre suas escolhas.Se preferir, você pode alterar seu plano clicando na seta localizada na aba superior.\r\n";
-     
+        textos[(int)ChaveTextos.A_AULA_TERMINA] = "Neste momento do jogo você responde perguntas de quiz relacionadas com suas escolhas, e isso irá definir sua pontuação! Os comentários feitos pelos estudantes sobre as mídias têm relação com o quanto elas são proveitosas na metodologia Aprendizagem Baseada em Problemas (ABP). A aula termina quando a barra de duração da aula estiver cheia.";
+
 
 
 

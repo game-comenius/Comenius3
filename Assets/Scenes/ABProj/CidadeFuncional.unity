@@ -2654,7 +2654,7 @@ PrefabInstance:
     - target: {fileID: 8541668870042985360, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8541668870042985361, guid: 638b9cf57ef10c644917c0d1a0cd21d6,
         type: 3}
@@ -28701,13 +28701,13 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: 0}
-    - m_Text: "Make sure he's not in the bathroom!  \r"
-      m_Image: {fileID: 0}
-    - m_Text: "Maria, invite him to join the group.\r"
+    - m_Text: "Notify local security!\r"
       m_Image: {fileID: 0}
     - m_Text: Alright, we'll look for him later!
       m_Image: {fileID: 0}
-    - m_Text: "Notify local security!\r"
+    - m_Text: "Maria, invite him to join the group.\r"
+      m_Image: {fileID: 0}
+    - m_Text: "Make sure he's not in the bathroom!  \r"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35985,6 +35985,7 @@ GameObject:
   - component: {fileID: 8590174703798233911}
   - component: {fileID: 8590174703798233909}
   - component: {fileID: 8590174703798233908}
+  - component: {fileID: 8590174703798233912}
   m_Layer: 5
   m_Name: Texto
   m_TagString: Untagged
@@ -36012,6 +36013,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.15, y: -18}
   m_SizeDelta: {x: 621.2326, y: 163.11377}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8590174703798233912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590174703798233910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67be370fc53ff6f4b9c4a940ad03c824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: 209
+  caixaAlta: 0
 --- !u!222 &8590174703801309240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38521,7 +38536,7 @@ MonoBehaviour:
   media2Icon: {fileID: 8590174703523285389}
   media3Icon: {fileID: 8590174703832916967}
   media4Icon: {fileID: 8590174703877492779}
-  helpText: {fileID: 8590174703798233908}
+  helpText: {fileID: 0}
   firstHelp: "Esta \xE9 a tela de feedback final da sua aula! Aqui voc\xEA pode conferir
     sua pontua\xE7\xE3o de acordo com seu desempenho no quiz!"
   firstHelpPt: 
