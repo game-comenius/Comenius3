@@ -116,7 +116,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.NASA_SALA_INVERTIDA] = "In a Flipped Classroom, there is the possibility of concentrating the necessary information for the course or subject on the platform or virtual environment, which is a great attraction of this method.";
         textos[(int)ChaveTextos.SEQUENCIA_DICATICA2] = "Didactic Sequence, in the classroom:\r\n\r\n1. Explore the material\r\n\r\n2. Discuss with the group in the classroom\r \n\r\n3. Carry out activities";
         textos[(int)ChaveTextos.NA_SALA_DE_AULA_INVERTIDA_DOCENTE] = "In the Flipped Classroom, the teacher proposes content and activities to be done at home by students, through materials such as videos, podcasts or reading texts, etc. After studying prior to the topic, students take their doubts to the classroom, reflect in groups and develop projects.";
-        textos[(int)ChaveTextos.MIDIAS_QUARTO] = "<b>Midias - Bedroom</b>";
+        textos[(int)ChaveTextos.MIDIAS_QUARTO] = "<b>Media - Bedroom</b>";
         textos[(int)ChaveTextos.NA_SEQUENCIA] = "Following the <b>Flipped Classroom</b>, this is the moment when students will:";
         textos[(int)ChaveTextos.MIDIAS_SALA] = "<b>Media - Classroom</b>";
         textos[(int)ChaveTextos.CONHECER_SALA_INVERTIDA] = "Let's learn a little more about the Flipped Classroom?";
@@ -145,7 +145,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.DICA] = "Tip:";
         textos[(int)ChaveTextos.VAMOS_PARA_TERCEIRA] = "Shall we go to the third methodology? \r\nNow you must choose a theme for your last class in the game!";
         textos[(int)ChaveTextos.CARACTERISTICAS_TURMA] = "Characteristics of the Class";
-        textos[(int)ChaveTextos.MIDIAS] = "Medias";
+        textos[(int)ChaveTextos.MIDIAS] = "Media";
         textos[(int)ChaveTextos.TEMA] = "Theme";
         textos[(int)ChaveTextos.CAMPOS_DE_APRENDIZAGEM] = "Learning Field";
         textos[(int)ChaveTextos.METODOLOGIA_SIMPLES] = "Methodology";
@@ -164,7 +164,7 @@ public class TextosIngles : Textos
         textos[(int)ChaveTextos.SUA_TURMA] = "Your class";
         textos[(int)ChaveTextos.FIQUE_ATENTO] = "Pay attention to the students, they may need your help.";
         textos[(int)ChaveTextos.ESTUDANTE] = "Student";
-        textos[(int)ChaveTextos.MIDIAS_ESPACO_DE_ENSINO] = "<b>Medias - Teaching space</b>";
+        textos[(int)ChaveTextos.MIDIAS_ESPACO_DE_ENSINO] = "<b>Media - Teaching space</b>";
         textos[(int)ChaveTextos.ESCOLHAS_AS_DUAS_MIDIAS] = "Choose the two media that will be used in the classroom";
         textos[(int)ChaveTextos.AGORA_OS_ESTUDANTES] = "Now the students will react to your class topic\r\nGood Luck!\r\n The class topic is: " + EstadoDoJogo.Instance.Tema;
         textos[(int)ChaveTextos.COM_ESSA_INFORMACAO] = "With this information, continue your planning!";

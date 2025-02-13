@@ -267,7 +267,7 @@ public sealed class AreaDeConhecimento
       "action and use of space with the body.";
 
     private static string TracosSonsCoresFormasEua =
-        "<style=\"title\">Traces, Sounds, Colors and Shapes</style>\n\nThrough diverse experiences, experience" +
+        "<style=\"title\">Traces, Sounds, Colors and Shapes</style>\n\nThrough diverse experiences " +
         "Discover forms of expression and languages, contributing to developing sensitivity, aesthetic and creative sensetico," +
         "in addition to creativity and personal expression to create their own artistic and cultural repertoire.";
 

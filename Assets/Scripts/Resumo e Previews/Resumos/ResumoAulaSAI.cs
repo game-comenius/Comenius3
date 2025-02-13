@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,8 +47,104 @@ public class ResumoAulaSAI : MonoBehaviour
         textoSalaMidia2.text = EstadoDoJogo.Instance.Midias[3].nome;
         textoQuartoMidia1.text = EstadoDoJogo.Instance.Midias[0].nome;
         textoQuartoMidia2.text = EstadoDoJogo.Instance.Midias[1].nome;
-        textoAgrupamento1.text = EstadoDoJogo.Instance.Midias[2].agrupamento.ToString(); // TODO: Arrumar
-        textoAgrupamento2.text = EstadoDoJogo.Instance.Midias[3].agrupamento.ToString(); // TODO: Arrumar
+
+        Debug.Log(EstadoDoJogo.Instance.Midias[2].agrupamento.ToString());
+        switch (EstadoDoJogo.Instance.Midias[2].agrupamento.ToString())
+        {
+            case "FormatoU":
+                switch (Textos.GetIdiomaSelecionado())
+                {
+                    case Idiomas.INGLES:
+                        textoAgrupamento1.text = "U Shape";
+                        break;
+                    case Idiomas.PORTUGUES:
+                        textoAgrupamento1.text = "Formato U";
+                        break;
+                    case Idiomas.ESPANHOL:
+                        textoAgrupamento1.text = "Forma de U";
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Individual":
+                textoAgrupamento1.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Individual",
+                    Idiomas.PORTUGUES => "Individual",
+                    Idiomas.ESPANHOL => "Individual",
+                    _ => textoAgrupamento1.text
+                };
+                break;
+
+            case "Duplas":
+                textoAgrupamento1.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Doubles and Trios",
+                    Idiomas.PORTUGUES => "Duplas e Trios",
+                    Idiomas.ESPANHOL => "Dobles y Tríos",
+                    _ => textoAgrupamento1.text
+                };
+                break;
+
+            case "GrandesGrupos":
+                textoAgrupamento1.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Large Groups",
+                    Idiomas.PORTUGUES => "Grandes Grupos",
+                    Idiomas.ESPANHOL => "Grupos grandes",
+                    _ => textoAgrupamento1.text
+                };
+                break;
+
+        }
+
+        switch (EstadoDoJogo.Instance.Midias[3].agrupamento.ToString())
+        {
+            case "FormatoU":
+                textoAgrupamento2.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "U Shape",
+                    Idiomas.PORTUGUES => "Formato U",
+                    Idiomas.ESPANHOL => "Forma de U",
+                    _ => textoAgrupamento2.text
+                };
+                break;
+
+            case "Individual":
+                textoAgrupamento2.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Individual",
+                    Idiomas.PORTUGUES => "Individual",
+                    Idiomas.ESPANHOL => "Individual",
+                    _ => textoAgrupamento2.text
+                };
+                break;
+
+            case "Duplas":
+                textoAgrupamento2.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Doubles and Trios",
+                    Idiomas.PORTUGUES => "Duplas e Trios",
+                    Idiomas.ESPANHOL => "Dobles y Tríos",
+                    _ => textoAgrupamento2.text
+                };
+                break;
+
+            case "GrandesGrupos":
+                textoAgrupamento2.text = Textos.GetIdiomaSelecionado() switch
+                {
+                    Idiomas.INGLES => "Large Groups",
+                    Idiomas.PORTUGUES => "Grandes Grupos",
+                    Idiomas.ESPANHOL => "Grupos grandes",
+                    _ => textoAgrupamento2.text
+                };
+                break;
+
+        }
+        Debug.Log(textoAgrupamento2.text);
+        Debug.Log(textoAgrupamento1.text);
         textoTema.text = EstadoDoJogo.Instance.Tema;
     }
 }

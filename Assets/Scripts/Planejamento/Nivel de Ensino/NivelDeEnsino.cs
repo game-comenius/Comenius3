@@ -14,9 +14,9 @@ public sealed class NivelDeEnsino
                    " obrigatória a matrícula). Tem como eixos estruturantes das práticas pedagógicas as interações e a" +
                    " brincadeira, tendo como finalidade o desenvolvimento integral da criança até 5 anos.";
     private static string educacaoInfantilDescricaoEua = "<style=\"title\">Early Childhood Education</style>\n\nIt is the first stage of Basic Education, having the principles" +
-                   " to educate and care as inseparable. It aims to expand the universe of experiences, with" +
-                   "knowledge and skills of babies and children through partnership with the family. It is offered in cr" +
-                   "eches for children up to 3 years of age, in preschools for children aged 4 to 5 years (this being " +
+                   " to educate and care as inseparable. It aims to expand the universe of experiences, with " +
+                   "knowledge and skills of babies and children through partnership with the family. It is offered in " +
+                   "daycare for children up to 3 years of age, in preschools for children aged 4 to 5 years (this being " +
                    "registration is mandatory). The structuring axes of pedagogical practices are interactions and" +
                    "play, aimed at the integral development of the child up to 5 years old.";
     private static string educacaoInfantilDescricaoEspanhol = "<style=\"title\">Educación Infantil</style>\n\nEs la primera etapa de la Educación Básica, teniendo los principios" +
@@ -36,7 +36,7 @@ public sealed class NivelDeEnsino
                    "dos fundamentos científico-tecnológicos dos processos produtivos, relacionando a teoria com a prát" +
                    "ica através de quatro grandes áreas do conhecimento. Dessa forma produz múltiplas culturas juvenis" +
                    " e  promove uma educação integral.";
-    private static string ensinoMedioDescricaoEua = "<style=\"title\">High School</style>\n\nThe final stage of Basic Education aims to deepen" +
+    private static string ensinoMedioDescricaoEua = "<style=\"title\">High School</style>\n\nThe final stage of Basic Education aims to deepe " +
                    "reinforcement of previously acquired knowledge, basic preparation for work and the city" +
                    "ania, ethical training and the improvement of critical thinking. This happens through understanding" +
                    "the scientific-technological foundations of production processes, relating theory to practice" +
@@ -56,10 +56,10 @@ public sealed class NivelDeEnsino
                    "amento da educação básica mediante a formação e a capacitação de profissionais, por meio de pesqui" +
                    "sas pedagógicas e o desenvolvimento de atividades de extensão, em prol do desenvolvimento da socie" +
                    "dade brasileira.";
-    private static string ensinoSuperiorDescricaoEua = "<style=\"title\">Higher Education</style>\n\nIt is the level that seeks the desire for cultural improvement and" +
+    private static string ensinoSuperiorDescricaoEua = "<style=\"title\">Higher Education</style>\n\nIt is the level that seeks the desire for cultural improvement and " +
                    "professional, stimulating knowledge of the problems of the present world. Seeks to provide services" +
-                   "specialized to the community through scientific and technological research. It also seeks improvement" +
-                   "improvement of basic education through the training and qualification of professionals, through research" +
+                   "specialized to the community through scientific and technological research. It also seeks" +
+                   "improvement of basic education through the training and qualification of professionals, through research " +
                    "pedagogical activities and the development of extension activities, for the development of society" +
                    "Brazilian city.";
     private static string ensinoSuperiorDescricaoEspanhol = "<style=\"title\">Educación Superior</style>\n\nEs el nivel que busca el deseo de superación cultural y" +

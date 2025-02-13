@@ -341,8 +341,7 @@ public class Midia
                     switch (nomeMidia)
                     {
                         case NomeDeMidia.Lousa:
-                            return "<style=\"title\">Lousa</style>\n\nA lousa é uma superfície reutilizável, geralmente riscada com giz branco, utilizada para exp" +
-                                "osição do conteúdo do docente ou de forma colaborativa para docente e estudante.\n\n<b>Categoria:</b>\nMídia de exposição tradicional";
+                            return "The blackboard is a display medium that has been part of the teaching profession for decades, and can be used in a variety of ways, according to each teacher's methodological proposal. It can also be used as a space for students to express themselves. The digital blackboard allows for an internet connection, opening up possibilities for new ways of exposing, creating content and presenting information from a variety of sources, increasing student interaction and participation in class.";
 
                         case NomeDeMidia.LivroDidatico:
                             return "The printed textbook is provided by the school to the student. Brings information about all the content of the leti year\" +\r\n                                 \"vo, normally used as reading of complementary teaching material for specific subjects, with mediation \" +\r\n                                 \"from the teacher. It has content and resources such as images, graphics and various textual genres, and may also include questions\" +\r\n                                 \"are transversal.";
@@ -436,8 +435,11 @@ public class Midia
                     switch (nomeMidia)
                     {
                         case NomeDeMidia.Lousa:
-                            return "<style=\"title\">Lousa</style>\n\nA lousa é uma superfície reutilizável, geralmente riscada com giz branco, utilizada para exp" +
-                                "osição do conteúdo do docente ou de forma colaborativa para docente e estudante.\n\n<b>Categoria:</b>\nMídia de exposição tradicional";
+                            return "La pizarra es un medio de exhibición que ha sido parte de la profesión docente durante décadas y puede usarse de diversas maneras" +
+                                "formas, según la propuesta metodológica de cada docente. También puede ser utilizado como espacio de expresión de la" +
+                                "estudiantes.La pizarra digital permite la conexión a internet, abriendo posibilidades a nuevas formas de exposición" +
+                                "Posicionamiento, creación de contenidos y presentación de información de diversas fuentes, ampliando la interacción y la participación" +
+                                "posición de los estudiantes en clase.";
 
                         case NomeDeMidia.LivroDidatico:
                             return "La escuela proporciona el libro de texto impreso al estudiante. Trae información de todo el contenido del año leti" +

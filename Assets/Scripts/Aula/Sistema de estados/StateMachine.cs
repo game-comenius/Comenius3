@@ -37,10 +37,8 @@ public class StateMachine : ScriptableObject
             currentStateIndex = 0;
         }
         for (int i = 0; i < EstadoDoJogo.Instance.Midias.Length; i++) {
-            Debug.Log(EstadoDoJogo.Instance.Midias[i].nomeMidia);
 
         }
-        Debug.Log(EstadoDoJogo.Instance.Metodologia.nome);
 
         // Atualiza a midia conforme o momento de aula
         // TODO: Adaptar para a ABProj
